@@ -80,7 +80,8 @@ Recorded 2026-09-03 for the MVP build. Change a decision here first, then the co
 - Pin snapping: each pin projects onto its nearest road segments (up to 4 candidates
   within 300 px, grid spatial index); each candidate becomes a virtual node splitting
   its edge; the pin connects to each candidate by a straight `offroad` leg. The direct
-  straight A->B off-road path is always a candidate too; the cheapest total wins.
+  straight A->B off-road path is a candidate too; the cheapest total wins. **Amended by
+  D10:** water blocks off-road legs, and the direct A->B arc is foot-only.
 - Cost is time in seconds: `lengthPx * METERS_PER_PIXEL / SPEED_MPS[mode][class]`.
   Heuristic: straight-line distance / fastest speed for the mode (admissible).
 - Output: ordered legs, one per traversed edge (or off-road hop), each with class,
@@ -90,6 +91,7 @@ Recorded 2026-09-03 for the MVP build. Change a decision here first, then the co
   3 nearest other nodes within `CONNECTOR_RADIUS_PX` (200) that are not already
   adjacent. They cost off-road time, so the router hops small gaps between fragments
   instead of abandoning the road network, and the legs render as dashed off-road hops.
+  Connectors that would cross water are skipped (D10).
 
 ## D7. Speed model (`src/config/travel.ts`, the one tunable file)
 - `METERS_PER_PIXEL = 9500 / 5178` (ASSUMED: Pywel is roughly 9.5 km across per
@@ -120,3 +122,46 @@ Recorded 2026-09-03 for the MVP build. Change a decision here first, then the co
   reviews Grok's diffs, Claude subagents (cap 5) do research, tiles, whole-repo
   review, QA, and one reserved debug. Every task ends with typecheck + lint + build
   green and one commit.
+
+## D10. Water mask and horse-follows-roads
+- **Why:** the router was water-blind. D6 connectors and the off-road legs hopped
+  rivers where no bridge exists, and a horse would cut cross-country between two
+  roads. Added 2026-09-03.
+- **Mask:** `data/water-mask.png`, an 8-bit greyscale PNG at half the map
+  resolution (2589 x 2620 for the 5178 x 5240 map, so `scale` = 0.5 mask px per
+  image px). 255 = water, 0 = land; a 2 x 2 image block is water if any of its
+  pixels is, so the mask errs slightly toward water. Written by the extraction
+  script from the map's blue pixels and committed next to `data/roads.json`.
+  It is served at `/data/water-mask.png` in dev and copied into `dist/data/`.
+- **Loading:** `src/lib/water-mask-loader.ts` decodes the PNG with
+  `createImageBitmap` + `OffscreenCanvas` (`Image` + canvas fallback) into a
+  `WaterMask` (`src/routing/water-mask.ts`: width, height, scale, one byte per
+  mask pixel). A 404 or a decode failure logs one warning and returns
+  `undefined` — the app keeps working, water-blind, as before. `src/store.ts`
+  loads it alongside `roads.json` and passes it to every `buildGraph` call,
+  including the editor's rebuilds; `graph.water` carries it to `findRoute`.
+- **Crossing rule:** `crosses(a, b)` samples the straight segment every
+  `WATER_SAMPLE_STEP_MASK_PX` (1) mask pixel and reports a crossing only when at
+  least `WATER_CROSS_MIN_SAMPLES` (2) *consecutive* samples are water, so one
+  noisy pixel never blocks travel. Both constants, plus the decode threshold
+  `WATER_THRESHOLD` (128), live in `src/config/travel.ts`. Points outside the
+  mask count as land.
+- **Rules applied:**
+  1. A D6 dead-end connector candidate whose straight hop crosses water is
+     skipped; the freed slot goes to the next-best dry candidate, so each dead
+     end still gets up to `CONNECTOR_MAX` connectors. On the committed dataset
+     this replaces 510 water-crossing connectors (1233 -> 1229 total).
+  2. A pin-to-road snap leg that crosses water is not offered.
+  3. The direct A->B off-road arc is offered **only on foot** and only when it
+     does not cross water. A horse therefore always follows roads; only its
+     pin-to-road legs and the land-only connectors are off-road.
+  4. Exception: a pin dropped *on* water keeps all of its own legs, so a pin in
+     a lake or at sea still routes to shore instead of returning nothing.
+  5. Roads themselves are never water-checked — a traced road over a river is a
+     bridge or a ford.
+- **Warnings:** `Route.warnings: RouteWarning[]` (`straight-line-fallback` when
+  A* found no path and the route is the raw A->B line, `crosses-water` when an
+  off-road leg of the chosen route runs through water; both can be present).
+  Empty on a clean route. `RouteSummary` renders them as one amber line ("No
+  road route: straight line shown" / "Route crosses water"). Leg output is
+  otherwise unchanged.

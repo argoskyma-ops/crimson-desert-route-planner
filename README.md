@@ -32,6 +32,16 @@ If the tiles are missing, the app tells you to run those two scripts.
 6. The summary shows km and an ETA. Speeds and the metres-per-pixel scale are
    assumptions in `src/config/travel.ts` — they have not been calibrated in-game.
 
+The router knows where the water is (`data/water-mask.png`, see D10). Off-road
+legs — the pin-to-road hops and the gap connectors — never cross a river or the
+sea, only traced roads do, so a crossing means a bridge or a ford. **Horse** goes
+further and always follows roads: it never cuts cross-country between two roads,
+while **On foot** may still take a direct line if it stays on land. When no road
+route exists the summary says "No road route: straight line shown" and draws the
+straight line anyway; a pin dropped in water routes to shore and says "Route
+crosses water". Without `data/water-mask.png` the planner still works — it just
+ignores water.
+
 ## Tracing and fixing roads
 
 **Edit roads** (top-right) disables pin placement so you can fix the extracted
@@ -75,13 +85,21 @@ connectors that bridge gaps up to 200 px (`CONNECTOR_RADIUS_PX` in
 `src/config/travel.ts`). Trace the rest in the editor. Extraction never emits
 the `offroad` class.
 
+Extraction also writes `data/water-mask.png`: an 8-bit greyscale PNG at half the
+map resolution (2589 x 2620), 255 = water, 0 = land, built from the map's blue
+pixels. It is committed next to `roads.json`, served at `/data/water-mask.png`
+and copied into `dist/data/` on build. The router loads it at startup and uses it
+to keep off-road travel out of rivers and the sea (docs/DECISIONS.md D10); if the
+file is missing the app logs one warning and routes as before.
+
 ## Build and deploy
 
 ```bash
 npm run build
 ```
 
-writes a static `dist/` that includes `dist/data/` (tiles + `roads.json`). Also:
+writes a static `dist/` that includes `dist/data/` (tiles, `roads.json` and
+`water-mask.png`). Also:
 
 ```bash
 npm run typecheck
@@ -107,11 +125,11 @@ Publishing the app publicly is a separate decision.
 src/
   components/   MapView, ControlPanel, EditorPanel, Legend, RouteSummary
   editor/       graph-edit + Leaflet draw/select overlay
-  routing/      A* over the road graph
-  lib/          CRS, roads load/save, pin icons
+  routing/      A* over the road graph, water mask
+  lib/          CRS, roads + water-mask load/save, pin icons
   config/       travel.ts (speeds and colours)
 scripts/        fetch-map.sh, build-tiles.py, extract-roads.py
-data/           roads.json (committed); map/ (gitignored)
+data/           roads.json + water-mask.png (committed); map/ (gitignored)
 docs/           DECISIONS.md, PLAN.md, RESEARCH.md
-tests/          unit/ (roads.json checks), e2e/smoke.py (Playwright)
+tests/          unit/ (roads.json + water-mask checks), e2e/smoke.py (Playwright)
 ```
