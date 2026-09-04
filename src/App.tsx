@@ -30,16 +30,30 @@ export default function App() {
     }
   }, [setRoads])
 
+  useEffect(() => {
+    if (!editorDirty) return
+    const onBeforeUnload = (event: BeforeUnloadEvent) => {
+      event.preventDefault()
+      event.returnValue = ''
+    }
+    window.addEventListener('beforeunload', onBeforeUnload)
+    return () => window.removeEventListener('beforeunload', onBeforeUnload)
+  }, [editorDirty])
+
   return (
     <div className="relative h-dvh overflow-hidden bg-neutral-950 text-neutral-100">
       <MapView />
       <ControlPanel />
-      <div className="pointer-events-auto absolute top-3 right-3 z-[1100] flex w-[min(calc(100%-1.5rem),17.5rem)] flex-col gap-2 max-[479px]:top-auto max-[479px]:right-3 max-[479px]:bottom-28 max-[479px]:flex-col-reverse">
+      <div
+        className={`pointer-events-none absolute top-3 right-3 z-[1100] flex w-[min(calc(100%-1.5rem),17.5rem)] flex-col gap-2 max-[479px]:top-auto max-[479px]:right-3 max-[479px]:bottom-28 max-[479px]:w-[min(calc(100%-5.5rem),17.5rem)] max-[479px]:flex-col-reverse ${
+          editorActive ? 'items-stretch' : 'items-end'
+        }`}
+      >
         <button
           type="button"
           aria-pressed={editorActive}
           onClick={() => toggleEditor()}
-          className={`inline-flex min-h-11 items-center justify-center rounded-xl border px-3 text-sm font-medium shadow-lg backdrop-blur-md ${
+          className={`pointer-events-auto inline-flex min-h-11 items-center justify-center rounded-xl border px-3 text-sm font-medium shadow-lg backdrop-blur-md ${
             editorActive
               ? 'border-white/20 bg-neutral-100 text-neutral-900'
               : 'border-white/10 bg-neutral-950/80 text-neutral-100 hover:bg-neutral-800/80'
@@ -47,12 +61,16 @@ export default function App() {
         >
           {editorActive ? 'Done editing' : 'Edit roads'}
         </button>
-        {editorActive ? <EditorPanel /> : null}
+        {editorActive ? (
+          <div className="pointer-events-auto">
+            <EditorPanel />
+          </div>
+        ) : null}
         {!editorActive && editorDirty ? (
-          <p className="px-1 text-xs font-medium text-amber-400">Unsaved changes</p>
+          <p className="pointer-events-auto px-1 text-xs font-medium text-amber-400">Unsaved changes</p>
         ) : null}
       </div>
-      <Legend />
+      {!editorActive ? <Legend /> : null}
     </div>
   )
 }

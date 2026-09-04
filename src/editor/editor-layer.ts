@@ -13,6 +13,8 @@ export const EDGE_SNAP_CSS_PX = 10
 
 const VERTEX_RADIUS = 4
 const SNAP_RADIUS = 8
+const NODE_HANDLE_PX = 22
+const INTERIOR_VERTEX_RADIUS = 3
 
 function cssPixelsPerImagePixel(map: L.Map): number {
   const origin = map.latLngToContainerPoint(toLatLng({ x: 0, y: 0 }))
@@ -112,6 +114,7 @@ export function attachEditorLayer(map: L.Map): () => void {
   map.doubleClickZoom.disable()
 
   let hover: DraftPoint | null = null
+  let draggingNode = false
 
   const syncCursor = () => {
     const { editor } = useAppStore.getState()
@@ -119,6 +122,7 @@ export function attachEditorLayer(map: L.Map): () => void {
   }
 
   const redraw = () => {
+    if (draggingNode) return
     group.clearLayers()
     const { editor, roads } = useAppStore.getState()
     const color = CLASS_COLORS[editor.newEdgeClass]
@@ -141,6 +145,56 @@ export function attachEditorLayer(map: L.Map): () => void {
           interactive: false,
           renderer,
         }).addTo(group)
+
+        if (editor.tool === 'select') {
+          for (let index = 1; index < edge.points.length - 1; index += 1) {
+            const [x, y] = edge.points[index]
+            L.circleMarker(toLatLng({ x, y }), {
+              radius: INTERIOR_VERTEX_RADIUS,
+              color: '#ffffff',
+              weight: 1,
+              fillColor: CLASS_COLORS[edge.class],
+              fillOpacity: 1,
+              interactive: false,
+              renderer,
+            }).addTo(group)
+          }
+
+          const seen = new Set<string>()
+          for (const nodeId of [edge.from, edge.to]) {
+            if (seen.has(nodeId)) continue
+            seen.add(nodeId)
+            const node = roads.nodes.find((item) => item.id === nodeId)
+            if (!node) continue
+            const marker = L.marker(toLatLng({ x: node.x, y: node.y }), {
+              draggable: true,
+              autoPan: true,
+              keyboard: false,
+              zIndexOffset: 1200,
+              icon: L.divIcon({
+                className: '',
+                iconSize: [NODE_HANDLE_PX, NODE_HANDLE_PX],
+                iconAnchor: [NODE_HANDLE_PX / 2, NODE_HANDLE_PX / 2],
+                html: `<div style="width:${NODE_HANDLE_PX}px;height:${NODE_HANDLE_PX}px;box-sizing:border-box;border-radius:9999px;border:2px solid #fff;background:#fbbf24"></div>`,
+              }),
+            })
+            marker.on('click', (ev) => {
+              L.DomEvent.stop(ev)
+            })
+            marker.on('dragstart', () => {
+              draggingNode = true
+            })
+            marker.on('dragend', () => {
+              const pt = clampToManifest(fromLatLng(marker.getLatLng()))
+              marker.setLatLng(toLatLng(pt))
+              draggingNode = false
+              useAppStore.getState().moveNode(node.id, pt)
+            })
+            marker.addTo(group)
+            const el = marker.getElement()
+            if (el) L.DomEvent.disableClickPropagation(el)
+          }
+        }
       }
     }
 

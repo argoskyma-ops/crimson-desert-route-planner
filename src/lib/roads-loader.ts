@@ -46,8 +46,41 @@ export function validateRoads(value: unknown): RoadsFile {
     nodeIds.add(node.id)
   }
 
-  const edges: RoadEdge[] = raw.edges.map((edge, index) => parseEdge(edge, index, nodeIds))
+  const nodeById = new Map(nodes.map((node) => [node.id, node]))
+  const edgeIds = new Set<string>()
+  const edges: RoadEdge[] = raw.edges.map((edge, index) => {
+    const parsed = parseEdge(edge, index, nodeIds)
+    if (edgeIds.has(parsed.id)) {
+      throw new Error(`roads.json: duplicate edge id "${parsed.id}"`)
+    }
+    edgeIds.add(parsed.id)
+    const from = nodeById.get(parsed.from)
+    const to = nodeById.get(parsed.to)
+    if (!from || !to) {
+      throw new Error(`roads.json: edge "${parsed.id}" references a missing node`)
+    }
+    assertEndpoint(parsed.id, 'from', parsed.points[0], from)
+    assertEndpoint(parsed.id, 'to', parsed.points[parsed.points.length - 1], to)
+    return parsed
+  })
   return { version: 1, imageSize, nodes, edges }
+}
+
+/** D5: polyline endpoints must match node coords (0.05 px). */
+const ENDPOINT_EPS_PX = 0.05
+
+function assertEndpoint(
+  edgeId: string,
+  which: 'from' | 'to',
+  point: [number, number],
+  node: RoadNode,
+): void {
+  const distance = Math.hypot(point[0] - node.x, point[1] - node.y)
+  if (distance > ENDPOINT_EPS_PX) {
+    throw new Error(
+      `roads.json: edge "${edgeId}" ${which === 'from' ? 'first' : 'last'} point must equal ${which} node coordinates`,
+    )
+  }
 }
 
 function parseImageSize(value: unknown): [number, number] {

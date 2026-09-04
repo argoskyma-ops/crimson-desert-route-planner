@@ -1,6 +1,9 @@
+import { useRef, useState } from 'react'
 import { CLASS_COLORS } from '../config/travel'
 import { findEdge, isNodeSnap, type DraftSnap } from '../editor/graph-edit'
-import { ROAD_CLASSES, type RoadClass } from '../routing/types'
+import { downloadRoads, readRoadsFile, saveRoadsDev } from '../lib/roads-io'
+import { emptyRoads } from '../lib/roads-loader'
+import { ROAD_CLASSES, type RoadClass, type RoadsFile } from '../routing/types'
 import { useAppStore } from '../store'
 
 const TOOLS = [
@@ -13,6 +16,8 @@ const CLASS_SHORT: Record<RoadClass, string> = {
   sub: 'Sub',
   offroad: 'Off-road',
 }
+
+const FALLBACK_IMAGE_SIZE: [number, number] = [5178, 5240]
 
 const btn =
   'inline-flex min-h-11 items-center justify-center rounded-md px-3 text-sm font-medium'
@@ -42,12 +47,18 @@ export default function EditorPanel() {
   const newEdgeClass = useAppStore((s) => s.editor.newEdgeClass)
   const dirty = useAppStore((s) => s.editor.dirty)
   const roads = useAppStore((s) => s.roads)
+  const manifest = useAppStore((s) => s.manifest)
   const setTool = useAppStore((s) => s.setTool)
   const setSelectedClass = useAppStore((s) => s.setSelectedClass)
   const finishDraft = useAppStore((s) => s.finishDraft)
   const undoDraftPoint = useAppStore((s) => s.undoDraftPoint)
   const cancelDraft = useAppStore((s) => s.cancelDraft)
   const deleteSelected = useAppStore((s) => s.deleteSelected)
+  const setRoads = useAppStore((s) => s.setRoads)
+  const setEditor = useAppStore((s) => s.setEditor)
+  const fileRef = useRef<HTMLInputElement>(null)
+  const [notice, setNotice] = useState<string | null>(null)
+  const [ioError, setIoError] = useState<string | null>(null)
 
   const selectedEdge = selectedEdgeId && roads ? findEdge(roads, selectedEdgeId) : undefined
   const pickerClass =
@@ -60,6 +71,45 @@ export default function EditorPanel() {
     selectedEdge?.class ?? null,
     tool,
   )
+
+  function roadsPayload(): RoadsFile {
+    if (roads) return roads
+    const size: [number, number] = manifest
+      ? [manifest.width, manifest.height]
+      : FALLBACK_IMAGE_SIZE
+    return emptyRoads(size)
+  }
+
+  async function onSave() {
+    setIoError(null)
+    const payload = roadsPayload()
+    const ok = await saveRoadsDev(payload)
+    if (ok) {
+      setEditor({ dirty: false })
+      setNotice('Saved to data/roads.json')
+      return
+    }
+    downloadRoads(payload)
+    setNotice('Downloaded roads.json — copy it to data/')
+  }
+
+  function onExport() {
+    setIoError(null)
+    downloadRoads(roadsPayload())
+    setNotice(null)
+  }
+
+  async function onImportFile(file: File) {
+    setNotice(null)
+    try {
+      const next = await readRoadsFile(file)
+      setRoads(next)
+      setEditor({ dirty: true })
+      setIoError(null)
+    } catch (err) {
+      setIoError(err instanceof Error ? err.message : 'Invalid roads.json')
+    }
+  }
 
   return (
     <section
@@ -149,10 +199,39 @@ export default function EditorPanel() {
         Delete
       </button>
 
+      <div className="mt-1 grid grid-cols-3 gap-1">
+        <button type="button" onClick={() => void onSave()} className={btnBlock}>
+          Save
+        </button>
+        <button type="button" onClick={onExport} className={btnBlock}>
+          Export
+        </button>
+        <button
+          type="button"
+          onClick={() => fileRef.current?.click()}
+          className={btnBlock}
+        >
+          Import
+        </button>
+      </div>
+      <input
+        ref={fileRef}
+        type="file"
+        accept=".json,application/json"
+        className="hidden"
+        onChange={(event) => {
+          const file = event.target.files?.[0]
+          event.target.value = ''
+          if (file) void onImportFile(file)
+        }}
+      />
+
       <p className="mt-2 px-1 text-xs text-neutral-400">{status}</p>
       {dirty ? (
         <p className="mt-1 px-1 text-xs font-medium text-amber-400">Unsaved changes</p>
       ) : null}
+      {notice ? <p className="mt-1 px-1 text-xs text-neutral-300">{notice}</p> : null}
+      {ioError ? <p className="mt-1 px-1 text-xs text-red-400">{ioError}</p> : null}
     </section>
   )
 }

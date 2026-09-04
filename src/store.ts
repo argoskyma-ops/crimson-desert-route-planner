@@ -4,6 +4,8 @@ import {
   commitDraft,
   deleteEdge,
   findEdge,
+  moveNode as applyMoveNode,
+  removeOrphanNodes,
   setEdgeClass,
   type DraftPoint,
 } from './editor/graph-edit'
@@ -107,6 +109,7 @@ interface AppState {
   selectEdge: (id: string | null) => void
   setSelectedClass: (cls: RoadClass) => void
   deleteSelected: () => void
+  moveNode: (nodeId: string, pt: Pt) => void
   setTool: (tool: EditorState['tool']) => void
   toggleEditor: () => void
 }
@@ -240,7 +243,7 @@ export const useAppStore = create<AppState>((set) => ({
       if (!selectedId || !s.roads || !findEdge(s.roads, selectedId)) {
         return { editor: { ...s.editor, selectedEdgeId: null } }
       }
-      const nextRoads = deleteEdge(s.roads, selectedId)
+      const nextRoads = removeOrphanNodes(deleteEdge(s.roads, selectedId))
       const applied = applyRoads(s, nextRoads)
       return {
         ...applied,
@@ -248,7 +251,38 @@ export const useAppStore = create<AppState>((set) => ({
         editor: { ...s.editor, selectedEdgeId: null, dirty: true },
       }
     }),
-  setTool: (tool) => set((s) => ({ editor: { ...s.editor, tool } })),
+  moveNode: (nodeId, pt) =>
+    set((s) => {
+      if (!s.roads) return s
+      const width = s.manifest?.width ?? s.roads.imageSize[0]
+      const height = s.manifest?.height ?? s.roads.imageSize[1]
+      const clamped: Pt = {
+        x: Math.min(Math.max(0, pt.x), width),
+        y: Math.min(Math.max(0, pt.y), height),
+      }
+      try {
+        const nextRoads = removeOrphanNodes(applyMoveNode(s.roads, nodeId, clamped))
+        const applied = applyRoads(s, nextRoads)
+        return {
+          ...applied,
+          route: recomputeRoute({ graph: applied.graph, pins: s.pins, mode: s.mode }),
+          editor: { ...s.editor, dirty: true },
+        }
+      } catch {
+        return s
+      }
+    }),
+  setTool: (tool) =>
+    set((s) => {
+      if (s.editor.tool === tool) return s
+      return {
+        editor: {
+          ...s.editor,
+          tool,
+          draftPoints: tool === 'draw' ? s.editor.draftPoints : [],
+        },
+      }
+    }),
   toggleEditor: () =>
     set((s) => {
       if (s.editor.active) {
