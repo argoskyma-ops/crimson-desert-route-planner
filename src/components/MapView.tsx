@@ -1,16 +1,32 @@
 import L from 'leaflet'
 import { useEffect, useRef, useState } from 'react'
-import { makePixelCrs } from '../lib/coords'
+import { fromLatLng, makePixelCrs, toLatLng } from '../lib/coords'
 import { loadMapManifest } from '../lib/map-manifest'
+import { makePinIcon } from '../lib/pin-icons'
+import type { Pt } from '../routing/types'
 import { mapRef, useAppStore } from '../store'
 
 const MISSING_TILES_MESSAGE =
   'Map tiles not found. Run scripts/fetch-map.sh then .venv/bin/python scripts/build-tiles.py'
 
+function clampToImage(pt: Pt, width: number, height: number): Pt {
+  return {
+    x: Math.min(Math.max(0, pt.x), width),
+    y: Math.min(Math.max(0, pt.y), height),
+  }
+}
+
 export default function MapView() {
   const containerRef = useRef<HTMLDivElement>(null)
+  const markersRef = useRef<{ a: L.Marker | null; b: L.Marker | null }>({
+    a: null,
+    b: null,
+  })
   const setManifest = useAppStore((s) => s.setManifest)
+  const pinA = useAppStore((s) => s.pins.a)
+  const pinB = useAppStore((s) => s.pins.b)
   const [missing, setMissing] = useState(false)
+  const [mapReady, setMapReady] = useState(false)
 
   useEffect(() => {
     const el = containerRef.current
@@ -59,16 +75,65 @@ export default function MapView() {
         noWrap: true,
       }).addTo(map)
 
-      // Instance is also at mapRef.current in ../store for T2/T4/T6.
+      map.on('click', (e: L.LeafletMouseEvent) => {
+        const { editor, placePin, manifest } = useAppStore.getState()
+        if (editor.active || !manifest) return
+        placePin(clampToImage(fromLatLng(e.latlng), manifest.width, manifest.height))
+      })
+
       mapRef.current = map
+      setMapReady(true)
     })()
 
     return () => {
       cancelled = true
+      setMapReady(false)
+      markersRef.current.a?.remove()
+      markersRef.current.b?.remove()
+      markersRef.current = { a: null, b: null }
       mapRef.current = null
       map?.remove()
     }
   }, [setManifest])
+
+  useEffect(() => {
+    if (!mapReady) return
+    const map = mapRef.current
+    if (!map) return
+    const manifest = useAppStore.getState().manifest
+    if (!manifest) return
+
+    const sync = (which: 'a' | 'b', pt: Pt | null) => {
+      const markers = markersRef.current
+      if (pt === null) {
+        markers[which]?.remove()
+        markers[which] = null
+        return
+      }
+      const latlng = toLatLng(pt)
+      if (!markers[which]) {
+        const marker = L.marker(latlng, {
+          icon: makePinIcon(which === 'a' ? 'A' : 'B'),
+          draggable: true,
+          autoPan: true,
+        })
+        marker.on('dragend', () => {
+          const { setPin, manifest: m } = useAppStore.getState()
+          if (!m) return
+          const clamped = clampToImage(fromLatLng(marker.getLatLng()), m.width, m.height)
+          marker.setLatLng(toLatLng(clamped))
+          setPin(which, clamped)
+        })
+        marker.addTo(map)
+        markers[which] = marker
+      } else {
+        markers[which].setLatLng(latlng)
+      }
+    }
+
+    sync('a', pinA)
+    sync('b', pinB)
+  }, [mapReady, pinA, pinB])
 
   return (
     <div className="relative h-full w-full">

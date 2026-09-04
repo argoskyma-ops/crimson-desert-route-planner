@@ -42,12 +42,14 @@ function resolveDataFile(root: string, url: string): string | null {
 function dataDir(): Plugin {
   let root = ''
   let outDir = ''
+  let command: 'build' | 'serve' = 'serve'
 
   return {
     name: 'data-dir',
     configResolved(config) {
       root = config.root
       outDir = resolve(config.root, config.build.outDir)
+      command = config.command
     },
     configureServer(server) {
       server.middlewares.use((req, res, next) => {
@@ -82,6 +84,7 @@ function dataDir(): Plugin {
       })
     },
     closeBundle() {
+      if (command !== 'build') return
       const copies: [string, string][] = [
         [join(root, 'data', 'roads.json'), join(outDir, 'data', 'roads.json')],
         [

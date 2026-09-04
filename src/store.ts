@@ -4,11 +4,19 @@ import type { MapManifest } from './lib/map-manifest'
 import type { Mode, Pt, RoadClass, RoadsFile, Route } from './routing/types'
 
 /**
- * Leaflet map instance created by MapView. Later tasks (T2/T4/T6) read
- * `mapRef.current`. Module-level (not Zustand state) so assigning it does not
- * re-render subscribers. Null when the map is unmounted or the manifest is missing.
+ * Leaflet map instance created by MapView. T4/T6 read `mapRef.current`.
+ * Module-level (not Zustand state) so assigning it does not re-render subscribers.
+ * Null when the map is unmounted or the manifest is missing.
  */
 export const mapRef: { current: LeafletMap | null } = { current: null }
+
+function clampPin(pt: Pt, manifest: MapManifest | null): Pt {
+  if (!manifest) return pt
+  return {
+    x: Math.min(Math.max(0, pt.x), manifest.width),
+    y: Math.min(Math.max(0, pt.y), manifest.height),
+  }
+}
 
 export interface EditorState {
   active: boolean
@@ -55,11 +63,15 @@ export const useAppStore = create<AppState>((set) => ({
   showRoads: false,
   manifest: null,
   editor: initialEditor,
-  setPin: (which, pt) => set((s) => ({ pins: { ...s.pins, [which]: pt } })),
+  setPin: (which, pt) =>
+    set((s) => ({
+      pins: { ...s.pins, [which]: pt === null ? null : clampPin(pt, s.manifest) },
+    })),
   placePin: (pt) =>
     set((s) => {
-      if (s.pins.a === null) return { pins: { a: pt, b: s.pins.b } }
-      return { pins: { a: s.pins.a, b: pt } }
+      const clamped = clampPin(pt, s.manifest)
+      if (s.pins.a === null) return { pins: { a: clamped, b: s.pins.b } }
+      return { pins: { a: s.pins.a, b: clamped } }
     }),
   clearPins: () => set({ pins: { a: null, b: null } }),
   setMode: (mode) => set({ mode }),
