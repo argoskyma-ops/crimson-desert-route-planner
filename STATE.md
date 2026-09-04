@@ -1,33 +1,42 @@
 # STATE
 
-Session checkpoint for the Crimson Desert route-planner MVP build. A fresh session
-should read this first, then docs/PLAN.md and docs/DECISIONS.md, then continue from "Next".
+Session checkpoint for the Crimson Desert route planner. A fresh session should read
+this first, then docs/DECISIONS.md, then continue from "Next".
 
-## Done (MVP complete, 2026-09-03)
-- T0 tiles, T1 map shell, T2 pins, T3 routing (+ dead-end connectors), T4 route
-  rendering/summary/legend, T5 extraction (+ junction closing), T6a/T6b editor with
-  Save/Export/Import, T7 README, T8 whole-repo review (docs/REVIEW.md) + Playwright QA
-  (tests/e2e/smoke.py, docs/screenshots/), T9 review fixes. All committed on main.
-- Verification: typecheck, lint, 40 unit tests, build (static dist/ with dist/data/),
-  e2e smoke green on desktop and 390x844.
+## Done
+- **MVP (2026-09-03 day):** tiles, map shell, pins, A* routing, route rendering, raster
+  extraction, editor with Save/Export/Import, README, review + Playwright QA, review fixes.
+- **Road-network pass 2 (2026-09-03 evening):**
+  - Map source switched to the th.gl tile pyramid (32768 px, WebP, no auth), D1/D3/D4
+    rewritten: canonical coordinates are the zoom-4 grid (8192 x 8192), manifest carries
+    `canonicalZoom`, `tileOrder` (z/y/x), `bounds` (Pywel window). `scripts/fetch-tiles.py`
+    replaces fetch-map.sh + build-tiles.py. Old PowerPyx coords map as `x*0.97+1120, y*0.97+1640`.
+  - Extractor rebuilt for the new source (`scripts/extract-roads.py`): grey-ink mask +
+    optional ridge pass, cleanup, edges split at water and flagged `"bridge": true`,
+    class by stroke width (wide road = main, path = sub), `--legacy` imports in-game-map
+    trails the new map lacks from `data/legacy/roads-powerpyx.json`. `scripts/review-tiles.py`
+    renders labelled review tiles; `scripts/tiles.py` stitches windows from the pyramid.
+  - Water-aware routing (D10, subagent): `data/water-mask.png` (4096 px, zoom 3), connectors
+    and off-road legs never cross water, horse mode never takes the direct off-road arc,
+    `Route.warnings` surfaced in the summary.
+  - Bridge flag wired through types, loader, writer, and a blue casing in the roads overlay.
+  - Visual sweep of 36 zoom-4 review tiles against the old extraction: agreement is close
+    wherever both have roads; the new graph adds many roads and bridges; the thin trails the
+    new map omits come from the legacy import.
 
-## Next (follow-ups, not started)
-- Calibrate METERS_PER_PIXEL and SPEED_MPS in-game (src/config/travel.ts).
-- Dataset cleanup in the editor: 82 tiny self-loop edges and 13 closed mini-components
-  from extraction (see docs/REVIEW.md "Should fix"); trace missing river bridges.
-- Ideas in docs/NOTES.md (fast travel, multi-stop, water-aware off-road).
-- Publishing (Cloudflare Pages) is Rennie's call: the map image has no reuse licence.
+## Next
+- Calibrate METERS_PER_PIXEL and SPEED_MPS in-game (src/config/travel.ts, D7). Check
+  whether wide roads or paths are the faster class for a horse.
+- Second sweep in the editor for dead ends (about 600) and trails still missing; use
+  `scripts/review-tiles.py --zoom 6` on suspect windows.
+- Optional: extract at zoom 6 for tighter geometry; widen manifest `bounds` if the game
+  opens land beyond the Pywel frame.
+- Ideas in docs/NOTES.md (fast travel, multi-stop, land-grid off-road pathing on foot).
+- Publishing (Cloudflare Pages) is Rennie's call: the tiles have no reuse licence.
 
 ## Blockers
 - none
 
-## Tooling note (2026-09-03)
-- Codex quota ~3% and Cursor Opus monthly cap both exhausted; everything after T3/T5 ran on
-  `cursor-agent --model cursor-grok-4.6-xhigh` (and `-fast`). Reviews used `--mode ask`.
-
-## Subagent budget (cap 5)
-- 1 research (sonnet) — used
-- 2 map pipeline (sonnet) — used
-- 3 whole-repo review (opus) — used
-- 4 QA / Playwright (sonnet) — used
-- 5 reserved debug (opus) — not needed
+## Local-only state
+- `data/map/tiles/` is the th.gl pyramid (24 MB); `data/map/tiles-powerpyx/` and
+  `data/map/source.jpg` are the retired source, safe to delete.
