@@ -12,12 +12,25 @@ Douglas-Peucker, and classified from the median mask radius along each edge.
 Tuning, in order:
   * --contrast-low/--contrast-high control faint-line recall.  Raise them if
     terrain hatching is traced; lower them if real roads are fragmented.
+  * --recall-contrast-low/--recall-contrast-high grow the strict mask into a
+    slightly looser hysteresis band *without* adding new components.  Leave
+    them equal to the strict pair to disable.  A 5.5/14 trial pulled in
+    hatching and *increased* fragmentation, so the defaults stay off.
   * --min-background excludes the uniform grey out-of-bounds region.  Raising
     it is more conservative near the coast.
   * --max-chroma and the channel-difference bounds reject blue/red icons and
     dark teal labels.  They normally need no adjustment.
   * --close-radius closes 1-3 px breaks.  Values above 2 can merge parallel roads.
   * --spur-length and --component-length remove short hatching fragments.
+  * --junction-snap closes a degree-1 skeleton onto the nearest non-incident
+    edge (T-junctions).  Hits within 14 px are accepted even if the stub is
+    crooked; farther hits must face the target.  25-30 px is typical; 40 px
+    started welding unrelated roads without growing the giant component.
+  * --bridge-gap / --bridge-angle join mutually facing endpoints across
+    icon/text gaps.  The straight bridge is rejected if it crosses dark
+    teal-blue water (3+ samples) or more than --bridge-plain-run consecutive
+    plain-land pixels in the middle of the span.  70 px and 45 deg is the
+    usual range; keep water rejection strict.
   * --main-radius is the distance-transform radius separating thick main roads
     from minor roads; use the printed width histogram to retune it.
 
@@ -76,6 +89,18 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--max-intensity", type=float, default=201.0)
     parser.add_argument("--contrast-low", type=float, default=7.0)
     parser.add_argument("--contrast-high", type=float, default=17.0)
+    parser.add_argument(
+        "--recall-contrast-low",
+        type=float,
+        default=7.0,
+        help="Looser low threshold used only to grow existing mask components",
+    )
+    parser.add_argument(
+        "--recall-contrast-high",
+        type=float,
+        default=17.0,
+        help="Looser high threshold used only to grow existing mask components",
+    )
     parser.add_argument("--max-chroma", type=int, default=18)
     parser.add_argument(
         "--bright-exclusion",
@@ -106,16 +131,28 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--component-length", type=float, default=60.0)
     parser.add_argument("--merge-distance", type=float, default=2.0)
     parser.add_argument(
+        "--junction-snap",
+        type=float,
+        default=30.0,
+        help="Snap a degree-1 node onto the nearest non-incident edge within this many px",
+    )
+    parser.add_argument(
         "--bridge-gap",
         type=float,
-        default=45.0,
+        default=70.0,
         help="Bridge aligned graph endpoints across icon/text gaps up to this many px",
     )
     parser.add_argument(
         "--bridge-angle",
         type=float,
-        default=35.0,
-        help="Maximum tangent error in degrees for conservative endpoint bridging",
+        default=45.0,
+        help="Maximum tangent error in degrees for endpoint-pair bridging",
+    )
+    parser.add_argument(
+        "--bridge-plain-run",
+        type=int,
+        default=16,
+        help="Reject a bridge that crosses this many consecutive plain-land pixels",
     )
     parser.add_argument("--simplify", type=float, default=1.5)
     parser.add_argument(
@@ -174,6 +211,21 @@ def build_road_mask(
     mask = filters.apply_hysteresis_threshold(
         response, args.contrast_low, args.contrast_high
     )
+    recall_extra = 0
+    if (
+        args.recall_contrast_low < args.contrast_low
+        or args.recall_contrast_high < args.contrast_high
+    ):
+        loose = filters.apply_hysteresis_threshold(
+            response, args.recall_contrast_low, args.recall_contrast_high
+        )
+        loose = np.logical_or(loose, mask)
+        grown = morphology.reconstruction(
+            mask.astype(np.uint8), loose.astype(np.uint8)
+        ).astype(bool)
+        recall_extra = int(grown.sum() - mask.sum())
+        mask = grown
+        del loose, grown
     del response, candidate, rgb16, red_blue, green_blue, red_green, chroma
 
     if args.close_radius:
@@ -187,10 +239,93 @@ def build_road_mask(
         "mask_fraction": float(mask.mean()),
         "strong_fraction": float((contrast >= args.contrast_high).mean()),
         "background_mean": float(background.mean()),
+        "recall_extra_pixels": float(recall_extra),
     }
     del intensity, background, contrast
     gc.collect()
     return np.asarray(mask, dtype=bool), diagnostics
+
+
+def build_water_mask(rgb: np.ndarray) -> np.ndarray:
+    """Dark teal-blue ocean/river pixels, dilated 1 px to catch banks."""
+    rgb16 = rgb.astype(np.int16)
+    red = rgb16[:, :, 0]
+    green = rgb16[:, :, 1]
+    blue = rgb16[:, :, 2]
+    intensity = rgb.astype(np.float32).mean(axis=2)
+    chroma = rgb16.max(axis=2) - rgb16.min(axis=2)
+    water = (
+        (blue >= red + 20)
+        & (green >= red + 12)
+        & (intensity <= 145.0)
+        & (chroma >= 20)
+    )
+    return morphology.dilation(water, footprint=morphology.disk(1))
+
+
+def build_plain_land_mask(
+    rgb: np.ndarray, water: np.ndarray, road_mask: np.ndarray, near_radius: int = 3
+) -> np.ndarray:
+    """Bright low-chroma land that is not water and not next to road ink."""
+    rgb16 = rgb.astype(np.int16)
+    intensity = rgb.astype(np.float32).mean(axis=2)
+    chroma = rgb16.max(axis=2) - rgb16.min(axis=2)
+    near_road = road_mask
+    if near_radius > 0:
+        near_road = morphology.dilation(
+            road_mask, footprint=morphology.disk(near_radius)
+        )
+    return (
+        (intensity >= 178.0)
+        & (chroma <= 16)
+        & ~water
+        & ~near_road
+    )
+
+
+def sample_segment_cells(
+    start_yx: np.ndarray, end_yx: np.ndarray, height: int, width: int
+) -> tuple[np.ndarray, np.ndarray]:
+    distance = float(np.linalg.norm(end_yx - start_yx))
+    count = max(2, int(math.ceil(distance)))
+    ys = np.linspace(start_yx[0], end_yx[0], count)
+    xs = np.linspace(start_yx[1], end_yx[1], count)
+    rows = np.clip(np.rint(ys).astype(np.int64), 0, height - 1)
+    cols = np.clip(np.rint(xs).astype(np.int64), 0, width - 1)
+    return rows, cols
+
+
+def longest_true_run(flags: np.ndarray) -> int:
+    longest = current = 0
+    for flag in flags.tolist():
+        if flag:
+            current += 1
+            if current > longest:
+                longest = current
+        else:
+            current = 0
+    return longest
+
+
+def classify_bridge_obstruction(
+    start_yx: np.ndarray,
+    end_yx: np.ndarray,
+    water: np.ndarray,
+    plain_land: np.ndarray,
+    max_plain_run: int,
+) -> str | None:
+    rows, cols = sample_segment_cells(
+        start_yx, end_yx, water.shape[0], water.shape[1]
+    )
+    if int(water[rows, cols].sum()) >= 3:
+        return "water"
+    land = plain_land[rows, cols]
+    pad = min(10, max(0, len(land) // 4))
+    if pad * 2 < len(land):
+        land = land[pad:-pad]
+    if longest_true_run(land) > max_plain_run:
+        return "nonroad"
+    return None
 
 
 def remove_short_skeleton_components(
@@ -333,15 +468,15 @@ def endpoint_outward_tangent(
     return None
 
 
-def bridge_aligned_endpoints(
+def collect_aligned_endpoint_pairs(
     graph: nx.MultiGraph, maximum_gap: float, maximum_angle: float
-) -> int:
-    """Join mutually facing endpoints across small icon/text occlusions."""
+) -> list[tuple[float, float, int, int]]:
+    """Return (-score, distance, left, right) pairs that pass the tangent test."""
     if maximum_gap <= 0:
-        return 0
+        return []
     endpoints = [node for node in graph.nodes if graph.degree(node) == 1]
     if len(endpoints) < 2:
-        return 0
+        return []
     positions = np.vstack([graph.nodes[node]["pos"] for node in endpoints])
     tangents = {
         node: endpoint_outward_tangent(graph, node) for node in endpoints
@@ -364,11 +499,40 @@ def bridge_aligned_endpoints(
             continue
         score = min(left_alignment, right_alignment)
         candidates.append((-score, distance, left, right))
+    return candidates
 
+
+def bridge_aligned_endpoints(
+    graph: nx.MultiGraph,
+    maximum_gap: float,
+    maximum_angle: float,
+    water: np.ndarray,
+    plain_land: np.ndarray,
+    max_plain_run: int,
+) -> tuple[int, dict[str, int]]:
+    """Join mutually facing endpoints across small icon/text occlusions."""
+    rejected = {"water": 0, "nonroad": 0}
+    candidates = collect_aligned_endpoint_pairs(
+        graph, maximum_gap, maximum_angle
+    )
     used: set[int] = set()
     bridges = 0
     for _negative_score, _distance, left, right in sorted(candidates):
         if left in used or right in used:
+            continue
+        if left not in graph or right not in graph:
+            continue
+        if graph.degree(left) != 1 or graph.degree(right) != 1:
+            continue
+        reason = classify_bridge_obstruction(
+            graph.nodes[left]["pos"],
+            graph.nodes[right]["pos"],
+            water,
+            plain_land,
+            max_plain_run,
+        )
+        if reason is not None:
+            rejected[reason] += 1
             continue
         add_edge(
             graph,
@@ -378,7 +542,7 @@ def bridge_aligned_endpoints(
         )
         used.update((left, right))
         bridges += 1
-    return bridges
+    return bridges, rejected
 
 
 def orient_to_node(
@@ -390,6 +554,227 @@ def orient_to_node(
     if end_at_node:
         return points[::-1] if starts_at_node else points
     return points if starts_at_node else points[::-1]
+
+
+def densify_polyline(points: np.ndarray, step: float = 2.0) -> np.ndarray:
+    if len(points) == 0:
+        return points
+    pieces = [points[0]]
+    for start, end in zip(points[:-1], points[1:]):
+        span = float(np.linalg.norm(end - start))
+        if span <= step:
+            pieces.append(end)
+            continue
+        count = max(1, int(math.ceil(span / step)))
+        for index in range(1, count + 1):
+            pieces.append(start + (end - start) * (index / count))
+    return np.asarray(pieces, dtype=np.float64)
+
+
+def nearest_point_on_polyline(
+    points: np.ndarray, query: np.ndarray
+) -> tuple[np.ndarray, float, int, float]:
+    best_point = points[0]
+    best_distance = math.inf
+    best_segment = 0
+    best_t = 0.0
+    for index in range(len(points) - 1):
+        start = points[index]
+        end = points[index + 1]
+        delta = end - start
+        denom = float(np.dot(delta, delta))
+        if denom <= 1e-12:
+            t = 0.0
+            projection = start
+        else:
+            t = float(np.clip(np.dot(query - start, delta) / denom, 0.0, 1.0))
+            projection = start + t * delta
+        distance = float(np.linalg.norm(query - projection))
+        if distance < best_distance:
+            best_point = projection
+            best_distance = distance
+            best_segment = index
+            best_t = t
+    return np.asarray(best_point, dtype=np.float64), best_distance, best_segment, best_t
+
+
+def split_polyline(
+    points: np.ndarray, projection: np.ndarray, segment_index: int
+) -> tuple[np.ndarray, np.ndarray]:
+    left = [points[index] for index in range(segment_index + 1)]
+    if float(np.linalg.norm(left[-1] - projection)) > 0.25:
+        left.append(projection)
+    else:
+        left[-1] = projection
+    right = [projection]
+    for index in range(segment_index + 1, len(points)):
+        if (
+            len(right) == 1
+            and float(np.linalg.norm(points[index] - projection)) <= 0.25
+        ):
+            continue
+        right.append(points[index])
+    if len(right) < 2:
+        right.append(points[-1] if segment_index + 1 < len(points) else projection)
+    return (
+        np.asarray(left, dtype=np.float64),
+        np.asarray(right, dtype=np.float64),
+    )
+
+
+def next_graph_node_id(graph: nx.MultiGraph) -> int:
+    return (max(graph.nodes) + 1) if graph.number_of_nodes() else 1
+
+
+def split_edge_at_point(
+    graph: nx.MultiGraph, u: int, v: int, key: int, point: np.ndarray
+) -> int | None:
+    if not graph.has_edge(u, v, key):
+        return None
+    u_pos = graph.nodes[u]["pos"]
+    v_pos = graph.nodes[v]["pos"]
+    if float(np.linalg.norm(point - u_pos)) <= 2.0:
+        return u
+    if float(np.linalg.norm(point - v_pos)) <= 2.0:
+        return v
+    points = edge_points(graph.edges[u, v, key])
+    if float(np.linalg.norm(points[0] - u_pos)) > float(
+        np.linalg.norm(points[-1] - u_pos)
+    ):
+        points = points[::-1]
+    projection, _distance, segment_index, _t = nearest_point_on_polyline(points, point)
+    if float(np.linalg.norm(projection - u_pos)) <= 2.0:
+        return u
+    if float(np.linalg.norm(projection - v_pos)) <= 2.0:
+        return v
+    left, right = split_polyline(points, projection, segment_index)
+    if len(left) < 2 or len(right) < 2:
+        return u if float(np.linalg.norm(projection - u_pos)) <= float(
+            np.linalg.norm(projection - v_pos)
+        ) else v
+    new_id = next_graph_node_id(graph)
+    graph.add_node(new_id, pos=np.asarray(projection, dtype=np.float64))
+    graph.remove_edge(u, v, key)
+    add_edge(graph, u, new_id, left)
+    add_edge(graph, new_id, v, right)
+    return new_id
+
+
+def attach_endpoint_to_junction(
+    graph: nx.MultiGraph, dangling: int, junction: int
+) -> bool:
+    if dangling == junction or dangling not in graph or junction not in graph:
+        return False
+    if graph.degree(dangling) != 1:
+        return False
+    incident = list(graph.edges(dangling, keys=True, data=True))
+    if len(incident) != 1:
+        return False
+    _node, neighbor, key, data = incident[0]
+    if neighbor == junction:
+        return False
+    points = orient_to_node(
+        edge_points(data), graph.nodes[dangling]["pos"], end_at_node=True
+    )
+    target = graph.nodes[junction]["pos"]
+    if float(np.linalg.norm(points[-1] - target)) > 0.05:
+        points = np.vstack([points, target])
+    else:
+        points = points.copy()
+        points[-1] = target
+    graph.remove_edge(dangling, neighbor, key)
+    add_edge(graph, neighbor, junction, points)
+    if dangling in graph and graph.degree(dangling) == 0:
+        graph.remove_node(dangling)
+    return True
+
+
+def close_endpoint_to_edge_junctions(
+    graph: nx.MultiGraph, snap_distance: float
+) -> int:
+    """Extend each degree-1 node onto the nearest forward-facing non-incident edge."""
+    if snap_distance <= 0 or graph.number_of_edges() == 0:
+        return 0
+    closed = 0
+    close_range = min(14.0, snap_distance)
+    facing_limit = 0.30
+    for _round in range(24):
+        endpoints = [node for node in graph.nodes if graph.degree(node) == 1]
+        if not endpoints:
+            break
+        samples: list[np.ndarray] = []
+        owners: list[tuple[int, int, int]] = []
+        for u, v, key, data in graph.edges(keys=True, data=True):
+            for point in densify_polyline(edge_points(data), 2.0):
+                samples.append(point)
+                owners.append((u, v, key))
+        if not samples:
+            break
+        sample_points = np.vstack(samples)
+        tree = cKDTree(sample_points)
+        snaps: list[tuple[float, int, int, int, int, np.ndarray]] = []
+        for node in endpoints:
+            origin = graph.nodes[node]["pos"]
+            tangent = endpoint_outward_tangent(graph, node)
+            indices = tree.query_ball_point(origin, snap_distance)
+            best: tuple[float, int, int, int, np.ndarray] | None = None
+            seen_edges: set[tuple[int, int, int]] = set()
+            for index in indices:
+                u, v, key = owners[index]
+                edge_id = (u, v, key)
+                if edge_id in seen_edges:
+                    continue
+                seen_edges.add(edge_id)
+                if u == node or v == node:
+                    continue
+                if not graph.has_edge(u, v, key):
+                    continue
+                points = edge_points(graph.edges[u, v, key])
+                projection, distance, _segment, _t = nearest_point_on_polyline(
+                    points, origin
+                )
+                if distance > snap_distance:
+                    continue
+                direction = projection - origin
+                length = float(np.linalg.norm(direction))
+                if distance > close_range and length >= 0.25:
+                    if tangent is None:
+                        continue
+                    if float(np.dot(tangent, direction / length)) < facing_limit:
+                        continue
+                if best is None or distance < best[0]:
+                    best = (distance, u, v, key, projection)
+            if best is not None:
+                distance, u, v, key, projection = best
+                snaps.append((distance, node, u, v, key, projection))
+
+        if not snaps:
+            break
+        used_nodes: set[int] = set()
+        used_edges: set[tuple[int, int, int]] = set()
+        applied = 0
+        for distance, node, u, v, key, projection in sorted(
+            snaps, key=lambda item: item[0]
+        ):
+            if node in used_nodes or node not in graph or graph.degree(node) != 1:
+                continue
+            edge_id = (u, v, key)
+            reverse_id = (v, u, key)
+            if edge_id in used_edges or reverse_id in used_edges:
+                continue
+            if not graph.has_edge(u, v, key):
+                continue
+            junction = split_edge_at_point(graph, u, v, key, projection)
+            if junction is None:
+                continue
+            if attach_endpoint_to_junction(graph, node, junction):
+                used_nodes.add(node)
+                used_edges.update((edge_id, reverse_id))
+                applied += 1
+                closed += 1
+        if applied == 0:
+            break
+    return closed
 
 
 def merge_degree_two_chains(graph: nx.MultiGraph) -> int:
@@ -423,14 +808,26 @@ def merge_degree_two_chains(graph: nx.MultiGraph) -> int:
     return merged_count
 
 
-def clean_graph(raw: nx.MultiGraph, args: argparse.Namespace) -> nx.MultiGraph:
+def clean_graph(
+    raw: nx.MultiGraph,
+    args: argparse.Namespace,
+    water: np.ndarray,
+    plain_land: np.ndarray,
+) -> nx.MultiGraph:
     graph = normalize_sknw_graph(raw)
     graph = merge_nearby_nodes(graph, args.merge_distance)
     spurs = remove_spurs(graph, args.spur_length)
     small_components = remove_small_graph_components(graph, args.component_length)
-    bridges = bridge_aligned_endpoints(
-        graph, args.bridge_gap, args.bridge_angle
+    junctions = close_endpoint_to_edge_junctions(graph, args.junction_snap)
+    bridges, rejected = bridge_aligned_endpoints(
+        graph,
+        args.bridge_gap,
+        args.bridge_angle,
+        water,
+        plain_land,
+        args.bridge_plain_run,
     )
+    junctions += close_endpoint_to_edge_junctions(graph, args.junction_snap)
     degree_two = merge_degree_two_chains(graph)
     # Merging can create a short terminal edge or component, so finish with the
     # same two conservative filters once more.
@@ -439,8 +836,11 @@ def clean_graph(raw: nx.MultiGraph, args: argparse.Namespace) -> nx.MultiGraph:
     graph.remove_nodes_from(list(nx.isolates(graph)))
     print(
         f"Graph cleanup: removed {spurs:,} spurs and {small_components:,} small "
-        f"components; bridged {bridges:,} aligned gaps; merged {degree_two:,} "
-        "degree-2 nodes"
+        f"components; closed {junctions:,} endpoint-to-edge junctions; "
+        f"bridged {bridges:,} aligned gaps "
+        f"(rejected {rejected['water'] + rejected['nonroad']:,}: "
+        f"{rejected['water']:,} water, {rejected['nonroad']:,} non-road); "
+        f"merged {degree_two:,} degree-2 nodes"
     )
     return graph
 
@@ -649,10 +1049,17 @@ def print_final_stats(roads: dict[str, Any], json_size: int) -> None:
     graph.add_nodes_from(node["id"] for node in roads["nodes"])
     graph.add_edges_from((edge["from"], edge["to"]) for edge in roads["edges"])
     components = list(nx.connected_components(graph))
-    largest_nodes = max((len(component) for component in components), default=0)
+    largest = max(components, key=len) if components else set()
+    largest_nodes = len(largest)
     point_count = sum(len(edge["points"]) for edge in roads["edges"])
     class_histogram = Counter(edge["class"] for edge in roads["edges"])
     total_length = sum(road_length_xy(edge["points"]) for edge in roads["edges"])
+    largest_length = sum(
+        road_length_xy(edge["points"])
+        for edge in roads["edges"]
+        if edge["from"] in largest and edge["to"] in largest
+    )
+    share = (largest_length / total_length * 100.0) if total_length else 0.0
     print("Final extraction stats:")
     print(f"  Nodes: {len(roads['nodes']):,}")
     print(f"  Edges: {len(roads['edges']):,}")
@@ -660,6 +1067,9 @@ def print_final_stats(roads: dict[str, Any], json_size: int) -> None:
     print(f"  Class histogram: {dict(sorted(class_histogram.items()))}")
     print(f"  Connected components: {len(components):,}")
     print(f"  Largest component: {largest_nodes:,} nodes")
+    print(
+        f"  Largest-component length: {largest_length:,.1f} px ({share:.1f}% of total)"
+    )
     print(f"  Total road length: {total_length:,.1f} px")
     print(f"  JSON size: {json_size:,} bytes ({json_size / 1024 / 1024:.2f} MiB)")
 
@@ -678,18 +1088,29 @@ def main() -> None:
     print(
         "Thresholds: "
         f"contrast={args.contrast_low:g}/{args.contrast_high:g}, "
+        f"recall={args.recall_contrast_low:g}/{args.recall_contrast_high:g}, "
         f"intensity={args.min_intensity:g}-{args.max_intensity:g}, "
         f"min-background={args.min_background:g}, max-chroma={args.max_chroma}, "
         f"close={args.close_radius}, spur={args.spur_length:g}, "
-        f"component={args.component_length:g}, bridge={args.bridge_gap:g}px/"
-        f"{args.bridge_angle:g}deg, simplify={args.simplify:g}, "
+        f"component={args.component_length:g}, "
+        f"junction-snap={args.junction_snap:g}px, "
+        f"bridge={args.bridge_gap:g}px/{args.bridge_angle:g}deg/"
+        f"plain-run={args.bridge_plain_run}, simplify={args.simplify:g}, "
         f"main-radius={args.main_radius:g}"
     )
     print("Building road mask...")
     mask, diagnostics = build_road_mask(rgb, args)
     print(
         f"Mask coverage: {diagnostics['mask_fraction'] * 100:.4f}% of image; "
-        f"unconstrained strong pixels: {diagnostics['strong_fraction'] * 100:.3f}%"
+        f"unconstrained strong pixels: {diagnostics['strong_fraction'] * 100:.3f}%; "
+        f"recall-grow pixels: {int(diagnostics['recall_extra_pixels']):,}"
+    )
+    print("Building water and plain-land masks for bridge rejection...")
+    water = build_water_mask(rgb)
+    plain_land = build_plain_land_mask(rgb, water, mask)
+    print(
+        f"Water coverage: {water.mean() * 100:.3f}%; "
+        f"plain-land coverage: {plain_land.mean() * 100:.3f}%"
     )
     del rgb
     gc.collect()
@@ -705,8 +1126,8 @@ def main() -> None:
     raw_graph = sknw.build_sknw(
         skeleton.astype(np.uint8), multi=True, iso=False, ring=True, full=True
     )
-    graph = clean_graph(raw_graph, args)
-    del raw_graph, skeleton
+    graph = clean_graph(raw_graph, args, water, plain_land)
+    del raw_graph, skeleton, water, plain_land
     gc.collect()
 
     roads, graph = graph_to_roads(graph, mask, args)
