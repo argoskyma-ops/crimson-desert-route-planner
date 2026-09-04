@@ -11,11 +11,12 @@ should read this first, then docs/PLAN.md and docs/DECISIONS.md, then continue f
 - Vite + React + TS + Tailwind + Leaflet + Zustand + Vitest scaffold; typecheck/lint/build green.
 - data/map/source.jpg fetched (5178x5240, gitignored). Python venv at .venv with imaging libs.
 
-## In progress (parallel)
-- T2 pins A/B (+ T1 review fixes: 44 px zoom buttons, build-only copy) — Grok, main tree.
-- T5 follow-up: junction closing + wider bridging in extract-roads.py — Cursor Opus, main tree.
-- T3 follow-up: dead-end off-road connectors in buildGraph (D6) — Grok xhigh-fast, worktree
-  `codex-routing` at scratchpad/wt-routing (merge into main when done).
+- T2 pins + control panel; T3 dead-end connectors (18 routing tests); T5 junction closing
+  (136 components, largest 12.7% of length); tests/unit/roads-data.test.ts dataset check.
+- End-to-end smoke in Playwright: tiles, pins, route summary render with no console errors.
+
+## In progress
+- T4 route rendering + mode toggle + summary — Grok done, read-only review running, then commit.
 
 ## Tooling note (2026-09-03)
 - Codex quota is at ~3%: do not launch new `codex exec` runs. Use
@@ -23,9 +24,10 @@ should read this first, then docs/PLAN.md and docs/DECISIONS.md, then continue f
   `--model claude-opus-5-thinking-high` for reviews / algorithmic work.
 
 ## Next
-- Review + commit each of T0/T1/T3/T5 as they land (Codex reviews Grok diffs).
-- T2 pins -> T4 route rendering -> T6a/T6b editor -> T7 README, each via Grok.
-- Subagent 3 whole-repo review, subagent 4 Playwright QA + screenshot.
+- T6a editor draw/select -> T6b node drag/save/import/export -> T7 README, each via Grok
+  (prompts in the session scratchpad; regenerate from PLAN.md if lost).
+- index.html: add `viewport-fit=cover` to the viewport meta (safe-area padding needs it).
+- Subagent 3 whole-repo review, subagent 4 Playwright QA + screenshot to docs/screenshots/.
 
 ## Blockers
 - none
