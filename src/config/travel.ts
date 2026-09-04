@@ -26,6 +26,18 @@ export const CONNECTOR_RADIUS_PX = 200
 /** Dead-end connectors: max off-road arcs per degree-1 node. */
 export const CONNECTOR_MAX = 3
 
+/**
+ * Water mask (D10). `data/water-mask.png` is greyscale, 255 = water, at half the
+ * map resolution. A straight segment counts as crossing water only when at least
+ * WATER_CROSS_MIN_SAMPLES consecutive samples land on water, so a single noisy
+ * mask pixel does not block a connector or a pin-to-road leg.
+ */
+export const WATER_CROSS_MIN_SAMPLES = 2
+/** Water mask: spacing between samples along a segment, in mask pixels. */
+export const WATER_SAMPLE_STEP_MASK_PX = 1
+/** Water mask: greyscale value at or above which a decoded pixel counts as water. */
+export const WATER_THRESHOLD = 128
+
 export const MODE_LABELS: Record<Mode, string> = { horse: 'Horse', foot: 'On foot' }
 export const CLASS_LABELS: Record<RoadClass, string> = {
   main: 'Main road',
