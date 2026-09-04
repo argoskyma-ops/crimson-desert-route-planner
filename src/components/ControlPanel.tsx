@@ -1,19 +1,22 @@
 import { MODE_LABELS } from '../config/travel'
 import { MODES } from '../routing/types'
 import { useAppStore } from '../store'
+import RouteSummary from './RouteSummary'
 
 export default function ControlPanel() {
   const mode = useAppStore((s) => s.mode)
   const setMode = useAppStore((s) => s.setMode)
   const pins = useAppStore((s) => s.pins)
   const clearPins = useAppStore((s) => s.clearPins)
+  const roadsError = useAppStore((s) => s.roadsError)
 
   const hasPins = pins.a !== null || pins.b !== null
   const bothPlaced = pins.a !== null && pins.b !== null
+  const noPins = pins.a === null && pins.b === null
 
   return (
     <aside
-      className="pointer-events-auto absolute top-3 left-3 z-[1100] w-[calc(100%-1.5rem)] max-w-[320px] rounded-xl border border-white/10 bg-neutral-950/80 p-3 text-neutral-100 shadow-lg backdrop-blur-md max-[479px]:inset-x-0 max-[479px]:top-0 max-[479px]:w-full max-[479px]:max-w-none max-[479px]:rounded-none"
+      className="pointer-events-auto absolute top-3 left-3 z-[1100] w-[calc(100%-1.5rem)] max-w-[320px] rounded-xl border border-white/10 bg-neutral-950/80 p-3 text-neutral-100 shadow-lg backdrop-blur-md max-[479px]:inset-x-0 max-[479px]:top-0 max-[479px]:w-full max-[479px]:max-w-none max-[479px]:rounded-none max-[479px]:pt-[calc(0.75rem+env(safe-area-inset-top))]"
     >
       <h1 className="px-1 text-sm font-semibold tracking-tight">
         Crimson Desert Route Planner
@@ -49,14 +52,17 @@ export default function ControlPanel() {
         Clear
       </button>
 
-      <p className="mt-3 px-1 text-xs text-neutral-400">
-        {bothPlaced
-          ? 'Drag pins to move them'
-          : 'Tap the map to place A, then B'}
-      </p>
+      {noPins ? (
+        <p className="mt-3 px-1 text-xs text-neutral-400">Tap the map to place A, then B</p>
+      ) : bothPlaced ? (
+        <p className="mt-3 px-1 text-xs text-neutral-400">Drag pins to move them</p>
+      ) : null}
 
-      {/* Route summary (T4) */}
-      <div />
+      {roadsError ? (
+        <p className="mt-3 px-1 text-xs text-amber-400">{roadsError}</p>
+      ) : null}
+
+      <RouteSummary />
     </aside>
   )
 }

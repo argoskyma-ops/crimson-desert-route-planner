@@ -1,9 +1,10 @@
 import L from 'leaflet'
 import { useEffect, useRef, useState } from 'react'
+import { CLASS_COLORS } from '../config/travel'
 import { fromLatLng, makePixelCrs, toLatLng } from '../lib/coords'
 import { loadMapManifest } from '../lib/map-manifest'
 import { makePinIcon } from '../lib/pin-icons'
-import type { Pt } from '../routing/types'
+import { ROAD_CLASSES, type Pt, type RoadClass, type RouteLeg } from '../routing/types'
 import { mapRef, useAppStore } from '../store'
 
 const MISSING_TILES_MESSAGE =
@@ -16,15 +17,43 @@ function clampToImage(pt: Pt, width: number, height: number): Pt {
   }
 }
 
+function addRouteLeg(group: L.LayerGroup, renderer: L.Renderer, leg: RouteLeg) {
+  if (leg.points.length < 2) return
+  const latlngs = leg.points.map(toLatLng)
+  const dashed = leg.class === 'offroad' ? { dashArray: '6 8' } : {}
+  L.polyline(latlngs, {
+    color: '#ffffff',
+    weight: 8,
+    opacity: 0.9,
+    interactive: false,
+    renderer,
+    ...dashed,
+  }).addTo(group)
+  L.polyline(latlngs, {
+    color: CLASS_COLORS[leg.class],
+    weight: 4,
+    opacity: 1,
+    interactive: false,
+    renderer,
+    ...dashed,
+  }).addTo(group)
+}
+
 export default function MapView() {
   const containerRef = useRef<HTMLDivElement>(null)
   const markersRef = useRef<{ a: L.Marker | null; b: L.Marker | null }>({
     a: null,
     b: null,
   })
+  const routeLayerRef = useRef<L.LayerGroup | null>(null)
+  const roadsLayerRef = useRef<L.LayerGroup | null>(null)
+  const rendererRef = useRef<L.Renderer | null>(null)
   const setManifest = useAppStore((s) => s.setManifest)
   const pinA = useAppStore((s) => s.pins.a)
   const pinB = useAppStore((s) => s.pins.b)
+  const route = useAppStore((s) => s.route)
+  const roads = useAppStore((s) => s.roads)
+  const showRoads = useAppStore((s) => s.showRoads)
   const [missing, setMissing] = useState(false)
   const [mapReady, setMapReady] = useState(false)
 
@@ -75,6 +104,10 @@ export default function MapView() {
         noWrap: true,
       }).addTo(map)
 
+      rendererRef.current = map.getRenderer(L.polyline([[0, 0], [1, 0]]))
+      roadsLayerRef.current = L.layerGroup().addTo(map)
+      routeLayerRef.current = L.layerGroup().addTo(map)
+
       map.on('click', (e: L.LeafletMouseEvent) => {
         const { editor, placePin, manifest } = useAppStore.getState()
         if (editor.active || !manifest) return
@@ -91,6 +124,9 @@ export default function MapView() {
       markersRef.current.a?.remove()
       markersRef.current.b?.remove()
       markersRef.current = { a: null, b: null }
+      routeLayerRef.current = null
+      roadsLayerRef.current = null
+      rendererRef.current = null
       mapRef.current = null
       map?.remove()
     }
@@ -134,6 +170,48 @@ export default function MapView() {
     sync('a', pinA)
     sync('b', pinB)
   }, [mapReady, pinA, pinB])
+
+  useEffect(() => {
+    if (!mapReady) return
+    const group = routeLayerRef.current
+    const renderer = rendererRef.current
+    if (!group || !renderer) return
+    group.clearLayers()
+    if (!route) return
+    for (const leg of route.legs) {
+      addRouteLeg(group, renderer, leg)
+    }
+  }, [mapReady, route])
+
+  useEffect(() => {
+    if (!mapReady) return
+    const group = roadsLayerRef.current
+    const renderer = rendererRef.current
+    if (!group || !renderer) return
+    group.clearLayers()
+    if (!showRoads || !roads) return
+
+    const latlngsByClass: Record<RoadClass, L.LatLng[][]> = {
+      main: [],
+      sub: [],
+      offroad: [],
+    }
+    for (const edge of roads.edges) {
+      if (edge.points.length < 2) continue
+      latlngsByClass[edge.class].push(edge.points.map(([x, y]) => toLatLng({ x, y })))
+    }
+    for (const cls of ROAD_CLASSES) {
+      const lines = latlngsByClass[cls]
+      if (lines.length === 0) continue
+      L.polyline(lines, {
+        color: CLASS_COLORS[cls],
+        weight: 2,
+        opacity: 0.6,
+        interactive: false,
+        renderer,
+      }).addTo(group)
+    }
+  }, [mapReady, roads, showRoads])
 
   return (
     <div className="relative h-full w-full">
