@@ -4,16 +4,23 @@ Session checkpoint for the Crimson Desert route-planner MVP build. A fresh sessi
 should read this first, then docs/PLAN.md and docs/DECISIONS.md, then continue from "Next".
 
 ## Done
+- T0 tiles (scripts/fetch-map.sh, build-tiles.py, SOURCE.md), T1 app shell + MapView,
+  T3 routing module (13 tests), T5 first-pass extraction (data/roads.json, 245 fragments).
 - docs/RESEARCH.md (map sources, road-data strategy) — subagent 1.
 - docs/DECISIONS.md, docs/PLAN.md, shared contracts src/routing/types.ts + src/config/travel.ts.
 - Vite + React + TS + Tailwind + Leaflet + Zustand + Vitest scaffold; typecheck/lint/build green.
 - data/map/source.jpg fetched (5178x5240, gitignored). Python venv at .venv with imaging libs.
 
 ## In progress (parallel)
-- T0 map pipeline (scripts/build-tiles.py, SOURCE.md) — subagent 2.
-- T1 app shell + MapView — Grok (cursor-agent), main tree.
-- T3 routing module — Codex, git worktree on branch `codex-routing` (merge into main when done).
-- T5 road extraction (scripts/extract-roads.py -> data/roads.json) — Codex, main tree.
+- T2 pins A/B (+ T1 review fixes: 44 px zoom buttons, build-only copy) — Grok, main tree.
+- T5 follow-up: junction closing + wider bridging in extract-roads.py — Cursor Opus, main tree.
+- T3 follow-up: dead-end off-road connectors in buildGraph (D6) — Grok xhigh-fast, worktree
+  `codex-routing` at scratchpad/wt-routing (merge into main when done).
+
+## Tooling note (2026-09-03)
+- Codex quota is at ~3%: do not launch new `codex exec` runs. Use
+  `cursor-agent -p --force --trust --model cursor-grok-4.6-xhigh-fast` for volume and
+  `--model claude-opus-5-thinking-high` for reviews / algorithmic work.
 
 ## Next
 - Review + commit each of T0/T1/T3/T5 as they land (Codex reviews Grok diffs).
