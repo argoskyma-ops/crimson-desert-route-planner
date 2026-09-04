@@ -1,26 +1,30 @@
 # Map source
 
 ## Provenance
-- **Image URL:** `https://www.powerpyx.com/wp-content/uploads/crimson-desert-full-world-map.jpg`
-- **Article URL:** `https://www.powerpyx.com/crimson-desert-full-world-map/`
-- **Resolution:** 5178 x 5240 px, JPEG
-- **File size:** 2,229,107 bytes
-- **SHA-256:** `29faed0c0daa09adc4967f069cdfaaf1146dde2ad76a933768558ed44d10774c`
+- **Tiles:** `https://cdn.th.gl/crimson-desert/map-tiles/OpenWorld-25391853dd739b8fd7d28d6280f02d15/{z}/{y}/{x}.webp`
+- **Site:** `https://crimsondesert.th.gl` (The Hidden Gaming Lair's Crimson Desert map)
+- **Pyramid:** 512 px WebP tiles, zoom 0..6, `{z}/{y}/{x}` order; 64 x 64 tiles at
+  zoom 6 = 32768 x 32768 px. 5461 tiles, about 24 MB.
 - **Fetch date:** 2026-09-03
+- **Access:** plain HTTP GET, no auth, referer or special user agent needed (verified).
 
 ## License note
-Fan-hosted copy of the in-game full-world map of Pywel (published by a guide site, not
-an official downloadable asset). No explicit reuse terms are stated on the page. This is
-treated as fine for **personal, local use only** by this route-planning tool: do not
-redistribute the source image or any tiles built from it. Whether to publish this app
-publicly (and thus the derived tiles) is Rennie's call, not assumed here.
+Fan-hosted map of the game world (Pearl Abyss's Crimson Desert). No reuse terms are
+stated on the site. This is treated as fine for **personal, local use only** by this
+route-planning tool: do not redistribute the tiles or anything derived from them
+except the road graph and water mask this repo commits. Whether to publish this app
+publicly (and thus the tiles) is Rennie's call, not assumed here.
 
 ## Re-create `data/map/` from scratch
 ```
-scripts/fetch-map.sh
-.venv/bin/python scripts/build-tiles.py
+.venv/bin/python scripts/fetch-tiles.py
 ```
-The first command downloads `data/map/source.jpg` (skipped if it already exists) and
-verifies it is 5178x5240; the second builds `data/map/tiles/{z}/{x}/{y}.jpg` and
-`data/map/manifest.json` per docs/DECISIONS.md D4. `data/map/` is gitignored — none of
-this is committed.
+Downloads every tile to `data/map/tiles/{z}/{y}/{x}.webp` (skipping ones already
+there) and writes `data/map/manifest.json` per docs/DECISIONS.md D4. `data/map/` is
+gitignored; none of this is committed.
+
+## Previous source (retired 2026-09-03)
+PowerPyx full world map JPEG, `https://www.powerpyx.com/wp-content/uploads/crimson-desert-full-world-map.jpg`,
+5178 x 5240 px, SHA-256 `29faed0c0daa09adc4967f069cdfaaf1146dde2ad76a933768558ed44d10774c`.
+Its frame maps into the current canonical space as `x * 0.97 + 1120, y * 0.97 + 1640`
+(docs/DECISIONS.md D1/D3).
