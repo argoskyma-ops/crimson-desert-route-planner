@@ -1,3 +1,5 @@
+> Build-time working document from the 2026-09-03 MVP build, kept for history and not maintained.
+
 # Plan
 
 MVP task list. Each task is sized for one external-coder call (Cursor/Grok or Codex),

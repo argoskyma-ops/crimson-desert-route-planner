@@ -1,3 +1,5 @@
+> Build-time working document from the 2026-09-03 MVP build, kept for history and not maintained.
+
 # Review
 
 Whole-repo review against docs/DECISIONS.md (D1–D9) and docs/PLAN.md (T0–T7), 2026-09-03.

@@ -1,3 +1,5 @@
+> Build-time working document from the 2026-09-03 MVP build, kept for history and not maintained.
+
 # Research: map source + road-data strategy for the route planner
 
 Researched 2026-09-03. Crimson Desert (Pearl Abyss) is out; the continent is Pywel, split
