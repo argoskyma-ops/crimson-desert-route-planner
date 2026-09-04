@@ -3,15 +3,28 @@
 Recorded 2026-09-03 for the MVP build. Change a decision here first, then the code.
 
 ## D1. Map source
-- **Primary:** PowerPyx full world map of Pywel,
-  `https://www.powerpyx.com/wp-content/uploads/crimson-desert-full-world-map.jpg`,
-  5178 x 5240 px JPEG, 2.2 MB. Fan-hosted copy of the in-game full map; no explicit
-  reuse license. Fine for a personal, local tool. **Do not redistribute the image or
-  the tiles built from it; publishing the app publicly is Rennie's call.**
-- **Fallback:** MapGenie's Pywel tile pyramid (schema known, CDN returns 403 to scripts).
-  Not used. See docs/RESEARCH.md.
-- The source image and every derived raster live under `data/map/` which is gitignored.
-  `SOURCE.md` + `scripts/fetch-map.sh` + `scripts/build-tiles.py` are committed instead.
+- **Primary (since 2026-09-03 evening):** The Hidden Gaming Lair's Crimson Desert map tile
+  pyramid, `https://cdn.th.gl/crimson-desert/map-tiles/OpenWorld-25391853dd739b8fd7d28d6280f02d15/{z}/{y}/{x}.webp`,
+  512 px WebP tiles, zoom 0..6 (64 x 64 tiles = 32768 px square at z6), fetched by
+  `scripts/fetch-tiles.py` with no auth or special headers. It is a clean render of the
+  whole game world: roads are neutral grey ink, rivers teal, no labels or icons, and
+  roads are drawn *over* water so bridges are visible. About 40x the pixels of the
+  PowerPyx image. Fan-hosted; no reuse terms stated. Same stance as before: **personal,
+  local use only; do not redistribute the tiles; publishing the app is Rennie's call.**
+- **Pywel window:** the pyramid covers more land than the in-game full map. The frame of
+  the PowerPyx in-game map (the playable Pywel region) sits at canonical
+  `x 1120..6143, y 1640..6723` (PowerPyx px * 0.97 + (1120, 1640); found by phase
+  correlation of the two water masks, match verified visually). The manifest's `bounds`
+  (`[1024, 1544, 6248, 6832]`, that frame plus a margin, snapped to 8 px) is what the map
+  fits to, pans within, and what extraction covers. Widen it if the game opens more land.
+- **Retired:** PowerPyx full world map JPEG (5178 x 5240; `scripts/fetch-map.sh` +
+  `scripts/build-tiles.py`, removed 2026-09-03). Too pixelated when zoomed and the map
+  paints rivers over roads, which hid every bridge from extraction. The old tile
+  pyramid may still sit in `data/map/tiles-powerpyx/` locally; it is unused.
+- **Not used:** MapGenie (tiles 403 to scripts), crimsondesertfire.com (16384 px pyramid,
+  same cartography as PowerPyx), Fextralife's 8192 px PNG. See docs/RESEARCH.md.
+- Every raster lives under `data/map/` which is gitignored. `SOURCE.md` +
+  `scripts/fetch-tiles.py` are committed instead.
 
 ## D2. Stack
 - Vite 8 + React 19 + TypeScript + Tailwind v4, plain Leaflet 1.9 (no react-leaflet:
@@ -23,56 +36,71 @@ Recorded 2026-09-03 for the MVP build. Change a decision here first, then the co
 - Phone/tablet first: full-screen map, one floating control panel, 44 px touch targets.
 
 ## D3. Coordinate system
-- The canonical coordinate space is **native image pixels** of `data/map/source.jpg`:
-  x right, y down, origin top-left, `imageSize = [5178, 5240]`. `roads.json`, pins,
-  routes and the editor all use it.
+- The canonical coordinate space is the **zoom-4 pixel grid of the tile pyramid**:
+  8192 x 8192, x right, y down, origin top-left, `imageSize = [8192, 8192]`. `roads.json`,
+  pins, routes, the water mask and the editor all use it. (Before 2026-09-03 it was the
+  5178 x 5240 PowerPyx image; old coordinates convert as `new = old * 0.97 + (1120, 1640)`.)
 - Leaflet CRS (`src/lib/coords.ts`):
   `PixelCRS = L.extend({}, L.CRS.Simple, { transformation: new L.Transformation(s, 0, s, 0) })`
-  with `s = 1 / 2 ** maxNativeZoom`. Then `L.latLng(y, x)` is an image pixel and at
-  zoom == maxNativeZoom one image pixel == one CSS pixel. Helpers `toLatLng(pt)` and
-  `fromLatLng(latlng)`.
-- Map bounds `[[0, 0], [height, width]]`, `maxBounds` padded by 10%, `minZoom` = the
-  zoom that fits the map, `maxZoom = maxNativeZoom + 2` (overzoom, `maxNativeZoom` on
-  the tile layer).
+  with `s = 1 / 2 ** canonicalZoom` (manifest `canonicalZoom`, 4). Then `L.latLng(y, x)` is
+  a canonical pixel; at zoom 4 one canonical pixel == one CSS pixel, and at the pyramid's
+  native zooms 5 and 6 a canonical pixel spans 2 and 4 CSS pixels (real detail, not
+  overzoom). Helpers `toLatLng(pt)` and `fromLatLng(latlng)`.
+- Map bounds: the manifest `bounds` window (Pywel), `maxBounds` padded by 10% of it and
+  clipped to the image, `minZoom` = the zoom that fits it, `maxZoom = maxNativeZoom + 2`.
+  The tile layer itself is bounded by the whole 8192 x 8192 image so the padding renders.
 
 ## D4. Tile pyramid
-- `scripts/build-tiles.py` writes `data/map/tiles/{z}/{x}/{y}.jpg` (256 px, quality 85)
-  for z = 0..maxNativeZoom where `maxNativeZoom = ceil(log2(max(w, h) / 256))` = 5.
-  At zoom z the image is scaled by `2 ** (z - maxNativeZoom)` (native zoom is copied
-  1:1, no resampling); edge tiles are padded with the image's border grey.
-- It also writes `data/map/manifest.json`:
-  `{ "width": 5178, "height": 5240, "tileSize": 256, "minZoom": 0, "maxNativeZoom": 5,
-     "format": "jpg", "source": "SOURCE.md" }`.
-- Serving: a small Vite plugin in `vite.config.ts` serves the `data/` directory at
-  `/data/` in dev and copies `data/roads.json`, `data/map/manifest.json` and
-  `data/map/tiles/` into `dist/data/` on build. The app fetches
-  `/data/map/manifest.json`, `/data/map/tiles/{z}/{x}/{y}.jpg` and `/data/roads.json`.
-  If the manifest is missing the app shows "run scripts/fetch-map.sh and
-  scripts/build-tiles.py" instead of a blank map.
+- `scripts/fetch-tiles.py` downloads the th.gl pyramid unchanged to
+  `data/map/tiles/{z}/{y}/{x}.webp` (note the **z/y/x** order; 5461 tiles, ~24 MB) and
+  writes `data/map/manifest.json`:
+  `{ "width": 8192, "height": 8192, "canonicalZoom": 4, "tileSize": 512, "minZoom": 0,
+     "maxNativeZoom": 6, "format": "webp", "tileOrder": "zyx",
+     "bounds": [1024, 1544, 6248, 6832], "source": "SOURCE.md" }`.
+  Re-running skips tiles that exist. `--composite N` also stitches zoom N to a PNG.
+- `src/lib/map-manifest.ts` parses it with defaults for older manifests (`canonicalZoom`
+  = `maxNativeZoom`, `tileOrder` = `zxy`, `bounds` = the whole image) and builds the
+  Leaflet URL template from `format` + `tileOrder`.
+- Serving: the Vite plugin in `vite.config.ts` serves `data/` at `/data/` in dev (jpg,
+  png, webp, json) and copies `data/roads.json`, `data/water-mask.png`,
+  `data/map/manifest.json` and `data/map/tiles/` into `dist/data/` on build. If the
+  manifest is missing the app says "run scripts/fetch-tiles.py".
 
 ## D5. Road data
-- **Hybrid:** `scripts/extract-roads.py` produces a first-pass `data/roads.json` from
-  the raster (tan road color band -> mask -> skeletonize -> junction graph -> simplify
-  -> class by stroke width). The in-app editor fixes and extends it. `data/roads.json`
-  is committed; it is the dataset.
+- **Hybrid:** `scripts/extract-roads.py` produces `data/roads.json` from the pyramid
+  (stitch the Pywel window at zoom 5 -> grey-ink mask -> optional ridge pass -> skeleton
+  -> junction graph -> prune -> split at water -> simplify -> classify by width -> divide
+  coordinates by 2). The in-app editor fixes and extends it. `data/roads.json` is committed;
+  it is the dataset. `scripts/review-tiles.py` renders labelled review tiles of the graph
+  over the map for visual sweeps.
 - Schema `roads.json` v1 (`src/routing/types.ts` is the TypeScript mirror):
   ```json
   {
     "version": 1,
-    "imageSize": [5178, 5240],
+    "imageSize": [8192, 8192],
     "nodes": [{ "id": "n1", "x": 1234.5, "y": 678.9 }],
     "edges": [{ "id": "e1", "from": "n1", "to": "n2", "class": "main",
-                "points": [[1234.5, 678.9], [1240.0, 690.2]] }]
+                "points": [[1234.5, 678.9], [1240.0, 690.2]], "bridge": true }]
   }
   ```
   Rules: edges are undirected; `points[0]` equals the `from` node and the last point
   equals the `to` node; ids are unique strings; `class` is `main | sub | offroad`;
-  lengths are derived at load time, never stored. Coordinates may be fractional.
-- Off-road is not traced; it is what the router uses for the pin-to-road legs and for
-  hand-drawn `offroad` shortcut edges (fords, passes).
-- Extraction closes junctions: a skeleton endpoint within ~25 px of another edge is
-  joined to that edge (splitting it), and endpoint pairs within ~70 px with aligned
-  tangents are bridged. Fragments still remain; see D6 connectors and the editor.
+  `bridge` is optional and marks a piece of road drawn over water; lengths are derived
+  at load time, never stored. Coordinates may be fractional.
+- **Classes on this map:** the pyramid draws roads about 5 px wide at zoom 5 and paths
+  about 2 px. Width (median mask half-width >= `--main-radius`, 1.9) decides: roads are
+  `main`, paths are `sub`. Which of the two the game treats as faster is an assumption;
+  tune D7 speeds rather than swapping classes. Off-road is never traced; it is what the
+  router uses for pin-to-road legs and hand-drawn `offroad` shortcut edges.
+- **Bridges:** rivers are painted under the roads on this source, so a road's ink runs
+  across the water. `split_edges_at_water` cuts every edge where it enters or leaves the
+  water mask and flags the wet pieces `"bridge": true` (runs under `--bridge-min-length`,
+  6 px at zoom 5, are ignored as noise). A gap across water therefore means no bridge,
+  and the water-aware router (D10) will not jump it.
+- Cleanup: spurs, fragments, self-loops around symbols, small closed rings, and dense
+  clutter (towns, farm parcels, hatching) are removed; T-junctions within
+  `--junction-snap` (24 px) and facing gaps within `--bridge-gap` (40 px, land only) are
+  closed; a surviving closed ring gets one junction onto the nearest road.
 
 ## D6. Routing
 - `src/routing/` is a pure TypeScript module: `buildGraph(roads)` once per roads
@@ -127,11 +155,13 @@ Recorded 2026-09-03 for the MVP build. Change a decision here first, then the co
 - **Why:** the router was water-blind. D6 connectors and the off-road legs hopped
   rivers where no bridge exists, and a horse would cut cross-country between two
   roads. Added 2026-09-03.
-- **Mask:** `data/water-mask.png`, an 8-bit greyscale PNG at half the map
-  resolution (2589 x 2620 for the 5178 x 5240 map, so `scale` = 0.5 mask px per
-  image px). 255 = water, 0 = land; a 2 x 2 image block is water if any of its
-  pixels is, so the mask errs slightly toward water. Written by the extraction
-  script from the map's blue pixels and committed next to `data/roads.json`.
+- **Mask:** `data/water-mask.png`, an 8-bit greyscale PNG of the whole canonical
+  map at half resolution (zoom 3 of the pyramid: 4096 x 4096 for the 8192 x 8192
+  canonical space, so `scale` = 0.5 mask px per canonical px). 255 = water, 0 =
+  land; a block is water if any of its zoom-5 pixels is, so the mask errs slightly
+  toward water. Written by the extraction script from the map's teal pixels for
+  the Pywel window (everything outside is land) and committed next to
+  `data/roads.json`.
   It is served at `/data/water-mask.png` in dev and copied into `dist/data/`.
 - **Loading:** `src/lib/water-mask-loader.ts` decodes the PNG with
   `createImageBitmap` + `OffscreenCanvas` (`Image` + canvas fallback) into a

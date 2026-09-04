@@ -10,17 +10,17 @@ sub / off-road classes. The app is local-only: a static Vite site plus
 ```bash
 npm install
 uv venv .venv && uv pip install --python .venv/bin/python pillow numpy scipy scikit-image networkx shapely sknw
-scripts/fetch-map.sh
-.venv/bin/python scripts/build-tiles.py
+.venv/bin/python scripts/fetch-tiles.py
 npm run dev
 ```
 
-Open http://localhost:5173. `scripts/fetch-map.sh` downloads the PowerPyx
-full-world JPEG into `data/map/source.jpg` (skipped if it is already there).
-`build-tiles.py` writes the zoom pyramid and `data/map/manifest.json`.
-`data/map/` is gitignored; `data/roads.json` (the committed road graph) is not.
+Open http://localhost:5173. `scripts/fetch-tiles.py` downloads the th.gl map
+tile pyramid (5461 WebP tiles, about 24 MB, see `SOURCE.md`) into
+`data/map/tiles/` and writes `data/map/manifest.json`; re-running skips tiles
+that are already there. `data/map/` is gitignored; `data/roads.json` (the
+committed road graph) and `data/water-mask.png` are not.
 
-If the tiles are missing, the app tells you to run those two scripts.
+If the tiles are missing, the app tells you to run that script.
 
 ## Using the planner
 
@@ -62,35 +62,42 @@ graph. **Done editing** returns to the planner.
 
 ## Map pipeline and road extraction
 
-`scripts/build-tiles.py` cuts `data/map/source.jpg` into a 256 px JPEG pyramid
-(`data/map/tiles/{z}/{x}/{y}.jpg`, z = 0..5) and writes `data/map/manifest.json`.
-Useful flags: `--source`, `--out`, `--manifest`, `--tile-size`, `--quality`,
-`--force` (rewrite tiles that already exist).
+The map is the th.gl tile pyramid: 512 px WebP tiles at zoom 0..6, stored as
+`data/map/tiles/{z}/{y}/{x}.webp`. Coordinates in `roads.json` are the zoom-4
+pixel grid (8192 x 8192); zooms 5 and 6 add real detail on screen. The manifest's
+`bounds` is the Pywel window the map fits to (docs/DECISIONS.md D1, D3, D4).
 
-`scripts/extract-roads.py` builds a first-pass `data/roads.json` from the raster
-(colour + local contrast mask → skeleton → junction graph → simplify → classify
-by stroke width). Key tuning flags:
+`scripts/extract-roads.py` builds `data/roads.json` from the tiles: it stitches
+the Pywel window at zoom 5, masks the grey road ink (which runs straight over
+the teal water, so bridges are part of the mask), skeletonizes it, builds a
+junction graph, prunes and reconnects it, splits edges where they cross water
+and flags those pieces `"bridge": true`, simplifies, and classifies by stroke
+width. Key flags:
 
-- `--contrast-low` / `--contrast-high` — faint-line recall
-- `--min-background` — exclude water and the grey border
-- `--close-radius` — close 1–3 px breaks (keep ≤ 2)
-- `--spur-length` / `--component-length` — drop hatching fragments
-- `--junction-snap` — join a stub onto a nearby edge (typical 25–30 px)
-- `--bridge-gap` / `--bridge-angle` — join facing endpoints across icons
-- `--main-radius` — thick vs thin roads
+- `--ridge` — add a ridge-filter pass that picks up the faintest paths
+  (used for the committed dataset)
+- `--ink-min` / `--ink-max` / `--ink-chroma` — the road-ink colour band
+- `--spur-length` / `--component-length` — drop skeleton fragments
+- `--junction-snap` / `--bridge-gap` — reconnect stubs and small land gaps
+- `--main-radius` — roads (wide, `main`) vs paths (narrow, `sub`)
+- `--bounds` / `--zoom` — window and resolution
 
-It also writes `data/map/roads-debug.png` (mask + skeleton over the map) for
-eyeballing. Extraction still leaves fragments; the router adds off-road
-connectors that bridge gaps up to 200 px (`CONNECTOR_RADIUS_PX` in
-`src/config/travel.ts`). Trace the rest in the editor. Extraction never emits
-the `offroad` class.
+It also writes `data/map/roads-debug.png` (mask + graph over the map). Gaps that
+remain are bridged by the router's off-road connectors (up to 200 px,
+`CONNECTOR_RADIUS_PX` in `src/config/travel.ts`) on land only; trace the rest in
+the editor. Extraction never emits the `offroad` class.
 
-Extraction also writes `data/water-mask.png`: an 8-bit greyscale PNG at half the
-map resolution (2589 x 2620), 255 = water, 0 = land, built from the map's blue
-pixels. It is committed next to `roads.json`, served at `/data/water-mask.png`
-and copied into `dist/data/` on build. The router loads it at startup and uses it
-to keep off-road travel out of rivers and the sea (docs/DECISIONS.md D10); if the
-file is missing the app logs one warning and routes as before.
+`scripts/review-tiles.py` renders labelled review tiles (graph over the map,
+dead ends ringed, water outlined) into `data/map/review/` for a visual sweep;
+`--compare other.json` overlays a second graph in magenta.
+
+Extraction also writes `data/water-mask.png`: an 8-bit greyscale PNG of the
+whole canonical map at half resolution (4096 x 4096), 255 = water, 0 = land,
+from the map's teal pixels. It is committed next to `roads.json`, served at
+`/data/water-mask.png` and copied into `dist/data/` on build. The router loads
+it at startup and uses it to keep off-road travel out of rivers and the sea
+(docs/DECISIONS.md D10); if the file is missing the app logs one warning and
+routes as before.
 
 ## Build and deploy
 
@@ -115,9 +122,8 @@ npm run dev -- --port 5173 --strictPort   # in another terminal
 .venv/bin/python tests/e2e/smoke.py
 ```
 
-The map image is a fan-hosted copy of the in-game Pywel map with no reuse
-licence (see `SOURCE.md`). Do not redistribute the source JPEG or the tiles.
-Publishing the app publicly is a separate decision.
+The map tiles are fan-hosted with no stated reuse licence (see `SOURCE.md`).
+Do not redistribute them. Publishing the app publicly is a separate decision.
 
 ## Layout
 
@@ -128,7 +134,7 @@ src/
   routing/      A* over the road graph, water mask
   lib/          CRS, roads + water-mask load/save, pin icons
   config/       travel.ts (speeds and colours)
-scripts/        fetch-map.sh, build-tiles.py, extract-roads.py
+scripts/        fetch-tiles.py, extract-roads.py, review-tiles.py, tiles.py
 data/           roads.json + water-mask.png (committed); map/ (gitignored)
 docs/           DECISIONS.md, PLAN.md, RESEARCH.md
 tests/          unit/ (roads.json + water-mask checks), e2e/smoke.py (Playwright)
