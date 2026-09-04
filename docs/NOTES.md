@@ -37,4 +37,4 @@ change a decision there first, then the code.
 
 - `data/map/tiles/` is the th.gl pyramid (about 24 MB, gitignored). A
   `data/map/tiles-powerpyx/` or `data/map/source.jpg` left over from the retired
-  source is unused and safe to delete.
+  source is unused and safe to delete; neither exists on a fresh clone.

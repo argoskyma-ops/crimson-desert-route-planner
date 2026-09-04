@@ -12,8 +12,8 @@ account and no hosted demo: clone it and run it locally.
 
 ## Quick start
 
-Needs Node 22 or newer and [uv](https://docs.astral.sh/uv/) (it installs Python
-for you). Then:
+Needs Node 22 or newer and [uv](https://docs.astral.sh/uv/), which provisions
+Python for you (3.11 or newer works). Then:
 
 ```bash
 npm install
@@ -116,10 +116,12 @@ npm test
 npm run build      # static dist/ including dist/data/ (tiles, roads.json, water-mask.png)
 ```
 
-End-to-end smoke test (needs the dev server on port 5173 and the Playwright
-Chromium in `.venv`; it restores `data/roads.json` afterwards):
+End-to-end smoke test. It needs Playwright and its Chromium in `.venv` (not
+part of the quick start) plus the dev server on port 5173, and it restores
+`data/roads.json` afterwards:
 
 ```bash
+uv pip install --python .venv/bin/python playwright && .venv/bin/python -m playwright install chromium
 npm run dev -- --port 5173 --strictPort   # in another terminal
 .venv/bin/python tests/e2e/smoke.py
 ```
@@ -127,6 +129,8 @@ npm run dev -- --port 5173 --strictPort   # in another terminal
 ## Map data and licensing
 
 - **Code** in this repository is released under the [MIT License](LICENSE).
+  The data files described below are the exception: they are covered by this
+  section, not by the MIT grant.
 - **Map tiles** are third-party content from The Hidden Gaming Lair's Crimson
   Desert map (https://crimsondesert.th.gl), a fan site with no stated reuse
   licence. `scripts/fetch-tiles.py` downloads them to your machine; they are
@@ -143,7 +147,8 @@ npm run dev -- --port 5173 --strictPort   # in another terminal
 ## Contributing
 
 Issues and pull requests are welcome. Before opening a PR run
-`npm run typecheck`, `npm run lint` and `npm test`. Keep commits atomic with
+`npm run typecheck`, `npm run lint` and `npm test`, plus `npm run build` if you
+touched `vite.config.ts` or anything under `data/`. Keep commits atomic with
 imperative subjects, and use kebab-case for files and branches. Design
 decisions live in `docs/DECISIONS.md`; change the decision there first, then
 the code. Open questions and follow-ups are in `docs/NOTES.md`.
