@@ -3,6 +3,7 @@ import { cumulativePolylineLengths, dist } from './geometry'
 import { SegmentSpatialIndex } from './spatial-index'
 import type { SpatialSegment } from './spatial-index'
 import type { Pt, RoadClass, RoadNode, RoadsFile } from './types'
+import type { WaterMask } from './water-mask'
 
 export interface GraphEdge {
   id: string
@@ -30,12 +31,16 @@ export interface RoadGraph {
   readonly adjacency: ReadonlyMap<string, readonly GraphArc[]>
   /** Undirected dead-end connector pairs; graph-only, not written back to `roads`. */
   readonly connectorCount: number
+  /** D10 land/water raster, or null when no mask is loaded. `findRoute` reads it. */
+  readonly water: WaterMask | null
   edgesNear(point: Pt, radius: number): SpatialSegment[]
 }
 
 export interface BuildGraphOptions {
   /** When false, skip D6 dead-end connectors. Default true. */
   connectors?: boolean
+  /** D10: when given, dead-end connectors that cross water are skipped. */
+  water?: WaterMask | null
 }
 
 export function buildGraph(roads: RoadsFile, options: BuildGraphOptions = {}): RoadGraph {
@@ -93,15 +98,17 @@ export function buildGraph(roads: RoadsFile, options: BuildGraphOptions = {}): R
   }
 
   const spatialIndex = new SegmentSpatialIndex(spatialSegments)
+  const water = options.water ?? null
   const connectorCount = options.connectors === false
     ? 0
-    : addDeadEndConnectors(roads.nodes, adjacency)
+    : addDeadEndConnectors(roads.nodes, adjacency, water)
   return {
     roads,
     nodeById,
     edgeById,
     adjacency,
     connectorCount,
+    water,
     edgesNear: (point, radius) => spatialIndex.segmentsNear(point, radius),
   }
 }
@@ -109,6 +116,7 @@ export function buildGraph(roads: RoadsFile, options: BuildGraphOptions = {}): R
 function addDeadEndConnectors(
   nodes: readonly RoadNode[],
   adjacency: Map<string, GraphArc[]>,
+  water: WaterMask | null,
 ): number {
   const sources = nodes.filter((node) => (adjacency.get(node.id)?.length ?? 0) === 1)
   if (sources.length === 0) return 0
@@ -126,13 +134,14 @@ function addDeadEndConnectors(
     }
 
     const fromRoot = components.find(node.id)
-    const candidates: { id: string; distance: number; otherComponent: boolean }[] = []
+    const candidates: { id: string; node: RoadNode; distance: number; otherComponent: boolean }[] = []
     for (const other of nodes) {
       if (other.id === node.id || adjacent.has(other.id)) continue
       const distance = dist(node, other)
       if (distance > CONNECTOR_RADIUS_PX) continue
       candidates.push({
         id: other.id,
+        node: other,
         distance,
         otherComponent: components.find(other.id) !== fromRoot,
       })
@@ -144,7 +153,16 @@ function addDeadEndConnectors(
       return left.id.localeCompare(right.id)
     })
 
-    for (const candidate of candidates.slice(0, CONNECTOR_MAX)) {
+    // D10: a connector may not jump a river. Skipped candidates free their slot
+    // for the next-best dry one, so a dead end still reaches its land neighbours.
+    const selected: typeof candidates = []
+    for (const candidate of candidates) {
+      if (selected.length >= CONNECTOR_MAX) break
+      if (water?.crosses(node, candidate.node)) continue
+      selected.push(candidate)
+    }
+
+    for (const candidate of selected) {
       if (hasConnector(adjacency, node.id, candidate.id)) continue
       adjacency.get(node.id)?.push(connectorArc(candidate.id))
       adjacency.get(candidate.id)?.push(connectorArc(node.id))

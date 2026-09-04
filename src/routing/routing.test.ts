@@ -4,9 +4,27 @@ import { buildGraph } from './graph'
 import { findRoute } from './route'
 import { snapToRoads } from './snap'
 import type { Mode, Pt, RoadEdge, RoadNode, RoadsFile } from './types'
+import { WaterMask } from './water-mask'
 
 function roads(nodes: RoadNode[], edges: RoadEdge[]): RoadsFile {
   return { version: 1, imageSize: [5178, 5240], nodes, edges }
+}
+
+/**
+ * Half-resolution mask over a 1024 x 1024 image area whose water is the vertical
+ * band `bandStart <= x < bandEnd` in image pixels.
+ */
+function riverMask(bandStart: number, bandEnd: number, scale = 0.5): WaterMask {
+  const width = Math.ceil(1_024 * scale)
+  const height = width
+  const data = new Uint8Array(width * height)
+  for (let maskY = 0; maskY < height; maskY += 1) {
+    for (let maskX = 0; maskX < width; maskX += 1) {
+      const imageX = maskX / scale
+      if (imageX >= bandStart && imageX < bandEnd) data[maskY * width + maskX] = 1
+    }
+  }
+  return new WaterMask({ width, height, scale, data })
 }
 
 function twoNodeRoad(points: [number, number][], roadClass: RoadEdge['class'] = 'main'): RoadsFile {
@@ -144,6 +162,72 @@ describe('buildGraph', () => {
     expect(graph.adjacency.get('a2')).toHaveLength(1)
     expect(graph.adjacency.get('a2')?.[0]?.edgeId).toBe('left')
     expect(graph.adjacency.get('a2')?.some((arc) => arc.edgeId === undefined)).toBe(false)
+  })
+
+  it('skips connectors across water and keeps the land ones (D10)', () => {
+    const source = roads(
+      [
+        { id: 'a1', x: 0, y: 0 },
+        { id: 'a2', x: 100, y: 0 },
+        { id: 'b1', x: 150, y: 0 },
+        { id: 'b2', x: 250, y: 0 },
+        { id: 'c1', x: 400, y: 0 },
+        { id: 'c2', x: 500, y: 0 },
+        { id: 'd1', x: 550, y: 0 },
+        { id: 'd2', x: 650, y: 0 },
+      ],
+      [
+        { id: 'a', from: 'a1', to: 'a2', class: 'main', points: [[0, 0], [100, 0]] },
+        { id: 'b', from: 'b1', to: 'b2', class: 'main', points: [[150, 0], [250, 0]] },
+        { id: 'c', from: 'c1', to: 'c2', class: 'main', points: [[400, 0], [500, 0]] },
+        { id: 'd', from: 'd1', to: 'd2', class: 'main', points: [[550, 0], [650, 0]] },
+      ],
+    )
+    const water = riverMask(110, 140)
+    const dry = buildGraph(source)
+    const wet = buildGraph(source, { water })
+
+    const connects = (graph: typeof dry, from: string, to: string): boolean =>
+      (graph.adjacency.get(from) ?? []).some((arc) => arc.toNodeId === to && arc.edgeId === undefined)
+
+    expect(water.crosses({ x: 100, y: 0 }, { x: 150, y: 0 })).toBe(true)
+    expect(water.crosses({ x: 500, y: 0 }, { x: 550, y: 0 })).toBe(false)
+    expect(connects(dry, 'a2', 'b1')).toBe(true)
+    expect(connects(wet, 'a2', 'b1')).toBe(false)
+    expect(connects(wet, 'b1', 'a2')).toBe(false)
+    expect(connects(wet, 'c2', 'd1')).toBe(true)
+    expect(wet.connectorCount).toBeLessThan(dry.connectorCount)
+    expect(wet.water).toBe(water)
+    expect(dry.water).toBeNull()
+  })
+
+  it('replaces a water-crossing candidate with the next dry one', () => {
+    const source = roads(
+      [
+        { id: 'a1', x: 0, y: 0 },
+        { id: 'a2', x: 100, y: 0 },
+        { id: 'w1', x: 160, y: 0 },
+        { id: 'w2', x: 170, y: 0 },
+        { id: 'l1', x: 100, y: 30 },
+        { id: 'l2', x: 100, y: 60 },
+        { id: 'l3', x: 100, y: 90 },
+      ],
+      [
+        { id: 'a', from: 'a1', to: 'a2', class: 'main', points: [[0, 0], [100, 0]] },
+        { id: 'w', from: 'w1', to: 'w2', class: 'main', points: [[160, 0], [170, 0]] },
+        { id: 'l', from: 'l1', to: 'l2', class: 'main', points: [[100, 30], [100, 60]] },
+        { id: 'lb', from: 'l2', to: 'l3', class: 'main', points: [[100, 60], [100, 90]] },
+      ],
+    )
+    const graph = buildGraph(source, { water: riverMask(110, 140) })
+    const targets = (graph.adjacency.get('a2') ?? [])
+      .filter((arc) => arc.edgeId === undefined)
+      .map((arc) => arc.toNodeId)
+      .sort()
+
+    expect(targets).toHaveLength(CONNECTOR_MAX)
+    expect(targets).toEqual(['l1', 'l2', 'l3'])
+    expect(targets).not.toContain('w1')
   })
 
   it('rejects duplicate ids and dangling topology references', () => {
