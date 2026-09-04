@@ -15,8 +15,13 @@ should read this first, then docs/PLAN.md and docs/DECISIONS.md, then continue f
   (136 components, largest 12.7% of length); tests/unit/roads-data.test.ts dataset check.
 - End-to-end smoke in Playwright: tiles, pins, route summary render with no console errors.
 
+- T4 route rendering/summary/legend, T6a editor draw/select, T6b node drag + Save (dev
+  endpoint) / Export / Import + validation, all reviewed (Grok read-only) and committed.
+  Browser-verified: draw a road -> route uses it; Save -> reload keeps it; phone layout OK.
+
 ## In progress
-- T4 route rendering + mode toggle + summary — Grok done, read-only review running, then commit.
+- T7 README + safe-area polish + 3 small editor fixes — Grok xhigh-fast.
+- Subagent 3 whole-repo review -> docs/REVIEW.md (opus).
 
 ## Tooling note (2026-09-03)
 - Codex quota is at ~3%: do not launch new `codex exec` runs. Use
@@ -24,17 +29,16 @@ should read this first, then docs/PLAN.md and docs/DECISIONS.md, then continue f
   `--model claude-opus-5-thinking-high` for reviews / algorithmic work.
 
 ## Next
-- T6a editor draw/select -> T6b node drag/save/import/export -> T7 README, each via Grok
-  (prompts in the session scratchpad; regenerate from PLAN.md if lost).
-- index.html: add `viewport-fit=cover` to the viewport meta (safe-area padding needs it).
-- Subagent 3 whole-repo review, subagent 4 Playwright QA + screenshot to docs/screenshots/.
+- Fix REVIEW.md blockers via Grok, commit T7.
+- Subagent 4 QA: Playwright smoke test under tests/e2e/, screenshots in docs/screenshots/.
+- Final verification: typecheck, lint, test, build; print the `npm run dev` URL.
 
 ## Blockers
 - none
 
 ## Subagent budget (cap 5)
 - 1 research (sonnet) — used
-- 2 map pipeline (sonnet) — running
-- 3 whole-repo review — unused
+- 2 map pipeline (sonnet) — used
+- 3 whole-repo review (opus) — running
 - 4 QA / Playwright — unused
 - 5 reserved for one gnarly debug (opus) — unused
