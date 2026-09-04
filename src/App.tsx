@@ -4,10 +4,12 @@ import EditorPanel from './components/EditorPanel'
 import Legend from './components/Legend'
 import MapView from './components/MapView'
 import { loadRoads } from './lib/roads-loader'
+import { loadWaterMask } from './lib/water-mask-loader'
 import { useAppStore } from './store'
 
 export default function App() {
   const setRoads = useAppStore((s) => s.setRoads)
+  const setWaterMask = useAppStore((s) => s.setWaterMask)
   const editorActive = useAppStore((s) => s.editor.active)
   const editorDirty = useAppStore((s) => s.editor.dirty)
   const toggleEditor = useAppStore((s) => s.toggleEditor)
@@ -15,20 +17,21 @@ export default function App() {
   useEffect(() => {
     let cancelled = false
     void (async () => {
-      try {
-        const roads = await loadRoads()
-        if (!cancelled) setRoads(roads)
-      } catch (err) {
-        if (!cancelled) {
-          const message = err instanceof Error ? err.message : 'Invalid roads.json'
-          setRoads(null, message)
-        }
+      // The water mask (D10) loads alongside the graph; it never blocks routing.
+      const [roadsResult, waterResult] = await Promise.allSettled([loadRoads(), loadWaterMask()])
+      if (cancelled) return
+      setWaterMask(waterResult.status === 'fulfilled' ? waterResult.value ?? null : null)
+      if (roadsResult.status === 'fulfilled') {
+        setRoads(roadsResult.value)
+        return
       }
+      const err = roadsResult.reason
+      setRoads(null, err instanceof Error ? err.message : 'Invalid roads.json')
     })()
     return () => {
       cancelled = true
     }
-  }, [setRoads])
+  }, [setRoads, setWaterMask])
 
   useEffect(() => {
     if (!editorDirty) return

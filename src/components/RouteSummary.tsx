@@ -1,6 +1,11 @@
 import { CLASS_COLORS, CLASS_LABELS, METERS_PER_PIXEL } from '../config/travel'
-import { ROAD_CLASSES, type RoadClass, type Route } from '../routing/types'
+import { ROAD_CLASSES, type RoadClass, type Route, type RouteWarning } from '../routing/types'
 import { useAppStore } from '../store'
+
+const WARNING_TEXT: Record<RouteWarning, string> = {
+  'straight-line-fallback': 'No road route: straight line shown',
+  'crosses-water': 'Route crosses water',
+}
 
 function pxToKm(lengthPx: number): number {
   return (lengthPx * METERS_PER_PIXEL) / 1000
@@ -42,6 +47,7 @@ export default function RouteSummary() {
 
   const totalKm = pxToKm(route.totalPx)
   const breakdown = classBreakdown(route)
+  const warning = route.warnings.map((w) => WARNING_TEXT[w]).join(' · ')
 
   return (
     <div className="mt-3 px-1">
@@ -49,6 +55,7 @@ export default function RouteSummary() {
         <span className="font-medium tabular-nums">{totalKm.toFixed(1)} km</span>
         <span className="tabular-nums text-neutral-300">{formatEta(route.totalSeconds)}</span>
       </div>
+      {warning ? <p className="mt-1 text-xs text-amber-400">{warning}</p> : null}
       {breakdown.length > 0 ? (
         <ul className="mt-2 space-y-1">
           {breakdown.map(({ cls, km }) => (

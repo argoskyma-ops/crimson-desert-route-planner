@@ -13,6 +13,7 @@ import type { MapManifest } from './lib/map-manifest'
 import { emptyRoads } from './lib/roads-loader'
 import { buildGraph, findRoute, type RoadGraph } from './routing'
 import type { Mode, Pt, RoadClass, RoadsFile, Route } from './routing/types'
+import type { WaterMask } from './routing/water-mask'
 
 /**
  * Leaflet map instance created by MapView. T4/T6 read `mapRef.current`.
@@ -45,25 +46,27 @@ export function recomputeRoute(s: {
   return findRoute(s.graph, s.pins.a, s.pins.b, { mode: s.mode })
 }
 
+/** Every graph rebuild goes through here so the D10 water mask is never dropped. */
 function applyRoads(
-  s: { manifest: MapManifest | null },
+  s: { manifest: MapManifest | null; water: WaterMask | null },
   roads: RoadsFile | null,
   error?: string | null,
 ): { roads: RoadsFile | null; graph: RoadGraph | null; roadsError: string | null } {
+  const water = s.water
   if (roads === null) {
     return {
       roads: null,
-      graph: buildGraph(emptyRoads(imageSizeFor(s))),
+      graph: buildGraph(emptyRoads(imageSizeFor(s)), { water }),
       roadsError: error ?? 'No roads.json found',
     }
   }
   try {
-    return { roads, graph: buildGraph(roads), roadsError: null }
+    return { roads, graph: buildGraph(roads, { water }), roadsError: null }
   } catch (e) {
     const message = e instanceof Error ? e.message : 'Failed to build road graph'
     return {
       roads,
-      graph: buildGraph(emptyRoads(roads.imageSize)),
+      graph: buildGraph(emptyRoads(roads.imageSize), { water }),
       roadsError: message,
     }
   }
@@ -91,12 +94,15 @@ interface AppState {
   route: Route | null
   showRoads: boolean
   manifest: MapManifest | null
+  /** D10 land/water raster; null when `data/water-mask.png` is missing. */
+  water: WaterMask | null
   editor: EditorState
   setPin: (which: 'a' | 'b', pt: Pt | null) => void
   placePin: (pt: Pt) => void
   clearPins: () => void
   setMode: (mode: Mode) => void
   setRoads: (roads: RoadsFile | null, error?: string | null) => void
+  setWaterMask: (water: WaterMask | null) => void
   setRoute: (route: Route | null) => void
   toggleShowRoads: () => void
   setManifest: (manifest: MapManifest | null) => void
@@ -132,6 +138,7 @@ export const useAppStore = create<AppState>((set) => ({
   route: null,
   showRoads: false,
   manifest: null,
+  water: null,
   editor: initialEditor,
   setPin: (which, pt) =>
     set((s) => {
@@ -161,6 +168,18 @@ export const useAppStore = create<AppState>((set) => ({
     set((s) => {
       const next = applyRoads(s, roads, error)
       return { ...next, route: recomputeRoute({ graph: next.graph, pins: s.pins, mode: s.mode }) }
+    }),
+  setWaterMask: (water) =>
+    set((s) => {
+      if (s.water === water) return s
+      const next = applyRoads({ ...s, water }, s.roads, s.roadsError)
+      return {
+        water,
+        ...next,
+        // The mask says nothing about roads.json, so keep whatever it reported.
+        roadsError: s.roadsError,
+        route: recomputeRoute({ graph: next.graph, pins: s.pins, mode: s.mode }),
+      }
     }),
   setRoute: (route) => set({ route }),
   toggleShowRoads: () =>
