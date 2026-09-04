@@ -1,6 +1,7 @@
 import L from 'leaflet'
 import { useEffect, useRef, useState } from 'react'
 import { CLASS_COLORS } from '../config/travel'
+import { attachEditorLayer } from '../editor/editor-layer'
 import { fromLatLng, makePixelCrs, toLatLng } from '../lib/coords'
 import { loadMapManifest } from '../lib/map-manifest'
 import { makePinIcon } from '../lib/pin-icons'
@@ -54,6 +55,7 @@ export default function MapView() {
   const route = useAppStore((s) => s.route)
   const roads = useAppStore((s) => s.roads)
   const showRoads = useAppStore((s) => s.showRoads)
+  const editorActive = useAppStore((s) => s.editor.active)
   const [missing, setMissing] = useState(false)
   const [mapReady, setMapReady] = useState(false)
 
@@ -189,7 +191,7 @@ export default function MapView() {
     const renderer = rendererRef.current
     if (!group || !renderer) return
     group.clearLayers()
-    if (!showRoads || !roads) return
+    if ((!showRoads && !editorActive) || !roads) return
 
     const latlngsByClass: Record<RoadClass, L.LatLng[][]> = {
       main: [],
@@ -211,7 +213,14 @@ export default function MapView() {
         renderer,
       }).addTo(group)
     }
-  }, [mapReady, roads, showRoads])
+  }, [mapReady, roads, showRoads, editorActive])
+
+  useEffect(() => {
+    if (!mapReady || !editorActive) return
+    const map = mapRef.current
+    if (!map) return
+    return attachEditorLayer(map)
+  }, [mapReady, editorActive])
 
   return (
     <div className="relative h-full w-full">
