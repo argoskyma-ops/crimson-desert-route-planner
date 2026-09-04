@@ -300,9 +300,15 @@ function resolveEndpoint(
   return { roads: addNode(roads, draft.pt), nodeId, pt: { x: draft.pt.x, y: draft.pt.y } }
 }
 
+type DraftVertex =
+  | { kind: 'node'; nodeId: string; pt: Pt }
+  | { kind: 'vertex'; pt: Pt }
+
 /**
- * Turn a draw-tool draft into graph edits: endpoint snaps reuse/split nodes,
- * unsnapped endpoints create nodes, interior vertices stay polyline points.
+ * Turn a draw-tool draft into graph edits: every snapped point reuses or splits
+ * a node (including interior snaps); unsnapped endpoints create nodes; unsnapped
+ * interior vertices stay polyline points of the span they fall in. One new edge
+ * is emitted per span between consecutive resolved nodes.
  */
 export function commitDraft(roads: RoadsFile, draft: readonly DraftPoint[], cls: RoadClass): RoadsFile {
   if (draft.length < 2) return roads
@@ -313,16 +319,36 @@ export function commitDraft(roads: RoadsFile, draft: readonly DraftPoint[], cls:
   }
   if (length <= COORD_EPS) return roads
 
-  const start = resolveEndpoint(roads, draft[0])
-  const end = resolveEndpoint(start.roads, draft[draft.length - 1])
-
-  const points: [number, number][] = [[start.pt.x, start.pt.y]]
-  for (let index = 1; index < draft.length - 1; index += 1) {
-    points.push([draft[index].pt.x, draft[index].pt.y])
+  let current = roads
+  const items: DraftVertex[] = []
+  for (let index = 0; index < draft.length; index += 1) {
+    const point = draft[index]
+    const isEnd = index === 0 || index === draft.length - 1
+    if (isEnd || point.snap) {
+      const resolved = resolveEndpoint(current, point)
+      current = resolved.roads
+      items.push({ kind: 'node', nodeId: resolved.nodeId, pt: resolved.pt })
+    } else {
+      items.push({ kind: 'vertex', pt: point.pt })
+    }
   }
-  points.push([end.pt.x, end.pt.y])
-  const simplified = dropConsecutiveDuplicates(points)
-  if (simplified.length < 2) return end.roads
 
-  return addEdge(end.roads, start.nodeId, end.nodeId, cls, simplified)
+  let spanFrom: { nodeId: string } | null = null
+  let spanPoints: [number, number][] = []
+  for (const item of items) {
+    if (item.kind === 'node') {
+      if (spanFrom) {
+        spanPoints.push([item.pt.x, item.pt.y])
+        const simplified = dropConsecutiveDuplicates(spanPoints)
+        if (simplified.length >= 2) {
+          current = addEdge(current, spanFrom.nodeId, item.nodeId, cls, simplified)
+        }
+      }
+      spanFrom = { nodeId: item.nodeId }
+      spanPoints = [[item.pt.x, item.pt.y]]
+    } else if (spanFrom) {
+      spanPoints.push([item.pt.x, item.pt.y])
+    }
+  }
+  return current
 }

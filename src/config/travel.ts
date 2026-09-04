@@ -7,10 +7,14 @@ import type { Mode, RoadClass } from '../routing/types'
 /** Pywel is roughly 9.5 km across (secondary sources); the map is 5178 px wide. */
 export const METERS_PER_PIXEL = 9500 / 5178
 
-/** Travel speed in metres per second, per mode and road class. */
+/**
+ * Travel speed in metres per second, per mode and road class.
+ * Roads win whenever the road path is shorter than (main speed / offroad speed)
+ * times the straight line.
+ */
 export const SPEED_MPS: Record<Mode, Record<RoadClass, number>> = {
-  horse: { main: 11, sub: 9, offroad: 5.5 },
-  foot: { main: 5.5, sub: 5.0, offroad: 3.5 },
+  horse: { main: 11, sub: 9, offroad: 4 },
+  foot: { main: 5.5, sub: 5.0, offroad: 2.8 },
 }
 
 /** Pin snapping: how far (image px) a pin may be from a road before it is off-road only. */

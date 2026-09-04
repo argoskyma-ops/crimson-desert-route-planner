@@ -33,4 +33,5 @@ __pycache__/
 
 # map assets (see SOURCE.md + scripts/) — never commit the source image or tiles
 data/map/
+data/*.tmp
 *.tsbuildinfo

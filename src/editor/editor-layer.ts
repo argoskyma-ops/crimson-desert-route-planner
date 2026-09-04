@@ -35,9 +35,13 @@ function clampToManifest(pt: Pt): Pt {
 function nearestNode(map: L.Map, pt: Pt, maxCss: number): { id: string; pt: Pt } | null {
   const { roads } = useAppStore.getState()
   if (!roads) return null
+  const scale = cssPixelsPerImagePixel(map)
+  if (!(scale > 0)) return null
+  const maxImage = maxCss / scale
   const clickCss = map.latLngToContainerPoint(toLatLng(pt))
   let best: { id: string; pt: Pt; distance: number } | null = null
   for (const node of roads.nodes) {
+    if (Math.hypot(node.x - pt.x, node.y - pt.y) > maxImage) continue
     const distance = clickCss.distanceTo(map.latLngToContainerPoint(toLatLng(node)))
     if (distance > maxCss) continue
     if (!best || distance < best.distance || (distance === best.distance && node.id < best.id)) {
@@ -296,7 +300,14 @@ export function attachEditorLayer(map: L.Map): () => void {
   map.on('click', onClick)
   map.on('mousemove', onMove)
   window.addEventListener('keydown', onKeyDown)
-  const unsub = useAppStore.subscribe(() => {
+  const unsub = useAppStore.subscribe((state, prev) => {
+    if (
+      state.editor === prev.editor &&
+      state.roads === prev.roads &&
+      state.editor.newEdgeClass === prev.editor.newEdgeClass
+    ) {
+      return
+    }
     syncCursor()
     redraw()
   })

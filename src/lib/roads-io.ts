@@ -5,21 +5,39 @@ function round1(n: number): number {
   return Math.round(n * 10) / 10
 }
 
-/** Pretty-print a roads file: 2-space JSON, node/polyline coords rounded to 1 decimal. */
+/** Diff-friendly JSON: one compact node/edge object per line, coords rounded to 1 decimal. */
 export function serializeRoads(roads: RoadsFile): string {
-  const payload: RoadsFile = {
-    version: 1,
-    imageSize: [roads.imageSize[0], roads.imageSize[1]],
-    nodes: roads.nodes.map((node) => ({ id: node.id, x: round1(node.x), y: round1(node.y) })),
-    edges: roads.edges.map((edge) => ({
-      id: edge.id,
-      from: edge.from,
-      to: edge.to,
-      class: edge.class,
-      points: edge.points.map(([x, y]) => [round1(x), round1(y)] as [number, number]),
-    })),
+  const nodes = roads.nodes.map((node) => ({
+    id: node.id,
+    x: round1(node.x),
+    y: round1(node.y),
+  }))
+  const edges = roads.edges.map((edge) => ({
+    id: edge.id,
+    from: edge.from,
+    to: edge.to,
+    class: edge.class,
+    points: edge.points.map(([x, y]) => [round1(x), round1(y)] as [number, number]),
+  }))
+  const lines: string[] = [
+    '{',
+    '  "version": 1,',
+    `  "imageSize": [${roads.imageSize[0]}, ${roads.imageSize[1]}],`,
+    '  "nodes": [',
+  ]
+  for (let index = 0; index < nodes.length; index += 1) {
+    const comma = index < nodes.length - 1 ? ',' : ''
+    lines.push(`    ${JSON.stringify(nodes[index])}${comma}`)
   }
-  return JSON.stringify(payload, null, 2)
+  lines.push('  ],')
+  lines.push('  "edges": [')
+  for (let index = 0; index < edges.length; index += 1) {
+    const comma = index < edges.length - 1 ? ',' : ''
+    lines.push(`    ${JSON.stringify(edges[index])}${comma}`)
+  }
+  lines.push('  ]')
+  lines.push('}')
+  return `${lines.join('\n')}\n`
 }
 
 /** Trigger a browser download of the serialized roads file. */

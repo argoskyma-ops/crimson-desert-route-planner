@@ -93,3 +93,9 @@ Accept: README matches the scripts and UI; mobile layout checked at 390x844.
 ## T8. Whole-repo review (Claude subagent 3), then QA (Claude subagent 4)
 - Review against PLAN.md and DECISIONS.md; findings fixed via the CLI that wrote them.
 - Playwright smoke test committed under `tests/e2e/`, screenshot in `docs/screenshots/`.
+
+## T9. Review fixes (Grok, after docs/REVIEW.md and QA)
+Origin check + watcher ignore on the dev save endpoint, interior draft snaps become
+junctions, diff-friendly one-line-per-record roads.json, stronger off-road penalty (D7)
+with config-derived routing fixtures, curl -f, lint coverage, editor redraw gating.
+Accept: REVIEW.md blockers closed; tests/e2e/smoke.py green.

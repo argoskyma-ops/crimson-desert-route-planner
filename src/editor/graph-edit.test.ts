@@ -196,6 +196,18 @@ describe('removeOrphanNodes', () => {
   })
 })
 
+function expectEndpointsMatchNodes(roads: RoadsFile): void {
+  const byId = new Map(roads.nodes.map((node) => [node.id, node]))
+  for (const edge of roads.edges) {
+    const from = byId.get(edge.from)
+    const to = byId.get(edge.to)
+    expect(from).toBeDefined()
+    expect(to).toBeDefined()
+    expect(edge.points[0]).toEqual([from!.x, from!.y])
+    expect(edge.points.at(-1)).toEqual([to!.x, to!.y])
+  }
+}
+
 describe('commitDraft', () => {
   it('reuses a snapped node, splits a snapped edge, and adds the new polyline', () => {
     const roads = sample()
@@ -214,5 +226,52 @@ describe('commitDraft', () => {
     expect(drawn.from).toBe('n1')
     expect(drawn.points).toEqual([[0, 0], [2, 8], [5, 0]])
     expect(next.edges.filter((edge) => edge.class === 'main')).toHaveLength(2)
+    expectEndpointsMatchNodes(next)
+  })
+
+  it('emits two edges sharing an interior snapped node from a 4-point draft', () => {
+    const roads = sample()
+    const next = commitDraft(
+      roads,
+      [
+        { pt: { x: 0, y: 8 } },
+        { pt: { x: 0, y: 0 }, snap: { nodeId: 'n1' } },
+        { pt: { x: 4, y: 4 } },
+        { pt: { x: 8, y: 8 } },
+      ],
+      'sub',
+    )
+    const drawn = next.edges.filter((edge) => edge.class === 'sub')
+    expect(drawn).toHaveLength(2)
+    expect(drawn.every((edge) => edge.from === 'n1' || edge.to === 'n1')).toBe(true)
+    const first = drawn.find((edge) => edge.to === 'n1')!
+    const second = drawn.find((edge) => edge.from === 'n1')!
+    expect(first.points).toEqual([[0, 8], [0, 0]])
+    expect(second.points).toEqual([[0, 0], [4, 4], [8, 8]])
+    expect(findEdge(next, 'e1')).toBeDefined()
+    expectEndpointsMatchNodes(next)
+  })
+
+  it('splits an existing edge when an interior draft point snaps to it', () => {
+    const roads = sample()
+    const beforeCount = roads.edges.length
+    const next = commitDraft(
+      roads,
+      [
+        { pt: { x: 5, y: 8 } },
+        { pt: { x: 5, y: 0 }, snap: { edgeId: 'e1', segmentIndex: 0, t: 0.5 } },
+        { pt: { x: 5, y: -8 } },
+      ],
+      'sub',
+    )
+    expect(next.edges).toHaveLength(beforeCount + 3)
+    expect(findEdge(next, 'e1')).toBeUndefined()
+    expect(next.edges.filter((edge) => edge.class === 'main')).toHaveLength(2)
+    const drawn = next.edges.filter((edge) => edge.class === 'sub')
+    expect(drawn).toHaveLength(2)
+    const split = next.nodes.find((node) => node.x === 5 && node.y === 0)
+    expect(split).toBeDefined()
+    expect(drawn.every((edge) => edge.from === split!.id || edge.to === split!.id)).toBe(true)
+    expectEndpointsMatchNodes(next)
   })
 })

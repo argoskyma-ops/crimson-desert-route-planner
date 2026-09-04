@@ -88,11 +88,43 @@ function sendJson(res: ServerResponse, status: number, body: unknown): void {
   res.end(JSON.stringify(body))
 }
 
+function headerValue(value: string | string[] | undefined): string | undefined {
+  if (Array.isArray(value)) return value[0]
+  return value
+}
+
+/** `hostname:port` from an Origin URL or a Host header, with default ports filled in. */
+function hostnamePort(urlLike: string): string | null {
+  try {
+    const url = urlLike.includes('://') ? new URL(urlLike) : new URL(`http://${urlLike}`)
+    const port = url.port || (url.protocol === 'https:' ? '443' : '80')
+    return `${url.hostname}:${port}`
+  } catch {
+    return null
+  }
+}
+
+function isAllowedSaveRequest(req: IncomingMessage): boolean {
+  if (headerValue(req.headers['sec-fetch-site']) === 'same-origin') return true
+  const origin = headerValue(req.headers.origin)
+  const host = headerValue(req.headers.host)
+  if (!origin || !host) return false
+  const originHost = hostnamePort(origin)
+  const requestHost = hostnamePort(host)
+  return originHost !== null && originHost === requestHost
+}
+
 async function handleSaveRoads(
   req: IncomingMessage,
   res: ServerResponse,
   root: string,
 ): Promise<void> {
+  if (!isAllowedSaveRequest(req)) {
+    sendJson(res, 403, { ok: false, error: 'forbidden' })
+    req.resume()
+    return
+  }
+
   let raw: Buffer
   try {
     raw = await readRequestBody(req, SAVE_ROADS_MAX_BYTES)
@@ -204,4 +236,5 @@ function dataDir(): Plugin {
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss(), dataDir()],
+  server: { watch: { ignored: ['**/data/**'] } },
 })

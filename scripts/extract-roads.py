@@ -958,6 +958,45 @@ def graph_to_roads(
     return roads, graph
 
 
+def _json_num(value: float) -> float | int:
+    """Round to 1 decimal; emit ints for whole numbers so output matches JSON.stringify."""
+    rounded = round(float(value), 1)
+    as_int = int(rounded)
+    return as_int if rounded == as_int else rounded
+
+
+def dump_roads(roads: dict[str, Any]) -> str:
+    """Diff-friendly JSON: one compact node/edge object per line, coords to 1 decimal."""
+    image_size = roads["imageSize"]
+    nodes = roads["nodes"]
+    edges = roads["edges"]
+    lines = [
+        "{",
+        '  "version": 1,',
+        f'  "imageSize": [{int(image_size[0])}, {int(image_size[1])}],',
+        '  "nodes": [',
+    ]
+    for index, node in enumerate(nodes):
+        obj = {"id": node["id"], "x": _json_num(node["x"]), "y": _json_num(node["y"])}
+        comma = "," if index < len(nodes) - 1 else ""
+        lines.append(f"    {json.dumps(obj, separators=(',', ':'))}{comma}")
+    lines.append("  ],")
+    lines.append('  "edges": [')
+    for index, edge in enumerate(edges):
+        obj = {
+            "id": edge["id"],
+            "from": edge["from"],
+            "to": edge["to"],
+            "class": edge["class"],
+            "points": [[_json_num(x), _json_num(y)] for x, y in edge["points"]],
+        }
+        comma = "," if index < len(edges) - 1 else ""
+        lines.append(f"    {json.dumps(obj, separators=(',', ':'))}{comma}")
+    lines.append("  ]")
+    lines.append("}")
+    return "\n".join(lines) + "\n"
+
+
 def validate_roads(roads: dict[str, Any]) -> None:
     if roads.get("version") != 1:
         raise ValueError("roads.version must be 1")
@@ -1132,7 +1171,7 @@ def main() -> None:
 
     roads, graph = graph_to_roads(graph, mask, args)
     validate_roads(roads)
-    payload = (json.dumps(roads, separators=(",", ":")) + "\n").encode("utf-8")
+    payload = dump_roads(roads).encode("utf-8")
     if len(payload) >= 4 * 1024 * 1024:
         raise ValueError(
             f"roads JSON is {len(payload):,} bytes; increase simplification/pruning "

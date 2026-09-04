@@ -17,7 +17,11 @@ if [[ -f "${OUT_FILE}" ]]; then
   echo "fetch-map.sh: ${OUT_FILE} already exists, skipping download"
 else
   echo "fetch-map.sh: downloading ${SRC_URL}"
-  curl -sL -A "Mozilla/5.0" -o "${OUT_FILE}" "${SRC_URL}"
+  if ! curl -fsSL -A "Mozilla/5.0" -o "${OUT_FILE}" "${SRC_URL}"; then
+    rm -f "${OUT_FILE}"
+    echo "fetch-map.sh: download failed" >&2
+    exit 1
+  fi
 fi
 
 set +e
@@ -34,6 +38,7 @@ set -e
 
 if [[ ${STATUS} -ne 0 ]]; then
   echo "fetch-map.sh: ${OUT_FILE} is not ${EXPECTED_W}x${EXPECTED_H} (got '${DIMENSIONS}')" >&2
+  rm -f "${OUT_FILE}"
   exit 1
 fi
 

@@ -94,10 +94,12 @@ Recorded 2026-09-03 for the MVP build. Change a decision here first, then the co
 ## D7. Speed model (`src/config/travel.ts`, the one tunable file)
 - `METERS_PER_PIXEL = 9500 / 5178` (ASSUMED: Pywel is roughly 9.5 km across per
   secondary sources; unverified).
-- `SPEED_MPS`: horse main 11 / sub 9 / offroad 5.5; foot main 5.5 / sub 5.0 /
-  offroad 3.5. All ASSUMED; no source confirms a paved-road speed bonus. The values
+- `SPEED_MPS`: horse main 11 / sub 9 / offroad 4; foot main 5.5 / sub 5.0 /
+  offroad 2.8. All ASSUMED; no source confirms a paved-road speed bonus. The values
   encode "prefer main roads, then sub roads, cut across country only when it is much
-  shorter", which is the routing behaviour we want. Tune in-game.
+  shorter", which is the routing behaviour we want. Tune in-game. Off-road was
+  dropped from 5.5 / 3.5 (a 2× main/off-road ratio) after review measured that
+  almost no random A–B pair used a road at that ratio.
 
 ## D8. Road editor
 - Custom, plain Leaflet (no leaflet-geoman): the graph shares nodes between edges and a

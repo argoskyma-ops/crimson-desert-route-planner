@@ -17,6 +17,7 @@ from __future__ import annotations
 import json
 import re
 import subprocess
+import tempfile
 import sys
 from pathlib import Path
 
@@ -343,10 +344,7 @@ def run_desktop(page: Page, console_errors: list[str], page_errors: list[str]) -
         still_present = "Saved to data/roads.json" in page.content()
         notice_ok = still_present
         if seen_notice and not still_present:
-            SCRATCH = Path(
-                "/private/tmp/claude-501/-Users-argoskyma-dev-crimson-desert-route-planner/"
-                "89265cbf-969f-4c78-84ce-f64ed990ba23/scratchpad"
-            )
+            SCRATCH = Path(tempfile.gettempdir()) / "cd-route-planner-qa"
             SCRATCH.mkdir(parents=True, exist_ok=True)
             page.screenshot(path=str(SCRATCH / "save-notice-wiped.png"))
             evidence = (
@@ -366,9 +364,10 @@ def run_desktop(page: Page, console_errors: list[str], page_errors: list[str]) -
 
         roads_after = json.loads(ROADS_PATH.read_text())
         edges_after = len(roads_after["edges"])
-        edges_ok = edges_after == edges_before + 1
+        # Interior snaps may split the draft into several spans, so accept >= 1 new edge.
+        edges_ok = edges_after >= edges_before + 1
         report(
-            "5c. data/roads.json edge count +1",
+            "5c. data/roads.json gained at least one edge",
             edges_ok,
             f"before={edges_before}, after={edges_after}",
         )
@@ -382,7 +381,7 @@ def run_desktop(page: Page, console_errors: list[str], page_errors: list[str]) -
         report(
             "5d. Reload loads new edge, no console errors",
             edges_ok,
-            f"file still has +1 edge on disk after reload={edges_ok}",
+            f"file still has the new edge(s) on disk after reload={edges_ok}",
         )
         all_ok &= edges_ok
     except Exception as e:

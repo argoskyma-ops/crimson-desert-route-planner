@@ -1,9 +1,9 @@
 import { describe, expect, it } from 'vitest'
-import { CONNECTOR_MAX, CONNECTOR_RADIUS_PX } from '../config/travel'
+import { CONNECTOR_MAX, CONNECTOR_RADIUS_PX, SPEED_MPS } from '../config/travel'
 import { buildGraph } from './graph'
 import { findRoute } from './route'
 import { snapToRoads } from './snap'
-import type { Pt, RoadEdge, RoadNode, RoadsFile } from './types'
+import type { Mode, Pt, RoadEdge, RoadNode, RoadsFile } from './types'
 
 function roads(nodes: RoadNode[], edges: RoadEdge[]): RoadsFile {
   return { version: 1, imageSize: [5178, 5240], nodes, edges }
@@ -16,6 +16,18 @@ function twoNodeRoad(points: [number, number][], roadClass: RoadEdge['class'] = 
     [{ id: 'a', x: first[0], y: first[1] }, { id: 'b', x: last[0], y: last[1] }],
     [{ id: 'road', from: 'a', to: 'b', class: roadClass, points }],
   )
+}
+
+function breakEvenRatio(mode: Mode): number {
+  return SPEED_MPS[mode].main / SPEED_MPS[mode].offroad
+}
+
+/** Isosceles two-segment road from (0,0) to (`straight`, 0) with the given polyline length. */
+function detourRoad(straight: number, roadLength: number, roadClass: RoadEdge['class'] = 'main'): RoadsFile {
+  const half = straight / 2
+  const halfLen = roadLength / 2
+  const height = Math.sqrt(halfLen * halfLen - half * half)
+  return twoNodeRoad([[0, 0], [half, height], [straight, 0]], roadClass)
 }
 
 describe('buildGraph', () => {
@@ -148,32 +160,39 @@ describe('buildGraph', () => {
 
 describe('findRoute', () => {
   it('follows the road when it is faster', () => {
-    const height = Math.sqrt(5_600)
-    const graph = buildGraph(twoNodeRoad([[0, 0], [50, height], [100, 0]]))
-    const route = findRoute(graph, { x: 0, y: 0 }, { x: 100, y: 0 }, { mode: 'horse' })
+    const straight = 100
+    const breakEven = straight * breakEvenRatio('horse')
+    const graph = buildGraph(detourRoad(straight, 0.8 * breakEven))
+    const route = findRoute(graph, { x: 0, y: 0 }, { x: straight, y: 0 }, { mode: 'horse' })
 
     expect(route.legs.map((leg) => leg.edgeId)).toEqual(['road'])
-    expect(route.totalPx).toBeCloseTo(180)
+    expect(route.totalPx).toBeCloseTo(0.8 * breakEven)
   })
 
   it('uses direct off-road travel when a road detour is too long', () => {
-    const graph = buildGraph(twoNodeRoad([[0, 0], [50, 120], [100, 0]]))
-    const route = findRoute(graph, { x: 0, y: 0 }, { x: 100, y: 0 }, { mode: 'horse' })
+    const straight = 100
+    const breakEven = straight * breakEvenRatio('horse')
+    const graph = buildGraph(detourRoad(straight, 1.3 * breakEven))
+    const route = findRoute(graph, { x: 0, y: 0 }, { x: straight, y: 0 }, { mode: 'horse' })
 
     expect(route.legs).toHaveLength(1)
-    expect(route.legs[0]).toMatchObject({ class: 'offroad', lengthPx: 100 })
+    expect(route.legs[0]).toMatchObject({ class: 'offroad', lengthPx: straight })
     expect(route.legs[0].edgeId).toBeUndefined()
   })
 
   it('can choose a different route for horse and foot modes', () => {
-    const height = Math.sqrt(5_600)
-    const graph = buildGraph(twoNodeRoad([[0, 0], [50, height], [100, 0]]))
-    const horse = findRoute(graph, { x: 0, y: 0 }, { x: 100, y: 0 }, { mode: 'horse' })
-    const foot = findRoute(graph, { x: 0, y: 0 }, { x: 100, y: 0 }, { mode: 'foot' })
+    const horseBreak = breakEvenRatio('horse')
+    const footBreak = breakEvenRatio('foot')
+    expect(footBreak).toBeLessThan(horseBreak)
+    const ratio = (footBreak + horseBreak) / 2
+    const straight = 100
+    const graph = buildGraph(detourRoad(straight, ratio * straight))
+    const horse = findRoute(graph, { x: 0, y: 0 }, { x: straight, y: 0 }, { mode: 'horse' })
+    const foot = findRoute(graph, { x: 0, y: 0 }, { x: straight, y: 0 }, { mode: 'foot' })
 
     expect(horse.legs[0].edgeId).toBe('road')
     expect(foot.legs[0].edgeId).toBeUndefined()
-    expect(foot.totalPx).toBe(100)
+    expect(foot.totalPx).toBe(straight)
   })
 
   it('routes between two projections on the same edge in travel order', () => {
