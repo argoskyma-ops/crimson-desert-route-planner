@@ -197,3 +197,54 @@ Recorded 2026-09-03 for the MVP build. Change a decision here first, then the co
   Empty on a clean route. `RouteSummary` renders them as one amber line ("No
   road route: straight line shown" / "Route crosses water"). Leg output is
   otherwise unchanged.
+
+## D11. Fast-travel overlay
+- **Why:** the planner is A→B road routing (D6). Players also hop the map via
+  discovered teleports. Show those points on the same map so a route can be
+  planned around a hop. Routing-via-teleport is still later.
+- **What is drawn:** Abyss Nexus, Abyss Cresset, Abyss Gate, Bonfire, and
+  named camps, villages, hearths, and map labels on the Continent of Pywel
+  map. Bonfires and hearths default off because there are hundreds / a
+  hundred of them.
+- **Source:** The Hidden Gaming Lair's OpenWorld node dump (same site as D1
+  tiles). `scripts/fetch-fast-travel.py` reads the map page for the Leaflet
+  `transformation` + node file path, pulls
+  `cdn.th.gl/crimson-desert/nodes/OpenWorld.*.raw`, and keeps
+  `abyss_nexus` / `abyss_cresset` / `abyss_gate` / `bonfire` plus named
+  `camp` / `village` / `castle` / `town` / `rest_area` records and the painted
+  map labels. Points within 2000 world units of the origin are Abyss-local
+  leftovers and are dropped.
+- **Coordinates:** th.gl stores in-game world X/Y. Their tilesConfig
+  `transformation` `[a, b, c, d]` is a Leaflet `L.Transformation` at zoom 0
+  (512 px). Canonical pixels (D3, zoom 4) are
+  `x = (a * worldX + b) * 16`, `y = (c * worldY + d) * 16`. The same numbers
+  that map their tiles onto the world map our tiles. Checked against Hernand
+  Castle and Pailune labels on the z4/z5 tiles.
+- **Schema** `data/fast-travel.json` v1 (committed, like `roads.json`):
+  ```json
+  {
+    "version": 1,
+    "imageSize": [8192, 8192],
+    "source": "SOURCE.md",
+    "locations": [{
+      "id": "nexus:-5040.05:-2774.39",
+      "type": "nexus",
+      "name": "Abyss Nexus",
+      "x": 4775.3,
+      "y": 4616.8
+    }]
+  }
+  ```
+  `type` is `nexus | cresset | gate | bonfire | camp | village | place | hearth`.
+  Teleport `name` is th.gl's label when it is a real name; otherwise the type's
+  display name. Camps, villages, hearths, and painted map labels keep th.gl's
+  name and are dropped when that name is an untranslated `@key`. Coordinates
+  are canonical px, one decimal. A 404 or a bad file leaves the overlay empty;
+  routing is unchanged.
+- **UI:** circle markers (nexus blue, cresset gold, gate purple, bonfire
+  orange, camp green, village sky, place cream, hearth peach), tap for the
+  name. Type chips in the control panel show/hide each kind (nexus / cresset /
+  gate / camp / village / place on; bonfire and hearth off). Search matches
+  name or type, ranks places ahead of generic teleports, and filters the
+  markers; picking a hit pans to it and opens the popup. Markers do not place
+  A/B pins and are not route endpoints yet.

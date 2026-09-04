@@ -3,6 +3,7 @@ import ControlPanel from './components/ControlPanel'
 import EditorPanel from './components/EditorPanel'
 import Legend from './components/Legend'
 import MapView from './components/MapView'
+import { loadFastTravel } from './lib/fast-travel-loader'
 import { loadRoads } from './lib/roads-loader'
 import { loadWaterMask } from './lib/water-mask-loader'
 import { useAppStore } from './store'
@@ -10,6 +11,7 @@ import { useAppStore } from './store'
 export default function App() {
   const setRoads = useAppStore((s) => s.setRoads)
   const setWaterMask = useAppStore((s) => s.setWaterMask)
+  const setFastTravel = useAppStore((s) => s.setFastTravel)
   const editorActive = useAppStore((s) => s.editor.active)
   const editorDirty = useAppStore((s) => s.editor.dirty)
   const toggleEditor = useAppStore((s) => s.toggleEditor)
@@ -18,9 +20,18 @@ export default function App() {
     let cancelled = false
     void (async () => {
       // The water mask (D10) loads alongside the graph; it never blocks routing.
-      const [roadsResult, waterResult] = await Promise.allSettled([loadRoads(), loadWaterMask()])
+      const [roadsResult, waterResult, travelResult] = await Promise.allSettled([
+        loadRoads(),
+        loadWaterMask(),
+        loadFastTravel(),
+      ])
       if (cancelled) return
       setWaterMask(waterResult.status === 'fulfilled' ? waterResult.value ?? null : null)
+      if (travelResult.status === 'fulfilled' && travelResult.value) {
+        setFastTravel(travelResult.value.locations)
+      } else if (travelResult.status === 'rejected') {
+        console.warn('Fast-travel overlay unavailable; map will route without it.')
+      }
       if (roadsResult.status === 'fulfilled') {
         setRoads(roadsResult.value)
         return
@@ -31,7 +42,7 @@ export default function App() {
     return () => {
       cancelled = true
     }
-  }, [setRoads, setWaterMask])
+  }, [setRoads, setWaterMask, setFastTravel])
 
   useEffect(() => {
     if (!editorDirty) return

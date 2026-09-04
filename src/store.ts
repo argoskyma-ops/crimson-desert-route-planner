@@ -9,6 +9,8 @@ import {
   setEdgeClass,
   type DraftPoint,
 } from './editor/graph-edit'
+import { FAST_TRAVEL_TYPES_DEFAULT, type FastTravelType } from './config/travel'
+import type { FastTravelLocation } from './lib/fast-travel-loader'
 import type { MapManifest } from './lib/map-manifest'
 import { emptyRoads } from './lib/roads-loader'
 import { buildGraph, findRoute, type RoadGraph } from './routing'
@@ -93,6 +95,10 @@ interface AppState {
   roadsError: string | null
   route: Route | null
   showRoads: boolean
+  fastTravel: FastTravelLocation[]
+  fastTravelTypes: Record<FastTravelType, boolean>
+  fastTravelQuery: string
+  focusedFastTravelId: string | null
   manifest: MapManifest | null
   /** D10 land/water raster; null when `data/water-mask.png` is missing. */
   water: WaterMask | null
@@ -105,6 +111,10 @@ interface AppState {
   setWaterMask: (water: WaterMask | null) => void
   setRoute: (route: Route | null) => void
   toggleShowRoads: () => void
+  setFastTravel: (locations: FastTravelLocation[]) => void
+  toggleFastTravelType: (type: FastTravelType) => void
+  setFastTravelQuery: (query: string) => void
+  focusFastTravel: (id: string | null) => void
   setManifest: (manifest: MapManifest | null) => void
   setEditor: (partial: Partial<EditorState>) => void
   startDraft: () => void
@@ -137,6 +147,10 @@ export const useAppStore = create<AppState>((set) => ({
   roadsError: null,
   route: null,
   showRoads: false,
+  fastTravel: [],
+  fastTravelTypes: { ...FAST_TRAVEL_TYPES_DEFAULT },
+  fastTravelQuery: '',
+  focusedFastTravelId: null,
   manifest: null,
   water: null,
   editor: initialEditor,
@@ -186,6 +200,26 @@ export const useAppStore = create<AppState>((set) => ({
     set((s) => {
       if (s.editor.active) return { showRoads: true }
       return { showRoads: !s.showRoads }
+    }),
+  setFastTravel: (locations) => set({ fastTravel: locations }),
+  toggleFastTravelType: (type) =>
+    set((s) => ({
+      fastTravelTypes: { ...s.fastTravelTypes, [type]: !s.fastTravelTypes[type] },
+    })),
+  setFastTravelQuery: (query) => set({ fastTravelQuery: query }),
+  focusFastTravel: (id) =>
+    set((s) => {
+      if (id === null) return { focusedFastTravelId: null }
+      const loc = s.fastTravel.find((item) => item.id === id)
+      if (!loc) return { focusedFastTravelId: null }
+      // Bonfires and hearths are dense; keep the one hit without turning the set on.
+      const enableType = loc.type !== 'bonfire' && loc.type !== 'hearth'
+      return {
+        focusedFastTravelId: id,
+        fastTravelTypes: enableType
+          ? { ...s.fastTravelTypes, [loc.type]: true }
+          : s.fastTravelTypes,
+      }
     }),
   setManifest: (manifest) => set({ manifest }),
   setEditor: (partial) => set((s) => ({ editor: { ...s.editor, ...partial } })),

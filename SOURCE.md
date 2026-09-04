@@ -16,6 +16,16 @@ except the road graph and water mask this repo commits. Whether to host this app
 publicly (and so serve the tiles) is the maintainer's call, not assumed here; this
 repo offers no hosted demo.
 
+## Fast-travel nodes (D11)
+- **Nodes:** `https://cdn.th.gl/crimson-desert/nodes/OpenWorld.<hash>.raw`
+  (hash is on the Continent of Pywel map page as `nodesPaths.OpenWorld`).
+- **Transform:** the page's `tilesConfig.OpenWorld.transformation`, a Leaflet
+  `L.Transformation` that places those world X/Y onto this same tile pyramid.
+- **Fetch:** `.venv/bin/python scripts/fetch-fast-travel.py` writes
+  `data/fast-travel.json` (committed): teleports plus named camps, villages,
+  hearths and map labels. Personal, local use; same stance as the tiles — do
+  not treat the dump as redistributable game data.
+
 ## Re-create `data/map/` from scratch
 ```
 .venv/bin/python scripts/fetch-tiles.py

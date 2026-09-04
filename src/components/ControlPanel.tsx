@@ -1,6 +1,7 @@
 import { MODE_LABELS } from '../config/travel'
 import { MODES } from '../routing/types'
 import { useAppStore } from '../store'
+import FastTravelSearch from './FastTravelSearch'
 import RouteSummary from './RouteSummary'
 
 export default function ControlPanel() {
@@ -42,6 +43,8 @@ export default function ControlPanel() {
           )
         })}
       </div>
+
+      <FastTravelSearch />
 
       <button
         type="button"

@@ -1,6 +1,7 @@
 import L from 'leaflet'
 import { useEffect, useRef, useState } from 'react'
-import { BRIDGE_COLOR, CLASS_COLORS } from '../config/travel'
+import { BRIDGE_COLOR, CLASS_COLORS, FAST_TRAVEL_COLORS, FAST_TRAVEL_LABELS } from '../config/travel'
+import { filterFastTravel } from '../lib/fast-travel-loader'
 import { attachEditorLayer } from '../editor/editor-layer'
 import { fromLatLng, makePixelCrs, toLatLng } from '../lib/coords'
 import { loadMapManifest, tileUrlTemplate } from '../lib/map-manifest'
@@ -10,6 +11,14 @@ import { mapRef, useAppStore } from '../store'
 
 const MISSING_TILES_MESSAGE =
   'Map tiles not found. Run .venv/bin/python scripts/fetch-tiles.py'
+
+function escapeHtml(text: string): string {
+  return text
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+}
 
 function clampToImage(pt: Pt, width: number, height: number): Pt {
   return {
@@ -48,6 +57,7 @@ export default function MapView() {
   })
   const routeLayerRef = useRef<L.LayerGroup | null>(null)
   const roadsLayerRef = useRef<L.LayerGroup | null>(null)
+  const fastTravelLayerRef = useRef<L.LayerGroup | null>(null)
   const rendererRef = useRef<L.Renderer | null>(null)
   const setManifest = useAppStore((s) => s.setManifest)
   const pinA = useAppStore((s) => s.pins.a)
@@ -55,6 +65,10 @@ export default function MapView() {
   const route = useAppStore((s) => s.route)
   const roads = useAppStore((s) => s.roads)
   const showRoads = useAppStore((s) => s.showRoads)
+  const fastTravel = useAppStore((s) => s.fastTravel)
+  const fastTravelTypes = useAppStore((s) => s.fastTravelTypes)
+  const fastTravelQuery = useAppStore((s) => s.fastTravelQuery)
+  const focusedFastTravelId = useAppStore((s) => s.focusedFastTravelId)
   const editorActive = useAppStore((s) => s.editor.active)
   const [missing, setMissing] = useState(false)
   const [mapReady, setMapReady] = useState(false)
@@ -110,7 +124,11 @@ export default function MapView() {
       }).addTo(map)
 
       rendererRef.current = map.getRenderer(L.polyline([[0, 0], [1, 0]]))
+      map.createPane('fastTravel')
+      const fastTravelPane = map.getPane('fastTravel')
+      if (fastTravelPane) fastTravelPane.style.zIndex = '450'
       roadsLayerRef.current = L.layerGroup().addTo(map)
+      fastTravelLayerRef.current = L.layerGroup().addTo(map)
       routeLayerRef.current = L.layerGroup().addTo(map)
 
       map.on('click', (e: L.LeafletMouseEvent) => {
@@ -131,6 +149,7 @@ export default function MapView() {
       markersRef.current = { a: null, b: null }
       routeLayerRef.current = null
       roadsLayerRef.current = null
+      fastTravelLayerRef.current = null
       rendererRef.current = null
       mapRef.current = null
       map?.remove()
@@ -230,6 +249,38 @@ export default function MapView() {
       }).addTo(group)
     }
   }, [mapReady, roads, showRoads, editorActive])
+
+  useEffect(() => {
+    if (!mapReady) return
+    const group = fastTravelLayerRef.current
+    if (!group) return
+    group.clearLayers()
+    const visible = filterFastTravel(fastTravel, fastTravelTypes, fastTravelQuery)
+    const focusedLoc = focusedFastTravelId
+      ? fastTravel.find((loc) => loc.id === focusedFastTravelId)
+      : undefined
+    if (focusedLoc && !visible.some((loc) => loc.id === focusedLoc.id)) {
+      visible.push(focusedLoc)
+    }
+    let focused: L.CircleMarker | null = null
+    for (const loc of visible) {
+      const isFocused = loc.id === focusedFastTravelId
+      const marker = L.circleMarker(toLatLng(loc), {
+        radius: isFocused ? 9 : loc.type === 'bonfire' || loc.type === 'hearth' ? 4 : 6,
+        color: '#ffffff',
+        weight: isFocused ? 2.5 : 1.5,
+        fillColor: FAST_TRAVEL_COLORS[loc.type],
+        fillOpacity: 0.95,
+        pane: 'fastTravel',
+      })
+        .bindPopup(
+          `<strong>${escapeHtml(loc.name)}</strong><br>${escapeHtml(FAST_TRAVEL_LABELS[loc.type])}`,
+        )
+        .addTo(group)
+      if (isFocused) focused = marker
+    }
+    focused?.openPopup()
+  }, [mapReady, fastTravel, fastTravelTypes, fastTravelQuery, focusedFastTravelId])
 
   useEffect(() => {
     if (!mapReady || !editorActive) return

@@ -57,6 +57,71 @@ export const CLASS_COLORS: Record<RoadClass, string> = {
   offroad: '#9ca3af',
 }
 
+/** Overlay + search index (D11). Hearths default off — there are a hundred. */
+export const FAST_TRAVEL_TYPES = [
+  'nexus',
+  'cresset',
+  'gate',
+  'bonfire',
+  'camp',
+  'village',
+  'place',
+  'hearth',
+] as const
+export type FastTravelType = (typeof FAST_TRAVEL_TYPES)[number]
+export const FAST_TRAVEL_LABELS: Record<FastTravelType, string> = {
+  nexus: 'Abyss Nexus',
+  cresset: 'Abyss Cresset',
+  gate: 'Abyss Gate',
+  bonfire: 'Bonfire',
+  camp: 'Camp',
+  village: 'Village',
+  place: 'Place',
+  hearth: 'Hearth',
+}
+export const FAST_TRAVEL_SHORT_LABELS: Record<FastTravelType, string> = {
+  nexus: 'Nexus',
+  cresset: 'Cresset',
+  gate: 'Gate',
+  bonfire: 'Bonfire',
+  camp: 'Camp',
+  village: 'Village',
+  place: 'Place',
+  hearth: 'Hearth',
+}
+export const FAST_TRAVEL_COLORS: Record<FastTravelType, string> = {
+  nexus: '#3b82f6',
+  cresset: '#eab308',
+  gate: '#a855f7',
+  bonfire: '#f97316',
+  camp: '#4ade80',
+  village: '#38bdf8',
+  place: '#f5d0a0',
+  hearth: '#fdba74',
+}
+/** Bonfires and hearths default off — there are hundreds / a hundred. */
+export const FAST_TRAVEL_TYPES_DEFAULT: Record<FastTravelType, boolean> = {
+  nexus: true,
+  cresset: true,
+  gate: true,
+  bonfire: false,
+  camp: true,
+  village: true,
+  place: true,
+  hearth: false,
+}
+/** Search ranks named places above generic teleports. */
+export const FAST_TRAVEL_SEARCH_RANK: Record<FastTravelType, number> = {
+  place: 0,
+  village: 1,
+  camp: 2,
+  hearth: 3,
+  nexus: 4,
+  cresset: 5,
+  gate: 6,
+  bonfire: 7,
+}
+
 export function secondsFor(lengthPx: number, mode: Mode, cls: RoadClass): number {
   return (lengthPx * METERS_PER_PIXEL) / SPEED_MPS[mode][cls]
 }

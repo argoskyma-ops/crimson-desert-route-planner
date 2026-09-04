@@ -26,8 +26,8 @@ Open http://localhost:5173. `scripts/fetch-tiles.py` downloads the map tile
 pyramid (5461 WebP tiles, about 24 MB, see `SOURCE.md`) into `data/map/tiles/`
 and writes `data/map/manifest.json`; re-running skips tiles that are already
 there. Pass `--max-zoom 4` for a quicker, lower-detail download. `data/map/` is
-gitignored; `data/roads.json` (the road graph) and `data/water-mask.png` are
-committed.
+gitignored; `data/roads.json` (the road graph), `data/fast-travel.json` (teleport
+points) and `data/water-mask.png` are committed.
 
 If the tiles are missing, the app tells you to run that script.
 
@@ -38,7 +38,11 @@ If the tiles are missing, the app tells you to run that script.
 3. **Horse** / **On foot** changes speeds (and sometimes the chosen path).
 4. Route colours: main roads orange, sub roads yellow, off-road hops dashed grey.
 5. **Show roads** draws the whole graph faintly under the route.
-6. The summary shows km and an ETA. Speeds and the metres-per-pixel scale are
+6. **Search** for a camp, village, place or teleport. Type chips show or hide
+   each kind (Nexus / Cresset / Gate / Camp / Village / Place start on;
+   Bonfire and Hearth start off). Pick a hit to pan to it. Tap a marker for
+   its name.
+7. The summary shows km and an ETA. Speeds and the metres-per-pixel scale are
    assumptions in `src/config/travel.ts`; they have not been calibrated in-game.
 
 The router knows where the water is (`data/water-mask.png`, see D10 in
@@ -113,7 +117,7 @@ dead ends ringed, water outlined) into `data/map/review/` for a visual sweep;
 npm run typecheck
 npm run lint
 npm test
-npm run build      # static dist/ including dist/data/ (tiles, roads.json, water-mask.png)
+npm run build      # static dist/ including dist/data/ (tiles, roads.json, fast-travel.json, water-mask.png)
 ```
 
 End-to-end smoke test. It needs Playwright and its Chromium in `.venv` (not
@@ -136,11 +140,12 @@ npm run dev -- --port 5173 --strictPort   # in another terminal
   licence. `scripts/fetch-tiles.py` downloads them to your machine; they are
   never committed or redistributed by this project, and no licence to them is
   granted here. See `SOURCE.md` for the exact URL and fetch details.
-- **The committed road graph and water mask** (`data/roads.json`,
-  `data/water-mask.png`, `data/legacy/roads-powerpyx.json`) are derived from
-  fan-hosted renders of the in-game map. They are provided for personal use
-  with no claim over the underlying map. The retired PowerPyx source they
-  partly come from stays credited in `SOURCE.md`.
+- **The committed road graph, water mask and fast-travel points**
+  (`data/roads.json`, `data/water-mask.png`, `data/fast-travel.json`,
+  `data/legacy/roads-powerpyx.json`) are derived from fan-hosted renders and
+  node dumps of the in-game map. They are provided for personal use with no
+  claim over the underlying map. The retired PowerPyx source they partly come
+  from stays credited in `SOURCE.md`.
 - Crimson Desert is a trademark of Pearl Abyss. This project is not affiliated
   with or endorsed by Pearl Abyss.
 
@@ -157,13 +162,13 @@ the code. Open questions and follow-ups are in `docs/NOTES.md`.
 
 ```
 src/
-  components/   MapView, ControlPanel, EditorPanel, Legend, RouteSummary
+  components/   MapView, ControlPanel, FastTravelSearch, EditorPanel, Legend, RouteSummary
   editor/       graph-edit + Leaflet draw/select overlay
   routing/      A* over the road graph, water mask
   lib/          CRS, roads + water-mask load/save, pin icons
   config/       travel.ts (speeds and colours)
-scripts/        fetch-tiles.py, extract-roads.py, review-tiles.py, tiles.py
-data/           roads.json + water-mask.png (committed); legacy/; map/ (gitignored)
+scripts/        fetch-tiles.py, fetch-fast-travel.py, extract-roads.py, review-tiles.py, tiles.py
+data/           roads.json + fast-travel.json + water-mask.png (committed); legacy/; map/ (gitignored)
 docs/           DECISIONS.md, NOTES.md, screenshots/, build-time working docs
 tests/          unit/ (roads.json + water-mask checks), e2e/smoke.py (Playwright)
 ```

@@ -28,7 +28,9 @@ change a decision there first, then the code.
 
 ## Ideas for later
 
-- Fast-travel nodes
+- Fast-travel overlay (D11): markers, type filters, search, bonfires, and
+  named camps/villages/places are in. Still to do: using a teleport as a
+  route hop.
 - Multi-stop routes
 - Land-grid off-road pathing on foot
 - Done: water-aware off-road legs (D10), higher-resolution map source (D1)

@@ -218,6 +218,7 @@ function dataDir(): Plugin {
       if (command !== 'build') return
       const copies: [string, string][] = [
         [join(root, 'data', 'roads.json'), join(outDir, 'data', 'roads.json')],
+        [join(root, 'data', 'fast-travel.json'), join(outDir, 'data', 'fast-travel.json')],
         [join(root, 'data', 'water-mask.png'), join(outDir, 'data', 'water-mask.png')],
         [
           join(root, 'data', 'map', 'manifest.json'),

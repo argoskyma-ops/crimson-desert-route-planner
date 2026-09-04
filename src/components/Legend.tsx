@@ -1,10 +1,17 @@
-import { CLASS_COLORS, CLASS_LABELS } from '../config/travel'
+import {
+  CLASS_COLORS,
+  CLASS_LABELS,
+  FAST_TRAVEL_COLORS,
+  FAST_TRAVEL_LABELS,
+  FAST_TRAVEL_TYPES,
+} from '../config/travel'
 import { ROAD_CLASSES } from '../routing/types'
 import { useAppStore } from '../store'
 
 export default function Legend() {
   const showRoads = useAppStore((s) => s.showRoads)
   const toggleShowRoads = useAppStore((s) => s.toggleShowRoads)
+  const fastTravelTypes = useAppStore((s) => s.fastTravelTypes)
 
   return (
     <div
@@ -12,6 +19,16 @@ export default function Legend() {
       aria-label="Map legend"
     >
       <ul className="space-y-1">
+        {FAST_TRAVEL_TYPES.filter((type) => fastTravelTypes[type]).map((type) => (
+          <li key={type} className="flex items-center gap-2 text-xs text-neutral-200">
+            <span
+              className="inline-block h-2.5 w-2.5 shrink-0 rounded-full"
+              style={{ backgroundColor: FAST_TRAVEL_COLORS[type] }}
+              aria-hidden
+            />
+            {FAST_TRAVEL_LABELS[type]}
+          </li>
+        ))}
         {ROAD_CLASSES.map((cls) => (
           <li key={cls} className="flex items-center gap-2 text-xs text-neutral-200">
             <span
