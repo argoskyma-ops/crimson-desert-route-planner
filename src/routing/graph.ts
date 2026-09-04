@@ -1,4 +1,5 @@
-import { cumulativePolylineLengths } from './geometry'
+import { CONNECTOR_MAX, CONNECTOR_RADIUS_PX } from '../config/travel'
+import { cumulativePolylineLengths, dist } from './geometry'
 import { SegmentSpatialIndex } from './spatial-index'
 import type { SpatialSegment } from './spatial-index'
 import type { Pt, RoadClass, RoadNode, RoadsFile } from './types'
@@ -15,7 +16,8 @@ export interface GraphEdge {
 }
 
 export interface GraphArc {
-  edgeId: string
+  /** Absent for graph-only dead-end connectors. */
+  edgeId?: string
   toNodeId: string
   fromOffset: number
   toOffset: number
@@ -26,10 +28,17 @@ export interface RoadGraph {
   readonly nodeById: ReadonlyMap<string, RoadNode>
   readonly edgeById: ReadonlyMap<string, GraphEdge>
   readonly adjacency: ReadonlyMap<string, readonly GraphArc[]>
+  /** Undirected dead-end connector pairs; graph-only, not written back to `roads`. */
+  readonly connectorCount: number
   edgesNear(point: Pt, radius: number): SpatialSegment[]
 }
 
-export function buildGraph(roads: RoadsFile): RoadGraph {
+export interface BuildGraphOptions {
+  /** When false, skip D6 dead-end connectors. Default true. */
+  connectors?: boolean
+}
+
+export function buildGraph(roads: RoadsFile, options: BuildGraphOptions = {}): RoadGraph {
   const nodeById = new Map<string, RoadNode>()
   for (const node of roads.nodes) {
     if (nodeById.has(node.id)) throw new Error(`Duplicate road node id: "${node.id}"`)
@@ -84,11 +93,105 @@ export function buildGraph(roads: RoadsFile): RoadGraph {
   }
 
   const spatialIndex = new SegmentSpatialIndex(spatialSegments)
+  const connectorCount = options.connectors === false
+    ? 0
+    : addDeadEndConnectors(roads.nodes, adjacency)
   return {
     roads,
     nodeById,
     edgeById,
     adjacency,
+    connectorCount,
     edgesNear: (point, radius) => spatialIndex.segmentsNear(point, radius),
+  }
+}
+
+function addDeadEndConnectors(
+  nodes: readonly RoadNode[],
+  adjacency: Map<string, GraphArc[]>,
+): number {
+  const sources = nodes.filter((node) => (adjacency.get(node.id)?.length ?? 0) === 1)
+  if (sources.length === 0) return 0
+
+  const components = new UnionFind(nodes.map((node) => node.id))
+  for (const [fromId, arcs] of adjacency) {
+    for (const arc of arcs) components.union(fromId, arc.toNodeId)
+  }
+
+  let connectorCount = 0
+  for (const node of sources) {
+    const adjacent = new Set<string>()
+    for (const arc of adjacency.get(node.id) ?? []) {
+      if (arc.edgeId !== undefined) adjacent.add(arc.toNodeId)
+    }
+
+    const fromRoot = components.find(node.id)
+    const candidates: { id: string; distance: number; otherComponent: boolean }[] = []
+    for (const other of nodes) {
+      if (other.id === node.id || adjacent.has(other.id)) continue
+      const distance = dist(node, other)
+      if (distance > CONNECTOR_RADIUS_PX) continue
+      candidates.push({
+        id: other.id,
+        distance,
+        otherComponent: components.find(other.id) !== fromRoot,
+      })
+    }
+
+    candidates.sort((left, right) => {
+      if (left.otherComponent !== right.otherComponent) return left.otherComponent ? -1 : 1
+      if (left.distance !== right.distance) return left.distance - right.distance
+      return left.id.localeCompare(right.id)
+    })
+
+    for (const candidate of candidates.slice(0, CONNECTOR_MAX)) {
+      if (hasConnector(adjacency, node.id, candidate.id)) continue
+      adjacency.get(node.id)?.push(connectorArc(candidate.id))
+      adjacency.get(candidate.id)?.push(connectorArc(node.id))
+      connectorCount += 1
+    }
+  }
+  return connectorCount
+}
+
+function connectorArc(toNodeId: string): GraphArc {
+  return { toNodeId, fromOffset: 0, toOffset: 0 }
+}
+
+function hasConnector(
+  adjacency: ReadonlyMap<string, readonly GraphArc[]>,
+  fromId: string,
+  toId: string,
+): boolean {
+  return (adjacency.get(fromId) ?? []).some((arc) => arc.toNodeId === toId && arc.edgeId === undefined)
+}
+
+class UnionFind {
+  private readonly parent = new Map<string, string>()
+
+  constructor(ids: readonly string[]) {
+    for (const id of ids) this.parent.set(id, id)
+  }
+
+  find(id: string): string {
+    let current = id
+    while (this.parent.get(current) !== current) {
+      const next = this.parent.get(current)
+      if (next === undefined) return current
+      current = next
+    }
+    let walk = id
+    while (walk !== current) {
+      const next = this.parent.get(walk) ?? walk
+      this.parent.set(walk, current)
+      walk = next
+    }
+    return current
+  }
+
+  union(a: string, b: string): void {
+    const left = this.find(a)
+    const right = this.find(b)
+    if (left !== right) this.parent.set(left, right)
   }
 }
