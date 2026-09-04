@@ -8,7 +8,7 @@ export default function Legend() {
 
   return (
     <div
-      className="pointer-events-auto absolute bottom-3 left-3 z-[1100] rounded-xl border border-white/10 bg-neutral-950/80 px-3 py-2 text-neutral-100 shadow-lg backdrop-blur-md"
+      className="pointer-events-auto absolute bottom-3 left-3 z-[1100] rounded-xl border border-white/10 bg-neutral-950/80 px-3 pt-2 pb-[calc(0.5rem+env(safe-area-inset-bottom))] text-neutral-100 shadow-lg backdrop-blur-md"
       aria-label="Map legend"
     >
       <ul className="space-y-1">

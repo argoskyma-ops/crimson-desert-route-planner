@@ -13,7 +13,8 @@ export const EDGE_SNAP_CSS_PX = 10
 
 const VERTEX_RADIUS = 4
 const SNAP_RADIUS = 8
-const NODE_HANDLE_PX = 22
+const NODE_HANDLE_HIT_PX = 44
+const NODE_HANDLE_DOT_PX = 14
 const INTERIOR_VERTEX_RADIUS = 3
 
 function cssPixelsPerImagePixel(map: L.Map): number {
@@ -173,9 +174,9 @@ export function attachEditorLayer(map: L.Map): () => void {
               zIndexOffset: 1200,
               icon: L.divIcon({
                 className: '',
-                iconSize: [NODE_HANDLE_PX, NODE_HANDLE_PX],
-                iconAnchor: [NODE_HANDLE_PX / 2, NODE_HANDLE_PX / 2],
-                html: `<div style="width:${NODE_HANDLE_PX}px;height:${NODE_HANDLE_PX}px;box-sizing:border-box;border-radius:9999px;border:2px solid #fff;background:#fbbf24"></div>`,
+                iconSize: [NODE_HANDLE_HIT_PX, NODE_HANDLE_HIT_PX],
+                iconAnchor: [22, 22],
+                html: `<div style="width:${NODE_HANDLE_HIT_PX}px;height:${NODE_HANDLE_HIT_PX}px;display:flex;align-items:center;justify-content:center;background:transparent"><div style="width:${NODE_HANDLE_DOT_PX}px;height:${NODE_HANDLE_DOT_PX}px;box-sizing:border-box;border-radius:9999px;border:2px solid #fff;background:#fbbf24"></div></div>`,
               }),
             })
             marker.on('click', (ev) => {

@@ -82,10 +82,13 @@ export default function EditorPanel() {
 
   async function onSave() {
     setIoError(null)
+    const snapshot = roads
     const payload = roadsPayload()
     const ok = await saveRoadsDev(payload)
     if (ok) {
-      setEditor({ dirty: false })
+      if (useAppStore.getState().roads === snapshot) {
+        setEditor({ dirty: false })
+      }
       setNotice('Saved to data/roads.json')
       return
     }
@@ -104,7 +107,7 @@ export default function EditorPanel() {
     try {
       const next = await readRoadsFile(file)
       setRoads(next)
-      setEditor({ dirty: true })
+      setEditor({ dirty: true, selectedEdgeId: null, draftPoints: [] })
       setIoError(null)
     } catch (err) {
       setIoError(err instanceof Error ? err.message : 'Invalid roads.json')
