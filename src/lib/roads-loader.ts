@@ -133,13 +133,15 @@ function parseEdge(value: unknown, index: number, nodeIds: ReadonlySet<string>):
   if (!nodeIds.has(raw.to)) {
     throw new Error(`roads.json: edge "${id}" references missing to node "${raw.to}"`)
   }
-  return {
+  const edge: RoadEdge = {
     id: raw.id,
     from: raw.from,
     to: raw.to,
     class: raw.class,
     points: parsePoints(raw.points, id),
   }
+  if (raw.bridge === true) edge.bridge = true
+  return edge
 }
 
 function parsePoints(value: unknown, edgeId: string): [number, number][] {

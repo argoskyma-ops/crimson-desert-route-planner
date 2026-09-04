@@ -18,6 +18,7 @@ export function serializeRoads(roads: RoadsFile): string {
     to: edge.to,
     class: edge.class,
     points: edge.points.map(([x, y]) => [round1(x), round1(y)] as [number, number]),
+    ...(edge.bridge ? { bridge: true } : {}),
   }))
   const lines: string[] = [
     '{',
