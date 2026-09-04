@@ -145,10 +145,11 @@ Recorded 2026-09-03 for the MVP build. Change a decision here first, then the co
 - Editor mode disables pin placement; pins and route stay visible.
 
 ## D9. Process
-- GSD pipeline skipped for this run; `docs/PLAN.md` is the task list, `STATE.md` the
-  checkpoint. Cursor/Grok writes the app, Codex writes routing + extraction and
-  reviews Grok's diffs, Claude subagents (cap 5) do research, tiles, whole-repo
-  review, QA, and one reserved debug. Every task ends with typecheck + lint + build
+- GSD pipeline skipped for this run; `docs/PLAN.md` was the task list and a root
+  `STATE.md` the checkpoint (retired when the repo went public; its follow-ups live
+  in `docs/NOTES.md`). Cursor/Grok wrote the app, Codex wrote routing + extraction
+  and reviewed Grok's diffs, Claude subagents (cap 5) did research, tiles, whole-repo
+  review, QA, and one reserved debug. Every task ended with typecheck + lint + build
   green and one commit.
 
 ## D10. Water mask and horse-follows-roads

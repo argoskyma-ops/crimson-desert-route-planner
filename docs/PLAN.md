@@ -2,7 +2,8 @@
 
 MVP task list. Each task is sized for one external-coder call (Cursor/Grok or Codex),
 owns an explicit set of files, and has an acceptance check. Read docs/DECISIONS.md
-first; it is the contract. Status is tracked in STATE.md.
+first; it is the contract. Status was tracked in a root STATE.md, since folded into
+docs/NOTES.md.
 
 Global acceptance for every task: `npm run typecheck`, `npm run lint`, `npm run build`
 (and `npm test` where tests exist) are clean; only the listed files change; one commit.
