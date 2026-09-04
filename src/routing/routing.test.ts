@@ -12,19 +12,30 @@ function roads(nodes: RoadNode[], edges: RoadEdge[]): RoadsFile {
 
 /**
  * Half-resolution mask over a 1024 x 1024 image area whose water is the vertical
- * band `bandStart <= x < bandEnd` in image pixels.
+ * band `bandStart <= x < bandEnd` in image pixels. `dryAbove` leaves the band dry
+ * for `y < dryAbove`, which stands in for a bridge.
  */
-function riverMask(bandStart: number, bandEnd: number, scale = 0.5): WaterMask {
+function riverMask(bandStart: number, bandEnd: number, dryAbove = 0, scale = 0.5): WaterMask {
   const width = Math.ceil(1_024 * scale)
   const height = width
   const data = new Uint8Array(width * height)
   for (let maskY = 0; maskY < height; maskY += 1) {
+    const imageY = maskY / scale
+    if (imageY < dryAbove) continue
     for (let maskX = 0; maskX < width; maskX += 1) {
       const imageX = maskX / scale
       if (imageX >= bandStart && imageX < bandEnd) data[maskY * width + maskX] = 1
     }
   }
   return new WaterMask({ width, height, scale, data })
+}
+
+/** A single main road along y = 0 from x = 100 to x = 300, i.e. the bridge. */
+function bridgeRoad(): RoadsFile {
+  return roads(
+    [{ id: 'r1', x: 100, y: 0 }, { id: 'r2', x: 300, y: 0 }],
+    [{ id: 'bridge', from: 'r1', to: 'r2', class: 'main', points: [[100, 0], [300, 0]] }],
+  )
 }
 
 function twoNodeRoad(points: [number, number][], roadClass: RoadEdge['class'] = 'main'): RoadsFile {
@@ -253,15 +264,27 @@ describe('findRoute', () => {
     expect(route.totalPx).toBeCloseTo(0.8 * breakEven)
   })
 
-  it('uses direct off-road travel when a road detour is too long', () => {
+  it('uses direct off-road travel on foot when a road detour is too long', () => {
+    const straight = 100
+    const breakEven = straight * breakEvenRatio('foot')
+    const graph = buildGraph(detourRoad(straight, 1.3 * breakEven))
+    const route = findRoute(graph, { x: 0, y: 0 }, { x: straight, y: 0 }, { mode: 'foot' })
+
+    expect(route.legs).toHaveLength(1)
+    expect(route.legs[0]).toMatchObject({ class: 'offroad', lengthPx: straight })
+    expect(route.legs[0].edgeId).toBeUndefined()
+    expect(route.warnings).toEqual([])
+  })
+
+  it('keeps a horse on the road even when the detour is long (D10)', () => {
     const straight = 100
     const breakEven = straight * breakEvenRatio('horse')
     const graph = buildGraph(detourRoad(straight, 1.3 * breakEven))
     const route = findRoute(graph, { x: 0, y: 0 }, { x: straight, y: 0 }, { mode: 'horse' })
 
-    expect(route.legs).toHaveLength(1)
-    expect(route.legs[0]).toMatchObject({ class: 'offroad', lengthPx: straight })
-    expect(route.legs[0].edgeId).toBeUndefined()
+    expect(route.legs.map((leg) => leg.edgeId)).toEqual(['road'])
+    expect(route.totalPx).toBeCloseTo(1.3 * breakEven)
+    expect(route.warnings).toEqual([])
   })
 
   it('can choose a different route for horse and foot modes', () => {
@@ -324,6 +347,69 @@ describe('findRoute', () => {
     expect(direct.totalPx).toBe(5)
     expect(direct.legs).toHaveLength(1)
     expect(zero).toMatchObject({ mode: 'foot', legs: [], totalPx: 0, totalSeconds: 0 })
+  })
+})
+
+describe('findRoute over water (D10)', () => {
+  const river = () => riverMask(180, 220, 40)
+  const a: Pt = { x: 100, y: 100 }
+  const b: Pt = { x: 300, y: 100 }
+
+  it('sends a walker to the bridge instead of straight across the river', () => {
+    const water = river()
+    expect(water.crosses(a, b)).toBe(true)
+    expect(water.isWater(a)).toBe(false)
+    expect(water.isWater(b)).toBe(false)
+
+    const dry = findRoute(buildGraph(bridgeRoad()), a, b, { mode: 'foot' })
+    expect(dry.legs).toHaveLength(1)
+    expect(dry.legs[0]).toMatchObject({ class: 'offroad', lengthPx: 200 })
+
+    const wet = findRoute(buildGraph(bridgeRoad(), { water }), a, b, { mode: 'foot' })
+    expect(wet.legs.map((leg) => ({ class: leg.class, edgeId: leg.edgeId }))).toEqual([
+      { class: 'offroad', edgeId: undefined },
+      { class: 'main', edgeId: 'bridge' },
+      { class: 'offroad', edgeId: undefined },
+    ])
+    expect(wet.warnings).toEqual([])
+  })
+
+  it('never gives a horse a direct off-road leg when a road path exists', () => {
+    const route = findRoute(buildGraph(bridgeRoad(), { water: river() }), a, b, { mode: 'horse' })
+
+    expect(route.legs.map((leg) => leg.edgeId)).toEqual([undefined, 'bridge', undefined])
+    expect(route.legs[0].points).toEqual([a, { x: 100, y: 0 }])
+    expect(route.legs.at(-1)?.points).toEqual([{ x: 300, y: 0 }, b])
+    expect(route.warnings).toEqual([])
+  })
+
+  it('falls back to a straight line with warnings when a horse has no road path', () => {
+    const water = river()
+    const graph = buildGraph(roads([], []), { water })
+    const route = findRoute(graph, a, b, { mode: 'horse' })
+
+    expect(route.legs).toHaveLength(1)
+    expect(route.legs[0]).toMatchObject({ class: 'offroad', lengthPx: 200 })
+    expect(route.warnings).toEqual(['straight-line-fallback', 'crosses-water'])
+  })
+
+  it('warns without crossing water when the fallback stays on land', () => {
+    const graph = buildGraph(roads([], []), { water: river() })
+    const route = findRoute(graph, { x: 0, y: 100 }, { x: 150, y: 100 }, { mode: 'horse' })
+
+    expect(route.warnings).toEqual(['straight-line-fallback'])
+  })
+
+  it('lets a pin dropped on water reach the road anyway', () => {
+    const water = river()
+    const inWater: Pt = { x: 200, y: 100 }
+    expect(water.isWater(inWater)).toBe(true)
+
+    const route = findRoute(buildGraph(bridgeRoad(), { water }), inWater, b, { mode: 'horse' })
+
+    expect(route.legs.map((leg) => leg.edgeId)).toEqual([undefined, 'bridge', undefined])
+    expect(route.legs[0].points).toEqual([inWater, { x: 200, y: 0 }])
+    expect(route.warnings).toEqual(['crosses-water'])
   })
 })
 

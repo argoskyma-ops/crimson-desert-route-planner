@@ -46,11 +46,21 @@ export interface RouteLeg {
   edgeId?: string
 }
 
+/**
+ * D10 route caveats:
+ * - `straight-line-fallback`: A* found no path, so the route is the raw A->B line.
+ * - `crosses-water`: an off-road leg of the route passes through water.
+ */
+export type RouteWarning = 'straight-line-fallback' | 'crosses-water'
+export const ROUTE_WARNINGS: readonly RouteWarning[] = ['straight-line-fallback', 'crosses-water']
+
 export interface Route {
   mode: Mode
   legs: RouteLeg[]
   totalPx: number
   totalSeconds: number
+  /** Empty for a clean road route. See `RouteWarning`. */
+  warnings: RouteWarning[]
 }
 
 export interface RouteOptions {
