@@ -10,7 +10,8 @@ Recorded 2026-09-03 for the MVP build. Change a decision here first, then the co
   whole game world: roads are neutral grey ink, rivers teal, no labels or icons, and
   roads are drawn *over* water so bridges are visible. About 40x the pixels of the
   PowerPyx image. Fan-hosted; no reuse terms stated. Same stance as before: **personal,
-  local use only; do not redistribute the tiles; publishing the app is Rennie's call.**
+  local use only; do not redistribute the tiles; hosting a public copy is the
+  maintainer's call.**
 - **Pywel window:** the pyramid covers more land than the in-game full map. The frame of
   the PowerPyx in-game map (the playable Pywel region) sits at canonical
   `x 1120..6143, y 1640..6723` (PowerPyx px * 0.97 + (1120, 1640); found by phase

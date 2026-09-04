@@ -12,8 +12,9 @@
 Fan-hosted map of the game world (Pearl Abyss's Crimson Desert). No reuse terms are
 stated on the site. This is treated as fine for **personal, local use only** by this
 route-planning tool: do not redistribute the tiles or anything derived from them
-except the road graph and water mask this repo commits. Whether to publish this app
-publicly (and thus the tiles) is Rennie's call, not assumed here.
+except the road graph and water mask this repo commits. Whether to host this app
+publicly (and so serve the tiles) is the maintainer's call, not assumed here; this
+repo offers no hosted demo.
 
 ## Re-create `data/map/` from scratch
 ```
