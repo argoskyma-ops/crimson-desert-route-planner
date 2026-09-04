@@ -1,6 +1,6 @@
 /**
  * Checks the committed water mask against the committed road graph: known
- * land/water landmarks, the half-resolution scale, and the effect of D10 on
+ * land/water landmarks, the half-resolution scale (zoom 3 of the pyramid), and the effect of D10 on
  * dead-end connectors. Skips when either dataset is missing.
  */
 import { existsSync, readFileSync } from 'node:fs'
@@ -16,12 +16,12 @@ const roads: RoadsFile | null = existsSync(ROADS_PATH)
   ? validateRoads(JSON.parse(readFileSync(ROADS_PATH, 'utf8')))
   : null
 
-/** Image-pixel landmarks, verified against the committed mask. */
-const SENA_RIVER: Pt = { x: 2_491, y: 2_687 }
-const SENA_BANK: Pt = { x: 2_266, y: 2_762 }
-const OPEN_LAND: Pt = { x: 1_160, y: 3_020 }
-const NORTH_BANK: Pt = { x: 2_440, y: 2_700 }
-const SOUTH_BANK: Pt = { x: 2_560, y: 2_700 }
+/** Canonical-pixel landmarks (D3), verified against the committed mask. */
+const SENA_RIVER: Pt = { x: 3_536, y: 4_246 }
+const SENA_BANK: Pt = { x: 3_318, y: 4_319 }
+const OPEN_LAND: Pt = { x: 2_245, y: 4_569 }
+const NORTH_BANK: Pt = { x: 3_487, y: 4_259 }
+const SOUTH_BANK: Pt = { x: 3_603, y: 4_259 }
 
 describe.skipIf(mask === null)('data/water-mask.png', () => {
   it('reads the known land and water landmarks', () => {
