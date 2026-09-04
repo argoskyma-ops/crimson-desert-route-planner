@@ -89,6 +89,14 @@ npm run lint
 npm test
 ```
 
+End-to-end smoke test (needs the dev server on port 5173 and the Playwright
+Chromium in `.venv`; it restores `data/roads.json` afterwards):
+
+```bash
+npm run dev -- --port 5173 --strictPort   # in another terminal
+.venv/bin/python tests/e2e/smoke.py
+```
+
 The map image is a fan-hosted copy of the in-game Pywel map with no reuse
 licence (see `SOURCE.md`). Do not redistribute the source JPEG or the tiles.
 Publishing the app publicly is a separate decision.
@@ -105,5 +113,5 @@ src/
 scripts/        fetch-map.sh, build-tiles.py, extract-roads.py
 data/           roads.json (committed); map/ (gitignored)
 docs/           DECISIONS.md, PLAN.md, RESEARCH.md
-tests/          unit checks for the committed roads file
+tests/          unit/ (roads.json checks), e2e/smoke.py (Playwright)
 ```
