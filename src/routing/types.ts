@@ -28,6 +28,8 @@ export interface RoadEdge {
   class: RoadClass
   /** Polyline in image pixels; first point equals `from`, last equals `to`. */
   points: [number, number][]
+  /** True for a piece of road drawn over water (D5); rendering only. */
+  bridge?: boolean
 }
 
 export interface RoadsFile {

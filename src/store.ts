@@ -22,7 +22,7 @@ import type { WaterMask } from './routing/water-mask'
  */
 export const mapRef: { current: LeafletMap | null } = { current: null }
 
-const FALLBACK_IMAGE_SIZE: [number, number] = [5178, 5240]
+const FALLBACK_IMAGE_SIZE: [number, number] = [8192, 8192]
 
 function clampPin(pt: Pt, manifest: MapManifest | null): Pt {
   if (!manifest) return pt

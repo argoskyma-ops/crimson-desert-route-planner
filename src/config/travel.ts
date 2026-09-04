@@ -4,8 +4,12 @@
  */
 import type { Mode, RoadClass } from '../routing/types'
 
-/** Pywel is roughly 9.5 km across (secondary sources); the map is 5178 px wide. */
-export const METERS_PER_PIXEL = 9500 / 5178
+/**
+ * Pywel is roughly 9.5 km across (secondary sources). The in-game full map frame
+ * spans 5178 px on the old PowerPyx image, which is 0.97 canonical px per px on
+ * the th.gl pyramid (D1), so the frame is about 5023 canonical px wide.
+ */
+export const METERS_PER_PIXEL = 9500 / 5023
 
 /**
  * Travel speed in metres per second, per mode and road class.
@@ -44,6 +48,8 @@ export const CLASS_LABELS: Record<RoadClass, string> = {
   sub: 'Sub road',
   offroad: 'Off-road',
 }
+/** Casing drawn under road pieces flagged `bridge` in the roads overlay (D5). */
+export const BRIDGE_COLOR = '#4f8cff'
 /** Route / overlay colours per class (also used by the legend). */
 export const CLASS_COLORS: Record<RoadClass, string> = {
   main: '#ff7a1a',

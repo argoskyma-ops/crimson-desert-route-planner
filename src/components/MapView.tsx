@@ -1,15 +1,15 @@
 import L from 'leaflet'
 import { useEffect, useRef, useState } from 'react'
-import { CLASS_COLORS } from '../config/travel'
+import { BRIDGE_COLOR, CLASS_COLORS } from '../config/travel'
 import { attachEditorLayer } from '../editor/editor-layer'
 import { fromLatLng, makePixelCrs, toLatLng } from '../lib/coords'
-import { loadMapManifest } from '../lib/map-manifest'
+import { loadMapManifest, tileUrlTemplate } from '../lib/map-manifest'
 import { makePinIcon } from '../lib/pin-icons'
 import { ROAD_CLASSES, type Pt, type RoadClass, type RouteLeg } from '../routing/types'
 import { mapRef, useAppStore } from '../store'
 
 const MISSING_TILES_MESSAGE =
-  'Map tiles not found. Run scripts/fetch-map.sh then .venv/bin/python scripts/build-tiles.py'
+  'Map tiles not found. Run .venv/bin/python scripts/fetch-tiles.py'
 
 function clampToImage(pt: Pt, width: number, height: number): Pt {
   return {
@@ -75,17 +75,20 @@ export default function MapView() {
         return
       }
 
-      const { width, height, tileSize, maxNativeZoom } = loaded
-      const bounds = L.latLngBounds([0, 0], [height, width])
-      const padX = width * 0.1
-      const padY = height * 0.1
+      const { width, height, tileSize, maxNativeZoom, canonicalZoom } = loaded
+      const imageBounds = L.latLngBounds([0, 0], [height, width])
+      // The explored window (Pywel); the rest of the pyramid is padding.
+      const [x0, y0, x1, y1] = loaded.bounds
+      const bounds = L.latLngBounds([y0, x0], [y1, x1])
+      const padX = (x1 - x0) * 0.1
+      const padY = (y1 - y0) * 0.1
       const maxBounds = L.latLngBounds(
-        [-padY, -padX],
-        [height + padY, width + padX],
+        [Math.max(0, y0 - padY), Math.max(0, x0 - padX)],
+        [Math.min(height, y1 + padY), Math.min(width, x1 + padX)],
       )
 
       map = L.map(el, {
-        crs: makePixelCrs(maxNativeZoom),
+        crs: makePixelCrs(canonicalZoom),
         preferCanvas: true,
         zoomControl: false,
         attributionControl: false,
@@ -97,12 +100,12 @@ export default function MapView() {
       map.fitBounds(bounds)
       map.setMinZoom(map.getZoom())
 
-      L.tileLayer('/data/map/tiles/{z}/{x}/{y}.jpg', {
+      L.tileLayer(tileUrlTemplate(loaded), {
         tileSize,
         minZoom: 0,
         maxNativeZoom,
         maxZoom: maxNativeZoom + 2,
-        bounds,
+        bounds: imageBounds,
         noWrap: true,
       }).addTo(map)
 
@@ -198,9 +201,12 @@ export default function MapView() {
       sub: [],
       offroad: [],
     }
+    const bridges: L.LatLng[][] = []
     for (const edge of roads.edges) {
       if (edge.points.length < 2) continue
-      latlngsByClass[edge.class].push(edge.points.map(([x, y]) => toLatLng({ x, y })))
+      const latlngs = edge.points.map(([x, y]) => toLatLng({ x, y }))
+      latlngsByClass[edge.class].push(latlngs)
+      if (edge.bridge) bridges.push(latlngs)
     }
     for (const cls of ROAD_CLASSES) {
       const lines = latlngsByClass[cls]
@@ -209,6 +215,16 @@ export default function MapView() {
         color: CLASS_COLORS[cls],
         weight: 2,
         opacity: 0.6,
+        interactive: false,
+        renderer,
+      }).addTo(group)
+    }
+    if (bridges.length > 0) {
+      // Bridges: a wider translucent casing under the class colour.
+      L.polyline(bridges, {
+        color: BRIDGE_COLOR,
+        weight: 6,
+        opacity: 0.45,
         interactive: false,
         renderer,
       }).addTo(group)

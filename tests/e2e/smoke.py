@@ -44,10 +44,11 @@ def report(step: str, ok: bool, evidence: str) -> None:
 # the map is in when called.
 # --------------------------------------------------------------------------
 
-TILE_SRC_RE = re.compile(r"/data/map/tiles/(\d+)/(\d+)/(\d+)\.jpg")
+TILE_SRC_RE = re.compile(r"/data/map/tiles/(\d+)/(\d+)/(\d+)\.(?:jpg|webp)")
 
 
-def calibrate(page: Page, max_native_zoom: int, tile_size: int = 256) -> dict:
+def calibrate(page: Page, canonical_zoom: int, tile_size: int = 512, tile_order: str = "zyx") -> dict:
+    """Map canonical px -> viewport CSS px from the rendered tile boxes (D3/D4)."""
     tiles = page.eval_on_selector_all(
         "img.leaflet-tile-loaded",
         "els => els.map(el => ({src: el.currentSrc || el.src, rect: el.getBoundingClientRect()}))",
@@ -59,8 +60,13 @@ def calibrate(page: Page, max_native_zoom: int, tile_size: int = 256) -> dict:
         m = TILE_SRC_RE.search(t["src"])
         if not m:
             continue
-        z, x, y = int(m.group(1)), int(m.group(2)), int(m.group(3))
-        factor = tile_size * (2 ** (max_native_zoom - z))
+        z = int(m.group(1))
+        if tile_order == "zyx":
+            y, x = int(m.group(2)), int(m.group(3))
+        else:
+            x, y = int(m.group(2)), int(m.group(3))
+        # Canonical px per tile at this zoom (tiles above canonicalZoom are finer).
+        factor = tile_size * (2 ** (canonical_zoom - z))
         rect = t["rect"]
         if rect["width"] <= 0 or rect["height"] <= 0:
             continue
@@ -181,7 +187,9 @@ def find_candidate_pairs(
 def run_desktop(page: Page, console_errors: list[str], page_errors: list[str]) -> bool:
     all_ok = True
     manifest = json.loads((REPO_ROOT / "data" / "map" / "manifest.json").read_text())
-    max_native_zoom = manifest["maxNativeZoom"]
+    canonical_zoom = manifest.get("canonicalZoom", manifest["maxNativeZoom"])
+    tile_size = manifest.get("tileSize", 256)
+    tile_order = manifest.get("tileOrder", "zxy")
 
     page.goto(BASE_URL)
     page.wait_for_load_state("networkidle")
@@ -209,7 +217,7 @@ def run_desktop(page: Page, console_errors: list[str], page_errors: list[str]) -
     page.wait_for_selector(".leaflet-tile-loaded")
     page.wait_for_timeout(300)
 
-    cal = calibrate(page, max_native_zoom)
+    cal = calibrate(page, canonical_zoom, tile_size, tile_order)
     rects = overlay_rects(page)
     viewport = page.viewport_size
     vp = (viewport["width"], viewport["height"])
@@ -393,7 +401,9 @@ def run_desktop(page: Page, console_errors: list[str], page_errors: list[str]) -
 
 def run_phone(page: Page, console_errors: list[str], page_errors: list[str]) -> None:
     manifest = json.loads((REPO_ROOT / "data" / "map" / "manifest.json").read_text())
-    max_native_zoom = manifest["maxNativeZoom"]
+    canonical_zoom = manifest.get("canonicalZoom", manifest["maxNativeZoom"])
+    tile_size = manifest.get("tileSize", 256)
+    tile_order = manifest.get("tileOrder", "zxy")
 
     page.goto(BASE_URL)
     page.wait_for_load_state("networkidle")
@@ -432,7 +442,7 @@ def run_phone(page: Page, console_errors: list[str], page_errors: list[str]) -> 
     page.wait_for_timeout(300)
 
     try:
-        cal = calibrate(page, max_native_zoom)
+        cal = calibrate(page, canonical_zoom, tile_size, tile_order)
         rects = overlay_rects(page)
         vp_t = (vp["width"], vp["height"])
         roads = json.loads(ROADS_PATH.read_text())

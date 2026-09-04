@@ -17,7 +17,7 @@ const CLASS_SHORT: Record<RoadClass, string> = {
   offroad: 'Off-road',
 }
 
-const FALLBACK_IMAGE_SIZE: [number, number] = [5178, 5240]
+const FALLBACK_IMAGE_SIZE: [number, number] = [8192, 8192]
 
 const btn =
   'inline-flex min-h-11 items-center justify-center rounded-md px-3 text-sm font-medium'

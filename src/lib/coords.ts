@@ -2,11 +2,12 @@ import L from 'leaflet'
 import type { Pt } from '../routing/types'
 
 /**
- * Pixel CRS for native image coordinates (x right, y down). See D3.
- * At zoom == maxNativeZoom, one image pixel == one CSS pixel.
+ * Pixel CRS for canonical image coordinates (x right, y down). See D3.
+ * At zoom == canonicalZoom, one canonical pixel == one CSS pixel; at the
+ * pyramid's higher native zooms a canonical pixel spans several CSS pixels.
  */
-export function makePixelCrs(maxNativeZoom: number): L.CRS {
-  const s = 1 / 2 ** maxNativeZoom
+export function makePixelCrs(canonicalZoom: number): L.CRS {
+  const s = 1 / 2 ** canonicalZoom
   return L.extend({}, L.CRS.Simple, {
     transformation: new L.Transformation(s, 0, s, 0),
   })
