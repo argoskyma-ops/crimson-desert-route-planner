@@ -70,6 +70,9 @@ Recorded 2026-09-03 for the MVP build. Change a decision here first, then the co
   lengths are derived at load time, never stored. Coordinates may be fractional.
 - Off-road is not traced; it is what the router uses for the pin-to-road legs and for
   hand-drawn `offroad` shortcut edges (fords, passes).
+- Extraction closes junctions: a skeleton endpoint within ~25 px of another edge is
+  joined to that edge (splitting it), and endpoint pairs within ~70 px with aligned
+  tangents are bridged. Fragments still remain; see D6 connectors and the editor.
 
 ## D6. Routing
 - `src/routing/` is a pure TypeScript module: `buildGraph(roads)` once per roads
@@ -82,6 +85,11 @@ Recorded 2026-09-03 for the MVP build. Change a decision here first, then the co
   Heuristic: straight-line distance / fastest speed for the mode (admissible).
 - Output: ordered legs, one per traversed edge (or off-road hop), each with class,
   points, lengthPx and seconds, plus totals.
+- Dead-end connectors (added 2026-09-03 after the first extraction came back in 245
+  fragments): `buildGraph` gives every degree-1 node straight `offroad` arcs to up to
+  3 nearest other nodes within `CONNECTOR_RADIUS_PX` (200) that are not already
+  adjacent. They cost off-road time, so the router hops small gaps between fragments
+  instead of abandoning the road network, and the legs render as dashed off-road hops.
 
 ## D7. Speed model (`src/config/travel.ts`, the one tunable file)
 - `METERS_PER_PIXEL = 9500 / 5178` (ASSUMED: Pywel is roughly 9.5 km across per

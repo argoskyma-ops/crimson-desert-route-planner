@@ -17,6 +17,10 @@ export const SPEED_MPS: Record<Mode, Record<RoadClass, number>> = {
 export const SNAP_RADIUS_PX = 300
 /** Number of nearest road projections considered per pin. */
 export const SNAP_CANDIDATES = 4
+/** Dead-end connectors (D6): radius in image px for off-road arcs from degree-1 nodes. */
+export const CONNECTOR_RADIUS_PX = 200
+/** Dead-end connectors: max off-road arcs per degree-1 node. */
+export const CONNECTOR_MAX = 3
 
 export const MODE_LABELS: Record<Mode, string> = { horse: 'Horse', foot: 'On foot' }
 export const CLASS_LABELS: Record<RoadClass, string> = {
