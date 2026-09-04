@@ -1,7 +1,7 @@
 export { astar, travelTimeHeuristic } from './astar'
 export * from './geometry'
 export { buildGraph } from './graph'
-export type { GraphArc, GraphEdge, RoadGraph } from './graph'
+export type { BuildGraphOptions, GraphArc, GraphEdge, RoadGraph } from './graph'
 export { findRoute } from './route'
 export { snapToRoads } from './snap'
 export * from './types'

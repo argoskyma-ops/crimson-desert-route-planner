@@ -1,7 +1,9 @@
 /**
  * Routing builds a query-local augmented graph: every snap is a virtual split point
  * on its road edge, pin hops are off-road arcs, and A* chooses among those arcs plus
- * the always-present direct off-road arc. The immutable base graph is never modified.
+ * the always-present direct off-road arc. Dead-end connectors on the base graph are
+ * traversed as the same kind of off-road hop (class `offroad`, two points, no edge
+ * id). The immutable base graph is never modified.
  */
 import { secondsFor } from '../config/travel'
 import { astar, travelTimeHeuristic } from './astar'
@@ -135,8 +137,21 @@ function queryNeighbors(
 
   const id = baseNodeId(node)
   const arcs: AStarArc<string, RouteStep>[] = []
+  const fromNode = graph.nodeById.get(id)
   for (const baseArc of graph.adjacency.get(id) ?? []) {
-    const edge = graph.edgeById.get(baseArc.edgeId)
+    const edgeId = baseArc.edgeId
+    if (edgeId === undefined) {
+      const toNode = graph.nodeById.get(baseArc.toNodeId)
+      if (!fromNode || !toNode) continue
+      arcs.push(offroadArc(
+        baseId(baseArc.toNodeId),
+        { x: fromNode.x, y: fromNode.y },
+        { x: toNode.x, y: toNode.y },
+        mode,
+      ))
+      continue
+    }
+    const edge = graph.edgeById.get(edgeId)
     if (!edge) continue
     const edgeSplits = splits.byEdge.get(edge.id)
     if (!edgeSplits || edgeSplits.length === 0) {

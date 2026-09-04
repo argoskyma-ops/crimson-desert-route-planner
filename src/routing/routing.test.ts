@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest'
+import { CONNECTOR_MAX, CONNECTOR_RADIUS_PX } from '../config/travel'
 import { buildGraph } from './graph'
 import { findRoute } from './route'
 import { snapToRoads } from './snap'
@@ -26,6 +27,111 @@ describe('buildGraph', () => {
     expect(snapToRoads(graph, { x: 5, y: 5 }, 4, 10)).toMatchObject([
       { edgeId: 'road', segmentIndex: 1, distancePx: 1 },
     ])
+  })
+
+  it('joins nearby disconnected fragments with an off-road connector hop', () => {
+    const graph = buildGraph(roads(
+      [
+        { id: 'a1', x: 0, y: 0 },
+        { id: 'a2', x: 100, y: 0 },
+        { id: 'b1', x: 150, y: 0 },
+        { id: 'b2', x: 250, y: 0 },
+      ],
+      [
+        { id: 'left', from: 'a1', to: 'a2', class: 'main', points: [[0, 0], [100, 0]] },
+        { id: 'right', from: 'b1', to: 'b2', class: 'main', points: [[150, 0], [250, 0]] },
+      ],
+    ))
+
+    expect(graph.connectorCount).toBeGreaterThan(0)
+    expect(graph.roads.edges.map((edge) => edge.id)).toEqual(['left', 'right'])
+    expect(graph.adjacency.get('a2')?.some((arc) => arc.toNodeId === 'b1' && arc.edgeId === undefined)).toBe(true)
+
+    const route = findRoute(graph, { x: 0, y: 0 }, { x: 250, y: 0 }, { mode: 'horse' })
+    expect(route.legs.map((leg) => ({ class: leg.class, edgeId: leg.edgeId }))).toEqual([
+      { class: 'main', edgeId: 'left' },
+      { class: 'offroad', edgeId: undefined },
+      { class: 'main', edgeId: 'right' },
+    ])
+    expect(route.legs[1]?.points).toEqual([{ x: 100, y: 0 }, { x: 150, y: 0 }])
+    expect(route.legs[1]?.lengthPx).toBe(50)
+  })
+
+  it('does not join fragments farther than the connector radius', () => {
+    const graph = buildGraph(roads(
+      [
+        { id: 'a1', x: 0, y: 0 },
+        { id: 'a2', x: 100, y: 0 },
+        { id: 'b1', x: 600, y: 0 },
+        { id: 'b2', x: 700, y: 0 },
+      ],
+      [
+        { id: 'left', from: 'a1', to: 'a2', class: 'main', points: [[0, 0], [100, 0]] },
+        { id: 'right', from: 'b1', to: 'b2', class: 'main', points: [[600, 0], [700, 0]] },
+      ],
+    ))
+    expect(600 - 100).toBeGreaterThan(CONNECTOR_RADIUS_PX)
+    expect(graph.connectorCount).toBe(0)
+
+    const route = findRoute(graph, { x: 0, y: 0 }, { x: 700, y: 0 }, { mode: 'horse' })
+    expect(route.legs).toHaveLength(1)
+    expect(route.legs[0]?.class).toBe('offroad')
+    expect(route.legs[0]?.edgeId).toBeUndefined()
+  })
+
+  it('does not create connectors between already-adjacent nodes', () => {
+    const graph = buildGraph(twoNodeRoad([[0, 0], [50, 0]]))
+    expect(graph.connectorCount).toBe(0)
+    expect(graph.adjacency.get('a')).toHaveLength(1)
+    expect(graph.adjacency.get('b')).toHaveLength(1)
+    expect(graph.adjacency.get('a')?.[0]?.edgeId).toBe('road')
+  })
+
+  it('caps connectors at CONNECTOR_MAX and prefers other components', () => {
+    const graph = buildGraph(roads(
+      [
+        { id: 'a1', x: 0, y: 0 },
+        { id: 'a2', x: 0, y: 40 },
+        { id: 'a3', x: 20, y: 0 },
+        { id: 'a4', x: 40, y: 0 },
+        { id: 'b', x: 50, y: 0 },
+        { id: 'c', x: 60, y: 0 },
+        { id: 'd', x: 70, y: 0 },
+        { id: 'e', x: 80, y: 0 },
+      ],
+      [
+        { id: 'spine', from: 'a1', to: 'a2', class: 'sub', points: [[0, 0], [0, 40]] },
+        { id: 'fold', from: 'a2', to: 'a3', class: 'sub', points: [[0, 40], [20, 0]] },
+        { id: 'tail', from: 'a3', to: 'a4', class: 'sub', points: [[20, 0], [40, 0]] },
+      ],
+    ))
+
+    const fromA1 = graph.adjacency.get('a1') ?? []
+    const connectorTargets = fromA1.filter((arc) => arc.edgeId === undefined).map((arc) => arc.toNodeId).sort()
+    expect(connectorTargets).toHaveLength(CONNECTOR_MAX)
+    expect(connectorTargets).toEqual(['b', 'c', 'd'])
+    expect(connectorTargets).not.toContain('a3')
+    expect(connectorTargets).not.toContain('e')
+  })
+
+  it('skips connector generation when buildGraph options disable them', () => {
+    const source = roads(
+      [
+        { id: 'a1', x: 0, y: 0 },
+        { id: 'a2', x: 100, y: 0 },
+        { id: 'b1', x: 150, y: 0 },
+        { id: 'b2', x: 250, y: 0 },
+      ],
+      [
+        { id: 'left', from: 'a1', to: 'a2', class: 'main', points: [[0, 0], [100, 0]] },
+        { id: 'right', from: 'b1', to: 'b2', class: 'main', points: [[150, 0], [250, 0]] },
+      ],
+    )
+    const graph = buildGraph(source, { connectors: false })
+    expect(graph.connectorCount).toBe(0)
+    expect(graph.adjacency.get('a2')).toHaveLength(1)
+    expect(graph.adjacency.get('a2')?.[0]?.edgeId).toBe('left')
+    expect(graph.adjacency.get('a2')?.some((arc) => arc.edgeId === undefined)).toBe(false)
   })
 
   it('rejects duplicate ids and dangling topology references', () => {
@@ -151,6 +257,7 @@ describe('routing performance', () => {
 
     expect(nodes).toHaveLength(20_022)
     expect(edges).toHaveLength(39_761)
+    expect(graph.connectorCount).toBe(0)
     expect(route.legs.some((leg) => leg.edgeId !== undefined)).toBe(true)
     expect(buildMs).toBeLessThan(500)
     expect(routeMs).toBeLessThan(100)
