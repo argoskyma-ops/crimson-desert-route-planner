@@ -5,6 +5,13 @@ change a decision there first, then the code.
 
 ## Open questions
 
+- [ ] `data/fast-travel.json` is committed while `data/pois.json` (same
+  source, 20x larger) is local-only (D13). Keep the small committed file, or
+  move it to local-only for consistency? Maintainer's call.
+- [ ] Hosting: the companion adds hand-written content that is fine to
+  publish, but the tiles and `pois.json` are still personal-use only. A hosted
+  copy would need its own map source.
+
 - [x] What is being routed — collectibles, quests, resource nodes, fast-travel hops?
   Answered: A→B along roads (main / sub / off-road), Horse or On foot.
 - [x] Where does map/node data come from — manual entry, a wiki, datamined files?
@@ -17,6 +24,14 @@ change a decision there first, then the code.
 
 ## Follow-ups
 
+- Companion build (2026-09-05): design in `docs/COMPANION-SPEC.md`, decisions
+  D12 to D18, task list with status in `docs/COMPANION-PLAN.md`. Start with T10
+  and R1.
+- `scripts/fetch-fast-travel.py` reads th.gl's CBOR place records and painted
+  labels as `[x, y]`; they are `[y, x]`. 153 committed camps, villages, hearths
+  and places sit in the sea south-east of Pywel. Fix is T10 in the companion
+  plan (measured 2026-09-05: swapped, all 117 named places land on Pywel).
+
 - Calibrate `METERS_PER_PIXEL` and `SPEED_MPS` in-game (`src/config/travel.ts`, D7).
   Check whether wide roads or paths are the faster class for a horse.
 - Second sweep in the editor for dead ends (about 600) and trails still missing; use
@@ -25,6 +40,10 @@ change a decision there first, then the code.
   game opens land beyond the Pywel frame.
 - Hosting a public copy is the maintainer's call: the tiles have no reuse licence
   (SOURCE.md), so this repo offers no hosted demo.
+
+## Scaffold review
+
+R1 in `docs/COMPANION-PLAN.md` writes its findings here.
 
 ## Ideas for later
 

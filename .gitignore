@@ -35,3 +35,6 @@ __pycache__/
 data/map/
 data/*.tmp
 *.tsbuildinfo
+
+# th.gl node dump in canonical px (docs/DECISIONS.md D14) — local only, never commit
+data/pois.json

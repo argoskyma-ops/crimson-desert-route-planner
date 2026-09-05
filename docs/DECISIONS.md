@@ -248,3 +248,113 @@ Recorded 2026-09-03 for the MVP build. Change a decision here first, then the co
   name or type, ranks places ahead of generic teleports, and filters the
   markers; picking a hit pans to it and opens the popup. Markers do not place
   A/B pins and are not route endpoints yet.
+
+## D12. Content model (companion)
+- **Why:** the planner becomes a full companion (search anything, get a
+  guide). Recorded 2026-09-05; design in `docs/COMPANION-SPEC.md`, tasks in
+  `docs/COMPANION-PLAN.md`.
+- Content is hand-authored JSON in `data/content/`, one file per entity type
+  (`region, place, character, faction, storyline, quest, item, collectible,
+  collection, vendor, recipe, skill, enemy, mount, activity, guide`), each
+  `{ "version": 1, "type": "<type>", "records": [...] }`, listed in
+  `data/content/meta.json`.
+- `src/content/schema.ts` (zod 4) is the contract; `src/content/types.ts`
+  re-exports the inferred types. Every record has the common head (`id`,
+  `type`, `name`, `summary`, `sources`, `confidence`, `gameVersion`, optional
+  `aliases`, `body`, `region`, `location`, `tags`, `related`) plus a typed
+  body. Ids are `<type>:<slug>`, kebab-case, unique across files, stable
+  across renames (rename the `name`, keep the id, add the old name to
+  `aliases`).
+- Guides are ordered `Step`s (`text`, optional `action`, `location`, `refs`,
+  `cost`, `missable`, `optional`). Quests and standalone guides carry steps
+  directly; items, skills and mounts carry `Acquisition`s, each of which may
+  carry steps. Locations are canonical px (D3) with `map: "pywel" | "abyss"`.
+- Validation runs in the browser loader and in `tests/unit/content-data.test.ts`
+  (every file validates, ids unique, refs resolve, locations inside the
+  manifest bounds and on land, ≥ 1 source). `scripts/content-report.ts`
+  prints coverage.
+- Dependencies added: `zod` (schemas) and `minisearch` (D15). Both MIT.
+
+## D13. Content sources and licence stance
+- **Facts, original prose.** Names, coordinates, prices, drops, prerequisites
+  and counts are facts and may be checked against any source. Every sentence
+  committed here is written for this repo. No prose, table or list is copied
+  from a wiki or guide site; no third-party image enters the repo.
+- **Cite every record.** `sources` holds the URLs consulted and the date.
+  Order of preference: official Pearl Abyss notes and site; Fandom wiki
+  (CC BY-SA 3.0 text, facts only, so no CC BY-SA directory is needed); guide
+  sites (Fextralife, Game8, PowerPyx, Gamer Guides and the like) for
+  verification only.
+- **th.gl node data.** `data/pois.json` is generated locally by
+  `scripts/fetch-pois.py` and gitignored, the same stance as the tiles (D1).
+  Committed content records may carry a location, but each is authored
+  individually with a non-th.gl source; bulk conversion of `pois.json` into
+  content is not allowed. `data/fast-travel.json` stays committed as decided
+  in D11 (small, reviewed); whether it should move to local-only is an open
+  question in `docs/NOTES.md`.
+- **Pearl Abyss Fan Content Guidelines**
+  (`https://crimsondesert.pearlabyss.com/en-us/Policy?_policyNo=130`) allow
+  non-commercial fan sites that disclose they are unofficial. README and the
+  in-app About panel carry that disclosure; no paywall, no altered logos.
+- **Versioning.** `data/content/meta.json` records the current game version
+  (2.01.00, 2026-09-04, "Crimson Desert Enhanced") and announced expansions.
+  Each record's `gameVersion` is the patch it was last checked against;
+  `confidence` uses the `verified / reported / assumed` scale from
+  `docs/RESEARCH.md`.
+
+## D14. POI layers
+- `scripts/fetch-pois.py` reads the th.gl Continent of Pywel page (tile
+  transformation, the `filters` taxonomy of groups and types with labels,
+  the name dictionary) and the OpenWorld node dump, and writes
+  `data/pois.json` (gitignored): `groups[]` with `types[]`, and `nodes[]`
+  with `id`, `type`, canonical `x`, `y` and `name` when th.gl has a real one.
+- **Record order.** th.gl's CBOR records are `[id, [worldY, worldX, z]]`.
+  Reading them as `[x, y]` puts 90% of named places in the sea (measured
+  2026-09-05: swapped, 100% of 23,487 records fall in the manifest bounds and
+  95% on land). Painted labels (`"position": [y, x]`) follow the same order.
+  T10 fixes `fetch-fast-travel.py`; `fetch-pois.py` is written correctly.
+- **Scope.** OpenWorld map only in v1; the Abyss dump is a later task.
+  Records within 2000 world units of the origin are dropped (D11 rule).
+- **Rendering.** One canvas layer with viewport culling and a grid cluster
+  below zoom 3; per-group toggles with counts; defaults in
+  `src/config/pois.ts` (dense groups off). Checkable types write to progress
+  (D16). Missing file: the panel explains how to generate it; nothing else
+  changes.
+
+## D15. Search
+- MiniSearch index built in memory at load over content records (`name` ×3,
+  `aliases` ×2, `tags`, `summary`, `type`), fast-travel places, and one
+  document per POI type. `prefix: true`, `fuzzy: 0.2`, OR combine.
+- One search box (`SearchPanel`) replaces `FastTravelSearch`; the fast-travel
+  type chips move into it. Results grouped by type; Enter opens the top hit;
+  a hit opens the entity panel and pans to its location when it has one.
+
+## D16. Entity panel, guides, progress
+- Bottom sheet on phones, right panel from 768 px; map stays live.
+- `ContentDb` (built by the loader) holds `byId` and reverse relations
+  (sold by, dropped by, rewarded by, used in, found in, member of) so the
+  panel never scans.
+- `GuideSteps`: checkbox per step, *Route here* on steps with a location
+  (sets pin B via `setPin`; asks for pin A if unset), missable warning line.
+- Progress lives in `localStorage` under `cd-companion:progress:v1` as
+  `{ version, steps: string[], quests: string[], collected: string[] }`;
+  export downloads JSON, import replaces. No backend (D2).
+- Markdown in `body`, `strategy`, `rules`: a tiny renderer supporting
+  paragraphs, `**bold**`, `-` lists and `[[id]]` entity links. No HTML.
+
+## D17. Versioning and coverage
+- `meta.json.gameVersion` is shown in the About panel. After each patch:
+  bump `meta.json`, re-check records the notes touch, bump their
+  `gameVersion`. Records older than the current major version are flagged by
+  `npm run content:report` (never hidden in the app).
+- Coverage targets are tracked in `docs/COMPANION-PLAN.md` (C-tasks), not in
+  code.
+
+## D18. Process v2
+- Claude plans and scaffolds (spec, decisions, schemas, seeds, tests, task
+  list). Cursor/Grok builds the T-tasks, authors the C-tasks and reviews with
+  the R-tasks. Same rules as D9: each task owns listed files, ends with
+  `npm run typecheck`, `npm run lint`, `npm test` (and `npm run build` when
+  `vite.config.ts` or `data/` changes) green, and one commit. Status
+  checkboxes live in `docs/COMPANION-PLAN.md`.
+- Content tasks follow the record checklist in `data/content/README.md`.

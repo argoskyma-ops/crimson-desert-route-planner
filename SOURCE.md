@@ -26,6 +26,27 @@ repo offers no hosted demo.
   hearths and map labels. Personal, local use; same stance as the tiles — do
   not treat the dump as redistributable game data.
 
+## Points of interest (D14)
+- **Nodes:** the same `cdn.th.gl/crimson-desert/nodes/OpenWorld.<hash>.raw`
+  dump, every record (about 23,500 typed nodes: mines, herbs, chests, hidden
+  gear, quests, shops, stations, creatures), plus the `filters` taxonomy on the
+  map page for group and type labels.
+- **Fetch:** `.venv/bin/python scripts/fetch-pois.py` writes `data/pois.json`
+  (task T15 in docs/COMPANION-PLAN.md). The file is **gitignored**: local,
+  personal use, never committed or redistributed, like the tiles.
+- **Record order:** CBOR records are `[id, [worldY, worldX, z]]`; labels are
+  `"position": [y, x]`. See D14.
+
+## Game content (D13)
+- `data/content/*.json` is hand-written for this repo: facts checked against
+  the sources each record cites, prose original. No wiki or guide text is
+  copied. Per-record `sources` carry the URLs; `docs/RESEARCH-COMPANION.md`
+  records the licence survey behind the stance.
+- Pearl Abyss's Fan Content Guidelines
+  (`https://crimsondesert.pearlabyss.com/en-us/Policy?_policyNo=130`) permit
+  unofficial, non-paywalled fan companions that say they are unofficial. This
+  project is not affiliated with or endorsed by Pearl Abyss.
+
 ## Re-create `data/map/` from scratch
 ```
 .venv/bin/python scripts/fetch-tiles.py

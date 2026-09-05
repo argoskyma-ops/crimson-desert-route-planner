@@ -55,6 +55,20 @@ straight line shown" and draws the straight line anyway; a pin dropped in water
 routes to shore and says "Route crosses water". Without the water mask the
 planner still works, it just ignores water.
 
+## Companion (in progress)
+
+The planner is growing into a full playthrough companion: one search box
+over quests, places, items, collectibles, vendors, characters and factions,
+a panel with the facts and relations for each, step-by-step acquisition
+guides with *Route here*, progress tracking, and map layers for every
+point-of-interest type. Design: `docs/COMPANION-SPEC.md`; decisions D12 to
+D18 in `docs/DECISIONS.md`; build tasks and status in
+`docs/COMPANION-PLAN.md`. Content lives in `data/content/` (see its README
+for the record checklist); `npm run content:report` prints coverage.
+
+This is an unofficial fan project. It is not affiliated with or endorsed by
+Pearl Abyss, and it is free: no paywall, no accounts.
+
 ## Tracing and fixing roads
 
 **Edit roads** (top-right) disables pin placement so you can fix the extracted
@@ -140,6 +154,10 @@ npm run dev -- --port 5173 --strictPort   # in another terminal
   licence. `scripts/fetch-tiles.py` downloads them to your machine; they are
   never committed or redistributed by this project, and no licence to them is
   granted here. See `SOURCE.md` for the exact URL and fetch details.
+- **Game content** in `data/content/` is written for this project: facts
+  checked against the cited sources, prose original, no copied wiki text and
+  no third-party images. `data/pois.json` (th.gl points of interest) is
+  generated locally by `scripts/fetch-pois.py` and never committed.
 - **The committed road graph, water mask and fast-travel points**
   (`data/roads.json`, `data/water-mask.png`, `data/fast-travel.json`,
   `data/legacy/roads-powerpyx.json`) are derived from fan-hosted renders and
@@ -166,9 +184,10 @@ src/
   editor/       graph-edit + Leaflet draw/select overlay
   routing/      A* over the road graph, water mask
   lib/          CRS, roads + water-mask load/save, pin icons
+  content/      schema.ts (zod contract), types.ts, ids.ts for data/content
   config/       travel.ts (speeds and colours)
-scripts/        fetch-tiles.py, fetch-fast-travel.py, extract-roads.py, review-tiles.py, tiles.py
-data/           roads.json + fast-travel.json + water-mask.png (committed); legacy/; map/ (gitignored)
-docs/           DECISIONS.md, NOTES.md, screenshots/, build-time working docs
-tests/          unit/ (roads.json + water-mask checks), e2e/smoke.py (Playwright)
+scripts/        fetch-tiles.py, fetch-fast-travel.py, extract-roads.py, review-tiles.py, tiles.py, content-report.ts
+data/           roads.json + fast-travel.json + water-mask.png (committed); content/ (companion records); legacy/; map/ and pois.json (gitignored)
+docs/           DECISIONS.md, NOTES.md, COMPANION-SPEC.md, COMPANION-PLAN.md, screenshots/, build-time working docs
+tests/          unit/ (roads, water mask, fast travel, content checks), e2e/smoke.py (Playwright)
 ```
