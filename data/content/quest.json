@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "type": "quest",
+  "records": [
+    {
+      "id": "quest:dead-of-night",
+      "type": "quest",
+      "name": "Dead of Night",
+      "kind": "main",
+      "chapter": "Prologue",
+      "storyline": "storyline:main",
+      "region": "region:pailune",
+      "summary": "The prologue: the Greymane camp is attacked at night and Kliff fights his way out.",
+      "steps": [
+        { "text": "Follow the camp attack as it unfolds; the fights teach the basic combat controls.", "action": "fight" },
+        { "text": "Escape the camp. The chapter ends when Kliff is clear of the attackers.", "action": "travel" }
+      ],
+      "rewards": [{ "kind": "unlock", "text": "Chapter 1 begins" }],
+      "sources": [
+        { "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/", "title": "GameRant: main story quests and chapter list", "accessed": "2026-09-05" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:trial-of-the-winds",
+      "type": "quest",
+      "name": "Trial of the Winds",
+      "kind": "main",
+      "chapter": 2,
+      "storyline": "storyline:main",
+      "summary": "Mandatory chapter 2 quest at the first Ancient Obelisk; completing it unlocks gliding.",
+      "prerequisites": [{ "kind": "chapter", "value": 2, "text": "Reach chapter 2 of the main story" }],
+      "steps": [
+        { "text": "Travel to the first Ancient Obelisk the quest marks.", "action": "travel" },
+        { "text": "Complete the trial at the obelisk.", "action": "solve" }
+      ],
+      "rewards": [{ "kind": "unlock", "text": "Gliding (double-jump to deploy)" }],
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/582136", "title": "Game8: main story walkthrough", "accessed": "2026-09-05" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:early-encounter",
+      "type": "quest",
+      "name": "Early Encounter",
+      "kind": "side",
+      "region": "region:hernand",
+      "summary": "Short side quest near the Timberturner Wainwright, north of the Nas River, that unlocks the 1,000-slot Collectibles Chest.",
+      "steps": [
+        { "text": "Find the Timberturner Wainwright north of the Nas River in Hernand and speak to the quest giver.", "action": "talk" },
+        { "text": "Complete the errand; the Collectibles Chest opens afterwards for quest items, lore notes and learned recipe books.", "action": "other" }
+      ],
+      "rewards": [{ "kind": "unlock", "text": "Collectibles Chest (1,000 slots)" }],
+      "sources": [
+        { "url": "https://www.thegamer.com/crimson-desert-wardrobe-gatherables-collectible-chests-location-how-to-get-explained-guide/", "title": "TheGamer: wardrobe, gatherables and collectible chests", "accessed": "2026-09-05" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    }
+  ]
+}

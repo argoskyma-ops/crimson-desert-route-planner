@@ -1,0 +1,85 @@
+{
+  "version": 1,
+  "type": "region",
+  "records": [
+    {
+      "id": "region:hernand",
+      "type": "region",
+      "name": "Hernand",
+      "kind": "region",
+      "summary": "The green, forested starting region, home to the City of Hernand and most of Pywel's noble houses.",
+      "body": "Kliff's story opens here. The region is the best documented in the game and holds the largest share of faction questlines, from [[faction:greymanes]] allies to the noble houses that feud over its estates.",
+      "keyPlaces": ["place:hernand-castle", "place:steel-mountains"],
+      "tags": ["starting-region"],
+      "sources": [
+        { "url": "https://gfuel.com/blogs/news/crimson-desert-map-full-region-map-cities-and-more", "title": "Crimson Desert map: full region map, cities and more", "accessed": "2026-09-05" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Crimson+Desert+Wiki", "title": "Fextralife: Crimson Desert Wiki", "accessed": "2026-09-05" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:pailune",
+      "type": "region",
+      "name": "Pailune",
+      "kind": "region",
+      "summary": "The cold, mountainous north where the Greymanes made their camp and where the story's opening attack takes place.",
+      "keyPlaces": [],
+      "sources": [
+        { "url": "https://gfuel.com/blogs/news/crimson-desert-map-full-region-map-cities-and-more", "title": "Crimson Desert map: full region map, cities and more", "accessed": "2026-09-05" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:demeniss",
+      "type": "region",
+      "name": "Demeniss",
+      "kind": "region",
+      "summary": "Pywel's political and religious centre, with castles and temples under House Caliburn's influence.",
+      "keyPlaces": ["place:demeniss-castle"],
+      "sources": [
+        { "url": "https://gfuel.com/blogs/news/crimson-desert-map-full-region-map-cities-and-more", "title": "Crimson Desert map: full region map, cities and more", "accessed": "2026-09-05" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:delesyia",
+      "type": "region",
+      "name": "Delesyia",
+      "kind": "region",
+      "summary": "A trade-driven region with an active criminal underworld; descriptions of its technology vary between sources.",
+      "sources": [
+        { "url": "https://gfuel.com/blogs/news/crimson-desert-map-full-region-map-cities-and-more", "title": "Crimson Desert map: full region map, cities and more", "accessed": "2026-09-05" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:crimson-desert",
+      "type": "region",
+      "name": "Crimson Desert",
+      "kind": "region",
+      "summary": "The lawless red-sand desert with no central government; Tommaso, Varnia, Urdavah and Arcosa are its named settlements.",
+      "sources": [
+        { "url": "https://gfuel.com/blogs/news/crimson-desert-map-full-region-map-cities-and-more", "title": "Crimson Desert map: full region map, cities and more", "accessed": "2026-09-05" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:abyss",
+      "type": "region",
+      "name": "The Abyss",
+      "kind": "layer",
+      "summary": "A separate layer above Pywel with floating islands, its own fast-travel nodes and Abyss-tier gear and bosses.",
+      "body": "The Abyss is not a ground region. th.gl maps it as a second tile pyramid; the companion will add it later (docs/COMPANION-SPEC.md section 9). Records that live there use `map: \"abyss\"` in their location.",
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Crimson+Desert+Wiki", "title": "Fextralife: Crimson Desert Wiki", "accessed": "2026-09-05" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    }
+  ]
+}

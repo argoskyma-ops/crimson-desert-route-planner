@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "type": "character",
+  "records": [
+    {
+      "id": "character:kliff",
+      "type": "character",
+      "name": "Kliff",
+      "role": "Protagonist, acting leader of the Greymanes",
+      "playable": true,
+      "companion": false,
+      "factions": ["faction:greymanes"],
+      "summary": "The main playable character: a versatile melee fighter with swords, spears, axes and grappling.",
+      "body": "Kliff carries the critical path of the story; [[character:damiane]] and [[character:oongka]] become playable later but the main missions stay with him. He leads what is left of the [[faction:greymanes]] after the attack at their camp.",
+      "facts": [
+        "Fights with swords, spears, axes and unarmed grapples",
+        "The 2.0 Enhanced update reworked parts of his story and dialogue"
+      ],
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/583000", "title": "Game8: playable characters", "accessed": "2026-09-05" },
+        { "url": "https://www.forbes.com/sites/paultassi/2026/08/26/crimson-desert-literally-patched-its-story-in-a-huge-way-transforming-kliff/", "title": "Forbes on the 2.0 story changes", "accessed": "2026-09-05" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:damiane",
+      "type": "character",
+      "name": "Damiane",
+      "role": "Playable companion, rapier and pistol",
+      "playable": true,
+      "companion": true,
+      "summary": "A fast, fragile fighter with a rapier and a pistol who joins as a playable character around chapter 3.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/583000", "title": "Game8: playable characters", "accessed": "2026-09-05" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:oongka",
+      "type": "character",
+      "name": "Oongka",
+      "role": "Playable companion, heavy melee",
+      "playable": true,
+      "companion": true,
+      "summary": "A brute-force melee fighter who becomes playable around chapter 7.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/583000", "title": "Game8: playable characters", "accessed": "2026-09-05" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:myurdin",
+      "type": "character",
+      "name": "Myurdin",
+      "role": "Antagonist, leader of the Black Bears",
+      "factions": ["faction:black-bears"],
+      "summary": "Leader of the Black Bears, the faction that shattered the Greymanes in the opening attack.",
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Factions", "title": "Fextralife: Factions", "accessed": "2026-09-05" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:rhett",
+      "type": "character",
+      "name": "Rhett",
+      "role": "Armour merchant in Hernand",
+      "vendor": "vendor:rhett-hernand",
+      "home": "place:hernand-castle",
+      "summary": "Hernand's armour merchant; the first place to buy a full plate set.",
+      "sources": [
+        { "url": "https://gamingbolt.com/crimson-desert-guide-the-best-armor-sets-and-how-to-get-them", "title": "GamingBolt: best armor sets", "accessed": "2026-09-05" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    }
+  ]
+}

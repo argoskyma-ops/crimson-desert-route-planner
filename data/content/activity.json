@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "type": "activity",
+  "records": [
+    {
+      "id": "activity:arm-wrestling",
+      "type": "activity",
+      "name": "Arm wrestling",
+      "kind": "minigame",
+      "summary": "Tavern minigame: mash the prompt to fill and hold the gauge against your opponent.",
+      "rules": "Mash the shown input to push the gauge to your side and hold it there until the timer runs out. Rewards vary by opponent: reputation, coin or a unique item.",
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Crimson+Desert+Wiki", "title": "Fextralife: Crimson Desert Wiki", "accessed": "2026-09-05" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    }
+  ]
+}

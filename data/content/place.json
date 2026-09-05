@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "type": "place",
+  "records": [
+    {
+      "id": "place:hernand-castle",
+      "type": "place",
+      "name": "Hernand Castle",
+      "aliases": ["City of Hernand", "Hernand Town", "Hernand City"],
+      "kind": "castle",
+      "region": "region:hernand",
+      "location": { "x": 2422.6, "y": 5053.5 },
+      "summary": "The walled capital of Hernand: main-quest hub, vendors and the seat of the region's noble politics.",
+      "body": "The city sits west of the Sena's tributaries in the middle of Hernand. [[vendor:rhett-hernand]] sells the starter Canta Plate armour here. The location is the walled city centre read off the map at zoom 5; the painted map label sits about 120 px east of it.",
+      "contains": ["vendor:rhett-hernand"],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Factions", "title": "Fextralife: Factions", "accessed": "2026-09-05", "note": "House seats and the city as Hernand's capital" },
+        { "url": "https://gamingbolt.com/crimson-desert-guide-the-best-armor-sets-and-how-to-get-them", "title": "GamingBolt: best armor sets", "accessed": "2026-09-05", "note": "Rhett's shop in Hernand Town" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:demeniss-castle",
+      "type": "place",
+      "name": "Demeniss Castle",
+      "kind": "castle",
+      "region": "region:demeniss",
+      "location": { "x": 3431.4, "y": 5036.4 },
+      "summary": "House Caliburn's stronghold and the political heart of Demeniss.",
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Factions", "title": "Fextralife: Factions", "accessed": "2026-09-05" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:steel-mountains",
+      "type": "place",
+      "name": "Steel Mountains",
+      "kind": "landmark",
+      "region": "region:hernand",
+      "location": { "x": 2921.3, "y": 5887.7 },
+      "summary": "Mountain range in southern Hernand; the legendary horse Rokade grazes by a lake here near the Spire of Insight.",
+      "contains": ["mount:rokade"],
+      "sources": [
+        { "url": "https://www.powerpyx.com/crimson-desert-legendary-horse-locations/", "title": "PowerPyx: legendary horse locations", "accessed": "2026-09-05" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    }
+  ]
+}

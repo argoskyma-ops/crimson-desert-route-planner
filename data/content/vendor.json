@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "type": "vendor",
+  "records": [
+    {
+      "id": "vendor:rhett-hernand",
+      "type": "vendor",
+      "name": "Rhett's armoury",
+      "shopType": "equipment_shop",
+      "character": "character:rhett",
+      "place": "place:hernand-castle",
+      "region": "region:hernand",
+      "location": { "x": 2422.6, "y": 5053.5 },
+      "summary": "Armour shop in the City of Hernand; sells the Canta Plate starter set.",
+      "inventory": [
+        { "item": "item:canta-plate", "stock": "unlimited" }
+      ],
+      "currencies": ["silver"],
+      "sources": [
+        { "url": "https://gamingbolt.com/crimson-desert-guide-the-best-armor-sets-and-how-to-get-them", "title": "GamingBolt: best armor sets", "accessed": "2026-09-05" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    }
+  ]
+}

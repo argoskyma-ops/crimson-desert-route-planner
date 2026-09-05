@@ -1,0 +1,122 @@
+{
+  "version": 1,
+  "type": "mount",
+  "records": [
+    {
+      "id": "mount:rokade",
+      "type": "mount",
+      "name": "Rokade",
+      "species": "horse",
+      "legendary": true,
+      "region": "region:hernand",
+      "location": {
+        "x": 2921.3,
+        "y": 5887.7
+      },
+      "summary": "Black legendary horse that grazes by a lake in the Steel Mountains of southern Hernand, near the Spire of Insight.",
+      "body": "One of three named legendary horses, with [[mount:royler]] and [[mount:camora]] still to be recorded. Taming drains stamina; running out mid-tame throws Kliff and resets the bar, so a Stamina skill level around 6 makes the attempt comfortable.",
+      "howToGet": [
+        {
+          "kind": "tame",
+          "ref": "place:steel-mountains",
+          "location": {
+            "x": 2921.3,
+            "y": 5887.7
+          },
+          "note": "One capture per playthrough.",
+          "steps": [
+            {
+              "text": "Ride to the lake below the Spire of Insight in the Steel Mountains.",
+              "action": "travel",
+              "location": {
+                "x": 2921.3,
+                "y": 5887.7
+              },
+              "refs": [
+                "place:steel-mountains"
+              ]
+            },
+            {
+              "text": "Approach from behind cover so the horse does not notice you.",
+              "action": "travel"
+            },
+            {
+              "text": "Mount and push the stick opposite to the horse's facing until the taming bar fills.",
+              "action": "tame"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.powerpyx.com/crimson-desert-legendary-horse-locations/",
+          "title": "PowerPyx: legendary horse locations",
+          "accessed": "2026-09-05"
+        },
+        {
+          "url": "https://www.method.gg/crimson-desert/crimson-desert-legendary-horses-how-to-find-and-tame-royler-rokade-and-camora",
+          "title": "Method: legendary horses",
+          "accessed": "2026-09-05"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "mount:royler",
+      "type": "mount",
+      "name": "Royler",
+      "species": "horse",
+      "legendary": true,
+      "summary": "Royler is one of the three named legendary horses; its grazing spot and taming steps are still to be recorded.",
+      "howToGet": [
+        {
+          "kind": "tame",
+          "note": "Location not yet recorded; see the sources."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.powerpyx.com/crimson-desert-legendary-horse-locations/",
+          "title": "PowerPyx: legendary horse locations",
+          "accessed": "2026-09-05"
+        },
+        {
+          "url": "https://www.method.gg/crimson-desert/crimson-desert-legendary-horses-how-to-find-and-tame-royler-rokade-and-camora",
+          "title": "Method: legendary horses",
+          "accessed": "2026-09-05"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "mount:camora",
+      "type": "mount",
+      "name": "Camora",
+      "species": "horse",
+      "legendary": true,
+      "summary": "Camora is one of the three named legendary horses; its grazing spot and taming steps are still to be recorded.",
+      "howToGet": [
+        {
+          "kind": "tame",
+          "note": "Location not yet recorded; see the sources."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.powerpyx.com/crimson-desert-legendary-horse-locations/",
+          "title": "PowerPyx: legendary horse locations",
+          "accessed": "2026-09-05"
+        },
+        {
+          "url": "https://www.method.gg/crimson-desert/crimson-desert-legendary-horses-how-to-find-and-tame-royler-rokade-and-camora",
+          "title": "Method: legendary horses",
+          "accessed": "2026-09-05"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    }
+  ]
+}

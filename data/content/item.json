@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "type": "item",
+  "records": [
+    {
+      "id": "item:bringer-of-balance",
+      "type": "item",
+      "name": "Bringer of Balance",
+      "category": "weapon",
+      "rarity": "unique",
+      "summary": "A unique weapon taken from an altar in an underground ruin west of Tashelp; nothing in the game points at it.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "One-time pickup from an altar; can be returned to at any time.",
+          "steps": [
+            { "text": "Ride to the area south of the Forbearers Barons map label, west of Tashelp.", "action": "travel", "missable": "easy-to-miss", "missableNote": "No in-game marker; easy to gallop past." },
+            { "text": "Find the trap door and drop into the ruin below.", "action": "solve" },
+            { "text": "Follow the passage to the altar and take the weapon.", "action": "collect" }
+          ]
+        }
+      ],
+      "sources": [
+        { "url": "https://fandomwire.com/all-unique-weapons-in-crimson-desert/", "title": "FandomWire: all unique weapons", "accessed": "2026-09-05" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:blackwing-mask",
+      "type": "item",
+      "name": "Blackwing Mask",
+      "category": "armor",
+      "slot": "head",
+      "setName": "Blackwing",
+      "summary": "Head piece of the Blackwing set, dropped by the Crowcaller; the rest of the set is scattered as exploration loot.",
+      "acquisitions": [
+        { "kind": "drop", "ref": "enemy:crowcaller", "note": "Drops together with one armour piece on the first kill." }
+      ],
+      "sources": [
+        { "url": "https://vulkk.com/2026/05/09/crimson-desert-armor-sets-catalog/", "title": "VULKK: armor sets catalog", "accessed": "2026-09-05" },
+        { "url": "https://gamingbolt.com/crimson-desert-guide-the-best-armor-sets-and-how-to-get-them", "title": "GamingBolt: best armor sets", "accessed": "2026-09-05" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:canta-plate",
+      "type": "item",
+      "name": "Canta Plate",
+      "category": "armor",
+      "slot": "body",
+      "setName": "Canta Plate",
+      "summary": "Starter plate armour sold by Rhett in Hernand; a plain silver purchase with no prerequisites beyond reaching the city.",
+      "acquisitions": [
+        { "kind": "vendor", "ref": "vendor:rhett-hernand", "note": "Price not yet recorded." }
+      ],
+      "sources": [
+        { "url": "https://gamingbolt.com/crimson-desert-guide-the-best-armor-sets-and-how-to-get-them", "title": "GamingBolt: best armor sets", "accessed": "2026-09-05" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    }
+  ]
+}

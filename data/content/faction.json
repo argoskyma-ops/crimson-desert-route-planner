@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "type": "faction",
+  "records": [
+    {
+      "id": "faction:greymanes",
+      "type": "faction",
+      "name": "Greymanes",
+      "kind": "mercenary",
+      "hostile": false,
+      "members": ["character:kliff"],
+      "region": "region:pailune",
+      "summary": "Kliff's mercenary company and the protectors of Pailune, all but destroyed in the opening attack.",
+      "body": "Survivors are found one by one through the main story. Greymane commissions are short repeatable tasks that pay a flat reward and refresh daily.",
+      "reputation": {
+        "tiers": ["War", "Hostile", "Neutral", "Friendly", "Alliance"],
+        "notes": "Faction reputation follows the five-tier scale; Alliance unlocks faction vendors, materials and restricted areas. Reported, not yet checked in-game."
+      },
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Factions", "title": "Fextralife: Factions", "accessed": "2026-09-05" },
+        { "url": "https://www.keengamer.com/articles/guides/crimson-desert-all-factions-guide-how-to-earn-reputation-and-best-rewards/", "title": "KeenGamer: factions and reputation", "accessed": "2026-09-05" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "faction:black-bears",
+      "type": "faction",
+      "name": "Black Bears",
+      "kind": "hostile",
+      "hostile": true,
+      "leader": "character:myurdin",
+      "summary": "Myurdin's hostile faction, responsible for the attack on the Greymane camp.",
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Factions", "title": "Fextralife: Factions", "accessed": "2026-09-05" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    }
+  ]
+}

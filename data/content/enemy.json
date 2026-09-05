@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "type": "enemy",
+  "records": [
+    {
+      "id": "enemy:crowcaller",
+      "type": "enemy",
+      "name": "Crowcaller",
+      "rank": "world-boss",
+      "summary": "Boss that drops the Blackwing mask and one Blackwing armour piece; its rank and level are not yet confirmed.",
+      "drops": [{ "item": "item:blackwing-mask" }],
+      "sources": [
+        { "url": "https://vulkk.com/2026/05/09/crimson-desert-armor-sets-catalog/", "title": "VULKK: armor sets catalog", "accessed": "2026-09-05" }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    }
+  ]
+}

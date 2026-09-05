@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "game": {
+    "name": "Crimson Desert",
+    "edition": "Crimson Desert Enhanced",
+    "version": "2.01.00",
+    "versionDate": "2026-09-04",
+    "notesUrl": "https://store.steampowered.com/news/app/3321460/view/689767689898427146"
+  },
+  "expansions": [
+    { "name": "Charting the Unknown", "date": "2026-10-15", "status": "announced" }
+  ],
+  "files": [
+    "region.json",
+    "place.json",
+    "character.json",
+    "faction.json",
+    "storyline.json",
+    "quest.json",
+    "item.json",
+    "collectible.json",
+    "collection.json",
+    "vendor.json",
+    "recipe.json",
+    "skill.json",
+    "enemy.json",
+    "mount.json",
+    "activity.json",
+    "guide.json"
+  ]
+}

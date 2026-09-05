@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "type": "guide",
+  "records": [
+    {
+      "id": "guide:unlock-collectibles-chest",
+      "type": "guide",
+      "name": "Unlock the Collectibles Chest",
+      "target": "quest:early-encounter",
+      "region": "region:hernand",
+      "summary": "Get the 1,000-slot stash for quest items, lore notes and recipe books early, before the inventory fills up.",
+      "steps": [
+        { "text": "Cross to the north bank of the Nas River in Hernand.", "action": "travel" },
+        { "text": "Find the Timberturner Wainwright and take the Early Encounter quest.", "action": "talk", "refs": ["quest:early-encounter"] },
+        { "text": "Finish the errand; the chest is available from then on.", "action": "other" }
+      ],
+      "notes": "Recipe books and lore go to the chest automatically once it is unlocked.",
+      "sources": [
+        { "url": "https://www.thegamer.com/crimson-desert-wardrobe-gatherables-collectible-chests-location-how-to-get-explained-guide/", "title": "TheGamer: wardrobe, gatherables and collectible chests", "accessed": "2026-09-05" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    }
+  ]
+}

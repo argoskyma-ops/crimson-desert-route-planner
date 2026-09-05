@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "type": "collection",
+  "records": [
+    {
+      "id": "collection:sealed-abyss-artifacts",
+      "type": "collection",
+      "name": "Sealed Abyss Artifacts",
+      "poiType": "sealed_artifact",
+      "summary": "Small wooden roadside altars; each opens a challenge that rewards a unique Abyss-tier weapon on success.",
+      "sources": [
+        { "url": "https://www.powerpyx.com/crimson-desert-all-secret-places-locations/", "title": "PowerPyx: all secret places", "accessed": "2026-09-05" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "collection:memory-fragments",
+      "type": "collection",
+      "name": "Memory Fragments",
+      "poiType": "memory_fragment",
+      "summary": "Lore collectibles kept in the Collectibles Chest; the 2.0 update expanded what they cover.",
+      "sources": [
+        { "url": "https://vulkk.com/2026/08/26/crimson-desert-update-2-0-enhanced-edition-patch-notes/", "title": "VULKK: update 2.0 patch notes", "accessed": "2026-09-05" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    }
+  ]
+}
