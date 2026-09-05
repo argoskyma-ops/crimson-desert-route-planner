@@ -10,12 +10,15 @@
     "lint": "oxlint src scripts tests vite.config.ts vitest.config.ts",
     "preview": "vite preview",
     "typecheck": "tsc -b",
-    "test": "vitest run"
+    "test": "vitest run",
+    "content:report": "node scripts/content-report.ts"
   },
   "dependencies": {
     "leaflet": "^1.9.4",
+    "minisearch": "^7.2.0",
     "react": "^19.2.8",
-    "react-dom": "^19.2.8"
+    "react-dom": "^19.2.8",
+    "zod": "^4.5.4"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.3",
