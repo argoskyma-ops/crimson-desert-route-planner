@@ -32,6 +32,10 @@ change a decision there first, then the code.
   and places sit in the sea south-east of Pywel. Fix is T10 in the companion
   plan (measured 2026-09-05: swapped, all 117 named places land on Pywel).
 
+- `src/routing/routing.test.ts` "routing performance" fails about one run
+  in three on Argos (route time 100 to 115 ms against a 100 ms budget).
+  Timing-based; re-run confirms. Widen the budget or measure in a warm
+  loop so the commit gate is reliable (noted 2026-09-05 during T11).
 - Calibrate `METERS_PER_PIXEL` and `SPEED_MPS` in-game (`src/config/travel.ts`, D7).
   Check whether wide roads or paths are the faster class for a horse.
 - Second sweep in the editor for dead ends (about 600) and trails still missing; use
