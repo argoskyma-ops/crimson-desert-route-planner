@@ -358,3 +358,21 @@ Recorded 2026-09-03 for the MVP build. Change a decision here first, then the co
   `vite.config.ts` or `data/` changes) green, and one commit. Status
   checkboxes live in `docs/COMPANION-PLAN.md`.
 - Content tasks follow the record checklist in `data/content/README.md`.
+
+## D19. Content editor (dev-only)
+- **Why:** the maintainer verifies facts in-game and wants to type them
+  straight into the tool while playing, the way the road editor fixes the
+  graph. Decided 2026-09-05.
+- `EditorPanel` gains a **Content** mode (T14b): a form per entity type driven
+  by the zod schema (text, enum, number, boolean, id-picker with search, step
+  list, location picked by tapping the map), create or edit any record, and
+  Save. Records saved from the editor default to `confidence: "verified"`,
+  `gameVersion` from `meta.json` and `accessed` today; the form requires at
+  least one source URL (the in-game check counts, recorded as the official
+  site URL with note "checked in-game").
+- Persistence mirrors D8: `POST /__dev/save-content` (dev server only, same
+  same-origin check as save-roads) rewrites one `data/content/<type>.json`
+  after validating it with `ContentFileSchema`; production builds download the
+  file instead. The editor never writes `meta.json`.
+- The editor is a convenience for authoring; the JSON files stay the source of
+  truth and the data test stays the gate.

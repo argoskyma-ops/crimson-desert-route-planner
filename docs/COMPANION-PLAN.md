@@ -98,6 +98,23 @@ Conventions: coordinates are canonical zoom-4 px (D3); no DOM or Leaflet in
   an older version is rejected with a message; Route here produces a route
   when both pins exist.
 
+- [ ] **T14b. Dev-only content editor.** (D19)
+  Files: `src/components/ContentEditor.tsx`, `src/components/EditorPanel.tsx`,
+  `src/lib/content-io.ts` (+ test), `src/store.ts`, `vite.config.ts`,
+  `src/App.tsx`.
+  Add a Content mode to the editor: pick a type, pick an existing record or
+  New, edit a schema-driven form (strings, enums from the schema constants,
+  numbers, booleans, id pickers backed by the search index, step lists with
+  add/remove/reorder, a location field filled by tapping the map), Save.
+  Save validates the whole file with `ContentFileSchema`, POSTs to
+  `/__dev/save-content` (dev only; same-origin check and atomic write like
+  save-roads; body `{ type, file }`), and updates the store's db in place.
+  Production builds download the file. Defaults on save: `confidence`
+  "verified", `gameVersion` from meta, `accessed` today. Accept: create a
+  quest with two steps and a map-picked location, save, reload: it appears
+  in search and the panel; an invalid form cannot be saved; the endpoint
+  rejects cross-origin POSTs.
+
 ## Phase 2. POI layers
 
 - [ ] **T15. POI fetch script and loader.** (D14)
@@ -170,6 +187,15 @@ numbers go in the commit message. Coordinates come from your own map reading
 (the in-app map at zoom 5/6 with `data/pois.json` loaded locally is fine),
 never by copying `pois.json` records wholesale.
 
+Order (decided 2026-09-05): the main story first. C3 creates the minimal
+place and character records it references (id, name, summary, one source)
+and C1 and C2 fill them out afterwards.
+
+- [ ] **C3. Main storyline.** `storyline.json`, `quest.json`. Prologue, the
+  twelve chapters and the epilogue as one storyline; every main quest with
+  giver, start location, steps, rewards, prerequisites, and
+  points-of-no-return on the chapters that trigger them. Target: ≥ 160
+  quests.
 - [ ] **C1. Regions and places.** `region.json`, `place.json`. The five
   regions plus the Abyss layer, their named sub-areas, and every town,
   village, castle and camp already named in `data/fast-travel.json` (use its
@@ -180,15 +206,6 @@ never by copying `pois.json` records wholesale.
   Greymanes, Black Bears, Jackals, hostile groups), the three playable
   characters, Greymane companions, antagonists, and every named vendor.
   Target: ≥ 25 factions, ≥ 60 characters.
-- [ ] **C3. Main storyline.** `storyline.json`, `quest.json`. Prologue, the
-  twelve chapters and the epilogue as one storyline; every main quest with
-  giver, start location, steps, rewards, prerequisites, and
-  points-of-no-return on the chapters that trigger them. Target: ≥ 160
-  quests.
-- [ ] **C4. Faction questlines, Hernand first.** `storyline.json`,
-  `quest.json`. One storyline per faction with quests; commissions,
-  requests and bounties as `kind` records. Then Pailune, Demeniss, Delesyia,
-  Crimson Desert. Target: ≥ 250 quests total after all regions.
 - [ ] **C5. Unique gear and sets.** `item.json`. Every named unique weapon
   and armour piece, sets as items sharing `setName` with one acquisition
   per branch (boss drop, chest, vendor, craft). Refinement notes in `body`.
@@ -199,6 +216,10 @@ never by copying `pois.json` records wholesale.
   collections with `total` and `poiType`; individual records with a location
   and a short guide for every one that has a puzzle or a hidden entrance.
   Target: every collection defined; ≥ 300 individual collectibles.
+- [ ] **C4. Faction questlines, Hernand first.** `storyline.json`,
+  `quest.json`. One storyline per faction with quests; commissions,
+  requests and bounties as `kind` records. Then Pailune, Demeniss, Delesyia,
+  Crimson Desert. Target: ≥ 250 quests total after all regions.
 - [ ] **C7. Vendors, recipes, skills, mounts, enemies, activities.**
   `vendor.json`, `recipe.json`, `skill.json`, `mount.json`, `enemy.json`,
   `activity.json`. Every shop with its inventory and prices; every recipe
@@ -211,6 +232,7 @@ never by copying `pois.json` records wholesale.
   records the notes mention, bump their `gameVersion`, add new content.
   First scheduled for the 2.02 notes and for "Charting the Unknown"
   (2026-10-15).
+
 
 ## Phase 6. Later
 
