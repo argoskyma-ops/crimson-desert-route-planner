@@ -11,6 +11,7 @@ import {
 } from './editor/graph-edit'
 import { FAST_TRAVEL_TYPES_DEFAULT, type FastTravelType } from './config/travel'
 import { emptyContentDb, type ContentDb } from './content/db'
+import type { ContentLocation } from './content/types'
 import type { FastTravelLocation } from './lib/fast-travel-loader'
 import type { MapManifest } from './lib/map-manifest'
 import { emptyRoads } from './lib/roads-loader'
@@ -106,6 +107,7 @@ interface AppState {
   content: ContentDb
   contentError: string | null
   selectedEntityId: string | null
+  highlight: ContentLocation | null
   editor: EditorState
   setPin: (which: 'a' | 'b', pt: Pt | null) => void
   placePin: (pt: Pt) => void
@@ -122,6 +124,7 @@ interface AppState {
   setManifest: (manifest: MapManifest | null) => void
   setContent: (db: ContentDb, error?: string | null) => void
   selectEntity: (id: string | null) => void
+  setHighlight: (location: ContentLocation | null) => void
   setEditor: (partial: Partial<EditorState>) => void
   startDraft: () => void
   addDraftPoint: (pt: DraftPoint) => void
@@ -162,6 +165,7 @@ export const useAppStore = create<AppState>((set) => ({
   content: emptyContentDb(),
   contentError: null,
   selectedEntityId: null,
+  highlight: null,
   editor: initialEditor,
   setPin: (which, pt) =>
     set((s) => {
@@ -232,18 +236,29 @@ export const useAppStore = create<AppState>((set) => ({
     }),
   setManifest: (manifest) => set({ manifest }),
   setContent: (db, error) =>
-    set((s) => ({
-      content: db,
-      contentError: error ?? null,
-      selectedEntityId:
+    set((s) => {
+      const selectedEntityId =
         s.selectedEntityId !== null && db.byId.has(s.selectedEntityId)
           ? s.selectedEntityId
-          : null,
-    })),
+          : null
+      return {
+        content: db,
+        contentError: error ?? null,
+        selectedEntityId,
+        highlight: selectedEntityId === null ? null : s.highlight,
+      }
+    }),
   selectEntity: (id) =>
-    set((s) => ({
-      selectedEntityId: id === null || s.content.byId.has(id) ? id : null,
-    })),
+    set((s) => {
+      const selectedEntityId = id === null || s.content.byId.has(id) ? id : null
+      const record =
+        selectedEntityId === null ? undefined : s.content.byId.get(selectedEntityId)
+      return {
+        selectedEntityId,
+        highlight: record?.location ?? null,
+      }
+    }),
+  setHighlight: (location) => set({ highlight: location }),
   setEditor: (partial) => set((s) => ({ editor: { ...s.editor, ...partial } })),
   startDraft: () =>
     set((s) => ({
@@ -372,6 +387,8 @@ export const useAppStore = create<AppState>((set) => ({
       }
       return {
         showRoads: true,
+        selectedEntityId: null,
+        highlight: null,
         editor: { ...s.editor, active: true },
       }
     }),

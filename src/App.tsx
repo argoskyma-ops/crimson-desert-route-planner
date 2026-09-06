@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import ControlPanel from './components/ControlPanel'
 import EditorPanel from './components/EditorPanel'
+import EntityPanel from './components/EntityPanel'
 import Legend from './components/Legend'
 import MapView from './components/MapView'
 import { emptyContentDb } from './content/db'
@@ -10,6 +11,16 @@ import { loadRoads } from './lib/roads-loader'
 import { loadWaterMask } from './lib/water-mask-loader'
 import { useAppStore } from './store'
 
+declare global {
+  interface Window {
+    __cdStore?: typeof useAppStore
+  }
+}
+
+if (import.meta.env.DEV) {
+  window.__cdStore = useAppStore
+}
+
 export default function App() {
   const setRoads = useAppStore((s) => s.setRoads)
   const setWaterMask = useAppStore((s) => s.setWaterMask)
@@ -18,6 +29,8 @@ export default function App() {
   const editorActive = useAppStore((s) => s.editor.active)
   const editorDirty = useAppStore((s) => s.editor.dirty)
   const toggleEditor = useAppStore((s) => s.toggleEditor)
+  const selectedEntityId = useAppStore((s) => s.selectedEntityId)
+  const hidePhoneChrome = selectedEntityId !== null
 
   useEffect(() => {
     let cancelled = false
@@ -68,10 +81,11 @@ export default function App() {
     <div className="relative h-dvh overflow-hidden bg-neutral-950 text-neutral-100">
       <MapView />
       <ControlPanel />
+      <EntityPanel />
       <div
         className={`pointer-events-none absolute top-3 right-3 z-[1100] flex w-[min(calc(100%-1.5rem),17.5rem)] flex-col gap-2 max-[479px]:top-auto max-[479px]:right-3 max-[479px]:bottom-28 max-[479px]:w-[min(calc(100%-5.5rem),17.5rem)] max-[479px]:flex-col-reverse ${
           editorActive ? 'items-stretch' : 'items-end'
-        }`}
+        }${hidePhoneChrome ? ' max-md:hidden' : ''}`}
       >
         <button
           type="button"
@@ -94,7 +108,11 @@ export default function App() {
           <p className="pointer-events-auto px-1 text-xs font-medium text-amber-400">Unsaved changes</p>
         ) : null}
       </div>
-      {!editorActive ? <Legend /> : null}
+      {!editorActive ? (
+        <div className={hidePhoneChrome ? 'max-md:hidden' : undefined}>
+          <Legend />
+        </div>
+      ) : null}
     </div>
   )
 }

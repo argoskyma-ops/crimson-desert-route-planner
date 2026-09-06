@@ -58,6 +58,7 @@ export default function MapView() {
   const routeLayerRef = useRef<L.LayerGroup | null>(null)
   const roadsLayerRef = useRef<L.LayerGroup | null>(null)
   const fastTravelLayerRef = useRef<L.LayerGroup | null>(null)
+  const highlightLayerRef = useRef<L.LayerGroup | null>(null)
   const rendererRef = useRef<L.Renderer | null>(null)
   const setManifest = useAppStore((s) => s.setManifest)
   const pinA = useAppStore((s) => s.pins.a)
@@ -69,6 +70,7 @@ export default function MapView() {
   const fastTravelTypes = useAppStore((s) => s.fastTravelTypes)
   const fastTravelQuery = useAppStore((s) => s.fastTravelQuery)
   const focusedFastTravelId = useAppStore((s) => s.focusedFastTravelId)
+  const highlight = useAppStore((s) => s.highlight)
   const editorActive = useAppStore((s) => s.editor.active)
   const [missing, setMissing] = useState(false)
   const [mapReady, setMapReady] = useState(false)
@@ -127,8 +129,12 @@ export default function MapView() {
       map.createPane('fastTravel')
       const fastTravelPane = map.getPane('fastTravel')
       if (fastTravelPane) fastTravelPane.style.zIndex = '450'
+      map.createPane('highlight')
+      const highlightPane = map.getPane('highlight')
+      if (highlightPane) highlightPane.style.zIndex = '460'
       roadsLayerRef.current = L.layerGroup().addTo(map)
       fastTravelLayerRef.current = L.layerGroup().addTo(map)
+      highlightLayerRef.current = L.layerGroup().addTo(map)
       routeLayerRef.current = L.layerGroup().addTo(map)
 
       map.on('click', (e: L.LeafletMouseEvent) => {
@@ -150,6 +156,7 @@ export default function MapView() {
       routeLayerRef.current = null
       roadsLayerRef.current = null
       fastTravelLayerRef.current = null
+      highlightLayerRef.current = null
       rendererRef.current = null
       mapRef.current = null
       map?.remove()
@@ -281,6 +288,31 @@ export default function MapView() {
     }
     focused?.openPopup()
   }, [mapReady, fastTravel, fastTravelTypes, fastTravelQuery, focusedFastTravelId])
+
+  useEffect(() => {
+    if (!mapReady) return
+    const group = highlightLayerRef.current
+    if (!group) return
+    group.clearLayers()
+    if (!highlight || highlight.map !== 'pywel') return
+    const latlng = toLatLng(highlight)
+    L.circleMarker(latlng, {
+      radius: 14,
+      color: '#fbbf24',
+      weight: 3,
+      fillOpacity: 0,
+      interactive: false,
+      pane: 'highlight',
+    }).addTo(group)
+    L.circleMarker(latlng, {
+      radius: 4,
+      color: '#fbbf24',
+      fillColor: '#fbbf24',
+      fillOpacity: 1,
+      interactive: false,
+      pane: 'highlight',
+    }).addTo(group)
+  }, [mapReady, highlight])
 
   useEffect(() => {
     if (!mapReady || !editorActive) return

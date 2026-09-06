@@ -97,7 +97,7 @@ Conventions: coordinates are canonical zoom-4 px (D3); no DOM or Leaflet in
   fixture; "rokade" finds the mount seed; "nexus" still lists fast-travel
   points.
 
-- [ ] **T13. Entity panel.** (D16)
+- [x] **T13. Entity panel.** (D16)
   Files: `src/components/EntityPanel.tsx`, `src/components/entity/*.tsx`
   (a generic body plus one small section component per entity type; T17
   and T18 later replace the quest, storyline and codex sections),
