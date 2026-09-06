@@ -44,6 +44,8 @@ If the tiles are missing, the app tells you to run that script.
    its name.
 7. The summary shows km and an ETA. Speeds and the metres-per-pixel scale are
    assumptions in `src/config/travel.ts`; they have not been calibrated in-game.
+8. **Layers** (control panel) toggles POI groups when `data/pois.json` is
+   present; generate it with `scripts/fetch-pois.py` (details in `SOURCE.md`).
 
 The router knows where the water is (`data/water-mask.png`, see D10 in
 `docs/DECISIONS.md`). Off-road legs, meaning the pin-to-road hops and the gap
@@ -55,19 +57,23 @@ straight line shown" and draws the straight line anyway; a pin dropped in water
 routes to shore and says "Route crosses water". Without the water mask the
 planner still works, it just ignores water.
 
-## Companion (in progress)
+## Companion
 
-The planner is growing into a full playthrough companion: one search box
-over quests, places, items, collectibles, vendors, characters and factions,
-a panel with the facts and relations for each, step-by-step acquisition
-guides with *Route here*, progress tracking, and map layers for every
-point-of-interest type. Design: `docs/COMPANION-SPEC.md`; decisions D12 to
-D18 in `docs/DECISIONS.md`; build tasks and status in
+The planner includes a companion: global search over content, fast travel
+and POI types; an entity panel with facts, relations and step-by-step
+guides with *Route here* and *Show*; progress tracking (steps, quests,
+collected) with export/import; POI map layers generated locally by
+`scripts/fetch-pois.py` (Layers button); a quest log with storyline
+progress; a codex with facets; and an About panel with the disclosure and
+game version. Design: `docs/COMPANION-SPEC.md`; decisions D12 to D19 in
+`docs/DECISIONS.md`; build tasks and status in
 `docs/COMPANION-PLAN.md`. Content lives in `data/content/` (see its README
 for the record checklist); `npm run content:report` prints coverage.
+Content campaigns (C-tasks) are in progress and the seed data is small.
 
 This is an unofficial fan project. It is not affiliated with or endorsed by
-Pearl Abyss, and it is free: no paywall, no accounts.
+Pearl Abyss. Crimson Desert is a trademark of Pearl Abyss. It is free: no
+paywall, no accounts.
 
 ## Tracing and fixing roads
 
@@ -165,7 +171,8 @@ npm run dev -- --port 5173 --strictPort   # in another terminal
   claim over the underlying map. The retired PowerPyx source they partly come
   from stays credited in `SOURCE.md`.
 - Crimson Desert is a trademark of Pearl Abyss. This project is not affiliated
-  with or endorsed by Pearl Abyss.
+  with or endorsed by Pearl Abyss. The in-app About panel carries the same
+  summary.
 
 ## Contributing
 

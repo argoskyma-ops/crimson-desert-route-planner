@@ -1,4 +1,5 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import About from './components/About'
 import ControlPanel from './components/ControlPanel'
 import EditorPanel from './components/EditorPanel'
 import EntityPanel from './components/EntityPanel'
@@ -36,6 +37,7 @@ export default function App() {
   const toggleEditor = useAppStore((s) => s.toggleEditor)
   const selectedEntityId = useAppStore((s) => s.selectedEntityId)
   const hidePhoneChrome = selectedEntityId !== null
+  const [aboutOpen, setAboutOpen] = useState(false)
 
   useEffect(() => {
     let cancelled = false
@@ -107,7 +109,10 @@ export default function App() {
         <button
           type="button"
           aria-pressed={editorActive}
-          onClick={() => toggleEditor()}
+          onClick={() => {
+            setAboutOpen(false)
+            toggleEditor()
+          }}
           className={`pointer-events-auto inline-flex min-h-11 items-center justify-center rounded-xl border px-3 text-sm font-medium shadow-lg backdrop-blur-md ${
             editorActive
               ? 'border-white/20 bg-neutral-100 text-neutral-900'
@@ -116,9 +121,28 @@ export default function App() {
         >
           {editorActive ? 'Done editing' : 'Edit data'}
         </button>
+        {!editorActive ? (
+          <button
+            type="button"
+            aria-pressed={aboutOpen}
+            onClick={() => setAboutOpen((open) => !open)}
+            className={`pointer-events-auto inline-flex min-h-11 items-center justify-center rounded-xl border px-3 text-sm font-medium shadow-lg backdrop-blur-md ${
+              aboutOpen
+                ? 'border-white/20 bg-neutral-100 text-neutral-900'
+                : 'border-white/10 bg-neutral-950/80 text-neutral-100 hover:bg-neutral-800/80'
+            }`}
+          >
+            About
+          </button>
+        ) : null}
         {editorActive ? (
           <div className="pointer-events-auto">
             <EditorPanel />
+          </div>
+        ) : null}
+        {!editorActive && aboutOpen ? (
+          <div className="pointer-events-auto w-full">
+            <About onClose={() => setAboutOpen(false)} />
           </div>
         ) : null}
         {!editorActive && editorDirty ? (

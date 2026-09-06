@@ -205,7 +205,7 @@ Conventions: coordinates are canonical zoom-4 px (D3); no DOM or Leaflet in
   skill relation). Accept: every facet filters correctly on the seeds;
   counts match the db.
 
-- [ ] **T19. About and disclosure.** (D13, D17)
+- [x] **T19. About and disclosure.** (D13, D17)
   Files: `src/components/About.tsx`, `src/App.tsx`, `README.md`.
   About panel: unofficial fan project disclosure, game version from
   `meta.json`, data licence summary, link to `SOURCE.md`. README gains a
