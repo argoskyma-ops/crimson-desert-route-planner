@@ -6,10 +6,21 @@ orchestrator's status line above it says what was done with the findings.
 
 ## R2: Phase 1 (loader, search, panel, progress, editor)
 
-Status 2026-09-05: filed, not yet applied. The blocking item (Save writes
-a one-record file when the on-disk fetch fails) and the should-fix list
-go to Grok as one "R2 fixes" task before Phase 2; nits are folded into
-the same task where cheap. Tests-to-add are part of that task.
+Status 2026-09-05: R2 applied (commit "Apply the R2 review of companion
+Phase 1", Grok, one pass). The blocking item, the ten should-fixes and
+every test listed below are in. Nits applied except `ENTITY_TYPE_ORDER`
+(kept for T18); the spec wording was fixed in `docs/COMPANION-SPEC.md`.
+Choices made while applying: a failed file fetch aborts Save, Download,
+Revert and record switch with "Could not read <type>.json" (no in-memory
+rebuild); New refuses an existing id both live (issue) and at save time;
+`search()` gained an `options.filter` for the id picker; the phone control
+panel collapses to the title plus a Search button below 768 px while an
+entity is open; the content draft stays mounted across the Roads/Content
+toggle and `editor.contentDirty` feeds the refresh guard (closing the
+editor still drops the draft); the `/__dev/save-content` handler moved to
+`scripts/dev-save-content.ts` so `tests/unit/save-content-endpoint.test.ts`
+can drive it. A GET on the endpoint still falls through to the SPA index
+(pre-existing, harmless).
 
 ### R2 review: companion Phase 1 (Grok 4.6, 2026-09-05)
 

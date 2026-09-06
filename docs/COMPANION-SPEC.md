@@ -186,7 +186,8 @@ becomes part of this panel; its type chips stay.
 
 ## 6. Entity panel, guides and progress (D16)
 
-- Phone: bottom sheet over the map (half height, drag to full). Desktop
+- Phone: bottom sheet over the map (half height, Expand button to full;
+  the control panel collapses to a title bar while a sheet is open). Desktop
   (≥ 768 px): right-hand panel, map stays interactive.
 - Header: name, type badge, region, confidence + game version line ("checked
   against 2.01.00"), *Show on map*.
