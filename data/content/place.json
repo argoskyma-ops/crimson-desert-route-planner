@@ -48,6 +48,125 @@
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:greymanes-camp",
+      "type": "place",
+      "name": "Greymanes camp",
+      "aliases": ["Greymane camp"],
+      "kind": "camp",
+      "summary": "The Greymane camp hit in the opening raid; sources disagree on whether it sits in Hernand or Pailune.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/585649", "title": "Game8: Prologue walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:hernand-tavern",
+      "type": "place",
+      "name": "Hernand Tavern",
+      "kind": "inn",
+      "region": "region:hernand",
+      "summary": "The city tavern that opens after the prologue and hosts the first errands of Chapter 1.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/585649", "title": "Game8: Prologue walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:corridor-of-the-void",
+      "type": "place",
+      "name": "Corridor of the Void",
+      "kind": "dungeon",
+      "region": "region:abyss",
+      "summary": "An Abyss passage Kliff wakes in during the prologue, before the walk toward Hernand.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/585649", "title": "Game8: Prologue walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:hernand-sewer",
+      "type": "place",
+      "name": "City sewer",
+      "aliases": ["Hernand sewer"],
+      "kind": "dungeon",
+      "region": "region:hernand",
+      "summary": "The tunnels under Hernand that True Wisdom in Kindness sends Kliff into.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/585170", "title": "Game8: Chapter 1 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:axiom-archive",
+      "type": "place",
+      "name": "Axiom Archive",
+      "kind": "ruins",
+      "region": "region:abyss",
+      "summary": "An Abyss archive reached in Chapter 1 while following an engraved key.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/585170", "title": "Game8: Chapter 1 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:lioncrest-watchtower",
+      "type": "place",
+      "name": "Lioncrest Watchtower",
+      "kind": "watchtower",
+      "region": "region:hernand",
+      "summary": "A Hernand watchtower held by bandits at the start of Chapter 2, with a helm left on site.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/586591", "title": "Game8: Chapter 2 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:springtide-mill",
+      "type": "place",
+      "name": "Springtide Mill",
+      "kind": "farm",
+      "region": "region:hernand",
+      "summary": "A mill on the river where Chapter 2 sends Kliff to clear out enemies.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/586591", "title": "Game8: Chapter 2 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:goldleaf-merchant-guild",
+      "type": "place",
+      "name": "Goldleaf Merchant Guild",
+      "aliases": ["Goldleaf Merchant Camp", "Goldleaf Camp"],
+      "kind": "camp",
+      "region": "region:hernand",
+      "summary": "The Goldleaf merchants' guild and camp, investigated near the end of Chapter 2.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/586591", "title": "Game8: Chapter 2 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:serkis-estate",
+      "type": "place",
+      "name": "Serkis Estate",
+      "kind": "estate",
+      "region": "region:hernand",
+      "summary": "The Serkis house in Hernand; Chapter 2's last arc starts here.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/586591", "title": "Game8: Chapter 2 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
     }
   ]
 }

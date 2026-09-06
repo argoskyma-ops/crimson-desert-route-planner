@@ -77,6 +77,103 @@
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:sebastian",
+      "type": "character",
+      "name": "Sebastian",
+      "role": "Greymane ally in the prologue",
+      "factions": ["faction:greymanes"],
+      "summary": "A Greymane who walks Kliff out of the opening night and on toward Hernand.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/585649", "title": "Game8: Prologue walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:old-beggar",
+      "type": "character",
+      "name": "Old Beggar",
+      "role": "Hernand beggar, quest giver",
+      "summary": "The man in Hernand who asks for a coin and starts Mysterious Man.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/585170", "title": "Game8: Chapter 1 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:woman-in-white",
+      "type": "character",
+      "name": "Woman in White",
+      "role": "Abyss figure",
+      "summary": "A figure met in the Abyss at the close of Chapter 1, before the return to Hernand.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/585170", "title": "Game8: Chapter 1 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:shai",
+      "type": "character",
+      "name": "Shai",
+      "role": "Hernand girl with a cat",
+      "summary": "The girl who opens Chapter 2; her cat Jiji is with her when the errand begins.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/586591", "title": "Game8: Chapter 2 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:matthias",
+      "type": "character",
+      "name": "Matthias",
+      "role": "Duelling opponent in Hernand",
+      "summary": "The fighter Kliff has to beat during For Honor while Hernand is in uproar.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/586591", "title": "Game8: Chapter 2 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:barden-middler",
+      "type": "character",
+      "name": "Barden Middler",
+      "role": "Hernand official",
+      "summary": "The official Kliff is sent to speak with during Awestruck.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/586591", "title": "Game8: Chapter 2 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:boris",
+      "type": "character",
+      "name": "Boris",
+      "role": "Cave guide",
+      "summary": "The man who leads Kliff through a cave during Secrets Hidden in the Dark.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/586591", "title": "Game8: Chapter 2 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:shakatu",
+      "type": "character",
+      "name": "Shakatu",
+      "role": "Goldleaf trade ally",
+      "summary": "The Goldleaf contact who becomes a trade ally after Rebellion of Revolution.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/586591", "title": "Game8: Chapter 2 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
     }
   ]
 }

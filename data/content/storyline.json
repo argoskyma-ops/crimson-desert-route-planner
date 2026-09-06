@@ -8,35 +8,131 @@
       "name": "Main story",
       "kind": "main",
       "summary": "Kliff's campaign: a prologue, twelve chapters and an epilogue, played in a fixed order.",
-      "body": "Sources count about 168 main-quest steps across the fourteen sections. The campaign is linear with a single ending; chapters that permanently change the world state list that under their own pointsOfNoReturn as they are confirmed. Chapter titles here are the values quests use in their chapter field.",
+      "body": "GameRant's published list names 206 main quests across fourteen sections; this record currently holds the 36 quests of the Prologue through Chapter 2, and later chapters stay empty until those parts are written. The campaign is linear. Sources disagree on whether the opening Greymane camp lies in Hernand or Pailune, so the six prologue quests omit a region. Journey's End is treated as the first Epilogue quest, not as the close of Chapter 12.",
       "chapters": [
         {
           "title": "Prologue: Dead of Night",
           "quests": [
-            "quest:dead-of-night"
+            "quest:ambush",
+            "quest:unfamiliar-lands",
+            "quest:in-ashes-prologue",
+            "quest:unknown-space",
+            "quest:realm-of-uncertainty",
+            "quest:new-journey"
           ]
         },
         {
-          "title": "Chapter 1",
+          "title": "Chapter 1: The First Encounter",
+          "quests": [
+            "quest:trials-of-kindness",
+            "quest:where-rumors-gather",
+            "quest:mysterious-man",
+            "quest:true-wisdom-in-kindness",
+            "quest:actions-speak-louder-than-words",
+            "quest:hearts-beyond-borders",
+            "quest:trace",
+            "quest:mystical-key",
+            "quest:polar-opposites",
+            "quest:abyss-without-balance",
+            "quest:woman-in-white"
+          ]
+        },
+        {
+          "title": "Chapter 2: Golden Greed",
+          "quests": [
+            "quest:unexpected-gift",
+            "quest:where-the-light-leads",
+            "quest:memory-fragment",
+            "quest:reunion",
+            "quest:hernand-in-chaos",
+            "quest:for-honor",
+            "quest:awestruck",
+            "quest:shadow-cast-over-the-river",
+            "quest:where-misery-gathers",
+            "quest:trial-after-trial",
+            "quest:the-man-trapped-in-the-mire",
+            "quest:missing-companion",
+            "quest:secrets-hidden-in-the-dark",
+            "quest:the-end-of-greed",
+            "quest:the-dark-veil",
+            "quest:the-flames-of-greed",
+            "quest:kidnapped-healer",
+            "quest:rebellion-of-revolution",
+            "quest:cheers-echoing-from-the-edge"
+          ]
+        },
+        {
+          "title": "Chapter 3: Howling Hill",
+          "quests": [],
+          "pointsOfNoReturn": [
+            "Once this chapter closes, Damiane cannot be summoned for a while unless her side quests were finished first."
+          ]
+        },
+        {
+          "title": "Chapter 4: The Price of Knowledge",
           "quests": []
         },
         {
-          "title": "Chapter 2",
-          "quests": [
-            "quest:trial-of-the-winds"
+          "title": "Chapter 5: Guest Unbidden",
+          "quests": []
+        },
+        {
+          "title": "Chapter 6: Cracks in the Shield",
+          "quests": []
+        },
+        {
+          "title": "Chapter 7: Homecoming",
+          "quests": [],
+          "pointsOfNoReturn": [
+            "Ludvig escapes capture and Myurdin pulls back with losses; both states carry into Chapter 8."
           ]
+        },
+        {
+          "title": "Chapter 8: Blood Coronation",
+          "quests": [],
+          "pointsOfNoReturn": [
+            "Kliff is knocked out and play shifts to Damiane alone; Beatrice Azerian is killed, and that death stands."
+          ]
+        },
+        {
+          "title": "Chapter 9: The Sage of the Desert",
+          "quests": []
+        },
+        {
+          "title": "Chapter 10: Counterattack",
+          "quests": []
+        },
+        {
+          "title": "Chapter 11: Truth and Reality",
+          "quests": []
+        },
+        {
+          "title": "Chapter 12: The Abyss",
+          "quests": [],
+          "pointsOfNoReturn": [
+            "After Caliburn is chased into the Abyss, Damiane and Oongka cannot be used as companions for the rest of the chapter; take any needed gear off them first."
+          ]
+        },
+        {
+          "title": "Epilogue: Journey's End",
+          "quests": []
         }
       ],
       "sources": [
         {
           "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
           "title": "GameRant: main story quests and chapter list",
-          "accessed": "2026-09-05"
+          "accessed": "2026-09-06"
         },
         {
           "url": "https://game8.co/games/Crimson-Desert/archives/582136",
           "title": "Game8: main story walkthrough",
-          "accessed": "2026-09-05"
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/",
+          "title": "VULKK: main story walkthrough",
+          "accessed": "2026-09-06"
         }
       ],
       "confidence": "reported",

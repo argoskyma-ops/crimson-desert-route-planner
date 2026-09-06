@@ -3,35 +3,1703 @@
   "type": "quest",
   "records": [
     {
-      "id": "quest:dead-of-night",
+      "id": "quest:ambush",
       "type": "quest",
-      "name": "Dead of Night",
+      "name": "Ambush",
       "kind": "main",
       "chapter": "Prologue: Dead of Night",
       "storyline": "storyline:main",
-      "region": "region:pailune",
-      "summary": "The prologue: the Greymane camp is attacked at night and Kliff fights his way out.",
+      "summary": "Hold the Greymane camp through a night raid by the Black Bears.",
       "steps": [
         {
-          "text": "Follow the camp attack as it unfolds; the fights teach the basic combat controls.",
-          "action": "fight"
+          "text": "Stand with the Greymanes as the Black Bears hit the camp.",
+          "action": "fight",
+          "refs": ["place:greymanes-camp", "faction:black-bears", "faction:greymanes"]
         },
         {
-          "text": "Escape the camp. The chapter ends when Kliff is clear of the attackers.",
-          "action": "travel"
+          "text": "Cut down the raiders, including the Black Bear Elite among them.",
+          "action": "fight",
+          "refs": ["faction:black-bears"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/585649",
+          "title": "Game8: Prologue walkthrough",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/",
+          "title": "VULKK: main story walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:unfamiliar-lands",
+      "type": "quest",
+      "name": "Unfamiliar Lands",
+      "kind": "main",
+      "chapter": "Prologue: Dead of Night",
+      "storyline": "storyline:main",
+      "summary": "Fall back to a cabin and hear from the Greymanes who made it out.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:ambush",
+          "text": "Complete Ambush"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Leave the fighting at the camp and make for the cabin marked for the survivors.",
+          "action": "travel",
+          "refs": ["place:greymanes-camp"]
+        },
+        {
+          "text": "Talk with the Greymanes who reached it and hear how they mean to go on.",
+          "action": "talk",
+          "refs": ["faction:greymanes"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/585649",
+          "title": "Game8: Prologue walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:in-ashes-prologue",
+      "type": "quest",
+      "name": "In Ashes",
+      "kind": "main",
+      "chapter": "Prologue: Dead of Night",
+      "storyline": "storyline:main",
+      "summary": "Cut down the Black Bears still in the camp and pull surviving Greymanes out of the fight.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:unfamiliar-lands",
+          "text": "Complete Unfamiliar Lands"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Return to the camp and engage the Black Bears who stayed behind.",
+          "action": "fight",
+          "refs": ["place:greymanes-camp", "faction:black-bears"]
+        },
+        {
+          "text": "Get the remaining Greymanes clear of the raid.",
+          "action": "other",
+          "refs": ["faction:greymanes"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/585649",
+          "title": "Game8: Prologue walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:unknown-space",
+      "type": "quest",
+      "name": "Unknown Space",
+      "kind": "main",
+      "chapter": "Prologue: Dead of Night",
+      "storyline": "storyline:main",
+      "summary": "Wake in the Corridor of the Void and find a way through that Abyss passage.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:in-ashes-prologue",
+          "text": "Complete In Ashes"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Get your bearings after waking in the Corridor of the Void.",
+          "action": "travel",
+          "refs": ["place:corridor-of-the-void"]
+        },
+        {
+          "text": "Pick a path through the passage and keep moving until the next stretch opens.",
+          "action": "other",
+          "refs": ["place:corridor-of-the-void"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/585649",
+          "title": "Game8: Prologue walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:realm-of-uncertainty",
+      "type": "quest",
+      "name": "Realm of Uncertainty",
+      "kind": "main",
+      "chapter": "Prologue: Dead of Night",
+      "storyline": "storyline:main",
+      "summary": "Push on through the void, fire Blinding Flash at a light device, and reach the exit.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:unknown-space",
+          "text": "Complete Unknown Space"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Keep advancing through the Corridor of the Void.",
+          "action": "travel",
+          "refs": ["place:corridor-of-the-void"]
+        },
+        {
+          "text": "Use Blinding Flash on the light device that blocks the way.",
+          "action": "solve",
+          "refs": ["place:corridor-of-the-void"]
+        },
+        {
+          "text": "Find the exit and leave the passage.",
+          "action": "travel",
+          "refs": ["place:corridor-of-the-void"]
         }
       ],
       "rewards": [
         {
           "kind": "unlock",
-          "text": "Chapter 1 begins"
+          "text": "Blinding Flash"
         }
       ],
+      "missable": "no",
       "sources": [
         {
           "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
           "title": "GameRant: main story quests and chapter list",
-          "accessed": "2026-09-05"
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/585649",
+          "title": "Game8: Prologue walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:new-journey",
+      "type": "quest",
+      "name": "New Journey",
+      "kind": "main",
+      "chapter": "Prologue: Dead of Night",
+      "storyline": "storyline:main",
+      "summary": "Walk out with Sebastian and make for Hernand to start the road ahead.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:realm-of-uncertainty",
+          "text": "Complete Realm of Uncertainty"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Fall in behind Sebastian after the Abyss passage.",
+          "action": "talk",
+          "refs": ["character:sebastian"]
+        },
+        {
+          "text": "Travel with him toward Hernand and the city tavern that opens there.",
+          "action": "travel",
+          "refs": ["character:sebastian", "place:hernand-castle", "place:hernand-tavern"]
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "unlock",
+          "text": "Hernand Tavern"
+        },
+        {
+          "kind": "item",
+          "text": "Standard Inventory Expansion Tool"
+        },
+        {
+          "kind": "item",
+          "text": "Oats x10"
+        },
+        {
+          "kind": "item",
+          "text": "Blackberry x5"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/585649",
+          "title": "Game8: Prologue walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:trials-of-kindness",
+      "type": "quest",
+      "name": "Trials of Kindness",
+      "kind": "main",
+      "chapter": "Chapter 1: The First Encounter",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Settle into Hernand Tavern by lending a hand to townsfolk and testing yourself at the arm-wrestling table.",
+      "prerequisites": [
+        {
+          "kind": "chapter",
+          "value": 1,
+          "text": "Reach Chapter 1"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Enter Hernand Tavern and see who needs help on the floor.",
+          "action": "travel",
+          "refs": ["place:hernand-tavern"]
+        },
+        {
+          "text": "Lend a hand to the villagers who ask, then take a turn at arm wrestling.",
+          "action": "other",
+          "refs": ["place:hernand-tavern"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/585170",
+          "title": "Game8: Chapter 1 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:where-rumors-gather",
+      "type": "quest",
+      "name": "Where Rumors Gather",
+      "kind": "main",
+      "chapter": "Chapter 1: The First Encounter",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Work the tavern floor, pick up local talk, and take a turn at arm wrestling.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:trials-of-kindness",
+          "text": "Complete Trials of Kindness"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Look around Hernand Tavern and listen to what people are saying.",
+          "action": "other",
+          "refs": ["place:hernand-tavern"]
+        },
+        {
+          "text": "Sit down for arm wrestling once the floor has been checked.",
+          "action": "other",
+          "refs": ["place:hernand-tavern"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/585170",
+          "title": "Game8: Chapter 1 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:mysterious-man",
+      "type": "quest",
+      "name": "Mysterious Man",
+      "kind": "main",
+      "chapter": "Chapter 1: The First Encounter",
+      "storyline": "storyline:main",
+      "giver": "character:old-beggar",
+      "region": "region:hernand",
+      "summary": "Offer a coin to the Old Beggar who waits near the tavern.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:where-rumors-gather",
+          "text": "Complete Where Rumors Gather"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Find the Old Beggar near Hernand Tavern.",
+          "action": "travel",
+          "refs": ["character:old-beggar", "place:hernand-tavern"]
+        },
+        {
+          "text": "Give him a coin and hear what he has to say.",
+          "action": "talk",
+          "refs": ["character:old-beggar"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/585170",
+          "title": "Game8: Chapter 1 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:true-wisdom-in-kindness",
+      "type": "quest",
+      "name": "True Wisdom in Kindness",
+      "kind": "main",
+      "chapter": "Chapter 1: The First Encounter",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Drop into Hernand's sewer and see what the tunnels are hiding.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:mysterious-man",
+          "text": "Complete Mysterious Man"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Find a way down into the city sewer.",
+          "action": "travel",
+          "refs": ["place:hernand-sewer"]
+        },
+        {
+          "text": "Search the tunnels and finish whatever the errand asks below the streets.",
+          "action": "other",
+          "refs": ["place:hernand-sewer"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/585170",
+          "title": "Game8: Chapter 1 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:actions-speak-louder-than-words",
+      "type": "quest",
+      "name": "Actions Speak Louder Than Words",
+      "kind": "main",
+      "chapter": "Chapter 1: The First Encounter",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Seek out distressed people in the city and settle their trouble in person.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:true-wisdom-in-kindness",
+          "text": "Complete True Wisdom in Kindness"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Walk Hernand and find the villagers who are in distress.",
+          "action": "travel",
+          "refs": ["place:hernand-castle"]
+        },
+        {
+          "text": "Step in and deal with what is troubling them.",
+          "action": "other",
+          "refs": ["place:hernand-castle"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/585170",
+          "title": "Game8: Chapter 1 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:hearts-beyond-borders",
+      "type": "quest",
+      "name": "Hearts Beyond Borders",
+      "aliases": ["Heart Beyond Borders"],
+      "kind": "main",
+      "chapter": "Chapter 1: The First Encounter",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Talk with a child in Hernand and take a missing cat back to its owner.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:actions-speak-louder-than-words",
+          "text": "Complete Actions Speak Louder Than Words"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Speak with the child who is waiting in the city.",
+          "action": "talk",
+          "refs": ["place:hernand-castle"]
+        },
+        {
+          "text": "Find the cat and return it to its owner.",
+          "action": "collect",
+          "refs": ["place:hernand-castle"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/585170",
+          "title": "Game8: Chapter 1 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:trace",
+      "type": "quest",
+      "name": "Trace",
+      "aliases": ["Traces"],
+      "kind": "main",
+      "chapter": "Chapter 1: The First Encounter",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Follow the trail of an engraved key into the Axiom Archive.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:hearts-beyond-borders",
+          "text": "Complete Hearts Beyond Borders"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Take up the engraved key and start following the trail it marks.",
+          "action": "other"
+        },
+        {
+          "text": "Carry that trail into the Axiom Archive in the Abyss.",
+          "action": "travel",
+          "refs": ["place:axiom-archive"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/585170",
+          "title": "Game8: Chapter 1 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:mystical-key",
+      "type": "quest",
+      "name": "Mystical Key",
+      "kind": "main",
+      "chapter": "Chapter 1: The First Encounter",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Study the engraved key and open the room it marks inside Hernand Castle.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:trace",
+          "text": "Complete Trace"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Examine the engraved key and read what it is pointing at.",
+          "action": "solve"
+        },
+        {
+          "text": "Go into Hernand Castle and open the room the key fits.",
+          "action": "travel",
+          "refs": ["place:hernand-castle"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/585170",
+          "title": "Game8: Chapter 1 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:polar-opposites",
+      "type": "quest",
+      "name": "Polar Opposites",
+      "kind": "main",
+      "chapter": "Chapter 1: The First Encounter",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Bring the Abyss Nexus to life and locate a way into the layer beyond.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:mystical-key",
+          "text": "Complete Mystical Key"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Activate the Abyss Nexus.",
+          "action": "solve",
+          "refs": ["place:axiom-archive"]
+        },
+        {
+          "text": "Find the entrance that opens once the Nexus is live.",
+          "action": "travel",
+          "refs": ["place:axiom-archive"]
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "unlock",
+          "text": "Abyss Nexus"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/585170",
+          "title": "Game8: Chapter 1 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:abyss-without-balance",
+      "type": "quest",
+      "name": "Abyss Without Balance",
+      "kind": "main",
+      "chapter": "Chapter 1: The First Encounter",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Cross a skybridge in the Abyss, join an Abyss Cell, and claim the artifact waiting there.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:polar-opposites",
+          "text": "Complete Polar Opposites"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Cross the skybridge in the Axiom Archive.",
+          "action": "travel",
+          "refs": ["place:axiom-archive"]
+        },
+        {
+          "text": "Combine the Abyss Cell.",
+          "action": "solve",
+          "refs": ["place:axiom-archive"]
+        },
+        {
+          "text": "Take the artifact on the far side.",
+          "action": "collect",
+          "refs": ["place:axiom-archive"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/585170",
+          "title": "Game8: Chapter 1 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:woman-in-white",
+      "type": "quest",
+      "name": "Woman in White",
+      "kind": "main",
+      "chapter": "Chapter 1: The First Encounter",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Speak with the Woman in White in the Abyss, then return to Hernand.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:abyss-without-balance",
+          "text": "Complete Abyss Without Balance"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Find the Woman in White and hear her out.",
+          "action": "talk",
+          "refs": ["character:woman-in-white", "place:axiom-archive"]
+        },
+        {
+          "text": "Leave the Abyss and return to Hernand.",
+          "action": "travel",
+          "refs": ["place:hernand-castle"]
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "unlock",
+          "text": "Axiom Force"
+        },
+        {
+          "kind": "unlock",
+          "text": "Force Palm"
+        },
+        {
+          "kind": "money",
+          "amount": 1,
+          "text": "Silver"
+        },
+        {
+          "kind": "item",
+          "text": "Standard Inventory Expansion Tool x2"
+        },
+        {
+          "kind": "item",
+          "text": "Lentils x10"
+        },
+        {
+          "kind": "item",
+          "text": "Apple x5"
+        },
+        {
+          "kind": "item",
+          "text": "Faded Abyss Artifact x1"
+        },
+        {
+          "kind": "item",
+          "text": "Palmar Pill x1"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/585170",
+          "title": "Game8: Chapter 1 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:unexpected-gift",
+      "type": "quest",
+      "name": "Unexpected Gift",
+      "kind": "main",
+      "chapter": "Chapter 2: Golden Greed",
+      "storyline": "storyline:main",
+      "giver": "character:shai",
+      "region": "region:hernand",
+      "summary": "Meet Shai and her cat Jiji and take the errand that starts this chapter.",
+      "prerequisites": [
+        {
+          "kind": "chapter",
+          "value": 2,
+          "text": "Reach Chapter 2"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Find Shai; her cat Jiji is with her.",
+          "action": "travel",
+          "refs": ["character:shai"]
+        },
+        {
+          "text": "Hear her out and accept the work she offers.",
+          "action": "talk",
+          "refs": ["character:shai"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586591",
+          "title": "Game8: Chapter 2 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:where-the-light-leads",
+      "type": "quest",
+      "name": "Where the Light Leads",
+      "kind": "main",
+      "chapter": "Chapter 2: Golden Greed",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Drive the bandits off Lioncrest Watchtower and inspect the helm they left.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:unexpected-gift",
+          "text": "Complete Unexpected Gift"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Travel to Lioncrest Watchtower.",
+          "action": "travel",
+          "refs": ["place:lioncrest-watchtower"]
+        },
+        {
+          "text": "Defeat the bandits holding the tower.",
+          "action": "fight",
+          "refs": ["place:lioncrest-watchtower"]
+        },
+        {
+          "text": "Examine the helm left on the site.",
+          "action": "collect",
+          "refs": ["place:lioncrest-watchtower"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586591",
+          "title": "Game8: Chapter 2 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:memory-fragment",
+      "type": "quest",
+      "name": "Memory Fragment",
+      "kind": "main",
+      "chapter": "Chapter 2: Golden Greed",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Use the helm's stored memories to see what it recorded.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:where-the-light-leads",
+          "text": "Complete Where the Light Leads"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Turn the Visione on the helm taken at Lioncrest Watchtower.",
+          "action": "solve",
+          "refs": ["place:lioncrest-watchtower"]
+        },
+        {
+          "text": "Watch the memories stored in it and note what they show.",
+          "action": "other"
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "unlock",
+          "text": "Visione"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586591",
+          "title": "Game8: Chapter 2 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:reunion",
+      "type": "quest",
+      "name": "Reunion",
+      "kind": "main",
+      "chapter": "Chapter 2: Golden Greed",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Speak with a child and learn Nature's Grasp and Focus.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:memory-fragment",
+          "text": "Complete Memory Fragment"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Find the child and hear what they have to say.",
+          "action": "talk"
+        },
+        {
+          "text": "Learn Nature's Grasp and Focus from that meeting.",
+          "action": "other"
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "unlock",
+          "text": "Nature's Grasp"
+        },
+        {
+          "kind": "unlock",
+          "text": "Focus"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586591",
+          "title": "Game8: Chapter 2 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:hernand-in-chaos",
+      "type": "quest",
+      "name": "Hernand in Chaos",
+      "kind": "main",
+      "chapter": "Chapter 2: Golden Greed",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Face the unrest that has taken hold of Hernand and the jobs that come with it.",
+      "body": "No source gives this arc header its own objective; the steps follow the Chapter 2 jobs that sit under it.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:reunion",
+          "text": "Complete Reunion"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Return to the City of Hernand as the streets go to pieces.",
+          "action": "travel",
+          "refs": ["place:hernand-castle"]
+        },
+        {
+          "text": "Take the first of the jobs the unrest throws up.",
+          "action": "other",
+          "refs": ["place:hernand-castle"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586591",
+          "title": "Game8: Chapter 2 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:for-honor",
+      "type": "quest",
+      "name": "For Honor",
+      "kind": "main",
+      "chapter": "Chapter 2: Golden Greed",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Meet Matthias in a fight and beat him.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:hernand-in-chaos",
+          "text": "Complete Hernand in Chaos"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Find Matthias in Hernand.",
+          "action": "travel",
+          "refs": ["character:matthias", "place:hernand-castle"]
+        },
+        {
+          "text": "Defeat him.",
+          "action": "fight",
+          "refs": ["character:matthias"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586591",
+          "title": "Game8: Chapter 2 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:awestruck",
+      "type": "quest",
+      "name": "Awestruck",
+      "kind": "main",
+      "chapter": "Chapter 2: Golden Greed",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Find Barden Middler and hear what he has to say.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:for-honor",
+          "text": "Complete For Honor"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Seek out Barden Middler in Hernand.",
+          "action": "travel",
+          "refs": ["character:barden-middler", "place:hernand-castle"]
+        },
+        {
+          "text": "Speak with him and take the next instruction.",
+          "action": "talk",
+          "refs": ["character:barden-middler"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586591",
+          "title": "Game8: Chapter 2 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:shadow-cast-over-the-river",
+      "type": "quest",
+      "name": "Shadow Cast Over the River",
+      "kind": "main",
+      "chapter": "Chapter 2: Golden Greed",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Clear the enemies camped at Springtide Mill.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:awestruck",
+          "text": "Complete Awestruck"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Travel to Springtide Mill.",
+          "action": "travel",
+          "refs": ["place:springtide-mill"]
+        },
+        {
+          "text": "Defeat the enemies holding the mill.",
+          "action": "fight",
+          "refs": ["place:springtide-mill"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586591",
+          "title": "Game8: Chapter 2 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:where-misery-gathers",
+      "type": "quest",
+      "name": "Where Misery Gathers",
+      "kind": "main",
+      "chapter": "Chapter 2: Golden Greed",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Work through the requests posted on the notice board.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:shadow-cast-over-the-river",
+          "text": "Complete Shadow Cast Over the River"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Read the requests on the notice board in Hernand.",
+          "action": "other",
+          "refs": ["place:hernand-castle"]
+        },
+        {
+          "text": "Finish those board jobs and report them done.",
+          "action": "other",
+          "refs": ["place:hernand-castle"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586591",
+          "title": "Game8: Chapter 2 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:trial-after-trial",
+      "type": "quest",
+      "name": "Trial After Trial",
+      "kind": "main",
+      "chapter": "Chapter 2: Golden Greed",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Hit the bandit camp and break their hold on it.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:where-misery-gathers",
+          "text": "Complete Where Misery Gathers"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Travel to the bandit camp marked for this job.",
+          "action": "travel"
+        },
+        {
+          "text": "Defeat the bandits there.",
+          "action": "fight"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586591",
+          "title": "Game8: Chapter 2 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:the-man-trapped-in-the-mire",
+      "type": "quest",
+      "name": "The Man Trapped in the Mire",
+      "kind": "main",
+      "chapter": "Chapter 2: Golden Greed",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Track a thief, confront him, and put him down.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:trial-after-trial",
+          "text": "Complete Trial After Trial"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Track the thief to the ground he is using.",
+          "action": "travel"
+        },
+        {
+          "text": "Confront him and defeat him.",
+          "action": "fight"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586591",
+          "title": "Game8: Chapter 2 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:missing-companion",
+      "type": "quest",
+      "name": "Missing Companion",
+      "kind": "main",
+      "chapter": "Chapter 2: Golden Greed",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Search the area until you find the missing sheep Wooly.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:the-man-trapped-in-the-mire",
+          "text": "Complete The Man Trapped in the Mire"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Ask after Wooly and start searching the ground he wandered from.",
+          "action": "travel"
+        },
+        {
+          "text": "Find the sheep and bring the search to a close.",
+          "action": "collect"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586591",
+          "title": "Game8: Chapter 2 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:secrets-hidden-in-the-dark",
+      "type": "quest",
+      "name": "Secrets Hidden in the Dark",
+      "kind": "main",
+      "chapter": "Chapter 2: Golden Greed",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Enter the cave and stay with Boris as he leads the way.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:missing-companion",
+          "text": "Complete Missing Companion"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Meet Boris and enter the cave he is bound for.",
+          "action": "travel",
+          "refs": ["character:boris"]
+        },
+        {
+          "text": "Follow him through the dark and finish the search inside.",
+          "action": "other",
+          "refs": ["character:boris"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586591",
+          "title": "Game8: Chapter 2 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:the-end-of-greed",
+      "type": "quest",
+      "name": "The End of Greed",
+      "kind": "main",
+      "chapter": "Chapter 2: Golden Greed",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Go to Serkis Estate and take up the Goldleaf thread that ends this chapter.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:secrets-hidden-in-the-dark",
+          "text": "Complete Secrets Hidden in the Dark"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Travel to Serkis Estate.",
+          "action": "travel",
+          "refs": ["place:serkis-estate"]
+        },
+        {
+          "text": "Take the lead that points at the Goldleaf Merchant Guild.",
+          "action": "talk",
+          "refs": ["place:serkis-estate", "place:goldleaf-merchant-guild"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586591",
+          "title": "Game8: Chapter 2 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:the-dark-veil",
+      "type": "quest",
+      "name": "The Dark Veil",
+      "kind": "main",
+      "chapter": "Chapter 2: Golden Greed",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Look into the Goldleaf Merchant Guild and what it is hiding.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:the-end-of-greed",
+          "text": "Complete The End of Greed"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Go to the Goldleaf Merchant Guild.",
+          "action": "travel",
+          "refs": ["place:goldleaf-merchant-guild"]
+        },
+        {
+          "text": "Search the guild and camp for what the merchants are keeping from view.",
+          "action": "other",
+          "refs": ["place:goldleaf-merchant-guild"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586591",
+          "title": "Game8: Chapter 2 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:the-flames-of-greed",
+      "type": "quest",
+      "name": "The Flames of Greed",
+      "kind": "main",
+      "chapter": "Chapter 2: Golden Greed",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Pull a man out of the healer's house before the fire takes him.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:the-dark-veil",
+          "text": "Complete The Dark Veil"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Reach the healer's house while it is still in danger.",
+          "action": "travel"
+        },
+        {
+          "text": "Get the trapped man out.",
+          "action": "other"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586591",
+          "title": "Game8: Chapter 2 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:kidnapped-healer",
+      "type": "quest",
+      "name": "Kidnapped Healer",
+      "kind": "main",
+      "chapter": "Chapter 2: Golden Greed",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Find the taken healer and get that person out.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:the-flames-of-greed",
+          "text": "Complete The Flames of Greed"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Track the kidnapped healer from the house that was hit.",
+          "action": "travel"
+        },
+        {
+          "text": "Free the healer and leave with them.",
+          "action": "other"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586591",
+          "title": "Game8: Chapter 2 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:rebellion-of-revolution",
+      "type": "quest",
+      "name": "Rebellion of Revolution",
+      "aliases": ["Rebellion or Revolution"],
+      "kind": "main",
+      "chapter": "Chapter 2: Golden Greed",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Speak with Shakatu and hear the Goldleaf side of the revolt.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:kidnapped-healer",
+          "text": "Complete Kidnapped Healer"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Find Shakatu after the Goldleaf investigation.",
+          "action": "travel",
+          "refs": ["character:shakatu", "place:goldleaf-merchant-guild"]
+        },
+        {
+          "text": "Speak with him; he becomes a trade ally from this meeting.",
+          "action": "talk",
+          "refs": ["character:shakatu"]
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "unlock",
+          "text": "Shakatu as a trade ally"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586591",
+          "title": "Game8: Chapter 2 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:cheers-echoing-from-the-edge",
+      "type": "quest",
+      "name": "Cheers Echoing From the Edge",
+      "kind": "main",
+      "chapter": "Chapter 2: Golden Greed",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Fight Kailok the Hornsplitter and finish the Golden Greed arc.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:rebellion-of-revolution",
+          "text": "Complete Rebellion of Revolution"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Move to the ground where Hornsplitter is waiting.",
+          "action": "travel"
+        },
+        {
+          "text": "Defeat Kailok the Hornsplitter.",
+          "action": "fight"
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "money",
+          "amount": 50,
+          "text": "Copper"
+        },
+        {
+          "kind": "item",
+          "text": "Abyss Artifact x1"
+        },
+        {
+          "kind": "item",
+          "text": "Medium Bag x1"
+        },
+        {
+          "kind": "item",
+          "text": "Sword of the Lord (with Abyss Gears)"
+        },
+        {
+          "kind": "item",
+          "text": "Iron Ore x7"
+        },
+        {
+          "kind": "item",
+          "text": "Copper Ore x2"
+        },
+        {
+          "kind": "item",
+          "text": "Hernand Refinement Token"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586591",
+          "title": "Game8: Chapter 2 walkthrough",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/",
+          "title": "VULKK: main story walkthrough",
+          "accessed": "2026-09-06"
         }
       ],
       "confidence": "reported",
@@ -41,10 +1709,9 @@
       "id": "quest:trial-of-the-winds",
       "type": "quest",
       "name": "Trial of the Winds",
-      "kind": "main",
-      "chapter": "Chapter 2",
-      "storyline": "storyline:main",
+      "kind": "side",
       "summary": "Mandatory chapter 2 quest at the first Ancient Obelisk; completing it unlocks gliding.",
+      "body": "This is the gliding trial reached during Chapter 2: Golden Greed, at the first Ancient Obelisk; it is not a listed main-story quest.",
       "prerequisites": [
         {
           "kind": "chapter",
