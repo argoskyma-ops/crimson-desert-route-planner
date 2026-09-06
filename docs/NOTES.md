@@ -45,6 +45,11 @@ change a decision there first, then the code.
   returns 0 below map zoom 3 and node snapping silently does nothing there.
   `src/components/PoiLayer.ts` uses `map.project` (unrounded) instead; port
   that one-liner when the editor is next touched (found 2026-09-06, T16).
+- POI progress keys are `poi:<th.gl id>` and th.gl ids embed world
+  coordinates at two decimals. Stable across the 2026-09-03 and 2026-09-06
+  dumps (1,631 shared records identical). If a later re-fetch orphans
+  `collected` keys, remap on `setPois` by type plus canonical position
+  within 1 px (R3, 2026-09-06).
 - Calibrate `METERS_PER_PIXEL` and `SPEED_MPS` in-game (`src/config/travel.ts`, D7).
   Check whether wide roads or paths are the faster class for a horse.
 - Second sweep in the editor for dead ends (about 600) and trails still missing; use
