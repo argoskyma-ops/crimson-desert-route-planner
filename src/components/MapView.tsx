@@ -72,6 +72,8 @@ export default function MapView() {
   const focusedFastTravelId = useAppStore((s) => s.focusedFastTravelId)
   const highlight = useAppStore((s) => s.highlight)
   const editorActive = useAppStore((s) => s.editor.active)
+  const editorMode = useAppStore((s) => s.editor.mode)
+  const pickTarget = useAppStore((s) => s.editor.pickTarget)
   const [missing, setMissing] = useState(false)
   const [mapReady, setMapReady] = useState(false)
 
@@ -138,9 +140,14 @@ export default function MapView() {
       routeLayerRef.current = L.layerGroup().addTo(map)
 
       map.on('click', (e: L.LeafletMouseEvent) => {
-        const { editor, placePin, manifest } = useAppStore.getState()
-        if (editor.active || !manifest) return
-        placePin(clampToImage(fromLatLng(e.latlng), manifest.width, manifest.height))
+        const { editor, placePin, deliverPick, manifest } = useAppStore.getState()
+        if (!manifest) return
+        const clamped = clampToImage(fromLatLng(e.latlng), manifest.width, manifest.height)
+        if (editor.active) {
+          if (editor.mode === 'content') deliverPick(clamped)
+          return
+        }
+        placePin(clamped)
       })
 
       mapRef.current = map
@@ -315,11 +322,22 @@ export default function MapView() {
   }, [mapReady, highlight])
 
   useEffect(() => {
-    if (!mapReady || !editorActive) return
+    if (!mapReady || !editorActive || editorMode !== 'roads') return
     const map = mapRef.current
     if (!map) return
     return attachEditorLayer(map)
-  }, [mapReady, editorActive])
+  }, [mapReady, editorActive, editorMode])
+
+  useEffect(() => {
+    if (!mapReady) return
+    const map = mapRef.current
+    if (!map) return
+    const el = map.getContainer()
+    el.style.cursor = pickTarget ? 'crosshair' : ''
+    return () => {
+      el.style.cursor = ''
+    }
+  }, [mapReady, pickTarget])
 
   return (
     <div className="relative h-full w-full">

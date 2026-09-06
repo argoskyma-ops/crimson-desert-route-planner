@@ -95,6 +95,11 @@ export interface EditorState {
   draftPoints: DraftPoint[]
   newEdgeClass: RoadClass
   dirty: boolean
+  mode: 'roads' | 'content'
+  /** Form field path armed to receive the next map tap, e.g. 'location' or 'steps.1.location'. */
+  pickTarget: string | null
+  /** The tap delivered for pickTarget; the form consumes and clears it. */
+  picked: { target: string; x: number; y: number } | null
 }
 
 interface AppState {
@@ -149,6 +154,10 @@ interface AppState {
   deleteSelected: () => void
   moveNode: (nodeId: string, pt: Pt) => void
   setTool: (tool: EditorState['tool']) => void
+  setEditorMode: (mode: EditorState['mode']) => void
+  armPick: (target: string | null) => void
+  deliverPick: (pt: Pt) => void
+  clearPick: () => void
   toggleEditor: () => void
 }
 
@@ -159,6 +168,9 @@ const initialEditor: EditorState = {
   draftPoints: [],
   newEdgeClass: 'main',
   dirty: false,
+  mode: 'roads',
+  pickTarget: null,
+  picked: null,
 }
 
 export const useAppStore = create<AppState>((set) => ({
@@ -409,6 +421,40 @@ export const useAppStore = create<AppState>((set) => ({
         },
       }
     }),
+  setEditorMode: (mode) =>
+    set((s) => {
+      if (s.editor.mode === mode) return s
+      return {
+        editor: {
+          ...s.editor,
+          mode,
+          draftPoints: [],
+          selectedEdgeId: null,
+          pickTarget: null,
+          picked: null,
+        },
+      }
+    }),
+  armPick: (target) => set((s) => ({ editor: { ...s.editor, pickTarget: target } })),
+  deliverPick: (pt) =>
+    set((s) => {
+      if (!s.editor.active || s.editor.mode !== 'content' || s.editor.pickTarget === null) {
+        return s
+      }
+      return {
+        editor: {
+          ...s.editor,
+          // One decimal, the precision the committed data uses (D3).
+          picked: {
+            target: s.editor.pickTarget,
+            x: Math.round(pt.x * 10) / 10,
+            y: Math.round(pt.y * 10) / 10,
+          },
+          pickTarget: null,
+        },
+      }
+    }),
+  clearPick: () => set((s) => ({ editor: { ...s.editor, picked: null } })),
   toggleEditor: () =>
     set((s) => {
       if (s.editor.active) {
@@ -418,6 +464,9 @@ export const useAppStore = create<AppState>((set) => ({
             active: false,
             draftPoints: [],
             selectedEdgeId: null,
+            mode: 'roads',
+            pickTarget: null,
+            picked: null,
           },
         }
       }

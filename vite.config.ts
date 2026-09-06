@@ -13,8 +13,11 @@ import {
 import type { IncomingMessage, ServerResponse } from 'node:http'
 import { extname, join, relative, resolve } from 'node:path'
 import { defineConfig, type Plugin } from 'vite'
+import { ENTITY_TYPES } from './src/content/ids.ts'
+import { ContentFileSchema } from './src/content/schema.ts'
 
 const SAVE_ROADS_MAX_BYTES = 20 * 1024 * 1024
+const SAVE_CONTENT_MAX_BYTES = 5 * 1024 * 1024
 
 const CONTENT_TYPES: Record<string, string> = {
   '.jpg': 'image/jpeg',
@@ -165,6 +168,81 @@ async function handleSaveRoads(
   sendJson(res, 200, { ok: true, bytes: raw.byteLength })
 }
 
+async function handleSaveContent(
+  req: IncomingMessage,
+  res: ServerResponse,
+  root: string,
+): Promise<void> {
+  if (!isAllowedSaveRequest(req)) {
+    sendJson(res, 403, { ok: false, error: 'forbidden' })
+    req.resume()
+    return
+  }
+
+  let raw: Buffer
+  try {
+    raw = await readRequestBody(req, SAVE_CONTENT_MAX_BYTES)
+  } catch {
+    sendJson(res, 400, { ok: false, error: 'invalid body' })
+    return
+  }
+
+  let parsed: unknown
+  try {
+    parsed = JSON.parse(raw.toString('utf8')) as unknown
+  } catch {
+    sendJson(res, 400, { ok: false, error: 'invalid json' })
+    return
+  }
+
+  if (typeof parsed !== 'object' || parsed === null || Array.isArray(parsed)) {
+    sendJson(res, 400, { ok: false, error: 'invalid payload' })
+    return
+  }
+  const body = parsed as { type?: unknown; file?: unknown }
+  const type = body.type
+  const file = body.file
+  if (typeof type !== 'string' || !(ENTITY_TYPES as readonly string[]).includes(type)) {
+    sendJson(res, 400, { ok: false, error: 'invalid type' })
+    return
+  }
+  if (typeof file !== 'object' || file === null || Array.isArray(file)) {
+    sendJson(res, 400, { ok: false, error: 'invalid file' })
+    return
+  }
+  if ((file as { type?: unknown }).type !== type) {
+    sendJson(res, 400, { ok: false, error: 'type mismatch' })
+    return
+  }
+
+  const result = ContentFileSchema.safeParse(file)
+  if (!result.success) {
+    const issue = result.error.issues[0]
+    const path = issue?.path.map(String).join('.') ?? ''
+    const message = issue?.message ?? 'invalid file'
+    sendJson(res, 400, { ok: false, error: path ? `${path}: ${message}` : message })
+    return
+  }
+
+  const dest = join(root, 'data', 'content', `${type}.json`)
+  const tmp = join(root, 'data', 'content', `${type}.json.tmp`)
+  const text = `${JSON.stringify(file, null, 2)}\n`
+  try {
+    mkdirSync(join(root, 'data', 'content'), { recursive: true })
+    writeFileSync(tmp, text)
+    renameSync(tmp, dest)
+  } catch {
+    try {
+      unlinkSync(tmp)
+    } catch {
+      /* ignore leftover tmp */
+    }
+    sendJson(res, 400, { ok: false, error: 'write failed' })
+    return
+  }
+  sendJson(res, 200, { ok: true, bytes: Buffer.byteLength(text) })
+}
+
 function dataDir(): Plugin {
   let root = ''
   let outDir = ''
@@ -182,6 +260,10 @@ function dataDir(): Plugin {
         const pathname = (req.url ?? '').split('?')[0] ?? ''
         if (req.method === 'POST' && pathname === '/__dev/save-roads') {
           void handleSaveRoads(req, res, server.config.root)
+          return
+        }
+        if (req.method === 'POST' && pathname === '/__dev/save-content') {
+          void handleSaveContent(req, res, server.config.root)
           return
         }
         if (!pathname.startsWith('/data/')) {

@@ -5,6 +5,12 @@ import { downloadRoads, readRoadsFile, saveRoadsDev } from '../lib/roads-io'
 import { emptyRoads } from '../lib/roads-loader'
 import { ROAD_CLASSES, type RoadClass, type RoadsFile } from '../routing/types'
 import { useAppStore } from '../store'
+import ContentEditor from './ContentEditor'
+
+const MODES = [
+  { id: 'roads', label: 'Roads' },
+  { id: 'content', label: 'Content' },
+] as const
 
 const TOOLS = [
   { id: 'draw', label: 'Draw' },
@@ -41,6 +47,8 @@ function statusLine(
 }
 
 export default function EditorPanel() {
+  const mode = useAppStore((s) => s.editor.mode)
+  const setEditorMode = useAppStore((s) => s.setEditorMode)
   const tool = useAppStore((s) => s.editor.tool)
   const draftPoints = useAppStore((s) => s.editor.draftPoints)
   const selectedEdgeId = useAppStore((s) => s.editor.selectedEdgeId)
@@ -115,10 +123,38 @@ export default function EditorPanel() {
   }
 
   return (
-    <section
-      className="rounded-xl border border-white/10 bg-neutral-950/80 p-3 text-neutral-100 shadow-lg backdrop-blur-md"
-      aria-label="Road editor"
+    <div
+      className={`rounded-xl border border-white/10 bg-neutral-950/80 p-3 text-neutral-100 shadow-lg backdrop-blur-md ${
+        mode === 'content' ? 'max-h-[calc(100dvh-5.5rem)] overflow-y-auto' : ''
+      }`}
     >
+      <div className="grid grid-cols-2 gap-1 rounded-lg bg-neutral-800/90 p-1">
+        {MODES.map((item) => {
+          const selected = mode === item.id
+          return (
+            <button
+              key={item.id}
+              type="button"
+              aria-pressed={selected}
+              onClick={() => setEditorMode(item.id)}
+              className={`${btn} ${
+                selected
+                  ? 'bg-neutral-100 text-neutral-900'
+                  : 'text-neutral-300 hover:bg-neutral-700/70'
+              }`}
+            >
+              {item.label}
+            </button>
+          )
+        })}
+      </div>
+
+      {mode === 'content' ? (
+        <section aria-label="Content editor" className="mt-2">
+          <ContentEditor />
+        </section>
+      ) : (
+      <section aria-label="Road editor" className="mt-2">
       <div className="grid grid-cols-2 gap-1 rounded-lg bg-neutral-800/90 p-1">
         {TOOLS.map((item) => {
           const selected = tool === item.id
@@ -235,6 +271,8 @@ export default function EditorPanel() {
       ) : null}
       {notice ? <p className="mt-1 px-1 text-xs text-neutral-300">{notice}</p> : null}
       {ioError ? <p className="mt-1 px-1 text-xs text-red-400">{ioError}</p> : null}
-    </section>
+      </section>
+      )}
+    </div>
   )
 }

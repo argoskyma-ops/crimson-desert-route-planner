@@ -128,7 +128,7 @@ Conventions: coordinates are canonical zoom-4 px (D3); no DOM or Leaflet in
   an older version is rejected with a message; Route here produces a route
   when both pins exist.
 
-- [ ] **T14b. Dev-only content editor.** (D19)
+- [x] **T14b. Dev-only content editor.** (D19)
   Files: `src/components/ContentEditor.tsx`, `src/components/EditorPanel.tsx`,
   `src/lib/content-io.ts` (+ test), `src/components/MapView.tsx` (tap to
   fill a location field), `src/store.ts`, `vite.config.ts`, `src/App.tsx`.

@@ -27,6 +27,7 @@ export default function App() {
   const setFastTravel = useAppStore((s) => s.setFastTravel)
   const setContent = useAppStore((s) => s.setContent)
   const editorActive = useAppStore((s) => s.editor.active)
+  const editorMode = useAppStore((s) => s.editor.mode)
   const editorDirty = useAppStore((s) => s.editor.dirty)
   const toggleEditor = useAppStore((s) => s.toggleEditor)
   const selectedEntityId = useAppStore((s) => s.selectedEntityId)
@@ -83,7 +84,11 @@ export default function App() {
       <ControlPanel />
       <EntityPanel />
       <div
-        className={`pointer-events-none absolute top-3 right-3 z-[1100] flex w-[min(calc(100%-1.5rem),17.5rem)] flex-col gap-2 max-[479px]:top-auto max-[479px]:right-3 max-[479px]:bottom-28 max-[479px]:w-[min(calc(100%-5.5rem),17.5rem)] max-[479px]:flex-col-reverse ${
+        className={`pointer-events-none absolute top-3 right-3 z-[1100] flex ${
+          editorActive && editorMode === 'content'
+            ? 'w-[min(calc(100%-1.5rem),24rem)]'
+            : 'w-[min(calc(100%-1.5rem),17.5rem)]'
+        } flex-col gap-2 max-[479px]:top-auto max-[479px]:right-3 max-[479px]:bottom-28 max-[479px]:w-[min(calc(100%-5.5rem),17.5rem)] max-[479px]:flex-col-reverse ${
           editorActive ? 'items-stretch' : 'items-end'
         }${hidePhoneChrome ? ' max-md:hidden' : ''}`}
       >
