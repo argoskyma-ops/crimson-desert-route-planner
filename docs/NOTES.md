@@ -36,6 +36,11 @@ change a decision there first, then the code.
   in three on Argos (route time 100 to 115 ms against a 100 ms budget).
   Timing-based; re-run confirms. Widen the budget or measure in a warm
   loop so the commit gate is reliable (noted 2026-09-05 during T11).
+- Phone layout after T13: the control panel (mode, search, eight chips,
+  Clear) plus the half-height entity sheet leave a map strip of about
+  60 px on a 390 x 844 viewport. Collapse the chips or the whole control
+  panel while an entity is open, or auto-collapse the sheet on map tap.
+  Candidate for R2 (noted 2026-09-05).
 - Calibrate `METERS_PER_PIXEL` and `SPEED_MPS` in-game (`src/config/travel.ts`, D7).
   Check whether wide roads or paths are the faster class for a horse.
 - Second sweep in the editor for dead ends (about 600) and trails still missing; use
