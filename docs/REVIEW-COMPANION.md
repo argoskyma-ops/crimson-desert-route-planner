@@ -4,6 +4,86 @@ Whole-feature reviews of the companion build (docs/COMPANION-PLAN.md,
 R-tasks). Each review is pasted verbatim from the read-only Grok run; the
 orchestrator's status line above it says what was done with the findings.
 
+## R4 (C3): main story content
+
+Status 2026-09-06: filed; fixes dispatched as one Grok task (status
+updated once applied). Orchestrator checks before the review: every
+record validates, ids unique, refs resolve, one https source each; every
+cited URL returns 200 except the Forbes article on the Kliff seed (bot
+block); a script found no 7-word run of any summary, step, body or
+warning on a cited page beyond five factual phrases (an instruction, a
+boss name, a title, a place phrase); the per-chapter counts match
+GameRant's list. Decisions on findings that do not stand as written:
+`quest:ambush` keeps no prerequisite (it is the first quest of the game);
+`quest:journeys-end` gets a `chapter` prerequisite whose `value` is the
+epilogue's title string (the schema allows a string and the app matches
+titles exactly); converting text rewards to `item` and `enemy` refs waits
+for C5 and C7 as the review itself says.
+
+### R4 review: C3 main story content (Cursor/Grok 4.6, 2026-09-06)
+
+**Blocking** (wrong facts, invented facts, copied prose, schema misuse)
+- `quest:lust-for-power` (`data/content/quest.json`) — `confidence` is `reported` and the record repeats Witch's Ring, Stardust Necklace, Earring of Dark Magic, Crow Whisperer, and Greymane's Earring. The research file marks this quest "not individually described beyond its name"; those items are already granted on `quest:shattered-ties`, `quest:thinning-blade`, and `quest:veiled-witch`. Set `confidence` to `assumed`. Drop the five items here (keep them only on the quests Game8 actually attaches them to).
+- `quest:new-horizons` (`data/content/quest.json`) — `confidence` is `reported`. The research file marks it "not individually described beyond its name"; the body already says the steps are inferred. Set `confidence` to `assumed`. Keep Dark Executioner Leather Armor on this last-of-chapter record.
+- `quest:the-sage-of-the-desert` (`data/content/quest.json`) — steps have Kliff seek and defeat Master Du. The research file does not match this name to a walkthrough beat; `quest:enlightenment` already has the sourced Master Du fight. Do not invent a second fight. Keep `assumed`. Replace the steps with name-only work (or drop the fight).
+- `quest:the-end-of-greed` (`data/content/quest.json`) — `confidence` is `reported`. The research file gives only start: Serkis Estate (arc header). The summary and step 2 invent a Goldleaf lead; that is `quest:the-dark-veil`. Set `confidence` to `assumed`, or drop the Goldleaf text and keep the Serkis Estate travel step.
+- `quest:the-crows-warning` (`data/content/quest.json`) — `confidence` is `reported`. The research file says gather clues about the crow in Hernand. Step 2 and the summary invent a White Crow abduction match; `collect` does not fit that text. Drop step 2 / the White Crow line, or set `confidence` to `assumed` and change the action to `other`.
+
+**Should fix**
+- `quest:journeys-end` (`data/content/quest.json`) — first quest of the Epilogue has only a quest prereq to `quest:blinding-darkness`. Every other chapter's first quest has a `chapter` prereq whose `value` matches the title number. Add a `chapter` prereq (`value` `13` or `"epilogue"`).
+- `quest:ambush` (`data/content/quest.json`) — first quest of `Prologue: Dead of Night` has no prerequisites. Add a `chapter` prereq (`value` `0` or `"prologue"`) so the first-of-chapter rule is consistent.
+- `quest:woman-in-white` (`data/content/quest.json`) and `quest:trial-of-the-winds` (`data/content/quest.json`) — Chapter 1 unlocks include Glide; that unlock is missing from the Chapter 1 last quest. The leftover side record claims gliding is granted in Chapter 2 at the first Ancient Obelisk. The research file never names Trial of the Winds. Put Glide on the Chapter 1 bundle (`quest:woman-in-white`, or the quest that actually teaches it). Reword or drop the glide reward on `quest:trial-of-the-winds` so the leftover does not contradict the fact file. Keep `quest:trial-of-the-winds` and `quest:early-encounter` as `kind: "side"` and out of `storyline:main` (that part is correct).
+- `quest:the-iron-pots-usage` (`data/content/quest.json`) — Kuku Pot is stored as `kind: "unlock"`. The research file lists it as a pot/reward ("needed for Abyss use"). The contract is `item` + `text` for gear. Change the reward to `kind: "item"`, `text: "Kuku Pot"`.
+- `quest:a-fleeting-dream` (`data/content/quest.json`) — Woosa and Maegu ally unlocks sit here. The research file ties that to `quest:where-the-wind-guides-you`. Move those two `unlock` rows to that quest. Keep this record's own items (Ponytail Ticket, Official Knight set, Eclipsed Solas Plate Gloves, Spire of Clockwork Key).
+- `quest:time-to-face-justice` (`data/content/quest.json`) — `unlock` text says "Oongka playable". The research file says Oongka is recruited in Chapter 6 and is permanently playable after an epilogue quest (Vulkk, single source). Soften the text to that qualifier; do not treat Chapter 7 as the permanent unlock.
+- `quest:thinning-blade`, `quest:six-pensive-statues-and-the-evil-spirit`, `quest:veiled-witch` (`data/content/quest.json`) — each chains to the previous trial line. The research file (and `storyline:main` Chapter 9 `pointsOfNoReturn`) says the four trial lines after The Calling have no forced order. Keep the chapter list order for display. Drop the quest prereqs that lock Thinning Blade, Six Pensive Statues, and Veiled Witch behind the prior trial. Gate `quest:enlightenment` on finishing all four lines (or leave that gate `assumed` in `body`).
+- `storyline:main` Chapter 9 `pointsOfNoReturn` (`data/content/storyline.json`) — the any-order / suggested-order line is not a lock. D16/T17 will warn it as a point of no return. Move it to `body`. Suggested order in the research file is Shattered Ties, Veiled Witch, Thinning Blade, then Six Pensive Statues; that wording can stay in `body`.
+- `storyline:main` Epilogue `pointsOfNoReturn` (`data/content/storyline.json`) — finishing 40 Abyss Challenges is optional side content that unlocks a true ending, not a chapter lock. Move it to the storyline-level `pointsOfNoReturn` (or `body`) so starting the epilogue is not shown as closing that set.
+- `storyline:main` `body` (`data/content/storyline.json`) and `place:greymanes-camp` (`data/content/place.json`) — both say sources disagree on Hernand vs Pailune for the opening camp. `docs/RESEARCH-MAIN-STORY.md` states the prologue hub as Hernand (Greymanes camp). Drop the disagreement, or cite `docs/RESEARCH-COMPANION.md` as the other file. Omitting `region` on the camp and on the six prologue quests can stay until that is settled.
+- `storyline:main` Chapter 8 `pointsOfNoReturn` (`data/content/storyline.json`) — missing that Damiane kills Bastier in the forced Damiane-only stretch (Vulkk; Game8 names Bastier on A Fleeting Dream). Add that clause. Beatrice's death standing is already there.
+- `character:barden-middler` (`data/content/character.json`) — used as Marshal Middler in `quest:first-step-to-rebuilding` and `quest:the-counterattack-ch6`. The research file lists Barden Middler (Chapter 2) and Marshal Middler (Chapters 3 and 6) separately and never says they are one person. Add alias `Marshal Middler` and an `assumed` note, or split the record.
+- `quest:return-home` (`data/content/quest.json`) — step 1 invents leaving Calphade Castle; the research file only says speak with comrades. Step 2 `refs` is only `faction:greymanes`. Drop the castle leave, or mark `assumed`. Point the talk step at a character or place, not only a faction.
+- `quest:cloud-castle-orbian` (`data/content/quest.json`) — Blackstar is `kind: "unlock"` with no `ref`. After C7, point this at a `mount:` id. Leave as `unlock` + text until that record exists.
+- Gear rewards on last-of-chapter and boss quests (`data/content/quest.json`) — almost all named gear is `item` + `text` and no `ref`. `quest:toward-the-nest` already refs seed `item:blackwing-mask` and leaves Blackwing Leather Armor / Tauria Curved Sword as text. Once C5 exists, convert those text rows to `item` refs. Do not invent item ids now.
+
+**Nits**
+- `place:hernand-church` (`data/content/place.json`) — `name` is `Church`. The research file only has "a church" / Secret at the Church. Keep the record; treat the name as a placeholder and rename when the in-game name is known.
+- `character:witch` (`data/content/character.json`) — keep. Sources call the Chapter 9 guide "the Witch"; it is not a duplicate of `character:hexe-marie`.
+- `character:old-beggar` (`data/content/character.json`) — keep. That is the Game8 giver name for Mysterious Man.
+- `character:orc-captain` and `character:dean-of-the-scholastone-institute` (`data/content/character.json`) — keep. Those are the source labels.
+- C3 characters (`data/content/character.json`) — none has `region`. Add the chapter hub (`region:hernand`, `region:pailune`, …) where the research file names one; leave prologue `character:sebastian` without a region.
+- `quest:ambush` step 2 (`data/content/quest.json`) — `refs` is only `faction:black-bears`. Add `place:greymanes-camp` (and an enemy id once C7 has Black Bear Elite).
+- `quest:cheers-echoing-from-the-edge` (`data/content/quest.json`) — Hornsplitter / Kailok has no `refs`. Add an `enemy:` id when C7 exists.
+- `quest:fragments-of-darkness` (`data/content/quest.json`) — destroying totems uses `fight`. Prefer `other` or `solve`.
+- `place:urdavah` (`data/content/place.json`) — `kind` is `town`. Companion region notes call Urdavah a village; this fact file does not specify. Switch to `village` only if a later source does.
+- `enemy:crowcaller` (`data/content/enemy.json`) — seed leftover, `rank: "world-boss"`. Chapter 5 treats Crowcaller as a story boss. Set `story-boss` when C7 rewrites the record. `quest:toward-the-nest` already refs this id.
+- No second Hernand and no second Greymanes camp. `place:greymanes-camp` is the opening raid; `place:howling-hill` is the Chapter 3 rebuild.
+
+**Sampled and sound**
+- `quest:actions-speak-louder-than-words`
+- `quest:reunion`
+- `quest:reward-for-their-sweat`
+- `quest:hope-after-the-draught`
+- `quest:obsession-and-madness`
+- `quest:the-touch-of-deliverance`
+- `quest:all-quiet-on-the-front`
+- `quest:shadows-over-pailune`
+- `quest:broken-claws`
+- `quest:where-the-wind-guides-you`
+- `quest:traitor-ch8`
+- `quest:crossing-point`
+- `quest:the-gate-of-war`
+- `quest:the-city-of-steel`
+- `quest:precise-execution`
+- `quest:hernand-in-chaos`
+- `quest:the-face-behind-the-mask`
+- `quest:twisted-fate`
+- `quest:the-cloister-of-enlightenment-ii`
+- `quest:blinding-darkness`
+- `quest:cheers-echoing-from-the-edge`
+- `quest:the-blood-coronation`
+- `quest:the-unyielding-shields-epilogue`
+
 ## R3: Phase 2 (POI fetch, loader, canvas layer, layers panel)
 
 Status 2026-09-06: applied (commit "Apply the R3 review of the POI
