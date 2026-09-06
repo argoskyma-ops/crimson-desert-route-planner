@@ -19,7 +19,7 @@
         {
           "text": "Cut down the raiders, including the Black Bear Elite among them.",
           "action": "fight",
-          "refs": ["faction:black-bears"]
+          "refs": ["place:greymanes-camp", "faction:black-bears"]
         }
       ],
       "missable": "no",
@@ -777,6 +777,10 @@
           "text": "Force Palm"
         },
         {
+          "kind": "unlock",
+          "text": "Glide"
+        },
+        {
           "kind": "money",
           "amount": 1,
           "text": "Silver"
@@ -1412,7 +1416,8 @@
       "chapter": "Chapter 2: Golden Greed",
       "storyline": "storyline:main",
       "region": "region:hernand",
-      "summary": "Go to Serkis Estate and take up the Goldleaf thread that ends this chapter.",
+      "summary": "Go to Serkis Estate and take up the arc that closes this chapter's greed.",
+      "body": "No source gives this arc header more than a start at Serkis Estate; the steps are inferred from the Chapter 2 close.",
       "prerequisites": [
         {
           "kind": "quest",
@@ -1427,9 +1432,9 @@
           "refs": ["place:serkis-estate"]
         },
         {
-          "text": "Take the lead that points at the Goldleaf Merchant Guild.",
-          "action": "talk",
-          "refs": ["place:serkis-estate", "place:goldleaf-merchant-guild"]
+          "text": "Take up the work this estate stretch opens.",
+          "action": "other",
+          "refs": ["place:serkis-estate"]
         }
       ],
       "missable": "no",
@@ -1445,7 +1450,7 @@
           "accessed": "2026-09-06"
         }
       ],
-      "confidence": "reported",
+      "confidence": "assumed",
       "gameVersion": "2.01.00"
     },
     {
@@ -2855,8 +2860,8 @@
       ],
       "rewards": [
         {
-          "kind": "unlock",
-          "text": "Kuku Pot (needed for Abyss use)"
+          "kind": "item",
+          "text": "Kuku Pot"
         }
       ],
       "missable": "no",
@@ -3741,7 +3746,7 @@
       "chapter": "Chapter 5: Guest Unbidden",
       "storyline": "storyline:main",
       "region": "region:hernand",
-      "summary": "Walk Hernand for traces of the crow and of White Crow.",
+      "summary": "Walk Hernand gathering clues about the crow.",
       "prerequisites": [
         {
           "kind": "quest",
@@ -3756,9 +3761,9 @@
           "refs": ["place:hernand-castle"]
         },
         {
-          "text": "Set those clues against what is known of White Crow's abduction.",
+          "text": "Gather clues about the crow around Hernand.",
           "action": "collect",
-          "refs": ["character:white-crow"]
+          "refs": ["place:hernand-castle"]
         }
       ],
       "missable": "no",
@@ -4776,14 +4781,14 @@
       ],
       "steps": [
         {
-          "text": "Leave Calphade Castle for the people who fought with you.",
+          "text": "Walk back to the comrades.",
           "action": "travel",
-          "refs": ["place:calphade-castle", "faction:greymanes"]
+          "refs": ["place:howling-hill", "faction:greymanes"]
         },
         {
           "text": "Speak with those comrades.",
           "action": "talk",
-          "refs": ["faction:greymanes"]
+          "refs": ["place:howling-hill"]
         }
       ],
       "rewards": [
@@ -5880,7 +5885,7 @@
         {
           "kind": "unlock",
           "ref": "character:oongka",
-          "text": "Oongka playable"
+          "text": "Oongka joins as a companion (permanently playable after an epilogue quest, per one source)"
         },
         {
           "kind": "item",
@@ -6121,6 +6126,16 @@
         }
       ],
       "rewards": [
+        {
+          "kind": "unlock",
+          "ref": "character:woosa",
+          "text": "Woosa becomes an ally"
+        },
+        {
+          "kind": "unlock",
+          "ref": "character:maegu",
+          "text": "Maegu becomes an ally"
+        },
         {
           "kind": "item",
           "text": "Abyss Artifact x1"
@@ -6671,16 +6686,6 @@
       ],
       "rewards": [
         {
-          "kind": "unlock",
-          "ref": "character:woosa",
-          "text": "Woosa becomes an ally"
-        },
-        {
-          "kind": "unlock",
-          "ref": "character:maegu",
-          "text": "Maegu becomes an ally"
-        },
-        {
           "kind": "item",
           "text": "Damiane's Ponytail Ticket x1"
         },
@@ -7013,8 +7018,8 @@
       "prerequisites": [
         {
           "kind": "quest",
-          "ref": "quest:shackles-of-fate",
-          "text": "Complete Shackles of Fate"
+          "ref": "quest:the-cloister-of-enlightenment",
+          "text": "Complete The Cloister of Enlightenment"
         }
       ],
       "steps": [
@@ -7154,8 +7159,8 @@
       "prerequisites": [
         {
           "kind": "quest",
-          "ref": "quest:unwavering-steps",
-          "text": "Complete Unwavering Steps"
+          "ref": "quest:the-cloister-of-enlightenment",
+          "text": "Complete The Cloister of Enlightenment"
         }
       ],
       "steps": [
@@ -7451,8 +7456,8 @@
       "prerequisites": [
         {
           "kind": "quest",
-          "ref": "quest:face-the-inner-self",
-          "text": "Complete Face the Inner Self"
+          "ref": "quest:the-cloister-of-enlightenment",
+          "text": "Complete The Cloister of Enlightenment"
         }
       ],
       "steps": [
@@ -7514,7 +7519,7 @@
         },
         {
           "text": "Destroy them.",
-          "action": "fight"
+          "action": "other"
         }
       ],
       "missable": "no",
@@ -7628,8 +7633,23 @@
       "storyline": "storyline:main",
       "region": "region:crimson-desert",
       "summary": "Show resilience, will, and vigor, then fight Master Du.",
-      "body": "Game8 gates this trial at Health Lv. 6, Spirit Lv. 5 and Stamina Lv. 6.",
+      "body": "Game8 gates this trial at Health Lv. 6, Spirit Lv. 5 and Stamina Lv. 6. The four trial lines after The Calling can be played in any order.",
       "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:shackles-of-fate",
+          "text": "Complete Shackles of Fate"
+        },
+        {
+          "kind": "quest",
+          "ref": "quest:unwavering-steps",
+          "text": "Complete Unwavering Steps"
+        },
+        {
+          "kind": "quest",
+          "ref": "quest:path-to-enlightenment",
+          "text": "Complete Path to Enlightenment"
+        },
         {
           "kind": "quest",
           "ref": "quest:black-witch",
@@ -7719,8 +7739,8 @@
       "chapter": "Chapter 9: The Sage of the Desert",
       "storyline": "storyline:main",
       "region": "region:crimson-desert",
-      "summary": "Face Master Du, the sage this chapter is named for.",
-      "body": "No source matches this name to a walkthrough beat; the steps treat it as the Master Du fight Game8 ties to Enlightenment.",
+      "summary": "Reach the sage's place and take what this arc still asks.",
+      "body": "No source describes this quest beyond its name; the steps are inferred from the Enlightenment arc.",
       "prerequisites": [
         {
           "kind": "quest",
@@ -7730,14 +7750,14 @@
       ],
       "steps": [
         {
-          "text": "Seek Master Du at the close of the trials.",
+          "text": "Reach the sage's place.",
           "action": "travel",
-          "refs": ["character:master-du"]
+          "refs": ["place:cloister-of-enlightenment"]
         },
         {
-          "text": "Defeat him.",
-          "action": "fight",
-          "refs": ["character:master-du"]
+          "text": "Take what the arc still asks.",
+          "action": "other",
+          "refs": ["place:cloister-of-enlightenment"]
         }
       ],
       "missable": "no",
@@ -7800,7 +7820,7 @@
       "storyline": "storyline:main",
       "region": "region:crimson-desert",
       "summary": "Close the Sage of the Desert after the last trial is done.",
-      "body": "No source describes this quest beyond its name; the steps are inferred from the Enlightenment close. The rewards are the chapter bundle reported by Game8.",
+      "body": "No source describes this quest beyond its name; the steps are inferred from the Enlightenment arc.",
       "prerequisites": [
         {
           "kind": "quest",
@@ -7820,28 +7840,6 @@
           "refs": ["place:cloister-of-enlightenment"]
         }
       ],
-      "rewards": [
-        {
-          "kind": "item",
-          "text": "Witch's Ring"
-        },
-        {
-          "kind": "item",
-          "text": "Stardust Necklace"
-        },
-        {
-          "kind": "item",
-          "text": "Earring of Dark Magic"
-        },
-        {
-          "kind": "item",
-          "text": "Crow Whisperer"
-        },
-        {
-          "kind": "item",
-          "text": "Greymane's Earring"
-        }
-      ],
       "missable": "no",
       "sources": [
         {
@@ -7855,7 +7853,7 @@
           "accessed": "2026-09-06"
         }
       ],
-      "confidence": "reported",
+      "confidence": "assumed",
       "gameVersion": "2.01.00"
     },
     {
@@ -9225,6 +9223,11 @@
       "body": "Game8 lists this name at the end of Chapter 12; this record follows GameRant and VULKK and keeps it as the first Epilogue quest.",
       "prerequisites": [
         {
+          "kind": "chapter",
+          "value": "Epilogue: Journey's End",
+          "text": "Reach the Epilogue"
+        },
+        {
           "kind": "quest",
           "ref": "quest:blinding-darkness",
           "text": "Complete Blinding Darkness"
@@ -9585,7 +9588,7 @@
           "accessed": "2026-09-06"
         }
       ],
-      "confidence": "reported",
+      "confidence": "assumed",
       "gameVersion": "2.01.00"
     },
     {
@@ -9594,7 +9597,7 @@
       "name": "Trial of the Winds",
       "kind": "side",
       "summary": "Mandatory chapter 2 quest at the first Ancient Obelisk; completing it unlocks gliding.",
-      "body": "This is the gliding trial reached during Chapter 2: Golden Greed, at the first Ancient Obelisk; it is not a listed main-story quest.",
+      "body": "The leftover seed's source places this gliding trial at the first Ancient Obelisk in Chapter 2. The main-story research lists Glide among the Chapter 1 unlocks instead.",
       "prerequisites": [
         {
           "kind": "chapter",
@@ -9615,7 +9618,7 @@
       "rewards": [
         {
           "kind": "unlock",
-          "text": "Gliding (double-jump to deploy)"
+          "text": "Gliding at the first Ancient Obelisk, where the leftover seed's source places it"
         }
       ],
       "sources": [
@@ -9625,7 +9628,7 @@
           "accessed": "2026-09-05"
         }
       ],
-      "confidence": "reported",
+      "confidence": "assumed",
       "gameVersion": "2.01.00"
     },
     {

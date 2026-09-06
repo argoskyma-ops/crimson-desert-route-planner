@@ -96,6 +96,7 @@
       "type": "character",
       "name": "Old Beggar",
       "role": "Hernand beggar, quest giver",
+      "region": "region:hernand",
       "summary": "The man in Hernand who asks for a coin and starts Mysterious Man.",
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/585170", "title": "Game8: Chapter 1 walkthrough", "accessed": "2026-09-06" }
@@ -108,6 +109,7 @@
       "type": "character",
       "name": "Woman in White",
       "role": "Abyss figure",
+      "region": "region:hernand",
       "summary": "A figure met in the Abyss at the close of Chapter 1, before the return to Hernand.",
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/585170", "title": "Game8: Chapter 1 walkthrough", "accessed": "2026-09-06" }
@@ -120,6 +122,7 @@
       "type": "character",
       "name": "Shai",
       "role": "Hernand girl with a cat",
+      "region": "region:hernand",
       "summary": "The girl who opens Chapter 2; her cat Jiji is with her when the errand begins.",
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/586591", "title": "Game8: Chapter 2 walkthrough", "accessed": "2026-09-06" }
@@ -132,6 +135,7 @@
       "type": "character",
       "name": "Matthias",
       "role": "Duelling opponent in Hernand",
+      "region": "region:hernand",
       "summary": "The fighter Kliff has to beat during For Honor while Hernand is in uproar.",
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/586591", "title": "Game8: Chapter 2 walkthrough", "accessed": "2026-09-06" }
@@ -143,12 +147,15 @@
       "id": "character:barden-middler",
       "type": "character",
       "name": "Barden Middler",
+      "aliases": ["Marshal Middler"],
       "role": "Hernand official",
+      "region": "region:hernand",
       "summary": "The official Kliff is sent to speak with during Awestruck.",
+      "body": "Treating Marshal Middler as the same person is assumed; the research file lists Barden Middler and Marshal Middler separately.",
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/586591", "title": "Game8: Chapter 2 walkthrough", "accessed": "2026-09-06" }
       ],
-      "confidence": "reported",
+      "confidence": "assumed",
       "gameVersion": "2.01.00"
     },
     {
@@ -156,6 +163,7 @@
       "type": "character",
       "name": "Boris",
       "role": "Cave guide",
+      "region": "region:hernand",
       "summary": "The man who leads Kliff through a cave during Secrets Hidden in the Dark.",
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/586591", "title": "Game8: Chapter 2 walkthrough", "accessed": "2026-09-06" }
@@ -168,6 +176,7 @@
       "type": "character",
       "name": "Shakatu",
       "role": "Goldleaf trade ally",
+      "region": "region:hernand",
       "summary": "The Goldleaf contact who becomes a trade ally after Rebellion of Revolution.",
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/586591", "title": "Game8: Chapter 2 walkthrough", "accessed": "2026-09-06" }
@@ -181,6 +190,7 @@
       "name": "Marius",
       "role": "Greymane comrade",
       "factions": ["faction:greymanes"],
+      "region": "region:hernand",
       "summary": "A Greymane walked back to camp in Chapter 3, then sought out again as Howling Hill takes shape.",
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/586592", "title": "Game8: Chapter 3 walkthrough", "accessed": "2026-09-06" }
@@ -194,6 +204,7 @@
       "name": "Marquis Serkis",
       "role": "Hernand marquis",
       "home": "place:serkis-estate",
+      "region": "region:hernand",
       "summary": "The Hernand marquis who sets the Greymanes to work rebuilding after Golden Greed.",
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/586592", "title": "Game8: Chapter 3 walkthrough", "accessed": "2026-09-06" }
@@ -206,6 +217,7 @@
       "type": "character",
       "name": "Yann",
       "role": "House of Healing contact",
+      "region": "region:hernand",
       "summary": "The person who leads Kliff through the House of Healing during Familiar Curses.",
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/586592", "title": "Game8: Chapter 3 walkthrough", "accessed": "2026-09-06" }
@@ -219,6 +231,7 @@
       "name": "Andrew",
       "role": "Greymane comrade",
       "factions": ["faction:greymanes"],
+      "region": "region:hernand",
       "summary": "A comrade whose condition is checked after the draught during Hope After the Draught.",
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/586592", "title": "Game8: Chapter 3 walkthrough", "accessed": "2026-09-06" }
@@ -232,6 +245,7 @@
       "name": "Grimnir",
       "role": "Kilnden Workshop contact",
       "home": "place:kilnden-workshop",
+      "region": "region:hernand",
       "summary": "The workshop contact who hands over the iron pot in Chapter 4.",
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/586747", "title": "Game8: Chapter 4 walkthrough", "accessed": "2026-09-06" }
@@ -244,6 +258,7 @@
       "type": "character",
       "name": "Duane",
       "role": "Archery contest host",
+      "region": "region:hernand",
       "summary": "The host of the archery contest during Skilled in Archery.",
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/586747", "title": "Game8: Chapter 4 walkthrough", "accessed": "2026-09-06" }
@@ -257,6 +272,7 @@
       "name": "Octavius",
       "role": "Scholastone experimenter",
       "home": "place:scholastone-institute",
+      "region": "region:hernand",
       "summary": "A Scholastone experimenter whose work Kliff helps during On the Right Path.",
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/586747", "title": "Game8: Chapter 4 walkthrough", "accessed": "2026-09-06" }
@@ -270,6 +286,7 @@
       "name": "Dean of the Scholastone Institute",
       "role": "Head of Scholastone",
       "home": "place:scholastone-institute",
+      "region": "region:hernand",
       "summary": "The head of the Scholastone Institute, met when Kliff first reaches the school.",
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/586747", "title": "Game8: Chapter 4 walkthrough", "accessed": "2026-09-06" }
@@ -282,6 +299,7 @@
       "type": "character",
       "name": "Alustin",
       "role": "Letter writer",
+      "region": "region:hernand",
       "summary": "The writer of the letter that points Kliff toward Scholastone in Chapter 4.",
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/586747", "title": "Game8: Chapter 4 walkthrough", "accessed": "2026-09-06" }
@@ -294,6 +312,7 @@
       "type": "character",
       "name": "Grundir",
       "role": "Rift witness",
+      "region": "region:hernand",
       "summary": "The person spoken to after the rift in Obsession and Madness.",
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/586747", "title": "Game8: Chapter 4 walkthrough", "accessed": "2026-09-06" }
@@ -306,6 +325,7 @@
       "type": "character",
       "name": "White Crow",
       "role": "Abduction victim",
+      "region": "region:hernand",
       "summary": "The captive the Chapter 5 hunt keeps circling back to while Crowcaller is still at large.",
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/586937", "title": "Game8: Chapter 5 walkthrough", "accessed": "2026-09-06" }
@@ -319,6 +339,7 @@
       "name": "Marquis Lanford",
       "role": "Calphadean marquis",
       "home": "place:calphade-castle",
+      "region": "region:hernand",
       "summary": "The Calphadean marquis who takes the victory report after Cassius Morten falls.",
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/587251", "title": "Game8: Chapter 6 walkthrough", "accessed": "2026-09-06" }
@@ -332,6 +353,7 @@
       "name": "Stefan Lanford",
       "role": "Calphadean ally",
       "home": "place:calphade-castle",
+      "region": "region:hernand",
       "summary": "A Lanford who leads a stretch of the assault on Calphade Castle and needs backing there.",
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/587251", "title": "Game8: Chapter 6 walkthrough", "accessed": "2026-09-06" }
@@ -345,6 +367,7 @@
       "name": "Torstein",
       "role": "Pailune ally",
       "home": "place:pailune",
+      "region": "region:pailune",
       "summary": "The ally who sets the Homecoming beacon work and is sought again when Pailune is being put back together.",
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/587752", "title": "Game8: Chapter 7 walkthrough", "accessed": "2026-09-06" }
@@ -357,6 +380,7 @@
       "type": "character",
       "name": "Naira",
       "role": "Ally reunited in Pailune",
+      "region": "region:hernand",
       "summary": "An ally found again with Andrew once the company is back on the Pailune road.",
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/587752", "title": "Game8: Chapter 7 walkthrough", "accessed": "2026-09-06" }
@@ -369,6 +393,7 @@
       "type": "character",
       "name": "Shane",
       "role": "Contact on Ludvig's trail",
+      "region": "region:pailune",
       "summary": "Met with Duane when the company still has to pin down where Ludvig went.",
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/587752", "title": "Game8: Chapter 7 walkthrough", "accessed": "2026-09-06" }
@@ -381,6 +406,7 @@
       "type": "character",
       "name": "Ludvig",
       "role": "Homecoming antagonist",
+      "region": "region:pailune",
       "summary": "The fighter faced in Pailune during Lonely Jackals, then hunted again after that meeting does not end him.",
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/587752", "title": "Game8: Chapter 7 walkthrough", "accessed": "2026-09-06" }
@@ -393,6 +419,7 @@
       "type": "character",
       "name": "Woosa",
       "role": "Ally found in Pailune",
+      "region": "region:demeniss",
       "summary": "Found during Where the Wind Guides You, then walked to Maegu after Gregor the Halberd of Carnage falls.",
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/588901", "title": "Game8: Chapter 8 walkthrough", "accessed": "2026-09-06" }
@@ -405,6 +432,7 @@
       "type": "character",
       "name": "Maegu",
       "role": "Ally joined with Woosa",
+      "region": "region:demeniss",
       "summary": "The person Woosa is escorted to, after which both stand with the company.",
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/588901", "title": "Game8: Chapter 8 walkthrough", "accessed": "2026-09-06" }
@@ -418,6 +446,7 @@
       "name": "Count Byron",
       "role": "Windmere Manor target",
       "home": "place:windmere-manor",
+      "region": "region:demeniss",
       "summary": "The count Bloodied Invitation sends Kliff into Windmere Manor to kill.",
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/588901", "title": "Game8: Chapter 8 walkthrough", "accessed": "2026-09-06" }
@@ -431,6 +460,7 @@
       "name": "Countess Azerian",
       "role": "Azerian noble",
       "home": "place:azerian-manor",
+      "region": "region:demeniss",
       "summary": "The countess spoken to after the manor work, before the coronation fight.",
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/588901", "title": "Game8: Chapter 8 walkthrough", "accessed": "2026-09-06" }
@@ -444,6 +474,7 @@
       "name": "Beatrice Azerian",
       "role": "Captive Azerian noble",
       "home": "place:azerian-manor",
+      "region": "region:demeniss",
       "summary": "Sought in Demeniss and found below the city; her death at Bastier's hands is permanent.",
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/588901", "title": "Game8: Chapter 8 walkthrough", "accessed": "2026-09-06" },
@@ -457,6 +488,7 @@
       "type": "character",
       "name": "Gabriel Caliburn",
       "role": "Coronation antagonist",
+      "region": "region:demeniss",
       "summary": "The Caliburn faced during The Blood Coronation after a memory is read.",
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/588901", "title": "Game8: Chapter 8 walkthrough", "accessed": "2026-09-06" }
@@ -469,6 +501,7 @@
       "type": "character",
       "name": "Bastier",
       "role": "Beatrice Azerian's killer",
+      "region": "region:demeniss",
       "summary": "Fought by Damiane at the close of Blood Coronation, after he murders Beatrice Azerian.",
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/588901", "title": "Game8: Chapter 8 walkthrough", "accessed": "2026-09-06" },
@@ -482,6 +515,7 @@
       "type": "character",
       "name": "Witch",
       "role": "Desert trial guide",
+      "region": "region:crimson-desert",
       "summary": "The woman who calls Kliff into the Crimson Desert and points him at the trials of Chapter 9.",
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/589366", "title": "Game8: Chapter 9 walkthrough", "accessed": "2026-09-06" }
@@ -495,6 +529,7 @@
       "name": "Hexe Marie",
       "aliases": ["Black Witch"],
       "role": "Black Witch, Chapter 9 boss",
+      "region": "region:crimson-desert",
       "summary": "The Black Witch fought at the close of the Veiled Witch stretch.",
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/589366", "title": "Game8: Chapter 9 walkthrough", "accessed": "2026-09-06" }
@@ -507,6 +542,7 @@
       "type": "character",
       "name": "Master Du",
       "role": "Desert sage, trial master",
+      "region": "region:crimson-desert",
       "summary": "The sage who trains Kliff at the close of Chapter 9 and is fought during Enlightenment.",
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/589366", "title": "Game8: Chapter 9 walkthrough", "accessed": "2026-09-06" }
@@ -520,6 +556,7 @@
       "name": "Valgash",
       "role": "Weaponsmith",
       "home": "place:gorthak-ironworks",
+      "region": "region:demeniss",
       "summary": "The ironworks smith followed in Chapter 10, then spoken to again after Marni's Clockwork Mantis falls.",
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/590081", "title": "Game8: Chapter 10 walkthrough", "accessed": "2026-09-06" }
@@ -532,6 +569,7 @@
       "type": "character",
       "name": "Orc Captain",
       "role": "Captain at the Gate of War",
+      "region": "region:demeniss",
       "summary": "The orc officer spoken to after the device at the Gate of War is started.",
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/590081", "title": "Game8: Chapter 10 walkthrough", "accessed": "2026-09-06" }
@@ -545,6 +583,7 @@
       "name": "Marni",
       "role": "Delesyia figure, laboratorium namesake",
       "home": "place:marnis-laboratorium",
+      "region": "region:delesyia",
       "summary": "A living person in Delesyia, not only a name on machines; met again at the castle gate during the epilogue.",
       "sources": [
         { "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/", "title": "VULKK: main story walkthrough", "accessed": "2026-09-06" }
@@ -557,6 +596,7 @@
       "type": "character",
       "name": "H.A.L.L.",
       "role": "AI antagonist in Cloud Castle Orbian",
+      "region": "region:delesyia",
       "summary": "The machine mind fought at the heart of Cloud Castle Orbian, after its cores are broken.",
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/590172", "title": "Game8: Chapter 11 walkthrough", "accessed": "2026-09-06" }
@@ -569,6 +609,7 @@
       "type": "character",
       "name": "Umbra",
       "role": "Abyss antagonist",
+      "region": "region:demeniss",
       "summary": "The Abyss presence fought in its own form at the close of Chapter 12, after Myurdin falls.",
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/590343", "title": "Game8: Chapter 12 walkthrough", "accessed": "2026-09-06" }

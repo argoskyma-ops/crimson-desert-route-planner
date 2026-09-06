@@ -6,8 +6,10 @@ orchestrator's status line above it says what was done with the findings.
 
 ## R4 (C3): main story content
 
-Status 2026-09-06: filed; fixes dispatched as one Grok task (status
-updated once applied). Orchestrator checks before the review: every
+Status 2026-09-06: applied (commit "Apply the R4 review of the C3 main
+story content", Grok, one pass): all five blocking items and every
+should-fix and nit except the two rejected below and the ref conversions
+deferred to C5 and C7. Orchestrator checks before the review: every
 record validates, ids unique, refs resolve, one https source each; every
 cited URL returns 200 except the Forbes article on the Kliff seed (bot
 block); a script found no 7-word run of any summary, step, body or

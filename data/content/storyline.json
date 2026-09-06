@@ -8,7 +8,7 @@
       "name": "Main story",
       "kind": "main",
       "summary": "Kliff's campaign: a prologue, twelve chapters and an epilogue, played in a fixed order.",
-      "body": "GameRant's published list names 206 main quests across fourteen sections; this record holds all 206. The campaign is linear. Sources disagree on whether the opening Greymane camp lies in Hernand or Pailune, so the six prologue quests omit a region. Journey's End is treated as the first Epilogue quest, not as the close of Chapter 12.",
+      "body": "GameRant's published list names 206 main quests across fourteen sections; this record holds all 206. The campaign is linear. The companion research (docs/RESEARCH-COMPANION.md) places the opening Greymane camp in Pailune; the main-story research places it in Hernand, so the six prologue quests omit a region. Journey's End is treated as the first Epilogue quest, not as the close of Chapter 12. The four trial lines after The Calling can be taken in any order; sources suggest Shattered Ties, then Veiled Witch, then Thinning Blade, then Six Pensive Statues and the Evil Spirit.",
       "chapters": [
         {
           "title": "Prologue: Dead of Night",
@@ -204,7 +204,7 @@
             "quest:a-fleeting-dream"
           ],
           "pointsOfNoReturn": [
-            "Kliff is knocked out and play shifts to Damiane alone; Beatrice Azerian is killed, and that death stands."
+            "Kliff is knocked out and play shifts to Damiane alone; during that stretch Damiane kills Bastier, who has murdered Beatrice Azerian, and Beatrice's death stands."
           ]
         },
         {
@@ -235,9 +235,6 @@
             "quest:the-sage-of-the-desert",
             "quest:new-perspectives",
             "quest:lust-for-power"
-          ],
-          "pointsOfNoReturn": [
-            "The four trial lines after The Calling can be taken in any order; sources suggest Shattered Ties, then Veiled Witch, then Thinning Blade, then Six Pensive Statues and the Evil Spirit."
           ]
         },
         {
@@ -299,11 +296,11 @@
             "quest:the-enduring-flame",
             "quest:evolving-city",
             "quest:new-horizons"
-          ],
-          "pointsOfNoReturn": [
-            "Finishing all forty Abyss Challenges, a side set, is reported to open an alternate ending with more on Pywel, the Abyss, and Kliff's past."
           ]
         }
+      ],
+      "pointsOfNoReturn": [
+        "Finishing all forty Abyss Challenges, a side set, is reported to open an alternate ending with more on Pywel, the Abyss, and Kliff's past."
       ],
       "sources": [
         {

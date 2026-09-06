@@ -55,7 +55,7 @@
       "name": "Greymanes camp",
       "aliases": ["Greymane camp"],
       "kind": "camp",
-      "summary": "The Greymane camp hit in the opening raid; sources disagree on whether it sits in Hernand or Pailune.",
+      "summary": "The Greymane camp hit in the opening raid; the companion research places it in Pailune, the main-story research in Hernand.",
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/585649", "title": "Game8: Prologue walkthrough", "accessed": "2026-09-06" }
       ],
