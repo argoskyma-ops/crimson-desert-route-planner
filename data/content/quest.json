@@ -4831,6 +4831,1894 @@
       "gameVersion": "2.01.00"
     },
     {
+      "id": "quest:dawn-mist",
+      "type": "quest",
+      "name": "Dawn Mist",
+      "aliases": ["Morning Mist"],
+      "kind": "main",
+      "chapter": "Chapter 7: Homecoming",
+      "storyline": "storyline:main",
+      "region": "region:pailune",
+      "summary": "Turn the company toward Pailune and open the Dawn Mist stretch of Homecoming.",
+      "body": "No source gives this arc header its own objective; the steps are inferred from the Homecoming work that sits under it.",
+      "prerequisites": [
+        {
+          "kind": "chapter",
+          "value": 7,
+          "text": "Reach Chapter 7"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Leave the Calphadean line and set out for Pailune.",
+          "action": "travel",
+          "refs": ["region:pailune"]
+        },
+        {
+          "text": "Begin the Dawn Mist work that leads the company home.",
+          "action": "other",
+          "refs": ["region:pailune"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587752",
+          "title": "Game8: Chapter 7 walkthrough",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://www.powerpyx.com/crimson-desert-walkthrough-all-main-quests/",
+          "title": "PowerPyx: all main quests",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:ashes-of-treachery",
+      "type": "quest",
+      "name": "Ashes of Treachery",
+      "kind": "main",
+      "chapter": "Chapter 7: Homecoming",
+      "storyline": "storyline:main",
+      "region": "region:pailune",
+      "summary": "Read what a shrine still holds, then travel on to Beighen.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:dawn-mist",
+          "text": "Complete Dawn Mist"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Check the shrine for the information still kept there.",
+          "action": "other"
+        },
+        {
+          "text": "Travel to Beighen.",
+          "action": "travel",
+          "refs": ["place:beighen"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587752",
+          "title": "Game8: Chapter 7 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:trust-lost",
+      "type": "quest",
+      "name": "Trust Lost",
+      "kind": "main",
+      "chapter": "Chapter 7: Homecoming",
+      "storyline": "storyline:main",
+      "region": "region:pailune",
+      "summary": "Find Naira and Andrew again once the company is back on the Pailune road.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:ashes-of-treachery",
+          "text": "Complete Ashes of Treachery"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Seek out Naira.",
+          "action": "talk",
+          "refs": ["character:naira"]
+        },
+        {
+          "text": "Reunite with Andrew as well.",
+          "action": "talk",
+          "refs": ["character:andrew"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587752",
+          "title": "Game8: Chapter 7 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:bared-fang",
+      "type": "quest",
+      "name": "Bared Fang",
+      "kind": "main",
+      "chapter": "Chapter 7: Homecoming",
+      "storyline": "storyline:main",
+      "region": "region:pailune",
+      "summary": "Gather what can be learned about the Blue Fangs in Pailune.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:trust-lost",
+          "text": "Complete Trust Lost"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Ask around for word of the Blue Fangs.",
+          "action": "talk",
+          "refs": ["region:pailune"]
+        },
+        {
+          "text": "Piece together what that group is doing here.",
+          "action": "other"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587752",
+          "title": "Game8: Chapter 7 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:rekindled-hope",
+      "type": "quest",
+      "name": "Rekindled Hope",
+      "kind": "main",
+      "chapter": "Chapter 7: Homecoming",
+      "storyline": "storyline:main",
+      "giver": "character:torstein",
+      "region": "region:pailune",
+      "summary": "Take Torstein's brief, cut down a commander, and light the beacon that follows.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:bared-fang",
+          "text": "Complete Bared Fang"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Speak with Torstein.",
+          "action": "talk",
+          "refs": ["character:torstein"]
+        },
+        {
+          "text": "Defeat the commander in the way.",
+          "action": "fight"
+        },
+        {
+          "text": "Light the beacon.",
+          "action": "other"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587752",
+          "title": "Game8: Chapter 7 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:podium-of-resolve",
+      "type": "quest",
+      "name": "Podium of Resolve",
+      "kind": "main",
+      "chapter": "Chapter 7: Homecoming",
+      "storyline": "storyline:main",
+      "region": "region:pailune",
+      "summary": "Stand at the podium and take Jian's Sword.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:rekindled-hope",
+          "text": "Complete Rekindled Hope"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Reach the podium where the gift is waiting.",
+          "action": "travel"
+        },
+        {
+          "text": "Receive Jian's Sword.",
+          "action": "collect"
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "item",
+          "text": "Jian's Sword"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587752",
+          "title": "Game8: Chapter 7 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:dawnrise",
+      "type": "quest",
+      "name": "Dawnrise",
+      "aliases": ["Dawn"],
+      "kind": "main",
+      "chapter": "Chapter 7: Homecoming",
+      "storyline": "storyline:main",
+      "region": "region:pailune",
+      "summary": "Push the Dawnrise stretch that aims the company at Pailune itself.",
+      "body": "No source gives this arc header its own objective; the steps are inferred from the Pailune seizure work that sits under it.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:podium-of-resolve",
+          "text": "Complete Podium of Resolve"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Carry the Dawn Mist gains into the next push.",
+          "action": "other"
+        },
+        {
+          "text": "Turn the company toward the streets of Pailune.",
+          "action": "travel",
+          "refs": ["place:pailune"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587752",
+          "title": "Game8: Chapter 7 walkthrough",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://www.powerpyx.com/crimson-desert-walkthrough-all-main-quests/",
+          "title": "PowerPyx: all main quests",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:shadows-over-pailune",
+      "type": "quest",
+      "name": "Shadows Over Pailune",
+      "kind": "main",
+      "chapter": "Chapter 7: Homecoming",
+      "storyline": "storyline:main",
+      "region": "region:pailune",
+      "summary": "Set up a safe house inside Pailune.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:dawnrise",
+          "text": "Complete Dawnrise"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Enter Pailune and pick a place that can be held.",
+          "action": "travel",
+          "refs": ["place:pailune"]
+        },
+        {
+          "text": "Establish the safe house there.",
+          "action": "other",
+          "refs": ["place:pailune"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587752",
+          "title": "Game8: Chapter 7 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:driving-out-the-shadows",
+      "type": "quest",
+      "name": "Driving out the Shadows",
+      "kind": "main",
+      "chapter": "Chapter 7: Homecoming",
+      "storyline": "storyline:main",
+      "region": "region:pailune",
+      "summary": "Find explosives and install the device they feed.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:shadows-over-pailune",
+          "text": "Complete Shadows Over Pailune"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Find the explosives.",
+          "action": "collect",
+          "refs": ["place:pailune"]
+        },
+        {
+          "text": "Install the device.",
+          "action": "other",
+          "refs": ["place:pailune"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587752",
+          "title": "Game8: Chapter 7 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:lurking-wolves",
+      "type": "quest",
+      "name": "Lurking Wolves",
+      "kind": "main",
+      "chapter": "Chapter 7: Homecoming",
+      "storyline": "storyline:main",
+      "region": "region:pailune",
+      "summary": "Time a signal with the allies waiting on it.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:driving-out-the-shadows",
+          "text": "Complete Driving out the Shadows"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Get in position with the people waiting on the cue.",
+          "action": "travel",
+          "refs": ["place:pailune"]
+        },
+        {
+          "text": "Send the signal they agreed on.",
+          "action": "other"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587752",
+          "title": "Game8: Chapter 7 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:reclamation-ii",
+      "type": "quest",
+      "name": "Reclamation (II)",
+      "kind": "main",
+      "chapter": "Chapter 7: Homecoming",
+      "storyline": "storyline:main",
+      "region": "region:pailune",
+      "summary": "Take Pailune back from the force holding it.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:lurking-wolves",
+          "text": "Complete Lurking Wolves"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Move on the streets from the safe house.",
+          "action": "travel",
+          "refs": ["place:pailune"]
+        },
+        {
+          "text": "Seize Pailune.",
+          "action": "fight",
+          "refs": ["place:pailune"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587752",
+          "title": "Game8: Chapter 7 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:lonely-jackals",
+      "type": "quest",
+      "name": "Lonely Jackals",
+      "kind": "main",
+      "chapter": "Chapter 7: Homecoming",
+      "storyline": "storyline:main",
+      "region": "region:pailune",
+      "summary": "Fight Ludvig in the recaptured city and take the Jackal and Hungering Fang gear that follows.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:reclamation-ii",
+          "text": "Complete Reclamation (II)"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Find Ludvig in Pailune.",
+          "action": "travel",
+          "refs": ["character:ludvig", "place:pailune"]
+        },
+        {
+          "text": "Defeat Ludvig.",
+          "action": "fight",
+          "refs": ["character:ludvig"]
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "item",
+          "text": "Jackal's Leather Helm"
+        },
+        {
+          "kind": "item",
+          "text": "Jackal's Leather Armor"
+        },
+        {
+          "kind": "item",
+          "text": "Jackal's Cloth Cloak"
+        },
+        {
+          "kind": "item",
+          "text": "Hungering Fang Cloak"
+        },
+        {
+          "kind": "item",
+          "text": "Hungering Fang Boots"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587752",
+          "title": "Game8: Chapter 7 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:resolution",
+      "type": "quest",
+      "name": "Resolution",
+      "kind": "main",
+      "chapter": "Chapter 7: Homecoming",
+      "storyline": "storyline:main",
+      "region": "region:pailune",
+      "summary": "Join the comrades again and regroup after the fight with Ludvig.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:lonely-jackals",
+          "text": "Complete Lonely Jackals"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Find the comrades who peeled off during the fight.",
+          "action": "travel",
+          "refs": ["faction:greymanes"]
+        },
+        {
+          "text": "Join them and regroup.",
+          "action": "talk",
+          "refs": ["faction:greymanes"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587752",
+          "title": "Game8: Chapter 7 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:decisive-battle",
+      "type": "quest",
+      "name": "Decisive Battle",
+      "kind": "main",
+      "chapter": "Chapter 7: Homecoming",
+      "storyline": "storyline:main",
+      "region": "region:pailune",
+      "summary": "Open the Decisive Battle stretch that aims the company at Myurdin.",
+      "body": "No source gives this arc header its own objective; the steps are inferred from the Silverwolf Mountain push that sits under it.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:resolution",
+          "text": "Complete Resolution"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Leave the recaptured city and form up for the next fight.",
+          "action": "travel",
+          "refs": ["place:pailune"]
+        },
+        {
+          "text": "Commit to the run toward Myurdin.",
+          "action": "other",
+          "refs": ["character:myurdin"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587752",
+          "title": "Game8: Chapter 7 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:the-counterattack-ch7",
+      "type": "quest",
+      "name": "The Counterattack",
+      "kind": "main",
+      "chapter": "Chapter 7: Homecoming",
+      "storyline": "storyline:main",
+      "region": "region:pailune",
+      "summary": "Ready the company for the engagement that follows the taking of Pailune.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:decisive-battle",
+          "text": "Complete Decisive Battle"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Gather what the next fight will need.",
+          "action": "other"
+        },
+        {
+          "text": "Prepare the company for the engagement.",
+          "action": "talk",
+          "refs": ["faction:greymanes"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587752",
+          "title": "Game8: Chapter 7 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:unleashed-fury",
+      "type": "quest",
+      "name": "Unleashed Fury",
+      "kind": "main",
+      "chapter": "Chapter 7: Homecoming",
+      "storyline": "storyline:main",
+      "region": "region:pailune",
+      "summary": "Carry out the offensive once the company is ready.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:the-counterattack-ch7",
+          "text": "Complete The Counterattack"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Move the line forward.",
+          "action": "travel"
+        },
+        {
+          "text": "Execute the offensive.",
+          "action": "fight"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587752",
+          "title": "Game8: Chapter 7 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:the-final-bridge",
+      "type": "quest",
+      "name": "The Final Bridge",
+      "kind": "main",
+      "chapter": "Chapter 7: Homecoming",
+      "storyline": "storyline:main",
+      "region": "region:pailune",
+      "summary": "Meet the Greymanes again before the slave camp and the mountain.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:unleashed-fury",
+          "text": "Complete Unleashed Fury"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Reach the crossing where the Greymanes wait.",
+          "action": "travel",
+          "refs": ["faction:greymanes"]
+        },
+        {
+          "text": "Regroup with them there.",
+          "action": "talk",
+          "refs": ["faction:greymanes"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587752",
+          "title": "Game8: Chapter 7 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:broken-claws",
+      "type": "quest",
+      "name": "Broken Claws",
+      "kind": "main",
+      "chapter": "Chapter 7: Homecoming",
+      "storyline": "storyline:main",
+      "region": "region:pailune",
+      "summary": "Free the people held at the Ashclaw Slave Camp.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:the-final-bridge",
+          "text": "Complete The Final Bridge"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Reach the Ashclaw Slave Camp.",
+          "action": "travel",
+          "refs": ["place:ashclaw-slave-camp"]
+        },
+        {
+          "text": "Liberate the camp.",
+          "action": "fight",
+          "refs": ["place:ashclaw-slave-camp"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587752",
+          "title": "Game8: Chapter 7 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:battle-at-silverwolf-mountain",
+      "type": "quest",
+      "name": "Battle at Silverwolf Mountain",
+      "kind": "main",
+      "chapter": "Chapter 7: Homecoming",
+      "storyline": "storyline:main",
+      "region": "region:pailune",
+      "summary": "Hunt Myurdin on Silverwolf Mountain and fight that battle.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:broken-claws",
+          "text": "Complete Broken Claws"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Climb Silverwolf Mountain and find Myurdin.",
+          "action": "travel",
+          "refs": ["place:silverwolf-mountain", "character:myurdin"]
+        },
+        {
+          "text": "Defeat Myurdin.",
+          "action": "fight",
+          "refs": ["character:myurdin", "place:silverwolf-mountain"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587752",
+          "title": "Game8: Chapter 7 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:incomplete-victory",
+      "type": "quest",
+      "name": "Incomplete Victory",
+      "kind": "main",
+      "chapter": "Chapter 7: Homecoming",
+      "storyline": "storyline:main",
+      "region": "region:pailune",
+      "summary": "Speak with Oongka after the mountain fight and take Melted Ambition.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:battle-at-silverwolf-mountain",
+          "text": "Complete Battle at Silverwolf Mountain"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Come down from Silverwolf Mountain after the fight.",
+          "action": "travel",
+          "refs": ["place:silverwolf-mountain"]
+        },
+        {
+          "text": "Speak with Oongka.",
+          "action": "talk",
+          "refs": ["character:oongka"]
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "item",
+          "text": "Melted Ambition"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587752",
+          "title": "Game8: Chapter 7 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:twisted-fate",
+      "type": "quest",
+      "name": "Twisted Fate",
+      "kind": "main",
+      "chapter": "Chapter 7: Homecoming",
+      "storyline": "storyline:main",
+      "region": "region:pailune",
+      "summary": "Open the Twisted Fate stretch that still has to find Ludvig.",
+      "body": "No source gives this arc header its own objective; the steps are inferred from the hunt for Ludvig that sits under it.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:incomplete-victory",
+          "text": "Complete Incomplete Victory"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Take stock after the mountain fight that did not finish everything.",
+          "action": "other",
+          "refs": ["character:oongka"]
+        },
+        {
+          "text": "Turn the company toward finding Ludvig.",
+          "action": "other",
+          "refs": ["character:ludvig"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587752",
+          "title": "Game8: Chapter 7 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:ludvigs-whereabouts",
+      "type": "quest",
+      "name": "Ludvig's Whereabouts",
+      "kind": "main",
+      "chapter": "Chapter 7: Homecoming",
+      "storyline": "storyline:main",
+      "region": "region:pailune",
+      "summary": "Meet Duane and Shane, then use what they know to find Ludvig.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:twisted-fate",
+          "text": "Complete Twisted Fate"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Meet Duane and Shane.",
+          "action": "talk",
+          "refs": ["character:duane", "character:shane"]
+        },
+        {
+          "text": "Use what they know to locate Ludvig.",
+          "action": "other",
+          "refs": ["character:ludvig"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587752",
+          "title": "Game8: Chapter 7 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:time-to-face-justice",
+      "type": "quest",
+      "name": "Time to Face Justice",
+      "kind": "main",
+      "chapter": "Chapter 7: Homecoming",
+      "storyline": "storyline:main",
+      "region": "region:pailune",
+      "summary": "Track Ludvig down and confront him, then close Homecoming with the chapter's remaining gear.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:ludvigs-whereabouts",
+          "text": "Complete Ludvig's Whereabouts"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Follow the trail Duane and Shane pointed out.",
+          "action": "travel",
+          "refs": ["character:ludvig", "character:duane", "character:shane"]
+        },
+        {
+          "text": "Confront Ludvig.",
+          "action": "fight",
+          "refs": ["character:ludvig"]
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "unlock",
+          "ref": "place:pailune",
+          "text": "Control of Pailune"
+        },
+        {
+          "kind": "unlock",
+          "ref": "character:oongka",
+          "text": "Oongka playable"
+        },
+        {
+          "kind": "item",
+          "text": "Ignir (spear)"
+        },
+        {
+          "kind": "item",
+          "text": "Solas Plate Armor"
+        },
+        {
+          "kind": "item",
+          "text": "Solas Plate Boots"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587752",
+          "title": "Game8: Chapter 7 walkthrough",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/",
+          "title": "VULKK: main story walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:ashen-steps",
+      "type": "quest",
+      "name": "Ashen Steps",
+      "kind": "main",
+      "chapter": "Chapter 8: Blood Coronation",
+      "storyline": "storyline:main",
+      "region": "region:demeniss",
+      "summary": "Meet Torstein in Pailune and open the Ashen Steps stretch.",
+      "prerequisites": [
+        {
+          "kind": "chapter",
+          "value": 8,
+          "text": "Reach Chapter 8"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Return to Pailune.",
+          "action": "travel",
+          "refs": ["place:pailune"]
+        },
+        {
+          "text": "Meet Torstein there.",
+          "action": "talk",
+          "refs": ["character:torstein", "place:pailune"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/588901",
+          "title": "Game8: Chapter 8 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:healing-pailune",
+      "type": "quest",
+      "name": "Healing Pailune",
+      "kind": "main",
+      "chapter": "Chapter 8: Blood Coronation",
+      "storyline": "storyline:main",
+      "region": "region:demeniss",
+      "summary": "Meet Torstein about the work of putting Pailune back together.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:ashen-steps",
+          "text": "Complete Ashen Steps"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Find Torstein in the city that was just taken back.",
+          "action": "travel",
+          "refs": ["character:torstein", "place:pailune"]
+        },
+        {
+          "text": "Hear what healing Pailune will take.",
+          "action": "talk",
+          "refs": ["character:torstein", "place:pailune"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/588901",
+          "title": "Game8: Chapter 8 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:a-bond",
+      "type": "quest",
+      "name": "A Bond",
+      "kind": "main",
+      "chapter": "Chapter 8: Blood Coronation",
+      "storyline": "storyline:main",
+      "region": "region:demeniss",
+      "summary": "Read a letter and go to the place it points out.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:healing-pailune",
+          "text": "Complete Healing Pailune"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Read the letter.",
+          "action": "other"
+        },
+        {
+          "text": "Visit the location it indicates.",
+          "action": "travel"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/588901",
+          "title": "Game8: Chapter 8 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:ritual-preparations",
+      "type": "quest",
+      "name": "Ritual Preparations",
+      "kind": "main",
+      "chapter": "Chapter 8: Blood Coronation",
+      "storyline": "storyline:main",
+      "region": "region:demeniss",
+      "summary": "Read the memories left on a shipwreck and bring back the items asked for.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:a-bond",
+          "text": "Complete A Bond"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Read the shipwreck memories.",
+          "action": "other"
+        },
+        {
+          "text": "Retrieve the requested items.",
+          "action": "collect"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/588901",
+          "title": "Game8: Chapter 8 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:where-the-wind-guides-you",
+      "type": "quest",
+      "name": "Where the Wind Guides You",
+      "kind": "main",
+      "chapter": "Chapter 8: Blood Coronation",
+      "storyline": "storyline:main",
+      "region": "region:demeniss",
+      "summary": "Find Woosa, beat Gregor the Halberd of Carnage, and walk Woosa to Maegu.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:ritual-preparations",
+          "text": "Complete Ritual Preparations"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Find Woosa.",
+          "action": "travel",
+          "refs": ["character:woosa"]
+        },
+        {
+          "text": "Defeat Gregor the Halberd of Carnage.",
+          "action": "fight"
+        },
+        {
+          "text": "Escort Woosa to Maegu.",
+          "action": "travel",
+          "refs": ["character:woosa", "character:maegu"]
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "item",
+          "text": "Abyss Artifact x1"
+        },
+        {
+          "kind": "item",
+          "text": "Golden Vanguard"
+        },
+        {
+          "kind": "item",
+          "text": "Radiant Necklace"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/588901",
+          "title": "Game8: Chapter 8 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:to-demeniss",
+      "type": "quest",
+      "name": "To Demeniss",
+      "aliases": ["Demeniss Bound"],
+      "kind": "main",
+      "chapter": "Chapter 8: Blood Coronation",
+      "storyline": "storyline:main",
+      "region": "region:demeniss",
+      "summary": "Examine a Dragon Totem, read the letter it holds, and turn toward Demeniss.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:where-the-wind-guides-you",
+          "text": "Complete Where the Wind Guides You"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Examine the Dragon Totem.",
+          "action": "other"
+        },
+        {
+          "text": "Read the letter it yields.",
+          "action": "other"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/588901",
+          "title": "Game8: Chapter 8 walkthrough",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://www.powerpyx.com/crimson-desert-walkthrough-all-main-quests/",
+          "title": "PowerPyx: all main quests",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:chasing-a-shadow",
+      "type": "quest",
+      "name": "Chasing a Shadow",
+      "kind": "main",
+      "chapter": "Chapter 8: Blood Coronation",
+      "storyline": "storyline:main",
+      "region": "region:demeniss",
+      "summary": "Examine the Dragon Totem at a shrine and read the letter left there.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:to-demeniss",
+          "text": "Complete To Demeniss"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Reach the shrine that holds the Dragon Totem.",
+          "action": "travel"
+        },
+        {
+          "text": "Read the letter waiting with it.",
+          "action": "other"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/588901",
+          "title": "Game8: Chapter 8 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:blazing-fire",
+      "type": "quest",
+      "name": "Blazing Fire",
+      "kind": "main",
+      "chapter": "Chapter 8: Blood Coronation",
+      "storyline": "storyline:main",
+      "region": "region:demeniss",
+      "summary": "Slip into Azerian Manor and get out again.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:chasing-a-shadow",
+          "text": "Complete Chasing a Shadow"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Infiltrate Azerian Manor.",
+          "action": "travel",
+          "refs": ["place:azerian-manor"]
+        },
+        {
+          "text": "Escape the manor.",
+          "action": "other",
+          "refs": ["place:azerian-manor"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/588901",
+          "title": "Game8: Chapter 8 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:whispering-shadows",
+      "type": "quest",
+      "name": "Whispering Shadows",
+      "kind": "main",
+      "chapter": "Chapter 8: Blood Coronation",
+      "storyline": "storyline:main",
+      "region": "region:demeniss",
+      "summary": "Slip into Sungrove Manor and read the memories kept there.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:blazing-fire",
+          "text": "Complete Blazing Fire"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Infiltrate Sungrove Manor.",
+          "action": "travel",
+          "refs": ["place:sungrove-manor"]
+        },
+        {
+          "text": "Read the memories inside.",
+          "action": "other",
+          "refs": ["place:sungrove-manor"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/588901",
+          "title": "Game8: Chapter 8 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:bloodied-invitation",
+      "type": "quest",
+      "name": "Bloodied Invitation",
+      "kind": "main",
+      "chapter": "Chapter 8: Blood Coronation",
+      "storyline": "storyline:main",
+      "region": "region:demeniss",
+      "summary": "Slip into Windmere Manor and assassinate Count Byron.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:whispering-shadows",
+          "text": "Complete Whispering Shadows"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Infiltrate Windmere Manor.",
+          "action": "travel",
+          "refs": ["place:windmere-manor"]
+        },
+        {
+          "text": "Assassinate Count Byron.",
+          "action": "fight",
+          "refs": ["character:count-byron", "place:windmere-manor"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/588901",
+          "title": "Game8: Chapter 8 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:resolve-amidst-a-storm",
+      "type": "quest",
+      "name": "Resolve Amidst a Storm",
+      "kind": "main",
+      "chapter": "Chapter 8: Blood Coronation",
+      "storyline": "storyline:main",
+      "region": "region:demeniss",
+      "summary": "Speak with Countess Azerian after the manor work.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:bloodied-invitation",
+          "text": "Complete Bloodied Invitation"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Find Countess Azerian.",
+          "action": "travel",
+          "refs": ["character:countess-azerian"]
+        },
+        {
+          "text": "Speak with her.",
+          "action": "talk",
+          "refs": ["character:countess-azerian"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/588901",
+          "title": "Game8: Chapter 8 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:rebel-suppression",
+      "type": "quest",
+      "name": "Rebel Suppression",
+      "kind": "main",
+      "chapter": "Chapter 8: Blood Coronation",
+      "storyline": "storyline:main",
+      "region": "region:demeniss",
+      "summary": "Put down the rebels in the way.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:resolve-amidst-a-storm",
+          "text": "Complete Resolve Amidst a Storm"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Find the rebels in the field.",
+          "action": "travel"
+        },
+        {
+          "text": "Defeat them.",
+          "action": "fight"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/588901",
+          "title": "Game8: Chapter 8 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:the-cursed-knight",
+      "type": "quest",
+      "name": "The Cursed Knight",
+      "kind": "main",
+      "chapter": "Chapter 8: Blood Coronation",
+      "storyline": "storyline:main",
+      "region": "region:demeniss",
+      "summary": "Defeat Fortain the Cursed Knight and take the artifact that follows.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:rebel-suppression",
+          "text": "Complete Rebel Suppression"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Face Fortain the Cursed Knight.",
+          "action": "travel"
+        },
+        {
+          "text": "Defeat Fortain and obtain the artifact.",
+          "action": "fight"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/588901",
+          "title": "Game8: Chapter 8 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:the-blood-coronation",
+      "type": "quest",
+      "name": "The Blood Coronation",
+      "kind": "main",
+      "chapter": "Chapter 8: Blood Coronation",
+      "storyline": "storyline:main",
+      "region": "region:demeniss",
+      "summary": "Read a memory, then fight Gabriel Caliburn at the coronation.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:the-cursed-knight",
+          "text": "Complete The Cursed Knight"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Read the memory that opens the coronation.",
+          "action": "other"
+        },
+        {
+          "text": "Defeat Gabriel Caliburn.",
+          "action": "fight",
+          "refs": ["character:gabriel-caliburn"]
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "item",
+          "text": "Abyss Artifact x1"
+        },
+        {
+          "kind": "item",
+          "text": "Shackle of Might x1"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/588901",
+          "title": "Game8: Chapter 8 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:traitor-ch8",
+      "type": "quest",
+      "name": "Traitor",
+      "kind": "main",
+      "chapter": "Chapter 8: Blood Coronation",
+      "storyline": "storyline:main",
+      "region": "region:demeniss",
+      "summary": "Find Beatrice Azerian from Demeniss Court and get out of the city.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:the-blood-coronation",
+          "text": "Complete The Blood Coronation"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Reach Demeniss Court and start the search for Beatrice Azerian.",
+          "action": "travel",
+          "refs": ["place:demeniss-court", "character:beatrice-azerian"]
+        },
+        {
+          "text": "Locate her, then escape the city.",
+          "action": "travel",
+          "refs": ["character:beatrice-azerian"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/588901",
+          "title": "Game8: Chapter 8 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:clue",
+      "type": "quest",
+      "name": "Clue",
+      "aliases": ["Clues"],
+      "kind": "main",
+      "chapter": "Chapter 8: Blood Coronation",
+      "storyline": "storyline:main",
+      "region": "region:demeniss",
+      "summary": "Find the underground prison and locate Beatrice Azerian there.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:traitor-ch8",
+          "text": "Complete Traitor"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Find the underground prison.",
+          "action": "travel"
+        },
+        {
+          "text": "Locate Beatrice Azerian.",
+          "action": "other",
+          "refs": ["character:beatrice-azerian"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/588901",
+          "title": "Game8: Chapter 8 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:a-fleeting-dream",
+      "type": "quest",
+      "name": "A Fleeting Dream",
+      "kind": "main",
+      "chapter": "Chapter 8: Blood Coronation",
+      "storyline": "storyline:main",
+      "region": "region:demeniss",
+      "summary": "Fight Bastier after Kliff is knocked out, then close Blood Coronation on Damiane's stretch.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:clue",
+          "text": "Complete Clue"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Take control as Damiane after Kliff is knocked out.",
+          "action": "other",
+          "refs": ["character:damiane", "character:kliff"]
+        },
+        {
+          "text": "Defeat Bastier.",
+          "action": "fight",
+          "refs": ["character:bastier", "character:damiane"]
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "unlock",
+          "ref": "character:woosa",
+          "text": "Woosa becomes an ally"
+        },
+        {
+          "kind": "unlock",
+          "ref": "character:maegu",
+          "text": "Maegu becomes an ally"
+        },
+        {
+          "kind": "item",
+          "text": "Damiane's Ponytail Ticket x1"
+        },
+        {
+          "kind": "item",
+          "text": "Official Knight armor set"
+        },
+        {
+          "kind": "item",
+          "text": "Eclipsed Solas Plate Gloves x1"
+        },
+        {
+          "kind": "item",
+          "text": "Spire of Clockwork Key x1"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/588901",
+          "title": "Game8: Chapter 8 walkthrough",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/",
+          "title": "VULKK: main story walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
       "id": "quest:trial-of-the-winds",
       "type": "quest",
       "name": "Trial of the Winds",

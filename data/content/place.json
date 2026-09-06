@@ -376,6 +376,111 @@
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:beighen",
+      "type": "place",
+      "name": "Beighen",
+      "kind": "town",
+      "region": "region:pailune",
+      "summary": "The Pailune settlement Ashes of Treachery sends the company to after a shrine is checked.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/587752", "title": "Game8: Chapter 7 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:pailune",
+      "type": "place",
+      "name": "Pailune",
+      "kind": "city",
+      "region": "region:pailune",
+      "summary": "The northern city taken back in Homecoming and used as the first hub of Blood Coronation.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/587752", "title": "Game8: Chapter 7 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:ashclaw-slave-camp",
+      "type": "place",
+      "name": "Ashclaw Slave Camp",
+      "kind": "camp",
+      "region": "region:pailune",
+      "summary": "The camp Broken Claws sends the company to free during the Decisive Battle stretch.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/587752", "title": "Game8: Chapter 7 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:silverwolf-mountain",
+      "type": "place",
+      "name": "Silverwolf Mountain",
+      "aliases": ["Silver Wolf Mountain"],
+      "kind": "landmark",
+      "region": "region:pailune",
+      "summary": "The mountain where Myurdin is found and fought at the close of the Decisive Battle stretch.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/587752", "title": "Game8: Chapter 7 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:azerian-manor",
+      "type": "place",
+      "name": "Azerian Manor",
+      "kind": "estate",
+      "region": "region:demeniss",
+      "summary": "The Azerian house slipped into during Blazing Fire, then left again in a hurry.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/588901", "title": "Game8: Chapter 8 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:sungrove-manor",
+      "type": "place",
+      "name": "Sungrove Manor",
+      "kind": "estate",
+      "region": "region:demeniss",
+      "summary": "The manor Whispering Shadows sends Kliff into to read the memories kept there.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/588901", "title": "Game8: Chapter 8 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:windmere-manor",
+      "type": "place",
+      "name": "Windmere Manor",
+      "kind": "estate",
+      "region": "region:demeniss",
+      "summary": "Count Byron's house, entered during Bloodied Invitation for the killing that follows.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/588901", "title": "Game8: Chapter 8 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:demeniss-court",
+      "type": "place",
+      "name": "Demeniss Court",
+      "kind": "other",
+      "region": "region:demeniss",
+      "summary": "The court where the Traitor stretch starts the search for Beatrice Azerian.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/588901", "title": "Game8: Chapter 8 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
     }
   ]
 }

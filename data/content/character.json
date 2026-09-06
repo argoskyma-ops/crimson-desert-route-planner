@@ -338,6 +338,144 @@
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:torstein",
+      "type": "character",
+      "name": "Torstein",
+      "role": "Pailune ally",
+      "home": "place:pailune",
+      "summary": "The ally who sets the Homecoming beacon work and is sought again when Pailune is being put back together.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/587752", "title": "Game8: Chapter 7 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:naira",
+      "type": "character",
+      "name": "Naira",
+      "role": "Ally reunited in Pailune",
+      "summary": "An ally found again with Andrew once the company is back on the Pailune road.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/587752", "title": "Game8: Chapter 7 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:shane",
+      "type": "character",
+      "name": "Shane",
+      "role": "Contact on Ludvig's trail",
+      "summary": "Met with Duane when the company still has to pin down where Ludvig went.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/587752", "title": "Game8: Chapter 7 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:ludvig",
+      "type": "character",
+      "name": "Ludvig",
+      "role": "Homecoming antagonist",
+      "summary": "The fighter faced in Pailune during Lonely Jackals, then hunted again after that meeting does not end him.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/587752", "title": "Game8: Chapter 7 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:woosa",
+      "type": "character",
+      "name": "Woosa",
+      "role": "Ally found in Pailune",
+      "summary": "Found during Where the Wind Guides You, then walked to Maegu after Gregor the Halberd of Carnage falls.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/588901", "title": "Game8: Chapter 8 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:maegu",
+      "type": "character",
+      "name": "Maegu",
+      "role": "Ally joined with Woosa",
+      "summary": "The person Woosa is escorted to, after which both stand with the company.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/588901", "title": "Game8: Chapter 8 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:count-byron",
+      "type": "character",
+      "name": "Count Byron",
+      "role": "Windmere Manor target",
+      "home": "place:windmere-manor",
+      "summary": "The count Bloodied Invitation sends Kliff into Windmere Manor to kill.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/588901", "title": "Game8: Chapter 8 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:countess-azerian",
+      "type": "character",
+      "name": "Countess Azerian",
+      "role": "Azerian noble",
+      "home": "place:azerian-manor",
+      "summary": "The countess spoken to after the manor work, before the coronation fight.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/588901", "title": "Game8: Chapter 8 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:beatrice-azerian",
+      "type": "character",
+      "name": "Beatrice Azerian",
+      "role": "Captive Azerian noble",
+      "home": "place:azerian-manor",
+      "summary": "Sought in Demeniss and found below the city; her death at Bastier's hands is permanent.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/588901", "title": "Game8: Chapter 8 walkthrough", "accessed": "2026-09-06" },
+        { "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/", "title": "VULKK: main story walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:gabriel-caliburn",
+      "type": "character",
+      "name": "Gabriel Caliburn",
+      "role": "Coronation antagonist",
+      "summary": "The Caliburn faced during The Blood Coronation after a memory is read.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/588901", "title": "Game8: Chapter 8 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:bastier",
+      "type": "character",
+      "name": "Bastier",
+      "role": "Beatrice Azerian's killer",
+      "summary": "Fought by Damiane at the close of Blood Coronation, after he murders Beatrice Azerian.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/588901", "title": "Game8: Chapter 8 walkthrough", "accessed": "2026-09-06" },
+        { "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/", "title": "VULKK: main story walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
     }
   ]
 }

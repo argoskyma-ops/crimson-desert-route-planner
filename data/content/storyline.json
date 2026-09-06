@@ -8,7 +8,7 @@
       "name": "Main story",
       "kind": "main",
       "summary": "Kliff's campaign: a prologue, twelve chapters and an epilogue, played in a fixed order.",
-      "body": "GameRant's published list names 206 main quests across fourteen sections; this record currently holds the 103 quests of the Prologue through Chapter 6, and later chapters stay empty until those parts are written. The campaign is linear. Sources disagree on whether the opening Greymane camp lies in Hernand or Pailune, so the six prologue quests omit a region. Journey's End is treated as the first Epilogue quest, not as the close of Chapter 12.",
+      "body": "GameRant's published list names 206 main quests across fourteen sections; this record currently holds the 143 quests of the Prologue through Chapter 8, and later chapters stay empty until those parts are written. The campaign is linear. Sources disagree on whether the opening Greymane camp lies in Hernand or Pailune, so the six prologue quests omit a region. Journey's End is treated as the first Epilogue quest, not as the close of Chapter 12.",
       "chapters": [
         {
           "title": "Prologue: Dead of Night",
@@ -153,14 +153,56 @@
         },
         {
           "title": "Chapter 7: Homecoming",
-          "quests": [],
+          "quests": [
+            "quest:dawn-mist",
+            "quest:ashes-of-treachery",
+            "quest:trust-lost",
+            "quest:bared-fang",
+            "quest:rekindled-hope",
+            "quest:podium-of-resolve",
+            "quest:dawnrise",
+            "quest:shadows-over-pailune",
+            "quest:driving-out-the-shadows",
+            "quest:lurking-wolves",
+            "quest:reclamation-ii",
+            "quest:lonely-jackals",
+            "quest:resolution",
+            "quest:decisive-battle",
+            "quest:the-counterattack-ch7",
+            "quest:unleashed-fury",
+            "quest:the-final-bridge",
+            "quest:broken-claws",
+            "quest:battle-at-silverwolf-mountain",
+            "quest:incomplete-victory",
+            "quest:twisted-fate",
+            "quest:ludvigs-whereabouts",
+            "quest:time-to-face-justice"
+          ],
           "pointsOfNoReturn": [
             "Ludvig escapes capture and Myurdin pulls back with losses; both states carry into Chapter 8."
           ]
         },
         {
           "title": "Chapter 8: Blood Coronation",
-          "quests": [],
+          "quests": [
+            "quest:ashen-steps",
+            "quest:healing-pailune",
+            "quest:a-bond",
+            "quest:ritual-preparations",
+            "quest:where-the-wind-guides-you",
+            "quest:to-demeniss",
+            "quest:chasing-a-shadow",
+            "quest:blazing-fire",
+            "quest:whispering-shadows",
+            "quest:bloodied-invitation",
+            "quest:resolve-amidst-a-storm",
+            "quest:rebel-suppression",
+            "quest:the-cursed-knight",
+            "quest:the-blood-coronation",
+            "quest:traitor-ch8",
+            "quest:clue",
+            "quest:a-fleeting-dream"
+          ],
           "pointsOfNoReturn": [
             "Kliff is knocked out and play shifts to Damiane alone; Beatrice Azerian is killed, and that death stands."
           ]
