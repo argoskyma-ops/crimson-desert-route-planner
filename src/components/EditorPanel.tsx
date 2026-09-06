@@ -149,12 +149,10 @@ export default function EditorPanel() {
         })}
       </div>
 
-      {mode === 'content' ? (
-        <section aria-label="Content editor" className="mt-2">
-          <ContentEditor />
-        </section>
-      ) : (
-      <section aria-label="Road editor" className="mt-2">
+      <section aria-label="Content editor" hidden={mode !== 'content'} className="mt-2">
+        <ContentEditor />
+      </section>
+      <section aria-label="Road editor" hidden={mode !== 'roads'} className="mt-2">
       <div className="grid grid-cols-2 gap-1 rounded-lg bg-neutral-800/90 p-1">
         {TOOLS.map((item) => {
           const selected = tool === item.id
@@ -272,7 +270,6 @@ export default function EditorPanel() {
       {notice ? <p className="mt-1 px-1 text-xs text-neutral-300">{notice}</p> : null}
       {ioError ? <p className="mt-1 px-1 text-xs text-red-400">{ioError}</p> : null}
       </section>
-      )}
     </div>
   )
 }

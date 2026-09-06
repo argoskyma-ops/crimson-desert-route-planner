@@ -103,6 +103,11 @@ function indexRelations(relations: MutableRelations, entity: Entity): void {
         if (reward.ref !== undefined) add(relations.rewardedBy, reward.ref, entity.id)
       }
       return
+    case 'activity':
+      for (const reward of entity.rewards ?? []) {
+        if (reward.ref !== undefined) add(relations.rewardedBy, reward.ref, entity.id)
+      }
+      return
     case 'collectible':
       if (entity.reward?.ref !== undefined) {
         add(relations.rewardedBy, entity.reward.ref, entity.id)

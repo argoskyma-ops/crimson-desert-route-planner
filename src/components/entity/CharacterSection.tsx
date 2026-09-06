@@ -12,11 +12,6 @@ export default function CharacterSection({ record }: { record: EntityOf<'charact
           {record.companion ? <Badge>Companion</Badge> : null}
         </div>
       ) : null}
-      {record.factions?.length ? (
-        <Section title="Factions">
-          <LinkList ids={record.factions} />
-        </Section>
-      ) : null}
       <Field label="Vendor">{record.vendor ? <EntityLink id={record.vendor} /> : null}</Field>
       <Field label="Home">{record.home ? <EntityLink id={record.home} /> : null}</Field>
       <Section title="Facts">

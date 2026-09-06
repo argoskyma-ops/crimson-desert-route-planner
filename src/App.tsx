@@ -29,6 +29,7 @@ export default function App() {
   const editorActive = useAppStore((s) => s.editor.active)
   const editorMode = useAppStore((s) => s.editor.mode)
   const editorDirty = useAppStore((s) => s.editor.dirty)
+  const contentDirty = useAppStore((s) => s.editor.contentDirty)
   const toggleEditor = useAppStore((s) => s.toggleEditor)
   const selectedEntityId = useAppStore((s) => s.selectedEntityId)
   const hidePhoneChrome = selectedEntityId !== null
@@ -69,14 +70,14 @@ export default function App() {
   }, [setRoads, setWaterMask, setFastTravel, setContent])
 
   useEffect(() => {
-    if (!editorDirty) return
+    if (!editorDirty && !contentDirty) return
     const onBeforeUnload = (event: BeforeUnloadEvent) => {
       event.preventDefault()
       event.returnValue = ''
     }
     window.addEventListener('beforeunload', onBeforeUnload)
     return () => window.removeEventListener('beforeunload', onBeforeUnload)
-  }, [editorDirty])
+  }, [editorDirty, contentDirty])
 
   return (
     <div className="relative h-dvh overflow-hidden bg-neutral-950 text-neutral-100">
@@ -102,7 +103,7 @@ export default function App() {
               : 'border-white/10 bg-neutral-950/80 text-neutral-100 hover:bg-neutral-800/80'
           }`}
         >
-          {editorActive ? 'Done editing' : 'Edit roads'}
+          {editorActive ? 'Done editing' : 'Edit data'}
         </button>
         {editorActive ? (
           <div className="pointer-events-auto">

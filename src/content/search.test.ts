@@ -55,6 +55,26 @@ function fixtureFiles(): ContentFile[] {
           name: 'Trial of the Winds',
           kind: 'side',
         },
+        {
+          ...head,
+          id: 'quest:hernand',
+          type: 'quest',
+          name: 'Hernand',
+          kind: 'side',
+        },
+      ],
+    }),
+    parseContentFile({
+      version: 1,
+      type: 'character',
+      records: [
+        {
+          ...head,
+          id: 'character:hernand-scout',
+          type: 'character',
+          name: 'Hernand the Scout',
+          role: 'member',
+        },
       ],
     }),
     parseContentFile({
@@ -153,5 +173,28 @@ describe('search', () => {
 
   it('returns null from topHit on an empty list', () => {
     expect(topHit([])).toBeNull()
+  })
+
+  it('returns [] or hits for a punctuation-only query without throwing', () => {
+    expect(() => search(index, '...')).not.toThrow()
+    const groups = search(index, '...')
+    expect(Array.isArray(groups)).toBe(true)
+  })
+
+  it('returns hits for a one-letter query without throwing', () => {
+    expect(() => search(index, 'r')).not.toThrow()
+    expect(flatten(search(index, 'r')).length).toBeGreaterThan(0)
+  })
+
+  it('applies options.filter before ranking and limit', () => {
+    expect(topHit(search(index, 'hernand'))?.type).not.toBe('character')
+    const filtered = search(index, 'hernand', 8, { filter: (hit) => hit.type === 'character' })
+    const hits = flatten(filtered)
+    expect(hits.length).toBeGreaterThan(0)
+    expect(hits.every((hit) => hit.type === 'character')).toBe(true)
+  })
+
+  it('treats an alias word-prefix as prefix', () => {
+    expect(findHit(search(index, 'horse'), 'mount:rokade')?.tier).toBe('prefix')
   })
 })

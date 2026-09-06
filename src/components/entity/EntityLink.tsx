@@ -21,7 +21,7 @@ export default function EntityLink({ id }: { id: string }) {
     <button
       type="button"
       onClick={() => selectEntity(id)}
-      className="inline-flex min-h-8 max-w-full items-center gap-1.5 py-1 text-left text-sm text-sky-300 hover:text-sky-200"
+      className="inline-flex min-h-11 max-w-full items-center gap-1.5 text-left text-sm text-sky-300 hover:text-sky-200"
     >
       <span className="min-w-0 truncate">{record.name}</span>
       <span className="shrink-0 text-[10px] tracking-wide text-neutral-500 uppercase">
@@ -34,7 +34,7 @@ export default function EntityLink({ id }: { id: string }) {
 export function LinkList({ ids }: { ids?: readonly string[] }) {
   if (ids === undefined || ids.length === 0) return null
   return (
-    <ul className="space-y-0.5">
+    <ul className="space-y-0">
       {ids.map((itemId) => (
         <li key={itemId}>
           <EntityLink id={itemId} />

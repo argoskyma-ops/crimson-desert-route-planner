@@ -46,6 +46,25 @@ describe('parseProgress', () => {
     )
   })
 
+  it('accepts extra top-level keys and drops them', () => {
+    const parsed = parseProgress(
+      JSON.stringify({
+        version: 1,
+        steps: ['a#g0'],
+        quests: [],
+        collected: [],
+        extra: true,
+      }),
+    )
+    expect(parsed).toEqual({
+      version: 1,
+      steps: ['a#g0'],
+      quests: [],
+      collected: [],
+    })
+    expect(parsed).not.toHaveProperty('extra')
+  })
+
   it('de-duplicates list entries', () => {
     const parsed = parseProgress(
       JSON.stringify({
@@ -74,6 +93,10 @@ describe('load and save', () => {
     const storage = mapStorage()
     storage.setItem(PROGRESS_KEY, '{not json')
     expect(loadProgress(storage)).toEqual(emptyProgress())
+  })
+
+  it('returns emptyProgress from loadProgress(null)', () => {
+    expect(loadProgress(null)).toEqual(emptyProgress())
   })
 })
 

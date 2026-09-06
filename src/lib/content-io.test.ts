@@ -6,6 +6,7 @@ import {
   fieldSpecs,
   serializeContentFile,
   suggestId,
+  recordExists,
   upsertRecord,
   validateContentFile,
 } from './content-io'
@@ -37,15 +38,45 @@ describe('fieldSpecs', () => {
 })
 
 describe('emptyRecord', () => {
-  it('fails validation with a message naming sources or id', () => {
+  it('fails validation when id is empty', () => {
     const result = validateContentFile({
       version: 1,
       type: 'quest',
-      records: [emptyRecord('quest')],
+      records: [
+        {
+          ...emptyRecord('quest'),
+          name: 'X',
+          summary: 'A summary.',
+          sources: [source],
+          confidence: 'reported',
+          gameVersion: '2.01.00',
+        },
+      ],
     })
     expect(result.ok).toBe(false)
     if (result.ok) return
-    expect(result.message).toMatch(/sources|id/)
+    expect(result.message).toMatch(/id/)
+  })
+
+  it('fails validation when sources is empty', () => {
+    const result = validateContentFile({
+      version: 1,
+      type: 'quest',
+      records: [
+        {
+          ...emptyRecord('quest'),
+          id: 'quest:x',
+          name: 'X',
+          summary: 'A summary.',
+          sources: [],
+          confidence: 'reported',
+          gameVersion: '2.01.00',
+        },
+      ],
+    })
+    expect(result.ok).toBe(false)
+    if (result.ok) return
+    expect(result.message).toMatch(/sources/)
   })
 })
 
@@ -83,6 +114,11 @@ describe('upsertRecord', () => {
     gameVersion: '2.01.00',
   }
   const file: ContentFileInput = { version: 1, type: 'quest', records: [existing] }
+
+  it('reports whether an id is already in the file', () => {
+    expect(recordExists(file, 'quest:x')).toBe(true)
+    expect(recordExists(file, 'quest:missing')).toBe(false)
+  })
 
   it('replaces by id and appends new', () => {
     const replaced = upsertRecord(file, { ...existing, name: 'Renamed' })

@@ -20,8 +20,8 @@ export default function EnemySection({ record }: { record: EntityOf<'enemy'> }) 
       <Section title="Drops">
         {record.drops.length === 0 ? null : (
           <ul className="space-y-1">
-            {record.drops.map((drop) => (
-              <li key={drop.item} className="flex flex-wrap items-center gap-2 text-sm">
+            {record.drops.map((drop, index) => (
+              <li key={`${drop.item}-${index}`} className="flex flex-wrap items-center gap-2 text-sm">
                 <EntityLink id={drop.item} />
                 {drop.chance !== undefined ? (
                   <span className="text-neutral-400">{Math.round(drop.chance * 100)}%</span>

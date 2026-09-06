@@ -3,6 +3,7 @@ import { join } from 'node:path'
 import { describe, expect, it } from 'vitest'
 import { buildContentDb } from '../../src/content/db.ts'
 import { parseContentFile, parseMeta } from '../../src/content/schema.ts'
+import { validateFastTravel } from '../../src/lib/fast-travel-loader'
 import { buildSearchIndex, search, topHit } from '../../src/content/search.ts'
 
 const CONTENT_DIR = 'data/content'
@@ -23,5 +24,12 @@ describe('content search seeds', () => {
     expect(hit?.ref).toBe('mount:rokade')
     expect(hit?.kind).toBe('entity')
     expect(hit?.tier).toBe('exact')
+  })
+
+  it('finds a place hit for "nexus" in data/fast-travel.json', () => {
+    const file = validateFastTravel(readJson('data/fast-travel.json'))
+    const index = buildSearchIndex(buildContentDb([]), file.locations, [])
+    const hits = search(index, 'nexus').flatMap((group) => group.hits)
+    expect(hits.some((hit) => hit.kind === 'place')).toBe(true)
   })
 })

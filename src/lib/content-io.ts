@@ -263,6 +263,10 @@ export function applySaveDefaults(
   return out
 }
 
+export function recordExists(file: ContentFileInput, id: string): boolean {
+  return file.records.some((item) => item.id === id)
+}
+
 export function upsertRecord(
   file: ContentFileInput,
   record: Record<string, unknown>,

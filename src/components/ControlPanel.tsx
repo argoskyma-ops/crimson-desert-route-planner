@@ -1,8 +1,12 @@
+import { useState } from 'react'
 import { MODE_LABELS } from '../config/travel'
 import { MODES } from '../routing/types'
 import { useAppStore } from '../store'
 import RouteSummary from './RouteSummary'
 import SearchPanel from './SearchPanel'
+
+const clearBtnClass =
+  'inline-flex min-h-11 items-center justify-center rounded-lg border border-white/10 bg-neutral-800/80 px-3 text-sm font-medium text-neutral-100 hover:bg-neutral-700/80 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-neutral-800/80'
 
 export default function ControlPanel() {
   const mode = useAppStore((s) => s.mode)
@@ -10,6 +14,10 @@ export default function ControlPanel() {
   const pins = useAppStore((s) => s.pins)
   const clearPins = useAppStore((s) => s.clearPins)
   const roadsError = useAppStore((s) => s.roadsError)
+  const contentError = useAppStore((s) => s.contentError)
+  const selectedEntityId = useAppStore((s) => s.selectedEntityId)
+  const [expandedFor, setExpandedFor] = useState<string | null>(null)
+  const collapsed = selectedEntityId !== null && expandedFor !== selectedEntityId
 
   const hasPins = pins.a !== null || pins.b !== null
   const bothPlaced = pins.a !== null && pins.b !== null
@@ -19,53 +27,72 @@ export default function ControlPanel() {
     <aside
       className="pointer-events-auto absolute top-3 left-3 z-[1100] w-[calc(100%-1.5rem)] max-w-[320px] rounded-xl border border-white/10 bg-neutral-950/80 p-3 text-neutral-100 shadow-lg backdrop-blur-md max-[479px]:inset-x-0 max-[479px]:top-0 max-[479px]:w-full max-[479px]:max-w-none max-[479px]:rounded-none max-[479px]:pt-[calc(0.75rem+env(safe-area-inset-top))]"
     >
-      <h1 className="px-1 text-sm font-semibold tracking-tight">
-        Crimson Desert Route Planner
-      </h1>
-
-      <div className="mt-3 grid grid-cols-2 gap-1 rounded-lg bg-neutral-800/90 p-1">
-        {MODES.map((m) => {
-          const selected = mode === m
-          return (
-            <button
-              key={m}
-              type="button"
-              aria-pressed={selected}
-              onClick={() => setMode(m)}
-              className={`inline-flex min-h-11 items-center justify-center rounded-md px-3 text-sm font-medium ${
-                selected
-                  ? 'bg-neutral-100 text-neutral-900'
-                  : 'text-neutral-300 hover:bg-neutral-700/70'
-              }`}
-            >
-              {MODE_LABELS[m]}
-            </button>
-          )
-        })}
+      <div className="flex items-center justify-between gap-2">
+        <h1 className="px-1 text-sm font-semibold tracking-tight">
+          Crimson Desert Route Planner
+        </h1>
+        {collapsed ? (
+          <button
+            type="button"
+            onClick={() => {
+              if (selectedEntityId !== null) setExpandedFor(selectedEntityId)
+            }}
+            className={`md:hidden ${clearBtnClass}`}
+          >
+            Search
+          </button>
+        ) : null}
       </div>
 
-      <SearchPanel />
+      <div className={collapsed ? 'max-md:hidden' : undefined}>
+        <div className="mt-3 grid grid-cols-2 gap-1 rounded-lg bg-neutral-800/90 p-1">
+          {MODES.map((m) => {
+            const selected = mode === m
+            return (
+              <button
+                key={m}
+                type="button"
+                aria-pressed={selected}
+                onClick={() => setMode(m)}
+                className={`inline-flex min-h-11 items-center justify-center rounded-md px-3 text-sm font-medium ${
+                  selected
+                    ? 'bg-neutral-100 text-neutral-900'
+                    : 'text-neutral-300 hover:bg-neutral-700/70'
+                }`}
+              >
+                {MODE_LABELS[m]}
+              </button>
+            )
+          })}
+        </div>
 
-      <button
-        type="button"
-        onClick={clearPins}
-        disabled={!hasPins}
-        className="mt-3 inline-flex min-h-11 w-full items-center justify-center rounded-lg border border-white/10 bg-neutral-800/80 px-3 text-sm font-medium text-neutral-100 hover:bg-neutral-700/80 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-neutral-800/80"
-      >
-        Clear
-      </button>
+        <SearchPanel />
 
-      {noPins ? (
-        <p className="mt-3 px-1 text-xs text-neutral-400">Tap the map to place A, then B</p>
-      ) : bothPlaced ? (
-        <p className="mt-3 px-1 text-xs text-neutral-400">Drag pins to move them</p>
-      ) : null}
+        <button
+          type="button"
+          onClick={clearPins}
+          disabled={!hasPins}
+          className={`mt-3 w-full ${clearBtnClass}`}
+        >
+          Clear
+        </button>
 
-      {roadsError ? (
-        <p className="mt-3 px-1 text-xs text-amber-400">{roadsError}</p>
-      ) : null}
+        {noPins ? (
+          <p className="mt-3 px-1 text-xs text-neutral-400">Tap the map to place A, then B</p>
+        ) : bothPlaced ? (
+          <p className="mt-3 px-1 text-xs text-neutral-400">Drag pins to move them</p>
+        ) : null}
 
-      <RouteSummary />
+        {roadsError ? (
+          <p className="mt-3 px-1 text-xs text-amber-400">{roadsError}</p>
+        ) : null}
+
+        {contentError ? (
+          <p className="mt-3 px-1 text-xs text-amber-400">{contentError}</p>
+        ) : null}
+
+        <RouteSummary />
+      </div>
     </aside>
   )
 }

@@ -9,8 +9,8 @@ export default function RecipeSection({ record }: { record: EntityOf<'recipe'> }
       <Field label="Station">{record.station.replace(/-/g, ' ')}</Field>
       <Section title="Inputs">
         <ul className="space-y-0.5 text-sm">
-          {record.inputs.map((input) => (
-            <li key={input.item} className="flex flex-wrap items-center gap-1">
+          {record.inputs.map((input, index) => (
+            <li key={`${input.item}-${index}`} className="flex flex-wrap items-center gap-1">
               <EntityLink id={input.item} />
               <span className="tabular-nums text-neutral-400">× {input.qty}</span>
             </li>

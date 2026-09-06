@@ -7,8 +7,8 @@ import {
   FAST_TRAVEL_LABELS,
   FAST_TRAVEL_TYPES,
   type FastTravelType,
-} from '../config/travel'
-import type { FastTravelLocation } from '../lib/fast-travel-loader'
+} from '../config/travel.ts'
+import type { FastTravelLocation } from '../lib/fast-travel-loader.ts'
 import type { ContentDb } from './db.ts'
 import { isEntityType } from './ids.ts'
 import { ENTITY_PLURALS } from './types.ts'
@@ -95,6 +95,9 @@ function matchTier(name: string, aliases: readonly string[], query: string): Mat
     return 'prefix'
   }
   if (lowerName.split(/\s+/).some((word) => word.startsWith(q))) return 'prefix'
+  if (lowerAliases.some((alias) => alias.split(/\s+/).some((word) => word.startsWith(q)))) {
+    return 'prefix'
+  }
   return 'fuzzy'
 }
 
@@ -190,14 +193,26 @@ export function buildSearchIndex(
   return index
 }
 
-export function search(index: SearchIndex, query: string, limit = 20): SearchGroup[] {
+export interface SearchOptions {
+  /** Keep only hits the predicate accepts; applied before ranking and `limit`. */
+  filter?: (hit: SearchHit) => boolean
+}
+
+export function search(
+  index: SearchIndex,
+  query: string,
+  limit = 20,
+  options: SearchOptions = {},
+): SearchGroup[] {
   const trimmed = query.trim()
   if (trimmed.length === 0) return []
 
   const hits: SearchHit[] = []
   for (const result of index.search(trimmed)) {
     const hit = toHit(result, trimmed)
-    if (hit !== null) hits.push(hit)
+    if (hit === null) continue
+    if (options.filter !== undefined && !options.filter(hit)) continue
+    hits.push(hit)
   }
   hits.sort(compareHits)
   const ranked = hits.slice(0, limit)

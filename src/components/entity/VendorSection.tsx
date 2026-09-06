@@ -16,9 +16,9 @@ export default function VendorSection({ record }: { record: EntityOf<'vendor'> }
       <Section title="Inventory">
         {record.inventory.length === 0 ? null : (
           <ul className="space-y-2">
-            {record.inventory.map((line) => (
+            {record.inventory.map((line, index) => (
               <li
-                key={line.item}
+                key={`${line.item}-${index}`}
                 className="rounded-lg border border-white/10 bg-neutral-900/60 p-2 text-sm"
               >
                 <EntityLink id={line.item} />

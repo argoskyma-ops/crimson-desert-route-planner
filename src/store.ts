@@ -95,6 +95,8 @@ export interface EditorState {
   draftPoints: DraftPoint[]
   newEdgeClass: RoadClass
   dirty: boolean
+  /** True while the content form has unsaved edits; survives Roads/Content switches. */
+  contentDirty: boolean
   mode: 'roads' | 'content'
   /** Form field path armed to receive the next map tap, e.g. 'location' or 'steps.1.location'. */
   pickTarget: string | null
@@ -158,6 +160,8 @@ interface AppState {
   armPick: (target: string | null) => void
   deliverPick: (pt: Pt) => void
   clearPick: () => void
+  resetPick: () => void
+  setContentDirty: (value: boolean) => void
   toggleEditor: () => void
 }
 
@@ -168,6 +172,7 @@ const initialEditor: EditorState = {
   draftPoints: [],
   newEdgeClass: 'main',
   dirty: false,
+  contentDirty: false,
   mode: 'roads',
   pickTarget: null,
   picked: null,
@@ -455,6 +460,8 @@ export const useAppStore = create<AppState>((set) => ({
       }
     }),
   clearPick: () => set((s) => ({ editor: { ...s.editor, picked: null } })),
+  resetPick: () => set((s) => ({ editor: { ...s.editor, pickTarget: null, picked: null } })),
+  setContentDirty: (value) => set((s) => ({ editor: { ...s.editor, contentDirty: value } })),
   toggleEditor: () =>
     set((s) => {
       if (s.editor.active) {
@@ -467,6 +474,7 @@ export const useAppStore = create<AppState>((set) => ({
             mode: 'roads',
             pickTarget: null,
             picked: null,
+            contentDirty: false,
           },
         }
       }

@@ -1,5 +1,4 @@
 import type { EntityOf } from '../../content/types'
-import { LinkList } from './EntityLink'
 import AcquisitionList from './AcquisitionList'
 import { Field, Section, StatGrid } from './Section'
 
@@ -16,11 +15,6 @@ export default function ItemSection({ record }: { record: EntityOf<'item'> }) {
         </Section>
       ) : null}
       <AcquisitionList entityId={record.id} acquisitions={record.acquisitions} />
-      {record.usedIn?.length ? (
-        <Section title="Used in">
-          <LinkList ids={record.usedIn} />
-        </Section>
-      ) : null}
     </>
   )
 }

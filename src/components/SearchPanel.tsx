@@ -57,10 +57,11 @@ export default function SearchPanel() {
     if (hit.kind === 'entity') {
       selectEntity(hit.ref)
       const location = content.byId.get(hit.ref)?.location
-      if (location?.map !== 'pywel') return
-      const map = mapRef.current
-      if (!map) return
-      map.setView(toLatLng(location), Math.max(map.getZoom(), FOCUS_ZOOM))
+      if (location?.map === 'pywel') {
+        const map = mapRef.current
+        if (map) map.setView(toLatLng(location), Math.max(map.getZoom(), FOCUS_ZOOM))
+      }
+      setQuery('')
       return
     }
     if (hit.kind === 'place') {
@@ -68,8 +69,8 @@ export default function SearchPanel() {
       if (!loc) return
       focusFastTravel(hit.ref)
       const map = mapRef.current
-      if (!map) return
-      map.setView(toLatLng(loc), Math.max(map.getZoom(), FOCUS_ZOOM))
+      if (map) map.setView(toLatLng(loc), Math.max(map.getZoom(), FOCUS_ZOOM))
+      setQuery('')
       return
     }
     // T16 wires turning the POI group on and panning to the nearest node.

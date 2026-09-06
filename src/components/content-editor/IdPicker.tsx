@@ -1,19 +1,14 @@
 import { useState } from 'react'
-import { search, type SearchHit, type SearchIndex } from '../../content/search'
+import { search, type SearchIndex } from '../../content/search'
 import type { EntityType } from '../../content/ids'
 import { btnClass, inputClass } from './ui'
 import { FieldLabel } from './SimpleFields'
 
 function entityHits(index: SearchIndex, query: string, entityType: EntityType | 'any') {
-  const hits: SearchHit[] = []
-  for (const group of search(index, query, 8)) {
-    for (const hit of group.hits) {
-      if (hit.kind !== 'entity') continue
-      if (entityType !== 'any' && hit.type !== entityType) continue
-      hits.push(hit)
-    }
-  }
-  return hits.slice(0, 8)
+  return search(index, query, 8, {
+    filter: (hit) =>
+      hit.kind === 'entity' && (entityType === 'any' || hit.type === entityType),
+  }).flatMap((group) => group.hits)
 }
 
 export function IdPicker({

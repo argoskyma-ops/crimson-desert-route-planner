@@ -180,6 +180,24 @@ describe('buildContentDb', () => {
     expect(related(buildContentDb([file]), 'soldBy', 'item:nope')).toEqual(['vendor:ghost'])
   })
 
+  it('indexes activity rewards on rewardedBy', () => {
+    const file = parseContentFile({
+      version: 1,
+      type: 'activity',
+      records: [
+        {
+          ...head,
+          id: 'activity:x',
+          type: 'activity',
+          name: 'X',
+          kind: 'other',
+          rewards: [{ kind: 'item', ref: 'item:x' }],
+        },
+      ],
+    })
+    expect(related(buildContentDb([file]), 'rewardedBy', 'item:x')).toEqual(['activity:x'])
+  })
+
   it('keeps the first record when an id appears in two files', () => {
     const first = parseContentFile({
       version: 1,

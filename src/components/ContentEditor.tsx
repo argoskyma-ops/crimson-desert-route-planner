@@ -9,6 +9,7 @@ import {
   emptyRecord,
   fetchContentFile,
   fieldSpecs,
+  recordExists,
   saveContentDev,
   upsertRecord,
   validateContentFile,
@@ -36,10 +37,6 @@ function issueLines(value: unknown): string[] {
   })
 }
 
-function emptyFile(type: EntityType): ContentFileInput {
-  return { version: 1, type, records: [] }
-}
-
 function applyPicked(
   draft: Record<string, unknown>,
   picked: { target: string; x: number; y: number } | null,
@@ -62,11 +59,18 @@ function recordFromFile(
   return record ? { ...record } : emptyRecord(type)
 }
 
+function readFileError(type: EntityType, err: unknown): string {
+  const message = err instanceof Error ? err.message : String(err)
+  return `Could not read ${type}.json: ${message}`
+}
+
 export default function ContentEditor() {
   const content = useAppStore((s) => s.content)
   const setContent = useAppStore((s) => s.setContent)
   const picked = useAppStore((s) => s.editor.picked)
   const clearPick = useAppStore((s) => s.clearPick)
+  const resetPick = useAppStore((s) => s.resetPick)
+  const setContentDirty = useAppStore((s) => s.setContentDirty)
   const [type, setType] = useState<EntityType>('quest')
   const [selectedId, setSelectedId] = useState('new')
   const [draft, setDraft] = useState<Record<string, unknown>>(() => emptyRecord('quest'))
@@ -89,7 +93,16 @@ export default function ContentEditor() {
     type,
     records: [applySaveDefaults(shownDraft, gameVersion, today)],
   }
+  const shownId = typeof shownDraft.id === 'string' ? shownDraft.id : ''
   const issues = validateContentFile(preview).ok ? [] : issueLines(preview)
+  if (selectedId === 'new' && shownId !== '' && content.byId.has(shownId)) {
+    issues.push('id: already exists (pick the record to edit it)')
+  }
+
+  function markDirty(value: boolean) {
+    setDirty(value)
+    setContentDirty(value)
+  }
 
   function nextLoad() {
     loadGen.current += 1
@@ -99,17 +112,13 @@ export default function ContentEditor() {
   function resetSeed(next: Record<string, unknown>, nextIdTouched = false) {
     setDraft(next)
     setIdTouched(nextIdTouched)
-    setDirty(false)
+    markDirty(false)
     setJsonErrors({})
     setFormKey((n) => n + 1)
   }
 
   async function loadFile(): Promise<ContentFileInput> {
-    try {
-      return await fetchContentFile(type)
-    } catch {
-      return emptyFile(type)
-    }
+    return fetchContentFile(type)
   }
 
   function takePick(base: Record<string, unknown>): Record<string, unknown> {
@@ -126,12 +135,12 @@ export default function ContentEditor() {
     const pick = useAppStore.getState().editor.picked
     if (pick !== null) clearPick()
     setDraft((current) => setPath(applyPicked(current, pick), path, value))
-    setDirty(true)
+    markDirty(true)
   }
 
   function changeType(next: EntityType) {
     nextLoad()
-    clearPick()
+    resetPick()
     setNotice(null)
     setError(null)
     setType(next)
@@ -141,7 +150,7 @@ export default function ContentEditor() {
 
   function changeRecord(id: string) {
     const token = nextLoad()
-    clearPick()
+    resetPick()
     setNotice(null)
     setError(null)
     if (id === 'new') {
@@ -155,9 +164,9 @@ export default function ContentEditor() {
         if (token !== loadGen.current) return
         resetSeed(recordFromFile(file, type, id), true)
       })
-      .catch(() => {
+      .catch((err) => {
         if (token !== loadGen.current) return
-        resetSeed(emptyRecord(type))
+        setError(readFileError(type, err))
       })
   }
 
@@ -167,10 +176,22 @@ export default function ContentEditor() {
     const merged = takePick(draft)
     if (merged !== draft) {
       setDraft(merged)
-      setDirty(true)
+      markDirty(true)
     }
     const prepared = applySaveDefaults(merged, gameVersion, today)
-    const next = upsertRecord(await loadFile(), prepared)
+    let file: ContentFileInput
+    try {
+      file = await loadFile()
+    } catch (err) {
+      setError(readFileError(type, err))
+      return
+    }
+    const id = typeof prepared.id === 'string' ? prepared.id : ''
+    if (selectedId === 'new' && recordExists(file, id)) {
+      setError(`id already exists: ${id}`)
+      return
+    }
+    const next = upsertRecord(file, prepared)
     const checked = validateContentFile(next, `${type}.json`)
     if (!checked.ok) {
       setError(checked.message)
@@ -193,24 +214,42 @@ export default function ContentEditor() {
     const merged = takePick(draft)
     if (merged !== draft) {
       setDraft(merged)
-      setDirty(true)
+      markDirty(true)
     }
-    downloadContentFile(type, upsertRecord(await loadFile(), applySaveDefaults(merged, gameVersion, today)))
+    let file: ContentFileInput
+    try {
+      file = await loadFile()
+    } catch (err) {
+      setError(readFileError(type, err))
+      return
+    }
+    const prepared = applySaveDefaults(merged, gameVersion, today)
+    const id = typeof prepared.id === 'string' ? prepared.id : ''
+    if (selectedId === 'new' && recordExists(file, id)) {
+      setError(`id already exists: ${id}`)
+      return
+    }
+    downloadContentFile(type, upsertRecord(file, prepared))
   }
 
   function onRevert() {
     const token = nextLoad()
-    clearPick()
+    resetPick()
     setNotice(null)
     setError(null)
     if (selectedId === 'new') {
       resetSeed(emptyRecord(type))
       return
     }
-    void loadFile().then((file) => {
-      if (token !== loadGen.current) return
-      resetSeed(recordFromFile(file, type, selectedId), true)
-    })
+    void loadFile()
+      .then((file) => {
+        if (token !== loadGen.current) return
+        resetSeed(recordFromFile(file, type, selectedId), true)
+      })
+      .catch((err) => {
+        if (token !== loadGen.current) return
+        setError(readFileError(type, err))
+      })
   }
 
   const specs = fieldSpecs(type).filter((spec) => spec.key !== 'id' && spec.key !== 'type')
@@ -233,7 +272,7 @@ export default function ContentEditor() {
         onSelect={changeRecord}
         onName={(next) => {
           setDraft(takePick(next))
-          setDirty(true)
+          markDirty(true)
         }}
         onId={(id) => {
           setIdTouched(true)
