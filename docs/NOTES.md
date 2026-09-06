@@ -40,6 +40,11 @@ change a decision there first, then the code.
   sheet left about 60 px of map on a 390 x 844 viewport. Resolved by the R2
   fixes (2026-09-05): below 768 px the panel collapses to the title plus a
   Search button while an entity is open, leaving about 350 px of map.
+- `src/editor/editor-layer.ts` `cssPixelsPerImagePixel` measures the scale
+  with `latLngToContainerPoint`, which Leaflet rounds to whole pixels, so it
+  returns 0 below map zoom 3 and node snapping silently does nothing there.
+  `src/components/PoiLayer.ts` uses `map.project` (unrounded) instead; port
+  that one-liner when the editor is next touched (found 2026-09-06, T16).
 - Calibrate `METERS_PER_PIXEL` and `SPEED_MPS` in-game (`src/config/travel.ts`, D7).
   Check whether wide roads or paths are the faster class for a horse.
 - Second sweep in the editor for dead ends (about 600) and trails still missing; use

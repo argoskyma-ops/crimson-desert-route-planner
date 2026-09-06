@@ -6,10 +6,12 @@ import {
   FAST_TRAVEL_TYPES,
   type FastTravelType,
 } from '../config/travel'
+import { nearestPoiOfType } from '../content/poi-index'
+import { poiTypeInfos } from '../content/pois-loader'
 import { buildSearchIndex, search, topHit, type SearchHit } from '../content/search'
 import { isEntityType } from '../content/ids'
 import { ENTITY_LABELS } from '../content/types'
-import { toLatLng } from '../lib/coords'
+import { fromLatLng, toLatLng } from '../lib/coords'
 import { mapRef, useAppStore } from '../store'
 
 const RESULT_LIMIT = 20
@@ -40,10 +42,13 @@ export default function SearchPanel() {
   const toggleType = useAppStore((s) => s.toggleFastTravelType)
   const focusFastTravel = useAppStore((s) => s.focusFastTravel)
   const selectEntity = useAppStore((s) => s.selectEntity)
+  const pois = useAppStore((s) => s.pois)
+  const poiIndex = useAppStore((s) => s.poiIndex)
+  const focusPoi = useAppStore((s) => s.focusPoi)
 
   const index = useMemo(
-    () => buildSearchIndex(content, fastTravel, []),
-    [content, fastTravel],
+    () => buildSearchIndex(content, fastTravel, pois ? poiTypeInfos(pois) : []),
+    [content, fastTravel, pois],
   )
   const groups = useMemo(() => search(index, query, RESULT_LIMIT), [index, query])
   const totalHits = useMemo(() => {
@@ -73,7 +78,15 @@ export default function SearchPanel() {
       setQuery('')
       return
     }
-    // T16 wires turning the POI group on and panning to the nearest node.
+    const index = poiIndex
+    if (!index) return
+    const map = mapRef.current
+    const centre = map ? fromLatLng(map.getCenter()) : { x: 4096, y: 4096 }
+    const node = nearestPoiOfType(index, hit.ref, centre)
+    if (node === null) return
+    focusPoi(node.id)
+    if (map) map.setView(toLatLng(node), Math.max(map.getZoom(), FOCUS_ZOOM))
+    setQuery('')
   }
 
   return (

@@ -6,6 +6,7 @@ import Legend from './components/Legend'
 import MapView from './components/MapView'
 import { emptyContentDb } from './content/db'
 import { loadContent } from './content/loader'
+import { loadPois } from './content/pois-loader'
 import { loadFastTravel } from './lib/fast-travel-loader'
 import { loadRoads } from './lib/roads-loader'
 import { loadWaterMask } from './lib/water-mask-loader'
@@ -26,7 +27,9 @@ export default function App() {
   const setWaterMask = useAppStore((s) => s.setWaterMask)
   const setFastTravel = useAppStore((s) => s.setFastTravel)
   const setContent = useAppStore((s) => s.setContent)
+  const setPois = useAppStore((s) => s.setPois)
   const editorActive = useAppStore((s) => s.editor.active)
+  const layersOpen = useAppStore((s) => s.layersOpen)
   const editorMode = useAppStore((s) => s.editor.mode)
   const editorDirty = useAppStore((s) => s.editor.dirty)
   const contentDirty = useAppStore((s) => s.editor.contentDirty)
@@ -38,12 +41,14 @@ export default function App() {
     let cancelled = false
     void (async () => {
       // The water mask (D10) loads alongside the graph; it never blocks routing.
-      const [roadsResult, waterResult, travelResult, contentResult] = await Promise.allSettled([
-        loadRoads(),
-        loadWaterMask(),
-        loadFastTravel(),
-        loadContent(),
-      ])
+      const [roadsResult, waterResult, travelResult, contentResult, poisResult] =
+        await Promise.allSettled([
+          loadRoads(),
+          loadWaterMask(),
+          loadFastTravel(),
+          loadContent(),
+          loadPois(),
+        ])
       if (cancelled) return
       setWaterMask(waterResult.status === 'fulfilled' ? waterResult.value ?? null : null)
       if (travelResult.status === 'fulfilled' && travelResult.value) {
@@ -57,6 +62,12 @@ export default function App() {
         const err = contentResult.reason
         setContent(emptyContentDb(), err instanceof Error ? err.message : 'Failed to load content')
       }
+      if (poisResult.status === 'fulfilled') {
+        setPois(poisResult.value)
+      } else {
+        const err = poisResult.reason
+        setPois(null, err instanceof Error ? err.message : 'Failed to load POIs')
+      }
       if (roadsResult.status === 'fulfilled') {
         setRoads(roadsResult.value)
         return
@@ -67,7 +78,7 @@ export default function App() {
     return () => {
       cancelled = true
     }
-  }, [setRoads, setWaterMask, setFastTravel, setContent])
+  }, [setRoads, setWaterMask, setFastTravel, setContent, setPois])
 
   useEffect(() => {
     if (!editorDirty && !contentDirty) return
@@ -114,7 +125,7 @@ export default function App() {
           <p className="pointer-events-auto px-1 text-xs font-medium text-amber-400">Unsaved changes</p>
         ) : null}
       </div>
-      {!editorActive ? (
+      {!editorActive && !layersOpen ? (
         <div className={hidePhoneChrome ? 'max-md:hidden' : undefined}>
           <Legend />
         </div>

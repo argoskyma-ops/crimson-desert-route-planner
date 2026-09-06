@@ -163,7 +163,7 @@ Conventions: coordinates are canonical zoom-4 px (D3); no DOM or Leaflet in
   when the file exists. Accept: about 23,000 nodes, ≥ 95% inside the
   manifest bounds; `mine_iron` count near 2,800; script is idempotent.
 
-- [ ] **T16. POI canvas layer and layers panel.** (D14)
+- [x] **T16. POI canvas layer and layers panel.** (D14)
   Files: `src/components/PoiLayer.ts`, `src/components/LayersPanel.tsx`,
   `src/config/pois.ts`, `src/components/MapView.tsx`,
   `src/components/ControlPanel.tsx`, `src/store.ts`, `src/App.tsx`.

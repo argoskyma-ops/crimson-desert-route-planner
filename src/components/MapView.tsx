@@ -2,6 +2,7 @@ import L from 'leaflet'
 import { useEffect, useRef, useState } from 'react'
 import { BRIDGE_COLOR, CLASS_COLORS, FAST_TRAVEL_COLORS, FAST_TRAVEL_LABELS } from '../config/travel'
 import { filterFastTravel } from '../lib/fast-travel-loader'
+import { attachPoiLayer, openPoiPopup, poiHitTest } from './PoiLayer'
 import { attachEditorLayer } from '../editor/editor-layer'
 import { fromLatLng, makePixelCrs, toLatLng } from '../lib/coords'
 import { loadMapManifest, tileUrlTemplate } from '../lib/map-manifest'
@@ -146,6 +147,13 @@ export default function MapView() {
         if (editor.active) {
           if (editor.mode === 'content') deliverPick(clamped)
           return
+        }
+        if (map) {
+          const hit = poiHitTest(map, e.latlng)
+          if (hit) {
+            openPoiPopup(map, hit)
+            return
+          }
         }
         placePin(clamped)
       })
@@ -320,6 +328,13 @@ export default function MapView() {
       pane: 'highlight',
     }).addTo(group)
   }, [mapReady, highlight])
+
+  useEffect(() => {
+    if (!mapReady) return
+    const map = mapRef.current
+    if (!map) return
+    return attachPoiLayer(map)
+  }, [mapReady])
 
   useEffect(() => {
     if (!mapReady || !editorActive || editorMode !== 'roads') return

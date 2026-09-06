@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { MODE_LABELS } from '../config/travel'
 import { MODES } from '../routing/types'
 import { useAppStore } from '../store'
+import LayersPanel from './LayersPanel'
 import RouteSummary from './RouteSummary'
 import SearchPanel from './SearchPanel'
 
@@ -16,6 +17,8 @@ export default function ControlPanel() {
   const roadsError = useAppStore((s) => s.roadsError)
   const contentError = useAppStore((s) => s.contentError)
   const selectedEntityId = useAppStore((s) => s.selectedEntityId)
+  const layersOpen = useAppStore((s) => s.layersOpen)
+  const toggleLayers = useAppStore((s) => s.toggleLayers)
   const [expandedFor, setExpandedFor] = useState<string | null>(null)
   const collapsed = selectedEntityId !== null && expandedFor !== selectedEntityId
 
@@ -25,7 +28,7 @@ export default function ControlPanel() {
 
   return (
     <aside
-      className="pointer-events-auto absolute top-3 left-3 z-[1100] w-[calc(100%-1.5rem)] max-w-[320px] rounded-xl border border-white/10 bg-neutral-950/80 p-3 text-neutral-100 shadow-lg backdrop-blur-md max-[479px]:inset-x-0 max-[479px]:top-0 max-[479px]:w-full max-[479px]:max-w-none max-[479px]:rounded-none max-[479px]:pt-[calc(0.75rem+env(safe-area-inset-top))]"
+      className="pointer-events-auto absolute top-3 left-3 z-[1100] w-[calc(100%-1.5rem)] max-w-[320px] max-h-[calc(100dvh-1.5rem)] overflow-y-auto overscroll-contain rounded-xl border border-white/10 bg-neutral-950/80 p-3 text-neutral-100 shadow-lg backdrop-blur-md max-[479px]:inset-x-0 max-[479px]:top-0 max-[479px]:w-full max-[479px]:max-w-none max-[479px]:max-h-dvh max-[479px]:rounded-none max-[479px]:pt-[calc(0.75rem+env(safe-area-inset-top))]"
     >
       <div className="flex items-center justify-between gap-2">
         <h1 className="px-1 text-sm font-semibold tracking-tight">
@@ -68,14 +71,26 @@ export default function ControlPanel() {
 
         <SearchPanel />
 
-        <button
-          type="button"
-          onClick={clearPins}
-          disabled={!hasPins}
-          className={`mt-3 w-full ${clearBtnClass}`}
-        >
-          Clear
-        </button>
+        <div className="mt-3 grid grid-cols-2 gap-2">
+          <button
+            type="button"
+            onClick={clearPins}
+            disabled={!hasPins}
+            className={clearBtnClass}
+          >
+            Clear
+          </button>
+          <button
+            type="button"
+            aria-pressed={layersOpen}
+            onClick={() => toggleLayers()}
+            className={clearBtnClass}
+          >
+            Layers
+          </button>
+        </div>
+
+        {layersOpen ? <LayersPanel /> : null}
 
         {noPins ? (
           <p className="mt-3 px-1 text-xs text-neutral-400">Tap the map to place A, then B</p>

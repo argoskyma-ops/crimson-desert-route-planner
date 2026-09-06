@@ -9,8 +9,11 @@ import {
   setEdgeClass,
   type DraftPoint,
 } from './editor/graph-edit'
+import { poiGroupDefault } from './config/pois'
 import { FAST_TRAVEL_TYPES_DEFAULT, type FastTravelType } from './config/travel'
 import { emptyContentDb, type ContentDb } from './content/db'
+import { buildPoiIndex, poiGroupOf, type PoiIndex } from './content/poi-index'
+import type { PoiFile } from './content/pois-loader'
 import {
   loadProgress,
   saveProgress,
@@ -124,6 +127,12 @@ interface AppState {
   selectedEntityId: string | null
   highlight: ContentLocation | null
   progress: Progress
+  pois: PoiFile | null
+  poisError: string | null
+  poiIndex: PoiIndex | null
+  poiGroups: Record<string, boolean>
+  focusedPoiId: string | null
+  layersOpen: boolean
   editor: EditorState
   setPin: (which: 'a' | 'b', pt: Pt | null) => void
   placePin: (pt: Pt) => void
@@ -145,6 +154,11 @@ interface AppState {
   toggleQuestDone: (id: string) => void
   toggleCollectedDone: (id: string) => void
   replaceProgress: (progress: Progress) => void
+  setPois: (file: PoiFile | null, error?: string | null) => void
+  togglePoiGroup: (groupId: string) => void
+  setPoiGroup: (groupId: string, on: boolean) => void
+  focusPoi: (nodeId: string | null) => void
+  toggleLayers: () => void
   setEditor: (partial: Partial<EditorState>) => void
   startDraft: () => void
   addDraftPoint: (pt: DraftPoint) => void
@@ -197,6 +211,12 @@ export const useAppStore = create<AppState>((set) => ({
   selectedEntityId: null,
   highlight: null,
   progress: loadProgress(),
+  pois: null,
+  poisError: null,
+  poiIndex: null,
+  poiGroups: {},
+  focusedPoiId: null,
+  layersOpen: false,
   editor: initialEditor,
   setPin: (which, pt) =>
     set((s) => {
@@ -312,6 +332,51 @@ export const useAppStore = create<AppState>((set) => ({
     saveProgress(progress)
     set({ progress })
   },
+  setPois: (file, error) =>
+    set((s) => {
+      if (file === null) {
+        return {
+          pois: null,
+          poisError: error ?? null,
+          poiIndex: null,
+          focusedPoiId: null,
+        }
+      }
+      const poiGroups: Record<string, boolean> = {}
+      for (const group of file.groups) {
+        const existing = s.poiGroups[group.id]
+        poiGroups[group.id] =
+          existing !== undefined ? existing : poiGroupDefault(group.id, group.defaultOn)
+      }
+      return {
+        pois: file,
+        poisError: error ?? null,
+        poiIndex: buildPoiIndex(file),
+        poiGroups,
+      }
+    }),
+  togglePoiGroup: (groupId) =>
+    set((s) => ({
+      poiGroups: { ...s.poiGroups, [groupId]: !s.poiGroups[groupId] },
+    })),
+  setPoiGroup: (groupId, on) =>
+    set((s) => ({
+      poiGroups: { ...s.poiGroups, [groupId]: on },
+    })),
+  focusPoi: (nodeId) =>
+    set((s) => {
+      if (nodeId === null) return { focusedPoiId: null }
+      const index = s.poiIndex
+      if (!index) return s
+      const node = index.byId.get(nodeId)
+      if (!node) return s
+      const groupId = poiGroupOf(index, node)
+      return {
+        focusedPoiId: nodeId,
+        poiGroups: groupId ? { ...s.poiGroups, [groupId]: true } : s.poiGroups,
+      }
+    }),
+  toggleLayers: () => set((s) => ({ layersOpen: !s.layersOpen })),
   setEditor: (partial) => set((s) => ({ editor: { ...s.editor, ...partial } })),
   startDraft: () =>
     set((s) => ({
