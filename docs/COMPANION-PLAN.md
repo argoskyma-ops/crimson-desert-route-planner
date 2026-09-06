@@ -279,7 +279,7 @@ and C1 and C2 fill them out afterwards.
 
 ## Review tasks
 
-- [ ] **R2.** After Phase 1: whole-feature review of loader, search, panel,
+- [x] **R2.** After Phase 1: whole-feature review of loader, search, panel,
   progress against D12, D15, D16. Findings to `docs/REVIEW-COMPANION.md`.
 - [ ] **R3.** After Phase 2: POI layer performance and correctness (spot-check
   50 nodes against the th.gl site at zoom 6).
