@@ -50,6 +50,23 @@ change a decision there first, then the code.
   dumps (1,631 shared records identical). If a later re-fetch orphans
   `collected` keys, remap on `setPois` by type plus canonical position
   within 1 px (R3, 2026-09-06).
+- C3 follow-ups (2026-09-06): the 206 main quests carry no `location`
+  (no non-th.gl source gives coordinates, and D13 forbids bulk th.gl
+  positions); *Route here* and the report's located count therefore skip
+  them. Placing them means an in-app pass with the content editor (map
+  taps) or linking steps to located place records. 27 quest records are
+  `assumed` (arc headers with no objective of their own in the sources);
+  re-check them when a per-quest walkthrough appears. Gear rewards are
+  `item` text until C5 exists; bosses are step text until C7. The Forbes
+  article cited on `character:kliff` answers 403 to scripts (bot block).
+- C1 sourcing question (maintainer's call before C1 runs): the plan says
+  to give the 120+ fast-travel settlements their `data/fast-travel.json`
+  coordinates, while the record checklist (item 5) asks for a non-th.gl
+  source on any located record. Options: cite the th.gl map page for the
+  coordinates plus a wiki page for the place's existence and region, or
+  relax item 5 for fast-travel-backed places. `docs/RESEARCH-COMPANION.md`
+  section 2 names the sub-areas only for Hernand and the Crimson Desert;
+  the other regions need a research pass first.
 - Calibrate `METERS_PER_PIXEL` and `SPEED_MPS` in-game (`src/config/travel.ts`, D7).
   Check whether wide roads or paths are the faster class for a horse.
 - Second sweep in the editor for dead ends (about 600) and trails still missing; use
