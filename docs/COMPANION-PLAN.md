@@ -224,7 +224,7 @@ Order (decided 2026-09-05): the main story first. C3 creates the minimal
 place and character records it references (id, name, summary, one source)
 and C1 and C2 fill them out afterwards.
 
-- [ ] **C3. Main storyline.** `storyline.json`, `quest.json`, plus minimal
+- [x] **C3. Main storyline.** `storyline.json`, `quest.json`, plus minimal
   records in `place.json`, `character.json` and `region.json` for anything a
   quest references (id, name, kind or role, summary, one source). Prologue,
   the twelve chapters and the epilogue as one storyline whose chapter titles

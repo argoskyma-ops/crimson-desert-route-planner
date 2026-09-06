@@ -559,6 +559,111 @@
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:delesyia-castle",
+      "type": "place",
+      "name": "Delesyia Castle",
+      "kind": "castle",
+      "region": "region:delesyia",
+      "summary": "The steel-city castle that opens Chapter 11 once Delesyia is reached.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/590172", "title": "Game8: Chapter 11 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:valvegard-garrison",
+      "type": "place",
+      "name": "Valvegard Garrison",
+      "kind": "other",
+      "region": "region:delesyia",
+      "summary": "A Delesyia garrison that holds one of the three fortress keys in Chapter 11.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/590172", "title": "Game8: Chapter 11 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:marnis-laboratorium",
+      "type": "place",
+      "name": "Marni's Laboratorium",
+      "kind": "other",
+      "region": "region:delesyia",
+      "summary": "Marni's workshop in Delesyia, one of the three sites that yield a fortress key.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/590172", "title": "Game8: Chapter 11 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:aeronautical-research-base",
+      "type": "place",
+      "name": "Aeronautical Research Base",
+      "kind": "other",
+      "region": "region:delesyia",
+      "summary": "A Delesyia air-research site that holds the third fortress key.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/590172", "title": "Game8: Chapter 11 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:nest-of-valor",
+      "type": "place",
+      "name": "Nest of Valor",
+      "kind": "landmark",
+      "region": "region:delesyia",
+      "summary": "The nest Whispers in the Wind sends Kliff to after Golden Star falls.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/590172", "title": "Game8: Chapter 11 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:cloud-castle-orbian",
+      "type": "place",
+      "name": "Cloud Castle Orbian",
+      "aliases": ["Flying Fortress Orbian"],
+      "kind": "castle",
+      "region": "region:delesyia",
+      "summary": "The flying fortress whose cores must be broken before H.A.L.L. is fought.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/590172", "title": "Game8: Chapter 11 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:fort-muskets-outpost",
+      "type": "place",
+      "name": "Fort Musket's Outpost",
+      "kind": "camp",
+      "region": "region:demeniss",
+      "summary": "The Demeniss outpost where Chapter 12's last campaign is reported in.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/590343", "title": "Game8: Chapter 12 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:delesyia-castle-gate",
+      "type": "place",
+      "name": "Delesyia Castle Gate",
+      "kind": "landmark",
+      "region": "region:delesyia",
+      "summary": "The castle gate where a Visione device is used during the epilogue to reach Marni.",
+      "sources": [
+        { "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/", "title": "VULKK: main story walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
     }
   ]
 }

@@ -8,7 +8,7 @@
       "name": "Main story",
       "kind": "main",
       "summary": "Kliff's campaign: a prologue, twelve chapters and an epilogue, played in a fixed order.",
-      "body": "GameRant's published list names 206 main quests across fourteen sections; this record currently holds the 179 quests of the Prologue through Chapter 10, and later chapters stay empty until those parts are written. The campaign is linear. Sources disagree on whether the opening Greymane camp lies in Hernand or Pailune, so the six prologue quests omit a region. Journey's End is treated as the first Epilogue quest, not as the close of Chapter 12.",
+      "body": "GameRant's published list names 206 main quests across fourteen sections; this record holds all 206. The campaign is linear. Sources disagree on whether the opening Greymane camp lies in Hernand or Pailune, so the six prologue quests omit a region. Journey's End is treated as the first Epilogue quest, not as the close of Chapter 12.",
       "chapters": [
         {
           "title": "Prologue: Dead of Night",
@@ -258,18 +258,51 @@
         },
         {
           "title": "Chapter 11: Truth and Reality",
-          "quests": []
+          "quests": [
+            "quest:brave-new-world",
+            "quest:the-city-of-steel",
+            "quest:crossroads",
+            "quest:strange-manor",
+            "quest:fortress-keys",
+            "quest:truth-and-lies",
+            "quest:foreboding-shadow",
+            "quest:master-of-a-forgotten-land",
+            "quest:whispers-in-the-wind",
+            "quest:cloud-castle-orbian"
+          ]
         },
         {
           "title": "Chapter 12: The Abyss",
-          "quests": [],
+          "quests": [
+            "quest:the-final-battle",
+            "quest:precise-execution",
+            "quest:deferred-advance",
+            "quest:departure-of-the-brave",
+            "quest:forbidden-gate",
+            "quest:the-void",
+            "quest:a-shadow-in-the-void",
+            "quest:blinding-darkness"
+          ],
           "pointsOfNoReturn": [
             "After Caliburn is chased into the Abyss, Damiane and Oongka cannot be used as companions for the rest of the chapter; take any needed gear off them first."
           ]
         },
         {
           "title": "Epilogue: Journey's End",
-          "quests": []
+          "quests": [
+            "quest:journeys-end",
+            "quest:a-new-beginning",
+            "quest:peace-in-hernand",
+            "quest:the-unyielding-shields-epilogue",
+            "quest:the-heart-of-pywel",
+            "quest:the-deserts-edge",
+            "quest:the-enduring-flame",
+            "quest:evolving-city",
+            "quest:new-horizons"
+          ],
+          "pointsOfNoReturn": [
+            "Finishing all forty Abyss Challenges, a side set, is reported to open an alternate ending with more on Pywel, the Abyss, and Kliff's past."
+          ]
         }
       ],
       "sources": [

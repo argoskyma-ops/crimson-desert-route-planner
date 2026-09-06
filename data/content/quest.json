@@ -8354,6 +8354,1241 @@
       "gameVersion": "2.01.00"
     },
     {
+      "id": "quest:brave-new-world",
+      "type": "quest",
+      "name": "Brave New World",
+      "kind": "main",
+      "chapter": "Chapter 11: Truth and Reality",
+      "storyline": "storyline:main",
+      "region": "region:delesyia",
+      "summary": "Enter Delesyia and go up to Delesyia Castle, the first stop in the steel city.",
+      "prerequisites": [
+        {
+          "kind": "chapter",
+          "value": 11,
+          "text": "Reach Chapter 11"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Cross into Delesyia after the counterattack.",
+          "action": "travel"
+        },
+        {
+          "text": "Make for Delesyia Castle.",
+          "action": "travel",
+          "refs": ["place:delesyia-castle"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/590172",
+          "title": "Game8: Chapter 11 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:the-city-of-steel",
+      "type": "quest",
+      "name": "The City of Steel",
+      "kind": "main",
+      "chapter": "Chapter 11: Truth and Reality",
+      "storyline": "storyline:main",
+      "region": "region:delesyia",
+      "summary": "Walk Delesyia Castle and take in the city that runs on steel.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:brave-new-world",
+          "text": "Complete Brave New World"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Reach Delesyia Castle.",
+          "action": "travel",
+          "refs": ["place:delesyia-castle"]
+        },
+        {
+          "text": "Look through the castle and the steel city around it.",
+          "action": "other",
+          "refs": ["place:delesyia-castle"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/590172",
+          "title": "Game8: Chapter 11 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:crossroads",
+      "type": "quest",
+      "name": "Crossroads",
+      "kind": "main",
+      "chapter": "Chapter 11: Truth and Reality",
+      "storyline": "storyline:main",
+      "region": "region:delesyia",
+      "summary": "Work a clock mechanism in Delesyia until a transporter comes alive.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:the-city-of-steel",
+          "text": "Complete The City of Steel"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Find the clock mechanism.",
+          "action": "travel"
+        },
+        {
+          "text": "Set the clock so the transporter will start.",
+          "action": "solve"
+        },
+        {
+          "text": "Activate the transporter.",
+          "action": "other"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/590172",
+          "title": "Game8: Chapter 11 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:strange-manor",
+      "type": "quest",
+      "name": "Strange Manor",
+      "kind": "main",
+      "chapter": "Chapter 11: Truth and Reality",
+      "storyline": "storyline:main",
+      "region": "region:delesyia",
+      "summary": "Go to a manor in Delesyia and read the memory left there.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:crossroads",
+          "text": "Complete Crossroads"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Travel to the manor the trail names.",
+          "action": "travel"
+        },
+        {
+          "text": "Examine the memory kept there.",
+          "action": "other"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/590172",
+          "title": "Game8: Chapter 11 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:fortress-keys",
+      "type": "quest",
+      "name": "Fortress Keys",
+      "kind": "main",
+      "chapter": "Chapter 11: Truth and Reality",
+      "storyline": "storyline:main",
+      "region": "region:delesyia",
+      "summary": "Take the three fortress keys from Valvegard Garrison, Marni's Laboratorium, and the Aeronautical Research Base.",
+      "body": "VULKK names Dreadnought, Storm Crusher, and Thunder Tank as the three fortress-key guardians, without saying which site each one holds.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:strange-manor",
+          "text": "Complete Strange Manor"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Retrieve the key at Valvegard Garrison.",
+          "action": "collect",
+          "refs": ["place:valvegard-garrison"]
+        },
+        {
+          "text": "Retrieve the key at Marni's Laboratorium.",
+          "action": "collect",
+          "refs": ["place:marnis-laboratorium"]
+        },
+        {
+          "text": "Retrieve the key at the Aeronautical Research Base.",
+          "action": "collect",
+          "refs": ["place:aeronautical-research-base"]
+        },
+        {
+          "text": "Beat the three fortress-key guardians named Dreadnought, Storm Crusher, and Thunder Tank.",
+          "action": "fight"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/590172",
+          "title": "Game8: Chapter 11 walkthrough",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/",
+          "title": "VULKK: main story walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:truth-and-lies",
+      "type": "quest",
+      "name": "Truth and Lies",
+      "kind": "main",
+      "chapter": "Chapter 11: Truth and Reality",
+      "storyline": "storyline:main",
+      "region": "region:delesyia",
+      "summary": "Travel to the place the trail names and search it for what is true.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:fortress-keys",
+          "text": "Complete Fortress Keys"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Travel to the location the keys disclose.",
+          "action": "travel"
+        },
+        {
+          "text": "Investigate what that place is hiding.",
+          "action": "other"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/590172",
+          "title": "Game8: Chapter 11 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:foreboding-shadow",
+      "type": "quest",
+      "name": "Foreboding Shadow",
+      "kind": "main",
+      "chapter": "Chapter 11: Truth and Reality",
+      "storyline": "storyline:main",
+      "region": "region:delesyia",
+      "summary": "Turn from the keys toward the shadow that hangs over Delesyia.",
+      "body": "No source gives this arc header its own objective; the steps are inferred from the Golden Star and Orbian fights that sit under it.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:truth-and-lies",
+          "text": "Complete Truth and Lies"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Leave the disclosed site with the keys in hand.",
+          "action": "travel"
+        },
+        {
+          "text": "Turn toward the forgotten land and the fortress beyond it.",
+          "action": "other"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/590172",
+          "title": "Game8: Chapter 11 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:master-of-a-forgotten-land",
+      "type": "quest",
+      "name": "Master of a Forgotten Land",
+      "kind": "main",
+      "chapter": "Chapter 11: Truth and Reality",
+      "storyline": "storyline:main",
+      "region": "region:delesyia",
+      "summary": "Take a power core and bring down Golden Star.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:foreboding-shadow",
+          "text": "Complete Foreboding Shadow"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Obtain the power core.",
+          "action": "collect"
+        },
+        {
+          "text": "Defeat Golden Star.",
+          "action": "fight"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/590172",
+          "title": "Game8: Chapter 11 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:whispers-in-the-wind",
+      "type": "quest",
+      "name": "Whispers in the Wind",
+      "kind": "main",
+      "chapter": "Chapter 11: Truth and Reality",
+      "storyline": "storyline:main",
+      "region": "region:delesyia",
+      "summary": "Make for the Nest of Valor after Golden Star falls.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:master-of-a-forgotten-land",
+          "text": "Complete Master of a Forgotten Land"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Leave the forgotten land.",
+          "action": "travel"
+        },
+        {
+          "text": "Travel to the Nest of Valor.",
+          "action": "travel",
+          "refs": ["place:nest-of-valor"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/590172",
+          "title": "Game8: Chapter 11 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:cloud-castle-orbian",
+      "type": "quest",
+      "name": "Cloud Castle Orbian",
+      "aliases": ["Flying Fortress Orbian"],
+      "kind": "main",
+      "chapter": "Chapter 11: Truth and Reality",
+      "storyline": "storyline:main",
+      "region": "region:delesyia",
+      "summary": "Tear through the flying fortress and defeat H.A.L.L. at its heart.",
+      "body": "VULKK names this Flying Fortress Orbian. Blackstar stays as a mount from this point on.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:whispers-in-the-wind",
+          "text": "Complete Whispers in the Wind"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Reach Cloud Castle Orbian.",
+          "action": "travel",
+          "refs": ["place:cloud-castle-orbian"]
+        },
+        {
+          "text": "Destroy the fortress and the cores inside it.",
+          "action": "fight",
+          "refs": ["place:cloud-castle-orbian"]
+        },
+        {
+          "text": "Defeat H.A.L.L.",
+          "action": "fight",
+          "refs": ["character:hall"]
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "unlock",
+          "text": "Blackstar (dragon mount)"
+        },
+        {
+          "kind": "item",
+          "text": "Golden Star Power Core"
+        },
+        {
+          "kind": "unlock",
+          "text": "Golden Fire"
+        },
+        {
+          "kind": "item",
+          "text": "Blueprint II: Abyssal Fusion"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/590172",
+          "title": "Game8: Chapter 11 walkthrough",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/",
+          "title": "VULKK: main story walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:the-final-battle",
+      "type": "quest",
+      "name": "The Final Battle",
+      "kind": "main",
+      "chapter": "Chapter 12: The Abyss",
+      "storyline": "storyline:main",
+      "region": "region:demeniss",
+      "summary": "Report in at Fort Musket's Outpost and open the last campaign in Demeniss.",
+      "prerequisites": [
+        {
+          "kind": "chapter",
+          "value": 12,
+          "text": "Reach Chapter 12"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Return to Demeniss for the last campaign.",
+          "action": "travel"
+        },
+        {
+          "text": "Report to Fort Musket's Outpost.",
+          "action": "travel",
+          "refs": ["place:fort-muskets-outpost"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/590343",
+          "title": "Game8: Chapter 12 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:precise-execution",
+      "type": "quest",
+      "name": "Precise Execution",
+      "kind": "main",
+      "chapter": "Chapter 12: The Abyss",
+      "storyline": "storyline:main",
+      "region": "region:demeniss",
+      "summary": "Reach Fort Musket's Outpost and give the report that starts the advance.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:the-final-battle",
+          "text": "Complete The Final Battle"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Arrive at Fort Musket's Outpost.",
+          "action": "travel",
+          "refs": ["place:fort-muskets-outpost"]
+        },
+        {
+          "text": "Give the report that opens the advance.",
+          "action": "talk",
+          "refs": ["place:fort-muskets-outpost"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/590343",
+          "title": "Game8: Chapter 12 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:deferred-advance",
+      "type": "quest",
+      "name": "Deferred Advance",
+      "kind": "main",
+      "chapter": "Chapter 12: The Abyss",
+      "storyline": "storyline:main",
+      "region": "region:demeniss",
+      "summary": "Find and wreck the three Ultimate Weapons before the line can move.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:precise-execution",
+          "text": "Complete Precise Execution"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Find the three Ultimate Weapons.",
+          "action": "travel"
+        },
+        {
+          "text": "Destroy them.",
+          "action": "fight"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/590343",
+          "title": "Game8: Chapter 12 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:departure-of-the-brave",
+      "type": "quest",
+      "name": "Departure of the Brave",
+      "kind": "main",
+      "chapter": "Chapter 12: The Abyss",
+      "storyline": "storyline:main",
+      "region": "region:demeniss",
+      "summary": "Stand through the ceremony, then break a rear gate.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:deferred-advance",
+          "text": "Complete Deferred Advance"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Join the ceremony.",
+          "action": "other"
+        },
+        {
+          "text": "Breach the rear gate.",
+          "action": "fight"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/590343",
+          "title": "Game8: Chapter 12 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:forbidden-gate",
+      "type": "quest",
+      "name": "Forbidden gate",
+      "kind": "main",
+      "chapter": "Chapter 12: The Abyss",
+      "storyline": "storyline:main",
+      "region": "region:demeniss",
+      "summary": "Hunt Gabriel Caliburn as he runs for a gate that should stay shut.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:departure-of-the-brave",
+          "text": "Complete Departure of the Brave"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Pick up Caliburn's trail after the gate is breached.",
+          "action": "travel",
+          "refs": ["character:gabriel-caliburn"]
+        },
+        {
+          "text": "Pursue him through the forbidden gate.",
+          "action": "other",
+          "refs": ["character:gabriel-caliburn"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/590343",
+          "title": "Game8: Chapter 12 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:the-void",
+      "type": "quest",
+      "name": "The Void",
+      "kind": "main",
+      "chapter": "Chapter 12: The Abyss",
+      "storyline": "storyline:main",
+      "region": "region:abyss",
+      "summary": "Follow Caliburn out of Demeniss and into the Abyss.",
+      "body": "No source gives this arc header its own objective; the steps are inferred from the chase into the Abyss that sits under it.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:forbidden-gate",
+          "text": "Complete Forbidden gate"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Follow Caliburn through the forbidden gate.",
+          "action": "travel",
+          "refs": ["character:gabriel-caliburn"]
+        },
+        {
+          "text": "Enter the Abyss.",
+          "action": "other"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/590343",
+          "title": "Game8: Chapter 12 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:a-shadow-in-the-void",
+      "type": "quest",
+      "name": "A Shadow in the Void",
+      "kind": "main",
+      "chapter": "Chapter 12: The Abyss",
+      "storyline": "storyline:main",
+      "region": "region:abyss",
+      "summary": "Run Caliburn down in the Abyss and end the fight.",
+      "body": "VULKK names the boss Corrupted Caliburn.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:the-void",
+          "text": "Complete The Void"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Pursue Caliburn through the Abyss.",
+          "action": "travel",
+          "refs": ["character:gabriel-caliburn"]
+        },
+        {
+          "text": "Defeat him.",
+          "action": "fight",
+          "refs": ["character:gabriel-caliburn"]
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "item",
+          "text": "Twisted Verdict"
+        },
+        {
+          "kind": "unlock",
+          "text": "Falling Palm Skill"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/590343",
+          "title": "Game8: Chapter 12 walkthrough",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/",
+          "title": "VULKK: main story walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:blinding-darkness",
+      "type": "quest",
+      "name": "Blinding Darkness",
+      "kind": "main",
+      "chapter": "Chapter 12: The Abyss",
+      "storyline": "storyline:main",
+      "region": "region:abyss",
+      "summary": "Chase the thing that flees the Void and defeat Myurdin, then Umbra.",
+      "body": "VULKK describes Myurdin here as an Avatar of Umbra, then a second fight against Umbra's true form.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:a-shadow-in-the-void",
+          "text": "Complete A Shadow in the Void"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Chase the unknown entity that leaves the Void.",
+          "action": "travel"
+        },
+        {
+          "text": "Defeat Myurdin.",
+          "action": "fight",
+          "refs": ["character:myurdin"]
+        },
+        {
+          "text": "Defeat Umbra.",
+          "action": "fight",
+          "refs": ["character:umbra"]
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "item",
+          "text": "Axe of the Apocalypse"
+        },
+        {
+          "kind": "unlock",
+          "text": "Epilogue access"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/590343",
+          "title": "Game8: Chapter 12 walkthrough",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/",
+          "title": "VULKK: main story walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:journeys-end",
+      "type": "quest",
+      "name": "Journey's End",
+      "kind": "main",
+      "chapter": "Epilogue: Journey's End",
+      "storyline": "storyline:main",
+      "summary": "Walk the allied regions again and speak with the leaders who still hold them.",
+      "body": "Game8 lists this name at the end of Chapter 12; this record follows GameRant and VULKK and keeps it as the first Epilogue quest.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:blinding-darkness",
+          "text": "Complete Blinding Darkness"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Set out again for the allied regions.",
+          "action": "travel"
+        },
+        {
+          "text": "Speak with the leaders who still hold them.",
+          "action": "talk"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/",
+          "title": "VULKK: main story walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:a-new-beginning",
+      "type": "quest",
+      "name": "A New Beginning",
+      "kind": "main",
+      "chapter": "Epilogue: Journey's End",
+      "storyline": "storyline:main",
+      "summary": "Leave the last fight behind and start the circuit that closes the war.",
+      "body": "No source describes this quest beyond its name; the steps are inferred from the epilogue's regional visits.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:journeys-end",
+          "text": "Complete Journey's End"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Leave the Abyss behind.",
+          "action": "travel"
+        },
+        {
+          "text": "Turn toward the allied regions that still need a word.",
+          "action": "other"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:peace-in-hernand",
+      "type": "quest",
+      "name": "Peace in Hernand",
+      "kind": "main",
+      "chapter": "Epilogue: Journey's End",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Return to Hernand and confirm how that region means to live after the war.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:a-new-beginning",
+          "text": "Complete A New Beginning"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Return to Hernand.",
+          "action": "travel",
+          "refs": ["place:hernand-castle"]
+        },
+        {
+          "text": "Confirm Hernand's post-war plans.",
+          "action": "talk",
+          "refs": ["place:hernand-castle"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/",
+          "title": "VULKK: main story walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:the-unyielding-shields-epilogue",
+      "type": "quest",
+      "name": "The Unyielding Shields",
+      "kind": "main",
+      "chapter": "Epilogue: Journey's End",
+      "storyline": "storyline:main",
+      "summary": "Look in on the shield-lands and hear how those lines stand now.",
+      "body": "No source describes this quest beyond its name; the steps are inferred from the epilogue's regional visits and the name reused from Chapter 6.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:peace-in-hernand",
+          "text": "Complete Peace in Hernand"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Seek out the people who still hold the unyielding line.",
+          "action": "travel"
+        },
+        {
+          "text": "Hear how they mean to keep it.",
+          "action": "talk"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:the-heart-of-pywel",
+      "type": "quest",
+      "name": "The Heart of Pywel",
+      "kind": "main",
+      "chapter": "Epilogue: Journey's End",
+      "storyline": "storyline:main",
+      "summary": "Go to the heart of Pywel and hear the plans kept there.",
+      "body": "No source describes this quest beyond its name; the steps are inferred from the epilogue's regional visits.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:the-unyielding-shields-epilogue",
+          "text": "Complete The Unyielding Shields"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Travel to the heart of Pywel.",
+          "action": "travel"
+        },
+        {
+          "text": "Hear the plans spoken there.",
+          "action": "talk"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:the-deserts-edge",
+      "type": "quest",
+      "name": "The Desert's Edge",
+      "kind": "main",
+      "chapter": "Epilogue: Journey's End",
+      "storyline": "storyline:main",
+      "region": "region:crimson-desert",
+      "summary": "Travel to the Crimson Desert and confirm that region's plans.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:the-heart-of-pywel",
+          "text": "Complete The Heart of Pywel"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Travel to the Crimson Desert.",
+          "action": "travel"
+        },
+        {
+          "text": "Confirm that region's plans.",
+          "action": "talk"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/",
+          "title": "VULKK: main story walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:the-enduring-flame",
+      "type": "quest",
+      "name": "The Enduring Flame",
+      "kind": "main",
+      "chapter": "Epilogue: Journey's End",
+      "storyline": "storyline:main",
+      "summary": "Visit the allies whose fire did not go out and hear their next steps.",
+      "body": "No source describes this quest beyond its name; the steps are inferred from the epilogue's regional visits.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:the-deserts-edge",
+          "text": "Complete The Desert's Edge"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Find the flame the epilogue still names.",
+          "action": "travel"
+        },
+        {
+          "text": "Hear what those who keep it intend.",
+          "action": "talk"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:evolving-city",
+      "type": "quest",
+      "name": "Evolving City",
+      "kind": "main",
+      "chapter": "Epilogue: Journey's End",
+      "storyline": "storyline:main",
+      "region": "region:delesyia",
+      "summary": "Use a Visione device at Delesyia Castle Gate, meet Marni, and confirm Delesyia's plans.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:the-enduring-flame",
+          "text": "Complete The Enduring Flame"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Go to Delesyia Castle Gate.",
+          "action": "travel",
+          "refs": ["place:delesyia-castle-gate"]
+        },
+        {
+          "text": "Use the Visione device there.",
+          "action": "other",
+          "refs": ["place:delesyia-castle-gate"]
+        },
+        {
+          "text": "Meet Marni and confirm Delesyia's plans.",
+          "action": "talk",
+          "refs": ["character:marni"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/",
+          "title": "VULKK: main story walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:new-horizons",
+      "type": "quest",
+      "name": "New Horizons",
+      "kind": "main",
+      "chapter": "Epilogue: Journey's End",
+      "storyline": "storyline:main",
+      "summary": "Close the last talk of the circuit and step into the road beyond the war.",
+      "body": "No source describes this quest beyond its name; the steps are inferred from the epilogue close. The rewards are the chapter bundle reported by VULKK.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:evolving-city",
+          "text": "Complete Evolving City"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Finish the last talk of the circuit.",
+          "action": "talk",
+          "refs": ["character:marni"]
+        },
+        {
+          "text": "Step into the open road after the war.",
+          "action": "travel"
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "item",
+          "text": "Dark Executioner Leather Armor"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/",
+          "title": "VULKK: main story walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
       "id": "quest:trial-of-the-winds",
       "type": "quest",
       "name": "Trial of the Winds",

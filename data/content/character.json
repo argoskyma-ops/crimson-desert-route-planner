@@ -538,6 +538,43 @@
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:marni",
+      "type": "character",
+      "name": "Marni",
+      "role": "Delesyia figure, laboratorium namesake",
+      "home": "place:marnis-laboratorium",
+      "summary": "A living person in Delesyia, not only a name on machines; met again at the castle gate during the epilogue.",
+      "sources": [
+        { "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/", "title": "VULKK: main story walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:hall",
+      "type": "character",
+      "name": "H.A.L.L.",
+      "role": "AI antagonist in Cloud Castle Orbian",
+      "summary": "The machine mind fought at the heart of Cloud Castle Orbian, after its cores are broken.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/590172", "title": "Game8: Chapter 11 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:umbra",
+      "type": "character",
+      "name": "Umbra",
+      "role": "Abyss antagonist",
+      "summary": "The Abyss presence fought in its own form at the close of Chapter 12, after Myurdin falls.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/590343", "title": "Game8: Chapter 12 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
     }
   ]
 }
