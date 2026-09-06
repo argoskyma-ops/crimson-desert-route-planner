@@ -1,9 +1,10 @@
+import { stepKey } from '../../content/progress'
 import type { EntityOf } from '../../content/types'
+import GuideSteps from '../GuideSteps'
 import EntityLink from './EntityLink'
 import Markdown from './Markdown'
 import PrerequisiteList from './PrerequisiteList'
 import { Badge, Field, Section } from './Section'
-import StepList from './StepList'
 
 export default function GuideSection({ record }: { record: EntityOf<'guide'> }) {
   return (
@@ -17,7 +18,13 @@ export default function GuideSection({ record }: { record: EntityOf<'guide'> }) 
         </div>
       ) : null}
       <PrerequisiteList prerequisites={record.prerequisites} />
-      <StepList steps={record.steps} />
+      <Section title="Steps">
+        <GuideSteps
+          entityId={record.id}
+          steps={record.steps}
+          keyFor={(j) => stepKey(record.id, j)}
+        />
+      </Section>
       {record.notes ? (
         <Section title="Notes">
           <Markdown source={record.notes} />

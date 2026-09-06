@@ -15,7 +15,7 @@ export default function ItemSection({ record }: { record: EntityOf<'item'> }) {
           <StatGrid stats={record.stats} />
         </Section>
       ) : null}
-      <AcquisitionList acquisitions={record.acquisitions} />
+      <AcquisitionList entityId={record.id} acquisitions={record.acquisitions} />
       {record.usedIn?.length ? (
         <Section title="Used in">
           <LinkList ids={record.usedIn} />

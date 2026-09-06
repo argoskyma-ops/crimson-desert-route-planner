@@ -16,7 +16,7 @@ export default function MountSection({ record }: { record: EntityOf<'mount'> }) 
           <StatGrid stats={record.stats} />
         </Section>
       ) : null}
-      <AcquisitionList acquisitions={record.howToGet} title="How to get" />
+      <AcquisitionList entityId={record.id} acquisitions={record.howToGet} title="How to get" />
     </>
   )
 }

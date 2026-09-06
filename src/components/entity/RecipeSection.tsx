@@ -24,6 +24,7 @@ export default function RecipeSection({ record }: { record: EntityOf<'recipe'> }
         </span>
       </Field>
       <AcquisitionList
+        entityId={record.id}
         acquisitions={record.learnedFrom ? [record.learnedFrom] : undefined}
         title="Learned from"
       />

@@ -1,4 +1,6 @@
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
+import { exportProgress, importProgress } from '../content/progress'
+import type { Entity } from '../content/types'
 import { useAppStore } from '../store'
 import EntityBody from './entity/EntityBody'
 import EntityHeader from './entity/EntityHeader'
@@ -8,22 +10,24 @@ import Relations from './entity/Relations'
 import { Section } from './entity/Section'
 import Sources from './entity/Sources'
 
+const btnBlock =
+  'inline-flex min-h-11 w-full items-center justify-center rounded-lg border border-white/10 bg-neutral-800/80 px-3 text-sm font-medium text-neutral-100 hover:bg-neutral-700/80'
+
 export default function EntityPanel() {
   const selectedEntityId = useAppStore((s) => s.selectedEntityId)
   const record = useAppStore((s) =>
     s.selectedEntityId === null ? undefined : s.content.byId.get(s.selectedEntityId),
   )
   const editorActive = useAppStore((s) => s.editor.active)
-  const selectEntity = useAppStore((s) => s.selectEntity)
-  const [expanded, setExpanded] = useState(false)
-  const scrollRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    setExpanded(false)
-    scrollRef.current?.scrollTo(0, 0)
-  }, [selectedEntityId])
 
   if (editorActive || selectedEntityId === null || record === undefined) return null
+
+  return <EntityPanelInner key={selectedEntityId} record={record} />
+}
+
+function EntityPanelInner({ record }: { record: Entity }) {
+  const selectEntity = useAppStore((s) => s.selectEntity)
+  const [expanded, setExpanded] = useState(false)
 
   return (
     <aside
@@ -37,10 +41,7 @@ export default function EntityPanel() {
         onToggleExpand={() => setExpanded((value) => !value)}
         onClose={() => selectEntity(null)}
       />
-      <div
-        ref={scrollRef}
-        className="flex-1 overflow-y-auto overscroll-contain px-3 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))]"
-      >
+      <div className="flex-1 overflow-y-auto overscroll-contain px-3 pt-3 pb-3">
         <p className="text-sm text-neutral-300">{record.summary}</p>
         {record.body ? (
           <div className="mt-3">
@@ -63,6 +64,66 @@ export default function EntityPanel() {
         ) : null}
         <Sources sources={record.sources} />
       </div>
+      <ProgressFooter />
     </aside>
+  )
+}
+
+function downloadProgress(json: string) {
+  const url = URL.createObjectURL(new Blob([json], { type: 'application/json' }))
+  const anchor = document.createElement('a')
+  anchor.href = url
+  anchor.download = 'cd-companion-progress.json'
+  document.body.appendChild(anchor)
+  anchor.click()
+  anchor.remove()
+  URL.revokeObjectURL(url)
+}
+
+function ProgressFooter() {
+  const progress = useAppStore((s) => s.progress)
+  const replaceProgress = useAppStore((s) => s.replaceProgress)
+  const [importError, setImportError] = useState<string | null>(null)
+  const fileRef = useRef<HTMLInputElement>(null)
+
+  return (
+    <footer className="shrink-0 border-t border-white/10 px-3 pt-2 pb-[calc(0.75rem+env(safe-area-inset-bottom))]">
+      <div className="grid grid-cols-2 gap-2">
+        <button
+          type="button"
+          className={btnBlock}
+          onClick={() => downloadProgress(exportProgress(progress))}
+        >
+          Export progress
+        </button>
+        <button type="button" className={btnBlock} onClick={() => fileRef.current?.click()}>
+          Import progress
+        </button>
+      </div>
+      <input
+        ref={fileRef}
+        type="file"
+        accept="application/json"
+        className="hidden"
+        onChange={(event) => {
+          const file = event.target.files?.[0]
+          event.target.value = ''
+          if (file === undefined) return
+          void (async () => {
+            try {
+              replaceProgress(importProgress(await file.text()))
+              setImportError(null)
+            } catch (error) {
+              setImportError(error instanceof Error ? error.message : 'Could not import progress')
+            }
+          })()
+        }}
+      />
+      {importError ? <p className="mt-2 text-xs text-amber-300">{importError}</p> : null}
+      <p className="mt-2 text-xs text-neutral-500">
+        {progress.steps.length} steps, {progress.quests.length} quests,{' '}
+        {progress.collected.length} collected
+      </p>
+    </footer>
   )
 }

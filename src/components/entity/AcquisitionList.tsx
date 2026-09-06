@@ -1,13 +1,16 @@
+import { acquisitionStepKey } from '../../content/progress'
 import type { Acquisition } from '../../content/types'
+import GuideSteps from '../GuideSteps'
 import EntityLink from './EntityLink'
 import { Section } from './Section'
 import ShowOnMapButton from './ShowOnMap'
-import StepList from './StepList'
 
 export default function AcquisitionList({
+  entityId,
   acquisitions,
   title = 'Acquisitions',
 }: {
+  entityId: string
   acquisitions?: Acquisition[]
   title?: string
 }) {
@@ -32,7 +35,15 @@ export default function AcquisitionList({
             ) : null}
             {acq.note ? <p className="text-neutral-400">{acq.note}</p> : null}
             {acq.location ? <ShowOnMapButton location={acq.location} /> : null}
-            <StepList steps={acq.steps} />
+            {acq.steps?.length ? (
+              <Section title="Steps">
+                <GuideSteps
+                  entityId={entityId}
+                  steps={acq.steps}
+                  keyFor={(j) => acquisitionStepKey(entityId, index, j)}
+                />
+              </Section>
+            ) : null}
           </li>
         ))}
       </ul>

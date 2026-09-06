@@ -113,7 +113,7 @@ Conventions: coordinates are canonical zoom-4 px (D3); no DOM or Leaflet in
   no console errors; a `[[quest:...]]` link navigates; unknown ids render
   as plain text with a warning style.
 
-- [ ] **T14. Guide steps and progress.** (D16)
+- [x] **T14. Guide steps and progress.** (D16)
   Files: `src/content/progress.ts` (+ test), `src/components/GuideSteps.tsx`,
   `src/components/EntityPanel.tsx`, `src/store.ts`.
   `progress.ts`: load/save `cd-companion:progress:v1`, `toggleStep(key)`,

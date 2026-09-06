@@ -13,7 +13,7 @@ export default function SkillSection({ record }: { record: EntityOf<'skill'> }) 
       <Field label="Tree">{record.tree.replace(/-/g, ' ')}</Field>
       <Field label="Max level">{record.maxLevel}</Field>
       <PrerequisiteList prerequisites={record.prerequisites} />
-      <AcquisitionList acquisitions={record.howToLearn} title="How to learn" />
+      <AcquisitionList entityId={record.id} acquisitions={record.howToLearn} title="How to learn" />
     </>
   )
 }

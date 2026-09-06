@@ -11,6 +11,14 @@ import {
 } from './editor/graph-edit'
 import { FAST_TRAVEL_TYPES_DEFAULT, type FastTravelType } from './config/travel'
 import { emptyContentDb, type ContentDb } from './content/db'
+import {
+  loadProgress,
+  saveProgress,
+  toggleCollected,
+  toggleQuest,
+  toggleStep,
+  type Progress,
+} from './content/progress'
 import type { ContentLocation } from './content/types'
 import type { FastTravelLocation } from './lib/fast-travel-loader'
 import type { MapManifest } from './lib/map-manifest'
@@ -108,6 +116,7 @@ interface AppState {
   contentError: string | null
   selectedEntityId: string | null
   highlight: ContentLocation | null
+  progress: Progress
   editor: EditorState
   setPin: (which: 'a' | 'b', pt: Pt | null) => void
   placePin: (pt: Pt) => void
@@ -125,6 +134,10 @@ interface AppState {
   setContent: (db: ContentDb, error?: string | null) => void
   selectEntity: (id: string | null) => void
   setHighlight: (location: ContentLocation | null) => void
+  toggleStepDone: (key: string) => void
+  toggleQuestDone: (id: string) => void
+  toggleCollectedDone: (id: string) => void
+  replaceProgress: (progress: Progress) => void
   setEditor: (partial: Partial<EditorState>) => void
   startDraft: () => void
   addDraftPoint: (pt: DraftPoint) => void
@@ -166,6 +179,7 @@ export const useAppStore = create<AppState>((set) => ({
   contentError: null,
   selectedEntityId: null,
   highlight: null,
+  progress: loadProgress(),
   editor: initialEditor,
   setPin: (which, pt) =>
     set((s) => {
@@ -259,6 +273,28 @@ export const useAppStore = create<AppState>((set) => ({
       }
     }),
   setHighlight: (location) => set({ highlight: location }),
+  toggleStepDone: (key) =>
+    set((s) => {
+      const progress = toggleStep(s.progress, key)
+      saveProgress(progress)
+      return { progress }
+    }),
+  toggleQuestDone: (id) =>
+    set((s) => {
+      const progress = toggleQuest(s.progress, id)
+      saveProgress(progress)
+      return { progress }
+    }),
+  toggleCollectedDone: (id) =>
+    set((s) => {
+      const progress = toggleCollected(s.progress, id)
+      saveProgress(progress)
+      return { progress }
+    }),
+  replaceProgress: (progress) => {
+    saveProgress(progress)
+    set({ progress })
+  },
   setEditor: (partial) => set((s) => ({ editor: { ...s.editor, ...partial } })),
   startDraft: () =>
     set((s) => ({
