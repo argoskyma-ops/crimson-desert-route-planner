@@ -72,9 +72,11 @@ NAME_RE = re.compile(
 PLACE_NAME_RE = re.compile(
     r'"((?:camp|village|castle|town|rest_area|region)_[^"]+)"\s*:\s*"([^"]+)"'
 )
+# Painted labels: "position":[worldY, worldX] (D14). First number is Y.
 LABEL_RE = re.compile(
     r'"position":\[(-?\d+(?:\.\d+)?),(-?\d+(?:\.\d+)?)\],"text":"([^"]+)"'
 )
+# Region centres: "center":[worldY, worldX] (D14). First number is Y.
 REGION_RE = re.compile(
     r'\{"id":"(region_[^"]+)","center":\[([^,]+),([^,\]]+)'
 )
@@ -86,7 +88,7 @@ TRANSFORM_RE = re.compile(
     re.DOTALL,
 )
 NODES_PATH_RE = re.compile(r"(/nodes/OpenWorld\.[0-9a-f]+\.raw)")
-# th.gl wraps each [id, [x, y, z]] record in CBOR tag 0xe002.
+# th.gl wraps each [id, [worldY, worldX, z]] record in CBOR tag 0xe002.
 CBOR_RECORD_TAG = b"\xd9\xe0\x02"
 
 
@@ -202,7 +204,7 @@ def collect_teleports(
 
 
 class _Cbor:
-    """Enough CBOR to read th.gl's tagged [id, [x, y, z]] place records."""
+    """Enough CBOR to read th.gl's tagged [id, [worldY, worldX, z]] place records."""
 
     def __init__(self, data: bytes) -> None:
         self.data = data
@@ -267,6 +269,11 @@ def collect_cbor_places(
     names: dict[str, str],
     transform: tuple[float, float, float, float],
 ) -> list[dict[str, object]]:
+    """Named camps, villages, castles, towns and hearths from tagged CBOR records.
+
+    Each record is ``[id, [worldY, worldX, z]]`` (D14). Id suffixes such as
+    ``mine_blacksmith@-3065.98:-4582.23`` encode X:Y and match coords[1]:coords[0].
+    """
     locations: list[dict[str, object]] = []
     seen: set[str] = set()
     index = 0
@@ -301,7 +308,8 @@ def collect_cbor_places(
         coords = value[1]
         if not all(isinstance(item, (int, float)) for item in coords[:2]):
             continue
-        world_x, world_y = float(coords[0]), float(coords[1])
+        world_x = float(coords[1])
+        world_y = float(coords[0])
         if math.hypot(world_x, world_y) < ORIGIN_RADIUS:
             continue
         x, y = world_to_canonical(world_x, world_y, transform)
@@ -340,10 +348,12 @@ def collect_labels(
     transform: tuple[float, float, float, float],
     existing: list[dict[str, object]],
 ) -> list[dict[str, object]]:
+    """Painted map labels. ``LABEL_RE`` captures ``"position":[worldY, worldX]`` as ``(xs, ys, name)``."""
     locations: list[dict[str, object]] = []
     seen: set[str] = set()
     for xs, ys, name in LABEL_RE.findall(html):
-        world_x, world_y = float(xs), float(ys)
+        world_x = float(ys)
+        world_y = float(xs)
         if math.hypot(world_x, world_y) < ORIGIN_RADIUS:
             continue
         x, y = world_to_canonical(world_x, world_y, transform)
@@ -374,13 +384,15 @@ def collect_regions(
     transform: tuple[float, float, float, float],
     existing: list[dict[str, object]],
 ) -> list[dict[str, object]]:
+    """Region centres. ``REGION_RE`` captures ``"center":[worldY, worldX]`` as ``(id, xs, ys)``."""
     locations: list[dict[str, object]] = []
     seen: set[str] = set()
     for key, xs, ys in REGION_RE.findall(html):
         name = names.get(key)
         if not name:
             continue
-        world_x, world_y = float(xs), float(ys)
+        world_x = float(ys)
+        world_y = float(xs)
         if math.hypot(world_x, world_y) < ORIGIN_RADIUS:
             continue
         x, y = world_to_canonical(world_x, world_y, transform)
