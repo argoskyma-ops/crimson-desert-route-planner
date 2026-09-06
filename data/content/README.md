@@ -25,7 +25,10 @@ Before committing a record, check every line:
 5. **Sources.** At least one URL you actually consulted, with the date.
    Official Pearl Abyss notes first, then the Fandom wiki, then guide sites.
    A record with a `location` needs a source other than th.gl for that
-   place.
+   place, except a place whose `fastTravel` names the committed
+   `data/fast-travel.json` point it takes its coordinates from: cite the
+   th.gl map page (`https://crimsondesert.th.gl`) for the coordinates and
+   add a non-th.gl source when one names the place.
 6. **Confidence.** `verified` only when you checked it in-game;
    `reported` when a reliable source states it; `assumed` when it is your
    inference. Say what is assumed in `body` or `note`.

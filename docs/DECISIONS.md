@@ -299,7 +299,10 @@ Recorded 2026-09-03 for the MVP build. Change a decision here first, then the co
   individually with a non-th.gl source; bulk conversion of `pois.json` into
   content is not allowed. `data/fast-travel.json` stays committed as decided
   in D11 (small, reviewed); whether it should move to local-only is an open
-  question in `docs/NOTES.md`.
+  question in `docs/NOTES.md`. A place whose `fastTravel` names a point in
+  that file takes the point's coordinates: it cites the th.gl map page for
+  them and adds a non-th.gl source whenever one names the place (decided
+  2026-09-06 for C1; camps that no guide names stay th.gl-only).
 - **Pearl Abyss Fan Content Guidelines**
   (`https://crimsondesert.pearlabyss.com/en-us/Policy?_policyNo=130`) allow
   non-commercial fan sites that disclose they are unofficial. README and the
