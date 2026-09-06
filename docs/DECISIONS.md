@@ -352,8 +352,12 @@ Recorded 2026-09-03 for the MVP build. Change a decision here first, then the co
 
 ## D18. Process v2
 - Claude plans and scaffolds (spec, decisions, schemas, seeds, tests, task
-  list). Cursor/Grok builds the T-tasks, authors the C-tasks and reviews with
-  the R-tasks. Same rules as D9: each task owns listed files, ends with
+  list) and drives Cursor from the terminal. Cursor/Grok **4.6 xhigh fast**
+  (`agent --model 'grok-4.6[effort=xhigh,fast=true]'`) builds the T-tasks,
+  authors the C-tasks and reviews with the R-tasks; one `agent -p` call per
+  task with a self-contained prompt. Read-only tasks run with `--mode ask`.
+  Write tasks run edit-only (Grok edits, Claude runs the checks and commits)
+  unless the session is allowed to launch `agent` with shell access. Same rules as D9: each task owns listed files, ends with
   `npm run typecheck`, `npm run lint`, `npm test` (and `npm run build` when
   `vite.config.ts` or `data/` changes) green, and one commit. Status
   checkboxes live in `docs/COMPANION-PLAN.md`.

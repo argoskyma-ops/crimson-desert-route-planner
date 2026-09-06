@@ -1,9 +1,30 @@
 # Companion plan
 
 Task list for the companion build (design: `docs/COMPANION-SPEC.md`,
-contract: `docs/DECISIONS.md` D12 to D18). Each task is sized for one
-external-coder call (Cursor/Grok), owns an explicit set of files and has an
-acceptance check. Tick the box when the commit lands.
+contract: `docs/DECISIONS.md` D12 to D19). Each task is sized for one
+external-coder call (Cursor/Grok 4.6 xhigh fast), owns an explicit set of
+files and has an acceptance check. Tick the box when the commit lands.
+
+## Driving Grok (D18)
+
+From the repo root, one call per task, prompt written to a file first:
+
+```
+agent -p --output-format text --model 'grok-4.6[effort=xhigh,fast=true]' \
+  --trust --workspace "$PWD" "$(cat /path/to/prompt.md)" > /path/to/log 2>&1
+```
+
+- Add `--mode ask` for R-tasks (read-only). Without `--force` Grok can edit
+  files but cannot run shell commands: the orchestrator regenerates data, runs
+  `npm run typecheck && npm run lint && npm test` (and `npm run build` when
+  `vite.config.ts` or `data/` changed), reviews `git diff`, and commits.
+- `--force --sandbox disabled` gives Grok the shell (it can then run the
+  checks and commit itself, per the task text). Claude Code's auto mode blocks
+  that flag pair unless a Bash permission rule for `agent` is added to
+  `.claude/settings.local.json`.
+- A prompt is self-contained: repo path and branch, the task text, the files
+  it may touch, the decisions to read, acceptance, and "no push, no other
+  files, one commit". Grok does not see this conversation.
 
 Global acceptance for every task: `npm run typecheck`, `npm run lint` and
 `npm test` green (`npm run build` too when `vite.config.ts` or `data/`
@@ -17,7 +38,7 @@ Conventions: coordinates are canonical zoom-4 px (D3); no DOM or Leaflet in
 
 ## Phase 0. Fixes
 
-- [ ] **T10. Fix fast-travel coordinate order.** (D14)
+- [x] **T10. Fix fast-travel coordinate order.** (D14)
   Files: `scripts/fetch-fast-travel.py`, `data/fast-travel.json`,
   `tests/unit/fast-travel-data.test.ts`.
   th.gl CBOR records are `[id, [worldY, worldX, z]]` and painted labels are
