@@ -59,17 +59,20 @@ Status after the orchestrator pass on 2026-09-05 (commit "Apply the R1 scaffold 
   location or guide; seeds corrected (Hernand body, storyline chapter titles
   and a Chapter 1 stub, Blackwing note, arm-wrestling and Abyss marked
   `assumed`, collection totals noted as unknown).
-- **Should fix, left for the next session (schema owner decides):** typed
-  `ref` by `kind` on Prerequisite / Acquisition / Reward (D19 picker);
-  `Vendor.inventory[].stock` union; `Skill.character` enum vs character id
-  (T18 must special-case); `equipment_shop` is a real th.gl services id
-  (19 nodes), so the vendor seed stands; Bringer of Balance has no location
-  because no source gives one; plan wording items below (T12 poiTypes
-  argument, T13/T14b add `MapView.tsx`, T14 step-key format
-  `<entityId>#a<i>s<j>` / `#g<j>`, T13 vs T17/T18 file split, C3 file list,
-  C6 horses reference `mount:*`, T16 testable accept).
-- **Nits:** CLAUDE.md now says D12 to D19; the spec is behind the schema on
-  `city`, `inn`, `Vendor.place` and quest `start` (schema wins).
+- **Should fix, settled 2026-09-05 (second orchestrator pass, D12):** `ref`
+  on Prerequisite / Acquisition / Reward is typed by `kind` through the
+  `*_REF_TYPES` tables plus a refine, and `IdSchema` / `idOf()` carry
+  `meta({ entityType })` for the D19 picker; `Vendor.inventory[].stock` is a
+  count with a separate `unlimited` boolean; `Skill.character` stays the
+  enum and `SKILL_OWNER_CHARACTER` maps it to character ids for T18 (T11
+  builds no skill relation). Stands as-is: `equipment_shop` is a real th.gl
+  services id (19 nodes); Bringer of Balance has no location because no
+  source gives one. The plan wording items (T12 `poiTypes` argument,
+  T13/T14b list `MapView.tsx`, T14 step keys, T13 vs T17/T18 split, C3 file
+  list, C6 horses as `mount:*`, T16 testable accept) were applied in the
+  first pass.
+- **Nits:** CLAUDE.md and the spec now match the schema (D12 to D19, `city`,
+  `inn`, `Vendor.place`, quest `location`).
 
 ### R1 scaffold review (Cursor/Grok 4.6, 2026-09-05)
 

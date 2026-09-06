@@ -35,7 +35,10 @@ Before committing a record, check every line:
    `[[id]]` link (what `collectRefs` in `src/content/schema.ts` finds) exists
    and is not the record itself. The test suite fails otherwise. Add the
    missing record or drop the link. `place.fastTravel` must be an id from
-   `data/fast-travel.json`.
+   `data/fast-travel.json`. A `ref` on a prerequisite, acquisition or
+   reward must be of the type its `kind` allows (the `*_REF_TYPES` tables in
+   `src/content/schema.ts`; `unlock` and `other` take any type). Vendor
+   lines say `"unlimited": true` or `"stock": <count>`, never both.
 9. **Locations** are canonical zoom-4 pixels (D3) read off the in-app map at
    zoom 5 or 6, inside the Pywel bounds and on land. Use `map: "abyss"` for
    Abyss records. Never bulk-copy coordinates from `data/pois.json`.

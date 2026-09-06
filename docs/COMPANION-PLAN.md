@@ -54,6 +54,9 @@ Conventions: coordinates are canonical zoom-4 px (D3); no DOM or Leaflet in
   the central landmass (the label sits just east of the walled city, about x 2423, y 5054; all 117 named camps, villages and castles and all 9 labels land on Pywel after the swap), not
   on an island.
 
+- [x] **R1b. Settle the R1 leftovers.** Typed refs by kind, `stock` +
+  `unlimited`, `Skill.character` enum kept with `SKILL_OWNER_CHARACTER`;
+  see D12 and "Scaffold review" in `docs/NOTES.md`.
 - [x] **R1. Review the scaffold.** Read D12 to D18, `src/content/schema.ts`,
   `src/content/ids.ts`, the seed files in `data/content/` and
   `tests/unit/content-data.test.ts`. Report (in `docs/NOTES.md` under
@@ -103,8 +106,8 @@ Conventions: coordinates are canonical zoom-4 px (D3); no DOM or Leaflet in
   Bottom sheet under 768 px, right panel above. Header (name, type badge,
   region, confidence and game version, Show on map, Close), summary,
   rendered body, type sections driven by the record (rewards, acquisitions
-  with nested steps, inventory, drops, chapters, prerequisites), then
-  relations from the db. `[[id]]` links call `selectEntity`. Show on map
+  with nested steps, inventory with `stock` or "unlimited", drops, chapters,
+  prerequisites), then relations from the db. `[[id]]` links call `selectEntity`. Show on map
   pans to `location` and drops a highlight marker (`MapView` gets a
   `highlight` prop from the store). Accept: every seed record renders with
   no console errors; a `[[quest:...]]` link navigates; unknown ids render
@@ -197,8 +200,10 @@ Conventions: coordinates are canonical zoom-4 px (D3); no DOM or Leaflet in
   Browse by type with facets (region, faction, rarity, category, rank,
   collection); item pages list acquisitions and "used in"; vendor pages list
   inventory with prices; recipe pages show inputs with "where to get" links;
-  enemy pages show drops; collection pages show found/total from progress.
-  Accept: every facet filters correctly on the seeds; counts match the db.
+  enemy pages show drops; collection pages show found/total from progress;
+  character pages list skills through `SKILL_OWNER_CHARACTER` (the db has no
+  skill relation). Accept: every facet filters correctly on the seeds;
+  counts match the db.
 
 - [ ] **T19. About and disclosure.** (D13, D17)
   Files: `src/components/About.tsx`, `src/App.tsx`, `README.md`.

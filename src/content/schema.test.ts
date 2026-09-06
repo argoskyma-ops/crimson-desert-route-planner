@@ -3,6 +3,8 @@ import { extractLinks, makeId, parseId, slugify } from './ids.ts'
 import {
   collectRefs,
   compareGameVersions,
+  IdSchema,
+  idOf,
   parseContentFile,
   parseEntity,
   parseMeta,
@@ -188,6 +190,46 @@ describe('entity schemas', () => {
     expect(() =>
       parseEntity({
         ...head,
+        id: 'item:x',
+        type: 'item',
+        name: 'X',
+        category: 'tool',
+        acquisitions: [{ kind: 'vendor', ref: 'enemy:crow' }],
+      }),
+    ).toThrow(/vendor id/)
+    expect(() =>
+      parseEntity({
+        ...head,
+        id: 'quest:x',
+        type: 'quest',
+        name: 'X',
+        kind: 'side',
+        rewards: [{ kind: 'xp', ref: 'item:y', amount: 10 }],
+      }),
+    ).toThrow(/takes no ref/)
+    expect(() =>
+      parseEntity({
+        ...head,
+        id: 'quest:x',
+        type: 'quest',
+        name: 'X',
+        kind: 'side',
+        prerequisites: [{ kind: 'quest', ref: 'item:y', text: 'finish y' }],
+      }),
+    ).toThrow(/quest id/)
+    expect(() =>
+      parseEntity({
+        ...head,
+        id: 'vendor:x',
+        type: 'vendor',
+        name: 'X',
+        shopType: 'smithy',
+        inventory: [{ item: 'item:a', stock: 3, unlimited: true }],
+      }),
+    ).toThrow(/unlimited/)
+    expect(() =>
+      parseEntity({
+        ...head,
         gameVersion: 'v2',
         id: 'item:x',
         type: 'item',
@@ -195,6 +237,39 @@ describe('entity schemas', () => {
         category: 'tool',
       }),
     ).toThrow(/gameVersion/)
+  })
+
+  it('accepts typed refs, any-type refs and vendor stock lines', () => {
+    const quest = parseEntity({
+      ...head,
+      id: 'quest:x',
+      type: 'quest',
+      name: 'X',
+      kind: 'side',
+      prerequisites: [{ kind: 'quest', ref: 'quest:y', text: 'finish y' }],
+      rewards: [
+        { kind: 'item', ref: 'item:y', amount: 1 },
+        { kind: 'unlock', ref: 'skill:glide' },
+        { kind: 'money', amount: 500 },
+      ],
+    })
+    expect(quest.type).toBe('quest')
+    const vendor = parseEntity({
+      ...head,
+      id: 'vendor:x',
+      type: 'vendor',
+      name: 'X',
+      shopType: 'smithy',
+      inventory: [
+        { item: 'item:a', unlimited: true },
+        { item: 'item:b', stock: 2 },
+        { item: 'item:c' },
+      ],
+    })
+    if (vendor.type !== 'vendor') throw new Error('unreachable')
+    expect(vendor.inventory).toHaveLength(3)
+    expect(idOf('quest').meta()).toEqual({ entityType: 'quest' })
+    expect(IdSchema.meta()).toEqual({ entityType: 'any' })
   })
 
   it('collects refs and links', () => {

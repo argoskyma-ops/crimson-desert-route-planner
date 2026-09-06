@@ -7,7 +7,13 @@
 import { existsSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { describe, expect, it } from 'vitest'
-import { collectRefs, compareGameVersions, parseContentFile, parseMeta } from '../../src/content/schema.ts'
+import {
+  collectRefs,
+  compareGameVersions,
+  parseContentFile,
+  parseMeta,
+  SKILL_OWNER_CHARACTER,
+} from '../../src/content/schema.ts'
 import type { ContentFile, Entity } from '../../src/content/types.ts'
 import { loadWaterMaskFile, WATER_MASK_PATH } from './water-mask-file'
 
@@ -88,6 +94,12 @@ describe('data/content', () => {
     }
     expect(missing).toEqual([])
     expect(self).toEqual([])
+  })
+
+  it('has a character record for every skill owner', () => {
+    for (const id of Object.values(SKILL_OWNER_CHARACTER)) {
+      if (id !== null) expect(ids.has(id), id).toBe(true)
+    }
   })
 
   it('points place.fastTravel at an id in data/fast-travel.json', () => {

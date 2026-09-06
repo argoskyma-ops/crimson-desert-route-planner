@@ -269,6 +269,14 @@ Recorded 2026-09-03 for the MVP build. Change a decision here first, then the co
   `cost`, `missable`, `optional`). Quests and standalone guides carry steps
   directly; items, skills and mounts carry `Acquisition`s, each of which may
   carry steps. Locations are canonical px (D3) with `map: "pywel" | "abyss"`.
+- Typed refs (R1, decided 2026-09-05): `ref` on `Prerequisite`, `Acquisition`
+  and `Reward` must point at a type the `kind` allows (`PREREQUISITE_REF_TYPES`,
+  `ACQUISITION_REF_TYPES`, `REWARD_REF_TYPES` in `schema.ts`; `other` and
+  `unlock` accept any type). Id schemas carry `meta({ entityType })` so the
+  D19 picker can filter. Vendor lines use `stock?: number` plus
+  `unlimited?: boolean` (both omitted when unknown). `Skill.character` stays
+  the `kliff | damiane | oongka | shared` enum; `SKILL_OWNER_CHARACTER` maps it
+  to character ids for the codex (T18); reverse relations do not join skills.
 - Validation runs in the browser loader and in `tests/unit/content-data.test.ts`
   (every file validates, ids unique, refs resolve, locations inside the
   manifest bounds and on land, ≥ 1 source). `scripts/content-report.ts`

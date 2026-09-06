@@ -126,13 +126,15 @@ prose version.
 - `collection`: a set of collectibles: `total?`, `reward?`, `poiType?`
   (the th.gl type that marks them, e.g. `memory_fragment`).
 - `vendor`: `shopType` (th.gl services id), `character?`, `place?`,
-  `inventory` (`[{ item, price?, stock?, unlock?, trust? }]`, `stock` is a
-  count or `"unlimited"`), `currencies?`.
+  `inventory` (`[{ item, price?, stock?, unlimited?, unlock?, trust? }]`,
+  `stock` is units per restock, `unlimited` true when the line never runs
+  out, both omitted when unknown), `currencies?`.
 - `recipe`: `station` (cooking, alchemy, anvil, grindstone, sewing,
   carpentry, other), `inputs`, `output`, `learnedFrom?` (Acquisition).
-- `skill`: `character` (kliff, damiane, oongka, shared), `tree` (stamina,
-  spirit, health, other), `prerequisites`, `howToLearn` (Acquisition[]),
-  `maxLevel?`.
+- `skill`: `character` (kliff, damiane, oongka, shared; an enum, not a
+  character id, mapped by `SKILL_OWNER_CHARACTER` for the codex), `tree`
+  (stamina, spirit, health, other), `prerequisites`, `howToLearn`
+  (Acquisition[]), `maxLevel?`.
 - `enemy`: `rank` (common, elite, story-boss, world-boss, legendary-animal),
   `level?`, `drops` (`[{ item, chance? }]`), `weaknesses?`, `strategy?`.
 - `mount`: `species`, `legendary`, `howToGet` (Acquisition[]), `stats?`.
@@ -149,13 +151,20 @@ prose version.
   requires `missableNote`. Steps are ordered; a step with a location gets
   *Route here*.
 - `Prerequisite`: `{ kind (quest, chapter, level, reputation, item, skill,
-  other), ref?, value?, text }`.
+  other), ref?, value?, text }`. `ref` is typed by `kind`: quest → quest id,
+  chapter → storyline id, reputation → faction id, item → item id, skill →
+  skill id, level → no ref, other → any (`PREREQUISITE_REF_TYPES`).
 - `Acquisition`: `{ kind (vendor, drop, quest, chest, craft, gather, tame,
   event, other), ref?, location?, cost?, chance?, note?, steps? }`. An item
   with several acquisitions (a set with a boss piece and two chest pieces)
-  lists one per branch.
+  lists one per branch. `ref` is typed by `kind`: vendor → vendor, drop →
+  enemy, quest → quest, chest → place, collectible or collection, craft →
+  recipe, gather and tame → place, event → activity, quest or place, other →
+  any (`ACQUISITION_REF_TYPES`).
 - `Reward`: `{ kind (item, money, xp, reputation, unlock, other), ref?,
-  amount?, text? }`.
+  amount?, text? }`. `ref` is typed by `kind`: item → item, reputation →
+  faction, money and xp → no ref, unlock and other → any
+  (`REWARD_REF_TYPES`).
 - `Cost`: `{ currency (copper, silver, gold-bar, contribution, other),
   amount }`.
 

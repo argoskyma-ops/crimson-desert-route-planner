@@ -58,6 +58,44 @@ export const ACQUISITION_KINDS = [
 ] as const
 export const REWARD_KINDS = ['item', 'money', 'xp', 'reputation', 'unlock', 'other'] as const
 
+export type PrerequisiteKind = (typeof PREREQUISITE_KINDS)[number]
+export type AcquisitionKind = (typeof ACQUISITION_KINDS)[number]
+export type RewardKind = (typeof REWARD_KINDS)[number]
+
+/**
+ * Which entity types `ref` may point at for each kind (R1; the D19 picker
+ * filters its id list from these). `null` means any type; an empty list means
+ * the kind takes no ref at all.
+ */
+export const PREREQUISITE_REF_TYPES: Record<PrerequisiteKind, readonly EntityType[] | null> = {
+  quest: ['quest'],
+  chapter: ['storyline'],
+  level: [],
+  reputation: ['faction'],
+  item: ['item'],
+  skill: ['skill'],
+  other: null,
+}
+export const ACQUISITION_REF_TYPES: Record<AcquisitionKind, readonly EntityType[] | null> = {
+  vendor: ['vendor'],
+  drop: ['enemy'],
+  quest: ['quest'],
+  chest: ['place', 'collectible', 'collection'],
+  craft: ['recipe'],
+  gather: ['place'],
+  tame: ['place'],
+  event: ['activity', 'quest', 'place'],
+  other: null,
+}
+export const REWARD_REF_TYPES: Record<RewardKind, readonly EntityType[] | null> = {
+  item: ['item'],
+  money: [],
+  xp: [],
+  reputation: ['faction'],
+  unlock: null,
+  other: null,
+}
+
 export const REGION_KINDS = ['region', 'sub-area', 'layer'] as const
 export const PLACE_KINDS = [
   'city',
@@ -126,6 +164,18 @@ export const STATIONS = [
   'other',
 ] as const
 export const SKILL_OWNERS = ['kliff', 'damiane', 'oongka', 'shared'] as const
+export type SkillOwner = (typeof SKILL_OWNERS)[number]
+/**
+ * `Skill.character` is an enum, not a character id (R1: `shared` is not a
+ * character). Reverse relations do not join skills to characters; T18 joins
+ * through this map when it shows a character's skills.
+ */
+export const SKILL_OWNER_CHARACTER: Record<SkillOwner, string | null> = {
+  kliff: 'character:kliff',
+  damiane: 'character:damiane',
+  oongka: 'character:oongka',
+  shared: null,
+}
 export const SKILL_TREES = ['stamina', 'spirit', 'health', 'other'] as const
 export const ENEMY_RANKS = [
   'common',
@@ -145,6 +195,7 @@ const gameVersion = z
 export const IdSchema = z
   .string()
   .refine(isEntityId, 'id must be <type>:<slug> of a known entity type')
+  .meta({ entityType: 'any' })
 
 /** Today as YYYY-MM-DD (local time) for the `accessed` upper bound. */
 function today(): string {
@@ -170,6 +221,26 @@ export function idOf(type: EntityType) {
   return z
     .string()
     .regex(new RegExp(`^${type}:${SLUG_PATTERN}$`), `expected a ${type}:<slug> id`)
+    .meta({ entityType: type })
+}
+
+/** Refine for `{ kind, ref? }` shapes: `ref` must be a type the kind allows. */
+function refMatchesKind<K extends string>(table: Record<K, readonly EntityType[] | null>) {
+  return (value: { kind: K; ref?: string }, ctx: z.RefinementCtx) => {
+    if (value.ref === undefined) return
+    const allowed = table[value.kind]
+    if (allowed === null) return
+    const type = parseId(value.ref)?.type
+    if (allowed.length === 0) {
+      ctx.addIssue({ code: 'custom', path: ['ref'], message: `kind ${value.kind} takes no ref` })
+    } else if (type === undefined || !allowed.includes(type)) {
+      ctx.addIssue({
+        code: 'custom',
+        path: ['ref'],
+        message: `ref for kind ${value.kind} must be a ${allowed.join(' or ')} id`,
+      })
+    }
+  }
 }
 
 export const LocationSchema = z.object({
@@ -209,31 +280,39 @@ export const StepSchema = z
   })
   .refine(lostIfNeedsNote, LOST_IF_MESSAGE)
 
-export const PrerequisiteSchema = z.object({
-  kind: z.enum(PREREQUISITE_KINDS),
-  ref: IdSchema.optional(),
-  value: z.union([z.number(), z.string()]).optional(),
-  text: z.string().min(1),
-})
+export const PrerequisiteSchema = z
+  .object({
+    kind: z.enum(PREREQUISITE_KINDS),
+    /** Typed by `kind` (PREREQUISITE_REF_TYPES). */
+    ref: IdSchema.optional(),
+    value: z.union([z.number(), z.string()]).optional(),
+    text: z.string().min(1),
+  })
+  .superRefine(refMatchesKind(PREREQUISITE_REF_TYPES))
 
-export const AcquisitionSchema = z.object({
-  kind: z.enum(ACQUISITION_KINDS),
-  /** The vendor, enemy, quest, place, recipe or collectible this branch goes through. */
-  ref: IdSchema.optional(),
-  location: LocationSchema.optional(),
-  cost: CostSchema.optional(),
-  /** Drop or gather chance, 0..1. */
-  chance: z.number().min(0).max(1).optional(),
-  note: z.string().optional(),
-  steps: z.array(StepSchema).optional(),
-})
+export const AcquisitionSchema = z
+  .object({
+    kind: z.enum(ACQUISITION_KINDS),
+    /** The vendor, enemy, quest, place, recipe or collectible this branch goes through; typed by `kind` (ACQUISITION_REF_TYPES). */
+    ref: IdSchema.optional(),
+    location: LocationSchema.optional(),
+    cost: CostSchema.optional(),
+    /** Drop or gather chance, 0..1. */
+    chance: z.number().min(0).max(1).optional(),
+    note: z.string().optional(),
+    steps: z.array(StepSchema).optional(),
+  })
+  .superRefine(refMatchesKind(ACQUISITION_REF_TYPES))
 
-export const RewardSchema = z.object({
-  kind: z.enum(REWARD_KINDS),
-  ref: IdSchema.optional(),
-  amount: z.number().optional(),
-  text: z.string().optional(),
-})
+export const RewardSchema = z
+  .object({
+    kind: z.enum(REWARD_KINDS),
+    /** Typed by `kind` (REWARD_REF_TYPES). */
+    ref: IdSchema.optional(),
+    amount: z.number().optional(),
+    text: z.string().optional(),
+  })
+  .superRefine(refMatchesKind(REWARD_REF_TYPES))
 
 const EntityBase = z.object({
   id: IdSchema,
@@ -373,10 +452,17 @@ export const VendorSchema = EntityBase.extend({
       z.object({
         item: idOf('item'),
         price: CostSchema.optional(),
-        stock: z.union([z.number().int().nonnegative(), z.literal('unlimited')]).optional(),
+        /** Units per restock; omit when unknown. */
+        stock: z.number().int().nonnegative().optional(),
+        /** True when the line never runs out (then `stock` is omitted). */
+        unlimited: z.boolean().optional(),
         unlock: z.string().optional(),
         /** Trust level (0..100) needed before this line appears. */
         trust: z.number().int().min(0).max(100).optional(),
+      })
+      .refine((line) => !(line.unlimited && line.stock !== undefined), {
+        message: 'an unlimited line has no stock count',
+        path: ['stock'],
       }),
     )
     .default([]),
