@@ -3378,6 +3378,1459 @@
       "gameVersion": "2.01.00"
     },
     {
+      "id": "quest:uninvited-guest",
+      "type": "quest",
+      "name": "Uninvited Guest",
+      "kind": "main",
+      "chapter": "Chapter 5: Guest Unbidden",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Leave Serkis Estate for Hernand Castle's gate and settle the stir that has broken out there.",
+      "prerequisites": [
+        {
+          "kind": "chapter",
+          "value": 5,
+          "text": "Reach Chapter 5"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Hear the trouble reported at Serkis Estate.",
+          "action": "talk",
+          "refs": ["place:serkis-estate"]
+        },
+        {
+          "text": "Go to Hernand Castle's gate and put the commotion down.",
+          "action": "other",
+          "refs": ["place:hernand-castle"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586937",
+          "title": "Game8: Chapter 5 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:double-sided-invitation",
+      "type": "quest",
+      "name": "Double-sided Invitation",
+      "kind": "main",
+      "chapter": "Chapter 5: Guest Unbidden",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Look again at the crowd by the castle gate, then take a horse in hand for the first time.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:uninvited-guest",
+          "text": "Complete Uninvited Guest"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Return to Hernand Castle's gate and see what still holds the crowd there.",
+          "action": "travel",
+          "refs": ["place:hernand-castle"]
+        },
+        {
+          "text": "Tame the horse the work puts in front of you.",
+          "action": "tame",
+          "refs": ["place:hernand-castle"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586937",
+          "title": "Game8: Chapter 5 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:unwelcomed-guests",
+      "type": "quest",
+      "name": "Unwelcomed Guests",
+      "kind": "main",
+      "chapter": "Chapter 5: Guest Unbidden",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Finish taming the horse and walk it to the stable.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:double-sided-invitation",
+          "text": "Complete Double-sided Invitation"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Tame the horse until it will take a rider.",
+          "action": "tame"
+        },
+        {
+          "text": "Deliver that horse to the stable.",
+          "action": "travel"
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "unlock",
+          "text": "Horse taming"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586937",
+          "title": "Game8: Chapter 5 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:demenissian-delegation",
+      "type": "quest",
+      "name": "Demenissian Delegation",
+      "kind": "main",
+      "chapter": "Chapter 5: Guest Unbidden",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Sit the banquet for the visitors from Demeniss, then cut down Kearush the Slayer when the feast turns.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:unwelcomed-guests",
+          "text": "Complete Unwelcomed Guests"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Attend the banquet held for the Demenissian delegation at Hernand Castle.",
+          "action": "talk",
+          "refs": ["place:hernand-castle"]
+        },
+        {
+          "text": "Defeat Kearush the Slayer when the fighting starts.",
+          "action": "fight",
+          "refs": ["place:hernand-castle"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586937",
+          "title": "Game8: Chapter 5 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:exposed-plot",
+      "type": "quest",
+      "name": "Exposed Plot",
+      "kind": "main",
+      "chapter": "Chapter 5: Guest Unbidden",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Find Damiane after the banquet and hear the plot that has come into the open.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:demenissian-delegation",
+          "text": "Complete Demenissian Delegation"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Find Damiane after the delegation's feast.",
+          "action": "travel",
+          "refs": ["character:damiane"]
+        },
+        {
+          "text": "Speak with her about the plot now in the open.",
+          "action": "talk",
+          "refs": ["character:damiane"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586937",
+          "title": "Game8: Chapter 5 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:black-and-white",
+      "type": "quest",
+      "name": "Black and White",
+      "kind": "main",
+      "chapter": "Chapter 5: Guest Unbidden",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Move the work to Hernand Castle and take up the hunt that follows the crow.",
+      "body": "No source gives this arc header its own objective; the steps are inferred from the Chapter 5 jobs that sit under it.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:exposed-plot",
+          "text": "Complete Exposed Plot"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Travel to Hernand Castle.",
+          "action": "travel",
+          "refs": ["place:hernand-castle"]
+        },
+        {
+          "text": "Take the first lead that ties the castle to the crow and to White Crow.",
+          "action": "other",
+          "refs": ["place:hernand-castle", "character:white-crow"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586937",
+          "title": "Game8: Chapter 5 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:the-missing-seal",
+      "type": "quest",
+      "name": "The Missing Seal",
+      "kind": "main",
+      "chapter": "Chapter 5: Guest Unbidden",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Read the letter that has lost its seal, then meet the witch it points toward.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:black-and-white",
+          "text": "Complete Black and White"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Read the unsealed letter.",
+          "action": "collect",
+          "refs": ["place:hernand-castle"]
+        },
+        {
+          "text": "Meet the witch that letter points toward.",
+          "action": "talk"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586937",
+          "title": "Game8: Chapter 5 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:crowcaller",
+      "type": "quest",
+      "name": "Crowcaller",
+      "kind": "main",
+      "chapter": "Chapter 5: Guest Unbidden",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Track the invader through Hernand and follow that trail into the Axiom Archive.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:the-missing-seal",
+          "text": "Complete The Missing Seal"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Track the invader through Hernand.",
+          "action": "other",
+          "refs": ["enemy:crowcaller", "place:hernand-castle"]
+        },
+        {
+          "text": "Move on into the Axiom Archive.",
+          "action": "travel",
+          "refs": ["place:axiom-archive"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586937",
+          "title": "Game8: Chapter 5 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:the-crows-warning",
+      "type": "quest",
+      "name": "The Crow's Warning",
+      "kind": "main",
+      "chapter": "Chapter 5: Guest Unbidden",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Walk Hernand for traces of the crow and of White Crow.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:crowcaller",
+          "text": "Complete Crowcaller"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Search Hernand for anything that speaks of the crow.",
+          "action": "other",
+          "refs": ["place:hernand-castle"]
+        },
+        {
+          "text": "Set those clues against what is known of White Crow's abduction.",
+          "action": "collect",
+          "refs": ["character:white-crow"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586937",
+          "title": "Game8: Chapter 5 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:bloodwind",
+      "type": "quest",
+      "name": "Bloodwind",
+      "kind": "main",
+      "chapter": "Chapter 5: Guest Unbidden",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Chase the feathered man and defeat Crowcaller when you close the gap.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:the-crows-warning",
+          "text": "Complete The Crow's Warning"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Chase the feathered man across the ground he opens.",
+          "action": "travel",
+          "refs": ["enemy:crowcaller"]
+        },
+        {
+          "text": "Defeat Crowcaller.",
+          "action": "fight",
+          "refs": ["enemy:crowcaller"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586937",
+          "title": "Game8: Chapter 5 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:secret-at-the-church",
+      "type": "quest",
+      "name": "Secret at the Church",
+      "kind": "main",
+      "chapter": "Chapter 5: Guest Unbidden",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Take the relic kept at the church and light the Pillar of Radiance.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:bloodwind",
+          "text": "Complete Bloodwind"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Obtain the relic kept at the church.",
+          "action": "collect",
+          "refs": ["place:hernand-church"]
+        },
+        {
+          "text": "Activate the Pillar of Radiance.",
+          "action": "solve",
+          "refs": ["place:hernand-church"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586937",
+          "title": "Game8: Chapter 5 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:toward-the-nest",
+      "type": "quest",
+      "name": "Toward the Nest",
+      "kind": "main",
+      "chapter": "Chapter 5: Guest Unbidden",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Wake the Spire of Soaring and beat Crowcaller on the last ground of the hunt.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:secret-at-the-church",
+          "text": "Complete Secret at the Church"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Activate the Spire of Soaring.",
+          "action": "solve",
+          "refs": ["place:spire-of-soaring"]
+        },
+        {
+          "text": "Defeat Crowcaller at the final battleground.",
+          "action": "fight",
+          "refs": ["enemy:crowcaller", "place:spire-of-soaring"]
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "item",
+          "text": "Core Blueprint: Haste"
+        },
+        {
+          "kind": "item",
+          "text": "Blackwing Leather Armor"
+        },
+        {
+          "kind": "item",
+          "ref": "item:blackwing-mask",
+          "text": "Blackwing Mask"
+        },
+        {
+          "kind": "item",
+          "text": "Tauria Curved Sword"
+        },
+        {
+          "kind": "item",
+          "text": "The Grove's Thorn"
+        },
+        {
+          "kind": "unlock",
+          "text": "Swift I"
+        },
+        {
+          "kind": "unlock",
+          "text": "Howling of Chaos"
+        },
+        {
+          "kind": "item",
+          "text": "Hernand Refinement Token"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586937",
+          "title": "Game8: Chapter 5 walkthrough",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/",
+          "title": "VULKK: main story walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:blazing-beacon",
+      "type": "quest",
+      "name": "Blazing Beacon",
+      "kind": "main",
+      "chapter": "Chapter 6: Cracks in the Shield",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Meet Marquis Serkis on Calphadean ground and raise the Banner Pike that opens the war effort.",
+      "prerequisites": [
+        {
+          "kind": "chapter",
+          "value": 6,
+          "text": "Reach Chapter 6"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Find Marquis Serkis in Calphadean territory.",
+          "action": "talk",
+          "refs": ["character:marquis-serkis"]
+        },
+        {
+          "text": "Raise the Calphadean Banner Pike.",
+          "action": "other",
+          "refs": ["character:marquis-serkis"]
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "unlock",
+          "text": "War-effort mechanics"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587251",
+          "title": "Game8: Chapter 6 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:news",
+      "type": "quest",
+      "name": "News",
+      "kind": "main",
+      "chapter": "Chapter 6: Cracks in the Shield",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Hear the visiting soldier who has come into camp with word from the line.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:blazing-beacon",
+          "text": "Complete Blazing Beacon"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Find the visiting soldier who has come into camp.",
+          "action": "travel"
+        },
+        {
+          "text": "Hear the news they brought from the front.",
+          "action": "talk"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587251",
+          "title": "Game8: Chapter 6 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:to-the-battlefield",
+      "type": "quest",
+      "name": "To the Battlefield",
+      "kind": "main",
+      "chapter": "Chapter 6: Cracks in the Shield",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Follow a guide to a beacon and read the attack scene left around it.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:news",
+          "text": "Complete News"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Follow the guide out to the beacon.",
+          "action": "travel"
+        },
+        {
+          "text": "Investigate the attack scene waiting there.",
+          "action": "other"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587251",
+          "title": "Game8: Chapter 6 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:the-counterattack-ch6",
+      "type": "quest",
+      "name": "The Counterattack",
+      "kind": "main",
+      "chapter": "Chapter 6: Cracks in the Shield",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Reach Calphade Gate and take Marshal Middler's brief for the push.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:to-the-battlefield",
+          "text": "Complete To the Battlefield"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Move to Calphade Gate.",
+          "action": "travel",
+          "refs": ["place:calphade-gate"]
+        },
+        {
+          "text": "Speak with Marshal Middler.",
+          "action": "talk",
+          "refs": ["character:barden-middler", "place:calphade-gate"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587251",
+          "title": "Game8: Chapter 6 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:under-the-banner-pike-again",
+      "type": "quest",
+      "name": "Under the Banner Pike Again",
+      "aliases": ["Below the Banners"],
+      "kind": "main",
+      "chapter": "Chapter 6: Cracks in the Shield",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Take up the Banner Pike work again along the Calphadean line.",
+      "body": "No source gives this arc header its own objective; the steps are inferred from the Chapter 6 banner jobs that sit under it.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:the-counterattack-ch6",
+          "text": "Complete The Counterattack"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Return to the Calphadean front under the Banner Pike.",
+          "action": "travel",
+          "refs": ["place:calphade-gate"]
+        },
+        {
+          "text": "Take the next stretch of work that plants those pikes along the line.",
+          "action": "other",
+          "refs": ["place:calphade-gate"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587251",
+          "title": "Game8: Chapter 6 walkthrough",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://www.powerpyx.com/crimson-desert-walkthrough-all-main-quests/",
+          "title": "PowerPyx: all main quests",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:cradle-of-defense",
+      "type": "quest",
+      "name": "Cradle of Defense",
+      "kind": "main",
+      "chapter": "Chapter 6: Cracks in the Shield",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Raise Banner Pikes at the Siege Armory, the Gunpowder Mill, and Thalwynd.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:under-the-banner-pike-again",
+          "text": "Complete Under the Banner Pike Again"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Raise a Banner Pike at the Siege Armory.",
+          "action": "other",
+          "refs": ["place:siege-armory"]
+        },
+        {
+          "text": "Raise a Banner Pike at the Gunpowder Mill.",
+          "action": "other",
+          "refs": ["place:gunpowder-mill"]
+        },
+        {
+          "text": "Raise a Banner Pike at Thalwynd.",
+          "action": "other",
+          "refs": ["place:thalwynd"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587251",
+          "title": "Game8: Chapter 6 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:the-touch-of-deliverance",
+      "type": "quest",
+      "name": "The Touch of Deliverance",
+      "kind": "main",
+      "chapter": "Chapter 6: Cracks in the Shield",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Speak with the soldier waiting at the Southern Guard Post.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:cradle-of-defense",
+          "text": "Complete Cradle of Defense"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Travel to the Southern Guard Post.",
+          "action": "travel",
+          "refs": ["place:southern-guard-post"]
+        },
+        {
+          "text": "Speak with the soldier posted there.",
+          "action": "talk",
+          "refs": ["place:southern-guard-post"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587251",
+          "title": "Game8: Chapter 6 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:fire-on-the-frontlines",
+      "type": "quest",
+      "name": "Fire on the Frontlines",
+      "kind": "main",
+      "chapter": "Chapter 6: Cracks in the Shield",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Find the injured soldier on the line and get them out of the fighting.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:the-touch-of-deliverance",
+          "text": "Complete The Touch of Deliverance"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Search the front for the injured soldier.",
+          "action": "travel",
+          "refs": ["place:southern-guard-post"]
+        },
+        {
+          "text": "Rescue them and get them clear of the fighting.",
+          "action": "other"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587251",
+          "title": "Game8: Chapter 6 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:turning-tides",
+      "type": "quest",
+      "name": "Turning Tides",
+      "kind": "main",
+      "chapter": "Chapter 6: Cracks in the Shield",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Slip into the Black Bears' base in Deepfog Basin.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:fire-on-the-frontlines",
+          "text": "Complete Fire on the Frontlines"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Travel to Deepfog Basin.",
+          "action": "travel",
+          "refs": ["place:deepfog-basin"]
+        },
+        {
+          "text": "Infiltrate the Black Bears' base there.",
+          "action": "other",
+          "refs": ["place:deepfog-basin", "faction:black-bears"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587251",
+          "title": "Game8: Chapter 6 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:fire-support",
+      "type": "quest",
+      "name": "Fire Support",
+      "kind": "main",
+      "chapter": "Chapter 6: Cracks in the Shield",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Bring down the Black Bear watchtowers covering Deepfog Basin.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:turning-tides",
+          "text": "Complete Turning Tides"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Find the Black Bear watchtowers around Deepfog Basin.",
+          "action": "travel",
+          "refs": ["place:deepfog-basin", "faction:black-bears"]
+        },
+        {
+          "text": "Destroy those towers.",
+          "action": "fight",
+          "refs": ["faction:black-bears"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587251",
+          "title": "Game8: Chapter 6 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:in-ashes-ch6",
+      "type": "quest",
+      "name": "In Ashes",
+      "kind": "main",
+      "chapter": "Chapter 6: Cracks in the Shield",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Wreck the battle weapons the Black Bears have set against the line.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:fire-support",
+          "text": "Complete Fire Support"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Locate the enemy battle weapons in Deepfog Basin.",
+          "action": "travel",
+          "refs": ["place:deepfog-basin", "faction:black-bears"]
+        },
+        {
+          "text": "Destroy those weapons.",
+          "action": "fight",
+          "refs": ["faction:black-bears"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587251",
+          "title": "Game8: Chapter 6 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:hidden-fangs",
+      "type": "quest",
+      "name": "Hidden Fangs",
+      "kind": "main",
+      "chapter": "Chapter 6: Cracks in the Shield",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Free the captives held in the Black Bear camp.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:in-ashes-ch6",
+          "text": "Complete In Ashes"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Find where the captives are held in Deepfog Basin.",
+          "action": "travel",
+          "refs": ["place:deepfog-basin", "faction:black-bears"]
+        },
+        {
+          "text": "Get them out of the camp.",
+          "action": "other",
+          "refs": ["place:deepfog-basin"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587251",
+          "title": "Game8: Chapter 6 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:reclamation",
+      "type": "quest",
+      "name": "Reclamation",
+      "kind": "main",
+      "chapter": "Chapter 6: Cracks in the Shield",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Clear the enemies holding the outer bailey of Calphade Castle.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:hidden-fangs",
+          "text": "Complete Hidden Fangs"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Reach the outer bailey of Calphade Castle.",
+          "action": "travel",
+          "refs": ["place:calphade-castle"]
+        },
+        {
+          "text": "Defeat the enemies holding it.",
+          "action": "fight",
+          "refs": ["place:calphade-castle"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587251",
+          "title": "Game8: Chapter 6 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:the-unyielding-shields-ch6",
+      "type": "quest",
+      "name": "The Unyielding Shields",
+      "aliases": ["The Undying Shields"],
+      "kind": "main",
+      "chapter": "Chapter 6: Cracks in the Shield",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Push into Calphade Castle and face the traitor Cassius Morten.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:reclamation",
+          "text": "Complete Reclamation"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Advance on Calphade Castle.",
+          "action": "travel",
+          "refs": ["place:calphade-castle"]
+        },
+        {
+          "text": "Close with the traitor Cassius Morten.",
+          "action": "fight",
+          "refs": ["place:calphade-castle"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587251",
+          "title": "Game8: Chapter 6 walkthrough",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://www.powerpyx.com/crimson-desert-walkthrough-all-main-quests/",
+          "title": "PowerPyx: all main quests",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:a-thousand-troops",
+      "type": "quest",
+      "name": "A Thousand Troops",
+      "kind": "main",
+      "chapter": "Chapter 6: Cracks in the Shield",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Join Stefan Lanford and back his part of the assault on Calphade Castle.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:the-unyielding-shields-ch6",
+          "text": "Complete The Unyielding Shields"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Find Stefan Lanford in the fighting around the castle.",
+          "action": "travel",
+          "refs": ["character:stefan-lanford", "place:calphade-castle"]
+        },
+        {
+          "text": "Support him through that stretch of the battle.",
+          "action": "fight",
+          "refs": ["character:stefan-lanford"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587251",
+          "title": "Game8: Chapter 6 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:traitor-ch6",
+      "type": "quest",
+      "name": "Traitor",
+      "kind": "main",
+      "chapter": "Chapter 6: Cracks in the Shield",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Defeat Cassius Morten, the traitor of the Calphadean line.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:a-thousand-troops",
+          "text": "Complete A Thousand Troops"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Hunt Cassius Morten through Calphade Castle.",
+          "action": "travel",
+          "refs": ["place:calphade-castle"]
+        },
+        {
+          "text": "Defeat him.",
+          "action": "fight",
+          "refs": ["place:calphade-castle"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587251",
+          "title": "Game8: Chapter 6 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:all-quiet-on-the-front",
+      "type": "quest",
+      "name": "All Quiet on the Front",
+      "kind": "main",
+      "chapter": "Chapter 6: Cracks in the Shield",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Carry word of the victory to Marquis Lanford.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:traitor-ch6",
+          "text": "Complete Traitor"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Find Marquis Lanford after the castle is taken.",
+          "action": "travel",
+          "refs": ["character:marquis-lanford", "place:calphade-castle"]
+        },
+        {
+          "text": "Report the victory.",
+          "action": "talk",
+          "refs": ["character:marquis-lanford"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587251",
+          "title": "Game8: Chapter 6 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:news-of-victory",
+      "type": "quest",
+      "name": "News of Victory",
+      "kind": "main",
+      "chapter": "Chapter 6: Cracks in the Shield",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Light the beacon that tells the line the castle has fallen.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:all-quiet-on-the-front",
+          "text": "Complete All Quiet on the Front"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Reach the beacon raised for this signal.",
+          "action": "travel"
+        },
+        {
+          "text": "Light it.",
+          "action": "other"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587251",
+          "title": "Game8: Chapter 6 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:return-home",
+      "type": "quest",
+      "name": "Return Home",
+      "kind": "main",
+      "chapter": "Chapter 6: Cracks in the Shield",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Speak with the comrades who come back from the Calphadean war.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:news-of-victory",
+          "text": "Complete News of Victory"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Leave Calphade Castle for the people who fought with you.",
+          "action": "travel",
+          "refs": ["place:calphade-castle", "faction:greymanes"]
+        },
+        {
+          "text": "Speak with those comrades.",
+          "action": "talk",
+          "refs": ["faction:greymanes"]
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "unlock",
+          "ref": "character:oongka",
+          "text": "Oongka recruited"
+        },
+        {
+          "kind": "item",
+          "text": "Shield of Betrayal"
+        },
+        {
+          "kind": "item",
+          "text": "Unyielding Hero's Plate Armor"
+        },
+        {
+          "kind": "item",
+          "text": "Whistling Arrow x10"
+        },
+        {
+          "kind": "item",
+          "text": "Hernand Refinement Token"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587251",
+          "title": "Game8: Chapter 6 walkthrough",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/",
+          "title": "VULKK: main story walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
       "id": "quest:trial-of-the-winds",
       "type": "quest",
       "name": "Trial of the Winds",

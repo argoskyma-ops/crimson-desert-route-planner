@@ -259,6 +259,123 @@
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:hernand-church",
+      "type": "place",
+      "name": "Church",
+      "kind": "temple",
+      "region": "region:hernand",
+      "summary": "The church where Chapter 5 sends Kliff for a relic and the Pillar of Radiance.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/586937", "title": "Game8: Chapter 5 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:spire-of-soaring",
+      "type": "place",
+      "name": "Spire of Soaring",
+      "kind": "spire",
+      "region": "region:hernand",
+      "summary": "The spire woken in Toward the Nest before the last fight with Crowcaller.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/586937", "title": "Game8: Chapter 5 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:calphade-gate",
+      "type": "place",
+      "name": "Calphade Gate",
+      "kind": "landmark",
+      "region": "region:hernand",
+      "summary": "The gate into Calphadean ground where Marshal Middler briefs the counterattack.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/587251", "title": "Game8: Chapter 6 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:siege-armory",
+      "type": "place",
+      "name": "Siege Armory",
+      "kind": "other",
+      "region": "region:hernand",
+      "summary": "A Calphadean armory where a Banner Pike must be raised during Cradle of Defense.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/587251", "title": "Game8: Chapter 6 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:gunpowder-mill",
+      "type": "place",
+      "name": "Gunpowder Mill",
+      "kind": "other",
+      "region": "region:hernand",
+      "summary": "A mill on the Calphadean line that takes a Banner Pike during Cradle of Defense.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/587251", "title": "Game8: Chapter 6 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:thalwynd",
+      "type": "place",
+      "name": "Thalwynd",
+      "kind": "other",
+      "region": "region:hernand",
+      "summary": "A Calphadean site that takes the third Banner Pike during Cradle of Defense.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/587251", "title": "Game8: Chapter 6 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:southern-guard-post",
+      "type": "place",
+      "name": "Southern Guard Post",
+      "kind": "watchtower",
+      "region": "region:hernand",
+      "summary": "A southern post on the Calphadean line where a soldier waits during The Touch of Deliverance.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/587251", "title": "Game8: Chapter 6 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:deepfog-basin",
+      "type": "place",
+      "name": "Deepfog Basin",
+      "kind": "landmark",
+      "region": "region:hernand",
+      "summary": "The basin that hides the Black Bears' base during Turning Tides.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/587251", "title": "Game8: Chapter 6 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:calphade-castle",
+      "type": "place",
+      "name": "Calphade Castle",
+      "kind": "castle",
+      "region": "region:hernand",
+      "summary": "The Calphadean castle taken at the close of Chapter 6, where Cassius Morten is fought.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/587251", "title": "Game8: Chapter 6 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
     }
   ]
 }

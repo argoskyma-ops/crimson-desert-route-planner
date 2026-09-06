@@ -300,6 +300,44 @@
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:white-crow",
+      "type": "character",
+      "name": "White Crow",
+      "role": "Abduction victim",
+      "summary": "The captive the Chapter 5 hunt keeps circling back to while Crowcaller is still at large.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/586937", "title": "Game8: Chapter 5 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:marquis-lanford",
+      "type": "character",
+      "name": "Marquis Lanford",
+      "role": "Calphadean marquis",
+      "home": "place:calphade-castle",
+      "summary": "The Calphadean marquis who takes the victory report after Cassius Morten falls.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/587251", "title": "Game8: Chapter 6 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:stefan-lanford",
+      "type": "character",
+      "name": "Stefan Lanford",
+      "role": "Calphadean ally",
+      "home": "place:calphade-castle",
+      "summary": "A Lanford who leads a stretch of the assault on Calphade Castle and needs backing there.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/587251", "title": "Game8: Chapter 6 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
     }
   ]
 }
