@@ -12,7 +12,10 @@ Before committing a record, check every line:
 
 1. **Id.** `<type>:<slug>`, kebab-case, unique across all files, and stable:
    when the game renames something, keep the id, change `name`, add the old
-   name to `aliases`.
+   name to `aliases`. When the English name is not unique, suffix the slug
+   with the place or faction (`quest:celeste-supply-run`,
+   `vendor:rhett-hernand`). Unnamed collectibles are
+   `collectible:<collection-slug>-<index>` with `index` set to match.
 2. **Name** exactly as the English game text shows it.
 3. **Summary** is one original sentence, at most 240 characters.
 4. **Prose is yours.** `body`, `steps[].text`, `strategy`, `rules`, `notes`
@@ -28,10 +31,11 @@ Before committing a record, check every line:
    inference. Say what is assumed in `body` or `note`.
 7. **Game version.** The patch you checked the record against (see
    `meta.json`). Bump it when you re-check after a patch.
-8. **Refs resolve.** Every id in `refs`, `related`, `ref`, `giver`, `faction`,
-   `members`, `contains`, `drops[].item`, `inventory[].item` and every
-   `[[id]]` link exists. The test suite fails otherwise. Add the missing
-   record or drop the link.
+8. **Refs resolve.** Every whole-string id anywhere in the record and every
+   `[[id]]` link (what `collectRefs` in `src/content/schema.ts` finds) exists
+   and is not the record itself. The test suite fails otherwise. Add the
+   missing record or drop the link. `place.fastTravel` must be an id from
+   `data/fast-travel.json`.
 9. **Locations** are canonical zoom-4 pixels (D3) read off the in-app map at
    zoom 5 or 6, inside the Pywel bounds and on land. Use `map: "abyss"` for
    Abyss records. Never bulk-copy coordinates from `data/pois.json`.

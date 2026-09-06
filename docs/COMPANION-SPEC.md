@@ -99,9 +99,9 @@ prose version.
 
 - `region`: `kind` (region / sub-area / layer), `parent?`, `levelRange?`,
   `keyPlaces?` (place ids).
-- `place`: `kind` (town, village, camp, castle, estate, dungeon, cave, ruins,
-  farm, port, temple, watchtower, shipwreck, sanctum, spire, hidden-place,
-  arena, landmark, other), `contains?` (ids of vendors, enemies, collectibles
+- `place`: `kind` (city, town, village, camp, castle, estate, inn, dungeon,
+  cave, ruins, farm, port, temple, watchtower, shipwreck, sanctum, spire,
+  hidden-place, arena, landmark, other), `contains?` (ids of vendors, enemies, collectibles
   found there), `fastTravel?` (fast-travel.json id nearby).
 - `character`: `role`, `playable`, `companion`, `factions?`, `vendor?`
   (vendor id), `home?` (place id), `facts?` (string[]), `quests?` (ids).
@@ -109,22 +109,25 @@ prose version.
   community, other), `hostile`, `leader?`, `members?`, `headquarters?`,
   `reputation?` (`{ tiers?, notes }`), `quests?`.
 - `storyline`: `kind` (main, faction, character, side), `chapters`
-  (`[{ title, quests: id[] }]`), `branches?` (string[]),
-  `pointsOfNoReturn?` (string[]).
+  (`[{ title, quests: id[], pointsOfNoReturn? }]`; `title` is the value
+  quests use in `chapter`), `branches?` (string[]), `pointsOfNoReturn?`
+  (string[], for points not tied to one chapter).
 - `quest`: `kind` (main, faction, commission, request, bounty, challenge,
-  side), `chapter?`, `storyline?`, `giver?`, `faction?`, `start?`
-  (location), `prerequisites`, `steps`, `rewards`, `unlocks?`, `missable`,
-  `repeatable`.
-- `item`: `category` (weapon, armor, shield, accessory, consumable, material,
-  tool, key, manual, cosmetic, currency, other), `slot?`, `rarity?`,
+  side), `chapter?` (string, a storyline chapter title), `storyline?`,
+  `giver?`, `faction?`, `prerequisites`, `steps`, `rewards`, `unlocks?`,
+  `missable` (+ `missableNote`, required for `lost-if`), `repeatable`. The
+  quest's start point is the common `location`.
+- `item`: `category` (weapon, armor, shield, accessory, projectile,
+  consumable, material, tool, key, manual, cosmetic, currency, other), `slot?`, `rarity?`,
   `stats?`, `acquisitions` (Acquisition[]), `usedIn?` (recipe ids),
   `setName?`.
 - `collectible`: `collection` (collection id), `index?`, `guide?`
   (steps), `reward?`.
 - `collection`: a set of collectibles: `total?`, `reward?`, `poiType?`
   (the th.gl type that marks them, e.g. `memory_fragment`).
-- `vendor`: `shopType` (th.gl services id), `character?`, `inventory`
-  (`[{ item, price?, stock?, unlock?, trust? }]`), `currencies?`.
+- `vendor`: `shopType` (th.gl services id), `character?`, `place?`,
+  `inventory` (`[{ item, price?, stock?, unlock?, trust? }]`, `stock` is a
+  count or `"unlimited"`), `currencies?`.
 - `recipe`: `station` (cooking, alchemy, anvil, grindstone, sewing,
   carpentry, other), `inputs`, `output`, `learnedFrom?` (Acquisition).
 - `skill`: `character` (kliff, damiane, oongka, shared), `tree` (stamina,
@@ -133,8 +136,8 @@ prose version.
 - `enemy`: `rank` (common, elite, story-boss, world-boss, legendary-animal),
   `level?`, `drops` (`[{ item, chance? }]`), `weaknesses?`, `strategy?`.
 - `mount`: `species`, `legendary`, `howToGet` (Acquisition[]), `stats?`.
-- `activity`: `kind` (minigame, life-skill, challenge, contest), `rules?`,
-  `rewards?`, `locations?`.
+- `activity`: `kind` (minigame, life-skill, contest, other), `rules?`,
+  `rewards?`, `locations?`. Challenges are quests of kind `challenge`.
 - `guide`: a standalone walkthrough: `target` (id), `prerequisites`,
   `steps`, `repeatable`, `notes?`.
 
@@ -142,8 +145,9 @@ prose version.
 
 - `Step`: `{ text, action?, location?, refs?, cost?, missable?, optional? }`.
   `action` is one of travel, talk, fight, buy, craft, collect, solve, tame,
-  gather, other. `missable` is `no`, `easy-to-miss`, or `lost-if` with a
-  note. Steps are ordered; a step with a location gets *Route here*.
+  gather, other. `missable` is `no`, `easy-to-miss`, or `lost-if`, which
+  requires `missableNote`. Steps are ordered; a step with a location gets
+  *Route here*.
 - `Prerequisite`: `{ kind (quest, chapter, level, reputation, item, skill,
   other), ref?, value?, text }`.
 - `Acquisition`: `{ kind (vendor, drop, quest, chest, craft, gather, tame,

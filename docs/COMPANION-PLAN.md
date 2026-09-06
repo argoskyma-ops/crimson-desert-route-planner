@@ -54,7 +54,7 @@ Conventions: coordinates are canonical zoom-4 px (D3); no DOM or Leaflet in
   the central landmass (the label sits just east of the walled city, about x 2423, y 5054; all 117 named camps, villages and castles and all 9 labels land on Pywel after the swap), not
   on an island.
 
-- [ ] **R1. Review the scaffold.** Read D12 to D18, `src/content/schema.ts`,
+- [x] **R1. Review the scaffold.** Read D12 to D18, `src/content/schema.ts`,
   `src/content/ids.ts`, the seed files in `data/content/` and
   `tests/unit/content-data.test.ts`. Report (in `docs/NOTES.md` under
   "Scaffold review") anything that will not serve T11 to T19 or the
@@ -88,14 +88,18 @@ Conventions: coordinates are canonical zoom-4 px (D3); no DOM or Leaflet in
   aliases, tags, summary }`; `search(index, query, limit)` returns hits
   grouped by type, exact name first, then prefix, then fuzzy. The panel
   shows grouped results, opens an entity on tap (`selectEntity`), pans to a
-  place or a POI type (turns its group on). Accept: tests for exact >
-  prefix > fuzzy, alias hit, POI type hit; "rokade" finds the mount seed;
-  "nexus" still lists fast-travel points.
+  place, or pans to a POI type's nearest node when POIs are loaded
+  (`poiTypes` is an argument, `[]` until T15; turning a group on is T16).
+  Accept: tests for exact > prefix > fuzzy, alias hit, POI type hit with a
+  fixture; "rokade" finds the mount seed; "nexus" still lists fast-travel
+  points.
 
 - [ ] **T13. Entity panel.** (D16)
   Files: `src/components/EntityPanel.tsx`, `src/components/entity/*.tsx`
-  (one section component per entity type), `src/lib/mini-markdown.ts`
-  (+ test), `src/App.tsx`, `src/index.css`.
+  (a generic body plus one small section component per entity type; T17
+  and T18 later replace the quest, storyline and codex sections),
+  `src/lib/mini-markdown.ts` (+ test), `src/components/MapView.tsx`,
+  `src/store.ts`, `src/App.tsx`, `src/index.css`.
   Bottom sheet under 768 px, right panel above. Header (name, type badge,
   region, confidence and game version, Show on map, Close), summary,
   rendered body, type sections driven by the record (rewards, acquisitions
@@ -111,7 +115,9 @@ Conventions: coordinates are canonical zoom-4 px (D3); no DOM or Leaflet in
   `src/components/EntityPanel.tsx`, `src/store.ts`.
   `progress.ts`: load/save `cd-companion:progress:v1`, `toggleStep(key)`,
   `toggleQuest(id)`, `toggleCollected(id)`, `exportProgress()`,
-  `importProgress(json)`, version guard. Step keys are `<entityId>#<index>`.
+  `importProgress(json)`, version guard. Step keys: `<entityId>#g<j>` for a
+  record's own steps or guide (quest, guide, collectible), and
+  `<entityId>#a<i>s<j>` for step j of acquisition i (item, mount, skill).
   `GuideSteps` renders steps with checkboxes, action icon, cost, missable
   line, and *Route here* on located steps (calls `setPin('b', location)`;
   if pin A is null shows "Tap the map where you are"). Export/Import
@@ -121,8 +127,8 @@ Conventions: coordinates are canonical zoom-4 px (D3); no DOM or Leaflet in
 
 - [ ] **T14b. Dev-only content editor.** (D19)
   Files: `src/components/ContentEditor.tsx`, `src/components/EditorPanel.tsx`,
-  `src/lib/content-io.ts` (+ test), `src/store.ts`, `vite.config.ts`,
-  `src/App.tsx`.
+  `src/lib/content-io.ts` (+ test), `src/components/MapView.tsx` (tap to
+  fill a location field), `src/store.ts`, `vite.config.ts`, `src/App.tsx`.
   Add a Content mode to the editor: pick a type, pick an existing record or
   New, edit a schema-driven form (strings, enums from the schema constants,
   numbers, booleans, id pickers backed by the search index, step lists with
@@ -163,20 +169,21 @@ Conventions: coordinates are canonical zoom-4 px (D3); no DOM or Leaflet in
   counts instead. Tap → popup with type label, name if any, and for
   checkable types a *Collected* toggle (progress). Layers panel: groups with
   counts, collected/total for checkable types, defaults per D14, a "generate
-  data/pois.json" hint when missing. Accept: all groups on at zoom 6 stays
-  above 30 fps on a phone-class device (measure with the Performance tab
-  and note the number in the commit message); toggles persist for the
-  session; no DOM marker per node.
+  data/pois.json" hint when missing. Accept: unit tests for viewport culling
+  and the zoom-3 grid clustering; no DOM marker per node; toggles persist
+  for the session. Measure all groups on at zoom 6 with the Performance
+  tab and note the frame rate in the commit message (target above 30 fps
+  on a phone-class device).
 
 ## Phase 3. Quests and storylines
 
 - [ ] **T17. Storyline and quest views.** (D12, D16)
   Files: `src/components/entity/StorylineSection.tsx`,
-  `src/components/entity/QuestSection.tsx`, `src/components/QuestLog.tsx`,
-  `src/components/ControlPanel.tsx`.
+  `src/components/entity/QuestSection.tsx` (replacing T13's stubs),
+  `src/components/QuestLog.tsx`, `src/components/ControlPanel.tsx`.
   Storyline: chapters with quests, done state from progress, next
-  undone quest highlighted, points-of-no-return shown before the chapter
-  that triggers them. Quest: prerequisites (unmet ones flagged), steps via
+  undone quest highlighted, each chapter's `pointsOfNoReturn` shown before
+  its first quest. Quest: prerequisites (unmet ones flagged), steps via
   `GuideSteps`, rewards as entity links, missable and repeatable badges.
   QuestLog tab: main storyline progress, faction storylines by region.
   Accept: marking a quest done advances the storyline's next pointer;
@@ -212,11 +219,13 @@ Order (decided 2026-09-05): the main story first. C3 creates the minimal
 place and character records it references (id, name, summary, one source)
 and C1 and C2 fill them out afterwards.
 
-- [ ] **C3. Main storyline.** `storyline.json`, `quest.json`. Prologue, the
-  twelve chapters and the epilogue as one storyline; every main quest with
-  giver, start location, steps, rewards, prerequisites, and
-  points-of-no-return on the chapters that trigger them. Target: ≥ 160
-  quests.
+- [ ] **C3. Main storyline.** `storyline.json`, `quest.json`, plus minimal
+  records in `place.json`, `character.json` and `region.json` for anything a
+  quest references (id, name, kind or role, summary, one source). Prologue,
+  the twelve chapters and the epilogue as one storyline whose chapter titles
+  are the quests' `chapter` values; every main quest with giver, `location`
+  (start), steps, rewards, prerequisites, and `pointsOfNoReturn` on the
+  chapters that trigger them. Target: ≥ 160 quests.
 - [ ] **C1. Regions and places.** `region.json`, `place.json`. The five
   regions plus the Abyss layer, their named sub-areas, and every town,
   village, castle and camp already named in `data/fast-travel.json` (use its
@@ -233,8 +242,8 @@ and C1 and C2 fill them out afterwards.
   Target: ≥ 150 items.
 - [ ] **C6. Collectibles.** `collection.json`, `collectible.json`. Sealed
   Abyss Artifacts, memory fragments, collection chests, anamorphic
-  constellations, totems, treasure maps, bells, legendary horses as
-  collections with `total` and `poiType`; individual records with a location
+  constellations, totems, treasure maps and bells as collections with
+  `total` and `poiType` (legendary horses stay `mount:*` records, see C7); individual records with a location
   and a short guide for every one that has a puzzle or a hidden entrance.
   Target: every collection defined; ≥ 300 individual collectibles.
 - [ ] **C4. Faction questlines, Hernand first.** `storyline.json`,

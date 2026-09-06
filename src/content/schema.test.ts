@@ -1,6 +1,12 @@
 import { describe, expect, it } from 'vitest'
 import { extractLinks, makeId, parseId, slugify } from './ids.ts'
-import { collectRefs, parseContentFile, parseEntity, parseMeta } from './schema.ts'
+import {
+  collectRefs,
+  compareGameVersions,
+  parseContentFile,
+  parseEntity,
+  parseMeta,
+} from './schema.ts'
 
 const source = { url: 'https://example.com/page', accessed: '2026-09-05' }
 const head = {
@@ -121,6 +127,39 @@ describe('entity schemas', () => {
       parseEntity({ ...head, id: 'Quest:x', type: 'quest', name: 'X', kind: 'side' }),
     ).toThrow()
     expect(() =>
+      parseEntity({
+        ...head,
+        id: 'quest:x',
+        type: 'quest',
+        name: 'X',
+        kind: 'side',
+        related: ['spaceship:foo'],
+      }),
+    ).toThrow(/known entity type/)
+    expect(() =>
+      parseEntity({
+        ...head,
+        id: 'quest:x',
+        type: 'quest',
+        name: 'X',
+        kind: 'side',
+        steps: [{ text: 'grab it', missable: 'lost-if' }],
+      }),
+    ).toThrow(/missableNote/)
+    expect(() =>
+      parseEntity({ ...head, id: 'quest:x', type: 'quest', name: 'X', kind: 'side', chapter: 2 }),
+    ).toThrow()
+    expect(() =>
+      parseEntity({
+        ...head,
+        sources: [{ url: 'https://example.com', accessed: '2999-01-01' }],
+        id: 'quest:x',
+        type: 'quest',
+        name: 'X',
+        kind: 'side',
+      }),
+    ).toThrow(/future/)
+    expect(() =>
       parseEntity({ ...head, sources: [], id: 'quest:x', type: 'quest', name: 'X', kind: 'side' }),
     ).toThrow(/sources/)
     expect(() =>
@@ -165,7 +204,7 @@ describe('entity schemas', () => {
       type: 'item',
       name: 'X',
       category: 'armor',
-      body: 'Dropped by [[enemy:crow]]; see [[quest:y]].',
+      body: 'Dropped by [[enemy:crow]]; see [[quest:y]] but not [[quest:--bad]].',
       related: ['place:p'],
       acquisitions: [
         { kind: 'drop', ref: 'enemy:crow', steps: [{ text: 't', refs: ['place:q'] }] },
@@ -202,6 +241,12 @@ describe('content files', () => {
         ],
       }),
     ).toThrow(/duplicate/)
+  })
+
+  it('compares game versions numerically', () => {
+    expect(compareGameVersions('2.9.00', '2.10.00')).toBeLessThan(0)
+    expect(compareGameVersions('2.01.00', '2.1')).toBe(0)
+    expect(compareGameVersions('3.0.0', '2.99.99')).toBeGreaterThan(0)
   })
 
   it('parses meta.json', () => {

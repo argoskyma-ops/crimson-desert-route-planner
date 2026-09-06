@@ -7,7 +7,7 @@
 import { existsSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { describe, expect, it } from 'vitest'
-import { collectRefs, parseContentFile, parseMeta } from '../../src/content/schema.ts'
+import { collectRefs, compareGameVersions, parseContentFile, parseMeta } from '../../src/content/schema.ts'
 import type { ContentFile, Entity } from '../../src/content/types.ts'
 import { loadWaterMaskFile, WATER_MASK_PATH } from './water-mask-file'
 
@@ -31,6 +31,12 @@ const bounds: [number, number, number, number] = existsSync(MANIFEST_PATH)
     DEFAULT_BOUNDS)
   : DEFAULT_BOUNDS
 const mask = existsSync(WATER_MASK_PATH) ? loadWaterMaskFile() : null
+const FAST_TRAVEL_PATH = 'data/fast-travel.json'
+const fastTravelIds = new Set(
+  existsSync(FAST_TRAVEL_PATH)
+    ? (readJson(FAST_TRAVEL_PATH) as { locations: { id: string }[] }).locations.map((l) => l.id)
+    : [],
+)
 
 interface Located {
   x: number
@@ -70,15 +76,29 @@ describe('data/content', () => {
     expect(ids.size).toBe(records.length)
   })
 
-  it('resolves every ref and [[link]]', () => {
+  it('resolves every ref and [[link]] and never points at itself', () => {
     const missing: string[] = []
+    const self: string[] = []
     for (const record of records) {
       const { refs, links } = collectRefs(record)
       for (const ref of [...refs, ...links]) {
         if (!ids.has(ref)) missing.push(`${record.id} -> ${ref}`)
+        if (ref === record.id) self.push(record.id)
       }
     }
     expect(missing).toEqual([])
+    expect(self).toEqual([])
+  })
+
+  it('points place.fastTravel at an id in data/fast-travel.json', () => {
+    if (fastTravelIds.size === 0) return
+    const bad: string[] = []
+    for (const record of records) {
+      if (record.type === 'place' && record.fastTravel && !fastTravelIds.has(record.fastTravel)) {
+        bad.push(`${record.id} -> ${record.fastTravel}`)
+      }
+    }
+    expect(bad).toEqual([])
   })
 
   it('keeps Pywel locations inside the bounds and on land', () => {
@@ -101,7 +121,10 @@ describe('data/content', () => {
   it('is checked against the game version in meta.json or older', () => {
     const current = meta.game.version
     for (const record of records) {
-      expect(record.gameVersion <= current, `${record.id} is newer than meta.json`).toBe(true)
+      expect(
+        compareGameVersions(record.gameVersion, current) <= 0,
+        `${record.id} is newer than meta.json`,
+      ).toBe(true)
     }
   })
 

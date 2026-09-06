@@ -8,15 +8,36 @@
       "name": "Main story",
       "kind": "main",
       "summary": "Kliff's campaign: a prologue, twelve chapters and an epilogue, played in a fixed order.",
-      "body": "Sources count about 168 main-quest steps across the fourteen sections. The campaign is linear with a single ending; some chapters permanently change the world state, which is recorded under points of no return as they are confirmed.",
+      "body": "Sources count about 168 main-quest steps across the fourteen sections. The campaign is linear with a single ending; chapters that permanently change the world state list that under their own pointsOfNoReturn as they are confirmed. Chapter titles here are the values quests use in their chapter field.",
       "chapters": [
-        { "title": "Prologue: Dead of Night", "quests": ["quest:dead-of-night"] },
-        { "title": "Chapter 2", "quests": ["quest:trial-of-the-winds"] }
+        {
+          "title": "Prologue: Dead of Night",
+          "quests": [
+            "quest:dead-of-night"
+          ]
+        },
+        {
+          "title": "Chapter 1",
+          "quests": []
+        },
+        {
+          "title": "Chapter 2",
+          "quests": [
+            "quest:trial-of-the-winds"
+          ]
+        }
       ],
-      "pointsOfNoReturn": [],
       "sources": [
-        { "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/", "title": "GameRant: main story quests and chapter list", "accessed": "2026-09-05" },
-        { "url": "https://game8.co/games/Crimson-Desert/archives/582136", "title": "Game8: main story walkthrough", "accessed": "2026-09-05" }
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-05"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/582136",
+          "title": "Game8: main story walkthrough",
+          "accessed": "2026-09-05"
+        }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"

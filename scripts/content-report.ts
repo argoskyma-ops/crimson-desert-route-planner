@@ -12,7 +12,7 @@
 import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { ENTITY_TYPES } from '../src/content/ids.ts'
-import { collectRefs, parseContentFile, parseMeta } from '../src/content/schema.ts'
+import { collectRefs, compareGameVersions, parseContentFile, parseMeta } from '../src/content/schema.ts'
 import type { ContentFile, Entity } from '../src/content/types.ts'
 
 const CONTENT_DIR = join(process.cwd(), 'data', 'content')
@@ -23,6 +23,15 @@ function readJson(path: string): unknown {
 
 function pad(value: string | number, width: number): string {
   return String(value).padStart(width)
+}
+
+/** True when the record or anything nested in it (steps, acquisitions) carries a location. */
+function hasLocation(value: unknown): boolean {
+  if (Array.isArray(value)) return value.some(hasLocation)
+  if (typeof value !== 'object' || value === null) return false
+  const obj = value as Record<string, unknown>
+  if (typeof obj.x === 'number' && typeof obj.y === 'number' && typeof obj.map === 'string') return true
+  return Object.values(obj).some(hasLocation)
 }
 
 let failed = false
@@ -48,7 +57,7 @@ console.log(
 for (const type of ENTITY_TYPES) {
   const ofType = records.filter((record) => record.type === type)
   const count = (level: string) => ofType.filter((record) => record.confidence === level).length
-  const located = ofType.filter((record) => record.location).length
+  const located = ofType.filter(hasLocation).length
   console.log(
     `${pad(type, 12)} ${pad(ofType.length, 6)} ${pad(count('verified'), 9)} ${pad(count('reported'), 9)} ${pad(count('assumed'), 8)} ${pad(located, 8)}`,
   )
@@ -65,17 +74,27 @@ console.log(`\nUnresolved refs: ${unresolved.length}`)
 for (const line of unresolved) console.log(`  ${line}`)
 if (unresolved.length > 0) failed = true
 
-const stale = records.filter((record) => record.gameVersion < meta.game.version)
+const stale = records.filter(
+  (record) => compareGameVersions(record.gameVersion, meta.game.version) < 0,
+)
 console.log(`\nBehind ${meta.game.version}: ${stale.length}`)
 for (const record of stale) console.log(`  ${record.id} (${record.gameVersion})`)
 
-const unlocated = records.filter((record) => {
-  if (record.type === 'guide') return !record.steps.some((step) => step.location)
-  if (record.type === 'quest') return !record.start && !record.steps.some((step) => step.location)
+const unlocated = records.filter(
+  (record) => (record.type === 'guide' || record.type === 'quest') && !hasLocation(record),
+)
+console.log(`\nGuides and quests without any location: ${unlocated.length}`)
+for (const record of unlocated) console.log(`  ${record.id}`)
+
+const incomplete = records.filter((record) => {
+  if (record.type === 'item') return record.acquisitions.length === 0
+  if (record.type === 'mount') return record.howToGet.length === 0
+  if (record.type === 'skill') return record.howToLearn.length === 0
+  if (record.type === 'collectible') return !record.location && !record.guide
   return false
 })
-console.log(`\nGuides and quests without a located step: ${unlocated.length}`)
-for (const record of unlocated) console.log(`  ${record.id}`)
+console.log(`\nItems, mounts, skills without an acquisition; collectibles without location or guide: ${incomplete.length}`)
+for (const record of incomplete) console.log(`  ${record.id}`)
 
 const collections = records.filter((record) => record.type === 'collection')
 if (collections.length > 0) {

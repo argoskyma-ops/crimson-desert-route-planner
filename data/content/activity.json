@@ -10,9 +10,14 @@
       "summary": "Tavern minigame: mash the prompt to fill and hold the gauge against your opponent.",
       "rules": "Mash the shown input to push the gauge to your side and hold it there until the timer runs out. Rewards vary by opponent: reputation, coin or a unique item.",
       "sources": [
-        { "url": "https://crimsondesertgame.wiki.fextralife.com/Crimson+Desert+Wiki", "title": "Fextralife: Crimson Desert Wiki", "accessed": "2026-09-05" }
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Crimson+Desert+Wiki",
+          "title": "Fextralife: Crimson Desert Wiki",
+          "accessed": "2026-09-05",
+          "note": "Confirms the minigame exists; the gauge rules are from secondary write-ups and not yet checked in-game."
+        }
       ],
-      "confidence": "reported",
+      "confidence": "assumed",
       "gameVersion": "2.01.00"
     }
   ]

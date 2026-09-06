@@ -20,7 +20,7 @@ no hosted demo.
 
 ## Where things live
 - `docs/DECISIONS.md` is the design contract (D1 map source through D11
-  fast travel, D12 to D18 for the companion). Change the decision there first,
+  fast travel, D12 to D19 for the companion). Change the decision there first,
   then the code.
 - `docs/COMPANION-SPEC.md` is the companion design; `docs/COMPANION-PLAN.md`
   is its task list with status (T-tasks build, C-tasks author content,

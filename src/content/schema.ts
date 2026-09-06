@@ -11,7 +11,14 @@
  * Do not change these in a T-task; see docs/COMPANION-PLAN.md.
  */
 import { z } from 'zod'
-import { ENTITY_TYPES, ID_RE, SLUG_PATTERN, type EntityType } from './ids.ts'
+import {
+  ENTITY_TYPES,
+  extractLinks,
+  isEntityId,
+  parseId,
+  SLUG_PATTERN,
+  type EntityType,
+} from './ids.ts'
 
 export const MAPS = ['pywel', 'abyss'] as const
 export const CONFIDENCE_LEVELS = ['verified', 'reported', 'assumed'] as const
@@ -59,6 +66,7 @@ export const PLACE_KINDS = [
   'camp',
   'castle',
   'estate',
+  'inn',
   'dungeon',
   'cave',
   'ruins',
@@ -98,6 +106,7 @@ export const ITEM_CATEGORIES = [
   'armor',
   'shield',
   'accessory',
+  'projectile',
   'consumable',
   'material',
   'tool',
@@ -125,13 +134,36 @@ export const ENEMY_RANKS = [
   'world-boss',
   'legendary-animal',
 ] as const
-export const ACTIVITY_KINDS = ['minigame', 'life-skill', 'challenge', 'contest'] as const
+/** Challenges are quests of kind `challenge`, not activities. */
+export const ACTIVITY_KINDS = ['minigame', 'life-skill', 'contest', 'other'] as const
 
 const gameVersion = z
   .string()
   .regex(/^\d+\.\d+(?:\.\d+)?$/, 'gameVersion must look like 2.01.00')
 
-export const IdSchema = z.string().regex(ID_RE, 'id must be <type>:<slug>')
+/** `<type>:<slug>` of a known entity type: the same rule as `parseId` (R1). */
+export const IdSchema = z
+  .string()
+  .refine(isEntityId, 'id must be <type>:<slug> of a known entity type')
+
+/** Today as YYYY-MM-DD (local time) for the `accessed` upper bound. */
+function today(): string {
+  const now = new Date()
+  const month = String(now.getMonth() + 1).padStart(2, '0')
+  const day = String(now.getDate()).padStart(2, '0')
+  return `${now.getFullYear()}-${month}-${day}`
+}
+
+/** Compare two gameVersion strings numerically by (major, minor, patch). */
+export function compareGameVersions(a: string, b: string): number {
+  const pa = a.split('.').map(Number)
+  const pb = b.split('.').map(Number)
+  for (let i = 0; i < Math.max(pa.length, pb.length); i += 1) {
+    const diff = (pa[i] ?? 0) - (pb[i] ?? 0)
+    if (diff !== 0) return diff
+  }
+  return 0
+}
 
 /** An id whose type prefix is fixed, e.g. `idOf('quest')` accepts only `quest:...`. */
 export function idOf(type: EntityType) {
@@ -149,8 +181,8 @@ export const LocationSchema = z.object({
 export const SourceSchema = z.object({
   url: z.url(),
   title: z.string().min(1).optional(),
-  /** YYYY-MM-DD, the day the facts were checked against this source. */
-  accessed: z.iso.date(),
+  /** YYYY-MM-DD, the day the facts were checked against this source; never in the future. */
+  accessed: z.iso.date().refine((date) => date <= today(), 'accessed must not be in the future'),
   note: z.string().optional(),
 })
 
@@ -159,17 +191,23 @@ export const CostSchema = z.object({
   amount: z.number().nonnegative(),
 })
 
-export const StepSchema = z.object({
-  text: z.string().min(1),
-  action: z.enum(STEP_ACTIONS).optional(),
-  location: LocationSchema.optional(),
-  refs: z.array(IdSchema).optional(),
-  cost: CostSchema.optional(),
-  missable: z.enum(MISSABLE_LEVELS).optional(),
-  /** Required reading when `missable` is `lost-if`: what loses it. */
-  missableNote: z.string().optional(),
-  optional: z.boolean().optional(),
-})
+const lostIfNeedsNote = (value: { missable?: string; missableNote?: string }) =>
+  value.missable !== 'lost-if' || (value.missableNote ?? '').length > 0
+const LOST_IF_MESSAGE = { message: 'missableNote is required when missable is lost-if', path: ['missableNote'] }
+
+export const StepSchema = z
+  .object({
+    text: z.string().min(1),
+    action: z.enum(STEP_ACTIONS).optional(),
+    location: LocationSchema.optional(),
+    refs: z.array(IdSchema).optional(),
+    cost: CostSchema.optional(),
+    missable: z.enum(MISSABLE_LEVELS).optional(),
+    /** Required when `missable` is `lost-if`: what loses it. */
+    missableNote: z.string().optional(),
+    optional: z.boolean().optional(),
+  })
+  .refine(lostIfNeedsNote, LOST_IF_MESSAGE)
 
 export const PrerequisiteSchema = z.object({
   kind: z.enum(PREREQUISITE_KINDS),
@@ -265,23 +303,28 @@ export const StorylineSchema = EntityBase.extend({
   chapters: z
     .array(
       z.object({
+        /** Matches `Quest.chapter` of the quests in it. */
         title: z.string().min(1),
         quests: z.array(idOf('quest')),
+        /** What this chapter permanently changes or locks (D16, T17). */
+        pointsOfNoReturn: z.array(z.string().min(1)).optional(),
       }),
     )
     .min(1),
   branches: z.array(z.string().min(1)).optional(),
+  /** Points of no return not tied to one chapter. */
   pointsOfNoReturn: z.array(z.string().min(1)).optional(),
 })
 
 export const QuestSchema = EntityBase.extend({
   type: z.literal('quest'),
   kind: z.enum(QUEST_KINDS),
-  chapter: z.union([z.number().int(), z.string().min(1)]).optional(),
+  /** Chapter title, matching `Storyline.chapters[].title`. */
+  chapter: z.string().min(1).optional(),
   storyline: idOf('storyline').optional(),
   giver: idOf('character').optional(),
   faction: idOf('faction').optional(),
-  start: LocationSchema.optional(),
+  /** Where the quest starts is the common-head `location`; steps carry their own. */
   prerequisites: z.array(PrerequisiteSchema).default([]),
   steps: z.array(StepSchema).default([]),
   rewards: z.array(RewardSchema).default([]),
@@ -289,7 +332,7 @@ export const QuestSchema = EntityBase.extend({
   missable: z.enum(MISSABLE_LEVELS).default('no'),
   missableNote: z.string().optional(),
   repeatable: z.boolean().default(false),
-})
+}).refine(lostIfNeedsNote, LOST_IF_MESSAGE)
 
 export const ItemSchema = EntityBase.extend({
   type: z.literal('item'),
@@ -508,9 +551,9 @@ export function collectRefs(entity: z.infer<typeof EntitySchema>): {
   const walk = (value: unknown, key: string | undefined) => {
     if (typeof value === 'string') {
       if (key === 'id') return
-      if (ID_RE.test(value)) refs.push(value)
-      else if (value.includes('[['))
-        for (const match of value.matchAll(/\[\[([a-z]+:[a-z0-9-]+)\]\]/g)) links.push(match[1])
+      // parseId (not the type guard) so the else branch keeps `value` a string.
+      if (parseId(value) !== null) refs.push(value)
+      else if (value.includes('[[')) links.push(...extractLinks(value))
       return
     }
     if (Array.isArray(value)) {
