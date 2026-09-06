@@ -1,8 +1,16 @@
 import L from 'leaflet'
 import { useEffect, useRef, useState } from 'react'
+import { POI_CLUSTER_BELOW_ZOOM } from '../config/pois'
 import { BRIDGE_COLOR, CLASS_COLORS, FAST_TRAVEL_COLORS, FAST_TRAVEL_LABELS } from '../config/travel'
 import { filterFastTravel } from '../lib/fast-travel-loader'
-import { attachPoiLayer, openPoiPopup, poiHitTest } from './PoiLayer'
+import {
+  attachPoiLayer,
+  closePoiPopup,
+  isPoiPopupOpen,
+  openPoiPopup,
+  poiClusterHitTest,
+  poiHitTest,
+} from './PoiLayer'
 import { attachEditorLayer } from '../editor/editor-layer'
 import { fromLatLng, makePixelCrs, toLatLng } from '../lib/coords'
 import { loadMapManifest, tileUrlTemplate } from '../lib/map-manifest'
@@ -148,12 +156,20 @@ export default function MapView() {
           if (editor.mode === 'content') deliverPick(clamped)
           return
         }
-        if (map) {
-          const hit = poiHitTest(map, e.latlng)
-          if (hit) {
-            openPoiPopup(map, hit)
-            return
-          }
+        const leafletMap = e.target as L.Map
+        const hit = poiHitTest(leafletMap, e.latlng)
+        if (hit) {
+          openPoiPopup(leafletMap, hit)
+          return
+        }
+        if (isPoiPopupOpen()) {
+          closePoiPopup(leafletMap)
+          return
+        }
+        const cell = poiClusterHitTest(leafletMap, e.latlng)
+        if (cell) {
+          leafletMap.setView(toLatLng(cell), POI_CLUSTER_BELOW_ZOOM)
+          return
         }
         placePin(clamped)
       })

@@ -28,7 +28,7 @@ export default function ControlPanel() {
 
   return (
     <aside
-      className="pointer-events-auto absolute top-3 left-3 z-[1100] w-[calc(100%-1.5rem)] max-w-[320px] max-h-[calc(100dvh-1.5rem)] overflow-y-auto overscroll-contain rounded-xl border border-white/10 bg-neutral-950/80 p-3 text-neutral-100 shadow-lg backdrop-blur-md max-[479px]:inset-x-0 max-[479px]:top-0 max-[479px]:w-full max-[479px]:max-w-none max-[479px]:max-h-dvh max-[479px]:rounded-none max-[479px]:pt-[calc(0.75rem+env(safe-area-inset-top))]"
+      className="pointer-events-auto absolute top-3 left-3 z-[1100] w-[calc(100%-1.5rem)] max-w-[320px] max-h-[calc(100dvh-1.5rem)] overflow-y-auto overscroll-contain rounded-xl border border-white/10 bg-neutral-950/80 p-3 text-neutral-100 shadow-lg backdrop-blur-md max-[479px]:inset-x-0 max-[479px]:top-0 max-[479px]:w-full max-[479px]:max-w-none max-[479px]:max-h-dvh max-[479px]:rounded-none max-[479px]:pt-[calc(0.75rem+env(safe-area-inset-top))] max-[479px]:pb-[calc(0.75rem+env(safe-area-inset-bottom))]"
     >
       <div className="flex items-center justify-between gap-2">
         <h1 className="px-1 text-sm font-semibold tracking-tight">

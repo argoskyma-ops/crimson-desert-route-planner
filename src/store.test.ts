@@ -129,4 +129,36 @@ describe('store', () => {
     expect(useAppStore.getState().focusedPoiId).toBeNull()
     expect(useAppStore.getState().poiGroups).toEqual(groups)
   })
+
+  it('setPoiGroups replaces the map in one update', () => {
+    useAppStore.getState().setPois(poiFixture())
+    let updates = 0
+    const unsub = useAppStore.subscribe(() => {
+      updates += 1
+    })
+    useAppStore.getState().setPoiGroups({ mining: true })
+    unsub()
+    expect(updates).toBe(1)
+    expect(useAppStore.getState().poiGroups).toEqual({ mining: true })
+  })
+
+  it('setPois clears focusedPoiId when the new file no longer contains it', () => {
+    const file = poiFixture()
+    useAppStore.getState().setPois(file)
+    useAppStore.getState().focusPoi('mine_iron@1:1')
+    expect(useAppStore.getState().focusedPoiId).toBe('mine_iron@1:1')
+    useAppStore.getState().setPois({
+      ...file,
+      nodes: file.nodes.filter((node) => node.id !== 'mine_iron@1:1'),
+    })
+    expect(useAppStore.getState().focusedPoiId).toBeNull()
+  })
+
+  it('setPois keeps focusedPoiId when the new file still contains it', () => {
+    const file = poiFixture()
+    useAppStore.getState().setPois(file)
+    useAppStore.getState().focusPoi('mine_iron@1:1')
+    useAppStore.getState().setPois({ ...file, fetched: '2026-09-07' })
+    expect(useAppStore.getState().focusedPoiId).toBe('mine_iron@1:1')
+  })
 })

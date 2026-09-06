@@ -9,10 +9,40 @@ import {
   POI_FOCUS_RADIUS_CSS_PX,
   POI_HIT_RADIUS_CSS_PX,
 } from '../config/pois'
-import { clusterPois, poiGroupOf, visiblePois } from '../content/poi-index'
+import {
+  clusterPois,
+  poiGroupOf,
+  visiblePois,
+  type PoiCluster,
+  type PoiIndex,
+} from '../content/poi-index'
 import type { PoiFile, PoiNode } from '../content/pois-loader'
 import { fromLatLng, toLatLng } from '../lib/coords'
 import { useAppStore } from '../store'
+
+const BADGE_SIDE_CSS_PX = 38
+
+type ClusterCache = {
+  zoom: number
+  groups: Record<string, boolean>
+  index: PoiIndex
+  cellSize: number
+  clusters: PoiCluster[]
+}
+
+type PoiLayer = {
+  clusterCache: ClusterCache | null
+  collectedSet: Set<string>
+  lastCollected: string[] | null
+  filled: Map<string, PoiNode[]>
+  hollow: Map<string, PoiNode[]>
+  ctx: CanvasRenderingContext2D | null
+  lastDpr: number
+  lastCssWidth: number
+  lastCssHeight: number
+}
+
+let activeLayer: PoiLayer | null = null
 
 function cssPixelsPerImagePixel(map: L.Map): number {
   const origin = map.project(toLatLng({ x: 0, y: 0 }))
@@ -26,36 +56,66 @@ function formatClusterCount(count: number): string {
   return Number.isInteger(tenths) ? `${tenths}k` : `${tenths.toFixed(1)}k`
 }
 
-function labelsFor(pois: PoiFile | null, node: PoiNode): { typeLabel: string; groupLabel: string } {
-  if (pois) {
-    for (const group of pois.groups) {
-      for (const type of group.types) {
-        if (type.id === node.type) {
-          return { typeLabel: type.label, groupLabel: group.label }
-        }
-      }
-    }
-  }
+function labelsFor(index: PoiIndex | null, node: PoiNode): { typeLabel: string; groupLabel: string } {
+  const found = index?.labels.get(node.type)
+  if (found) return { typeLabel: found.type, groupLabel: found.group }
   return { typeLabel: node.type, groupLabel: '' }
+}
+
+function ensureClusterCache(
+  layer: PoiLayer,
+  pois: PoiFile,
+  poiIndex: PoiIndex,
+  poiGroups: Record<string, boolean>,
+  zoom: number,
+  cellSize: number,
+): PoiCluster[] {
+  const cache = layer.clusterCache
+  if (
+    cache &&
+    cache.zoom === zoom &&
+    cache.groups === poiGroups &&
+    cache.index === poiIndex &&
+    cache.cellSize === cellSize
+  ) {
+    return cache.clusters
+  }
+  const clusters = clusterPois(
+    poiIndex,
+    poiGroups,
+    { x0: 0, y0: 0, x1: pois.imageSize[0], y1: pois.imageSize[1] },
+    cellSize,
+  )
+  layer.clusterCache = { zoom, groups: poiGroups, index: poiIndex, cellSize, clusters }
+  return clusters
+}
+
+function clearBucketLists(buckets: Map<string, PoiNode[]>): void {
+  for (const list of buckets.values()) list.length = 0
 }
 
 let poiPopup: L.Popup | null = null
 let poiPopupNodeId: string | null = null
 
-function closePoiPopup(map: L.Map | null): void {
+export function isPoiPopupOpen(): boolean {
+  return poiPopup !== null
+}
+
+export function closePoiPopup(map: L.Map): void {
   const popup = poiPopup
   poiPopup = null
   poiPopupNodeId = null
   if (popup) {
-    popup.off('remove')
-    if (map) map.closePopup(popup)
-    else popup.remove()
+    map.closePopup(popup)
+  }
+  if (useAppStore.getState().focusedPoiId !== null) {
+    useAppStore.getState().focusPoi(null)
   }
 }
 
 function buildPopupContent(node: PoiNode): HTMLElement {
-  const { pois, poiIndex, progress, toggleCollectedDone } = useAppStore.getState()
-  const { typeLabel, groupLabel } = labelsFor(pois, node)
+  const { poiIndex, progress, toggleCollectedDone } = useAppStore.getState()
+  const { typeLabel, groupLabel } = labelsFor(poiIndex, node)
   const groupId = poiIndex ? poiGroupOf(poiIndex, node) : null
   const checkable = groupId !== null && isPoiCheckable(node.type, groupId)
   const key = poiProgressKey(node.id)
@@ -79,6 +139,7 @@ function buildPopupContent(node: PoiNode): HTMLElement {
     button.type = 'button'
     const collected = progress.collected.includes(key)
     button.textContent = collected ? 'Collected ✓' : 'Mark collected'
+    button.setAttribute('aria-pressed', collected ? 'true' : 'false')
     button.style.display = 'block'
     button.style.width = '100%'
     button.style.minHeight = '44px'
@@ -95,6 +156,7 @@ function buildPopupContent(node: PoiNode): HTMLElement {
       toggleCollectedDone(key)
       const now = useAppStore.getState().progress.collected.includes(key)
       button.textContent = now ? 'Collected ✓' : 'Mark collected'
+      button.setAttribute('aria-pressed', now ? 'true' : 'false')
     })
     root.appendChild(button)
   }
@@ -109,7 +171,7 @@ export function openPoiPopup(map: L.Map, node: PoiNode): void {
   }
   closePoiPopup(map)
 
-  const popup = L.popup({ maxWidth: 260, autoPan: true })
+  const popup = L.popup({ maxWidth: 260, autoPan: true, closeOnClick: false })
   popup.setLatLng(toLatLng(node))
   popup.setContent(buildPopupContent(node))
   popup.on('remove', () => {
@@ -151,6 +213,29 @@ export function poiHitTest(map: L.Map, latlng: L.LatLng): PoiNode | null {
   return best
 }
 
+export function poiClusterHitTest(map: L.Map, latlng: L.LatLng): { x: number; y: number } | null {
+  if (map.getZoom() >= POI_CLUSTER_BELOW_ZOOM) return null
+  const layer = activeLayer
+  if (!layer) return null
+  const { poiIndex, poiGroups, pois, editor } = useAppStore.getState()
+  if (!poiIndex || !pois || editor.active) return null
+  const scale = cssPixelsPerImagePixel(map)
+  if (!(scale > 0)) return null
+  const cellSize = POI_CLUSTER_CELL_CSS_PX / scale
+  const clusters = ensureClusterCache(layer, pois, poiIndex, poiGroups, map.getZoom(), cellSize)
+  const click = map.latLngToContainerPoint(latlng)
+  let best: { x: number; y: number } | null = null
+  let bestDist = POI_HIT_RADIUS_CSS_PX
+  for (const cluster of clusters) {
+    const dist = click.distanceTo(map.latLngToContainerPoint(toLatLng(cluster)))
+    if (dist <= bestDist) {
+      best = { x: cluster.x, y: cluster.y }
+      bestDist = dist
+    }
+  }
+  return best
+}
+
 function drawDiscs(
   ctx: CanvasRenderingContext2D,
   nodes: PoiNode[],
@@ -179,6 +264,7 @@ function paint(
   ctx: CanvasRenderingContext2D,
   map: L.Map,
   size: L.Point,
+  layer: PoiLayer,
 ): void {
   ctx.clearRect(0, 0, size.x, size.y)
   const { pois, poiIndex, poiGroups, focusedPoiId, progress, editor } = useAppStore.getState()
@@ -197,19 +283,21 @@ function paint(
   if (zoom < POI_CLUSTER_BELOW_ZOOM) {
     const cellSize = POI_CLUSTER_CELL_CSS_PX / scale
     const pad = cellSize
-    const clusters = clusterPois(
-      poiIndex,
-      poiGroups,
-      { x0: x0 - pad, y0: y0 - pad, x1: x1 + pad, y1: y1 + pad },
-      cellSize,
-    )
-    const cellCss = cellSize * scale
-    const side = Math.max(18, cellCss * 0.6)
+    const clusters = ensureClusterCache(layer, pois, poiIndex, poiGroups, zoom, cellSize)
+    const side = BADGE_SIDE_CSS_PX
     const radius = Math.min(6, side * 0.2)
     ctx.font = 'bold 11px system-ui'
     ctx.textAlign = 'center'
     ctx.textBaseline = 'middle'
     for (const cluster of clusters) {
+      if (
+        cluster.x < x0 - pad ||
+        cluster.x > x1 + pad ||
+        cluster.y < y0 - pad ||
+        cluster.y > y1 + pad
+      ) {
+        continue
+      }
       const sx = (cluster.x - topLeft.x) * scale
       const sy = (cluster.y - topLeft.y) * scale
       const color = poiGroupColor(cluster.groupId)
@@ -222,11 +310,26 @@ function paint(
       ctx.strokeStyle = color
       ctx.lineWidth = 1
       ctx.stroke()
+      const label = formatClusterCount(cluster.count)
+      ctx.lineJoin = 'round'
+      ctx.lineWidth = 3
+      ctx.strokeStyle = 'rgba(0,0,0,0.75)'
+      ctx.strokeText(label, sx, sy)
       ctx.fillStyle = '#ffffff'
-      ctx.fillText(formatClusterCount(cluster.count), sx, sy)
+      ctx.fillText(label, sx, sy)
     }
     return
   }
+
+  if (layer.lastCollected !== progress.collected) {
+    layer.lastCollected = progress.collected
+    layer.collectedSet = new Set(progress.collected)
+  }
+  const collected = layer.collectedSet
+  const filled = layer.filled
+  const hollow = layer.hollow
+  clearBucketLists(filled)
+  clearBucketLists(hollow)
 
   const pad = POI_FOCUS_RADIUS_CSS_PX / scale
   const nodes = visiblePois(poiIndex, poiGroups, {
@@ -235,9 +338,6 @@ function paint(
     x1: x1 + pad,
     y1: y1 + pad,
   })
-  const collected = new Set(progress.collected)
-  const filled = new Map<string, PoiNode[]>()
-  const hollow = new Map<string, PoiNode[]>()
   let focused: PoiNode | null = null
   let focusedGroup: string | null = null
   for (const node of nodes) {
@@ -319,22 +419,47 @@ export function attachPoiLayer(map: L.Map): () => void {
   canvas.style.top = '0'
   pane.appendChild(canvas)
 
+  const layer: PoiLayer = {
+    clusterCache: null,
+    collectedSet: new Set(),
+    lastCollected: null,
+    filled: new Map(),
+    hollow: new Map(),
+    ctx: null,
+    lastDpr: 0,
+    lastCssWidth: 0,
+    lastCssHeight: 0,
+  }
+  activeLayer = layer
+
   let raf = 0
   let disposed = false
 
   const ensureSize = (): { ctx: CanvasRenderingContext2D; size: L.Point } | null => {
     const size = map.getSize()
     const dpr = window.devicePixelRatio || 1
+    if (
+      layer.ctx &&
+      layer.lastDpr === dpr &&
+      layer.lastCssWidth === size.x &&
+      layer.lastCssHeight === size.y
+    ) {
+      return { ctx: layer.ctx, size }
+    }
     const width = Math.round(size.x * dpr)
     const height = Math.round(size.y * dpr)
     if (canvas.width !== width || canvas.height !== height) {
       canvas.width = width
       canvas.height = height
-      canvas.style.width = `${size.x}px`
-      canvas.style.height = `${size.y}px`
     }
-    const ctx = canvas.getContext('2d')
+    canvas.style.width = `${size.x}px`
+    canvas.style.height = `${size.y}px`
+    const ctx = layer.ctx ?? canvas.getContext('2d')
     if (!ctx) return null
+    layer.ctx = ctx
+    layer.lastDpr = dpr
+    layer.lastCssWidth = size.x
+    layer.lastCssHeight = size.y
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
     return { ctx, size }
   }
@@ -343,7 +468,7 @@ export function attachPoiLayer(map: L.Map): () => void {
     if (disposed) return
     const ready = ensureSize()
     if (!ready) return
-    paint(ready.ctx, map, ready.size)
+    paint(ready.ctx, map, ready.size, layer)
   }
 
   const requestRedraw = () => {
@@ -380,6 +505,16 @@ export function attachPoiLayer(map: L.Map): () => void {
       requestRedraw()
       return
     }
+    if (state.poiGroups !== prev.poiGroups && state.focusedPoiId !== null) {
+      const node = state.poiIndex.byId.get(state.focusedPoiId)
+      const groupId = node ? poiGroupOf(state.poiIndex, node) : null
+      if (groupId === null || state.poiGroups[groupId] !== true) {
+        closePoiPopup(map)
+      }
+    }
+    if (state.focusedPoiId === null && isPoiPopupOpen()) {
+      closePoiPopup(map)
+    }
     if (state.focusedPoiId !== prev.focusedPoiId && state.focusedPoiId !== null) {
       if (poiPopupNodeId !== state.focusedPoiId) {
         const node = state.poiIndex.byId.get(state.focusedPoiId)
@@ -410,5 +545,6 @@ export function attachPoiLayer(map: L.Map): () => void {
     if (raf !== 0) cancelAnimationFrame(raf)
     closePoiPopup(map)
     canvas.remove()
+    if (activeLayer === layer) activeLayer = null
   }
 }

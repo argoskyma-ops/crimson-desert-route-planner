@@ -74,4 +74,4 @@ export const POI_CLUSTER_CELL_CSS_PX = 64
 export const POI_DISC_RADIUS_CSS_PX = 2.5 // a 5 px disc
 export const POI_FOCUS_RADIUS_CSS_PX = 6
 /** Tap tolerance for opening a node popup. */
-export const POI_HIT_RADIUS_CSS_PX = 16
+export const POI_HIT_RADIUS_CSS_PX = 22

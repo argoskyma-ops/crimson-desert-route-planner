@@ -16,6 +16,8 @@ export interface PoiIndex {
   /** Nodes bucketed by `${cellX}:${cellY}` of floor(x / cellSize), floor(y / cellSize). */
   cells: Map<string, PoiNode[]>
   typeToGroup: Map<string, string>
+  /** Type id → type label and group label. */
+  labels: Map<string, { type: string; group: string }>
   nodes: PoiNode[]
   byId: Map<string, PoiNode>
 }
@@ -42,10 +44,12 @@ function inBounds(node: PoiNode, bounds: PoiBounds): boolean {
 export function buildPoiIndex(file: PoiFile, cellSize = POI_INDEX_CELL_PX): PoiIndex {
   const cells = new Map<string, PoiNode[]>()
   const typeToGroup = new Map<string, string>()
+  const labels = new Map<string, { type: string; group: string }>()
   const byId = new Map<string, PoiNode>()
   for (const group of file.groups) {
     for (const type of group.types) {
       typeToGroup.set(type.id, group.id)
+      labels.set(type.id, { type: type.label, group: group.label })
     }
   }
   for (const node of file.nodes) {
@@ -59,6 +63,7 @@ export function buildPoiIndex(file: PoiFile, cellSize = POI_INDEX_CELL_PX): PoiI
     cellSize,
     cells,
     typeToGroup,
+    labels,
     nodes: file.nodes,
     byId,
   }

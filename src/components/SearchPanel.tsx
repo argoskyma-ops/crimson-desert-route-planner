@@ -81,7 +81,8 @@ export default function SearchPanel() {
     const index = poiIndex
     if (!index) return
     const map = mapRef.current
-    const centre = map ? fromLatLng(map.getCenter()) : { x: 4096, y: 4096 }
+    // Pywel window centre; bounds [1024, 1544, 6248, 6832]
+    const centre = map ? fromLatLng(map.getCenter()) : { x: 3636, y: 4188 }
     const node = nearestPoiOfType(index, hit.ref, centre)
     if (node === null) return
     focusPoi(node.id)

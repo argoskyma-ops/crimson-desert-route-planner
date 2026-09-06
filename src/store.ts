@@ -157,6 +157,7 @@ interface AppState {
   setPois: (file: PoiFile | null, error?: string | null) => void
   togglePoiGroup: (groupId: string) => void
   setPoiGroup: (groupId: string, on: boolean) => void
+  setPoiGroups: (groups: Record<string, boolean>) => void
   focusPoi: (nodeId: string | null) => void
   toggleLayers: () => void
   setEditor: (partial: Partial<EditorState>) => void
@@ -348,11 +349,16 @@ export const useAppStore = create<AppState>((set) => ({
         poiGroups[group.id] =
           existing !== undefined ? existing : poiGroupDefault(group.id, group.defaultOn)
       }
+      const poiIndex = buildPoiIndex(file)
       return {
         pois: file,
         poisError: error ?? null,
-        poiIndex: buildPoiIndex(file),
+        poiIndex,
         poiGroups,
+        focusedPoiId:
+          s.focusedPoiId !== null && !poiIndex.byId.has(s.focusedPoiId)
+            ? null
+            : s.focusedPoiId,
       }
     }),
   togglePoiGroup: (groupId) =>
@@ -363,6 +369,7 @@ export const useAppStore = create<AppState>((set) => ({
     set((s) => ({
       poiGroups: { ...s.poiGroups, [groupId]: on },
     })),
+  setPoiGroups: (groups) => set({ poiGroups: groups }),
   focusPoi: (nodeId) =>
     set((s) => {
       if (nodeId === null) return { focusedPoiId: null }

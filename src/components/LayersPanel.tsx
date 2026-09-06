@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import { isPoiCheckable, poiGroupColor, poiGroupDefault, poiProgressKey } from '../config/pois'
+import { isPoiCheckable, poiGroupColor, poiGroupDefault } from '../config/pois'
 import { countPois } from '../content/pois-loader'
 import { useAppStore } from '../store'
 
@@ -18,20 +18,22 @@ export default function LayersPanel() {
   const poisError = useAppStore((s) => s.poisError)
   const poiGroups = useAppStore((s) => s.poiGroups)
   const collected = useAppStore((s) => s.progress.collected)
+  const poiIndex = useAppStore((s) => s.poiIndex)
   const togglePoiGroup = useAppStore((s) => s.togglePoiGroup)
-  const setPoiGroup = useAppStore((s) => s.setPoiGroup)
+  const setPoiGroups = useAppStore((s) => s.setPoiGroups)
 
   const counts = useMemo(() => (pois ? countPois(pois) : null), [pois])
   const collectedByType = useMemo(() => {
     const byType = new Map<string, number>()
-    if (!pois) return byType
-    const keys = new Set(collected)
-    for (const node of pois.nodes) {
-      if (!keys.has(poiProgressKey(node.id))) continue
+    if (!poiIndex) return byType
+    for (const key of collected) {
+      if (!key.startsWith('poi:')) continue
+      const node = poiIndex.byId.get(key.slice(4))
+      if (!node) continue
       byType.set(node.type, (byType.get(node.type) ?? 0) + 1)
     }
     return byType
-  }, [pois, collected])
+  }, [poiIndex, collected])
 
   const enabledCount = pois
     ? pois.groups.reduce((n, group) => n + (poiGroups[group.id] === true ? 1 : 0), 0)
@@ -58,7 +60,7 @@ export default function LayersPanel() {
         </div>
       ) : (
         <>
-          <ul className="mt-2 space-y-1">
+          <ul className="mt-2 max-h-[40dvh] space-y-1 overflow-y-auto overscroll-contain">
             {pois.groups.map((group) => {
               const on = poiGroups[group.id] === true
               const total = counts?.byGroup.get(group.id) ?? 0
@@ -109,7 +111,9 @@ export default function LayersPanel() {
               type="button"
               className={btnClass}
               onClick={() => {
-                for (const group of pois.groups) setPoiGroup(group.id, false)
+                const groups: Record<string, boolean> = {}
+                for (const group of pois.groups) groups[group.id] = false
+                setPoiGroups(groups)
               }}
             >
               All off
@@ -118,9 +122,11 @@ export default function LayersPanel() {
               type="button"
               className={btnClass}
               onClick={() => {
+                const groups: Record<string, boolean> = {}
                 for (const group of pois.groups) {
-                  setPoiGroup(group.id, poiGroupDefault(group.id, group.defaultOn))
+                  groups[group.id] = poiGroupDefault(group.id, group.defaultOn)
                 }
+                setPoiGroups(groups)
               }}
             >
               Defaults

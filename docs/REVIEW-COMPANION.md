@@ -6,8 +6,15 @@ orchestrator's status line above it says what was done with the findings.
 
 ## R3: Phase 2 (POI fetch, loader, canvas layer, layers panel)
 
-Status 2026-09-06: filed; fixes dispatched as one Grok task (see the next
-status line once applied). Orchestrator spot-check before the review: the
+Status 2026-09-06: applied (commit "Apply the R3 review of the POI
+layers", Grok, one pass). The blocking item (popup dismissal placed a pin)
+and every should-fix and nit below are in, except the three that do not
+stand (next paragraph). While verifying, the orchestrator removed a
+wholesale `popup.off('remove')` from `closePoiPopup`: it also stripped
+Leaflet's own once-listener that unhooks a closed popup from zoom
+animations, which surfaced as "Cannot read properties of null (reading
+'_latLngToNewLayerPoint')" on the next zoom. Orchestrator spot-check before
+the review: the
 1,631 nodes that `data/pois.json` shares with the committed
 `data/fast-travel.json` (teleports, bonfires, camps, villages, hearths,
 castles) match it within 0.1 px with identical names; of 50 random named

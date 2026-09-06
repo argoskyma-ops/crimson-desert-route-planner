@@ -252,4 +252,15 @@ describe('loadPois', () => {
     vi.stubGlobal('fetch', vi.fn().mockRejectedValue(new Error('network')))
     expect(await loadPois()).toBeNull()
   })
+
+  it('rejects when json() rejects', async () => {
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockResolvedValue({
+        ok: true,
+        json: () => Promise.reject(new Error('bad json')),
+      }),
+    )
+    await expect(loadPois()).rejects.toThrow()
+  })
 })

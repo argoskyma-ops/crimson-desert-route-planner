@@ -4,6 +4,7 @@ import {
   poiGroupColor,
   poiGroupDefault,
   POI_FALLBACK_COLOR,
+  POI_HIT_RADIUS_CSS_PX,
 } from './pois'
 
 describe('poi config', () => {
@@ -22,5 +23,9 @@ describe('poi config', () => {
   it('falls back when a group has no colour', () => {
     expect(poiGroupColor('not-a-group')).toBe(POI_FALLBACK_COLOR)
     expect(poiGroupColor('treasures')).toBe('#fde047')
+  })
+
+  it('keeps the tap hit radius at 22 CSS px', () => {
+    expect(POI_HIT_RADIUS_CSS_PX).toBe(22)
   })
 })

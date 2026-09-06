@@ -144,4 +144,33 @@ describe('poi-index', () => {
     expect(nearestPoiOfType(index, 'collection_chest', { x: 250, y: 0 })?.id).toBe('chest_b')
     expect(nearestPoiOfType(index, 'nope', { x: 0, y: 0 })).toBeNull()
   })
+
+  it('maps each type id to its type and group labels', () => {
+    expect(index.labels.get('collection_chest')).toEqual({
+      type: 'Collectible',
+      group: 'Treasures',
+    })
+    expect(index.labels.get('mine_iron')).toEqual({
+      type: 'Iron Mine',
+      group: 'Mining',
+    })
+  })
+
+  it('keeps the first group seen when two groups tie in a cluster cell', () => {
+    const tied = buildPoiIndex({
+      version: 1,
+      imageSize: [8192, 8192],
+      source: 'test',
+      fetched: '2026-09-06',
+      groups: fixture().groups,
+      nodes: [
+        { id: 'chest_tie', type: 'collection_chest', x: 10, y: 10 },
+        { id: 'iron_tie', type: 'mine_iron', x: 20, y: 20 },
+      ],
+    })
+    const clusters = clusterPois(tied, ALL_ON, CELL_0, 256)
+    expect(clusters).toHaveLength(1)
+    expect(clusters[0]?.count).toBe(2)
+    expect(clusters[0]?.groupId).toBe('treasures')
+  })
 })

@@ -254,6 +254,7 @@ def main() -> None:
             dropped_unknown += 1
             continue
         if ident in seen:
+            print(f"Skipped duplicate id: {ident}", file=sys.stderr)
             continue
         seen.add(ident)
         kept_types.add(node_type)
@@ -267,6 +268,13 @@ def main() -> None:
         if name:
             node["name"] = name
         nodes.append(node)
+
+    if not nodes:
+        print(
+            "No nodes written; refusing to overwrite the output with an empty file",
+            file=sys.stderr,
+        )
+        sys.exit(1)
 
     groups, dropped_types, dropped_groups = build_groups(filters, pairs, kept_types)
     nodes.sort(key=lambda item: (str(item["type"]), float(item["y"]), float(item["x"]), str(item["id"])))

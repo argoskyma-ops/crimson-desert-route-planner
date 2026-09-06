@@ -1,6 +1,6 @@
 /**
  * Load and validate data/pois.json (docs/DECISIONS.md D14).
- * Missing file: null. Bad shape: throws.
+ * Missing file: null. Bad JSON: rejects. Bad shape: throws.
  */
 import type { PoiTypeInfo } from './search.ts'
 
@@ -37,17 +37,18 @@ export interface PoiFile {
 const FETCHED_RE = /^\d{4}-\d{2}-\d{2}$/
 
 /**
- * Fetch `/data/pois.json`. Null on 404, network or JSON failure; throws from validatePois on a bad shape.
+ * Fetch `/data/pois.json`. Null on 404 or a fetch rejection; a JSON parse
+ * failure rejects; validatePois throws on a bad shape.
  */
 export async function loadPois(): Promise<PoiFile | null> {
-  let data: unknown
+  let res: Response
   try {
-    const res = await fetch('/data/pois.json')
-    if (!res.ok) return null
-    data = await res.json()
+    res = await fetch('/data/pois.json')
   } catch {
     return null
   }
+  if (!res.ok) return null
+  const data: unknown = await res.json()
   return validatePois(data)
 }
 
