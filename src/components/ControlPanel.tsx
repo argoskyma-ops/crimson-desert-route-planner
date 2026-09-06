@@ -1,8 +1,8 @@
 import { MODE_LABELS } from '../config/travel'
 import { MODES } from '../routing/types'
 import { useAppStore } from '../store'
-import FastTravelSearch from './FastTravelSearch'
 import RouteSummary from './RouteSummary'
+import SearchPanel from './SearchPanel'
 
 export default function ControlPanel() {
   const mode = useAppStore((s) => s.mode)
@@ -44,7 +44,7 @@ export default function ControlPanel() {
         })}
       </div>
 
-      <FastTravelSearch />
+      <SearchPanel />
 
       <button
         type="button"

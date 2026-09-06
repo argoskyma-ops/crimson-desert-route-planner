@@ -82,7 +82,7 @@ Conventions: coordinates are canonical zoom-4 px (D3); no DOM or Leaflet in
   number of seed records; every reverse relation on the seeds is present;
   `npm run build` output contains `dist/data/content/meta.json`.
 
-- [ ] **T12. Global search.** (D15)
+- [x] **T12. Global search.** (D15)
   Files: `src/content/search.ts` (+ test), `src/components/SearchPanel.tsx`,
   `src/components/ControlPanel.tsx`, `src/store.ts`; delete
   `src/components/FastTravelSearch.tsx` after moving its chips.
