@@ -12,6 +12,7 @@ function resetEditor() {
     poiGroups: {},
     focusedPoiId: null,
     layersOpen: false,
+    panelTab: 'search',
     editor: {
       active: false,
       tool: 'draw',
@@ -152,6 +153,22 @@ describe('store', () => {
       nodes: file.nodes.filter((node) => node.id !== 'mine_iron@1:1'),
     })
     expect(useAppStore.getState().focusedPoiId).toBeNull()
+  })
+
+  it('setPanelTab quests closes layers; search keeps layersOpen', () => {
+    useAppStore.setState({ layersOpen: true, panelTab: 'search' })
+    useAppStore.getState().setPanelTab('quests')
+    expect(useAppStore.getState().panelTab).toBe('quests')
+    expect(useAppStore.getState().layersOpen).toBe(false)
+
+    useAppStore.setState({ layersOpen: true })
+    useAppStore.getState().setPanelTab('search')
+    expect(useAppStore.getState().panelTab).toBe('search')
+    expect(useAppStore.getState().layersOpen).toBe(true)
+
+    useAppStore.setState({ layersOpen: false })
+    useAppStore.getState().setPanelTab('search')
+    expect(useAppStore.getState().layersOpen).toBe(false)
   })
 
   it('setPois keeps focusedPoiId when the new file still contains it', () => {

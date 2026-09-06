@@ -30,6 +30,8 @@ import { buildGraph, findRoute, type RoadGraph } from './routing'
 import type { Mode, Pt, RoadClass, RoadsFile, Route } from './routing/types'
 import type { WaterMask } from './routing/water-mask'
 
+export type PanelTab = 'search' | 'quests'
+
 /**
  * Leaflet map instance created by MapView. T4/T6 read `mapRef.current`.
  * Module-level (not Zustand state) so assigning it does not re-render subscribers.
@@ -133,6 +135,7 @@ interface AppState {
   poiGroups: Record<string, boolean>
   focusedPoiId: string | null
   layersOpen: boolean
+  panelTab: PanelTab
   editor: EditorState
   setPin: (which: 'a' | 'b', pt: Pt | null) => void
   placePin: (pt: Pt) => void
@@ -160,6 +163,7 @@ interface AppState {
   setPoiGroups: (groups: Record<string, boolean>) => void
   focusPoi: (nodeId: string | null) => void
   toggleLayers: () => void
+  setPanelTab: (tab: PanelTab) => void
   setEditor: (partial: Partial<EditorState>) => void
   startDraft: () => void
   addDraftPoint: (pt: DraftPoint) => void
@@ -218,6 +222,7 @@ export const useAppStore = create<AppState>((set) => ({
   poiGroups: {},
   focusedPoiId: null,
   layersOpen: false,
+  panelTab: 'search',
   editor: initialEditor,
   setPin: (which, pt) =>
     set((s) => {
@@ -384,6 +389,11 @@ export const useAppStore = create<AppState>((set) => ({
       }
     }),
   toggleLayers: () => set((s) => ({ layersOpen: !s.layersOpen })),
+  setPanelTab: (tab) =>
+    set((s) => ({
+      panelTab: tab,
+      layersOpen: tab === 'quests' ? false : s.layersOpen,
+    })),
   setEditor: (partial) => set((s) => ({ editor: { ...s.editor, ...partial } })),
   startDraft: () =>
     set((s) => ({

@@ -1,13 +1,19 @@
 import { useState } from 'react'
 import { MODE_LABELS } from '../config/travel'
 import { MODES } from '../routing/types'
-import { useAppStore } from '../store'
+import { useAppStore, type PanelTab } from '../store'
 import LayersPanel from './LayersPanel'
+import QuestLog from './QuestLog'
 import RouteSummary from './RouteSummary'
 import SearchPanel from './SearchPanel'
 
 const clearBtnClass =
   'inline-flex min-h-11 items-center justify-center rounded-lg border border-white/10 bg-neutral-800/80 px-3 text-sm font-medium text-neutral-100 hover:bg-neutral-700/80 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-neutral-800/80'
+
+const PANEL_TABS: { id: PanelTab; label: string }[] = [
+  { id: 'search', label: 'Search' },
+  { id: 'quests', label: 'Quests' },
+]
 
 export default function ControlPanel() {
   const mode = useAppStore((s) => s.mode)
@@ -19,12 +25,26 @@ export default function ControlPanel() {
   const selectedEntityId = useAppStore((s) => s.selectedEntityId)
   const layersOpen = useAppStore((s) => s.layersOpen)
   const toggleLayers = useAppStore((s) => s.toggleLayers)
+  const panelTab = useAppStore((s) => s.panelTab)
+  const setPanelTab = useAppStore((s) => s.setPanelTab)
   const [expandedFor, setExpandedFor] = useState<string | null>(null)
   const collapsed = selectedEntityId !== null && expandedFor !== selectedEntityId
 
   const hasPins = pins.a !== null || pins.b !== null
   const bothPlaced = pins.a !== null && pins.b !== null
   const noPins = pins.a === null && pins.b === null
+
+  const errors = (
+    <>
+      {roadsError ? (
+        <p className="mt-3 px-1 text-xs text-amber-400">{roadsError}</p>
+      ) : null}
+
+      {contentError ? (
+        <p className="mt-3 px-1 text-xs text-amber-400">{contentError}</p>
+      ) : null}
+    </>
+  )
 
   return (
     <aside
@@ -69,44 +89,70 @@ export default function ControlPanel() {
           })}
         </div>
 
-        <SearchPanel />
-
-        <div className="mt-3 grid grid-cols-2 gap-2">
-          <button
-            type="button"
-            onClick={clearPins}
-            disabled={!hasPins}
-            className={clearBtnClass}
-          >
-            Clear
-          </button>
-          <button
-            type="button"
-            aria-pressed={layersOpen}
-            onClick={() => toggleLayers()}
-            className={clearBtnClass}
-          >
-            Layers
-          </button>
+        <div className="mt-3 grid grid-cols-2 gap-1 rounded-lg bg-neutral-800/90 p-1">
+          {PANEL_TABS.map((tab) => {
+            const selected = panelTab === tab.id
+            return (
+              <button
+                key={tab.id}
+                type="button"
+                aria-pressed={selected}
+                onClick={() => setPanelTab(tab.id)}
+                className={`inline-flex min-h-11 items-center justify-center rounded-md px-3 text-sm font-medium ${
+                  selected
+                    ? 'bg-neutral-100 text-neutral-900'
+                    : 'text-neutral-300 hover:bg-neutral-700/70'
+                }`}
+              >
+                {tab.label}
+              </button>
+            )
+          })}
         </div>
 
-        {layersOpen ? <LayersPanel /> : null}
+        {panelTab === 'search' ? (
+          <>
+            <SearchPanel />
 
-        {noPins ? (
-          <p className="mt-3 px-1 text-xs text-neutral-400">Tap the map to place A, then B</p>
-        ) : bothPlaced ? (
-          <p className="mt-3 px-1 text-xs text-neutral-400">Drag pins to move them</p>
-        ) : null}
+            <div className="mt-3 grid grid-cols-2 gap-2">
+              <button
+                type="button"
+                onClick={clearPins}
+                disabled={!hasPins}
+                className={clearBtnClass}
+              >
+                Clear
+              </button>
+              <button
+                type="button"
+                aria-pressed={layersOpen}
+                onClick={() => toggleLayers()}
+                className={clearBtnClass}
+              >
+                Layers
+              </button>
+            </div>
 
-        {roadsError ? (
-          <p className="mt-3 px-1 text-xs text-amber-400">{roadsError}</p>
-        ) : null}
+            {layersOpen ? <LayersPanel /> : null}
 
-        {contentError ? (
-          <p className="mt-3 px-1 text-xs text-amber-400">{contentError}</p>
-        ) : null}
+            {noPins ? (
+              <p className="mt-3 px-1 text-xs text-neutral-400">Tap the map to place A, then B</p>
+            ) : bothPlaced ? (
+              <p className="mt-3 px-1 text-xs text-neutral-400">Drag pins to move them</p>
+            ) : null}
 
-        <RouteSummary />
+            {errors}
+
+            <RouteSummary />
+          </>
+        ) : (
+          <>
+            <div className="max-h-[60dvh] overflow-y-auto overscroll-contain">
+              <QuestLog />
+            </div>
+            {errors}
+          </>
+        )}
       </div>
     </aside>
   )

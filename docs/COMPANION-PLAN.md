@@ -180,7 +180,7 @@ Conventions: coordinates are canonical zoom-4 px (D3); no DOM or Leaflet in
 
 ## Phase 3. Quests and storylines
 
-- [ ] **T17. Storyline and quest views.** (D12, D16)
+- [x] **T17. Storyline and quest views.** (D12, D16)
   Files: `src/components/entity/StorylineSection.tsx`,
   `src/components/entity/QuestSection.tsx` (replacing T13's stubs),
   `src/components/QuestLog.tsx`, `src/components/ControlPanel.tsx`.
