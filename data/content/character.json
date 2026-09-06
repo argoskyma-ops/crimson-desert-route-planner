@@ -174,6 +174,132 @@
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:marius",
+      "type": "character",
+      "name": "Marius",
+      "role": "Greymane comrade",
+      "factions": ["faction:greymanes"],
+      "summary": "A Greymane walked back to camp in Chapter 3, then sought out again as Howling Hill takes shape.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/586592", "title": "Game8: Chapter 3 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:marquis-serkis",
+      "type": "character",
+      "name": "Marquis Serkis",
+      "role": "Hernand marquis",
+      "home": "place:serkis-estate",
+      "summary": "The Hernand marquis who sets the Greymanes to work rebuilding after Golden Greed.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/586592", "title": "Game8: Chapter 3 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:yann",
+      "type": "character",
+      "name": "Yann",
+      "role": "House of Healing contact",
+      "summary": "The person who leads Kliff through the House of Healing during Familiar Curses.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/586592", "title": "Game8: Chapter 3 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:andrew",
+      "type": "character",
+      "name": "Andrew",
+      "role": "Greymane comrade",
+      "factions": ["faction:greymanes"],
+      "summary": "A comrade whose condition is checked after the draught during Hope After the Draught.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/586592", "title": "Game8: Chapter 3 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:grimnir",
+      "type": "character",
+      "name": "Grimnir",
+      "role": "Kilnden Workshop contact",
+      "home": "place:kilnden-workshop",
+      "summary": "The workshop contact who hands over the iron pot in Chapter 4.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/586747", "title": "Game8: Chapter 4 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:duane",
+      "type": "character",
+      "name": "Duane",
+      "role": "Archery contest host",
+      "summary": "The host of the archery contest during Skilled in Archery.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/586747", "title": "Game8: Chapter 4 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:octavius",
+      "type": "character",
+      "name": "Octavius",
+      "role": "Scholastone experimenter",
+      "home": "place:scholastone-institute",
+      "summary": "A Scholastone experimenter whose work Kliff helps during On the Right Path.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/586747", "title": "Game8: Chapter 4 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:dean-of-the-scholastone-institute",
+      "type": "character",
+      "name": "Dean of the Scholastone Institute",
+      "role": "Head of Scholastone",
+      "home": "place:scholastone-institute",
+      "summary": "The head of the Scholastone Institute, met when Kliff first reaches the school.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/586747", "title": "Game8: Chapter 4 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:alustin",
+      "type": "character",
+      "name": "Alustin",
+      "role": "Letter writer",
+      "summary": "The writer of the letter that points Kliff toward Scholastone in Chapter 4.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/586747", "title": "Game8: Chapter 4 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:grundir",
+      "type": "character",
+      "name": "Grundir",
+      "role": "Rift witness",
+      "summary": "The person spoken to after the rift in Obsession and Madness.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/586747", "title": "Game8: Chapter 4 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
     }
   ]
 }

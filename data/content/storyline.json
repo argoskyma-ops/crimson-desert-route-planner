@@ -8,7 +8,7 @@
       "name": "Main story",
       "kind": "main",
       "summary": "Kliff's campaign: a prologue, twelve chapters and an epilogue, played in a fixed order.",
-      "body": "GameRant's published list names 206 main quests across fourteen sections; this record currently holds the 36 quests of the Prologue through Chapter 2, and later chapters stay empty until those parts are written. The campaign is linear. Sources disagree on whether the opening Greymane camp lies in Hernand or Pailune, so the six prologue quests omit a region. Journey's End is treated as the first Epilogue quest, not as the close of Chapter 12.",
+      "body": "GameRant's published list names 206 main quests across fourteen sections; this record currently holds the 72 quests of the Prologue through Chapter 4, and later chapters stay empty until those parts are written. The campaign is linear. Sources disagree on whether the opening Greymane camp lies in Hernand or Pailune, so the six prologue quests omit a region. Journey's End is treated as the first Epilogue quest, not as the close of Chapter 12.",
       "chapters": [
         {
           "title": "Prologue: Dead of Night",
@@ -63,14 +63,52 @@
         },
         {
           "title": "Chapter 3: Howling Hill",
-          "quests": [],
+          "quests": [
+            "quest:homestead",
+            "quest:old-friend",
+            "quest:first-step-to-rebuilding",
+            "quest:a-fresh-start",
+            "quest:reward-for-their-sweat",
+            "quest:return-of-the-comrade",
+            "quest:familiar-curses",
+            "quest:the-face-behind-the-mask",
+            "quest:return",
+            "quest:traces-in-the-manor",
+            "quest:nonhuman",
+            "quest:seed-of-unease",
+            "quest:dance-with-the-devil",
+            "quest:pioneering",
+            "quest:hope-after-the-draught",
+            "quest:scattered-comrades",
+            "quest:rumors-from-the-sawmill",
+            "quest:a-gentle-touch",
+            "quest:bustling-hill",
+            "quest:greymanes-reunited"
+          ],
           "pointsOfNoReturn": [
             "Once this chapter closes, Damiane cannot be summoned for a while unless her side quests were finished first."
           ]
         },
         {
           "title": "Chapter 4: The Price of Knowledge",
-          "quests": []
+          "quests": [
+            "quest:mysterious-iron-pot",
+            "quest:kilnden-workshop",
+            "quest:kiln-repair-at-the-kilnden-workshop",
+            "quest:the-mysterious-pot",
+            "quest:the-iron-pots-usage",
+            "quest:daily-life",
+            "quest:disturbance-at-the-arena",
+            "quest:skilled-in-archery",
+            "quest:forbidden-knowledge",
+            "quest:the-words-of-alustin",
+            "quest:scholastone",
+            "quest:on-the-right-path",
+            "quest:gate-to-the-otherworld",
+            "quest:spire-of-the-stars",
+            "quest:obsession-and-madness",
+            "quest:casted-shadow"
+          ]
         },
         {
           "title": "Chapter 5: Guest Unbidden",

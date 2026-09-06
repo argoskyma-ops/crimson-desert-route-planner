@@ -167,6 +167,98 @@
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:howling-hill",
+      "type": "place",
+      "name": "Howling Hill",
+      "kind": "camp",
+      "region": "region:hernand",
+      "summary": "The Greymane camp raised on a Hernand hill in Chapter 3, later expanded and used as a hub.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/586592", "title": "Game8: Chapter 3 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:glenbright-manor",
+      "type": "place",
+      "name": "Glenbright Manor",
+      "kind": "estate",
+      "region": "region:hernand",
+      "summary": "A Hernand manor searched for traces while hunting the Face Behind the Mask.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/586592", "title": "Game8: Chapter 3 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:reedfield-graves",
+      "type": "place",
+      "name": "Reedfield Graves",
+      "kind": "landmark",
+      "region": "region:hernand",
+      "summary": "The grave ground where the Devil of the Reed Field is tracked in Chapter 3.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/586592", "title": "Game8: Chapter 3 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:house-of-healing",
+      "type": "place",
+      "name": "House of Healing",
+      "kind": "other",
+      "region": "region:hernand",
+      "summary": "The healing house in Hernand that Familiar Curses sends Kliff into.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/586592", "title": "Game8: Chapter 3 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:kilnden-workshop",
+      "type": "place",
+      "name": "Kilnden Workshop",
+      "kind": "other",
+      "region": "region:hernand",
+      "summary": "The workshop where an explosion opens Chapter 4 and the kilns are put back to work.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/586747", "title": "Game8: Chapter 4 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:scholastone-institute",
+      "type": "place",
+      "name": "Scholastone Institute",
+      "aliases": ["Scholastone"],
+      "kind": "other",
+      "region": "region:hernand",
+      "summary": "The institute reached in The Price of Knowledge, seat of the Dean and of Octavius's experiment.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/586747", "title": "Game8: Chapter 4 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:spire-of-the-stars",
+      "type": "place",
+      "name": "Spire of the Stars",
+      "kind": "spire",
+      "region": "region:hernand",
+      "summary": "The spire climbed in Chapter 4 to reach an Abyss rift.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/586747", "title": "Game8: Chapter 4 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
     }
   ]
 }

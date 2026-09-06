@@ -1706,6 +1706,1678 @@
       "gameVersion": "2.01.00"
     },
     {
+      "id": "quest:homestead",
+      "type": "quest",
+      "name": "Homestead",
+      "kind": "main",
+      "chapter": "Chapter 3: Howling Hill",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Leave the City of Hernand and start raising a new Greymane camp on Howling Hill.",
+      "prerequisites": [
+        {
+          "kind": "chapter",
+          "value": 3,
+          "text": "Reach Chapter 3"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Return to the City of Hernand after the Goldleaf affair.",
+          "action": "travel",
+          "refs": ["place:hernand-castle"]
+        },
+        {
+          "text": "Begin the work of putting a Greymane camp back together on Howling Hill.",
+          "action": "other",
+          "refs": ["place:howling-hill", "faction:greymanes"]
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "unlock",
+          "text": "Camp management"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586592",
+          "title": "Game8: Chapter 3 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:old-friend",
+      "type": "quest",
+      "name": "Old Friend",
+      "kind": "main",
+      "chapter": "Chapter 3: Howling Hill",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Search the back alleys of Hernand for a lead on someone from the old days.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:homestead",
+          "text": "Complete Homestead"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Leave the main streets of Hernand and enter the back alleys.",
+          "action": "travel",
+          "refs": ["place:hernand-castle"]
+        },
+        {
+          "text": "Search those lanes for the old friend the job is pointing at.",
+          "action": "other",
+          "refs": ["place:hernand-castle"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586592",
+          "title": "Game8: Chapter 3 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:first-step-to-rebuilding",
+      "type": "quest",
+      "name": "First Step to Rebuilding",
+      "kind": "main",
+      "chapter": "Chapter 3: Howling Hill",
+      "storyline": "storyline:main",
+      "giver": "character:marquis-serkis",
+      "region": "region:hernand",
+      "summary": "Hear Marquis Serkis, then take the rebuilding brief on to Marshal Middler.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:old-friend",
+          "text": "Complete Old Friend"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Speak with Marquis Serkis about putting the Greymane camp back on its feet.",
+          "action": "talk",
+          "refs": ["character:marquis-serkis"]
+        },
+        {
+          "text": "Carry that word to Marshal Middler and hear how the work should start.",
+          "action": "talk",
+          "refs": ["character:barden-middler"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586592",
+          "title": "Game8: Chapter 3 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:a-fresh-start",
+      "type": "quest",
+      "name": "A Fresh Start",
+      "kind": "main",
+      "chapter": "Chapter 3: Howling Hill",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Haul sacks, drive stakes, and raise a banner so the new camp has a shape.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:first-step-to-rebuilding",
+          "text": "Complete First Step to Rebuilding"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Move the sacks stacked for the new camp on Howling Hill.",
+          "action": "other",
+          "refs": ["place:howling-hill"]
+        },
+        {
+          "text": "Drive the stakes that mark the camp's ground.",
+          "action": "other",
+          "refs": ["place:howling-hill"]
+        },
+        {
+          "text": "Raise a banner over the site.",
+          "action": "other",
+          "refs": ["place:howling-hill", "faction:greymanes"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586592",
+          "title": "Game8: Chapter 3 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:reward-for-their-sweat",
+      "type": "quest",
+      "name": "Reward for Their Sweat",
+      "kind": "main",
+      "chapter": "Chapter 3: Howling Hill",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Cook a meal at the new camp and serve it as a feast for the workers.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:a-fresh-start",
+          "text": "Complete A Fresh Start"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Cook the recipe marked for the camp feast.",
+          "action": "craft",
+          "refs": ["place:howling-hill"]
+        },
+        {
+          "text": "Serve that meal to the people who have been raising the site.",
+          "action": "other",
+          "refs": ["place:howling-hill"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586592",
+          "title": "Game8: Chapter 3 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:return-of-the-comrade",
+      "type": "quest",
+      "name": "Return of the Comrade",
+      "kind": "main",
+      "chapter": "Chapter 3: Howling Hill",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Find Marius and walk him back to the Greymane camp on Howling Hill.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:reward-for-their-sweat",
+          "text": "Complete Reward for Their Sweat"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Seek out Marius away from the hill.",
+          "action": "travel",
+          "refs": ["character:marius"]
+        },
+        {
+          "text": "Escort him to the camp on Howling Hill.",
+          "action": "other",
+          "refs": ["character:marius", "place:howling-hill"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586592",
+          "title": "Game8: Chapter 3 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:familiar-curses",
+      "type": "quest",
+      "name": "Familiar Curses",
+      "kind": "main",
+      "chapter": "Chapter 3: Howling Hill",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Look through the House of Healing and stay with Yann as the trail unfolds.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:return-of-the-comrade",
+          "text": "Complete Return of the Comrade"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Go to the House of Healing and search it.",
+          "action": "travel",
+          "refs": ["place:house-of-healing"]
+        },
+        {
+          "text": "Follow Yann from there and finish the look-through.",
+          "action": "other",
+          "refs": ["character:yann", "place:house-of-healing"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586592",
+          "title": "Game8: Chapter 3 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:the-face-behind-the-mask",
+      "type": "quest",
+      "name": "The Face Behind the Mask",
+      "kind": "main",
+      "chapter": "Chapter 3: Howling Hill",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Go to Serkis Estate and take up the hunt that leads toward the Devil of the Reed Field.",
+      "body": "No source gives this arc header its own objective; the steps are inferred from the Chapter 3 mask-and-devil jobs that sit under it.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:familiar-curses",
+          "text": "Complete Familiar Curses"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Travel to Serkis Estate.",
+          "action": "travel",
+          "refs": ["place:serkis-estate"]
+        },
+        {
+          "text": "Take the lead that points at the mask and the thing wearing it.",
+          "action": "talk",
+          "refs": ["place:serkis-estate"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586592",
+          "title": "Game8: Chapter 3 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:return",
+      "type": "quest",
+      "name": "Return",
+      "kind": "main",
+      "chapter": "Chapter 3: Howling Hill",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Find Marius and hear what he has to say after the camp work.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:the-face-behind-the-mask",
+          "text": "Complete The Face Behind the Mask"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Seek out Marius.",
+          "action": "travel",
+          "refs": ["character:marius"]
+        },
+        {
+          "text": "Speak with him and take the next instruction.",
+          "action": "talk",
+          "refs": ["character:marius"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586592",
+          "title": "Game8: Chapter 3 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:traces-in-the-manor",
+      "type": "quest",
+      "name": "Traces in the Manor",
+      "kind": "main",
+      "chapter": "Chapter 3: Howling Hill",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Search Glenbright Manor for whatever the mask hunt left behind.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:return",
+          "text": "Complete Return"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Travel to Glenbright Manor.",
+          "action": "travel",
+          "refs": ["place:glenbright-manor"]
+        },
+        {
+          "text": "Search the rooms and grounds for traces of the hunt.",
+          "action": "other",
+          "refs": ["place:glenbright-manor"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586592",
+          "title": "Game8: Chapter 3 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:nonhuman",
+      "type": "quest",
+      "name": "Nonhuman",
+      "kind": "main",
+      "chapter": "Chapter 3: Howling Hill",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Follow the Devil of the Reed Field from the manor trail to Reedfield Graves.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:traces-in-the-manor",
+          "text": "Complete Traces in the Manor"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Pick up the Devil of the Reed Field's trail after Glenbright Manor.",
+          "action": "travel",
+          "refs": ["place:glenbright-manor"]
+        },
+        {
+          "text": "Track that trail as far as Reedfield Graves.",
+          "action": "other",
+          "refs": ["place:reedfield-graves"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586592",
+          "title": "Game8: Chapter 3 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:seed-of-unease",
+      "type": "quest",
+      "name": "Seed of Unease",
+      "kind": "main",
+      "chapter": "Chapter 3: Howling Hill",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Study the altar and the doll left at Reedfield Graves.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:nonhuman",
+          "text": "Complete Nonhuman"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Examine the altar at Reedfield Graves.",
+          "action": "other",
+          "refs": ["place:reedfield-graves"]
+        },
+        {
+          "text": "Examine the doll left with it.",
+          "action": "collect",
+          "refs": ["place:reedfield-graves"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586592",
+          "title": "Game8: Chapter 3 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:dance-with-the-devil",
+      "type": "quest",
+      "name": "Dance with the Devil",
+      "kind": "main",
+      "chapter": "Chapter 3: Howling Hill",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Fight the Devil of the Reed Field at the graves and put it down.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:seed-of-unease",
+          "text": "Complete Seed of Unease"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Stand ready at Reedfield Graves for the Devil of the Reed Field.",
+          "action": "travel",
+          "refs": ["place:reedfield-graves"]
+        },
+        {
+          "text": "Defeat the Devil of the Reed Field.",
+          "action": "fight",
+          "refs": ["place:reedfield-graves"]
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "item",
+          "text": "Sunset Reed Cloth Gloves x1"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586592",
+          "title": "Game8: Chapter 3 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:pioneering",
+      "type": "quest",
+      "name": "Pioneering",
+      "kind": "main",
+      "chapter": "Chapter 3: Howling Hill",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Return to Serkis Estate and take up the jobs that grow Howling Hill.",
+      "body": "No source gives this arc header its own objective; the steps are inferred from the Chapter 3 pioneering jobs that sit under it.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:dance-with-the-devil",
+          "text": "Complete Dance with the Devil"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Travel back to Serkis Estate.",
+          "action": "travel",
+          "refs": ["place:serkis-estate"]
+        },
+        {
+          "text": "Take the next stretch of work that builds out Howling Hill.",
+          "action": "talk",
+          "refs": ["place:serkis-estate", "place:howling-hill"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586592",
+          "title": "Game8: Chapter 3 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:hope-after-the-draught",
+      "type": "quest",
+      "name": "Hope After the Draught",
+      "kind": "main",
+      "chapter": "Chapter 3: Howling Hill",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Look in on Andrew and see how he is holding up after the draught.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:pioneering",
+          "text": "Complete Pioneering"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Find Andrew.",
+          "action": "travel",
+          "refs": ["character:andrew"]
+        },
+        {
+          "text": "Check his condition and hear how he is.",
+          "action": "talk",
+          "refs": ["character:andrew"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586592",
+          "title": "Game8: Chapter 3 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:scattered-comrades",
+      "type": "quest",
+      "name": "Scattered Comrades",
+      "kind": "main",
+      "chapter": "Chapter 3: Howling Hill",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Speak with Marius about the Greymanes still spread across Hernand.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:hope-after-the-draught",
+          "text": "Complete Hope After the Draught"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Find Marius again.",
+          "action": "travel",
+          "refs": ["character:marius"]
+        },
+        {
+          "text": "Speak with him about the comrades still off the hill.",
+          "action": "talk",
+          "refs": ["character:marius", "faction:greymanes"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586592",
+          "title": "Game8: Chapter 3 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:rumors-from-the-sawmill",
+      "type": "quest",
+      "name": "Rumors from the Sawmill",
+      "kind": "main",
+      "chapter": "Chapter 3: Howling Hill",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Chase down the rumor coming out of the sawmill and see what it is worth.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:scattered-comrades",
+          "text": "Complete Scattered Comrades"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Go where the sawmill rumor is being told.",
+          "action": "travel"
+        },
+        {
+          "text": "Look into the rumor and settle what it amounts to.",
+          "action": "other"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586592",
+          "title": "Game8: Chapter 3 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:a-gentle-touch",
+      "type": "quest",
+      "name": "A Gentle Touch",
+      "kind": "main",
+      "chapter": "Chapter 3: Howling Hill",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Study the Dragon Head Totem at a shrine and read the letter left with it.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:rumors-from-the-sawmill",
+          "text": "Complete Rumors from the Sawmill"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Find the shrine that holds the Dragon Head Totem and examine it.",
+          "action": "other"
+        },
+        {
+          "text": "Read the letter waiting there.",
+          "action": "collect"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586592",
+          "title": "Game8: Chapter 3 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:bustling-hill",
+      "type": "quest",
+      "name": "Bustling Hill",
+      "kind": "main",
+      "chapter": "Chapter 3: Howling Hill",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Push Howling Hill through its first camp expansion.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:a-gentle-touch",
+          "text": "Complete A Gentle Touch"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Return to Howling Hill.",
+          "action": "travel",
+          "refs": ["place:howling-hill"]
+        },
+        {
+          "text": "Carry out the work that expands the camp.",
+          "action": "other",
+          "refs": ["place:howling-hill"]
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "unlock",
+          "text": "First camp expansion"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586592",
+          "title": "Game8: Chapter 3 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:greymanes-reunited",
+      "type": "quest",
+      "name": "Greymanes Reunited",
+      "aliases": ["Greymanes United"],
+      "kind": "main",
+      "chapter": "Chapter 3: Howling Hill",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Go back to the comrades at Howling Hill and close the chapter that rebuilt the camp.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:bustling-hill",
+          "text": "Complete Bustling Hill"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Return to the camp on Howling Hill.",
+          "action": "travel",
+          "refs": ["place:howling-hill"]
+        },
+        {
+          "text": "Meet the Greymanes gathered there and finish the reunion.",
+          "action": "talk",
+          "refs": ["place:howling-hill", "faction:greymanes"]
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "unlock",
+          "ref": "character:damiane",
+          "text": "Damiane playable"
+        },
+        {
+          "kind": "item",
+          "text": "Abyss Artifact x1"
+        },
+        {
+          "kind": "item",
+          "text": "Fine Timber x5"
+        },
+        {
+          "kind": "item",
+          "text": "Thick Hides x6"
+        },
+        {
+          "kind": "item",
+          "text": "Iron Ore x5"
+        },
+        {
+          "kind": "item",
+          "text": "Clear Soup x10"
+        },
+        {
+          "kind": "item",
+          "text": "St. Halssius Priest Attire set"
+        },
+        {
+          "kind": "item",
+          "text": "Large Bag x1"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586592",
+          "title": "Game8: Chapter 3 walkthrough",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/",
+          "title": "VULKK: main story walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:mysterious-iron-pot",
+      "type": "quest",
+      "name": "Mysterious Iron Pot",
+      "aliases": ["Mysterious Pot"],
+      "kind": "main",
+      "chapter": "Chapter 4: The Price of Knowledge",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Go to Kilnden Workshop and find out what blew up there.",
+      "prerequisites": [
+        {
+          "kind": "chapter",
+          "value": 4,
+          "text": "Reach Chapter 4"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Travel to Kilnden Workshop.",
+          "action": "travel",
+          "refs": ["place:kilnden-workshop"]
+        },
+        {
+          "text": "Look into the explosion on the grounds.",
+          "action": "other",
+          "refs": ["place:kilnden-workshop"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586747",
+          "title": "Game8: Chapter 4 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:kilnden-workshop",
+      "type": "quest",
+      "name": "Kilnden Workshop",
+      "kind": "main",
+      "chapter": "Chapter 4: The Price of Knowledge",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Bring the Ancient Generator online and get the kilns at Kilnden Workshop running again.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:mysterious-iron-pot",
+          "text": "Complete Mysterious Iron Pot"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Activate the Ancient Generator at Kilnden Workshop.",
+          "action": "solve",
+          "refs": ["place:kilnden-workshop"]
+        },
+        {
+          "text": "Repair the kilns on the site.",
+          "action": "other",
+          "refs": ["place:kilnden-workshop"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586747",
+          "title": "Game8: Chapter 4 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:kiln-repair-at-the-kilnden-workshop",
+      "type": "quest",
+      "name": "Kiln Repair at the Kilnden Workshop",
+      "kind": "main",
+      "chapter": "Chapter 4: The Price of Knowledge",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Feed the kiln at Kilnden Workshop so the repair can hold.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:kilnden-workshop",
+          "text": "Complete Kilnden Workshop"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Return to the kiln at Kilnden Workshop.",
+          "action": "travel",
+          "refs": ["place:kilnden-workshop"]
+        },
+        {
+          "text": "Add fuel to the kiln.",
+          "action": "other",
+          "refs": ["place:kilnden-workshop"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586747",
+          "title": "Game8: Chapter 4 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:the-mysterious-pot",
+      "type": "quest",
+      "name": "The Mysterious Pot",
+      "kind": "main",
+      "chapter": "Chapter 4: The Price of Knowledge",
+      "storyline": "storyline:main",
+      "giver": "character:grimnir",
+      "region": "region:hernand",
+      "summary": "Speak with Grimnir at the workshop and take the iron pot from him.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:kiln-repair-at-the-kilnden-workshop",
+          "text": "Complete Kiln Repair at the Kilnden Workshop"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Find Grimnir at Kilnden Workshop.",
+          "action": "travel",
+          "refs": ["character:grimnir", "place:kilnden-workshop"]
+        },
+        {
+          "text": "Speak with him and obtain the pot.",
+          "action": "talk",
+          "refs": ["character:grimnir"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586747",
+          "title": "Game8: Chapter 4 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:the-iron-pots-usage",
+      "type": "quest",
+      "name": "The Iron Pot's Usage",
+      "kind": "main",
+      "chapter": "Chapter 4: The Price of Knowledge",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Learn how the iron pot is used; it is the Kuku Pot needed in the Abyss.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:the-mysterious-pot",
+          "text": "Complete The Mysterious Pot"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Study the iron pot taken from Grimnir.",
+          "action": "other",
+          "refs": ["character:grimnir"]
+        },
+        {
+          "text": "Learn the use that turns it into the Kuku Pot.",
+          "action": "solve"
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "unlock",
+          "text": "Kuku Pot (needed for Abyss use)"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586747",
+          "title": "Game8: Chapter 4 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:daily-life",
+      "type": "quest",
+      "name": "Daily Life",
+      "kind": "main",
+      "chapter": "Chapter 4: The Price of Knowledge",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Return to Howling Hill and take the camp-life jobs waiting there.",
+      "body": "No source gives this arc header its own objective; the steps are inferred from the Chapter 4 camp-life jobs that sit under it.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:the-iron-pots-usage",
+          "text": "Complete The Iron Pot's Usage"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Travel back to Howling Hill.",
+          "action": "travel",
+          "refs": ["place:howling-hill"]
+        },
+        {
+          "text": "Take the first of the camp-life jobs posted on the hill.",
+          "action": "other",
+          "refs": ["place:howling-hill"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586747",
+          "title": "Game8: Chapter 4 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:disturbance-at-the-arena",
+      "type": "quest",
+      "name": "Disturbance at the Arena",
+      "kind": "main",
+      "chapter": "Chapter 4: The Price of Knowledge",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Step into the arena and win three matches.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:daily-life",
+          "text": "Complete Daily Life"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Go to the arena from Howling Hill.",
+          "action": "travel",
+          "refs": ["place:howling-hill"]
+        },
+        {
+          "text": "Win three arena matches.",
+          "action": "fight",
+          "refs": ["place:howling-hill"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586747",
+          "title": "Game8: Chapter 4 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:skilled-in-archery",
+      "type": "quest",
+      "name": "Skilled in Archery",
+      "kind": "main",
+      "chapter": "Chapter 4: The Price of Knowledge",
+      "storyline": "storyline:main",
+      "giver": "character:duane",
+      "region": "region:hernand",
+      "summary": "Take Duane's archery contest and win it.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:disturbance-at-the-arena",
+          "text": "Complete Disturbance at the Arena"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Find Duane and hear the rules of the contest.",
+          "action": "talk",
+          "refs": ["character:duane"]
+        },
+        {
+          "text": "Win the archery contest.",
+          "action": "other",
+          "refs": ["character:duane"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586747",
+          "title": "Game8: Chapter 4 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:forbidden-knowledge",
+      "type": "quest",
+      "name": "Forbidden Knowledge",
+      "kind": "main",
+      "chapter": "Chapter 4: The Price of Knowledge",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Read the letter that names Scholastone and start the road to the institute.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:skilled-in-archery",
+          "text": "Complete Skilled in Archery"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Read the letter that opens this arc.",
+          "action": "collect"
+        },
+        {
+          "text": "Set out for Scholastone.",
+          "action": "travel",
+          "refs": ["place:scholastone-institute"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586747",
+          "title": "Game8: Chapter 4 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:the-words-of-alustin",
+      "type": "quest",
+      "name": "The Words of Alustin",
+      "kind": "main",
+      "chapter": "Chapter 4: The Price of Knowledge",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Read Alustin's letter, then visit the Fence named in it.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:forbidden-knowledge",
+          "text": "Complete Forbidden Knowledge"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Read Alustin's letter.",
+          "action": "collect",
+          "refs": ["character:alustin"]
+        },
+        {
+          "text": "Visit the Fence the letter points to.",
+          "action": "travel"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586747",
+          "title": "Game8: Chapter 4 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:scholastone",
+      "type": "quest",
+      "name": "Scholastone",
+      "kind": "main",
+      "chapter": "Chapter 4: The Price of Knowledge",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Find the path to the Scholastone Institute and meet the Dean there.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:the-words-of-alustin",
+          "text": "Complete The Words of Alustin"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Find the path that leads to the Scholastone Institute.",
+          "action": "travel",
+          "refs": ["place:scholastone-institute"]
+        },
+        {
+          "text": "Meet the Dean of the Scholastone Institute.",
+          "action": "talk",
+          "refs": ["character:dean-of-the-scholastone-institute", "place:scholastone-institute"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586747",
+          "title": "Game8: Chapter 4 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:on-the-right-path",
+      "type": "quest",
+      "name": "On the Right Path",
+      "kind": "main",
+      "chapter": "Chapter 4: The Price of Knowledge",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Help Octavius with an experiment at Scholastone and take the artifact it yields.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:scholastone",
+          "text": "Complete Scholastone"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Join Octavius and help with the experiment.",
+          "action": "other",
+          "refs": ["character:octavius", "place:scholastone-institute"]
+        },
+        {
+          "text": "Obtain the artifact that comes out of that work.",
+          "action": "collect",
+          "refs": ["character:octavius"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586747",
+          "title": "Game8: Chapter 4 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:gate-to-the-otherworld",
+      "type": "quest",
+      "name": "Gate to the Otherworld",
+      "kind": "main",
+      "chapter": "Chapter 4: The Price of Knowledge",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Climb the Spire of the Stars until you stand at the top.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:on-the-right-path",
+          "text": "Complete On the Right Path"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Travel to the Spire of the Stars.",
+          "action": "travel",
+          "refs": ["place:spire-of-the-stars"]
+        },
+        {
+          "text": "Reach the top of the spire.",
+          "action": "other",
+          "refs": ["place:spire-of-the-stars"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586747",
+          "title": "Game8: Chapter 4 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:spire-of-the-stars",
+      "type": "quest",
+      "name": "Spire of the Stars",
+      "kind": "main",
+      "chapter": "Chapter 4: The Price of Knowledge",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Step from the spire into the Abyss and look into the rift waiting there.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:gate-to-the-otherworld",
+          "text": "Complete Gate to the Otherworld"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Move from the top of the Spire of the Stars into the Abyss.",
+          "action": "travel",
+          "refs": ["place:spire-of-the-stars"]
+        },
+        {
+          "text": "Investigate the rift on that side.",
+          "action": "other",
+          "refs": ["place:spire-of-the-stars"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586747",
+          "title": "Game8: Chapter 4 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:obsession-and-madness",
+      "type": "quest",
+      "name": "Obsession and Madness",
+      "kind": "main",
+      "chapter": "Chapter 4: The Price of Knowledge",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Find who opened the rift, then hear Grundir out.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:spire-of-the-stars",
+          "text": "Complete Spire of the Stars"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Search out who caused the rift.",
+          "action": "other",
+          "refs": ["place:spire-of-the-stars"]
+        },
+        {
+          "text": "Speak with Grundir about what you found.",
+          "action": "talk",
+          "refs": ["character:grundir"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586747",
+          "title": "Game8: Chapter 4 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:casted-shadow",
+      "type": "quest",
+      "name": "Casted Shadow",
+      "kind": "main",
+      "chapter": "Chapter 4: The Price of Knowledge",
+      "storyline": "storyline:main",
+      "region": "region:hernand",
+      "summary": "Leave the spire and the institute behind and return to Howling Hill.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:obsession-and-madness",
+          "text": "Complete Obsession and Madness"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Leave the Spire of the Stars and Scholastone.",
+          "action": "travel",
+          "refs": ["place:spire-of-the-stars", "place:scholastone-institute"]
+        },
+        {
+          "text": "Return to Howling Hill.",
+          "action": "travel",
+          "refs": ["place:howling-hill"]
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "unlock",
+          "text": "Focused Force Palm"
+        },
+        {
+          "kind": "item",
+          "text": "Scholastone Uniform"
+        },
+        {
+          "kind": "item",
+          "text": "Abyss Artifact x1"
+        },
+        {
+          "kind": "item",
+          "text": "Honey Tea x10"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586747",
+          "title": "Game8: Chapter 4 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
       "id": "quest:trial-of-the-winds",
       "type": "quest",
       "name": "Trial of the Winds",
