@@ -67,7 +67,7 @@ Conventions: coordinates are canonical zoom-4 px (D3); no DOM or Leaflet in
 
 ## Phase 1. Foundation
 
-- [ ] **T11. Content loader and store slice.** (D12, D16)
+- [x] **T11. Content loader and store slice.** (D12, D16)
   Files: `src/content/loader.ts` (+ test), `src/content/db.ts` (+ test),
   `src/store.ts`, `src/App.tsx`, `vite.config.ts`.
   `loadContent()` fetches `/data/content/meta.json`, then every file it

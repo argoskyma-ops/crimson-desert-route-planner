@@ -10,6 +10,7 @@ import {
   type DraftPoint,
 } from './editor/graph-edit'
 import { FAST_TRAVEL_TYPES_DEFAULT, type FastTravelType } from './config/travel'
+import { emptyContentDb, type ContentDb } from './content/db'
 import type { FastTravelLocation } from './lib/fast-travel-loader'
 import type { MapManifest } from './lib/map-manifest'
 import { emptyRoads } from './lib/roads-loader'
@@ -102,6 +103,9 @@ interface AppState {
   manifest: MapManifest | null
   /** D10 land/water raster; null when `data/water-mask.png` is missing. */
   water: WaterMask | null
+  content: ContentDb
+  contentError: string | null
+  selectedEntityId: string | null
   editor: EditorState
   setPin: (which: 'a' | 'b', pt: Pt | null) => void
   placePin: (pt: Pt) => void
@@ -116,6 +120,8 @@ interface AppState {
   setFastTravelQuery: (query: string) => void
   focusFastTravel: (id: string | null) => void
   setManifest: (manifest: MapManifest | null) => void
+  setContent: (db: ContentDb, error?: string | null) => void
+  selectEntity: (id: string | null) => void
   setEditor: (partial: Partial<EditorState>) => void
   startDraft: () => void
   addDraftPoint: (pt: DraftPoint) => void
@@ -153,6 +159,9 @@ export const useAppStore = create<AppState>((set) => ({
   focusedFastTravelId: null,
   manifest: null,
   water: null,
+  content: emptyContentDb(),
+  contentError: null,
+  selectedEntityId: null,
   editor: initialEditor,
   setPin: (which, pt) =>
     set((s) => {
@@ -222,6 +231,19 @@ export const useAppStore = create<AppState>((set) => ({
       }
     }),
   setManifest: (manifest) => set({ manifest }),
+  setContent: (db, error) =>
+    set((s) => ({
+      content: db,
+      contentError: error ?? null,
+      selectedEntityId:
+        s.selectedEntityId !== null && db.byId.has(s.selectedEntityId)
+          ? s.selectedEntityId
+          : null,
+    })),
+  selectEntity: (id) =>
+    set((s) => ({
+      selectedEntityId: id === null || s.content.byId.has(id) ? id : null,
+    })),
   setEditor: (partial) => set((s) => ({ editor: { ...s.editor, ...partial } })),
   startDraft: () =>
     set((s) => ({

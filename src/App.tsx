@@ -3,6 +3,8 @@ import ControlPanel from './components/ControlPanel'
 import EditorPanel from './components/EditorPanel'
 import Legend from './components/Legend'
 import MapView from './components/MapView'
+import { emptyContentDb } from './content/db'
+import { loadContent } from './content/loader'
 import { loadFastTravel } from './lib/fast-travel-loader'
 import { loadRoads } from './lib/roads-loader'
 import { loadWaterMask } from './lib/water-mask-loader'
@@ -12,6 +14,7 @@ export default function App() {
   const setRoads = useAppStore((s) => s.setRoads)
   const setWaterMask = useAppStore((s) => s.setWaterMask)
   const setFastTravel = useAppStore((s) => s.setFastTravel)
+  const setContent = useAppStore((s) => s.setContent)
   const editorActive = useAppStore((s) => s.editor.active)
   const editorDirty = useAppStore((s) => s.editor.dirty)
   const toggleEditor = useAppStore((s) => s.toggleEditor)
@@ -20,10 +23,11 @@ export default function App() {
     let cancelled = false
     void (async () => {
       // The water mask (D10) loads alongside the graph; it never blocks routing.
-      const [roadsResult, waterResult, travelResult] = await Promise.allSettled([
+      const [roadsResult, waterResult, travelResult, contentResult] = await Promise.allSettled([
         loadRoads(),
         loadWaterMask(),
         loadFastTravel(),
+        loadContent(),
       ])
       if (cancelled) return
       setWaterMask(waterResult.status === 'fulfilled' ? waterResult.value ?? null : null)
@@ -31,6 +35,12 @@ export default function App() {
         setFastTravel(travelResult.value.locations)
       } else if (travelResult.status === 'rejected') {
         console.warn('Fast-travel overlay unavailable; map will route without it.')
+      }
+      if (contentResult.status === 'fulfilled') {
+        setContent(contentResult.value.db, contentResult.value.error)
+      } else {
+        const err = contentResult.reason
+        setContent(emptyContentDb(), err instanceof Error ? err.message : 'Failed to load content')
       }
       if (roadsResult.status === 'fulfilled') {
         setRoads(roadsResult.value)
@@ -42,7 +52,7 @@ export default function App() {
     return () => {
       cancelled = true
     }
-  }, [setRoads, setWaterMask, setFastTravel])
+  }, [setRoads, setWaterMask, setFastTravel, setContent])
 
   useEffect(() => {
     if (!editorDirty) return
