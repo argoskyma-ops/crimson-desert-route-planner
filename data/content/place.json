@@ -481,6 +481,84 @@
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:cloister-of-enlightenment",
+      "type": "place",
+      "name": "Cloister of Enlightenment",
+      "kind": "temple",
+      "region": "region:crimson-desert",
+      "summary": "The desert cloister where Golden Statues are purified and the Chapter 9 trials keep returning.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/589366", "title": "Game8: Chapter 9 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:urdavah",
+      "type": "place",
+      "name": "Urdavah",
+      "kind": "town",
+      "region": "region:crimson-desert",
+      "summary": "A Crimson Desert settlement where the Shattered Ties tablet is read and a dragon is freed.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/589366", "title": "Game8: Chapter 9 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:spire-of-the-sun",
+      "type": "place",
+      "name": "Spire of the Sun",
+      "kind": "spire",
+      "region": "region:crimson-desert",
+      "summary": "The desert spire crossed during Thinning Blade and Unwavering Steps.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/589366", "title": "Game8: Chapter 9 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:morning-mist-peaks",
+      "type": "place",
+      "name": "Morning Mist Peaks",
+      "kind": "landmark",
+      "region": "region:demeniss",
+      "summary": "The Demeniss peaks where the Pensive Statues of Chapter 9 are repaired.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/589366", "title": "Game8: Chapter 9 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:jijeong-temple",
+      "type": "place",
+      "name": "Jijeong Temple",
+      "kind": "temple",
+      "region": "region:demeniss",
+      "summary": "The temple in uproar while its statues are put back together during Chapter 9.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/589366", "title": "Game8: Chapter 9 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:gorthak-ironworks",
+      "type": "place",
+      "name": "Gorthak Ironworks",
+      "kind": "other",
+      "region": "region:demeniss",
+      "summary": "The Demeniss works occupied by machines in Chapter 10, and Valgash's shop floor.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/590081", "title": "Game8: Chapter 10 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
     }
   ]
 }

@@ -476,6 +476,68 @@
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:witch",
+      "type": "character",
+      "name": "Witch",
+      "role": "Desert trial guide",
+      "summary": "The woman who calls Kliff into the Crimson Desert and points him at the trials of Chapter 9.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/589366", "title": "Game8: Chapter 9 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:hexe-marie",
+      "type": "character",
+      "name": "Hexe Marie",
+      "aliases": ["Black Witch"],
+      "role": "Black Witch, Chapter 9 boss",
+      "summary": "The Black Witch fought at the close of the Veiled Witch stretch.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/589366", "title": "Game8: Chapter 9 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:master-du",
+      "type": "character",
+      "name": "Master Du",
+      "role": "Desert sage, trial master",
+      "summary": "The sage who trains Kliff at the close of Chapter 9 and is fought during Enlightenment.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/589366", "title": "Game8: Chapter 9 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:valgash",
+      "type": "character",
+      "name": "Valgash",
+      "role": "Weaponsmith",
+      "home": "place:gorthak-ironworks",
+      "summary": "The ironworks smith followed in Chapter 10, then spoken to again after Marni's Clockwork Mantis falls.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/590081", "title": "Game8: Chapter 10 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:orc-captain",
+      "type": "character",
+      "name": "Orc Captain",
+      "role": "Captain at the Gate of War",
+      "summary": "The orc officer spoken to after the device at the Gate of War is started.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/590081", "title": "Game8: Chapter 10 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
     }
   ]
 }

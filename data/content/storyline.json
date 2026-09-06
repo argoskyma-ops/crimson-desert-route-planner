@@ -8,7 +8,7 @@
       "name": "Main story",
       "kind": "main",
       "summary": "Kliff's campaign: a prologue, twelve chapters and an epilogue, played in a fixed order.",
-      "body": "GameRant's published list names 206 main quests across fourteen sections; this record currently holds the 143 quests of the Prologue through Chapter 8, and later chapters stay empty until those parts are written. The campaign is linear. Sources disagree on whether the opening Greymane camp lies in Hernand or Pailune, so the six prologue quests omit a region. Journey's End is treated as the first Epilogue quest, not as the close of Chapter 12.",
+      "body": "GameRant's published list names 206 main quests across fourteen sections; this record currently holds the 179 quests of the Prologue through Chapter 10, and later chapters stay empty until those parts are written. The campaign is linear. Sources disagree on whether the opening Greymane camp lies in Hernand or Pailune, so the six prologue quests omit a region. Journey's End is treated as the first Epilogue quest, not as the close of Chapter 12.",
       "chapters": [
         {
           "title": "Prologue: Dead of Night",
@@ -209,11 +209,52 @@
         },
         {
           "title": "Chapter 9: The Sage of the Desert",
-          "quests": []
+          "quests": [
+            "quest:the-calling",
+            "quest:an-unknown-voice",
+            "quest:the-cloister-of-enlightenment",
+            "quest:shattered-ties",
+            "quest:mark-of-the-scar",
+            "quest:shackles-of-fate",
+            "quest:thinning-blade",
+            "quest:crossing-point",
+            "quest:unwavering-steps",
+            "quest:six-pensive-statues-and-the-evil-spirit",
+            "quest:morning-fog",
+            "quest:jijeong-temple-in-chaos",
+            "quest:path-to-enlightenment",
+            "quest:path-of-the-disciple",
+            "quest:true-strength",
+            "quest:face-the-inner-self",
+            "quest:veiled-witch",
+            "quest:fragments-of-darkness",
+            "quest:pursuit-beyond-the-veil",
+            "quest:black-witch",
+            "quest:enlightenment",
+            "quest:the-cloister-of-enlightenment-ii",
+            "quest:the-sage-of-the-desert",
+            "quest:new-perspectives",
+            "quest:lust-for-power"
+          ],
+          "pointsOfNoReturn": [
+            "The four trial lines after The Calling can be taken in any order; sources suggest Shattered Ties, then Veiled Witch, then Thinning Blade, then Six Pensive Statues and the Evil Spirit."
+          ]
         },
         {
           "title": "Chapter 10: Counterattack",
-          "quests": []
+          "quests": [
+            "quest:secret-weapon",
+            "quest:untouchable",
+            "quest:the-gate-of-war",
+            "quest:master-of-the-ironworks",
+            "quest:hidden-ace",
+            "quest:clockwork-insect-clash",
+            "quest:greater-firepower",
+            "quest:beating-heart",
+            "quest:invaders-from-the-east",
+            "quest:frozen-hearted-predator",
+            "quest:lingering-shadow"
+          ]
         },
         {
           "title": "Chapter 11: Truth and Reality",

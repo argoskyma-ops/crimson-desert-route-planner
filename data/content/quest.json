@@ -6719,6 +6719,1641 @@
       "gameVersion": "2.01.00"
     },
     {
+      "id": "quest:the-calling",
+      "type": "quest",
+      "name": "The Calling",
+      "kind": "main",
+      "chapter": "Chapter 9: The Sage of the Desert",
+      "storyline": "storyline:main",
+      "region": "region:crimson-desert",
+      "summary": "Hear the Witch and learn where the desert trials wait.",
+      "prerequisites": [
+        {
+          "kind": "chapter",
+          "value": 9,
+          "text": "Reach Chapter 9"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Seek the Witch and take her brief.",
+          "action": "talk",
+          "refs": ["character:witch"]
+        },
+        {
+          "text": "Find the trials she names.",
+          "action": "travel",
+          "refs": ["character:witch"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/589366",
+          "title": "Game8: Chapter 9 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:an-unknown-voice",
+      "type": "quest",
+      "name": "An Unknown Voice",
+      "kind": "main",
+      "chapter": "Chapter 9: The Sage of the Desert",
+      "storyline": "storyline:main",
+      "region": "region:crimson-desert",
+      "summary": "Hear the Witch about the voice that drew you into the desert.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:the-calling",
+          "text": "Complete The Calling"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Reach the Witch.",
+          "action": "travel",
+          "refs": ["character:witch"]
+        },
+        {
+          "text": "Hear what she has to say.",
+          "action": "talk",
+          "refs": ["character:witch"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/589366",
+          "title": "Game8: Chapter 9 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:the-cloister-of-enlightenment",
+      "type": "quest",
+      "name": "The Cloister of Enlightenment",
+      "kind": "main",
+      "chapter": "Chapter 9: The Sage of the Desert",
+      "storyline": "storyline:main",
+      "region": "region:crimson-desert",
+      "summary": "Purify the Golden Statues kept at the Cloister of Enlightenment.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:an-unknown-voice",
+          "text": "Complete An Unknown Voice"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Travel to the Cloister of Enlightenment.",
+          "action": "travel",
+          "refs": ["place:cloister-of-enlightenment"]
+        },
+        {
+          "text": "Purify the Golden Statues there.",
+          "action": "solve",
+          "refs": ["place:cloister-of-enlightenment"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/589366",
+          "title": "Game8: Chapter 9 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:shattered-ties",
+      "type": "quest",
+      "name": "Shattered Ties",
+      "kind": "main",
+      "chapter": "Chapter 9: The Sage of the Desert",
+      "storyline": "storyline:main",
+      "region": "region:crimson-desert",
+      "summary": "Read a stone tablet in Urdavah and free the dragon bound there.",
+      "body": "Game8 leaves the dragon fight unnamed. Another walkthrough names Goyen and T'rukan the Ascended as dragon-related bosses without saying which quest each belongs to.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:the-cloister-of-enlightenment",
+          "text": "Complete The Cloister of Enlightenment"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Travel to Urdavah and examine the stone tablet.",
+          "action": "travel",
+          "refs": ["place:urdavah"]
+        },
+        {
+          "text": "Free the dragon.",
+          "action": "other",
+          "refs": ["place:urdavah"]
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "item",
+          "text": "Stardust Necklace"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/589366",
+          "title": "Game8: Chapter 9 walkthrough",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/",
+          "title": "VULKK: main story walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:mark-of-the-scar",
+      "type": "quest",
+      "name": "Mark of the Scar",
+      "kind": "main",
+      "chapter": "Chapter 9: The Sage of the Desert",
+      "storyline": "storyline:main",
+      "region": "region:crimson-desert",
+      "summary": "Examine the stone tablet that marks this trial.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:shattered-ties",
+          "text": "Complete Shattered Ties"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Find the stone tablet.",
+          "action": "travel"
+        },
+        {
+          "text": "Examine the mark it holds.",
+          "action": "other"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/589366",
+          "title": "Game8: Chapter 9 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:shackles-of-fate",
+      "type": "quest",
+      "name": "Shackles of Fate",
+      "kind": "main",
+      "chapter": "Chapter 9: The Sage of the Desert",
+      "storyline": "storyline:main",
+      "region": "region:crimson-desert",
+      "summary": "Pull the spear from the dragon and stay on it through the flight that follows.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:mark-of-the-scar",
+          "text": "Complete Mark of the Scar"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Remove the spear from the dragon.",
+          "action": "other"
+        },
+        {
+          "text": "Hold on while riding it.",
+          "action": "other"
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "unlock",
+          "text": "Dragon rescue and interaction"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/589366",
+          "title": "Game8: Chapter 9 walkthrough",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/",
+          "title": "VULKK: main story walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:thinning-blade",
+      "type": "quest",
+      "name": "Thinning Blade",
+      "kind": "main",
+      "chapter": "Chapter 9: The Sage of the Desert",
+      "storyline": "storyline:main",
+      "region": "region:crimson-desert",
+      "summary": "Cross the Spire of the Sun and finish the trial that waits on the far side.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:shackles-of-fate",
+          "text": "Complete Shackles of Fate"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Make for the Spire of the Sun.",
+          "action": "travel",
+          "refs": ["place:spire-of-the-sun"]
+        },
+        {
+          "text": "Cross it and reach enlightenment.",
+          "action": "travel",
+          "refs": ["place:spire-of-the-sun"]
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "item",
+          "text": "Witch's Ring"
+        },
+        {
+          "kind": "item",
+          "text": "Greymane's Earring"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/589366",
+          "title": "Game8: Chapter 9 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:crossing-point",
+      "type": "quest",
+      "name": "Crossing Point",
+      "kind": "main",
+      "chapter": "Chapter 9: The Sage of the Desert",
+      "storyline": "storyline:main",
+      "region": "region:crimson-desert",
+      "summary": "Examine the stone tablet that opens the Thinning Blade crossing.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:thinning-blade",
+          "text": "Complete Thinning Blade"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Find the stone tablet.",
+          "action": "travel"
+        },
+        {
+          "text": "Examine it.",
+          "action": "other"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/589366",
+          "title": "Game8: Chapter 9 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:unwavering-steps",
+      "type": "quest",
+      "name": "Unwavering Steps",
+      "kind": "main",
+      "chapter": "Chapter 9: The Sage of the Desert",
+      "storyline": "storyline:main",
+      "region": "region:crimson-desert",
+      "summary": "Walk the Spire of the Sun without turning back.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:crossing-point",
+          "text": "Complete Crossing Point"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Reach the Spire of the Sun.",
+          "action": "travel",
+          "refs": ["place:spire-of-the-sun"]
+        },
+        {
+          "text": "Cross it.",
+          "action": "travel",
+          "refs": ["place:spire-of-the-sun"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/589366",
+          "title": "Game8: Chapter 9 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:six-pensive-statues-and-the-evil-spirit",
+      "type": "quest",
+      "name": "Six Pensive Statues and the Evil Spirit",
+      "aliases": ["Six Statues and the Beast"],
+      "kind": "main",
+      "chapter": "Chapter 9: The Sage of the Desert",
+      "storyline": "storyline:main",
+      "region": "region:crimson-desert",
+      "summary": "Repair three Pensive Statues in the Morning Mist Peaks of Demeniss.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:unwavering-steps",
+          "text": "Complete Unwavering Steps"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Travel to the Morning Mist Peaks.",
+          "action": "travel",
+          "refs": ["place:morning-mist-peaks"]
+        },
+        {
+          "text": "Begin the work of repairing three Pensive Statues.",
+          "action": "solve",
+          "refs": ["place:morning-mist-peaks"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/589366",
+          "title": "Game8: Chapter 9 walkthrough",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://www.powerpyx.com/crimson-desert-walkthrough-all-main-quests/",
+          "title": "PowerPyx: all main quests",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:morning-fog",
+      "type": "quest",
+      "name": "Morning Fog",
+      "kind": "main",
+      "chapter": "Chapter 9: The Sage of the Desert",
+      "storyline": "storyline:main",
+      "region": "region:crimson-desert",
+      "summary": "Repair the Pensive Statues waiting in the morning fog.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:six-pensive-statues-and-the-evil-spirit",
+          "text": "Complete Six Pensive Statues and the Evil Spirit"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Find the damaged Pensive Statues.",
+          "action": "travel",
+          "refs": ["place:morning-mist-peaks"]
+        },
+        {
+          "text": "Repair them.",
+          "action": "solve",
+          "refs": ["place:morning-mist-peaks"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/589366",
+          "title": "Game8: Chapter 9 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:jijeong-temple-in-chaos",
+      "type": "quest",
+      "name": "Jijeong Temple in Chaos",
+      "kind": "main",
+      "chapter": "Chapter 9: The Sage of the Desert",
+      "storyline": "storyline:main",
+      "region": "region:crimson-desert",
+      "summary": "Put the statues at Jijeong Temple back together while the temple is in uproar.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:morning-fog",
+          "text": "Complete Morning Fog"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Reach Jijeong Temple.",
+          "action": "travel",
+          "refs": ["place:jijeong-temple"]
+        },
+        {
+          "text": "Repair the statues there.",
+          "action": "solve",
+          "refs": ["place:jijeong-temple"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/589366",
+          "title": "Game8: Chapter 9 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:path-to-enlightenment",
+      "type": "quest",
+      "name": "Path to Enlightenment",
+      "kind": "main",
+      "chapter": "Chapter 9: The Sage of the Desert",
+      "storyline": "storyline:main",
+      "region": "region:crimson-desert",
+      "summary": "Tell a monk that the statues have been restored.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:jijeong-temple-in-chaos",
+          "text": "Complete Jijeong Temple in Chaos"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Find the monk who asked after the statues.",
+          "action": "travel",
+          "refs": ["place:jijeong-temple"]
+        },
+        {
+          "text": "Inform him the restoration is done.",
+          "action": "talk",
+          "refs": ["place:jijeong-temple"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/589366",
+          "title": "Game8: Chapter 9 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:path-of-the-disciple",
+      "type": "quest",
+      "name": "Path of the Disciple",
+      "kind": "main",
+      "chapter": "Chapter 9: The Sage of the Desert",
+      "storyline": "storyline:main",
+      "region": "region:crimson-desert",
+      "summary": "Walk the disciple path that follows the restored statues.",
+      "body": "No source describes this quest beyond its name; the steps are inferred from the disciple work that follows the statue restoration.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:path-to-enlightenment",
+          "text": "Complete Path to Enlightenment"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Return to the cloister after the statues stand again.",
+          "action": "travel",
+          "refs": ["place:cloister-of-enlightenment"]
+        },
+        {
+          "text": "Take the next trial the monks set.",
+          "action": "other",
+          "refs": ["place:cloister-of-enlightenment"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:true-strength",
+      "type": "quest",
+      "name": "True Strength",
+      "kind": "main",
+      "chapter": "Chapter 9: The Sage of the Desert",
+      "storyline": "storyline:main",
+      "region": "region:crimson-desert",
+      "summary": "Prove the strength the desert trial still asks for.",
+      "body": "No source describes this quest beyond its name; the steps are inferred from the Chapter 9 trial arc around it.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:path-of-the-disciple",
+          "text": "Complete Path of the Disciple"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Face the test of strength the disciple path opens.",
+          "action": "fight"
+        },
+        {
+          "text": "Hold through it.",
+          "action": "other"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:face-the-inner-self",
+      "type": "quest",
+      "name": "Face the Inner Self",
+      "kind": "main",
+      "chapter": "Chapter 9: The Sage of the Desert",
+      "storyline": "storyline:main",
+      "region": "region:crimson-desert",
+      "summary": "Meet the inner trial that sits on the disciple path.",
+      "body": "No source describes this quest beyond its name; the steps are inferred from the Chapter 9 trial arc around it.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:true-strength",
+          "text": "Complete True Strength"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Enter the inner trial.",
+          "action": "travel"
+        },
+        {
+          "text": "Face what it shows.",
+          "action": "solve"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:veiled-witch",
+      "type": "quest",
+      "name": "Veiled Witch",
+      "kind": "main",
+      "chapter": "Chapter 9: The Sage of the Desert",
+      "storyline": "storyline:main",
+      "region": "region:crimson-desert",
+      "summary": "Restore the sanctum, break the totems, and hunt the Black Witch who hides behind them.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:face-the-inner-self",
+          "text": "Complete Face the Inner Self"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Restore the sanctum's power.",
+          "action": "solve"
+        },
+        {
+          "text": "Destroy the totems that keep it veiled.",
+          "action": "fight"
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "item",
+          "text": "Earring of Dark Magic"
+        },
+        {
+          "kind": "item",
+          "text": "Crow Whisperer"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/589366",
+          "title": "Game8: Chapter 9 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:fragments-of-darkness",
+      "type": "quest",
+      "name": "Fragments of Darkness",
+      "kind": "main",
+      "chapter": "Chapter 9: The Sage of the Desert",
+      "storyline": "storyline:main",
+      "region": "region:crimson-desert",
+      "summary": "Destroy the four totems that hold the darkness in place.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:veiled-witch",
+          "text": "Complete Veiled Witch"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Find the four totems.",
+          "action": "travel"
+        },
+        {
+          "text": "Destroy them.",
+          "action": "fight"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/589366",
+          "title": "Game8: Chapter 9 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:pursuit-beyond-the-veil",
+      "type": "quest",
+      "name": "Pursuit Beyond the Veil",
+      "kind": "main",
+      "chapter": "Chapter 9: The Sage of the Desert",
+      "storyline": "storyline:main",
+      "region": "region:crimson-desert",
+      "summary": "Chase the target that flees beyond the veil.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:fragments-of-darkness",
+          "text": "Complete Fragments of Darkness"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Pick up the trail.",
+          "action": "travel"
+        },
+        {
+          "text": "Pursue the target.",
+          "action": "other"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/589366",
+          "title": "Game8: Chapter 9 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:black-witch",
+      "type": "quest",
+      "name": "Black Witch",
+      "kind": "main",
+      "chapter": "Chapter 9: The Sage of the Desert",
+      "storyline": "storyline:main",
+      "region": "region:crimson-desert",
+      "summary": "Defeat Hexe Marie, the Black Witch.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:pursuit-beyond-the-veil",
+          "text": "Complete Pursuit Beyond the Veil"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Find Hexe Marie.",
+          "action": "travel",
+          "refs": ["character:hexe-marie"]
+        },
+        {
+          "text": "Defeat her.",
+          "action": "fight",
+          "refs": ["character:hexe-marie"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/589366",
+          "title": "Game8: Chapter 9 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:enlightenment",
+      "type": "quest",
+      "name": "Enlightenment",
+      "kind": "main",
+      "chapter": "Chapter 9: The Sage of the Desert",
+      "storyline": "storyline:main",
+      "region": "region:crimson-desert",
+      "summary": "Show resilience, will, and vigor, then fight Master Du.",
+      "body": "Game8 gates this trial at Health Lv. 6, Spirit Lv. 5 and Stamina Lv. 6.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:black-witch",
+          "text": "Complete Black Witch"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Demonstrate resilience, will, and vigor.",
+          "action": "other",
+          "refs": ["character:master-du"]
+        },
+        {
+          "text": "Defeat Master Du.",
+          "action": "fight",
+          "refs": ["character:master-du"]
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "unlock",
+          "ref": "character:master-du",
+          "text": "Master Du's training"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/589366",
+          "title": "Game8: Chapter 9 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:the-cloister-of-enlightenment-ii",
+      "type": "quest",
+      "name": "The Cloister of Enlightenment (II)",
+      "kind": "main",
+      "chapter": "Chapter 9: The Sage of the Desert",
+      "storyline": "storyline:main",
+      "region": "region:crimson-desert",
+      "summary": "Return to the Cloister of Enlightenment after the desert trials.",
+      "body": "No source describes this quest beyond its name; the steps are inferred from the Enlightenment arc that sits around it.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:enlightenment",
+          "text": "Complete Enlightenment"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Go back to the Cloister of Enlightenment.",
+          "action": "travel",
+          "refs": ["place:cloister-of-enlightenment"]
+        },
+        {
+          "text": "Take the work still waiting there.",
+          "action": "other",
+          "refs": ["place:cloister-of-enlightenment"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:the-sage-of-the-desert",
+      "type": "quest",
+      "name": "The Sage of the Desert",
+      "kind": "main",
+      "chapter": "Chapter 9: The Sage of the Desert",
+      "storyline": "storyline:main",
+      "region": "region:crimson-desert",
+      "summary": "Face Master Du, the sage this chapter is named for.",
+      "body": "No source matches this name to a walkthrough beat; the steps treat it as the Master Du fight Game8 ties to Enlightenment.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:the-cloister-of-enlightenment-ii",
+          "text": "Complete The Cloister of Enlightenment (II)"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Seek Master Du at the close of the trials.",
+          "action": "travel",
+          "refs": ["character:master-du"]
+        },
+        {
+          "text": "Defeat him.",
+          "action": "fight",
+          "refs": ["character:master-du"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:new-perspectives",
+      "type": "quest",
+      "name": "New Perspectives",
+      "kind": "main",
+      "chapter": "Chapter 9: The Sage of the Desert",
+      "storyline": "storyline:main",
+      "region": "region:crimson-desert",
+      "summary": "Take in what the sage's trial changes about the road ahead.",
+      "body": "No source describes this quest beyond its name; the steps are inferred from the Enlightenment close.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:the-sage-of-the-desert",
+          "text": "Complete The Sage of the Desert"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Leave the fight with Master Du.",
+          "action": "travel",
+          "refs": ["character:master-du"]
+        },
+        {
+          "text": "Hear what that meeting opens.",
+          "action": "talk",
+          "refs": ["character:master-du"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:lust-for-power",
+      "type": "quest",
+      "name": "Lust for Power",
+      "kind": "main",
+      "chapter": "Chapter 9: The Sage of the Desert",
+      "storyline": "storyline:main",
+      "region": "region:crimson-desert",
+      "summary": "Close the Sage of the Desert after the last trial is done.",
+      "body": "No source describes this quest beyond its name; the steps are inferred from the Enlightenment close. The rewards are the chapter bundle reported by Game8.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:new-perspectives",
+          "text": "Complete New Perspectives"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Finish the last work the cloister still holds.",
+          "action": "other",
+          "refs": ["place:cloister-of-enlightenment"]
+        },
+        {
+          "text": "Turn back from the desert toward the fight that waits.",
+          "action": "travel",
+          "refs": ["place:cloister-of-enlightenment"]
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "item",
+          "text": "Witch's Ring"
+        },
+        {
+          "kind": "item",
+          "text": "Stardust Necklace"
+        },
+        {
+          "kind": "item",
+          "text": "Earring of Dark Magic"
+        },
+        {
+          "kind": "item",
+          "text": "Crow Whisperer"
+        },
+        {
+          "kind": "item",
+          "text": "Greymane's Earring"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/589366",
+          "title": "Game8: Chapter 9 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:secret-weapon",
+      "type": "quest",
+      "name": "Secret Weapon",
+      "kind": "main",
+      "chapter": "Chapter 10: Counterattack",
+      "storyline": "storyline:main",
+      "region": "region:demeniss",
+      "summary": "Rally at the outpost and open the hunt for the hidden weapon.",
+      "prerequisites": [
+        {
+          "kind": "chapter",
+          "value": 10,
+          "text": "Reach Chapter 10"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Reach the outpost.",
+          "action": "travel"
+        },
+        {
+          "text": "Rally there.",
+          "action": "other"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/590081",
+          "title": "Game8: Chapter 10 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:untouchable",
+      "type": "quest",
+      "name": "Untouchable",
+      "kind": "main",
+      "chapter": "Chapter 10: Counterattack",
+      "storyline": "storyline:main",
+      "region": "region:demeniss",
+      "summary": "Rally at the outpost that opens this stretch.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:secret-weapon",
+          "text": "Complete Secret Weapon"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Travel to the outpost.",
+          "action": "travel"
+        },
+        {
+          "text": "Join the rally.",
+          "action": "other"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/590081",
+          "title": "Game8: Chapter 10 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:the-gate-of-war",
+      "type": "quest",
+      "name": "The Gate of War",
+      "kind": "main",
+      "chapter": "Chapter 10: Counterattack",
+      "storyline": "storyline:main",
+      "region": "region:demeniss",
+      "summary": "Start the device at the gate and speak with the Orc Captain.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:untouchable",
+          "text": "Complete Untouchable"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Activate the device.",
+          "action": "solve"
+        },
+        {
+          "text": "Speak with the Orc Captain.",
+          "action": "talk",
+          "refs": ["character:orc-captain"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/590081",
+          "title": "Game8: Chapter 10 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:master-of-the-ironworks",
+      "type": "quest",
+      "name": "Master of the Ironworks",
+      "kind": "main",
+      "chapter": "Chapter 10: Counterattack",
+      "storyline": "storyline:main",
+      "giver": "character:valgash",
+      "region": "region:demeniss",
+      "summary": "Find Valgash and follow him through the ironworks.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:the-gate-of-war",
+          "text": "Complete The Gate of War"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Find Valgash.",
+          "action": "travel",
+          "refs": ["character:valgash", "place:gorthak-ironworks"]
+        },
+        {
+          "text": "Follow him.",
+          "action": "other",
+          "refs": ["character:valgash"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/590081",
+          "title": "Game8: Chapter 10 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:hidden-ace",
+      "type": "quest",
+      "name": "Hidden Ace",
+      "kind": "main",
+      "chapter": "Chapter 10: Counterattack",
+      "storyline": "storyline:main",
+      "region": "region:demeniss",
+      "summary": "Find the secret weapon and take the A.T.A.G. into operation.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:master-of-the-ironworks",
+          "text": "Complete Master of the Ironworks"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Locate the secret weapon.",
+          "action": "collect"
+        },
+        {
+          "text": "Operate the A.T.A.G.",
+          "action": "other"
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "unlock",
+          "text": "A.T.A.G. Mech piloting"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/590081",
+          "title": "Game8: Chapter 10 walkthrough",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/",
+          "title": "VULKK: main story walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:clockwork-insect-clash",
+      "type": "quest",
+      "name": "Clockwork Insect Clash",
+      "kind": "main",
+      "chapter": "Chapter 10: Counterattack",
+      "storyline": "storyline:main",
+      "region": "region:demeniss",
+      "summary": "Clear the machines that have taken Gorthak Ironworks.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:hidden-ace",
+          "text": "Complete Hidden Ace"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Reach Gorthak Ironworks.",
+          "action": "travel",
+          "refs": ["place:gorthak-ironworks"]
+        },
+        {
+          "text": "Eliminate the machines occupying it.",
+          "action": "fight",
+          "refs": ["place:gorthak-ironworks"]
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/590081",
+          "title": "Game8: Chapter 10 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:greater-firepower",
+      "type": "quest",
+      "name": "Greater Firepower",
+      "aliases": ["Greater Power"],
+      "kind": "main",
+      "chapter": "Chapter 10: Counterattack",
+      "storyline": "storyline:main",
+      "region": "region:demeniss",
+      "summary": "Push the new weapon toward the heavier fight that follows.",
+      "body": "No source gives this arc header its own objective; the steps are inferred from the firepower work that sits under it.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:clockwork-insect-clash",
+          "text": "Complete Clockwork Insect Clash"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Leave Gorthak with the weapon in hand.",
+          "action": "travel",
+          "refs": ["place:gorthak-ironworks"]
+        },
+        {
+          "text": "Turn it on the next line of machines.",
+          "action": "fight"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:beating-heart",
+      "type": "quest",
+      "name": "Beating Heart",
+      "kind": "main",
+      "chapter": "Chapter 10: Counterattack",
+      "storyline": "storyline:main",
+      "region": "region:demeniss",
+      "summary": "Start the power plant and hold the insect swarm that comes for it.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:greater-firepower",
+          "text": "Complete Greater Firepower"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Activate the power plant.",
+          "action": "solve"
+        },
+        {
+          "text": "Fend off the insect swarm.",
+          "action": "fight"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/590081",
+          "title": "Game8: Chapter 10 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:invaders-from-the-east",
+      "type": "quest",
+      "name": "Invaders from the East",
+      "kind": "main",
+      "chapter": "Chapter 10: Counterattack",
+      "storyline": "storyline:main",
+      "region": "region:demeniss",
+      "summary": "Shoot down the Sky Galleon coming in from the east.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:beating-heart",
+          "text": "Complete Beating Heart"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Find a firing position on the Sky Galleon.",
+          "action": "travel"
+        },
+        {
+          "text": "Shoot it down.",
+          "action": "fight"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/590081",
+          "title": "Game8: Chapter 10 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:frozen-hearted-predator",
+      "type": "quest",
+      "name": "Frozen Hearted Predator",
+      "kind": "main",
+      "chapter": "Chapter 10: Counterattack",
+      "storyline": "storyline:main",
+      "region": "region:demeniss",
+      "summary": "Track the fallen object and defeat Marni's Clockwork Mantis.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:invaders-from-the-east",
+          "text": "Complete Invaders from the East"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Find the fallen object.",
+          "action": "travel"
+        },
+        {
+          "text": "Defeat Marni's Clockwork Mantis.",
+          "action": "fight"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/590081",
+          "title": "Game8: Chapter 10 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "quest:lingering-shadow",
+      "type": "quest",
+      "name": "Lingering Shadow",
+      "kind": "main",
+      "chapter": "Chapter 10: Counterattack",
+      "storyline": "storyline:main",
+      "region": "region:demeniss",
+      "summary": "Speak with Valgash after the mantis falls and close the counterattack.",
+      "prerequisites": [
+        {
+          "kind": "quest",
+          "ref": "quest:frozen-hearted-predator",
+          "text": "Complete Frozen Hearted Predator"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Return to Valgash.",
+          "action": "travel",
+          "refs": ["character:valgash"]
+        },
+        {
+          "text": "Speak with him.",
+          "action": "talk",
+          "refs": ["character:valgash"]
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "item",
+          "text": "Leofric Musket"
+        },
+        {
+          "kind": "unlock",
+          "ref": "region:delesyia",
+          "text": "Access to Delesyia"
+        }
+      ],
+      "missable": "no",
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/590081",
+          "title": "Game8: Chapter 10 walkthrough",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/",
+          "title": "VULKK: main story walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
       "id": "quest:trial-of-the-winds",
       "type": "quest",
       "name": "Trial of the Winds",
