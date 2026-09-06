@@ -23,17 +23,22 @@ repo offers no hosted demo.
   `L.Transformation` that places those world X/Y onto this same tile pyramid.
 - **Fetch:** `.venv/bin/python scripts/fetch-fast-travel.py` writes
   `data/fast-travel.json` (committed): teleports plus named camps, villages,
-  hearths and map labels. Personal, local use; same stance as the tiles — do
-  not treat the dump as redistributable game data.
+  hearths and map labels. Page parsing and the CBOR reader live in the
+  shared `scripts/thgl.py` module. Personal, local use; same stance as the
+  tiles — do not treat the dump as redistributable game data.
 
 ## Points of interest (D14)
 - **Nodes:** the same `cdn.th.gl/crimson-desert/nodes/OpenWorld.<hash>.raw`
   dump, every record (about 23,500 typed nodes: mines, herbs, chests, hidden
   gear, quests, shops, stations, creatures), plus the `filters` taxonomy on the
   map page for group and type labels.
-- **Fetch:** `.venv/bin/python scripts/fetch-pois.py` writes `data/pois.json`
-  (task T15 in docs/COMPANION-PLAN.md). The file is **gitignored**: local,
-  personal use, never committed or redistributed, like the tiles.
+- **Fetch:** `.venv/bin/python scripts/fetch-pois.py` writes `data/pois.json`.
+  `--page-file PATH` and `--nodes-file PATH` read those inputs from disk
+  instead of the network (when only `--page-file` is given the nodes URL is
+  still taken from the page). The file is **gitignored**: local, personal
+  use, never committed or redistributed, like the tiles.
+- **Measured 2026-09-06:** 23,522 records, 23,483 written, 7,134 named,
+  61 groups / 845 types in the taxonomy of which 102 types carry nodes.
 - **Record order:** CBOR records are `[id, [worldY, worldX, z]]`; labels are
   `"position": [y, x]`. See D14.
 

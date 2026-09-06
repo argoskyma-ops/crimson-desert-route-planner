@@ -147,7 +147,7 @@ Conventions: coordinates are canonical zoom-4 px (D3); no DOM or Leaflet in
 
 ## Phase 2. POI layers
 
-- [ ] **T15. POI fetch script and loader.** (D14)
+- [x] **T15. POI fetch script and loader.** (D14)
   Files: `scripts/fetch-pois.py`, `src/content/pois-loader.ts` (+ test),
   `tests/unit/pois-data.test.ts`, `.gitignore` (already lists
   `data/pois.json`), `SOURCE.md`.

@@ -16,30 +16,26 @@ import argparse
 import json
 import math
 import re
-import struct
 import sys
-import urllib.request
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-MAP_PAGE = "https://crimsondesert.th.gl/maps/Continent%20of%20Pywel"
-CDN = "https://cdn.th.gl/crimson-desert"
-# Fallback: tilesConfig.OpenWorld.transformation from the 2026-09-03 pyramid
-# (OpenWorld-25391853dd739b8fd7d28d6280f02d15). Leaflet L.Transformation at z0.
-FALLBACK_TRANSFORM = (
-    0.026307676497790568,
-    431.0512794162984,
-    -0.026307676497790568,
-    215.5651012228959,
+from thgl import (
+    IMAGE_SIZE,
+    MAP_PAGE,
+    ORIGIN_RADIUS,
+    fetch_text,
+    in_image,
+    iter_cbor_records,
+    parse_nodes_url,
+    parse_transform,
+    round1,
+    unescape_page,
+    world_to_canonical,
 )
-CANONICAL_ZOOM = 4
-IMAGE_SIZE = 512 * 2**CANONICAL_ZOOM
-# Abyss-map leftovers sit near the Unreal origin and pile up on the east
-# padding. Real Pywel teleports are thousands of world units out.
-ORIGIN_RADIUS = 2000.0
+
+ROOT = Path(__file__).resolve().parents[1]
 # Skip a painted label when a named place already sits this close (canonical px).
 LABEL_DEDUP_PX = 80.0
-USER_AGENT = "crimson-desert-route-planner/1.0 (personal offline route planner)"
 
 TYPE_FROM_RAW = {
     "abyss_nexus": "nexus",
@@ -83,13 +79,6 @@ REGION_RE = re.compile(
 PLACE_ID_RE = re.compile(
     r"^(camp|village|castle|town|rest_area)_(\d+)$"
 )
-TRANSFORM_RE = re.compile(
-    r"OpenWorld-[0-9a-f]+.*?transformation(?:\\)?\":\[([^]]+)\]",
-    re.DOTALL,
-)
-NODES_PATH_RE = re.compile(r"(/nodes/OpenWorld\.[0-9a-f]+\.raw)")
-# th.gl wraps each [id, [worldY, worldX, z]] record in CBOR tag 0xe002.
-CBOR_RECORD_TAG = b"\xd9\xe0\x02"
 
 
 def parse_args() -> argparse.Namespace:
@@ -100,31 +89,6 @@ def parse_args() -> argparse.Namespace:
         default=ROOT / "data" / "fast-travel.json",
     )
     return parser.parse_args()
-
-
-def fetch_text(url: str) -> bytes:
-    request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    with urllib.request.urlopen(request, timeout=60) as response:
-        return response.read()
-
-
-def parse_transform(html: str) -> tuple[float, float, float, float]:
-    match = TRANSFORM_RE.search(html)
-    if not match:
-        print("No transformation on the map page; using the committed pyramid fallback")
-        return FALLBACK_TRANSFORM
-    parts = [float(piece.strip()) for piece in match.group(1).split(",")]
-    if len(parts) != 4:
-        print("Unexpected transformation on the map page; using the committed pyramid fallback")
-        return FALLBACK_TRANSFORM
-    return (parts[0], parts[1], parts[2], parts[3])
-
-
-def parse_nodes_url(html: str) -> str | None:
-    match = NODES_PATH_RE.search(html)
-    if not match:
-        return None
-    return f"{CDN}{match.group(1)}"
 
 
 def parse_names(html: str) -> dict[str, str]:
@@ -143,24 +107,6 @@ def parse_place_names(html: str) -> dict[str, str]:
             continue
         names[key] = raw
     return names
-
-
-def world_to_canonical(
-    world_x: float,
-    world_y: float,
-    transform: tuple[float, float, float, float],
-) -> tuple[float, float]:
-    a, b, c, d = transform
-    scale = 2**CANONICAL_ZOOM
-    return (a * world_x + b) * scale, (c * world_y + d) * scale
-
-
-def round1(value: float) -> float:
-    return round(value * 10) / 10
-
-
-def in_image(x: float, y: float) -> bool:
-    return 0 <= x <= IMAGE_SIZE and 0 <= y <= IMAGE_SIZE
 
 
 def display_name(raw_type: str, key: str, names: dict[str, str]) -> str:
@@ -203,67 +149,6 @@ def collect_teleports(
     return locations
 
 
-class _Cbor:
-    """Enough CBOR to read th.gl's tagged [id, [worldY, worldX, z]] place records."""
-
-    def __init__(self, data: bytes) -> None:
-        self.data = data
-        self.i = 0
-
-    def _u8(self) -> int:
-        value = self.data[self.i]
-        self.i += 1
-        return value
-
-    def _take(self, n: int) -> bytes:
-        chunk = self.data[self.i : self.i + n]
-        self.i += n
-        return chunk
-
-    def _extra(self, addl: int) -> int:
-        if addl < 24:
-            return addl
-        if addl == 24:
-            return self._u8()
-        if addl == 25:
-            return int.from_bytes(self._take(2), "big")
-        if addl == 26:
-            return int.from_bytes(self._take(4), "big")
-        if addl == 27:
-            return int.from_bytes(self._take(8), "big")
-        raise ValueError(f"unsupported additional info {addl}")
-
-    def decode(self) -> object:
-        first = self._u8()
-        major, addl = first >> 5, first & 0x1F
-        if major == 0:
-            return self._extra(addl)
-        if major == 1:
-            return -1 - self._extra(addl)
-        if major == 2:
-            return self._take(self._extra(addl))
-        if major == 3:
-            return self._take(self._extra(addl)).decode("utf-8", errors="replace")
-        if major == 4:
-            return [self.decode() for _ in range(self._extra(addl))]
-        if major == 5:
-            obj: dict[object, object] = {}
-            for _ in range(self._extra(addl)):
-                key = self.decode()
-                obj[key] = self.decode()
-            return obj
-        if major == 6:
-            self._extra(addl)
-            return self.decode()
-        if addl == 26:
-            return struct.unpack(">f", self._take(4))[0]
-        if addl == 27:
-            return struct.unpack(">d", self._take(8))[0]
-        if addl in (20, 21, 22, 23):
-            return {20: False, 21: True, 22: None, 23: None}[addl]
-        raise ValueError(f"unsupported CBOR simple {addl}")
-
-
 def collect_cbor_places(
     raw: bytes,
     names: dict[str, str],
@@ -276,27 +161,7 @@ def collect_cbor_places(
     """
     locations: list[dict[str, object]] = []
     seen: set[str] = set()
-    index = 0
-    while True:
-        start = raw.find(CBOR_RECORD_TAG, index)
-        if start < 0:
-            break
-        reader = _Cbor(raw[start:])
-        try:
-            value = reader.decode()
-        except (ValueError, IndexError, struct.error):
-            index = start + 1
-            continue
-        index = start + reader.i
-        if not (
-            isinstance(value, list)
-            and len(value) == 2
-            and isinstance(value[0], str)
-            and isinstance(value[1], list)
-            and len(value[1]) >= 2
-        ):
-            continue
-        ident = value[0]
+    for ident, coords in iter_cbor_records(raw):
         match = PLACE_ID_RE.match(ident)
         if not match:
             continue
@@ -304,9 +169,6 @@ def collect_cbor_places(
         loc_type = PLACE_FROM_PREFIX[prefix]
         name = names.get(ident)
         if not name:
-            continue
-        coords = value[1]
-        if not all(isinstance(item, (int, float)) for item in coords[:2]):
             continue
         world_x = float(coords[1])
         world_y = float(coords[0])
@@ -436,7 +298,7 @@ def serialize(locations: list[dict[str, object]]) -> str:
 def main() -> None:
     args = parse_args()
     print(f"Fetching {MAP_PAGE}")
-    html = fetch_text(MAP_PAGE).decode("utf-8", errors="replace").replace('\\"', '"')
+    html = unescape_page(fetch_text(MAP_PAGE))
     transform = parse_transform(html)
     teleport_names = parse_names(html)
     place_names = parse_place_names(html)
