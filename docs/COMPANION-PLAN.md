@@ -194,7 +194,7 @@ Conventions: coordinates are canonical zoom-4 px (D3); no DOM or Leaflet in
 
 ## Phase 4. Codex
 
-- [ ] **T18. Codex browser.** (D12)
+- [x] **T18. Codex browser.** (D12)
   Files: `src/components/Codex.tsx`, `src/components/entity/*.tsx`,
   `src/components/ControlPanel.tsx`.
   Browse by type with facets (region, faction, rarity, category, rank,

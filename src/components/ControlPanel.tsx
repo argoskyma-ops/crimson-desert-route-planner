@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { MODE_LABELS } from '../config/travel'
 import { MODES } from '../routing/types'
 import { useAppStore, type PanelTab } from '../store'
+import Codex from './Codex'
 import LayersPanel from './LayersPanel'
 import QuestLog from './QuestLog'
 import RouteSummary from './RouteSummary'
@@ -13,6 +14,7 @@ const clearBtnClass =
 const PANEL_TABS: { id: PanelTab; label: string }[] = [
   { id: 'search', label: 'Search' },
   { id: 'quests', label: 'Quests' },
+  { id: 'codex', label: 'Codex' },
 ]
 
 export default function ControlPanel() {
@@ -89,7 +91,7 @@ export default function ControlPanel() {
           })}
         </div>
 
-        <div className="mt-3 grid grid-cols-2 gap-1 rounded-lg bg-neutral-800/90 p-1">
+        <div className="mt-3 grid grid-cols-3 gap-1 rounded-lg bg-neutral-800/90 p-1">
           {PANEL_TABS.map((tab) => {
             const selected = panelTab === tab.id
             return (
@@ -148,7 +150,7 @@ export default function ControlPanel() {
         ) : (
           <>
             <div className="max-h-[60dvh] overflow-y-auto overscroll-contain">
-              <QuestLog />
+              {panelTab === 'quests' ? <QuestLog /> : <Codex />}
             </div>
             {errors}
           </>

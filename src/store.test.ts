@@ -171,6 +171,13 @@ describe('store', () => {
     expect(useAppStore.getState().layersOpen).toBe(false)
   })
 
+  it('setPanelTab codex closes layers', () => {
+    useAppStore.setState({ layersOpen: true, panelTab: 'search' })
+    useAppStore.getState().setPanelTab('codex')
+    expect(useAppStore.getState().panelTab).toBe('codex')
+    expect(useAppStore.getState().layersOpen).toBe(false)
+  })
+
   it('setPois keeps focusedPoiId when the new file still contains it', () => {
     const file = poiFixture()
     useAppStore.getState().setPois(file)

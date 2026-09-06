@@ -30,7 +30,7 @@ import { buildGraph, findRoute, type RoadGraph } from './routing'
 import type { Mode, Pt, RoadClass, RoadsFile, Route } from './routing/types'
 import type { WaterMask } from './routing/water-mask'
 
-export type PanelTab = 'search' | 'quests'
+export type PanelTab = 'search' | 'quests' | 'codex'
 
 /**
  * Leaflet map instance created by MapView. T4/T6 read `mapRef.current`.
@@ -392,7 +392,7 @@ export const useAppStore = create<AppState>((set) => ({
   setPanelTab: (tab) =>
     set((s) => ({
       panelTab: tab,
-      layersOpen: tab === 'quests' ? false : s.layersOpen,
+      layersOpen: tab === 'search' ? s.layersOpen : false,
     })),
   setEditor: (partial) => set((s) => ({ editor: { ...s.editor, ...partial } })),
   startDraft: () =>
