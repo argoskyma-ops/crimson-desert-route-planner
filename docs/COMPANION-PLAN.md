@@ -231,11 +231,13 @@ and C1 and C2 fill them out afterwards.
   are the quests' `chapter` values; every main quest with giver, `location`
   (start), steps, rewards, prerequisites, and `pointsOfNoReturn` on the
   chapters that trigger them. Target: ≥ 160 quests.
-- [ ] **C1. Regions and places.** `region.json`, `place.json`. The five
+- [x] **C1. Regions and places.** `region.json`, `place.json`. The five
   regions plus the Abyss layer, their named sub-areas, and every town,
   village, castle and camp already named in `data/fast-travel.json` (use its
   coordinates; the ids are stable). Target: 5 regions, ≥ 20 sub-areas, ≥ 120
-  places.
+  places. Done 2026-09-06 in four Grok parts from
+  `docs/RESEARCH-REGIONS.md`: 65 sub-areas, 124 fast-travel places (91
+  camps; th.gl-only camps are `assumed`, D13).
 - [ ] **C2. Factions and characters.** `faction.json`, `character.json`. All
   factions in `docs/RESEARCH-COMPANION.md` section 3 (houses, guilds,
   Greymanes, Black Bears, Jackals, hostile groups), the three playable
