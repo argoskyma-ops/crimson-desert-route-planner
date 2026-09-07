@@ -6647,6 +6647,2089 @@
       ],
       "confidence": "assumed",
       "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:light-of-the-battlefield",
+      "type": "item",
+      "name": "Light of the Battlefield",
+      "category": "armor",
+      "slot": "body",
+      "setName": "Light of the Battlefield",
+      "tags": [
+        "damiane",
+        "abyss-gear"
+      ],
+      "summary": "Damiane set named for high defense and Fortification, Aegis, and Vitality Abyss Gear; no source names a pickup.",
+      "body": "Guides treat this as a full Damiane kit and stop there. A same-named earring in the accessory index is a separate item, not this armour. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "other",
+          "note": "No source in the research file names a pickup, drop, or vendor."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587193",
+          "title": "Game8: best armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:demenissian-leather-armor",
+      "type": "item",
+      "name": "Demenissian Leather Armor",
+      "category": "armor",
+      "slot": "body",
+      "setName": "Demenissian",
+      "tags": [
+        "damiane"
+      ],
+      "region": "region:demeniss",
+      "summary": "Body piece of Damiane's Demenissian elite uniform; no source names a pickup.",
+      "body": "Game8 names the Damiane leather pieces and stops. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "other",
+          "note": "No source in the research file names a pickup, drop, or vendor."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/595963",
+          "title": "Game8: list of all Damiane armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:demenissian-leather-gloves",
+      "type": "item",
+      "name": "Demenissian Leather Gloves",
+      "category": "armor",
+      "slot": "gloves",
+      "setName": "Demenissian",
+      "tags": [
+        "damiane"
+      ],
+      "region": "region:demeniss",
+      "summary": "Gloves of Damiane's Demenissian elite uniform; no source names a pickup.",
+      "body": "Game8 names the Damiane leather pieces and stops. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "other",
+          "note": "No source in the research file names a pickup, drop, or vendor."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/595963",
+          "title": "Game8: list of all Damiane armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:demenissian-leather-boots",
+      "type": "item",
+      "name": "Demenissian Leather Boots",
+      "category": "armor",
+      "slot": "feet",
+      "setName": "Demenissian",
+      "tags": [
+        "damiane"
+      ],
+      "region": "region:demeniss",
+      "summary": "Boots of Damiane's Demenissian elite uniform; no source names a pickup.",
+      "body": "Game8 names the Damiane leather pieces and stops. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "other",
+          "note": "No source in the research file names a pickup, drop, or vendor."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/595963",
+          "title": "Game8: list of all Damiane armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:white-bloodwind-plate-helm",
+      "type": "item",
+      "name": "White Bloodwind Plate Helm",
+      "category": "armor",
+      "slot": "head",
+      "setName": "White Bloodwind",
+      "tags": [
+        "damiane"
+      ],
+      "region": "region:demeniss",
+      "summary": "Helm of Damiane's White Bloodwind set, paid at Trust 100 with Olanelle at the Demeniss tailor.",
+      "body": "Damiane receives this kit from Trust-100 NPCs and one crafted cloak. Olanelle's Request Commission is said to grant 50 Trust toward that cap. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "vendor",
+          "note": "Paid at Trust 100 with Olanelle at the Demeniss Tailor's Shop; that shop has no vendor record here yet.",
+          "steps": [
+            {
+              "text": "Go to the Tailor's Shop in Demeniss and start work with Olanelle.",
+              "action": "travel",
+              "refs": [
+                "place:demeniss-castle"
+              ]
+            },
+            {
+              "text": "Finish her Request Commission and raise Trust with her to 100.",
+              "action": "talk"
+            },
+            {
+              "text": "Collect the White Bloodwind plate helm.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://vulkk.com/2026/05/30/how-to-get-damianes-white-bloodwind-armor-in-crimson-desert-overview-and-stats/",
+          "title": "VULKK: how to get Damiane's White Bloodwind armor",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:white-bloodwind-leather-armor",
+      "type": "item",
+      "name": "White Bloodwind Leather Armor",
+      "category": "armor",
+      "slot": "body",
+      "setName": "White Bloodwind",
+      "tags": [
+        "damiane"
+      ],
+      "region": "region:hernand",
+      "summary": "Body piece of Damiane's White Bloodwind set, paid at Trust 100 with Stefan Lanford after Chapter 6.",
+      "body": "Damiane receives this kit from Trust-100 NPCs and one crafted cloak. Stefan starts at [[place:calphade-castle]] and is later named at Musket First Outpost in northeast Demeniss. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "other",
+          "note": "Paid at Trust 100 with Stefan Lanford after the end of Chapter 6; he moves from Calphade Castle to Musket First Outpost.",
+          "steps": [
+            {
+              "text": "Reach the end of Chapter 6 so Stefan Lanford will take Trust work.",
+              "action": "other",
+              "refs": [
+                "character:stefan-lanford"
+              ]
+            },
+            {
+              "text": "Find Stefan at Calphade Castle or later at Musket First Outpost.",
+              "action": "travel",
+              "refs": [
+                "character:stefan-lanford",
+                "place:calphade-castle"
+              ]
+            },
+            {
+              "text": "Raise Trust with him to 100 and collect the leather armor.",
+              "action": "talk",
+              "refs": [
+                "character:stefan-lanford"
+              ]
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://vulkk.com/2026/05/30/how-to-get-damianes-white-bloodwind-armor-in-crimson-desert-overview-and-stats/",
+          "title": "VULKK: how to get Damiane's White Bloodwind armor",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:white-bloodwind-cloth-cloak",
+      "type": "item",
+      "name": "White Bloodwind Cloth Cloak",
+      "category": "armor",
+      "slot": "cloak",
+      "setName": "White Bloodwind",
+      "tags": [
+        "damiane"
+      ],
+      "region": "region:hernand",
+      "summary": "Cloak of Damiane's White Bloodwind set, crafted from Cloth Armors of the World, Vol. I bought in Hernand.",
+      "body": "Damiane receives the rest of this kit from Trust-100 NPCs. No source states a price for the tailor manual. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "craft",
+          "note": "Crafted from Cloth Armors of the World, Vol. I, sold at the Tailor Shop in Hernand Town; that recipe has no record here yet.",
+          "steps": [
+            {
+              "text": "Go to the Tailor Shop in Hernand Town.",
+              "action": "travel",
+              "refs": [
+                "place:hernand-castle"
+              ]
+            },
+            {
+              "text": "Buy Cloth Armors of the World, Vol. I.",
+              "action": "buy"
+            },
+            {
+              "text": "Craft the White Bloodwind cloth cloak.",
+              "action": "craft"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://vulkk.com/2026/05/30/how-to-get-damianes-white-bloodwind-armor-in-crimson-desert-overview-and-stats/",
+          "title": "VULKK: how to get Damiane's White Bloodwind armor",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:white-bloodwind-plate-gloves",
+      "type": "item",
+      "name": "White Bloodwind Plate Gloves",
+      "category": "armor",
+      "slot": "gloves",
+      "setName": "White Bloodwind",
+      "tags": [
+        "damiane"
+      ],
+      "region": "region:demeniss",
+      "summary": "Gloves of Damiane's White Bloodwind set, paid at Trust 100 with the Chief Monk before Chapter 9 ends.",
+      "body": "Damiane receives this kit from Trust-100 NPCs and one crafted cloak. The Chief Monk at [[place:jijeong-temple]] stops appearing after Chapter 9 if Trust is not already capped. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "other",
+          "note": "Paid at Trust 100 with the Chief Monk at Jijeong Temple in Serpent Marsh; that monk has no character record here yet.",
+          "steps": [
+            {
+              "text": "Travel to Jijeong Temple in Serpent Marsh, between Demeniss and Delesyia.",
+              "action": "travel",
+              "refs": [
+                "place:jijeong-temple"
+              ]
+            },
+            {
+              "text": "Raise Trust with the Chief Monk to 100 before Chapter 9 closes.",
+              "action": "talk",
+              "refs": [
+                "place:jijeong-temple"
+              ],
+              "missable": "lost-if",
+              "missableNote": "The Chief Monk stops spawning after Chapter 9 if Trust is not already at 100."
+            },
+            {
+              "text": "Collect the White Bloodwind plate gloves.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://vulkk.com/2026/05/30/how-to-get-damianes-white-bloodwind-armor-in-crimson-desert-overview-and-stats/",
+          "title": "VULKK: how to get Damiane's White Bloodwind armor",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:white-bloodwind-leather-boots",
+      "type": "item",
+      "name": "White Bloodwind Leather Boots",
+      "category": "armor",
+      "slot": "feet",
+      "setName": "White Bloodwind",
+      "tags": [
+        "damiane"
+      ],
+      "region": "region:hernand",
+      "summary": "Boots of Damiane's White Bloodwind set, paid at Trust 100 with Polan in Florindale or Pororin.",
+      "body": "Damiane receives this kit from Trust-100 NPCs and one crafted cloak. Polan is named as the Pororin chief. Guides prefer this after Children of the Woods; that quest has no record here yet. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "other",
+          "note": "Paid at Trust 100 with Polan at Florindale or his house in Pororin; that chief has no character record here yet.",
+          "steps": [
+            {
+              "text": "Finish Children of the Woods if that quest is still open.",
+              "action": "other",
+              "optional": true
+            },
+            {
+              "text": "Find Polan at Florindale or at his house in Pororin.",
+              "action": "travel",
+              "refs": [
+                "place:florindale",
+                "place:pororin"
+              ]
+            },
+            {
+              "text": "Raise Trust with him to 100 and collect the leather boots.",
+              "action": "talk"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://vulkk.com/2026/05/30/how-to-get-damianes-white-bloodwind-armor-in-crimson-desert-overview-and-stats/",
+          "title": "VULKK: how to get Damiane's White Bloodwind armor",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:ashad-plate-headgear",
+      "type": "item",
+      "name": "Ashad Plate Headgear",
+      "category": "armor",
+      "slot": "head",
+      "setName": "Ashad Plate",
+      "tags": [
+        "oongka"
+      ],
+      "summary": "Headgear of Oongka's Ashad Plate set, taken from unnamed bosses in Pailune and Demeniss.",
+      "body": "Guides say this Oongka plate drops from specific bosses across Pailune and Demeniss and never name them. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "drop",
+          "note": "Dropped by unnamed bosses in Pailune and Demeniss; no enemy records exist for those fights yet."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/598696",
+          "title": "Game8: list of all Oongka armor sets",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/05/09/crimson-desert-armor-sets-catalog/",
+          "title": "VULKK: armor sets catalog",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587193",
+          "title": "Game8: best armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:ashad-plate-body-armor",
+      "type": "item",
+      "name": "Ashad Plate Body Armor",
+      "category": "armor",
+      "slot": "body",
+      "setName": "Ashad Plate",
+      "tags": [
+        "oongka"
+      ],
+      "summary": "Body plate of Oongka's Ashad Plate set, taken from unnamed bosses in Pailune and Demeniss.",
+      "body": "Guides say this Oongka plate drops from specific bosses across Pailune and Demeniss and never name them. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "drop",
+          "note": "Dropped by unnamed bosses in Pailune and Demeniss; no enemy records exist for those fights yet."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/598696",
+          "title": "Game8: list of all Oongka armor sets",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/05/09/crimson-desert-armor-sets-catalog/",
+          "title": "VULKK: armor sets catalog",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:ashad-plate-gloves",
+      "type": "item",
+      "name": "Ashad Plate Gloves",
+      "category": "armor",
+      "slot": "gloves",
+      "setName": "Ashad Plate",
+      "tags": [
+        "oongka"
+      ],
+      "summary": "Gloves of Oongka's Ashad Plate set, taken from unnamed bosses in Pailune and Demeniss.",
+      "body": "Guides say this Oongka plate drops from specific bosses across Pailune and Demeniss and never name them. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "drop",
+          "note": "Dropped by unnamed bosses in Pailune and Demeniss; no enemy records exist for those fights yet."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/598696",
+          "title": "Game8: list of all Oongka armor sets",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/05/09/crimson-desert-armor-sets-catalog/",
+          "title": "VULKK: armor sets catalog",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:ashad-plate-footwear",
+      "type": "item",
+      "name": "Ashad Plate Footwear",
+      "category": "armor",
+      "slot": "feet",
+      "setName": "Ashad Plate",
+      "tags": [
+        "oongka"
+      ],
+      "summary": "Footwear of Oongka's Ashad Plate set, taken from unnamed bosses in Pailune and Demeniss.",
+      "body": "Guides say this Oongka plate drops from specific bosses across Pailune and Demeniss and never name them. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "drop",
+          "note": "Dropped by unnamed bosses in Pailune and Demeniss; no enemy records exist for those fights yet."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/598696",
+          "title": "Game8: list of all Oongka armor sets",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/05/09/crimson-desert-armor-sets-catalog/",
+          "title": "VULKK: armor sets catalog",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:ashad-plate-cloak",
+      "type": "item",
+      "name": "Ashad Plate Cloak",
+      "category": "armor",
+      "slot": "cloak",
+      "setName": "Ashad Plate",
+      "tags": [
+        "oongka"
+      ],
+      "summary": "Cloak of Oongka's Ashad Plate set, taken from unnamed bosses in Pailune and Demeniss.",
+      "body": "Guides say this Oongka plate drops from specific bosses across Pailune and Demeniss and never name them. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "drop",
+          "note": "Dropped by unnamed bosses in Pailune and Demeniss; no enemy records exist for those fights yet."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/598696",
+          "title": "Game8: list of all Oongka armor sets",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/05/09/crimson-desert-armor-sets-catalog/",
+          "title": "VULKK: armor sets catalog",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:ashen-wolfs-leather-body-armor",
+      "type": "item",
+      "name": "Ashen Wolf's Leather Body Armor",
+      "category": "armor",
+      "slot": "body",
+      "setName": "Ashen Wolf's Leather",
+      "tags": [
+        "oongka"
+      ],
+      "summary": "Body piece of Oongka's Ashen Wolf's Leather set; no source names a pickup.",
+      "body": "Game8 names the Oongka leather pieces and stops. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "other",
+          "note": "No source in the research file names a pickup, drop, or vendor."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/598696",
+          "title": "Game8: list of all Oongka armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:ashen-wolfs-leather-gloves",
+      "type": "item",
+      "name": "Ashen Wolf's Leather Gloves",
+      "category": "armor",
+      "slot": "gloves",
+      "setName": "Ashen Wolf's Leather",
+      "tags": [
+        "oongka"
+      ],
+      "summary": "Gloves of Oongka's Ashen Wolf's Leather set; no source names a pickup.",
+      "body": "Game8 names the Oongka leather pieces and stops. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "other",
+          "note": "No source in the research file names a pickup, drop, or vendor."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/598696",
+          "title": "Game8: list of all Oongka armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:ashen-wolfs-leather-footwear",
+      "type": "item",
+      "name": "Ashen Wolf's Leather Footwear",
+      "category": "armor",
+      "slot": "feet",
+      "setName": "Ashen Wolf's Leather",
+      "tags": [
+        "oongka"
+      ],
+      "summary": "Footwear of Oongka's Ashen Wolf's Leather set; no source names a pickup.",
+      "body": "Game8 names the Oongka leather pieces and stops. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "other",
+          "note": "No source in the research file names a pickup, drop, or vendor."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/598696",
+          "title": "Game8: list of all Oongka armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:ashen-wolfs-leather-cloak",
+      "type": "item",
+      "name": "Ashen Wolf's Leather Cloak",
+      "category": "armor",
+      "slot": "cloak",
+      "setName": "Ashen Wolf's Leather",
+      "tags": [
+        "oongka"
+      ],
+      "summary": "Cloak of Oongka's Ashen Wolf's Leather set; no source names a pickup.",
+      "body": "Game8 names the Oongka leather pieces and stops. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "other",
+          "note": "No source in the research file names a pickup, drop, or vendor."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/598696",
+          "title": "Game8: list of all Oongka armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:valortread-plate-headgear",
+      "type": "item",
+      "name": "Valortread Plate Headgear",
+      "category": "armor",
+      "slot": "head",
+      "setName": "Valortread Plate",
+      "tags": [
+        "oongka",
+        "abyss-gear"
+      ],
+      "summary": "Headgear of Oongka's Valortread Plate set, listed with Gourmet, Aegis, and Fortification Abyss Gear.",
+      "body": "Game8 names the Oongka plate and the three Abyss Gear lines and does not name a pickup. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "other",
+          "note": "No source in the research file names a pickup, drop, or vendor."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/598696",
+          "title": "Game8: list of all Oongka armor sets",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587193",
+          "title": "Game8: best armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:valortread-plate-body-armor",
+      "type": "item",
+      "name": "Valortread Plate Body Armor",
+      "category": "armor",
+      "slot": "body",
+      "setName": "Valortread Plate",
+      "tags": [
+        "oongka",
+        "abyss-gear"
+      ],
+      "summary": "Body plate of Oongka's Valortread Plate set; no source names a pickup.",
+      "body": "Game8 names the Oongka plate and stops. The head piece is the row that lists Gourmet, Aegis, and Fortification Abyss Gear. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "other",
+          "note": "No source in the research file names a pickup, drop, or vendor."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/598696",
+          "title": "Game8: list of all Oongka armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:valortread-plate-gloves",
+      "type": "item",
+      "name": "Valortread Plate Gloves",
+      "category": "armor",
+      "slot": "gloves",
+      "setName": "Valortread Plate",
+      "tags": [
+        "oongka",
+        "abyss-gear"
+      ],
+      "summary": "Gloves of Oongka's Valortread Plate set; no source names a pickup.",
+      "body": "Game8 names the Oongka plate and stops. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "other",
+          "note": "No source in the research file names a pickup, drop, or vendor."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/598696",
+          "title": "Game8: list of all Oongka armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:valortread-plate-footwear",
+      "type": "item",
+      "name": "Valortread Plate Footwear",
+      "category": "armor",
+      "slot": "feet",
+      "setName": "Valortread Plate",
+      "tags": [
+        "oongka",
+        "abyss-gear"
+      ],
+      "summary": "Footwear of Oongka's Valortread Plate set; no source names a pickup.",
+      "body": "Game8 names the Oongka plate and stops. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "other",
+          "note": "No source in the research file names a pickup, drop, or vendor."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/598696",
+          "title": "Game8: list of all Oongka armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:valortread-plate-cloak",
+      "type": "item",
+      "name": "Valortread Plate Cloak",
+      "category": "armor",
+      "slot": "cloak",
+      "setName": "Valortread Plate",
+      "tags": [
+        "oongka",
+        "abyss-gear"
+      ],
+      "summary": "Cloak of Oongka's Valortread Plate set; no source names a pickup.",
+      "body": "Game8 names the Oongka plate and stops. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "other",
+          "note": "No source in the research file names a pickup, drop, or vendor."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/598696",
+          "title": "Game8: list of all Oongka armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:solas-plate-headgear",
+      "type": "item",
+      "name": "Solas Plate Headgear",
+      "category": "armor",
+      "slot": "head",
+      "setName": "Solas Plate",
+      "tags": [
+        "oongka"
+      ],
+      "summary": "Headgear of Oongka's Solas Plate set; no source names a pickup.",
+      "body": "Game8 lists this Oongka plate with no gloves piece and no route. Eclipsed Solas Plate Gloves are a separate [[quest:a-fleeting-dream]] reward and are not confirmed as a recolor of a missing Solas glove. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "other",
+          "note": "No source in the research file names a pickup, drop, or vendor."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/598696",
+          "title": "Game8: list of all Oongka armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:solas-plate-body-armor",
+      "type": "item",
+      "name": "Solas Plate Body Armor",
+      "category": "armor",
+      "slot": "body",
+      "setName": "Solas Plate",
+      "tags": [
+        "oongka"
+      ],
+      "summary": "Body plate of Oongka's Solas Plate set; no source names a pickup.",
+      "body": "Game8 lists this Oongka plate with no gloves piece and no route. Eclipsed Solas Plate Gloves on [[quest:a-fleeting-dream]] are not confirmed as part of this set. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "other",
+          "note": "No source in the research file names a pickup, drop, or vendor."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/598696",
+          "title": "Game8: list of all Oongka armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:solas-plate-footwear",
+      "type": "item",
+      "name": "Solas Plate Footwear",
+      "category": "armor",
+      "slot": "feet",
+      "setName": "Solas Plate",
+      "tags": [
+        "oongka"
+      ],
+      "summary": "Footwear of Oongka's Solas Plate set; no source names a pickup.",
+      "body": "Game8 lists this Oongka plate with no gloves piece and no route. Eclipsed Solas Plate Gloves on [[quest:a-fleeting-dream]] are not confirmed as part of this set. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "other",
+          "note": "No source in the research file names a pickup, drop, or vendor."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/598696",
+          "title": "Game8: list of all Oongka armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:solas-plate-cloak",
+      "type": "item",
+      "name": "Solas Plate Cloak",
+      "category": "armor",
+      "slot": "cloak",
+      "setName": "Solas Plate",
+      "tags": [
+        "oongka"
+      ],
+      "summary": "Cloak of Oongka's Solas Plate set; no source names a pickup.",
+      "body": "Game8 lists this Oongka plate with no gloves piece and no route. Eclipsed Solas Plate Gloves on [[quest:a-fleeting-dream]] are not confirmed as part of this set. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "other",
+          "note": "No source in the research file names a pickup, drop, or vendor."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/598696",
+          "title": "Game8: list of all Oongka armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:scorchflame-plate-helmet",
+      "type": "item",
+      "name": "Scorchflame Plate Helmet",
+      "aliases": [
+        "Scorchflame Knight"
+      ],
+      "category": "armor",
+      "slot": "head",
+      "setName": "Scorchflame",
+      "tags": [
+        "kliff"
+      ],
+      "region": "region:demeniss",
+      "summary": "Helmet of Kliff's Scorchflame set, taken from an upper-floor chest at Stonewell Farm in northeast Demeniss.",
+      "body": "Guides also file this Kliff kit as Scorchflame Knight. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "One-time chest on the upper floor at Stonewell Farm; that farm has no place record here yet.",
+          "steps": [
+            {
+              "text": "Ride to Stonewell Farm in northeast Demeniss.",
+              "action": "travel"
+            },
+            {
+              "text": "Climb the side of the building to the upper floor.",
+              "action": "solve"
+            },
+            {
+              "text": "Take the Scorchflame plate helmet from the chest.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/590350",
+          "title": "Game8: how to get Scorchflame Armor Set",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://www.keengamer.com/articles/guides/crimson-desert-10-best-armor-sets-ranked/",
+          "title": "KeenGamer: 10 best armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:scorchflame-plate-armor",
+      "type": "item",
+      "name": "Scorchflame Plate Armor",
+      "category": "armor",
+      "slot": "body",
+      "setName": "Scorchflame",
+      "tags": [
+        "kliff"
+      ],
+      "region": "region:demeniss",
+      "summary": "Body plate of Kliff's Scorchflame set, taken past a rotating door and a Stab through a waterfall at the Golden Trading Post.",
+      "body": "Guides also file this Kliff kit as Scorchflame Knight. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "One-time chest at the Golden Trading Post in north Demeniss; that post has no place record here yet.",
+          "steps": [
+            {
+              "text": "Ride to the Golden Trading Post in north Demeniss.",
+              "action": "travel"
+            },
+            {
+              "text": "Pass through the rotating wooden door.",
+              "action": "solve"
+            },
+            {
+              "text": "Stab through the waterfall and take the plate armor from the chest.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/590350",
+          "title": "Game8: how to get Scorchflame Armor Set",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:scorchflame-plate-gloves",
+      "type": "item",
+      "name": "Scorchflame Plate Gloves",
+      "category": "armor",
+      "slot": "gloves",
+      "setName": "Scorchflame",
+      "tags": [
+        "kliff"
+      ],
+      "region": "region:demeniss",
+      "summary": "Gloves of Kliff's Scorchflame set, taken from a chest at the second waterfall north of Rocca's Hill.",
+      "body": "Guides also file this Kliff kit as Scorchflame Knight. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "One-time chest at the second waterfall north of Rocca's Hill; that fall has no place record here yet.",
+          "steps": [
+            {
+              "text": "Ride north of Rocca's Hill to the second waterfall.",
+              "action": "travel"
+            },
+            {
+              "text": "Take the Scorchflame plate gloves from the chest.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/590350",
+          "title": "Game8: how to get Scorchflame Armor Set",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:scorchflame-leather-boots",
+      "type": "item",
+      "name": "Scorchflame Leather Boots",
+      "category": "armor",
+      "slot": "feet",
+      "setName": "Scorchflame",
+      "tags": [
+        "kliff"
+      ],
+      "region": "region:hernand",
+      "summary": "Boots of Kliff's Scorchflame set, taken after a Stab through a waterfall in Cascade Grotto on the Nas River.",
+      "body": "Guides also file this Kliff kit as Scorchflame Knight. Cascade Grotto sits on the Hernand–Demeniss line. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "One-time chest in Cascade Grotto on the Nas River; that grotto has no place record here yet.",
+          "steps": [
+            {
+              "text": "Ride to Cascade Grotto on the Nas River at the Hernand–Demeniss border.",
+              "action": "travel"
+            },
+            {
+              "text": "Stab through the waterfall.",
+              "action": "solve"
+            },
+            {
+              "text": "Take the Scorchflame leather boots from the chest.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/590350",
+          "title": "Game8: how to get Scorchflame Armor Set",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:scorchflame-plate-cloak",
+      "type": "item",
+      "name": "Scorchflame Plate Cloak",
+      "category": "armor",
+      "slot": "cloak",
+      "setName": "Scorchflame",
+      "tags": [
+        "kliff"
+      ],
+      "region": "region:hernand",
+      "summary": "Cloak of Kliff's Scorchflame set, taken at Silent Falls Hideout after Grave Walker and a Force Palm on a wall.",
+      "body": "Guides also file this Kliff kit as Scorchflame Knight. Grave Walker is also named for Insight I and Vigor I Abyss Gear. The hideout sits near the Hills of No Return on the Hernand–Demeniss line. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "drop",
+          "note": "Grave Walker at Silent Falls Hideout is named on this route and is also listed for Insight I and Vigor I Abyss Gear; that boss has no enemy record here yet.",
+          "steps": [
+            {
+              "text": "Ride to Silent Falls Hideout near the Hills of No Return.",
+              "action": "travel"
+            },
+            {
+              "text": "Defeat Grave Walker.",
+              "action": "fight"
+            }
+          ]
+        },
+        {
+          "kind": "chest",
+          "note": "One-time chest behind a Force Palm wall at Silent Falls Hideout; that hideout has no place record here yet.",
+          "steps": [
+            {
+              "text": "Stay in Silent Falls Hideout after Grave Walker falls.",
+              "action": "travel"
+            },
+            {
+              "text": "Force Palm the wall.",
+              "action": "solve"
+            },
+            {
+              "text": "Take the Scorchflame plate cloak from the chest.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/590350",
+          "title": "Game8: how to get Scorchflame Armor Set",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:icewing-plate-headgear",
+      "type": "item",
+      "name": "Icewing Plate Headgear",
+      "category": "armor",
+      "slot": "head",
+      "setName": "Icewing Plate",
+      "region": "region:hernand",
+      "summary": "A piece of the Icewing Plate set taken from Gwen Kraber at the Eldertree; the slot map is not given.",
+      "body": "KeenGamer is the only source and does not name which piece falls here. This record files the Eldertree drop against the head slot only as a catalog hook. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "drop",
+          "note": "Dropped by Gwen Kraber at the Eldertree; that boss and site have no records here yet.",
+          "steps": [
+            {
+              "text": "Ride to the Eldertree in Hernand.",
+              "action": "travel"
+            },
+            {
+              "text": "Defeat Gwen Kraber.",
+              "action": "fight"
+            },
+            {
+              "text": "Take the Icewing Plate piece from the fall.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.keengamer.com/articles/guides/crimson-desert-10-best-armor-sets-ranked/",
+          "title": "KeenGamer: 10 best armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:icewing-plate-body-armor",
+      "type": "item",
+      "name": "Icewing Plate Body Armor",
+      "category": "armor",
+      "slot": "body",
+      "setName": "Icewing Plate",
+      "summary": "A piece of the Icewing Plate set paid after all 15 Witches-questline Sanctums; the slot map is not given.",
+      "body": "KeenGamer is the only source and does not name which piece this reward is. This record files the Sanctum bundle against the body slot only as a catalog hook. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "quest",
+          "note": "Paid after finishing all 15 Sanctums on the Witches questline; that questline has no record here yet.",
+          "steps": [
+            {
+              "text": "Open the Witches questline.",
+              "action": "other"
+            },
+            {
+              "text": "Clear all 15 Sanctums on that line.",
+              "action": "solve"
+            },
+            {
+              "text": "Collect the Icewing Plate piece from the quest reward.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.keengamer.com/articles/guides/crimson-desert-10-best-armor-sets-ranked/",
+          "title": "KeenGamer: 10 best armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:icewing-plate-cloak",
+      "type": "item",
+      "name": "Icewing Plate Cloak",
+      "category": "armor",
+      "slot": "cloak",
+      "setName": "Icewing Plate",
+      "summary": "Icewing Plate pieces hidden at Claggy Chasm, the Sanctum of Solace, and the Cave of the Ancients; no slot map is given.",
+      "body": "KeenGamer is the only source and names three sites without saying which chest holds which piece. This record files those chests against the cloak slot only as a catalog hook. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "Chests at Claggy Chasm, the Sanctum of Solace, and the Cave of the Ancients; those sites have no place records here yet.",
+          "steps": [
+            {
+              "text": "Search Claggy Chasm, the Sanctum of Solace, and the Cave of the Ancients.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chests until the Icewing Plate pieces appear.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.keengamer.com/articles/guides/crimson-desert-10-best-armor-sets-ranked/",
+          "title": "KeenGamer: 10 best armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:golden-greed-headgear",
+      "type": "item",
+      "name": "Golden Greed Headgear",
+      "category": "armor",
+      "slot": "head",
+      "setName": "Golden Greed",
+      "summary": "A piece of the Golden Greed set hidden in Venomblade Grotto; the slot map is not given.",
+      "body": "KeenGamer is the only source and names five sites without saying which chest holds which piece. This record files Venomblade Grotto against the head slot only as a catalog hook. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "One-time chest in Venomblade Grotto; that grotto has no place record here yet.",
+          "steps": [
+            {
+              "text": "Ride to Venomblade Grotto.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for the Golden Greed piece.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.keengamer.com/articles/guides/crimson-desert-10-best-armor-sets-ranked/",
+          "title": "KeenGamer: 10 best armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:golden-greed-body-armor",
+      "type": "item",
+      "name": "Golden Greed Body Armor",
+      "category": "armor",
+      "slot": "body",
+      "setName": "Golden Greed",
+      "summary": "A piece of the Golden Greed set hidden in Arehaze Cave; the slot map is not given.",
+      "body": "KeenGamer is the only source and names five sites without saying which chest holds which piece. This record files Arehaze Cave against the body slot only as a catalog hook. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "One-time chest in Arehaze Cave; that cave has no place record here yet.",
+          "steps": [
+            {
+              "text": "Ride to Arehaze Cave.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for the Golden Greed piece.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.keengamer.com/articles/guides/crimson-desert-10-best-armor-sets-ranked/",
+          "title": "KeenGamer: 10 best armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:golden-greed-gloves",
+      "type": "item",
+      "name": "Golden Greed Gloves",
+      "category": "armor",
+      "slot": "gloves",
+      "setName": "Golden Greed",
+      "summary": "A piece of the Golden Greed set hidden in the Sanctum of Renunciation; the slot map is not given.",
+      "body": "KeenGamer is the only source and names five sites without saying which chest holds which piece. This record files the Sanctum of Renunciation against the gloves slot only as a catalog hook. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "One-time chest in the Sanctum of Renunciation; that sanctum has no place record here yet.",
+          "steps": [
+            {
+              "text": "Ride to the Sanctum of Renunciation.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for the Golden Greed piece.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.keengamer.com/articles/guides/crimson-desert-10-best-armor-sets-ranked/",
+          "title": "KeenGamer: 10 best armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:golden-greed-cloak",
+      "type": "item",
+      "name": "Golden Greed Cloak",
+      "category": "armor",
+      "slot": "cloak",
+      "setName": "Golden Greed",
+      "summary": "A piece of the Golden Greed set hidden in Gale of Judgement Cave; the slot map is not given.",
+      "body": "KeenGamer is the only source and names five sites without saying which chest holds which piece. This record files Gale of Judgement Cave against the cloak slot only as a catalog hook. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "One-time chest in Gale of Judgement Cave; that cave has no place record here yet.",
+          "steps": [
+            {
+              "text": "Ride to Gale of Judgement Cave.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for the Golden Greed piece.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.keengamer.com/articles/guides/crimson-desert-10-best-armor-sets-ranked/",
+          "title": "KeenGamer: 10 best armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:golden-greed-footwear",
+      "type": "item",
+      "name": "Golden Greed Footwear",
+      "category": "armor",
+      "slot": "feet",
+      "setName": "Golden Greed",
+      "summary": "A piece of the Golden Greed set hidden in Bursada Castle Ruins; the slot map is not given.",
+      "body": "KeenGamer is the only source and names five sites without saying which chest holds which piece. This record files Bursada Castle Ruins against the feet slot only as a catalog hook. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "One-time chest in Bursada Castle Ruins; those ruins have no place record here yet.",
+          "steps": [
+            {
+              "text": "Ride to Bursada Castle Ruins.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for the Golden Greed piece.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.keengamer.com/articles/guides/crimson-desert-10-best-armor-sets-ranked/",
+          "title": "KeenGamer: 10 best armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:dark-ringleaders-headgear",
+      "type": "item",
+      "name": "Dark Ringleader's Headgear",
+      "category": "armor",
+      "slot": "head",
+      "setName": "Dark Ringleader's",
+      "region": "region:hernand",
+      "summary": "A piece of the Dark Ringleader's set hidden in Echoing Tunnel; the slot map is not given.",
+      "body": "KeenGamer is the only source and names four west Hernand sites without saying which chest holds which piece. This record files Echoing Tunnel against the head slot only as a catalog hook. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "One-time chest in Echoing Tunnel in west Hernand; that tunnel has no place record here yet.",
+          "steps": [
+            {
+              "text": "Ride to Echoing Tunnel in west Hernand.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for the Dark Ringleader's piece.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.keengamer.com/articles/guides/crimson-desert-10-best-armor-sets-ranked/",
+          "title": "KeenGamer: 10 best armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:dark-ringleaders-body-armor",
+      "type": "item",
+      "name": "Dark Ringleader's Body Armor",
+      "category": "armor",
+      "slot": "body",
+      "setName": "Dark Ringleader's",
+      "region": "region:hernand",
+      "summary": "A piece of the Dark Ringleader's set hidden in Cloudmist Cave; the slot map is not given.",
+      "body": "KeenGamer is the only source and names four west Hernand sites without saying which chest holds which piece. This record files Cloudmist Cave against the body slot only as a catalog hook. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "One-time chest in Cloudmist Cave in west Hernand; that cave has no place record here yet.",
+          "steps": [
+            {
+              "text": "Ride to Cloudmist Cave in west Hernand.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for the Dark Ringleader's piece.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.keengamer.com/articles/guides/crimson-desert-10-best-armor-sets-ranked/",
+          "title": "KeenGamer: 10 best armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:dark-ringleaders-gloves",
+      "type": "item",
+      "name": "Dark Ringleader's Gloves",
+      "category": "armor",
+      "slot": "gloves",
+      "setName": "Dark Ringleader's",
+      "region": "region:hernand",
+      "summary": "A piece of the Dark Ringleader's set hidden in Shadowheart Grotto; the slot map is not given.",
+      "body": "KeenGamer is the only source and names four west Hernand sites without saying which chest holds which piece. This record files Shadowheart Grotto against the gloves slot only as a catalog hook. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "One-time chest in Shadowheart Grotto in west Hernand; that grotto has no place record here yet.",
+          "steps": [
+            {
+              "text": "Ride to Shadowheart Grotto in west Hernand.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for the Dark Ringleader's piece.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.keengamer.com/articles/guides/crimson-desert-10-best-armor-sets-ranked/",
+          "title": "KeenGamer: 10 best armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:dark-ringleaders-footwear",
+      "type": "item",
+      "name": "Dark Ringleader's Footwear",
+      "category": "armor",
+      "slot": "feet",
+      "setName": "Dark Ringleader's",
+      "region": "region:hernand",
+      "summary": "A piece of the Dark Ringleader's set hidden in Blade Cavern; the slot map is not given.",
+      "body": "KeenGamer is the only source and names four west Hernand sites without saying which chest holds which piece. This record files Blade Cavern against the feet slot only as a catalog hook. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "One-time chest in Blade Cavern in west Hernand; that cavern has no place record here yet.",
+          "steps": [
+            {
+              "text": "Ride to Blade Cavern in west Hernand.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for the Dark Ringleader's piece.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.keengamer.com/articles/guides/crimson-desert-10-best-armor-sets-ranked/",
+          "title": "KeenGamer: 10 best armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:plate-cloak-of-shadows",
+      "type": "item",
+      "name": "Plate Cloak of Shadows",
+      "category": "armor",
+      "slot": "cloak",
+      "setName": "Armor of the Shadows",
+      "tags": [
+        "kliff"
+      ],
+      "region": "region:hernand",
+      "summary": "Cloak of Kliff's Armor of the Shadows set, taken from an underground chamber at Hoenmark Ruins after a Force Palm.",
+      "body": "Guides also file this Kliff kit as Plate Armor of Shadows. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "One-time chest in the underground chamber at Hoenmark Ruins; those ruins have no place record here yet.",
+          "steps": [
+            {
+              "text": "Ride to Hoenmark Ruins in Hernand.",
+              "action": "travel"
+            },
+            {
+              "text": "Drop into the underground chamber and Force Palm the discolored floor tiles.",
+              "action": "solve"
+            },
+            {
+              "text": "Take the Plate Cloak of Shadows from the chest.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.keengamer.com/articles/guides/crimson-desert-how-to-get-plate-armor-of-the-shadows-set/",
+          "title": "KeenGamer: how to get Plate Armor of the Shadows set",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://www.keengamer.com/articles/guides/crimson-desert-10-best-armor-sets-ranked/",
+          "title": "KeenGamer: 10 best armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:plate-armor-of-shadows",
+      "type": "item",
+      "name": "Plate Armor of Shadows",
+      "category": "armor",
+      "slot": "body",
+      "setName": "Armor of the Shadows",
+      "tags": [
+        "kliff"
+      ],
+      "region": "region:hernand",
+      "summary": "Body plate of Kliff's Armor of the Shadows set, taken from a cave near Everfrost Watchtower after the lamp is lit.",
+      "body": "Guides also file this Kliff kit as Plate Armor of Shadows. The cave sits in the Argent Peaks. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "One-time chest in the cave near Everfrost Watchtower; that cave and watchtower have no place records here yet.",
+          "steps": [
+            {
+              "text": "Ride to the cave near Everfrost Watchtower in the Argent Peaks.",
+              "action": "travel"
+            },
+            {
+              "text": "Light the lamp or brazier inside.",
+              "action": "solve"
+            },
+            {
+              "text": "Take the Plate Armor of Shadows from the chest.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.keengamer.com/articles/guides/crimson-desert-how-to-get-plate-armor-of-the-shadows-set/",
+          "title": "KeenGamer: how to get Plate Armor of the Shadows set",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:plate-boots-of-shadows",
+      "type": "item",
+      "name": "Plate Boots of Shadows",
+      "category": "armor",
+      "slot": "feet",
+      "setName": "Armor of the Shadows",
+      "tags": [
+        "kliff"
+      ],
+      "region": "region:hernand",
+      "summary": "Boots of Kliff's Armor of the Shadows set, taken behind a lower waterfall in Frostclaw Cave after a charged Stab.",
+      "body": "Guides also file this Kliff kit as Plate Armor of Shadows. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "One-time chest behind the lower waterfall in Frostclaw Cave; that cave has no place record here yet.",
+          "steps": [
+            {
+              "text": "Ride to Frostclaw Cave and drop to the lower section.",
+              "action": "travel"
+            },
+            {
+              "text": "Charge a Stab at the left base of the waterfall.",
+              "action": "solve"
+            },
+            {
+              "text": "Take the Plate Boots of Shadows from the chest.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.keengamer.com/articles/guides/crimson-desert-how-to-get-plate-armor-of-the-shadows-set/",
+          "title": "KeenGamer: how to get Plate Armor of the Shadows set",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:plate-gloves-of-shadows",
+      "type": "item",
+      "name": "Plate Gloves of Shadows",
+      "category": "armor",
+      "slot": "gloves",
+      "setName": "Armor of the Shadows",
+      "tags": [
+        "kliff"
+      ],
+      "region": "region:hernand",
+      "summary": "Gloves of Kliff's Armor of the Shadows set, taken from Everfrost Cave after climbing past the end-of-world warning.",
+      "body": "Guides also file this Kliff kit as Plate Armor of Shadows. The cave sits above the riverbank in the northern stretch. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "One-time chest in Everfrost Cave above the riverbank; that cave has no place record here yet.",
+          "steps": [
+            {
+              "text": "Ride to Everfrost Cave above the northern riverbank.",
+              "action": "travel"
+            },
+            {
+              "text": "Climb past the end-of-world warning.",
+              "action": "solve"
+            },
+            {
+              "text": "Take the Plate Gloves of Shadows from the chest.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.keengamer.com/articles/guides/crimson-desert-how-to-get-plate-armor-of-the-shadows-set/",
+          "title": "KeenGamer: how to get Plate Armor of the Shadows set",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:plate-helm-of-shadows",
+      "type": "item",
+      "name": "Plate Helm of Shadows",
+      "category": "armor",
+      "slot": "head",
+      "setName": "Armor of the Shadows",
+      "tags": [
+        "kliff"
+      ],
+      "region": "region:hernand",
+      "summary": "Helm of Kliff's Armor of the Shadows set, taken from Beloth the Dark Sworn at Hoenmark Ruins.",
+      "body": "Guides also file this Kliff kit as Plate Armor of Shadows. KeenGamer's own pages disagree on the fight: one puts Beloth, the Dark Sworn or Darksworn, in Chapter 6, and the other puts the same fight on Chapter 7's White Blizzard quest. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "drop",
+          "note": "Dropped by Beloth, the Dark Sworn, at Hoenmark Ruins; that boss has no enemy record here yet.",
+          "steps": [
+            {
+              "text": "Ride to Hoenmark Ruins in Hernand.",
+              "action": "travel"
+            },
+            {
+              "text": "Defeat Beloth, the Dark Sworn.",
+              "action": "fight"
+            },
+            {
+              "text": "Take the Plate Helm of Shadows from the fall.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.keengamer.com/articles/guides/crimson-desert-how-to-get-plate-armor-of-the-shadows-set/",
+          "title": "KeenGamer: how to get Plate Armor of the Shadows set",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://www.keengamer.com/articles/guides/crimson-desert-10-best-armor-sets-ranked/",
+          "title": "KeenGamer: 10 best armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:dark-executioner-leather-armor",
+      "type": "item",
+      "name": "Dark Executioner Leather Armor",
+      "category": "armor",
+      "slot": "body",
+      "summary": "Standalone leather body piece paid as the Epilogue chapter reward on New Horizons.",
+      "body": "No other pieces of this name were found. Damiane's [[item:executioner-of-darkness-plate-helm]] kit shares a dark-executioner theme and is not confirmed as the same set. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "quest",
+          "ref": "quest:new-horizons",
+          "note": "Paid as the Epilogue chapter-total reward on New Horizons.",
+          "steps": [
+            {
+              "text": "Play through the Epilogue to New Horizons.",
+              "action": "other",
+              "refs": [
+                "quest:new-horizons"
+              ]
+            },
+            {
+              "text": "Collect Dark Executioner Leather Armor with the chapter reward.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/",
+          "title": "VULKK: main story walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:kuku-cold-resistant-armor",
+      "type": "item",
+      "name": "Kuku Cold-Resistant Armor",
+      "category": "armor",
+      "slot": "body",
+      "summary": "Standalone Kuku body armour crafted at the Kilnden Workshop, with ice resistance 10 and a movement-speed passive.",
+      "body": "The Kilnden Workshop and every named Kuku piece rest on one KeenGamer article. This row is not grouped into a head-to-cloak set. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "craft",
+          "note": "Crafted at the Kilnden Workshop; that recipe has no record here yet.",
+          "steps": [
+            {
+              "text": "Reach Chapter 4 and open the Kilnden Workshop.",
+              "action": "travel",
+              "refs": [
+                "quest:kilnden-workshop",
+                "place:kilnden-workshop"
+              ]
+            },
+            {
+              "text": "Speak with Grimnir at the bench.",
+              "action": "talk",
+              "refs": [
+                "character:grimnir",
+                "place:kilnden-workshop"
+              ]
+            },
+            {
+              "text": "Craft Kuku Cold-Resistant Armor from the workshop blueprint.",
+              "action": "craft",
+              "refs": [
+                "character:grimnir"
+              ]
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.keengamer.com/articles/guides/crimson-desert-best-kuku-weapons-and-gears-guide/",
+          "title": "KeenGamer: best Kuku weapons and gears",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:kuku-flame-resistant-armor",
+      "type": "item",
+      "name": "Kuku Flame-Resistant Armor",
+      "category": "armor",
+      "slot": "body",
+      "summary": "Standalone Kuku body armour crafted at the Kilnden Workshop, with fire resistance 10 and a critical-rate passive.",
+      "body": "The Kilnden Workshop and every named Kuku piece rest on one KeenGamer article. This row is not grouped into a head-to-cloak set. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "craft",
+          "note": "Crafted at the Kilnden Workshop; that recipe has no record here yet.",
+          "steps": [
+            {
+              "text": "Reach Chapter 4 and open the Kilnden Workshop.",
+              "action": "travel",
+              "refs": [
+                "quest:kilnden-workshop",
+                "place:kilnden-workshop"
+              ]
+            },
+            {
+              "text": "Speak with Grimnir at the bench.",
+              "action": "talk",
+              "refs": [
+                "character:grimnir",
+                "place:kilnden-workshop"
+              ]
+            },
+            {
+              "text": "Craft Kuku Flame-Resistant Armor from the workshop blueprint.",
+              "action": "craft",
+              "refs": [
+                "character:grimnir"
+              ]
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.keengamer.com/articles/guides/crimson-desert-best-kuku-weapons-and-gears-guide/",
+          "title": "KeenGamer: best Kuku weapons and gears",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:kuku-lightning-resistant-armor",
+      "type": "item",
+      "name": "Kuku Lightning-Resistant Armor",
+      "category": "armor",
+      "slot": "body",
+      "summary": "Standalone Kuku body armour crafted at the Kilnden Workshop, with lightning resistance 10 and an attack-speed passive.",
+      "body": "The Kilnden Workshop and every named Kuku piece rest on one KeenGamer article. This row is not grouped into a head-to-cloak set. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "craft",
+          "note": "Crafted at the Kilnden Workshop; that recipe has no record here yet.",
+          "steps": [
+            {
+              "text": "Reach Chapter 4 and open the Kilnden Workshop.",
+              "action": "travel",
+              "refs": [
+                "quest:kilnden-workshop",
+                "place:kilnden-workshop"
+              ]
+            },
+            {
+              "text": "Speak with Grimnir at the bench.",
+              "action": "talk",
+              "refs": [
+                "character:grimnir",
+                "place:kilnden-workshop"
+              ]
+            },
+            {
+              "text": "Craft Kuku Lightning-Resistant Armor from the workshop blueprint.",
+              "action": "craft",
+              "refs": [
+                "character:grimnir"
+              ]
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.keengamer.com/articles/guides/crimson-desert-best-kuku-weapons-and-gears-guide/",
+          "title": "KeenGamer: best Kuku weapons and gears",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:kuku-marni-laser-helm",
+      "type": "item",
+      "name": "Kuku Marni Laser Helm",
+      "category": "armor",
+      "slot": "head",
+      "summary": "Standalone Kuku helm crafted at the Kilnden Workshop, firing three laser shots each cooldown cycle.",
+      "body": "The Kilnden Workshop and every named Kuku piece rest on one KeenGamer article. This row is not grouped into a head-to-cloak set. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "craft",
+          "note": "Crafted at the Kilnden Workshop; that recipe has no record here yet.",
+          "steps": [
+            {
+              "text": "Reach Chapter 4 and open the Kilnden Workshop.",
+              "action": "travel",
+              "refs": [
+                "quest:kilnden-workshop",
+                "place:kilnden-workshop"
+              ]
+            },
+            {
+              "text": "Speak with Grimnir at the bench.",
+              "action": "talk",
+              "refs": [
+                "character:grimnir",
+                "place:kilnden-workshop"
+              ]
+            },
+            {
+              "text": "Craft Kuku Marni Laser Helm from the workshop blueprint.",
+              "action": "craft",
+              "refs": [
+                "character:grimnir"
+              ]
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.keengamer.com/articles/guides/crimson-desert-best-kuku-weapons-and-gears-guide/",
+          "title": "KeenGamer: best Kuku weapons and gears",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:kuku-breeze-step-boots",
+      "type": "item",
+      "name": "Kuku Breeze-Step Boots",
+      "category": "armor",
+      "slot": "feet",
+      "summary": "Standalone Kuku boots crafted at the Kilnden Workshop, with triple jump height on a five-charge cycle.",
+      "body": "The Kilnden Workshop and every named Kuku piece rest on one KeenGamer article. This row is not grouped into a head-to-cloak set. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "craft",
+          "note": "Crafted at the Kilnden Workshop; that recipe has no record here yet.",
+          "steps": [
+            {
+              "text": "Reach Chapter 4 and open the Kilnden Workshop.",
+              "action": "travel",
+              "refs": [
+                "quest:kilnden-workshop",
+                "place:kilnden-workshop"
+              ]
+            },
+            {
+              "text": "Speak with Grimnir at the bench.",
+              "action": "talk",
+              "refs": [
+                "character:grimnir",
+                "place:kilnden-workshop"
+              ]
+            },
+            {
+              "text": "Craft Kuku Breeze-Step Boots from the workshop blueprint.",
+              "action": "craft",
+              "refs": [
+                "character:grimnir"
+              ]
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.keengamer.com/articles/guides/crimson-desert-best-kuku-weapons-and-gears-guide/",
+          "title": "KeenGamer: best Kuku weapons and gears",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
     }
   ]
 }
