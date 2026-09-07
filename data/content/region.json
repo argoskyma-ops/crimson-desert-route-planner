@@ -7,25 +7,47 @@
       "type": "region",
       "name": "Hernand",
       "kind": "region",
-      "summary": "The green, forested starting region, home to the City of Hernand and most of Pywel's noble houses.",
-      "body": "Hernand is the first region Kliff explores after the prologue in Pailune and the game's main hub. It is the best documented region and holds the largest share of faction questlines, from [[faction:greymanes]] allies to the noble houses that feud over its estates.",
+      "summary": "Temperate western duchy of grassland, forest and river valleys, ruled by House Celeste from the City of Hernand.",
+      "body": "Hernand occupies the west and southwest of Pywel: rolling grassland and farmland cut by river valleys, with forest, mountain and a stretch of coast. House Celeste is the ducal house, descended from the knight Canta; House Serkis runs internal affairs as the marquis house, with Houses Alfonso, Felix, Grace and Roberts beneath them. [[place:hernand-castle]] is the capital and stronghold. The prologue and Chapters 1-6 play here (Chapter 5 also steps into Demeniss; Chapter 6 is set in [[region:calphadean-territory]]), and Hernand returns as a secondary setting in Chapters 7-8 and the epilogue.",
       "keyPlaces": [
         "place:hernand-castle",
-        "place:steel-mountains"
+        "place:steel-mountains",
+        "place:calphade-castle"
       ],
       "tags": [
         "starting-region"
       ],
       "sources": [
         {
-          "url": "https://gfuel.com/blogs/news/crimson-desert-map-full-region-map-cities-and-more",
-          "title": "Crimson Desert map: full region map, cities and more",
-          "accessed": "2026-09-05"
+          "url": "https://game8.co/games/Crimson-Desert/archives/585761",
+          "title": "Game8: Hernand region guide",
+          "accessed": "2026-09-06"
         },
         {
-          "url": "https://crimsondesertgame.wiki.fextralife.com/Crimson+Desert+Wiki",
-          "title": "Fextralife: Crimson Desert Wiki",
-          "accessed": "2026-09-05"
+          "url": "https://game8.co/games/Crimson-Desert/archives/588601",
+          "title": "Game8: List of All Factions",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Hernand",
+          "title": "Fextralife: Hernand",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://gfuel.com/blogs/news/crimson-desert-map-full-region-map-cities-and-more",
+          "title": "G FUEL: Crimson Desert map, cities and more",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesert.fandom.com/wiki/Hernand",
+          "title": "Fandom: Hernand",
+          "accessed": "2026-09-06",
+          "note": "seen via search snippet; the page blocks scripted fetches"
         }
       ],
       "confidence": "reported",
@@ -36,13 +58,44 @@
       "type": "region",
       "name": "Pailune",
       "kind": "region",
-      "summary": "The cold, mountainous north where the Greymanes made their camp and where the story's opening attack takes place.",
-      "keyPlaces": [],
+      "summary": "Snowbound northern mountains held by tribes and militias, with no single ruler and the settlement of Pailune as its hub.",
+      "body": "Pailune is Pywel's coldest country: steep, snow-covered mountains in the north with poor visibility. No house rules it by the time of the story; the Pailune Militia around [[place:pailune]] and the Beighen, Knytlingar, Longleaf, Skoghorn and Stjar tribes hold ground, while the [[faction:black-bears]] and Lonely Jackals occupy stretches of it. The [[faction:greymanes]] began here as its protectors under founder Gian, and a Beighen resistance known as the Blue Fangs fights the occupation. Chapter 7 (Homecoming) is the main-story chapter, shared with Demeniss; Chapter 8 uses Pailune again as a secondary setting, and the region's fast-travel bell opens only after Chapter 7.",
+      "keyPlaces": [
+        "place:pailune",
+        "place:beighen",
+        "place:silverwolf-mountain"
+      ],
       "sources": [
         {
+          "url": "https://game8.co/games/Crimson-Desert/archives/585764",
+          "title": "Game8: Pailune region guide",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/588601",
+          "title": "Game8: List of All Factions",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Pailune",
+          "title": "Fextralife: Pailune",
+          "accessed": "2026-09-06"
+        },
+        {
           "url": "https://gfuel.com/blogs/news/crimson-desert-map-full-region-map-cities-and-more",
-          "title": "Crimson Desert map: full region map, cities and more",
-          "accessed": "2026-09-05"
+          "title": "G FUEL: Crimson Desert map, cities and more",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesert.fandom.com/wiki/Pailune",
+          "title": "Fandom: Pailune",
+          "accessed": "2026-09-06",
+          "note": "seen via search snippet; the page blocks scripted fetches"
         }
       ],
       "confidence": "reported",
@@ -53,15 +106,44 @@
       "type": "region",
       "name": "Demeniss",
       "kind": "region",
-      "summary": "Pywel's political and religious centre, with castles and temples under House Caliburn's influence.",
+      "summary": "Cliff-walled plains of fortresses and noble courts, left unstable by House Thorel's vacant throne.",
+      "body": "Demeniss sits on golden plains behind high walls: fortified cities and large military works on a cliff line. House Thorel once unified its territories, but King Edward Thorel lies in a coma with no named heir; Houses Azerian, Byron, Elemore, Marshell (patron of Grand General Bastier) and Wells (said to govern the south) contest the vacuum, and [[character:gabriel-caliburn]] seizes power during Blood Coronation. [[place:demeniss-castle]] is the political capital; sources disagree on whether the city or the castle is the preferred name. Chapters 8, 10 and 12 are its main-story chapters; it also appears in Chapters 5, 7 and 9 and in the epilogue.",
       "keyPlaces": [
-        "place:demeniss-castle"
+        "place:demeniss-castle",
+        "place:morning-mist-peaks"
       ],
       "sources": [
         {
           "url": "https://gfuel.com/blogs/news/crimson-desert-map-full-region-map-cities-and-more",
-          "title": "Crimson Desert map: full region map, cities and more",
-          "accessed": "2026-09-05"
+          "title": "G FUEL: Crimson Desert map, cities and more",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/588601",
+          "title": "Game8: List of All Factions",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Demeniss",
+          "title": "Fextralife: Demeniss",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesert.fandom.com/wiki/Demeniss",
+          "title": "Fandom: Demeniss",
+          "accessed": "2026-09-06",
+          "note": "seen via search snippet; the page blocks scripted fetches"
+        },
+        {
+          "url": "https://crimsondeserthq.com/blog/demeniss-region-guide",
+          "title": "Crimson Desert HQ: Demeniss region guide",
+          "accessed": "2026-09-06",
+          "note": "seen via search snippet; the page blocks scripted fetches"
         }
       ],
       "confidence": "reported",
@@ -72,12 +154,37 @@
       "type": "region",
       "name": "Delesyia",
       "kind": "region",
-      "summary": "A trade-driven region with an active criminal underworld; descriptions of its technology vary between sources.",
+      "summary": "Pywel's machine-age region, run by engineering guilds rather than a noble house, and the setting of Chapter 11.",
+      "body": "Delesyia is the most mechanically distinct part of Pywel: factories, railways, automated works and airships, while Hernand and Demeniss stay medieval. No ruling noble house is named; [[character:marni]] and the institutions around him (Society of Progress, Delesyia National Institute, Delesyian Aerial Force, Cogknights, Marni's Tinkertons) are the civil power, with the Ironwheel of Dewhaven arguing that machines should only assist people. The Ironflame Orcs under [[character:valgash]] hold [[region:gorthak]], and the Wyvernflames occupy Fort Windridge. Chapter 11 (Truth and Reality) is the main-story chapter; no source read here names a clear capital, though [[place:delesyia-castle]] and Marni's clocktower (the Toll of Delesyia bell) are the closest hubs.",
+      "keyPlaces": [
+        "place:delesyia-castle"
+      ],
       "sources": [
         {
+          "url": "https://game8.co/games/Crimson-Desert/archives/585763",
+          "title": "Game8: Delesyia region guide",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/588601",
+          "title": "Game8: List of All Factions",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        },
+        {
           "url": "https://gfuel.com/blogs/news/crimson-desert-map-full-region-map-cities-and-more",
-          "title": "Crimson Desert map: full region map, cities and more",
-          "accessed": "2026-09-05"
+          "title": "G FUEL: Crimson Desert map, cities and more",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesert.fandom.com/wiki/Delesyia",
+          "title": "Fandom: Delesyia",
+          "accessed": "2026-09-06",
+          "note": "seen via search snippet; the page blocks scripted fetches"
         }
       ],
       "confidence": "reported",
@@ -88,12 +195,37 @@
       "type": "region",
       "name": "Crimson Desert",
       "kind": "region",
-      "summary": "The lawless red-sand desert with no central government; Tommaso, Varnia, Urdavah and Arcosa are its named settlements.",
+      "summary": "Lawless red-sand country in the north-east, with Varnia as its religious and trade hub and no sovereign house.",
+      "body": "The Crimson Desert is the north-easternmost major region: red sand, canyons, oases and sandstorms, with pockets of wetland and rainforest. No nation rules it; settlements, pilgrim towns, merchant guilds, tribes and outlaw bands share the ground. Civil names include the Lords of Unclaimed Lands, the Arcosa Tribe, the Redwind Merchant Guild, the pilgrim village of [[place:urdavah]] and the holy city Varnia (worship of Atima), plus the Sage of the Desert; hostile names include the Sandfang Marauders, Goldenscale Bandits, Dusksong, Savage Fangs, The Faceless and The Helms. Varnia is the religious and trade hub, with Urdavah and Tommaso as major waypoints, and Chapter 9 (The Sage of the Desert) is the main-story chapter, also touching Demeniss.",
+      "keyPlaces": [
+        "place:urdavah"
+      ],
       "sources": [
         {
+          "url": "https://game8.co/games/Crimson-Desert/archives/585766",
+          "title": "Game8: Crimson Desert region guide",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/588601",
+          "title": "Game8: List of All Factions",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        },
+        {
           "url": "https://gfuel.com/blogs/news/crimson-desert-map-full-region-map-cities-and-more",
-          "title": "Crimson Desert map: full region map, cities and more",
-          "accessed": "2026-09-05"
+          "title": "G FUEL: Crimson Desert map, cities and more",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesert.fandom.com/wiki/Crimson_Desert_(region)",
+          "title": "Fandom: Crimson Desert (region)",
+          "accessed": "2026-09-06",
+          "note": "seen via search snippet; the page blocks scripted fetches"
         }
       ],
       "confidence": "reported",
@@ -104,16 +236,1522 @@
       "type": "region",
       "name": "The Abyss",
       "kind": "layer",
-      "summary": "A separate layer above Pywel with floating islands, its own fast-travel nodes and Abyss-tier gear and bosses.",
-      "body": "The Abyss is described as a layer above Pywel rather than a ground region; the details here are inferred from map data and secondary sources, not checked in-game. th.gl maps it as a second tile pyramid; the companion will add it later (docs/COMPANION-SPEC.md section 9). Records that live there use `map: \"abyss\"` in their location.",
+      "summary": "A sky layer above Pywel of floating puzzle islands, reached through Abyss Nexus and Gate points, and the source of Abyss Artifacts.",
+      "body": "The Abyss is a separate map layer above the continent, not a ground region and with no ruling house in any source read here; it is reached through Abyss Nexus and Gate points. Its terrain is floating Sky Islands, each a self-contained puzzle, and Pearl Abyss calls it the cradle of providence. Abyss Artifacts collected there permanently raise Health, Stamina and Spirit and unlock skills, standing in for a traditional level system; the Library of Providence, its largest structure, holds lore on Pywel's making. The prologue and Chapter 1 use it for interludes ([[place:corridor-of-the-void]], [[place:axiom-archive]]); Chapter 12 climaxes here, and the epilogue returns for the forty Abyss Challenges' true ending.",
+      "keyPlaces": [
+        "place:corridor-of-the-void",
+        "place:axiom-archive"
+      ],
       "sources": [
+        {
+          "url": "https://www.powerpyx.com/crimson-desert-full-world-map/",
+          "title": "PowerPyx: full world map",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        },
         {
           "url": "https://crimsondesertgame.wiki.fextralife.com/Crimson+Desert+Wiki",
           "title": "Fextralife: Crimson Desert Wiki",
-          "accessed": "2026-09-05"
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesert.fandom.com/wiki/Abyss",
+          "title": "Fandom: Abyss",
+          "accessed": "2026-09-06",
+          "note": "seen via search snippet; the page blocks scripted fetches"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:argent-peaks",
+      "type": "region",
+      "name": "The Argent Peaks",
+      "kind": "sub-area",
+      "parent": "region:hernand",
+      "summary": "A Hernand mountain range used as a named highland above the western valleys.",
+      "body": "The Argent Peaks are a mountain range in Hernand. A bandit camp and a sentry camp take the same name.",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/591407",
+          "title": "Game8: All Region Locations",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:anvil-hill",
+      "type": "region",
+      "name": "Anvil Hill",
+      "kind": "sub-area",
+      "parent": "region:hernand",
+      "summary": "A Hernand hill with Anvil Basin and Anvil Riverside beside it, and bandit camps on the same ground.",
+      "body": "Anvil Hill is hill country in Hernand. Anvil Basin and Anvil Riverside sit with it; bandit camps use those names.",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:roccas-hill",
+      "type": "region",
+      "name": "Rocca's Hill",
+      "kind": "sub-area",
+      "parent": "region:hernand",
+      "summary": "A Hernand hill with a beacon and bandit camps on its northern and southern faces.",
+      "body": "Rocca's Hill is a hill area in Hernand. A beacon stands on it, and northern and southern bandit camps take the hill's name.",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:duskwood",
+      "type": "region",
+      "name": "Duskwood",
+      "kind": "sub-area",
+      "parent": "region:hernand",
+      "summary": "A Hernand forest that gives its name to a bandit camp among the trees.",
+      "body": "Duskwood is a forest in Hernand. A bandit camp in the timber uses the same name.",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:deepwoods",
+      "type": "region",
+      "name": "Deepwoods",
+      "kind": "sub-area",
+      "parent": "region:hernand",
+      "summary": "A Hernand forest known from the Southern Deepwoods Bandit Camp that takes its name.",
+      "body": "The Deepwoods are forest in Hernand. Location lists name the tract through the Southern Deepwoods Bandit Camp.",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:sunrise-plains",
+      "type": "region",
+      "name": "Sunrise Plains",
+      "kind": "sub-area",
+      "parent": "region:hernand",
+      "summary": "Open plains in Hernand, with a bandit camp on the same grassland.",
+      "body": "Sunrise Plains are grassland in Hernand. A bandit camp sits on the same flats.",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/591407",
+          "title": "Game8: All Region Locations",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:greenfield-highlands",
+      "type": "region",
+      "name": "Greenfield Highlands",
+      "kind": "sub-area",
+      "parent": "region:hernand",
+      "summary": "Hernand highland country, with Greenfield Gorge cut through it.",
+      "body": "The Greenfield Highlands are upland in Hernand. Greenfield Gorge is the cut through the same ground, and camps in the highlands take the Greenfield name.",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/591407",
+          "title": "Game8: All Region Locations",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:mountain-of-frozen-souls",
+      "type": "region",
+      "name": "Mountain of Frozen Souls",
+      "kind": "sub-area",
+      "parent": "region:hernand",
+      "summary": "A Hernand mountain that holds Frozen Soul Cave.",
+      "body": "The Mountain of Frozen Souls is a peak in Hernand. Frozen Soul Cave opens in its rock.",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/591407",
+          "title": "Game8: All Region Locations",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:pororin-forest",
+      "type": "region",
+      "name": "Pororin Forest",
+      "kind": "sub-area",
+      "parent": "region:hernand",
+      "summary": "A Hernand forest that hides a shai and Fadus village.",
+      "body": "Pororin Forest is woodland in Hernand. A hidden shai and Fadus village stands inside it.",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/585761",
+          "title": "Game8: Hernand region guide",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:arboria-forest",
+      "type": "region",
+      "name": "Arboria Forest",
+      "kind": "sub-area",
+      "parent": "region:hernand",
+      "summary": "A Hernand forest around the village of Arboria.",
+      "body": "Arboria Forest is woodland in Hernand. The village of Arboria, with a castle and craftshop listed beside it, sits in the same tract.",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/591407",
+          "title": "Game8: All Region Locations",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:drakesfall-gorge",
+      "type": "region",
+      "name": "Drakesfall Gorge",
+      "kind": "sub-area",
+      "parent": "region:hernand",
+      "summary": "A gorge in Hernand with a bandit camp on its walls.",
+      "body": "Drakesfall Gorge is a cut through Hernand hill country. A bandit camp uses the gorge's name.",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/591407",
+          "title": "Game8: All Region Locations",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:mistwind",
+      "type": "region",
+      "name": "Mistwind",
+      "kind": "sub-area",
+      "parent": "region:hernand",
+      "summary": "A stepped hillside in Hernand, also listed as Mistwind Stepped Hillside.",
+      "body": "Mistwind is hillside country in Hernand. Location indexes give it as Mistwind (Stepped Hillside).",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/591407",
+          "title": "Game8: All Region Locations",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:nas-river",
+      "type": "region",
+      "name": "Nas River",
+      "kind": "sub-area",
+      "parent": "region:hernand",
+      "summary": "Hernand's named river, with Upper Nas River and Nas Riverside along its banks.",
+      "body": "The Nas River runs through Hernand. Upper Nas River and Nas Riverside are named stretches of the same water.",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/585761",
+          "title": "Game8: Hernand region guide",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:warspike",
+      "type": "region",
+      "name": "Warspike",
+      "kind": "sub-area",
+      "parent": "region:hernand",
+      "summary": "A fortified Hernand territory around Fort Warspike and its three gates.",
+      "body": "Warspike is fort country in Hernand. Fort Warspike and three named gates mark the territory.",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:halssius-conflux",
+      "type": "region",
+      "name": "Halssius Conflux",
+      "kind": "sub-area",
+      "parent": "region:hernand",
+      "summary": "A Hernand waterway meeting-place with a trading post and an apothecary.",
+      "body": "Halssius Conflux is a river meeting in Hernand. A trading post and an apothecary stand at the confluence.",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:calphadean-territory",
+      "type": "region",
+      "name": "Calphadean Territory",
+      "aliases": [
+        "Calphade"
+      ],
+      "kind": "sub-area",
+      "parent": "region:hernand",
+      "summary": "Frontier march of the Duchy of Hernand under House Lanford, on the Pailune border.",
+      "body": "The Calphadean Territory is the Duchy of Hernand's northern frontier, held by House Lanford and set against Pailune. [[place:calphade-castle]] is its seat; Chapter 6 (Cracks in the Shield) plays here, along the line watched from [[place:calphade-gate]].",
+      "location": {
+        "x": 1920.7,
+        "y": 4385.8
+      },
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/585761",
+          "title": "Game8: Hernand region guide",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesert.gaming.tools/territories/hernand",
+          "title": "gaming.tools: Duchy of Hernand territories",
+          "accessed": "2026-09-06",
+          "note": "seen via search snippet; the page blocks scripted fetches"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:hernandian-mountains",
+      "type": "region",
+      "name": "Hernandian Mountains",
+      "kind": "sub-area",
+      "parent": "region:hernand",
+      "summary": "A Hernand mountain belt named from the bandit camp that sits on it.",
+      "body": "The Hernandian Mountains are a range in Hernand. Location lists name the tract through the Hernandian Mountains Bandit Camp; no dedicated area page was fetched.",
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/585761",
+          "title": "Game8: Hernand region guide",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesert.gaming.tools/territories/hernand/hernand_banditcamp",
+          "title": "gaming.tools: Hernand bandit camps",
+          "accessed": "2026-09-06",
+          "note": "seen via search snippet; the page blocks scripted fetches"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:everfrost",
+      "type": "region",
+      "name": "Everfrost",
+      "kind": "sub-area",
+      "parent": "region:hernand",
+      "summary": "A cold Hernand basin; Everfrost Basin is the low ground under the same name.",
+      "body": "Everfrost is cold country in Hernand. Everfrost Basin is the low ground that shares the name.",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:witchwoods",
+      "type": "region",
+      "name": "The Witchwoods",
+      "kind": "sub-area",
+      "parent": "region:hernand",
+      "summary": "A forested Hernand tract listed beside the Forest of Wolves and the Black Forest.",
+      "body": "The Witchwoods are forest in Hernand. Location indexes list them with [[region:forest-of-wolves]] and [[region:black-forest]].",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:forest-of-wolves",
+      "type": "region",
+      "name": "Forest of Wolves",
+      "kind": "sub-area",
+      "parent": "region:hernand",
+      "summary": "A Hernand woodland listed with the Witchwoods and the Black Forest.",
+      "body": "The Forest of Wolves is woodland in Hernand. Location indexes list it with [[region:witchwoods]] and [[region:black-forest]].",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:black-forest",
+      "type": "region",
+      "name": "Black Forest",
+      "kind": "sub-area",
+      "parent": "region:hernand",
+      "summary": "A Hernand forest listed with the Witchwoods and the Forest of Wolves.",
+      "body": "The Black Forest is woodland in Hernand. Location indexes list it with [[region:witchwoods]] and [[region:forest-of-wolves]].",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:windland-canyon",
+      "type": "region",
+      "name": "Windland Canyon",
+      "kind": "sub-area",
+      "parent": "region:hernand",
+      "summary": "A Hernand canyon that sits with Windland Heights as one highland pair.",
+      "body": "Windland Canyon is a canyon in Hernand. [[region:windland-heights]] is the high ground listed with it.",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:windland-heights",
+      "type": "region",
+      "name": "Windland Heights",
+      "kind": "sub-area",
+      "parent": "region:hernand",
+      "summary": "High ground above Windland Canyon in Hernand.",
+      "body": "Windland Heights are upland in Hernand. [[region:windland-canyon]] is the cut listed with them.",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:silver-wolf-mountain",
+      "type": "region",
+      "name": "Silver Wolf Mountain",
+      "kind": "sub-area",
+      "parent": "region:pailune",
+      "summary": "A Pailune mountain with a cave, and the site of the Chapter 7 fight on its slopes.",
+      "body": "Silver Wolf Mountain is a peak in Pailune, with a cave in its rock. [[place:silverwolf-mountain]] is the fast-travel landmark on the same mountain.",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/591407",
+          "title": "Game8: All Region Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Pailune",
+          "title": "Fextralife: Pailune",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:five-finger-mountain",
+      "type": "region",
+      "name": "Five-Finger Mountain",
+      "kind": "sub-area",
+      "parent": "region:pailune",
+      "summary": "A Pailune range whose named fingers include First-Finger Lake and Second-Finger Cave.",
+      "body": "Five-Finger Mountain is a range in Pailune. First-Finger Lake and Second-Finger Cave are named parts of the same massif.",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/591407",
+          "title": "Game8: All Region Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/585764",
+          "title": "Game8: Pailune region guide",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:wayward-woods",
+      "type": "region",
+      "name": "Wayward Woods",
+      "kind": "sub-area",
+      "parent": "region:pailune",
+      "summary": "A Pailune forest held by the Longleaf Tribe.",
+      "body": "Wayward Woods are forest in Pailune. The Longleaf Tribe holds this timber.",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/585764",
+          "title": "Game8: Pailune region guide",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:black-wall",
+      "type": "region",
+      "name": "Black Wall",
+      "kind": "sub-area",
+      "parent": "region:pailune",
+      "summary": "A wall or ridge landmark in Pailune.",
+      "body": "The Black Wall is a ridge landmark in Pailune. A bandit camp takes the wall's name.",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/591407",
+          "title": "Game8: All Region Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/585764",
+          "title": "Game8: Pailune region guide",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:scorched-mountain",
+      "type": "region",
+      "name": "Scorched Mountain",
+      "kind": "sub-area",
+      "parent": "region:pailune",
+      "summary": "A named mountain in Pailune.",
+      "body": "Scorched Mountain is a peak in Pailune. Location indexes place it in the same northern high country as the other Pailune ranges.",
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/591407",
+          "title": "Game8: All Region Locations",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:upper-denn-river",
+      "type": "region",
+      "name": "Upper Denn River",
+      "kind": "sub-area",
+      "parent": "region:pailune",
+      "summary": "The Pailune stretch of the Denn, upstream of the Demeniss river country.",
+      "body": "The Upper Denn River is the Pailune reach of the Denn. [[region:denn-river]] continues the same water through Demeniss.",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/591407",
+          "title": "Game8: All Region Locations",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:vannstein-lake",
+      "type": "region",
+      "name": "Vannstein Lake",
+      "kind": "sub-area",
+      "parent": "region:pailune",
+      "summary": "A lake in Pailune named in the region's guide.",
+      "body": "Vannstein Lake is a lake in Pailune. The Pailune region guide is the source that names it.",
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/585764",
+          "title": "Game8: Pailune region guide",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:kingshield-mountains",
+      "type": "region",
+      "name": "Kingshield Mountains",
+      "kind": "sub-area",
+      "parent": "region:demeniss",
+      "summary": "A mountain range in Demeniss.",
+      "body": "The Kingshield Mountains are a range in Demeniss. Location indexes list them with the region's other highland names.",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/591407",
+          "title": "Game8: All Region Locations",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:smoking-lands",
+      "type": "region",
+      "name": "Smoking Lands",
+      "kind": "sub-area",
+      "parent": "region:demeniss",
+      "summary": "A named Demeniss tract; no source read here describes the ground itself.",
+      "body": "The Smoking Lands are a named stretch of Demeniss. Indexes list the name; none of the pages read here say what the ground looks like.",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/591407",
+          "title": "Game8: All Region Locations",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:serpent-marsh",
+      "type": "region",
+      "name": "Serpent Marsh",
+      "kind": "sub-area",
+      "parent": "region:demeniss",
+      "summary": "A marsh in Demeniss.",
+      "body": "Serpent Marsh is wetland in Demeniss. Location indexes place it among the region's named terrain.",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/591407",
+          "title": "Game8: All Region Locations",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:valley-of-the-moon",
+      "type": "region",
+      "name": "Valley of the Moon",
+      "kind": "sub-area",
+      "parent": "region:demeniss",
+      "summary": "A Demeniss valley north of the line toward Fort Musket and the desert.",
+      "body": "The Valley of the Moon is a valley in Demeniss. Fort Musket is described as sitting south of this valley on the way toward the Crimson Desert.",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/591407",
+          "title": "Game8: All Region Locations",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:eye-of-ice",
+      "type": "region",
+      "name": "Eye of Ice",
+      "kind": "sub-area",
+      "parent": "region:demeniss",
+      "summary": "A named Demeniss feature; no source read here describes what the eye is.",
+      "body": "The Eye of Ice is a named feature in Demeniss. Indexes list the name; none of the pages read here describe its form.",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/591407",
+          "title": "Game8: All Region Locations",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:steel-mountains",
+      "type": "region",
+      "name": "Steel Mountains",
+      "kind": "sub-area",
+      "parent": "region:hernand",
+      "summary": "A southern Hernand mountain range whose adjoining Bay of Steel is named with it.",
+      "body": "The Steel Mountains sit in southern Hernand by map position, with the Bay of Steel against them; [[place:steel-mountains]] is the landmark on the same range. Two location indexes instead file the mountains under Demeniss.",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/591407",
+          "title": "Game8: All Region Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/585761",
+          "title": "Game8: Hernand region guide",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:morning-mist-peaks",
+      "type": "region",
+      "name": "Morning Mist Peaks",
+      "kind": "sub-area",
+      "parent": "region:demeniss",
+      "summary": "Mountain peaks in Demeniss where Chapter 9's pensive statues are repaired.",
+      "body": "The Morning Mist Peaks are mountains in Demeniss. [[place:morning-mist-peaks]] is the landmark on the same heights.",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/591407",
+          "title": "Game8: All Region Locations",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:thornbriar-mountains",
+      "type": "region",
+      "name": "Thornbriar Mountains",
+      "kind": "sub-area",
+      "parent": "region:demeniss",
+      "summary": "A mountain range in Demeniss.",
+      "body": "The Thornbriar Mountains are a range in Demeniss. Location indexes list them with Kingshield and the Morning Mist Peaks.",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/591407",
+          "title": "Game8: All Region Locations",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:ironwood-forest",
+      "type": "region",
+      "name": "Ironwood Forest",
+      "kind": "sub-area",
+      "parent": "region:demeniss",
+      "summary": "A Demeniss forest cluster that includes Ironwood Cape and Ironwood Highland Plains.",
+      "body": "Ironwood Forest is woodland in Demeniss. Ironwood Cape and Ironwood Highland Plains sit with it, and several bandit camps take the Ironwood name.",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/591407",
+          "title": "Game8: All Region Locations",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:denn-river",
+      "type": "region",
+      "name": "Denn River",
+      "kind": "sub-area",
+      "parent": "region:demeniss",
+      "summary": "Demeniss's named river, with the Central Denn River Basin along its course.",
+      "body": "The Denn River runs through Demeniss. The Central Denn River Basin is a named stretch; [[region:upper-denn-river]] is the Pailune reach upstream.",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/591407",
+          "title": "Game8: All Region Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Demeniss",
+          "title": "Fextralife: Demeniss",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:golden-plains",
+      "type": "region",
+      "name": "Golden Plains",
+      "kind": "sub-area",
+      "parent": "region:demeniss",
+      "summary": "The open plains that hold much of Demeniss's fortified country.",
+      "body": "The Golden Plains are grassland in Demeniss. Fortified cities and military works sit on this open ground.",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/591407",
+          "title": "Game8: All Region Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Demeniss",
+          "title": "Fextralife: Demeniss",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:gate-of-peace",
+      "type": "region",
+      "name": "Gate of Peace",
+      "kind": "sub-area",
+      "parent": "region:demeniss",
+      "summary": "A wall gate on the Demeniss-Gorthak border, not clearly inside either region alone.",
+      "body": "The Gate of Peace is a chokepoint in the wall between Demeniss and [[region:gorthak]]. It sits on that border rather than squarely inside one region; northern and western camps take the gate's name.",
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/585763",
+          "title": "Game8: Delesyia region guide",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesert.gaming.tools/knowledge/node_neut_delpheon",
+          "title": "gaming.tools: Gate of Peace",
+          "accessed": "2026-09-06",
+          "note": "seen via search snippet; the page blocks scripted fetches"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:beardtree-hills",
+      "type": "region",
+      "name": "Beardtree Hills",
+      "kind": "sub-area",
+      "parent": "region:delesyia",
+      "summary": "Hills in Delesyia.",
+      "body": "Beardtree Hills are hill country in Delesyia. Location indexes list them with the region's other named ground.",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/591407",
+          "title": "Game8: All Region Locations",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:benus-river",
+      "type": "region",
+      "name": "Benus River",
+      "kind": "sub-area",
+      "parent": "region:delesyia",
+      "summary": "A Delesyia river that runs by Mount Benus.",
+      "body": "The Benus River is a watercourse in Delesyia. [[region:mount-benus]] stands beside it; a bandit camp takes the river's name.",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/585763",
+          "title": "Game8: Delesyia region guide",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:mount-benus",
+      "type": "region",
+      "name": "Mount Benus",
+      "kind": "sub-area",
+      "parent": "region:delesyia",
+      "summary": "A Delesyia mountain that hosts a Gate to Advancement spire.",
+      "body": "Mount Benus is a peak in Delesyia. A Gate to Advancement spire stands on it, and [[region:benus-river]] runs below.",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/585763",
+          "title": "Game8: Delesyia region guide",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:drywind-valley",
+      "type": "region",
+      "name": "Drywind Valley",
+      "kind": "sub-area",
+      "parent": "region:delesyia",
+      "summary": "A valley in Delesyia; some lists also use the name Drywind Hills.",
+      "body": "Drywind Valley is a valley in Delesyia. Fast-travel lists sometimes give the same ground as Drywind Hills.",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/591407",
+          "title": "Game8: All Region Locations",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:chittering-forest",
+      "type": "region",
+      "name": "Chittering Forest",
+      "kind": "sub-area",
+      "parent": "region:delesyia",
+      "summary": "A forest in Delesyia.",
+      "body": "Chittering Forest is woodland in Delesyia. Location indexes place it among the region's named tracts.",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/591407",
+          "title": "Game8: All Region Locations",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:serpent-shrine",
+      "type": "region",
+      "name": "Serpent Shrine",
+      "kind": "sub-area",
+      "parent": "region:delesyia",
+      "summary": "A shrine landmark in Delesyia.",
+      "body": "The Serpent Shrine is a landmark in Delesyia. Location indexes list it with Snaketail Wall.",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/591407",
+          "title": "Game8: All Region Locations",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:snaketail-wall",
+      "type": "region",
+      "name": "Snaketail Wall",
+      "kind": "sub-area",
+      "parent": "region:delesyia",
+      "summary": "A wall or ridge landmark in Delesyia.",
+      "body": "Snaketail Wall is a ridge landmark in Delesyia. Location indexes list it with the Serpent Shrine.",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/591407",
+          "title": "Game8: All Region Locations",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:gorthak",
+      "type": "region",
+      "name": "Gorthak",
+      "kind": "sub-area",
+      "parent": "region:delesyia",
+      "summary": "Ironflame Orc territory on the Demeniss border at the Gate of Peace.",
+      "body": "Gorthak is the Ironflame Orcs' ground in Delesyia, led by [[character:valgash]]. It sits on the Demeniss border at [[region:gate-of-peace]].",
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/585763",
+          "title": "Game8: Delesyia region guide",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/588601",
+          "title": "Game8: List of All Factions",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesert.gaming.tools/knowledge/node_neut_delpheon",
+          "title": "gaming.tools: Gate of Peace",
+          "accessed": "2026-09-06",
+          "note": "seen via search snippet; the page blocks scripted fetches"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:timberdale",
+      "type": "region",
+      "name": "Timberdale",
+      "kind": "sub-area",
+      "parent": "region:delesyia",
+      "summary": "A named Delesyia tract known from the Timberdale Bandit Camp.",
+      "body": "Timberdale is a named stretch of Delesyia. The Timberdale Bandit Camp is the listing that confirms the name.",
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/591407",
+          "title": "Game8: All Region Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesert.gaming.tools/territories/delesyian/delesyian_banditcamp",
+          "title": "gaming.tools: Delesyian bandit camps",
+          "accessed": "2026-09-06",
+          "note": "seen via search snippet; the page blocks scripted fetches"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:crimson-mountains",
+      "type": "region",
+      "name": "Crimson Mountains",
+      "kind": "sub-area",
+      "parent": "region:crimson-desert",
+      "summary": "A mountain range in the Crimson Desert that holds a gold mine.",
+      "body": "The Crimson Mountains are a range in the Crimson Desert. A gold mine sits in the same high country.",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/591407",
+          "title": "Game8: All Region Locations",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:valley-of-fire",
+      "type": "region",
+      "name": "Valley of Fire",
+      "kind": "sub-area",
+      "parent": "region:crimson-desert",
+      "summary": "A valley in the Crimson Desert.",
+      "body": "The Valley of Fire is a valley in the Crimson Desert. Location indexes list it with the region's other named basins.",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/591407",
+          "title": "Game8: All Region Locations",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:gloomy-forest",
+      "type": "region",
+      "name": "Gloomy Forest",
+      "kind": "sub-area",
+      "parent": "region:crimson-desert",
+      "summary": "A forest in the Crimson Desert.",
+      "body": "Gloomy Forest is woodland in the Crimson Desert. A bandit camp takes the forest's name.",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/591407",
+          "title": "Game8: All Region Locations",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:saltroad",
+      "type": "region",
+      "name": "Saltroad",
+      "kind": "sub-area",
+      "parent": "region:crimson-desert",
+      "summary": "A desert trade road, with Saltroad Camp along it.",
+      "body": "Saltroad is a trade route through the Crimson Desert. Saltroad Camp sits on the same road.",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/591407",
+          "title": "Game8: All Region Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/585766",
+          "title": "Game8: Crimson Desert region guide",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:giants-yard",
+      "type": "region",
+      "name": "Giant's Yard",
+      "kind": "sub-area",
+      "parent": "region:crimson-desert",
+      "summary": "A named desert tract that holds a resource camp.",
+      "body": "Giant's Yard is a named stretch of the Crimson Desert. A resource camp stands on the same ground.",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/591407",
+          "title": "Game8: All Region Locations",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:traders-expanse",
+      "type": "region",
+      "name": "Trader's Expanse",
+      "kind": "sub-area",
+      "parent": "region:crimson-desert",
+      "summary": "A trade expanse on the approach to Varnia.",
+      "body": "Trader's Expanse is a trade route across the Crimson Desert. Travellers pass it on the way to Varnia.",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/585766",
+          "title": "Game8: Crimson Desert region guide",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:sovereign-wastes",
+      "type": "region",
+      "name": "Sovereign Wastes",
+      "kind": "sub-area",
+      "parent": "region:crimson-desert",
+      "summary": "A wasteland tract in the Crimson Desert.",
+      "body": "The Sovereign Wastes are open waste in the Crimson Desert. Location indexes treat this as the named wasteland of the region.",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/591407",
+          "title": "Game8: All Region Locations",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:tashkalp",
+      "type": "region",
+      "name": "Tashkalp",
+      "kind": "sub-area",
+      "parent": "region:crimson-desert",
+      "summary": "A desert sub-area that holds Muiquun and Caledora and one of the region's fog-clearing bells.",
+      "body": "Tashkalp is a named stretch of the Crimson Desert. The villages of Muiquun and Caledora sit in it, with one of the region's two fog-clearing bells.",
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/585766",
+          "title": "Game8: Crimson Desert region guide",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesert.gaming.tools/territories/node_crim_caledoravillage",
+          "title": "gaming.tools: Caledora",
+          "accessed": "2026-09-06",
+          "note": "seen via search snippet; the page blocks scripted fetches"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:rainforest",
+      "type": "region",
+      "name": "Rainforest",
+      "kind": "sub-area",
+      "parent": "region:crimson-desert",
+      "summary": "A rainforest pocket inside the Crimson Desert.",
+      "body": "The Rainforest is a wet pocket in the Crimson Desert. A damp-rainforest bandit camp takes its name from this tract.",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/591407",
+          "title": "Game8: All Region Locations",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:worlds-navel",
+      "type": "region",
+      "name": "World's Navel",
+      "kind": "sub-area",
+      "parent": "region:crimson-desert",
+      "summary": "A named landmark area in the Crimson Desert.",
+      "body": "World's Navel is a landmark tract in the Crimson Desert. Khafi-jahr Camp is described as a Dusksong outpost on this ground.",
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
+          "title": "Fextralife: Locations",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/591407",
+          "title": "Game8: All Region Locations",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:howlsands",
+      "type": "region",
+      "name": "Howlsands",
+      "kind": "sub-area",
+      "parent": "region:crimson-desert",
+      "summary": "Dune country that holds the Sandfang Marauders' stronghold.",
+      "body": "Howlsands are dune country in the Crimson Desert. The Sandfang Marauders keep their stronghold here.",
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/585766",
+          "title": "Game8: Crimson Desert region guide",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/588601",
+          "title": "Game8: List of All Factions",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesert.gaming.tools/knowledge/node_crim_howlsandscamp",
+          "title": "gaming.tools: Howlsands Camp",
+          "accessed": "2026-09-06",
+          "note": "seen via search snippet; the page blocks scripted fetches"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:border-trail",
+      "type": "region",
+      "name": "Border Trail",
+      "kind": "sub-area",
+      "parent": "region:crimson-desert",
+      "summary": "A named desert stretch with a bandit camp; no guide page fetched here treats it as its own mapped area.",
+      "body": "Border Trail is a named stretch of the Crimson Desert with a bandit camp. The name is low-confidence: no dedicated wiki page was fetched, only a search listing.",
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/585766",
+          "title": "Game8: Crimson Desert region guide",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/591407",
+          "title": "Game8: All Region Locations",
+          "accessed": "2026-09-06"
         }
       ],
       "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:izvatu",
+      "type": "region",
+      "name": "Izvatu",
+      "kind": "sub-area",
+      "parent": "region:crimson-desert",
+      "summary": "Site of the desert's largest raider base, held by the Dusksongs.",
+      "body": "Izvatu holds the largest raider base in the Crimson Desert. The Dusksongs keep it; they are said to have come from Demeniss.",
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/588601",
+          "title": "Game8: List of All Factions",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesert.gaming.tools/territories/node_crim_isvatufortress",
+          "title": "gaming.tools: Izvatu fortress",
+          "accessed": "2026-09-06",
+          "note": "seen via search snippet; the page blocks scripted fetches"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "region:twinpath",
+      "type": "region",
+      "name": "Twinpath",
+      "kind": "sub-area",
+      "parent": "region:crimson-desert",
+      "summary": "A Black Bear outpost on the road toward Pailune and the Denn, sitting on a regional border.",
+      "body": "Twinpath is a [[faction:black-bears]] outpost watching the road toward Pailune and the Denn, near The Sage's Peak. It sits on a border rather than squarely inside one region; location lists file it with the Crimson Desert.",
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/585764",
+          "title": "Game8: Pailune region guide",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesert.gaming.tools/knowledge/node_kwe_doublesteppass",
+          "title": "gaming.tools: Twinpath",
+          "accessed": "2026-09-06",
+          "note": "seen via search snippet; the page blocks scripted fetches"
+        }
+      ],
+      "confidence": "reported",
       "gameVersion": "2.01.00"
     }
   ]
