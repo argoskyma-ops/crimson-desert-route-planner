@@ -49,27 +49,79 @@
       "category": "armor",
       "slot": "head",
       "setName": "Blackwing",
-      "summary": "Head piece of the Blackwing set, dropped by the Crowcaller; the rest of the set is scattered as exploration loot.",
+      "tags": [
+        "kliff"
+      ],
+      "summary": "Head piece of the Blackwing set, taken when Crowcaller falls and listed again among the Toward the Nest rewards.",
+      "body": "This leather-and-plate kit was worn by the Crowcaller. VULKK, GamingBolt, and KeenGamer place that fight in Chapter 5; this repo's chapter table pays the mask on [[quest:toward-the-nest]], which those same guides treat as a Chapter 12 hunt. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
       "acquisitions": [
         {
           "kind": "drop",
           "ref": "enemy:crowcaller",
-          "note": "Drops from the Crowcaller together with one Blackwing armour piece; the remaining pieces are exploration loot elsewhere."
+          "note": "Taken from Crowcaller; some guides also name a Blackwing body piece on the same fall.",
+          "steps": [
+            {
+              "text": "Hunt Crowcaller through Bloodwind and Toward the Nest.",
+              "action": "travel",
+              "refs": [
+                "quest:bloodwind",
+                "quest:toward-the-nest",
+                "enemy:crowcaller"
+              ]
+            },
+            {
+              "text": "Defeat Crowcaller on the last ground.",
+              "action": "fight",
+              "refs": [
+                "quest:toward-the-nest",
+                "enemy:crowcaller"
+              ]
+            },
+            {
+              "text": "Take the Blackwing Mask from the fall.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "quest",
+          "ref": "quest:toward-the-nest",
+          "note": "The Chapter 5 reward list also names the mask on Toward the Nest."
         }
       ],
       "sources": [
         {
           "url": "https://vulkk.com/2026/05/09/crimson-desert-armor-sets-catalog/",
           "title": "VULKK: armor sets catalog",
-          "accessed": "2026-09-05"
+          "accessed": "2026-09-06"
         },
         {
           "url": "https://gamingbolt.com/crimson-desert-guide-the-best-armor-sets-and-how-to-get-them",
           "title": "GamingBolt: best armor sets",
-          "accessed": "2026-09-05"
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://www.keengamer.com/articles/guides/crimson-desert-10-best-armor-sets-ranked/",
+          "title": "KeenGamer: 10 best armor sets",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586937",
+          "title": "Game8: Chapter 5 walkthrough",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/",
+          "title": "VULKK: main story walkthrough",
+          "accessed": "2026-09-06"
         }
       ],
-      "confidence": "reported",
+      "confidence": "assumed",
       "gameVersion": "2.01.00"
     },
     {
@@ -79,19 +131,49 @@
       "category": "armor",
       "slot": "body",
       "setName": "Canta Plate",
-      "summary": "Starter plate armour sold by Rhett in Hernand; a plain silver purchase with no prerequisites beyond reaching the city.",
+      "region": "region:hernand",
+      "summary": "Hernand starter plate sold by Rhett after Matthias is beaten; no source states a price.",
+      "body": "Guides treat this as the Hernand starter kit sold as a full set. The items file says the shop opens after Matthias in Chapter 1; this repo's Matthias duel is [[quest:for-honor]]. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
       "acquisitions": [
         {
           "kind": "vendor",
           "ref": "vendor:rhett-hernand",
-          "note": "Price not yet recorded."
+          "note": "Sold at Rhett's equipment shop in Hernand after Matthias falls; no source states a price.",
+          "steps": [
+            {
+              "text": "Defeat Matthias in Hernand.",
+              "action": "fight",
+              "refs": [
+                "quest:for-honor",
+                "character:matthias"
+              ]
+            },
+            {
+              "text": "Buy Canta Plate from Rhett in the city shop.",
+              "action": "buy",
+              "refs": [
+                "vendor:rhett-hernand",
+                "place:hernand-castle"
+              ]
+            }
+          ]
         }
       ],
       "sources": [
         {
           "url": "https://gamingbolt.com/crimson-desert-guide-the-best-armor-sets-and-how-to-get-them",
           "title": "GamingBolt: best armor sets",
-          "accessed": "2026-09-05"
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587193",
+          "title": "Game8: best armor sets",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://www.keengamer.com/articles/guides/crimson-desert-10-best-armor-sets-ranked/",
+          "title": "KeenGamer: 10 best armor sets",
+          "accessed": "2026-09-06"
         }
       ],
       "confidence": "reported",
@@ -3438,6 +3520,3129 @@
           "url": "https://crimsondesertgame.wiki.fextralife.com/Unique+Weapons",
           "title": "Fextralife: Unique Weapons",
           "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:frostcursed-headgear",
+      "type": "item",
+      "name": "Frostcursed Headgear",
+      "category": "armor",
+      "slot": "head",
+      "setName": "Frostcursed",
+      "tags": [
+        "kliff"
+      ],
+      "region": "region:demeniss",
+      "summary": "Headgear of the Frostcursed set, taken from a vine-hidden chest in the Southern Chattering Rocks Ancient Ruins.",
+      "body": "Skull Knight, the Frostwarden, once wore this Demeniss kit. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "One-time chest in the Southern Chattering Rocks Ancient Ruins, tucked behind vines.",
+          "steps": [
+            {
+              "text": "Ride to the Southern Chattering Rocks Ancient Ruins in northwest Demeniss.",
+              "action": "travel"
+            },
+            {
+              "text": "Clear the vines that hide the ruin opening.",
+              "action": "solve"
+            },
+            {
+              "text": "Take the Frostcursed headgear from the chest.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://vulkk.com/2026/05/09/crimson-desert-armor-sets-catalog/",
+          "title": "VULKK: armor sets catalog",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://gamingbolt.com/crimson-desert-guide-the-best-armor-sets-and-how-to-get-them",
+          "title": "GamingBolt: best armor sets",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://www.keengamer.com/articles/guides/crimson-desert-10-best-armor-sets-ranked/",
+          "title": "KeenGamer: 10 best armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:frostcursed-body-armor",
+      "type": "item",
+      "name": "Frostcursed Body Armor",
+      "category": "armor",
+      "slot": "body",
+      "setName": "Frostcursed",
+      "tags": [
+        "kliff"
+      ],
+      "region": "region:demeniss",
+      "summary": "Body armour of the Frostcursed set, taken from Misthard Cave after a weak wall past the waterfalls is broken.",
+      "body": "Skull Knight, the Frostwarden, once wore this Demeniss kit. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "One-time chest in Misthard Cave, north of Deadfire Mountain, behind a destructible wall.",
+          "steps": [
+            {
+              "text": "Ride to Misthard Cave, north of Deadfire Mountain.",
+              "action": "travel"
+            },
+            {
+              "text": "Pass the waterfalls and break the weak wall.",
+              "action": "solve"
+            },
+            {
+              "text": "Take the Frostcursed body armor from the chest.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://vulkk.com/2026/05/09/crimson-desert-armor-sets-catalog/",
+          "title": "VULKK: armor sets catalog",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://gamingbolt.com/crimson-desert-guide-the-best-armor-sets-and-how-to-get-them",
+          "title": "GamingBolt: best armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:frostcursed-cloak",
+      "type": "item",
+      "name": "Frostcursed Cloak",
+      "category": "armor",
+      "slot": "cloak",
+      "setName": "Frostcursed",
+      "tags": [
+        "kliff"
+      ],
+      "region": "region:demeniss",
+      "summary": "Cloak of the Frostcursed set, taken from a chest in the Sanctum of Expiation.",
+      "body": "Skull Knight, the Frostwarden, once wore this Demeniss kit. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "One-time chest inside the Sanctum of Expiation in northwest Demeniss.",
+          "steps": [
+            {
+              "text": "Ride to the Sanctum of Expiation in northwest Demeniss.",
+              "action": "travel"
+            },
+            {
+              "text": "Take the Frostcursed cloak from the chest inside.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://vulkk.com/2026/05/09/crimson-desert-armor-sets-catalog/",
+          "title": "VULKK: armor sets catalog",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://gamingbolt.com/crimson-desert-guide-the-best-armor-sets-and-how-to-get-them",
+          "title": "GamingBolt: best armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:frostcursed-gloves",
+      "type": "item",
+      "name": "Frostcursed Gloves",
+      "category": "armor",
+      "slot": "gloves",
+      "setName": "Frostcursed",
+      "tags": [
+        "kliff"
+      ],
+      "region": "region:demeniss",
+      "summary": "Gloves of the Frostcursed set, taken from Lunar Spirit Grotto after passing through a waterfall on the Denn River.",
+      "body": "Skull Knight, the Frostwarden, once wore this Demeniss kit. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "One-time chest in Lunar Spirit Grotto, reached through a waterfall on the Denn River.",
+          "steps": [
+            {
+              "text": "Ride to Lunar Spirit Grotto on the Denn River.",
+              "action": "travel",
+              "refs": [
+                "region:denn-river"
+              ]
+            },
+            {
+              "text": "Pass through the waterfall into the grotto.",
+              "action": "solve"
+            },
+            {
+              "text": "Take the Frostcursed gloves from the chest.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://vulkk.com/2026/05/09/crimson-desert-armor-sets-catalog/",
+          "title": "VULKK: armor sets catalog",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://gamingbolt.com/crimson-desert-guide-the-best-armor-sets-and-how-to-get-them",
+          "title": "GamingBolt: best armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:frostcursed-footwear",
+      "type": "item",
+      "name": "Frostcursed Footwear",
+      "category": "armor",
+      "slot": "feet",
+      "setName": "Frostcursed",
+      "tags": [
+        "kliff"
+      ],
+      "region": "region:demeniss",
+      "summary": "Footwear of the Frostcursed set, taken from the Well of Tragedy cave after passing through a waterfall on the Denn River.",
+      "body": "Skull Knight, the Frostwarden, once wore this Demeniss kit. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "One-time chest in the Well of Tragedy cave, reached through a waterfall on the Denn River.",
+          "steps": [
+            {
+              "text": "Ride to the Well of Tragedy cave on the Denn River.",
+              "action": "travel",
+              "refs": [
+                "region:denn-river"
+              ]
+            },
+            {
+              "text": "Pass through the waterfall into the cave.",
+              "action": "solve"
+            },
+            {
+              "text": "Take the Frostcursed footwear from the chest.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://vulkk.com/2026/05/09/crimson-desert-armor-sets-catalog/",
+          "title": "VULKK: armor sets catalog",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://gamingbolt.com/crimson-desert-guide-the-best-armor-sets-and-how-to-get-them",
+          "title": "GamingBolt: best armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:blackwing-leather-armor",
+      "type": "item",
+      "name": "Blackwing Leather Armor",
+      "category": "armor",
+      "slot": "body",
+      "setName": "Blackwing",
+      "tags": [
+        "kliff"
+      ],
+      "summary": "Body piece of the Blackwing set, taken when Crowcaller falls and listed again among the Toward the Nest rewards.",
+      "body": "This leather-and-plate kit was worn by the Crowcaller. VULKK, GamingBolt, and KeenGamer place that fight in Chapter 5; this repo's chapter table pays the armor on [[quest:toward-the-nest]], which those same guides treat as a Chapter 12 hunt. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "drop",
+          "ref": "enemy:crowcaller",
+          "note": "Taken from Crowcaller; some guides also name the Blackwing Mask on the same fall.",
+          "steps": [
+            {
+              "text": "Hunt Crowcaller through Bloodwind and Toward the Nest.",
+              "action": "travel",
+              "refs": [
+                "quest:bloodwind",
+                "quest:toward-the-nest",
+                "enemy:crowcaller"
+              ]
+            },
+            {
+              "text": "Defeat Crowcaller on the last ground.",
+              "action": "fight",
+              "refs": [
+                "quest:toward-the-nest",
+                "enemy:crowcaller"
+              ]
+            },
+            {
+              "text": "Take the Blackwing Leather Armor from the fall.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "quest",
+          "ref": "quest:toward-the-nest",
+          "note": "The Chapter 5 reward list also names this body piece on Toward the Nest."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://vulkk.com/2026/05/09/crimson-desert-armor-sets-catalog/",
+          "title": "VULKK: armor sets catalog",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://gamingbolt.com/crimson-desert-guide-the-best-armor-sets-and-how-to-get-them",
+          "title": "GamingBolt: best armor sets",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://www.keengamer.com/articles/guides/crimson-desert-10-best-armor-sets-ranked/",
+          "title": "KeenGamer: 10 best armor sets",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586937",
+          "title": "Game8: Chapter 5 walkthrough",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/",
+          "title": "VULKK: main story walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:blackwing-leather-cloak",
+      "type": "item",
+      "name": "Blackwing Leather Cloak",
+      "aliases": [
+        "Leather Cloak"
+      ],
+      "category": "armor",
+      "slot": "cloak",
+      "setName": "Blackwing",
+      "tags": [
+        "kliff"
+      ],
+      "region": "region:hernand",
+      "summary": "Cloak of the Blackwing set, taken from a shed chest in Pororin after The Unreachable Village.",
+      "body": "This leather-and-plate kit was worn by the Crowcaller. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "ref": "place:pororin",
+          "note": "One-time chest in a Pororin shed; The Unreachable Village has no quest record here yet.",
+          "steps": [
+            {
+              "text": "Finish The Unreachable Village so Pororin is open to search.",
+              "action": "other"
+            },
+            {
+              "text": "Go to the shed in Pororin.",
+              "action": "travel",
+              "refs": [
+                "place:pororin"
+              ]
+            },
+            {
+              "text": "Take the Blackwing cloak from the chest.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://vulkk.com/2026/05/09/crimson-desert-armor-sets-catalog/",
+          "title": "VULKK: armor sets catalog",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://gamingbolt.com/crimson-desert-guide-the-best-armor-sets-and-how-to-get-them",
+          "title": "GamingBolt: best armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:blackwing-leather-gloves",
+      "type": "item",
+      "name": "Blackwing Leather Gloves",
+      "aliases": [
+        "Leather Gloves"
+      ],
+      "category": "armor",
+      "slot": "gloves",
+      "setName": "Blackwing",
+      "tags": [
+        "kliff"
+      ],
+      "summary": "Gloves of the Blackwing set, taken from an upper-floor chest in the Sanctum of Penitence reached through a floor hole.",
+      "body": "This leather-and-plate kit was worn by the Crowcaller. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "One-time chest on the upper floor of the Sanctum of Penitence, reached through a hole in the floor.",
+          "steps": [
+            {
+              "text": "Enter the Sanctum of Penitence.",
+              "action": "travel"
+            },
+            {
+              "text": "Drop through the floor hole to the upper floor.",
+              "action": "solve"
+            },
+            {
+              "text": "Take the Blackwing gloves from the chest.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://vulkk.com/2026/05/09/crimson-desert-armor-sets-catalog/",
+          "title": "VULKK: armor sets catalog",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://gamingbolt.com/crimson-desert-guide-the-best-armor-sets-and-how-to-get-them",
+          "title": "GamingBolt: best armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:blackwing-leather-boots",
+      "type": "item",
+      "name": "Blackwing Leather Boots",
+      "aliases": [
+        "Leather Boots"
+      ],
+      "category": "armor",
+      "slot": "feet",
+      "setName": "Blackwing",
+      "tags": [
+        "kliff"
+      ],
+      "summary": "Boots of the Blackwing set, taken after a roof climb and a leap from the House of Healing to a neighboring tower.",
+      "body": "This leather-and-plate kit was worn by the Crowcaller. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "ref": "place:house-of-healing",
+          "note": "One-time chest reached from the House of Healing roof by a ladder and a leap to a neighboring tower.",
+          "steps": [
+            {
+              "text": "Go to the House of Healing.",
+              "action": "travel",
+              "refs": [
+                "place:house-of-healing"
+              ]
+            },
+            {
+              "text": "Climb the exterior ladder onto the roof.",
+              "action": "travel"
+            },
+            {
+              "text": "Leap to the neighboring tower and take the boots.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://vulkk.com/2026/05/09/crimson-desert-armor-sets-catalog/",
+          "title": "VULKK: armor sets catalog",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://gamingbolt.com/crimson-desert-guide-the-best-armor-sets-and-how-to-get-them",
+          "title": "GamingBolt: best armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:unyielding-warriors-headgear",
+      "type": "item",
+      "name": "Unyielding Warrior's Headgear",
+      "category": "armor",
+      "slot": "head",
+      "setName": "Unyielding Warrior's",
+      "region": "region:hernand",
+      "summary": "Headgear of the Unyielding Warrior's set, crafted at a Calphade blacksmith from Plate Armors of the World Vol. 3 plus ore.",
+      "body": "Calphade's finest warriors wore this plate. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "craft",
+          "note": "Crafted with the Plate Armors of the World Vol. 3 manual plus iron and copper ore; that recipe has no record here yet.",
+          "steps": [
+            {
+              "text": "Obtain Plate Armors of the World Vol. 3.",
+              "action": "collect"
+            },
+            {
+              "text": "Bring iron and copper ore to a Calphade blacksmith.",
+              "action": "travel",
+              "refs": [
+                "place:calphade-castle"
+              ]
+            },
+            {
+              "text": "Craft the Unyielding Warrior's headgear.",
+              "action": "craft"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://vulkk.com/2026/05/09/crimson-desert-armor-sets-catalog/",
+          "title": "VULKK: armor sets catalog",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:unyielding-warriors-footwear",
+      "type": "item",
+      "name": "Unyielding Warrior's Footwear",
+      "category": "armor",
+      "slot": "feet",
+      "setName": "Unyielding Warrior's",
+      "region": "region:hernand",
+      "summary": "Footwear of the Unyielding Warrior's set, crafted from the same Vol. 3 manual and ores as the headgear.",
+      "body": "Calphade's finest warriors wore this plate. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "craft",
+          "note": "Crafted with the same Plate Armors of the World Vol. 3 manual plus iron and copper ore as the headgear.",
+          "steps": [
+            {
+              "text": "Obtain Plate Armors of the World Vol. 3.",
+              "action": "collect"
+            },
+            {
+              "text": "Bring iron and copper ore to a Calphade blacksmith.",
+              "action": "travel",
+              "refs": [
+                "place:calphade-castle"
+              ]
+            },
+            {
+              "text": "Craft the Unyielding Warrior's footwear.",
+              "action": "craft"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://vulkk.com/2026/05/09/crimson-desert-armor-sets-catalog/",
+          "title": "VULKK: armor sets catalog",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:unyielding-warriors-body-armor",
+      "type": "item",
+      "name": "Unyielding Warrior's Body Armor",
+      "category": "armor",
+      "slot": "body",
+      "setName": "Unyielding Warrior's",
+      "region": "region:hernand",
+      "summary": "Body armour of the Unyielding Warrior's set, crafted at a Calphade blacksmith from the set's plate manual plus ore.",
+      "body": "Calphade's finest warriors wore this plate. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "craft",
+          "note": "Crafted at a Calphade blacksmith from the plate manual plus ore; that recipe has no record here yet.",
+          "steps": [
+            {
+              "text": "Obtain the plate-armour manual used for this set.",
+              "action": "collect"
+            },
+            {
+              "text": "Bring ore to a Calphade blacksmith.",
+              "action": "travel",
+              "refs": [
+                "place:calphade-castle"
+              ]
+            },
+            {
+              "text": "Craft the Unyielding Warrior's body armor.",
+              "action": "craft"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://vulkk.com/2026/05/09/crimson-desert-armor-sets-catalog/",
+          "title": "VULKK: armor sets catalog",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:unyielding-warriors-cloak",
+      "type": "item",
+      "name": "Unyielding Warrior's Cloak",
+      "category": "armor",
+      "slot": "cloak",
+      "setName": "Unyielding Warrior's",
+      "region": "region:hernand",
+      "summary": "Cloak of the Unyielding Warrior's set, sold by a village smith after Chapter 5 or by the Calphedon armor smith.",
+      "body": "Calphade's finest warriors wore this plate. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "vendor",
+          "note": "Sold by a village smith after Chapter 5; that shop has no vendor record here yet.",
+          "steps": [
+            {
+              "text": "Finish Chapter 5 so the village smith's line is open.",
+              "action": "other"
+            },
+            {
+              "text": "Buy the Unyielding Warrior's cloak from that smith.",
+              "action": "buy"
+            }
+          ]
+        },
+        {
+          "kind": "vendor",
+          "note": "Also sold by the Calphedon armor smith; that shop has no vendor record here yet."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://vulkk.com/2026/05/09/crimson-desert-armor-sets-catalog/",
+          "title": "VULKK: armor sets catalog",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:ators-will-helm",
+      "type": "item",
+      "name": "Ator's Will Helm",
+      "category": "armor",
+      "slot": "head",
+      "setName": "Ator's Will",
+      "summary": "Helm of the Ator's Will set, paid on the Archon of Antumbra quest.",
+      "body": "This is Antumbra faction cloth and leather. Guides also name a disguise and lightning-resistance effect on the kit; the game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "quest",
+          "note": "Rewarded on Archon of Antumbra; that quest has no record here yet.",
+          "steps": [
+            {
+              "text": "Take up Archon of Antumbra when that quest opens.",
+              "action": "other"
+            },
+            {
+              "text": "Finish the quest and collect the helm.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Ator's_Will_Set",
+          "title": "Fextralife: Ator's Will Set",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:ators-will-cloth-armor",
+      "type": "item",
+      "name": "Ator's Will Cloth Armor",
+      "category": "armor",
+      "slot": "body",
+      "setName": "Ator's Will",
+      "summary": "Cloth body piece of the Ator's Will set, paid on the Archon of Antumbra quest.",
+      "body": "This is Antumbra faction cloth and leather. Guides also name a disguise and lightning-resistance effect on the kit; the game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "quest",
+          "note": "Rewarded on Archon of Antumbra; that quest has no record here yet.",
+          "steps": [
+            {
+              "text": "Take up Archon of Antumbra when that quest opens.",
+              "action": "other"
+            },
+            {
+              "text": "Finish the quest and collect the cloth armor.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Ator's_Will_Set",
+          "title": "Fextralife: Ator's Will Set",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:ators-will-leather-gloves",
+      "type": "item",
+      "name": "Ator's Will Leather Gloves",
+      "category": "armor",
+      "slot": "gloves",
+      "setName": "Ator's Will",
+      "summary": "Gloves of the Ator's Will set, paid on Archon of Antumbra or crafted from Leather Armors of the World, Vol. II.",
+      "body": "This is Antumbra faction cloth and leather. Guides also name a disguise and lightning-resistance effect on the kit; the game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "quest",
+          "note": "Rewarded on Archon of Antumbra; that quest has no record here yet.",
+          "steps": [
+            {
+              "text": "Take up Archon of Antumbra when that quest opens.",
+              "action": "other"
+            },
+            {
+              "text": "Finish the quest and collect the gloves.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "craft",
+          "note": "Also crafted with Leather Armors of the World, Vol. II; that recipe has no record here yet."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Ator's_Will_Set",
+          "title": "Fextralife: Ator's Will Set",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:ators-will-leather-boots",
+      "type": "item",
+      "name": "Ator's Will Leather Boots",
+      "category": "armor",
+      "slot": "feet",
+      "setName": "Ator's Will",
+      "summary": "Boots of the Ator's Will set, paid on Archon of Antumbra or crafted from Leather Armors of the World, Vol. III.",
+      "body": "This is Antumbra faction cloth and leather. Guides also name a disguise and lightning-resistance effect on the kit; the game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "quest",
+          "note": "Rewarded on Archon of Antumbra; that quest has no record here yet.",
+          "steps": [
+            {
+              "text": "Take up Archon of Antumbra when that quest opens.",
+              "action": "other"
+            },
+            {
+              "text": "Finish the quest and collect the boots.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "craft",
+          "note": "Also crafted with Leather Armors of the World, Vol. III; that recipe has no record here yet."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Ator's_Will_Set",
+          "title": "Fextralife: Ator's Will Set",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:camouflage-outfit",
+      "type": "item",
+      "name": "Camouflage Outfit",
+      "category": "armor",
+      "slot": "body",
+      "setName": "Camouflage",
+      "summary": "Body piece of the Camouflage set, sold by smugglers across Pywel.",
+      "body": "This kit is sold as a civilian disguise. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "vendor",
+          "note": "Sold by the smugglers of Pywel; none of those shops have a vendor record here yet."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Camouflage_Set",
+          "title": "Fextralife: Camouflage Set",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:disguise-cloak",
+      "type": "item",
+      "name": "Disguise Cloak",
+      "category": "armor",
+      "slot": "cloak",
+      "setName": "Camouflage",
+      "summary": "Cloak of the Camouflage set, sold by the same smugglers who stock the outfit.",
+      "body": "This kit is sold as a civilian disguise. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "vendor",
+          "note": "Sold by the smugglers of Pywel; none of those shops have a vendor record here yet."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Camouflage_Set",
+          "title": "Fextralife: Camouflage Set",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:crimson-chaser-plate-helm",
+      "type": "item",
+      "name": "Crimson Chaser Plate Helm",
+      "category": "armor",
+      "slot": "head",
+      "setName": "Crimson Chaser",
+      "summary": "Helm of the Crimson Chaser set, taken from a chest north of the Golden Fields.",
+      "body": "The kit belonged to Regina, a former Greymane who became a Crimson Warden. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "One-time chest north of the Golden Fields; that site has no place record here yet.",
+          "steps": [
+            {
+              "text": "Ride north of the Golden Fields.",
+              "action": "travel"
+            },
+            {
+              "text": "Take the Crimson Chaser helm from the chest.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Crimson_Chaser_Set",
+          "title": "Fextralife: Crimson Chaser Set",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:crimson-chaser-mail",
+      "type": "item",
+      "name": "Crimson Chaser Mail",
+      "category": "armor",
+      "slot": "body",
+      "setName": "Crimson Chaser",
+      "summary": "Mail of the Crimson Chaser set, paid on the Corrupted Greymane faction quest.",
+      "body": "The kit belonged to Regina, a former Greymane who became a Crimson Warden. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "quest",
+          "note": "Rewarded on Corrupted Greymane; that faction quest has no record here yet.",
+          "steps": [
+            {
+              "text": "Take up the Corrupted Greymane faction quest when it opens.",
+              "action": "other"
+            },
+            {
+              "text": "Finish the quest and collect the mail.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Crimson_Chaser_Set",
+          "title": "Fextralife: Crimson Chaser Set",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:crimson-chaser-chain-cloak",
+      "type": "item",
+      "name": "Crimson Chaser Chain Cloak",
+      "category": "armor",
+      "slot": "cloak",
+      "setName": "Crimson Chaser",
+      "summary": "Cloak of the Crimson Chaser set, taken from a chest south of the Golden Fields.",
+      "body": "The kit belonged to Regina, a former Greymane who became a Crimson Warden. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "One-time chest south of the Golden Fields; that site has no place record here yet.",
+          "steps": [
+            {
+              "text": "Ride south of the Golden Fields.",
+              "action": "travel"
+            },
+            {
+              "text": "Take the Crimson Chaser cloak from the chest.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Crimson_Chaser_Set",
+          "title": "Fextralife: Crimson Chaser Set",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:crimson-chaser-chain-gloves",
+      "type": "item",
+      "name": "Crimson Chaser Chain Gloves",
+      "category": "armor",
+      "slot": "gloves",
+      "setName": "Crimson Chaser",
+      "summary": "Gloves of the Crimson Chaser set, taken from a chest west of the Golden Fields.",
+      "body": "The kit belonged to Regina, a former Greymane who became a Crimson Warden. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "One-time chest west of the Golden Fields; that site has no place record here yet.",
+          "steps": [
+            {
+              "text": "Ride west of the Golden Fields.",
+              "action": "travel"
+            },
+            {
+              "text": "Take the Crimson Chaser gloves from the chest.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Crimson_Chaser_Set",
+          "title": "Fextralife: Crimson Chaser Set",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:leather-helm-of-the-fallen-kingdom",
+      "type": "item",
+      "name": "Leather Helm of the Fallen Kingdom",
+      "category": "armor",
+      "slot": "head",
+      "setName": "Fallen Kingdom",
+      "tags": [
+        "kliff"
+      ],
+      "region": "region:hernand",
+      "summary": "Helm of the Fallen Kingdom set, hidden in Hernand treasure chests whose piece-to-chest map is not given.",
+      "body": "KeenGamer names Icemoor Castle Ruins, Nightstorm Cave, Starlight Storm Cave, Frozen Soul Cave, and the Sanctum of Benediction in west Hernand, without saying which chest holds which piece. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "Found in Hernand treasure chests; the five named ruin and cave sites are not mapped to this slot.",
+          "steps": [
+            {
+              "text": "Search the west Hernand ruins and caves named for this set.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chests until the helm appears.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Fallen_Kingdom_Set",
+          "title": "Fextralife: Fallen Kingdom Set",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://www.keengamer.com/articles/guides/crimson-desert-10-best-armor-sets-ranked/",
+          "title": "KeenGamer: 10 best armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:leather-armor-of-the-fallen-kingdom",
+      "type": "item",
+      "name": "Leather Armor of the Fallen Kingdom",
+      "category": "armor",
+      "slot": "body",
+      "setName": "Fallen Kingdom",
+      "tags": [
+        "kliff"
+      ],
+      "region": "region:hernand",
+      "summary": "Body piece of the Fallen Kingdom set, hidden in Hernand treasure chests whose piece-to-chest map is not given.",
+      "body": "KeenGamer names Icemoor Castle Ruins, Nightstorm Cave, Starlight Storm Cave, Frozen Soul Cave, and the Sanctum of Benediction in west Hernand, without saying which chest holds which piece. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "Found in Hernand treasure chests; the five named ruin and cave sites are not mapped to this slot.",
+          "steps": [
+            {
+              "text": "Search the west Hernand ruins and caves named for this set.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chests until the leather armor appears.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Fallen_Kingdom_Set",
+          "title": "Fextralife: Fallen Kingdom Set",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://www.keengamer.com/articles/guides/crimson-desert-10-best-armor-sets-ranked/",
+          "title": "KeenGamer: 10 best armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:plate-gloves-of-the-fallen-kingdom",
+      "type": "item",
+      "name": "Plate Gloves of the Fallen Kingdom",
+      "category": "armor",
+      "slot": "gloves",
+      "setName": "Fallen Kingdom",
+      "tags": [
+        "kliff"
+      ],
+      "region": "region:hernand",
+      "summary": "Gloves of the Fallen Kingdom set, hidden in Hernand treasure chests whose piece-to-chest map is not given.",
+      "body": "KeenGamer names Icemoor Castle Ruins, Nightstorm Cave, Starlight Storm Cave, Frozen Soul Cave, and the Sanctum of Benediction in west Hernand, without saying which chest holds which piece. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "Found in Hernand treasure chests; the five named ruin and cave sites are not mapped to this slot.",
+          "steps": [
+            {
+              "text": "Search the west Hernand ruins and caves named for this set.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chests until the plate gloves appear.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Fallen_Kingdom_Set",
+          "title": "Fextralife: Fallen Kingdom Set",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://www.keengamer.com/articles/guides/crimson-desert-10-best-armor-sets-ranked/",
+          "title": "KeenGamer: 10 best armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:plate-boots-of-the-fallen-kingdom",
+      "type": "item",
+      "name": "Plate Boots of the Fallen Kingdom",
+      "category": "armor",
+      "slot": "feet",
+      "setName": "Fallen Kingdom",
+      "tags": [
+        "kliff"
+      ],
+      "region": "region:hernand",
+      "summary": "Boots of the Fallen Kingdom set, hidden in Hernand treasure chests whose piece-to-chest map is not given.",
+      "body": "KeenGamer names Icemoor Castle Ruins, Nightstorm Cave, Starlight Storm Cave, Frozen Soul Cave, and the Sanctum of Benediction in west Hernand, without saying which chest holds which piece. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "Found in Hernand treasure chests; the five named ruin and cave sites are not mapped to this slot.",
+          "steps": [
+            {
+              "text": "Search the west Hernand ruins and caves named for this set.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chests until the plate boots appear.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Fallen_Kingdom_Set",
+          "title": "Fextralife: Fallen Kingdom Set",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://www.keengamer.com/articles/guides/crimson-desert-10-best-armor-sets-ranked/",
+          "title": "KeenGamer: 10 best armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:leather-cloak-of-the-fallen-kingdom",
+      "type": "item",
+      "name": "Leather Cloak of the Fallen Kingdom",
+      "category": "armor",
+      "slot": "cloak",
+      "setName": "Fallen Kingdom",
+      "tags": [
+        "kliff"
+      ],
+      "region": "region:hernand",
+      "summary": "Cloak of the Fallen Kingdom set, hidden in Hernand treasure chests whose piece-to-chest map is not given.",
+      "body": "KeenGamer names Icemoor Castle Ruins, Nightstorm Cave, Starlight Storm Cave, Frozen Soul Cave, and the Sanctum of Benediction in west Hernand, without saying which chest holds which piece. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "Found in Hernand treasure chests; the five named ruin and cave sites are not mapped to this slot.",
+          "steps": [
+            {
+              "text": "Search the west Hernand ruins and caves named for this set.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chests until the leather cloak appears.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Fallen_Kingdom_Set",
+          "title": "Fextralife: Fallen Kingdom Set",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://www.keengamer.com/articles/guides/crimson-desert-10-best-armor-sets-ranked/",
+          "title": "KeenGamer: 10 best armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:plate-helm-of-cursed-soul",
+      "type": "item",
+      "name": "Plate Helm of Cursed Soul",
+      "category": "armor",
+      "slot": "head",
+      "setName": "Cursed Soul",
+      "region": "region:demeniss",
+      "summary": "Helm of the Cursed Soul set, hidden in Demeniss treasure chests whose piece-to-chest map is not given.",
+      "body": "KeenGamer names Anvil Hill Gust Cave, Windrift Cave, Shadowwolf Cave, the cemetery in Riverbed Terrace, and the Demenissian Ruins, without saying which chest holds which piece. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "Found in Demeniss treasure chests; the five named cave and ruin sites are not mapped to this slot.",
+          "steps": [
+            {
+              "text": "Search the Demeniss caves and ruins named for this set.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chests until the helm appears.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Cursed_Soul_Set",
+          "title": "Fextralife: Cursed Soul Set",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://www.keengamer.com/articles/guides/crimson-desert-10-best-armor-sets-ranked/",
+          "title": "KeenGamer: 10 best armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:plate-armor-of-cursed-soul",
+      "type": "item",
+      "name": "Plate Armor of Cursed Soul",
+      "category": "armor",
+      "slot": "body",
+      "setName": "Cursed Soul",
+      "region": "region:demeniss",
+      "summary": "Body plate of the Cursed Soul set, hidden in Demeniss treasure chests whose piece-to-chest map is not given.",
+      "body": "KeenGamer names Anvil Hill Gust Cave, Windrift Cave, Shadowwolf Cave, the cemetery in Riverbed Terrace, and the Demenissian Ruins, without saying which chest holds which piece. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "Found in Demeniss treasure chests; the five named cave and ruin sites are not mapped to this slot.",
+          "steps": [
+            {
+              "text": "Search the Demeniss caves and ruins named for this set.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chests until the plate armor appears.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Cursed_Soul_Set",
+          "title": "Fextralife: Cursed Soul Set",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://www.keengamer.com/articles/guides/crimson-desert-10-best-armor-sets-ranked/",
+          "title": "KeenGamer: 10 best armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:plate-gloves-of-cursed-soul",
+      "type": "item",
+      "name": "Plate Gloves of Cursed Soul",
+      "category": "armor",
+      "slot": "gloves",
+      "setName": "Cursed Soul",
+      "region": "region:demeniss",
+      "summary": "Gloves of the Cursed Soul set, hidden in Demeniss treasure chests whose piece-to-chest map is not given.",
+      "body": "KeenGamer names Anvil Hill Gust Cave, Windrift Cave, Shadowwolf Cave, the cemetery in Riverbed Terrace, and the Demenissian Ruins, without saying which chest holds which piece. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "Found in Demeniss treasure chests; the five named cave and ruin sites are not mapped to this slot.",
+          "steps": [
+            {
+              "text": "Search the Demeniss caves and ruins named for this set.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chests until the plate gloves appear.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Cursed_Soul_Set",
+          "title": "Fextralife: Cursed Soul Set",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://www.keengamer.com/articles/guides/crimson-desert-10-best-armor-sets-ranked/",
+          "title": "KeenGamer: 10 best armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:plate-cloak-of-cursed-soul",
+      "type": "item",
+      "name": "Plate Cloak of Cursed Soul",
+      "category": "armor",
+      "slot": "cloak",
+      "setName": "Cursed Soul",
+      "region": "region:demeniss",
+      "summary": "Cloak of the Cursed Soul set, hidden in Demeniss treasure chests whose piece-to-chest map is not given.",
+      "body": "KeenGamer names Anvil Hill Gust Cave, Windrift Cave, Shadowwolf Cave, the cemetery in Riverbed Terrace, and the Demenissian Ruins, without saying which chest holds which piece. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "Found in Demeniss treasure chests; the five named cave and ruin sites are not mapped to this slot.",
+          "steps": [
+            {
+              "text": "Search the Demeniss caves and ruins named for this set.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chests until the plate cloak appears.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Cursed_Soul_Set",
+          "title": "Fextralife: Cursed Soul Set",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://www.keengamer.com/articles/guides/crimson-desert-10-best-armor-sets-ranked/",
+          "title": "KeenGamer: 10 best armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:plate-boots-of-cursed-soul",
+      "type": "item",
+      "name": "Plate Boots of Cursed Soul",
+      "category": "armor",
+      "slot": "feet",
+      "setName": "Cursed Soul",
+      "region": "region:demeniss",
+      "summary": "Boots of the Cursed Soul set, hidden in Demeniss treasure chests whose piece-to-chest map is not given.",
+      "body": "KeenGamer names Anvil Hill Gust Cave, Windrift Cave, Shadowwolf Cave, the cemetery in Riverbed Terrace, and the Demenissian Ruins, without saying which chest holds which piece. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "Found in Demeniss treasure chests; the five named cave and ruin sites are not mapped to this slot.",
+          "steps": [
+            {
+              "text": "Search the Demeniss caves and ruins named for this set.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chests until the plate boots appear.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Cursed_Soul_Set",
+          "title": "Fextralife: Cursed Soul Set",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://www.keengamer.com/articles/guides/crimson-desert-10-best-armor-sets-ranked/",
+          "title": "KeenGamer: 10 best armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:baltheon-plate-helm",
+      "type": "item",
+      "name": "Baltheon Plate Helm",
+      "category": "armor",
+      "slot": "head",
+      "setName": "Baltheon Plate",
+      "region": "region:hernand",
+      "summary": "Helm of the Baltheon Plate set, sold by Rhett at the Hernand equipment shop; no source states a price.",
+      "body": "Rhett stocks this Hernand plate next to other shop armour. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "vendor",
+          "ref": "vendor:rhett-hernand",
+          "note": "Sold at Rhett's equipment shop in Hernand; no source states a price."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Baltheon_Plate_Set",
+          "title": "Fextralife: Baltheon Plate Set",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:baltheon-plate-armor",
+      "type": "item",
+      "name": "Baltheon Plate Armor",
+      "category": "armor",
+      "slot": "body",
+      "setName": "Baltheon Plate",
+      "region": "region:hernand",
+      "summary": "Body plate of the Baltheon Plate set, sold by Rhett at the Hernand equipment shop; no source states a price.",
+      "body": "Rhett stocks this Hernand plate next to other shop armour. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "vendor",
+          "ref": "vendor:rhett-hernand",
+          "note": "Sold at Rhett's equipment shop in Hernand; no source states a price."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Baltheon_Plate_Set",
+          "title": "Fextralife: Baltheon Plate Set",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:baltheon-plate-gloves",
+      "type": "item",
+      "name": "Baltheon Plate Gloves",
+      "category": "armor",
+      "slot": "gloves",
+      "setName": "Baltheon Plate",
+      "region": "region:hernand",
+      "summary": "Gloves of the Baltheon Plate set, sold by Rhett at the Hernand equipment shop; no source states a price.",
+      "body": "Rhett stocks this Hernand plate next to other shop armour. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "vendor",
+          "ref": "vendor:rhett-hernand",
+          "note": "Sold at Rhett's equipment shop in Hernand; no source states a price."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Baltheon_Plate_Set",
+          "title": "Fextralife: Baltheon Plate Set",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:belkandor-plate-helm",
+      "type": "item",
+      "name": "Belkandor Plate Helm",
+      "category": "armor",
+      "slot": "head",
+      "setName": "Belkandor Plate",
+      "tags": [
+        "kliff",
+        "oongka"
+      ],
+      "summary": "Helm of the Belkandor Plate set, crafted from its own blueprint; no source names where that blueprint sits.",
+      "body": "Kliff and Oongka both wear this plate. Blueprint sites in Demeniss, Delesyia, and the Crimson Desert are not named. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "craft",
+          "note": "Crafted from this piece's blueprint; no source names the blueprint site or the recipe record.",
+          "steps": [
+            {
+              "text": "Find the Belkandor Plate helm blueprint.",
+              "action": "collect"
+            },
+            {
+              "text": "Craft the helm at a blacksmith.",
+              "action": "craft"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Belkandor_Plate_Set",
+          "title": "Fextralife: Belkandor Plate Set",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/05/09/crimson-desert-armor-sets-catalog/",
+          "title": "VULKK: armor sets catalog",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:belkandor-plate-armor",
+      "type": "item",
+      "name": "Belkandor Plate Armor",
+      "category": "armor",
+      "slot": "body",
+      "setName": "Belkandor Plate",
+      "tags": [
+        "kliff",
+        "oongka"
+      ],
+      "summary": "Body plate of the Belkandor Plate set, crafted from its own blueprint; no source names where that blueprint sits.",
+      "body": "Kliff and Oongka both wear this plate. Blueprint sites in Demeniss, Delesyia, and the Crimson Desert are not named. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "craft",
+          "note": "Crafted from this piece's blueprint; no source names the blueprint site or the recipe record.",
+          "steps": [
+            {
+              "text": "Find the Belkandor Plate armor blueprint.",
+              "action": "collect"
+            },
+            {
+              "text": "Craft the armor at a blacksmith.",
+              "action": "craft"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Belkandor_Plate_Set",
+          "title": "Fextralife: Belkandor Plate Set",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/05/09/crimson-desert-armor-sets-catalog/",
+          "title": "VULKK: armor sets catalog",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:belkandor-plate-gloves",
+      "type": "item",
+      "name": "Belkandor Plate Gloves",
+      "category": "armor",
+      "slot": "gloves",
+      "setName": "Belkandor Plate",
+      "tags": [
+        "kliff",
+        "oongka"
+      ],
+      "summary": "Gloves of the Belkandor Plate set, crafted from their own blueprint; no source names where that blueprint sits.",
+      "body": "Kliff and Oongka both wear this plate. Blueprint sites in Demeniss, Delesyia, and the Crimson Desert are not named. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "craft",
+          "note": "Crafted from this piece's blueprint; no source names the blueprint site or the recipe record.",
+          "steps": [
+            {
+              "text": "Find the Belkandor Plate gloves blueprint.",
+              "action": "collect"
+            },
+            {
+              "text": "Craft the gloves at a blacksmith.",
+              "action": "craft"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Belkandor_Plate_Set",
+          "title": "Fextralife: Belkandor Plate Set",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/05/09/crimson-desert-armor-sets-catalog/",
+          "title": "VULKK: armor sets catalog",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:belkandor-plate-boots",
+      "type": "item",
+      "name": "Belkandor Plate Boots",
+      "category": "armor",
+      "slot": "feet",
+      "setName": "Belkandor Plate",
+      "tags": [
+        "kliff",
+        "oongka"
+      ],
+      "summary": "Boots of the Belkandor Plate set, crafted from their own blueprint; no source names where that blueprint sits.",
+      "body": "Kliff and Oongka both wear this plate. Blueprint sites in Demeniss, Delesyia, and the Crimson Desert are not named. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "craft",
+          "note": "Crafted from this piece's blueprint; no source names the blueprint site or the recipe record.",
+          "steps": [
+            {
+              "text": "Find the Belkandor Plate boots blueprint.",
+              "action": "collect"
+            },
+            {
+              "text": "Craft the boots at a blacksmith.",
+              "action": "craft"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Belkandor_Plate_Set",
+          "title": "Fextralife: Belkandor Plate Set",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/05/09/crimson-desert-armor-sets-catalog/",
+          "title": "VULKK: armor sets catalog",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:belkandor-plate-cloak",
+      "type": "item",
+      "name": "Belkandor Plate Cloak",
+      "category": "armor",
+      "slot": "cloak",
+      "setName": "Belkandor Plate",
+      "tags": [
+        "kliff",
+        "oongka"
+      ],
+      "summary": "Cloak of the Belkandor Plate set, crafted from its own blueprint; no source names where that blueprint sits.",
+      "body": "Kliff and Oongka both wear this plate. Blueprint sites in Demeniss, Delesyia, and the Crimson Desert are not named. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "craft",
+          "note": "Crafted from this piece's blueprint; no source names the blueprint site or the recipe record.",
+          "steps": [
+            {
+              "text": "Find the Belkandor Plate cloak blueprint.",
+              "action": "collect"
+            },
+            {
+              "text": "Craft the cloak at a blacksmith.",
+              "action": "craft"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Belkandor_Plate_Set",
+          "title": "Fextralife: Belkandor Plate Set",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/05/09/crimson-desert-armor-sets-catalog/",
+          "title": "VULKK: armor sets catalog",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:duskfang-leather-armor",
+      "type": "item",
+      "name": "Duskfang Leather Armor",
+      "category": "armor",
+      "slot": "body",
+      "setName": "Duskfang Leather",
+      "region": "region:hernand",
+      "summary": "Body piece of the Duskfang Leather set, hidden in Hernand treasure chests with no per-piece site named.",
+      "body": "Guides place the leather in Hernand chests and stop there. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "Hidden in Hernand treasure chests; no source maps this slot to one site.",
+          "steps": [
+            {
+              "text": "Search treasure chests across Hernand.",
+              "action": "travel"
+            },
+            {
+              "text": "Take the Duskfang leather armor when a chest holds it.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Duskfang_Leather_Set",
+          "title": "Fextralife: Duskfang Leather Set",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:duskfang-leather-cloak",
+      "type": "item",
+      "name": "Duskfang Leather Cloak",
+      "category": "armor",
+      "slot": "cloak",
+      "setName": "Duskfang Leather",
+      "region": "region:hernand",
+      "summary": "Cloak of the Duskfang Leather set, hidden in Hernand treasure chests with no per-piece site named.",
+      "body": "Guides place the leather in Hernand chests and stop there. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "Hidden in Hernand treasure chests; no source maps this slot to one site.",
+          "steps": [
+            {
+              "text": "Search treasure chests across Hernand.",
+              "action": "travel"
+            },
+            {
+              "text": "Take the Duskfang leather cloak when a chest holds it.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Duskfang_Leather_Set",
+          "title": "Fextralife: Duskfang Leather Set",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:duskfang-leather-gloves",
+      "type": "item",
+      "name": "Duskfang Leather Gloves",
+      "category": "armor",
+      "slot": "gloves",
+      "setName": "Duskfang Leather",
+      "region": "region:hernand",
+      "summary": "Gloves of the Duskfang Leather set, hidden in Hernand treasure chests with no per-piece site named.",
+      "body": "Guides place the leather in Hernand chests and stop there. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "Hidden in Hernand treasure chests; no source maps this slot to one site.",
+          "steps": [
+            {
+              "text": "Search treasure chests across Hernand.",
+              "action": "travel"
+            },
+            {
+              "text": "Take the Duskfang leather gloves when a chest holds them.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Duskfang_Leather_Set",
+          "title": "Fextralife: Duskfang Leather Set",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:grey-wolf-leather-armor",
+      "type": "item",
+      "name": "Grey Wolf Leather Armor",
+      "category": "armor",
+      "slot": "body",
+      "setName": "Grey Wolf Leather",
+      "tags": [
+        "kliff"
+      ],
+      "region": "region:pailune",
+      "summary": "Body piece of the Grey Wolf Leather set, crafted from Leather Armors of the World, Vol. IV, or bought from Lola or Diederik.",
+      "body": "This is Kliff's Pailune-Greymane leather. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "craft",
+          "note": "Crafted with Leather Armors of the World, Vol. IV; that recipe has no record here yet."
+        },
+        {
+          "kind": "vendor",
+          "note": "Sold by Lola at the Pailune Tailor's Shop or by Diederik at Greymane Camp; neither shop has a vendor record here yet."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Grey_Wolf_Leather_Set",
+          "title": "Fextralife: Grey Wolf Leather Set",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:grey-wolf-leather-gloves",
+      "type": "item",
+      "name": "Grey Wolf Leather Gloves",
+      "category": "armor",
+      "slot": "gloves",
+      "setName": "Grey Wolf Leather",
+      "tags": [
+        "kliff"
+      ],
+      "region": "region:pailune",
+      "summary": "Gloves of the Grey Wolf Leather set, crafted from Vol. IV or bought from Lola or Diederik.",
+      "body": "This is Kliff's Pailune-Greymane leather. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "craft",
+          "note": "Crafted with Leather Armors of the World, Vol. IV; that recipe has no record here yet."
+        },
+        {
+          "kind": "vendor",
+          "note": "Sold by Lola at the Pailune Tailor's Shop or by Diederik at Greymane Camp; neither shop has a vendor record here yet."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Grey_Wolf_Leather_Set",
+          "title": "Fextralife: Grey Wolf Leather Set",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:grey-wolf-leather-boots",
+      "type": "item",
+      "name": "Grey Wolf Leather Boots",
+      "category": "armor",
+      "slot": "feet",
+      "setName": "Grey Wolf Leather",
+      "tags": [
+        "kliff"
+      ],
+      "region": "region:pailune",
+      "summary": "Boots of the Grey Wolf Leather set, crafted from Leather Armors of the World, Vol. II, or bought from Lola or Diederik.",
+      "body": "This is Kliff's Pailune-Greymane leather. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "craft",
+          "note": "Crafted with Leather Armors of the World, Vol. II; that recipe has no record here yet."
+        },
+        {
+          "kind": "vendor",
+          "note": "Sold by Lola at the Pailune Tailor's Shop or by Diederik at Greymane Camp; neither shop has a vendor record here yet."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Grey_Wolf_Leather_Set",
+          "title": "Fextralife: Grey Wolf Leather Set",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:grey-wolf-leather-cloak",
+      "type": "item",
+      "name": "Grey Wolf Leather Cloak",
+      "category": "armor",
+      "slot": "cloak",
+      "setName": "Grey Wolf Leather",
+      "tags": [
+        "kliff"
+      ],
+      "region": "region:pailune",
+      "summary": "Cloak of the Grey Wolf Leather set, crafted from Vol. IV or bought from Lola or Diederik.",
+      "body": "This is Kliff's Pailune-Greymane leather. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "craft",
+          "note": "Crafted with Leather Armors of the World, Vol. IV; that recipe has no record here yet."
+        },
+        {
+          "kind": "vendor",
+          "note": "Sold by Lola at the Pailune Tailor's Shop or by Diederik at Greymane Camp; neither shop has a vendor record here yet."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Grey_Wolf_Leather_Set",
+          "title": "Fextralife: Grey Wolf Leather Set",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:helfryn-leather-armor",
+      "type": "item",
+      "name": "Helfryn Leather Armor",
+      "category": "armor",
+      "slot": "body",
+      "setName": "Helfryn Leather",
+      "region": "region:demeniss",
+      "summary": "Body piece of the Helfryn Leather set, hidden in Demeniss treasure chests with no per-piece site named.",
+      "body": "The leather belonged to [[character:gabriel-caliburn]], Duke of Demeniss. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "Hidden in treasure chests inside Demeniss; no source maps this slot to one site.",
+          "steps": [
+            {
+              "text": "Search treasure chests inside Demeniss.",
+              "action": "travel"
+            },
+            {
+              "text": "Take the Helfryn leather armor when a chest holds it.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Helfryn_Leather_Set",
+          "title": "Fextralife: Helfryn Leather Set",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:helfryn-leather-cloak",
+      "type": "item",
+      "name": "Helfryn Leather Cloak",
+      "category": "armor",
+      "slot": "cloak",
+      "setName": "Helfryn Leather",
+      "region": "region:demeniss",
+      "summary": "Cloak of the Helfryn Leather set, hidden in Demeniss treasure chests with no per-piece site named.",
+      "body": "The leather belonged to [[character:gabriel-caliburn]], Duke of Demeniss. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "Hidden in treasure chests inside Demeniss; no source maps this slot to one site.",
+          "steps": [
+            {
+              "text": "Search treasure chests inside Demeniss.",
+              "action": "travel"
+            },
+            {
+              "text": "Take the Helfryn leather cloak when a chest holds it.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Helfryn_Leather_Set",
+          "title": "Fextralife: Helfryn Leather Set",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:helfryn-leather-gloves",
+      "type": "item",
+      "name": "Helfryn Leather Gloves",
+      "category": "armor",
+      "slot": "gloves",
+      "setName": "Helfryn Leather",
+      "region": "region:demeniss",
+      "summary": "Gloves of the Helfryn Leather set, hidden in Demeniss treasure chests with no per-piece site named.",
+      "body": "The leather belonged to [[character:gabriel-caliburn]], Duke of Demeniss. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "Hidden in treasure chests inside Demeniss; no source maps this slot to one site.",
+          "steps": [
+            {
+              "text": "Search treasure chests inside Demeniss.",
+              "action": "travel"
+            },
+            {
+              "text": "Take the Helfryn leather gloves when a chest holds them.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Helfryn_Leather_Set",
+          "title": "Fextralife: Helfryn Leather Set",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:helfryn-leather-boots",
+      "type": "item",
+      "name": "Helfryn Leather Boots",
+      "category": "armor",
+      "slot": "feet",
+      "setName": "Helfryn Leather",
+      "region": "region:demeniss",
+      "summary": "Boots of the Helfryn Leather set, hidden in Demeniss treasure chests with no per-piece site named.",
+      "body": "The leather belonged to [[character:gabriel-caliburn]], Duke of Demeniss. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "Hidden in treasure chests inside Demeniss; no source maps this slot to one site.",
+          "steps": [
+            {
+              "text": "Search treasure chests inside Demeniss.",
+              "action": "travel"
+            },
+            {
+              "text": "Take the Helfryn leather boots when a chest holds them.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Helfryn_Leather_Set",
+          "title": "Fextralife: Helfryn Leather Set",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:dulone-plate-boots",
+      "type": "item",
+      "name": "Dulone Plate Boots",
+      "category": "armor",
+      "slot": "feet",
+      "setName": "Dulone Plate",
+      "summary": "Boots of the Dulone Plate set, crafted from Plate Armors of the World, Vol. IV.",
+      "body": "Only the boots and gloves of this plate are named. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "craft",
+          "note": "Crafted with Plate Armors of the World, Vol. IV; that recipe has no record here yet.",
+          "steps": [
+            {
+              "text": "Obtain Plate Armors of the World, Vol. IV.",
+              "action": "collect"
+            },
+            {
+              "text": "Craft the Dulone Plate boots at a blacksmith.",
+              "action": "craft"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Dulone_Plate_Set",
+          "title": "Fextralife: Dulone Plate Set",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:dulone-plate-gloves",
+      "type": "item",
+      "name": "Dulone Plate Gloves",
+      "category": "armor",
+      "slot": "gloves",
+      "setName": "Dulone Plate",
+      "summary": "Gloves of the Dulone Plate set, crafted from the same Vol. IV plate manual as the boots.",
+      "body": "Only the boots and gloves of this plate are named. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "craft",
+          "note": "Crafted with Plate Armors of the World, Vol. IV; that recipe has no record here yet.",
+          "steps": [
+            {
+              "text": "Obtain Plate Armors of the World, Vol. IV.",
+              "action": "collect"
+            },
+            {
+              "text": "Craft the Dulone Plate gloves at a blacksmith.",
+              "action": "craft"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Dulone_Plate_Set",
+          "title": "Fextralife: Dulone Plate Set",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:chelcia-plate-helm",
+      "type": "item",
+      "name": "Chelcia Plate Helm",
+      "category": "armor",
+      "slot": "head",
+      "setName": "Chelcia Plate",
+      "region": "region:demeniss",
+      "summary": "Helm of the Chelcia Plate set, sold at the Demeniss Castle Contribution Shop; no source states a price.",
+      "body": "The plate belonged to Chelcia, the Lion Knight. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "vendor",
+          "note": "Sold at the Demeniss Castle Contribution Shop; that shop has no vendor record here yet.",
+          "steps": [
+            {
+              "text": "Go to Demeniss Castle.",
+              "action": "travel",
+              "refs": [
+                "place:demeniss-castle"
+              ]
+            },
+            {
+              "text": "Buy the Chelcia Plate helm from the Contribution Shop.",
+              "action": "buy"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Chelcia_Plate_Set",
+          "title": "Fextralife: Chelcia Plate Set",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:chelcia-plate-armor",
+      "type": "item",
+      "name": "Chelcia Plate Armor",
+      "category": "armor",
+      "slot": "body",
+      "setName": "Chelcia Plate",
+      "region": "region:demeniss",
+      "summary": "Body plate of the Chelcia Plate set, sold at the Demeniss Castle Contribution Shop; no source states a price.",
+      "body": "The plate belonged to Chelcia, the Lion Knight. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "vendor",
+          "note": "Sold at the Demeniss Castle Contribution Shop; that shop has no vendor record here yet.",
+          "steps": [
+            {
+              "text": "Go to Demeniss Castle.",
+              "action": "travel",
+              "refs": [
+                "place:demeniss-castle"
+              ]
+            },
+            {
+              "text": "Buy the Chelcia Plate armor from the Contribution Shop.",
+              "action": "buy"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Chelcia_Plate_Set",
+          "title": "Fextralife: Chelcia Plate Set",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:chelcia-plate-cloak",
+      "type": "item",
+      "name": "Chelcia Plate Cloak",
+      "category": "armor",
+      "slot": "cloak",
+      "setName": "Chelcia Plate",
+      "region": "region:demeniss",
+      "summary": "Cloak of the Chelcia Plate set, sold at the Demeniss Castle Contribution Shop; no source states a price.",
+      "body": "The plate belonged to Chelcia, the Lion Knight. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "vendor",
+          "note": "Sold at the Demeniss Castle Contribution Shop; that shop has no vendor record here yet.",
+          "steps": [
+            {
+              "text": "Go to Demeniss Castle.",
+              "action": "travel",
+              "refs": [
+                "place:demeniss-castle"
+              ]
+            },
+            {
+              "text": "Buy the Chelcia Plate cloak from the Contribution Shop.",
+              "action": "buy"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Chelcia_Plate_Set",
+          "title": "Fextralife: Chelcia Plate Set",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:chelcia-plate-boots",
+      "type": "item",
+      "name": "Chelcia Plate Boots",
+      "category": "armor",
+      "slot": "feet",
+      "setName": "Chelcia Plate",
+      "region": "region:demeniss",
+      "summary": "Boots of the Chelcia Plate set, crafted from Plate Armors of the World, Vol. II, or bought from Kathor or Tranan.",
+      "body": "The plate belonged to Chelcia, the Lion Knight. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "craft",
+          "note": "Crafted with Plate Armors of the World, Vol. II; that recipe has no record here yet."
+        },
+        {
+          "kind": "vendor",
+          "note": "Sold by Kathor at the Demeniss Equipment Shop or by Tranan at Greymane's Camp; neither shop has a vendor record here yet."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Chelcia_Plate_Set",
+          "title": "Fextralife: Chelcia Plate Set",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:official-knights-plate-helm",
+      "type": "item",
+      "name": "Official Knight's Plate Helm",
+      "aliases": [
+        "Plate Helm"
+      ],
+      "category": "armor",
+      "slot": "head",
+      "setName": "Official Knight's",
+      "tags": [
+        "damiane"
+      ],
+      "summary": "Helm of the Official Knight's set, paid on A Fleeting Dream after Bastier falls.",
+      "body": "Damiane receives this kit as the Official Knight armor set on [[quest:a-fleeting-dream]]. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "quest",
+          "ref": "quest:a-fleeting-dream",
+          "note": "Paid with the Official Knight armor set after Bastier falls on A Fleeting Dream.",
+          "steps": [
+            {
+              "text": "Play Damiane's stretch on A Fleeting Dream.",
+              "action": "other",
+              "refs": [
+                "quest:a-fleeting-dream",
+                "character:damiane"
+              ]
+            },
+            {
+              "text": "Defeat Bastier.",
+              "action": "fight",
+              "refs": [
+                "character:bastier"
+              ]
+            },
+            {
+              "text": "Collect the plate helm with the Official Knight armor set.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/595963",
+          "title": "Game8: list of all Damiane armor sets",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/588901",
+          "title": "Game8: Chapter 8 walkthrough",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/",
+          "title": "VULKK: main story walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:official-knights-plate-armor",
+      "type": "item",
+      "name": "Official Knight's Plate Armor",
+      "aliases": [
+        "Plate Armor"
+      ],
+      "category": "armor",
+      "slot": "body",
+      "setName": "Official Knight's",
+      "tags": [
+        "damiane"
+      ],
+      "summary": "Body plate of the Official Knight's set, paid on A Fleeting Dream after Bastier falls.",
+      "body": "Damiane receives this kit as the Official Knight armor set on [[quest:a-fleeting-dream]]. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "quest",
+          "ref": "quest:a-fleeting-dream",
+          "note": "Paid with the Official Knight armor set after Bastier falls on A Fleeting Dream.",
+          "steps": [
+            {
+              "text": "Play Damiane's stretch on A Fleeting Dream.",
+              "action": "other",
+              "refs": [
+                "quest:a-fleeting-dream",
+                "character:damiane"
+              ]
+            },
+            {
+              "text": "Defeat Bastier.",
+              "action": "fight",
+              "refs": [
+                "character:bastier"
+              ]
+            },
+            {
+              "text": "Collect the plate armor with the Official Knight armor set.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/595963",
+          "title": "Game8: list of all Damiane armor sets",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/588901",
+          "title": "Game8: Chapter 8 walkthrough",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/",
+          "title": "VULKK: main story walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:official-knights-leather-gloves",
+      "type": "item",
+      "name": "Official Knight's Leather Gloves",
+      "category": "armor",
+      "slot": "gloves",
+      "setName": "Official Knight's",
+      "tags": [
+        "damiane"
+      ],
+      "summary": "Gloves of the Official Knight's set, paid on A Fleeting Dream after Bastier falls.",
+      "body": "Damiane receives this kit as the Official Knight armor set on [[quest:a-fleeting-dream]]. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "quest",
+          "ref": "quest:a-fleeting-dream",
+          "note": "Paid with the Official Knight armor set after Bastier falls on A Fleeting Dream.",
+          "steps": [
+            {
+              "text": "Play Damiane's stretch on A Fleeting Dream.",
+              "action": "other",
+              "refs": [
+                "quest:a-fleeting-dream",
+                "character:damiane"
+              ]
+            },
+            {
+              "text": "Defeat Bastier.",
+              "action": "fight",
+              "refs": [
+                "character:bastier"
+              ]
+            },
+            {
+              "text": "Collect the leather gloves with the Official Knight armor set.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/595963",
+          "title": "Game8: list of all Damiane armor sets",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/588901",
+          "title": "Game8: Chapter 8 walkthrough",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/",
+          "title": "VULKK: main story walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:official-knights-leather-boots",
+      "type": "item",
+      "name": "Official Knight's Leather Boots",
+      "category": "armor",
+      "slot": "feet",
+      "setName": "Official Knight's",
+      "tags": [
+        "damiane"
+      ],
+      "summary": "Boots of the Official Knight's set, paid on A Fleeting Dream after Bastier falls.",
+      "body": "Damiane receives this kit as the Official Knight armor set on [[quest:a-fleeting-dream]]. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "quest",
+          "ref": "quest:a-fleeting-dream",
+          "note": "Paid with the Official Knight armor set after Bastier falls on A Fleeting Dream.",
+          "steps": [
+            {
+              "text": "Play Damiane's stretch on A Fleeting Dream.",
+              "action": "other",
+              "refs": [
+                "quest:a-fleeting-dream",
+                "character:damiane"
+              ]
+            },
+            {
+              "text": "Defeat Bastier.",
+              "action": "fight",
+              "refs": [
+                "character:bastier"
+              ]
+            },
+            {
+              "text": "Collect the leather boots with the Official Knight armor set.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/595963",
+          "title": "Game8: list of all Damiane armor sets",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/588901",
+          "title": "Game8: Chapter 8 walkthrough",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/",
+          "title": "VULKK: main story walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:executioner-of-darkness-plate-helm",
+      "type": "item",
+      "name": "Executioner of Darkness Plate Helm",
+      "category": "armor",
+      "slot": "head",
+      "setName": "Executioner of Darkness",
+      "tags": [
+        "damiane"
+      ],
+      "summary": "Helm of Damiane's Executioner of Darkness set; no source names a pickup.",
+      "body": "Game8 lists this Damiane plate with no body piece and no route. A same-theme Epilogue reward named Dark Executioner Leather Armor is not confirmed as part of this set. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "other",
+          "note": "No source in the research file names a pickup, drop, or vendor."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/595963",
+          "title": "Game8: list of all Damiane armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:executioner-of-darkness-plate-gloves",
+      "type": "item",
+      "name": "Executioner of Darkness Plate Gloves",
+      "category": "armor",
+      "slot": "gloves",
+      "setName": "Executioner of Darkness",
+      "tags": [
+        "damiane"
+      ],
+      "summary": "Gloves of Damiane's Executioner of Darkness set; no source names a pickup.",
+      "body": "Game8 lists this Damiane plate with no body piece and no route. A same-theme Epilogue reward named Dark Executioner Leather Armor is not confirmed as part of this set. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "other",
+          "note": "No source in the research file names a pickup, drop, or vendor."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/595963",
+          "title": "Game8: list of all Damiane armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:executioner-of-darkness-plate-boots",
+      "type": "item",
+      "name": "Executioner of Darkness Plate Boots",
+      "category": "armor",
+      "slot": "feet",
+      "setName": "Executioner of Darkness",
+      "tags": [
+        "damiane"
+      ],
+      "summary": "Boots of Damiane's Executioner of Darkness set; no source names a pickup.",
+      "body": "Game8 lists this Damiane plate with no body piece and no route. A same-theme Epilogue reward named Dark Executioner Leather Armor is not confirmed as part of this set. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "other",
+          "note": "No source in the research file names a pickup, drop, or vendor."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/595963",
+          "title": "Game8: list of all Damiane armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:wanderer-of-faith-plate-helm",
+      "type": "item",
+      "name": "Wanderer of Faith Plate Helm",
+      "category": "armor",
+      "slot": "head",
+      "setName": "Wanderer of Faith",
+      "tags": [
+        "damiane"
+      ],
+      "summary": "Helm of Damiane's Wanderer of Faith set; no source names a pickup.",
+      "body": "Game8 names the Damiane pieces and stops. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "other",
+          "note": "No source in the research file names a pickup, drop, or vendor."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/595963",
+          "title": "Game8: list of all Damiane armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:wanderer-of-faith-leather-armor",
+      "type": "item",
+      "name": "Wanderer of Faith Leather Armor",
+      "category": "armor",
+      "slot": "body",
+      "setName": "Wanderer of Faith",
+      "tags": [
+        "damiane"
+      ],
+      "summary": "Body piece of Damiane's Wanderer of Faith set; no source names a pickup.",
+      "body": "Game8 names the Damiane pieces and stops. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "other",
+          "note": "No source in the research file names a pickup, drop, or vendor."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/595963",
+          "title": "Game8: list of all Damiane armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:wanderer-of-faith-leather-gloves",
+      "type": "item",
+      "name": "Wanderer of Faith Leather Gloves",
+      "category": "armor",
+      "slot": "gloves",
+      "setName": "Wanderer of Faith",
+      "tags": [
+        "damiane"
+      ],
+      "summary": "Gloves of Damiane's Wanderer of Faith set; no source names a pickup.",
+      "body": "Game8 names the Damiane pieces and stops. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "other",
+          "note": "No source in the research file names a pickup, drop, or vendor."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/595963",
+          "title": "Game8: list of all Damiane armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:wanderer-of-faith-leather-boots",
+      "type": "item",
+      "name": "Wanderer of Faith Leather Boots",
+      "category": "armor",
+      "slot": "feet",
+      "setName": "Wanderer of Faith",
+      "tags": [
+        "damiane"
+      ],
+      "summary": "Boots of Damiane's Wanderer of Faith set; no source names a pickup.",
+      "body": "Game8 names the Damiane pieces and stops. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "other",
+          "note": "No source in the research file names a pickup, drop, or vendor."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/595963",
+          "title": "Game8: list of all Damiane armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:autumn-banquet-plate-helm",
+      "type": "item",
+      "name": "Autumn Banquet Plate Helm",
+      "category": "armor",
+      "slot": "head",
+      "setName": "Autumn Banquet",
+      "tags": [
+        "damiane"
+      ],
+      "summary": "Helm of Damiane's Autumn Banquet set; no source names a pickup.",
+      "body": "Game8 names the Damiane pieces and stops. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "other",
+          "note": "No source in the research file names a pickup, drop, or vendor."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/595963",
+          "title": "Game8: list of all Damiane armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:autumn-banquet-leather-armor",
+      "type": "item",
+      "name": "Autumn Banquet Leather Armor",
+      "category": "armor",
+      "slot": "body",
+      "setName": "Autumn Banquet",
+      "tags": [
+        "damiane"
+      ],
+      "summary": "Body piece of Damiane's Autumn Banquet set; no source names a pickup.",
+      "body": "Game8 names the Damiane pieces and stops. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "other",
+          "note": "No source in the research file names a pickup, drop, or vendor."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/595963",
+          "title": "Game8: list of all Damiane armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:autumn-banquet-leather-gloves",
+      "type": "item",
+      "name": "Autumn Banquet Leather Gloves",
+      "category": "armor",
+      "slot": "gloves",
+      "setName": "Autumn Banquet",
+      "tags": [
+        "damiane"
+      ],
+      "summary": "Gloves of Damiane's Autumn Banquet set; no source names a pickup.",
+      "body": "Game8 names the Damiane pieces and stops. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "other",
+          "note": "No source in the research file names a pickup, drop, or vendor."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/595963",
+          "title": "Game8: list of all Damiane armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:autumn-banquet-leather-boots",
+      "type": "item",
+      "name": "Autumn Banquet Leather Boots",
+      "category": "armor",
+      "slot": "feet",
+      "setName": "Autumn Banquet",
+      "tags": [
+        "damiane"
+      ],
+      "summary": "Boots of Damiane's Autumn Banquet set; no source names a pickup.",
+      "body": "Game8 names the Damiane pieces and stops. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "other",
+          "note": "No source in the research file names a pickup, drop, or vendor."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/595963",
+          "title": "Game8: list of all Damiane armor sets",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:elegant-carmine-plate-helm",
+      "type": "item",
+      "name": "Elegant Carmine Plate Helm",
+      "category": "armor",
+      "slot": "head",
+      "setName": "Elegant Carmine",
+      "tags": [
+        "damiane"
+      ],
+      "region": "region:crimson-desert",
+      "summary": "Helm of Damiane's Elegant Carmine set, crafted from a blueprint in the Timeworn Ruins Ironcrawler Station office.",
+      "body": "Damiane crafts this kit from shared blueprints. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "craft",
+          "note": "Blueprint sits in the office at Timeworn Ruins Ironcrawler Station in Tashkalp; that recipe has no record here yet.",
+          "steps": [
+            {
+              "text": "Go to the Timeworn Ruins Ironcrawler Station in Tashkalp.",
+              "action": "travel",
+              "refs": [
+                "region:tashkalp"
+              ]
+            },
+            {
+              "text": "Enter the office and take the helm blueprint.",
+              "action": "collect"
+            },
+            {
+              "text": "Craft the Elegant Carmine plate helm.",
+              "action": "craft"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/590132",
+          "title": "Game8: how to get Elegant Carmine Leather Armor",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:elegant-carmine-leather-armor",
+      "type": "item",
+      "name": "Elegant Carmine Leather Armor",
+      "aliases": [
+        "Carmine Banquet Armor Blueprint"
+      ],
+      "category": "armor",
+      "slot": "body",
+      "setName": "Elegant Carmine",
+      "tags": [
+        "damiane"
+      ],
+      "summary": "Body piece of Damiane's Elegant Carmine set, crafted from a Jungle Ruins blueprint after a Force Palm on a fake wall.",
+      "body": "Damiane crafts this kit from shared blueprints. Turnali in Hernand uses Thin Hide x10, Thick Hide x5, Sturdy Hide x2, Gold Ore x2, and Garnet x2. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "craft",
+          "note": "Blueprint is the Carmine Banquet Armor Blueprint behind a fake wall at the Jungle Ruins east of the Red River; craft with Turnali in Hernand.",
+          "steps": [
+            {
+              "text": "Ride to the Jungle Ruins east of the Red River.",
+              "action": "travel"
+            },
+            {
+              "text": "Force Palm the fake wall.",
+              "action": "solve"
+            },
+            {
+              "text": "Take the Carmine Banquet Armor Blueprint.",
+              "action": "collect"
+            },
+            {
+              "text": "Craft the armor with Turnali in Hernand.",
+              "action": "craft",
+              "refs": [
+                "character:turnali"
+              ]
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/590132",
+          "title": "Game8: how to get Elegant Carmine Leather Armor",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:elegant-carmine-leather-cloak",
+      "type": "item",
+      "name": "Elegant Carmine Leather Cloak",
+      "category": "armor",
+      "slot": "cloak",
+      "setName": "Elegant Carmine",
+      "tags": [
+        "damiane"
+      ],
+      "region": "region:delesyia",
+      "summary": "Cloak of Damiane's Elegant Carmine set, crafted from a bookshelf blueprint at Marni's Masterium after a Chapter 11 teleport.",
+      "body": "Damiane crafts this kit from shared blueprints. The Masterium is only reached through a Chapter 11 (Truth and Reality) teleport. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "craft",
+          "note": "Blueprint sits on a bookshelf at Marni's Masterium on the southern Delesyia coast; that site has no place record here yet.",
+          "steps": [
+            {
+              "text": "Reach Marni's Masterium on the southern Delesyia coast through the Chapter 11 teleport.",
+              "action": "travel",
+              "refs": [
+                "character:marni"
+              ]
+            },
+            {
+              "text": "Take the cloak blueprint from the bookshelf.",
+              "action": "collect"
+            },
+            {
+              "text": "Craft the Elegant Carmine leather cloak.",
+              "action": "craft"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/590132",
+          "title": "Game8: how to get Elegant Carmine Leather Armor",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:elegant-carmine-plate-gloves",
+      "type": "item",
+      "name": "Elegant Carmine Plate Gloves",
+      "category": "armor",
+      "slot": "gloves",
+      "setName": "Elegant Carmine",
+      "tags": [
+        "damiane"
+      ],
+      "region": "region:delesyia",
+      "summary": "Gloves of Damiane's Elegant Carmine set, crafted from a bookshelf blueprint at Dewhaven Keep.",
+      "body": "Damiane crafts this kit from shared blueprints. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "craft",
+          "note": "Blueprint sits on a bookshelf at Dewhaven Keep; that keep has no place record under that name here yet.",
+          "steps": [
+            {
+              "text": "Go to Dewhaven Keep.",
+              "action": "travel"
+            },
+            {
+              "text": "Take the gloves blueprint from the bookshelf.",
+              "action": "collect"
+            },
+            {
+              "text": "Craft the Elegant Carmine plate gloves.",
+              "action": "craft"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/590132",
+          "title": "Game8: how to get Elegant Carmine Leather Armor",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:elegant-carmine-plate-boots",
+      "type": "item",
+      "name": "Elegant Carmine Plate Boots",
+      "category": "armor",
+      "slot": "feet",
+      "setName": "Elegant Carmine",
+      "tags": [
+        "damiane"
+      ],
+      "region": "region:crimson-desert",
+      "summary": "Boots of Damiane's Elegant Carmine set, bought from the Varnia tailor after Trust 100; that line is snippet-only.",
+      "body": "Damiane's kit is otherwise crafted. The Varnia tailor line comes only from a search snippet of the Game8 page, not from the fetched body. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "acquisitions": [
+        {
+          "kind": "vendor",
+          "note": "Purchased from the Tailor in Varnia after reaching 100 Trust with her; that shop has no vendor record here yet.",
+          "steps": [
+            {
+              "text": "Raise Trust with the Varnia tailor to 100.",
+              "action": "talk"
+            },
+            {
+              "text": "Buy the Elegant Carmine plate boots from her shop.",
+              "action": "buy"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/590132",
+          "title": "Game8: how to get Elegant Carmine Leather Armor",
+          "accessed": "2026-09-06",
+          "note": "seen via search snippet only"
         }
       ],
       "confidence": "assumed",
