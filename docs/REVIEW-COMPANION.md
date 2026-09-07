@@ -4,6 +4,58 @@ Whole-feature reviews of the companion build (docs/COMPANION-PLAN.md,
 R-tasks). Each review is pasted verbatim from the read-only Grok run; the
 orchestrator's status line above it says what was done with the findings.
 
+## R4 (C5): unique gear and sets
+
+Status 2026-09-06: applied (commit "Apply the R4 review of the C5 item
+content", Grok, one pass): all four blocking items, every should-fix and
+every nit except the piece-naming nit, decided otherwise: pieces the
+research leaves unnamed keep the `<Set> Headgear / Body Armor / Gloves /
+Footwear / Cloak` pattern (the authoring rule), except the two Solas
+Plate pieces the quest text names ("Solas Plate Armor", "Solas Plate
+Boots"). Sets whose sources list chest sites without a piece map
+(Icewing Plate, Golden Greed, Dark Ringleader's) keep one record per
+catalogue slot with the same site list on every piece and `assumed`.
+Orchestrator checks before the review: every record validates, ids
+unique, refs resolve and match their acquisition kind, every item has an
+acquisition, no set has two pieces in one slot, every weapon and
+accessory name in the research has a record; every cited URL returns 200
+except one homepage citation (dropped); eleven 7-word overlaps, eight of
+them manual or item names, three prose phrases reworded. A Rokade item
+record was dropped by the orchestrator (the horse is `mount:rokade`).
+Numbers after C5: 233 items (71 weapons, 136 armour pieces in 33 sets,
+13 shields, 10 accessories, 2 tools, 1 cosmetic); 22 main-quest gear
+rewards carry item refs.
+
+### R4 review: C5 unique gear and sets (Cursor/Grok 4.6, 2026-09-06)
+
+**Blocking** (wrong facts, invented facts, copied prose, schema misuse)
+- `item:bringer-of-balance` (`data/content/item.json`) — `rarity` is `"unique"`. Section 5: no rarity was found for any named item in §§2–4. Drop `rarity`.
+- `item:icewing-plate-cloak` (`data/content/item.json`; same invented split on `item:icewing-plate-headgear`, `item:icewing-plate-body-armor`) — KeenGamer leaves every Icewing row “(piece unspecified)” and does not map the Eldertree drop, the 15-Sanctum reward, or the three chests to slots. These records assign those routes to head / body / cloak as a “catalog hook.” Follow the Fallen Kingdom pattern: one location list on every piece, or one set row. Do not bind a site to a slot.
+- `item:golden-greed-footwear` (`data/content/item.json`; same invented split on the other four Golden Greed rows) — five unspecified chests were mapped 1:1 onto five invented slots (Bursada Castle Ruins → feet). Section 3 gives no piece-to-chest map. List all five sites on every piece, or collapse to one set row.
+- `item:solas-plate-body-armor` and `item:solas-plate-footwear` (`data/content/item.json`) — both say no pickup. `docs/RESEARCH-MAIN-STORY.md` pays “Solas Plate Armor/Boots” on Time to Face Justice, and `quest:time-to-face-justice` already lists those texts. Add a `quest` acquisition with `ref: "quest:time-to-face-justice"`. Add aliases `"Solas Plate Armor"` / `"Solas Plate Boots"` (or rename to those strings). Head and cloak stay no-pickup.
+
+**Should fix**
+- `item:bringer-of-balance` (`data/content/item.json`) — `confidence` is `reported`. The altar route is a carried, blocked FandomWire line (weak single-source). Set `assumed`.
+- `item:axe-of-the-apocalypse` (`data/content/item.json`) — quest reward of finishing the main story; `quest:blinding-darkness` already has the item `ref`, but this record says no quest name and omits `ref`. Set `acquisitions[0].ref` to `quest:blinding-darkness` (or drop the invented single-quest step if the axe stays chapter-total only).
+- `item:sword-of-the-lord` (`data/content/item.json`) — body notes the starting-kit / Abyss Gear claim; only `drop` and `quest` branches are encoded. Add an `other` branch for that starting-kit line (conflict row; keep `assumed`).
+- `item:white-bloodwind-plate-helm` (`data/content/item.json`) — Trust-100 reward from Olanelle is `kind: "vendor"`; the body piece and gloves use `other`. Section 3 is “Trust reward,” not a priced shop line. Use `other` on the helm.
+- `item:valortread-plate-body-armor` (`data/content/item.json`) — `tags` include `abyss-gear`. Section 3 names Gourmet / Aegis / Fortification only on the head row. Drop that tag from the body (keep it on the head).
+- `item:dark-ringleaders-headgear` (`data/content/item.json`; same on the other three Dark Ringleader rows) — four unspecified west-Hernand chests mapped 1:1 onto four invented slots, same “catalog hook” as Golden Greed. List all four sites on every piece, or one set row.
+- `quest:time-to-face-justice` (`data/content/quest.json`) — `rewards[]` texts “Solas Plate Armor” and “Solas Plate Boots” have no `ref`. After the aliases/renames above, set `ref` to `item:solas-plate-body-armor` and `item:solas-plate-footwear`. Do not point them at head or cloak.
+- `quest:cloud-castle-orbian` (`data/content/quest.json`) — “Golden Fire” is `kind: "unlock"` with no `ref`; `item:golden-fire` exists. Change that reward to `kind: "item"` and `ref: "item:golden-fire"`, or drop it (the item already ties the drop to Foreboding Shadow / Golden Star; Cloud Castle’s stated reward is Blackstar).
+
+**Nits**
+- `item:frostcursed-headgear`, `item:frostcursed-footwear`, `item:ashad-plate-headgear`, `item:solas-plate-headgear`, `item:solas-plate-footwear` (`data/content/item.json`) — blank piece-name rows should follow `<Set> <Slot>` (Head / Body / Feet). These use Headgear / Body Armor / Footwear. Align names (Solas body/feet should match the chapter-table “Armor” / “Boots” strings above).
+- `item:official-knights-leather-gloves` and `item:official-knights-leather-boots` (`data/content/item.json`) — helm and body already alias the research piece names; add `"Leather Gloves"` / `"Leather Boots"`.
+- `item:white-bloodwind-plate-helm` (`data/content/item.json`) — steps send the Demeniss tailor to `place:demeniss-castle`. Section 3 only says Tailor's Shop, Demeniss. Drop the castle ref unless a tailor place exists.
+- `quest:a-fleeting-dream` (`data/content/quest.json`) — “Official Knight armor set” correctly has no `ref` (four piece records; no set row). Leave it; do not point at one piece or at the Light of the Battlefield earring.
+
+**Sampled and sound**
+- Weapons: `item:crow-whisperer`, `item:golden-vanguard`, `item:crimson-wardens-bow`, `item:electro-mecha-spear`, `item:frozen-anguish`, `item:goblin-kings-treasure-dagger`, `item:soul-spear`, `item:grey-wolf-bow`, `item:caliburns-mercy-pistol`, `item:marni-musket`, `item:tauria-curved-sword`, `item:volcanic-blaster`, `item:shackle-of-might`, `item:chillfallen-sword`, `item:hollow-visage`, `item:sior-blaster`, `item:the-groves-thorn`, `item:twisted-verdict`, `item:rhinard-cannon`, `item:bismuth-spear`, `item:kuku-flame-spear`, `item:fallen-kingdoms-rapier`, `item:volono-sword`
+- Armour: `item:blackwing-mask`, `item:canta-plate`, `item:frostcursed-headgear`, `item:frostcursed-body-armor`, `item:frostcursed-cloak`, `item:frostcursed-gloves`, `item:frostcursed-footwear`, `item:blackwing-leather-armor`, `item:blackwing-leather-cloak`, `item:blackwing-leather-gloves`, `item:blackwing-leather-boots`, `item:unyielding-warriors-cloak`, `item:camouflage-outfit`, `item:crimson-chaser-chain-gloves`, `item:leather-cloak-of-the-fallen-kingdom`, `item:plate-boots-of-cursed-soul`, `item:belkandor-plate-armor`, `item:duskfang-leather-cloak`, `item:grey-wolf-leather-cloak`, `item:dulone-plate-boots`, `item:chelcia-plate-boots`, `item:official-knights-plate-helm`, `item:official-knights-plate-armor`, `item:official-knights-leather-gloves`, `item:official-knights-leather-boots`, `item:executioner-of-darkness-plate-helm`, `item:wanderer-of-faith-leather-gloves`, `item:autumn-banquet-leather-boots`, `item:elegant-carmine-plate-boots`, `item:light-of-the-battlefield`, `item:ashad-plate-headgear`, `item:ashen-wolfs-leather-body-armor`, `item:solas-plate-headgear`, `item:solas-plate-cloak`, `item:scorchflame-plate-gloves`, `item:plate-cloak-of-shadows`, `item:dark-executioner-leather-armor`, `item:kuku-breeze-step-boots`
+- Shields: `item:black-sun`, `item:blazing-shield`, `item:drake-shield`, `item:golden-shield`, `item:shield-of-conviction`, `item:shield-of-sacrifice`, `item:balgran-shield`, `item:khaled-shield`, `item:grey-wolf-wooden-shield`, `item:delesyian-ornamental-shield`, `item:ancient-shield`, `item:lucon-large-shield`, `item:legion-spearmens-large-shield`
+- Accessories / tools / cosmetic: `item:witchs-ring`, `item:greymanes-earring`, `item:stardust-necklace`, `item:earring-of-dark-magic`, `item:radiant-necklace`, `item:ring-of-lightning`, `item:light-of-the-battlefield-earring`, `item:axiom`, `item:damianes-axiom`, `item:oongkas-axiom`, `item:mining-knuckledrill`, `item:eastern-witchs-fan`, `item:damianes-ponytail-ticket`
+
 ## R4 (C2): factions and characters
 
 Status 2026-09-06: applied (commit "Apply the R4 review of the C2

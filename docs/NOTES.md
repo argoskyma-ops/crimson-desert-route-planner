@@ -86,6 +86,16 @@ change a decision there first, then the code.
   and Norfix/Kamraan trade managers are one person each is unconfirmed.
   `crimsondesert.gaming.tools` now answers a Cloudflare challenge to curl
   as well; its facts are snippet-only.
+- C5 follow-ups (2026-09-06): 83 items are `assumed` (no source names a
+  pickup, or the sources conflict); the section 5 conflicts in
+  `docs/RESEARCH-ITEMS.md` (Golden Vanguard's quest, Sword of the Lord,
+  the Crowcaller chapter, Beloth's chapter, Tauria Curved Sword) are
+  noted in the records and need an in-game check. Boss-drop and chest
+  acquisitions carry no `ref` until C7 adds the enemies and C4/C6 add
+  the caves, sanctums and ruins; convert the `note` text then. Prices
+  and rarity tiers are unrecorded (the five-tier colour ladder is
+  single-source). The Official Knight armor set reward on
+  `quest:a-fleeting-dream` has no set record to point at.
 - Calibrate `METERS_PER_PIXEL` and `SPEED_MPS` in-game (`src/config/travel.ts`, D7).
   Check whether wide roads or paths are the faster class for a horse.
 - Second sweep in the editor for dead ends (about 600) and trails still missing; use
