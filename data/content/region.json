@@ -70,7 +70,6 @@
       "keyPlaces": [
         "place:pailune",
         "place:beighen",
-        "place:silverwolf-mountain",
         "place:kweiden",
         "place:odeck",
         "place:skoghorn",
@@ -121,7 +120,6 @@
       "body": "Demeniss sits on golden plains behind high walls: fortified cities and large military works on a cliff line. House Thorel once unified its territories, but King Edward Thorel lies in a coma with no named heir; Houses Azerian, Byron, Elemore, Marshell (patron of Grand General Bastier) and Wells (said to govern the south) contest the vacuum, and [[character:gabriel-caliburn]] seizes power during Blood Coronation. [[place:demeniss-castle]] is the political capital; sources disagree on whether the city or the castle is the preferred name. Chapters 8, 10 and 12 are its main-story chapters; it also appears in Chapters 5, 7 and 9 and in the epilogue.",
       "keyPlaces": [
         "place:demeniss-castle",
-        "place:morning-mist-peaks",
         "place:easelbury",
         "place:fort-musket",
         "place:hexe-sanctuary",
@@ -278,11 +276,6 @@
         {
           "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
           "title": "Fextralife: Locations",
-          "accessed": "2026-09-06"
-        },
-        {
-          "url": "https://crimsondesertgame.wiki.fextralife.com/Crimson+Desert+Wiki",
-          "title": "Fextralife: Crimson Desert Wiki",
           "accessed": "2026-09-06"
         },
         {
@@ -660,7 +653,7 @@
       "kind": "sub-area",
       "parent": "region:hernand",
       "summary": "Frontier march of the Duchy of Hernand under House Lanford, on the Pailune border.",
-      "body": "The Calphadean Territory is the Duchy of Hernand's northern frontier, held by House Lanford and set against Pailune. [[place:calphade-castle]] is its seat; Chapter 6 (Cracks in the Shield) plays here, along the line watched from [[place:calphade-gate]].",
+      "body": "The Calphadean Territory is the Duchy of Hernand's northern frontier, held by House Lanford and set against Pailune. [[place:calphade-castle]] is its seat, and Chapter 6 (Cracks in the Shield) plays here.",
       "keyPlaces": [
         "place:calphade-castle",
         "place:calphade-logging-camp"
@@ -697,11 +690,6 @@
         "place:hernandian-mountains-bandit-camp"
       ],
       "sources": [
-        {
-          "url": "https://game8.co/games/Crimson-Desert/archives/585761",
-          "title": "Game8: Hernand region guide",
-          "accessed": "2026-09-06"
-        },
         {
           "url": "https://crimsondesert.gaming.tools/territories/hernand/hernand_banditcamp",
           "title": "gaming.tools: Hernand bandit camps",
@@ -826,7 +814,7 @@
       "name": "Silver Wolf Mountain",
       "kind": "sub-area",
       "parent": "region:pailune",
-      "summary": "A Pailune mountain with a cave, and the site of the Chapter 7 fight on its slopes.",
+      "summary": "A Pailune mountain with a cave.",
       "body": "Silver Wolf Mountain is a peak in Pailune, with a cave in its rock. [[place:silverwolf-mountain]] is the fast-travel landmark on the same mountain.",
       "sources": [
         {
@@ -1151,7 +1139,7 @@
       "name": "Morning Mist Peaks",
       "kind": "sub-area",
       "parent": "region:demeniss",
-      "summary": "Mountain peaks in Demeniss where Chapter 9's pensive statues are repaired.",
+      "summary": "Mountain peaks in Demeniss.",
       "body": "The Morning Mist Peaks are mountains in Demeniss. [[place:morning-mist-peaks]] is the landmark on the same heights.",
       "sources": [
         {
@@ -1256,8 +1244,8 @@
       "name": "Golden Plains",
       "kind": "sub-area",
       "parent": "region:demeniss",
-      "summary": "The open plains that hold much of Demeniss's fortified country.",
-      "body": "The Golden Plains are grassland in Demeniss. Fortified cities and military works sit on this open ground.",
+      "summary": "Open plains in Demeniss.",
+      "body": "The Golden Plains are grassland in Demeniss.",
       "sources": [
         {
           "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
@@ -1515,11 +1503,6 @@
       ],
       "sources": [
         {
-          "url": "https://game8.co/games/Crimson-Desert/archives/591407",
-          "title": "Game8: All Region Locations",
-          "accessed": "2026-09-06"
-        },
-        {
           "url": "https://crimsondesert.gaming.tools/territories/delesyian/delesyian_banditcamp",
           "title": "gaming.tools: Delesyian bandit camps",
           "accessed": "2026-09-06",
@@ -1766,9 +1749,7 @@
       "parent": "region:crimson-desert",
       "summary": "A named landmark area in the Crimson Desert.",
       "body": "World's Navel is a landmark tract in the Crimson Desert. Khafi-jahr Camp is described as a Dusksong outpost on this ground.",
-      "keyPlaces": [
-        "place:khafi-jahr-camp"
-      ],
+      "keyPlaces": [],
       "sources": [
         {
           "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
@@ -1779,6 +1760,12 @@
           "url": "https://game8.co/games/Crimson-Desert/archives/591407",
           "title": "Game8: All Region Locations",
           "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesert.gaming.tools/knowledge/topography/crimsondesert/crimsondesert_jahrcamp",
+          "title": "gaming.tools: Crimson Desert -jahr camps",
+          "accessed": "2026-09-06",
+          "note": "seen via search snippet; the page blocks scripted fetches"
         }
       ],
       "confidence": "reported",
@@ -1796,11 +1783,6 @@
         "place:howlsands-camp-hearth"
       ],
       "sources": [
-        {
-          "url": "https://game8.co/games/Crimson-Desert/archives/585766",
-          "title": "Game8: Crimson Desert region guide",
-          "accessed": "2026-09-06"
-        },
         {
           "url": "https://game8.co/games/Crimson-Desert/archives/588601",
           "title": "Game8: List of All Factions",
@@ -1829,14 +1811,10 @@
       ],
       "sources": [
         {
-          "url": "https://game8.co/games/Crimson-Desert/archives/585766",
-          "title": "Game8: Crimson Desert region guide",
-          "accessed": "2026-09-06"
-        },
-        {
-          "url": "https://game8.co/games/Crimson-Desert/archives/591407",
-          "title": "Game8: All Region Locations",
-          "accessed": "2026-09-06"
+          "url": "https://crimsondesert.th.gl",
+          "title": "The Hidden Gaming Lair: Crimson Desert map",
+          "accessed": "2026-09-06",
+          "note": "area name taken from the Border Trail Bandit Camp map label; no dedicated guide page was fetched"
         }
       ],
       "confidence": "assumed",
@@ -1848,8 +1826,8 @@
       "name": "Izvatu",
       "kind": "sub-area",
       "parent": "region:crimson-desert",
-      "summary": "Site of the desert's largest raider base, held by the Dusksongs.",
-      "body": "Izvatu holds the largest raider base in the Crimson Desert. The Dusksongs keep it; they are said to have come from Demeniss.",
+      "summary": "Dusksong country in the Crimson Desert, home to their biggest desert camp.",
+      "body": "Izvatu is where the Dusksongs keep their biggest desert camp. They are said to have come from Demeniss.",
       "keyPlaces": [
         "place:izvatu-bandit-camp"
       ],
@@ -1876,7 +1854,7 @@
       "kind": "sub-area",
       "parent": "region:crimson-desert",
       "summary": "A Black Bear outpost on the road toward Pailune and the Denn, sitting on a regional border.",
-      "body": "Twinpath is a [[faction:black-bears]] outpost watching the road toward Pailune and the Denn, near The Sage's Peak. It sits on a border rather than squarely inside one region; location lists file it with the Crimson Desert.",
+      "body": "Twinpath is a [[faction:black-bears]] outpost watching the road toward Pailune and the Denn, near The Sage's Peak. It sits on a Hernand/Pailune border rather than squarely inside one region. This record still parents it to the Crimson Desert; the Fextralife and Game8 location indexes do not list the name.",
       "sources": [
         {
           "url": "https://game8.co/games/Crimson-Desert/archives/585764",

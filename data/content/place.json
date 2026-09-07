@@ -11,15 +11,16 @@
       "region": "region:hernand",
       "location": { "x": 2422.6, "y": 5053.5 },
       "fastTravel": "place:hernand-castle",
-      "summary": "The walled capital of Hernand: main-quest hub, vendors and the seat of the region's noble politics.",
-      "body": "The city sits west of the Sena's tributaries in the middle of Hernand. [[vendor:rhett-hernand]] sells the starter Canta Plate armour here. The location is the walled city centre read off the map at zoom 5; the painted map label sits about 120 px east of it.",
+      "summary": "The walled capital of Hernand, hub from the Prologue through Chapter 6, with vendors and the seats of House Celeste and House Serkis.",
+      "body": "House Celeste is the ducal house of Hernand; House Serkis is the marquis house that runs internal administration. The city is the region's capital and main hub from the Prologue through Chapter 6. [[vendor:rhett-hernand]] sells the starter Canta Plate armour here. The location is the walled city centre read off the map at zoom 5; the painted map label sits about 120 px east of it.",
       "contains": ["vendor:rhett-hernand"],
       "sources": [
         { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
         { "url": "https://crimsondesertgame.wiki.fextralife.com/Factions", "title": "Fextralife: Factions", "accessed": "2026-09-05", "note": "House seats and the city as Hernand's capital" },
         { "url": "https://gamingbolt.com/crimson-desert-guide-the-best-armor-sets-and-how-to-get-them", "title": "GamingBolt: best armor sets", "accessed": "2026-09-05", "note": "Rhett's shop in Hernand Town" },
         { "url": "https://crimsondesertgame.wiki.fextralife.com/Hernand", "title": "Fextralife: Hernand", "accessed": "2026-09-06" },
-        { "url": "https://game8.co/games/Crimson-Desert/archives/585761", "title": "Game8: Hernand region guide", "accessed": "2026-09-06" }
+        { "url": "https://game8.co/games/Crimson-Desert/archives/585761", "title": "Game8: Hernand region guide", "accessed": "2026-09-06" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -28,16 +29,19 @@
       "id": "place:demeniss-castle",
       "type": "place",
       "name": "Demeniss Castle",
+      "aliases": ["City of Demeniss"],
       "kind": "castle",
       "region": "region:demeniss",
       "location": { "x": 3431.4, "y": 5036.4 },
       "fastTravel": "place:demeniss-castle",
-      "summary": "House Caliburn's stronghold and the political heart of Demeniss.",
-      "body": "Demeniss Castle is Pywel's political capital and the stronghold of House Thorel, now vacant in practice while King Edward Thorel lies in a coma with no named heir. Noble houses contest that gap, and the main story returns here for Blood Coronation, Counterattack and The Abyss. The rest point sits on the castle itself.",
+      "summary": "The political capital of Demeniss and House Thorel's stronghold, vacant while King Edward Thorel lies in a coma.",
+      "body": "Demeniss Castle is Pywel's political capital and the stronghold of House Thorel, now vacant in practice while King Edward Thorel lies in a coma with no named heir. Noble houses contest that gap; [[character:gabriel-caliburn]] seizes power later, during Blood Coronation. The main story returns here for Blood Coronation, Counterattack and The Abyss. The rest point sits on the castle itself.",
       "sources": [
         { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
         { "url": "https://crimsondesertgame.wiki.fextralife.com/Factions", "title": "Fextralife: Factions", "accessed": "2026-09-05" },
-        { "url": "https://crimsondesertgame.wiki.fextralife.com/Locations", "title": "Fextralife: Locations", "accessed": "2026-09-06" }
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Locations", "title": "Fextralife: Locations", "accessed": "2026-09-06" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" },
+        { "url": "https://crimsondeserthq.com/blog/demeniss-region-guide", "title": "Crimson Desert HQ: Demeniss region guide", "accessed": "2026-09-06", "note": "seen via search snippet; the page blocks scripted fetches" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -409,7 +413,7 @@
       "location": { "x": 3092.5, "y": 3889.7 },
       "fastTravel": "village:385",
       "summary": "The Pailune settlement Ashes of Treachery sends the company to after a shrine is checked.",
-      "body": "Beighen is Pailune's southern village, held by the Beighen Tribe and by the Blue Fangs resistance also called the Beighen Militia. Chapter 7 sends the company here during Ashes of Treachery. It sits on the milder edge of the snow country, looking toward the occupied highlands.",
+      "body": "Beighen is Pailune's southern village, held by the Beighen Tribe and by the Blue Fangs resistance also called the Beighen Militia. Chapter 7 sends the company here during Ashes of Treachery.",
       "sources": [
         { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
         { "url": "https://game8.co/games/Crimson-Desert/archives/587752", "title": "Game8: Chapter 7 walkthrough", "accessed": "2026-09-06" },
@@ -778,7 +782,7 @@
       "location": { "x": 3748.3, "y": 3810.6 },
       "fastTravel": "village:449",
       "summary": "A Crimson Desert town of labyrinth-like towers, home to the Disciples of Master Du.",
-      "body": "Burhum is a desert town known for a labyrinth-like tower style. The Disciples of Master Du hold it; [[character:master-du]] is named as a resident and later as a Chapter 9 trial master. It sits in the same desert village belt as Caledora and Duzhar.",
+      "body": "Burhum is a desert town known for a labyrinth-like tower style. The Disciples of Master Du hold it; [[character:master-du]] is named as a resident and later as a Chapter 9 boss. It sits in the same desert village belt as Caledora and Duzhar.",
       "sources": [
         { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
         { "url": "https://crimsondesert.gaming.tools/territories/node_crim_burhumvillage", "title": "gaming.tools: Burhum", "accessed": "2026-09-06", "note": "seen via search snippet; the page blocks scripted fetches" }
@@ -848,7 +852,7 @@
       "location": { "x": 4621.7, "y": 3812.3 },
       "fastTravel": "village:479",
       "summary": "A small Crimson Desert village near Fort Manub, left in ruins after kidnappings.",
-      "body": "Duzhar is a small village near Fort Manub in the Crimson Desert. The Twilight Messengers set up a base here and began kidnapping residents, and the place is now described as ruins. The map still treats the rest point as a village.",
+      "body": "Duzhar is a small village near Fort Manub in the Crimson Desert. The Twilight Messengers set up a base here and began kidnapping residents; the source describes the settlement as reduced to ruins. This record keeps the map's village label.",
       "sources": [
         { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
         { "url": "https://crimsondesert.gaming.tools/knowledge/node_crim_duzharvillage", "title": "gaming.tools: Duzhar", "accessed": "2026-09-06", "note": "seen via search snippet; the page blocks scripted fetches" }
@@ -865,7 +869,7 @@
       "location": { "x": 3380.0, "y": 4859.1 },
       "fastTravel": "village:174",
       "summary": "A village beside Demeniss Castle; no guide names it, so the region is inferred from that neighbour.",
-      "body": "Easelbury is a fast-travel village close to [[place:demeniss-castle]]. No guide names the place yet; the region is inferred from that castle. Treat it as a Demeniss settlement on the castle's doorstep.",
+      "body": "Easelbury is a fast-travel village close to [[place:demeniss-castle]] (about 180 px away, versus about 960 px from [[place:hernand-castle]]). No guide names the place yet; the region is inferred from the castle next door. The settlements table's Hernand call is the weaker inference from position. Treat it as a Demeniss settlement on the castle's doorstep.",
       "sources": [
         { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" }
       ],
@@ -950,7 +954,7 @@
       "region": "region:hernand",
       "location": { "x": 2138.7, "y": 4875.1 },
       "fastTravel": "village:35",
-      "summary": "A Hernand village in vine-choked wilds, where House Serkis tenants work the vines.",
+      "summary": "A Hernand village in vine-choked wilds, held by House Serkis.",
       "body": "Ivynook is a Hernand village in vine-choked country. House Serkis holds it, and the residents cultivate and process vines for a living. A dedicated Fextralife page names the settlement.",
       "sources": [
         { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
@@ -973,8 +977,7 @@
       "sources": [
         { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
         { "url": "https://crimsondesertwiki.net/wiki/locations/Kweiden", "title": "Crimson Desert Wiki: Kweiden", "accessed": "2026-09-06", "note": "seen via search snippet; the page blocks scripted fetches" },
-        { "url": "https://crimsondesert.app/en/wiki/locations/kweiden", "title": "Crimson Desert App: Kweiden", "accessed": "2026-09-06", "note": "seen via search snippet; the page blocks scripted fetches" },
-        { "url": "https://crimsondesertwiki.org/locations/kweiden-mountains/", "title": "Crimson Desert Wiki: Kweiden Mountains", "accessed": "2026-09-06", "note": "seen via search snippet; the page blocks scripted fetches" }
+        { "url": "https://crimsondesert.app/en/wiki/locations/kweiden", "title": "Crimson Desert App: Kweiden", "accessed": "2026-09-06", "note": "seen via search snippet; the page blocks scripted fetches" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -1368,7 +1371,7 @@
       "fastTravel": "camp:597",
       "tags": ["bandit"],
       "summary": "A bandit camp on the Border Trail in the Crimson Desert; no guide names it yet.",
-      "body": "A bandit camp on [[region:border-trail]], nearest [[place:arcosa]]. No guide names the place yet; the region is inferred from that desert trail.",
+      "body": "A bandit camp on [[region:border-trail]], nearest [[place:arcosa]]. The camp table places it in the Crimson Desert; no guide page was fetched.",
       "sources": [
         { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" }
       ],
@@ -1723,7 +1726,7 @@
       "fastTravel": "camp:0",
       "tags": ["freesword"],
       "summary": "A freesword camp beside Hernand Castle; no guide names it yet.",
-      "body": "A freesword camp nearest [[place:hernand-castle]]. No guide names the place yet; the region is inferred from that neighbouring city.",
+      "body": "A freesword camp nearest [[place:hernand-castle]]. No guide names the place yet; the region is inferred from that neighbouring city. The camp table files a Freesword Encampment row under the Crimson Desert; that looks like a catalogue error, and the sourced freesword site is [[place:desert-freesword-camp]].",
       "sources": [
         { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" }
       ],
@@ -1830,7 +1833,7 @@
       "related": ["region:giants-yard"],
       "location": { "x": 4770.7, "y": 4515.7 },
       "fastTravel": "camp:507",
-      "tags": ["logging"],
+      "tags": ["research"],
       "summary": "A resource camp in Giant's Yard in the Crimson Desert; no guide names the camp yet.",
       "body": "A resource camp in [[region:giants-yard]], nearest [[place:arcosa]]. No guide names the camp yet; the region is inferred from that desert tract.",
       "sources": [
@@ -2141,7 +2144,6 @@
       "name": "Khafi-jahr Camp",
       "kind": "camp",
       "region": "region:crimson-desert",
-      "related": ["region:worlds-navel"],
       "location": { "x": 3872.1, "y": 3604.4 },
       "fastTravel": "camp:601",
       "tags": ["tribal", "outpost"],
