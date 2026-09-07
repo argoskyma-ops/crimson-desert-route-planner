@@ -12,7 +12,14 @@
       "keyPlaces": [
         "place:hernand-castle",
         "place:steel-mountains",
-        "place:calphade-castle"
+        "place:calphade-castle",
+        "place:arboria",
+        "place:castlewood-ruins",
+        "place:florindale",
+        "place:ivynook",
+        "place:pororin",
+        "place:senia",
+        "place:vellua"
       ],
       "tags": [
         "starting-region"
@@ -63,7 +70,11 @@
       "keyPlaces": [
         "place:pailune",
         "place:beighen",
-        "place:silverwolf-mountain"
+        "place:silverwolf-mountain",
+        "place:kweiden",
+        "place:odeck",
+        "place:skoghorn",
+        "place:totemfelt"
       ],
       "sources": [
         {
@@ -110,7 +121,11 @@
       "body": "Demeniss sits on golden plains behind high walls: fortified cities and large military works on a cliff line. House Thorel once unified its territories, but King Edward Thorel lies in a coma with no named heir; Houses Azerian, Byron, Elemore, Marshell (patron of Grand General Bastier) and Wells (said to govern the south) contest the vacuum, and [[character:gabriel-caliburn]] seizes power during Blood Coronation. [[place:demeniss-castle]] is the political capital; sources disagree on whether the city or the castle is the preferred name. Chapters 8, 10 and 12 are its main-story chapters; it also appears in Chapters 5, 7 and 9 and in the epilogue.",
       "keyPlaces": [
         "place:demeniss-castle",
-        "place:morning-mist-peaks"
+        "place:morning-mist-peaks",
+        "place:easelbury",
+        "place:fort-musket",
+        "place:hexe-sanctuary",
+        "place:tariv"
       ],
       "sources": [
         {
@@ -157,7 +172,9 @@
       "summary": "Pywel's machine-age region, run by engineering guilds rather than a noble house, and the setting of Chapter 11.",
       "body": "Delesyia is the most mechanically distinct part of Pywel: factories, railways, automated works and airships, while Hernand and Demeniss stay medieval. No ruling noble house is named; [[character:marni]] and the institutions around him (Society of Progress, Delesyia National Institute, Delesyian Aerial Force, Cogknights, Marni's Tinkertons) are the civil power, with the Ironwheel of Dewhaven arguing that machines should only assist people. The Ironflame Orcs under [[character:valgash]] hold [[region:gorthak]], and the Wyvernflames occupy Fort Windridge. Chapter 11 (Truth and Reality) is the main-story chapter; no source read here names a clear capital, though [[place:delesyia-castle]] and Marni's clocktower (the Toll of Delesyia bell) are the closest hubs.",
       "keyPlaces": [
-        "place:delesyia-castle"
+        "place:delesyia-castle",
+        "place:dewhaven-castle",
+        "place:tinkerton-dig-site"
       ],
       "sources": [
         {
@@ -198,7 +215,17 @@
       "summary": "Lawless red-sand country in the north-east, with Varnia as its religious and trade hub and no sovereign house.",
       "body": "The Crimson Desert is the north-easternmost major region: red sand, canyons, oases and sandstorms, with pockets of wetland and rainforest. No nation rules it; settlements, pilgrim towns, merchant guilds, tribes and outlaw bands share the ground. Civil names include the Lords of Unclaimed Lands, the Arcosa Tribe, the Redwind Merchant Guild, the pilgrim village of [[place:urdavah]] and the holy city Varnia (worship of Atima), plus the Sage of the Desert; hostile names include the Sandfang Marauders, Goldenscale Bandits, Dusksong, Savage Fangs, The Faceless and The Helms. Varnia is the religious and trade hub, with Urdavah and Tommaso as major waypoints, and Chapter 9 (The Sage of the Desert) is the main-story chapter, also touching Demeniss.",
       "keyPlaces": [
-        "place:urdavah"
+        "place:urdavah",
+        "place:arcosa",
+        "place:arcosa-trade-depot",
+        "place:batihar",
+        "place:burhum",
+        "place:caledora",
+        "place:duzhar",
+        "place:helmara",
+        "place:muiquun",
+        "place:nahab",
+        "place:thoron-town-hall-ruins"
       ],
       "sources": [
         {
@@ -440,6 +467,9 @@
       "parent": "region:hernand",
       "summary": "A Hernand forest that hides a shai and Fadus village.",
       "body": "Pororin Forest is woodland in Hernand. A hidden shai and Fadus village stands inside it.",
+      "keyPlaces": [
+        "place:pororin"
+      ],
       "sources": [
         {
           "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
@@ -463,6 +493,9 @@
       "parent": "region:hernand",
       "summary": "A Hernand forest around the village of Arboria.",
       "body": "Arboria Forest is woodland in Hernand. The village of Arboria, with a castle and craftshop listed beside it, sits in the same tract.",
+      "keyPlaces": [
+        "place:arboria"
+      ],
       "sources": [
         {
           "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
@@ -594,6 +627,9 @@
       "parent": "region:hernand",
       "summary": "Frontier march of the Duchy of Hernand under House Lanford, on the Pailune border.",
       "body": "The Calphadean Territory is the Duchy of Hernand's northern frontier, held by House Lanford and set against Pailune. [[place:calphade-castle]] is its seat; Chapter 6 (Cracks in the Shield) plays here, along the line watched from [[place:calphade-gate]].",
+      "keyPlaces": [
+        "place:calphade-castle"
+      ],
       "location": {
         "x": 1920.7,
         "y": 4385.8
@@ -1035,6 +1071,9 @@
       "parent": "region:hernand",
       "summary": "A southern Hernand mountain range whose adjoining Bay of Steel is named with it.",
       "body": "The Steel Mountains sit in southern Hernand by map position, with the Bay of Steel against them; [[place:steel-mountains]] is the landmark on the same range. Two location indexes instead file the mountains under Demeniss.",
+      "keyPlaces": [
+        "place:steel-mountains"
+      ],
       "sources": [
         {
           "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
@@ -1592,6 +1631,10 @@
       "parent": "region:crimson-desert",
       "summary": "A desert sub-area that holds Muiquun and Caledora and one of the region's fog-clearing bells.",
       "body": "Tashkalp is a named stretch of the Crimson Desert. The villages of Muiquun and Caledora sit in it, with one of the region's two fog-clearing bells.",
+      "keyPlaces": [
+        "place:caledora",
+        "place:muiquun"
+      ],
       "sources": [
         {
           "url": "https://game8.co/games/Crimson-Desert/archives/585766",

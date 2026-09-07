@@ -10,12 +10,16 @@
       "kind": "castle",
       "region": "region:hernand",
       "location": { "x": 2422.6, "y": 5053.5 },
+      "fastTravel": "place:hernand-castle",
       "summary": "The walled capital of Hernand: main-quest hub, vendors and the seat of the region's noble politics.",
       "body": "The city sits west of the Sena's tributaries in the middle of Hernand. [[vendor:rhett-hernand]] sells the starter Canta Plate armour here. The location is the walled city centre read off the map at zoom 5; the painted map label sits about 120 px east of it.",
       "contains": ["vendor:rhett-hernand"],
       "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
         { "url": "https://crimsondesertgame.wiki.fextralife.com/Factions", "title": "Fextralife: Factions", "accessed": "2026-09-05", "note": "House seats and the city as Hernand's capital" },
-        { "url": "https://gamingbolt.com/crimson-desert-guide-the-best-armor-sets-and-how-to-get-them", "title": "GamingBolt: best armor sets", "accessed": "2026-09-05", "note": "Rhett's shop in Hernand Town" }
+        { "url": "https://gamingbolt.com/crimson-desert-guide-the-best-armor-sets-and-how-to-get-them", "title": "GamingBolt: best armor sets", "accessed": "2026-09-05", "note": "Rhett's shop in Hernand Town" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Hernand", "title": "Fextralife: Hernand", "accessed": "2026-09-06" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/585761", "title": "Game8: Hernand region guide", "accessed": "2026-09-06" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -27,9 +31,13 @@
       "kind": "castle",
       "region": "region:demeniss",
       "location": { "x": 3431.4, "y": 5036.4 },
+      "fastTravel": "place:demeniss-castle",
       "summary": "House Caliburn's stronghold and the political heart of Demeniss.",
+      "body": "Demeniss Castle is Pywel's political capital and the stronghold of House Thorel, now vacant in practice while King Edward Thorel lies in a coma with no named heir. Noble houses contest that gap, and the main story returns here for Blood Coronation, Counterattack and The Abyss. The rest point sits on the castle itself.",
       "sources": [
-        { "url": "https://crimsondesertgame.wiki.fextralife.com/Factions", "title": "Fextralife: Factions", "accessed": "2026-09-05" }
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Factions", "title": "Fextralife: Factions", "accessed": "2026-09-05" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Locations", "title": "Fextralife: Locations", "accessed": "2026-09-06" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -40,11 +48,18 @@
       "name": "Steel Mountains",
       "kind": "landmark",
       "region": "region:hernand",
+      "related": ["region:steel-mountains"],
       "location": { "x": 2921.3, "y": 5887.7 },
+      "fastTravel": "place:steel-mountains",
       "summary": "Mountain range in southern Hernand; the legendary horse Rokade grazes by a lake here near the Spire of Insight.",
+      "body": "The Steel Mountains are a southern Hernand range; this landmark sits among the village cluster around Florindale and Vellua. A lake below the peaks is where the legendary horse Rokade is found, near the Spire of Insight. Two location indexes, the Fextralife Locations page and Game8's all-region list, instead file the mountains and the Bay of Steel under Demeniss.",
       "contains": ["mount:rokade"],
       "sources": [
-        { "url": "https://www.powerpyx.com/crimson-desert-legendary-horse-locations/", "title": "PowerPyx: legendary horse locations", "accessed": "2026-09-05" }
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://www.powerpyx.com/crimson-desert-legendary-horse-locations/", "title": "PowerPyx: legendary horse locations", "accessed": "2026-09-05" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Locations", "title": "Fextralife: Locations", "accessed": "2026-09-06" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/591407", "title": "Game8: All Region Locations", "accessed": "2026-09-06" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/585761", "title": "Game8: Hernand region guide", "accessed": "2026-09-06" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -368,11 +383,19 @@
       "id": "place:calphade-castle",
       "type": "place",
       "name": "Calphade Castle",
+      "aliases": ["Calphade Castle Hearth"],
       "kind": "castle",
       "region": "region:hernand",
+      "related": ["region:calphadean-territory"],
+      "location": { "x": 1990.5, "y": 4367.1 },
+      "fastTravel": "place:902",
       "summary": "The Calphadean castle taken at the close of Chapter 6, where Cassius Morten is fought.",
+      "body": "Calphade Castle is House Lanford's seat in the [[region:calphadean-territory]], the Duchy of Hernand's northern march against Pailune. Chapter 6 ends here with the fight against Cassius Morten. The rest point on the map is labelled Calphade Castle Hearth; the castle watches that same frontier.",
       "sources": [
-        { "url": "https://game8.co/games/Crimson-Desert/archives/587251", "title": "Game8: Chapter 6 walkthrough", "accessed": "2026-09-06" }
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/587251", "title": "Game8: Chapter 6 walkthrough", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Locations", "title": "Fextralife: Locations", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesert.gaming.tools/territories/hernand", "title": "gaming.tools: Duchy of Hernand territories", "accessed": "2026-09-06", "note": "seen via search snippet; the page blocks scripted fetches" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -381,11 +404,17 @@
       "id": "place:beighen",
       "type": "place",
       "name": "Beighen",
-      "kind": "town",
+      "kind": "village",
       "region": "region:pailune",
+      "location": { "x": 3092.5, "y": 3889.7 },
+      "fastTravel": "village:385",
       "summary": "The Pailune settlement Ashes of Treachery sends the company to after a shrine is checked.",
+      "body": "Beighen is Pailune's southern village, held by the Beighen Tribe and by the Blue Fangs resistance also called the Beighen Militia. Chapter 7 sends the company here during Ashes of Treachery. It sits on the milder edge of the snow country, looking toward the occupied highlands.",
       "sources": [
-        { "url": "https://game8.co/games/Crimson-Desert/archives/587752", "title": "Game8: Chapter 7 walkthrough", "accessed": "2026-09-06" }
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/587752", "title": "Game8: Chapter 7 walkthrough", "accessed": "2026-09-06" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/585764", "title": "Game8: Pailune region guide", "accessed": "2026-09-06" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -394,11 +423,17 @@
       "id": "place:pailune",
       "type": "place",
       "name": "Pailune",
+      "aliases": ["Pailune Castle"],
       "kind": "city",
       "region": "region:pailune",
+      "location": { "x": 2775.2, "y": 3514.7 },
+      "fastTravel": "place:pailune",
       "summary": "The northern city taken back in Homecoming and used as the first hub of Blood Coronation.",
+      "body": "Pailune is the northern city's hub and the seat of the Pailune Militia; faction writeups treat it as the region's capital. Chapter 7 (Homecoming) takes the city back, and Chapter 8 uses it as an early hub. The fast-travel bell stays locked behind a conflict area until Chapter 7.",
       "sources": [
-        { "url": "https://game8.co/games/Crimson-Desert/archives/587752", "title": "Game8: Chapter 7 walkthrough", "accessed": "2026-09-06" }
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/587752", "title": "Game8: Chapter 7 walkthrough", "accessed": "2026-09-06" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/585764", "title": "Game8: Pailune region guide", "accessed": "2026-09-06" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -661,6 +696,479 @@
       "summary": "The castle gate where a Visione device is used during the epilogue to reach Marni.",
       "sources": [
         { "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/", "title": "VULKK: main story walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:arboria",
+      "type": "place",
+      "name": "Arboria",
+      "kind": "village",
+      "region": "region:hernand",
+      "related": ["region:arboria-forest"],
+      "location": { "x": 2635.8, "y": 4504.7 },
+      "fastTravel": "village:15",
+      "summary": "A Hernand village in Arboria Forest, listed beside a castle and craftshop of the same name.",
+      "body": "Arboria is a village in [[region:arboria-forest]]. Location lists also name Arboria Castle and Arboria Craftshop at the same place. The rest point sits on the village in that forest tract.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Locations", "title": "Fextralife: Locations", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:arcosa",
+      "type": "place",
+      "name": "Arcosa",
+      "kind": "village",
+      "region": "region:crimson-desert",
+      "location": { "x": 4522.8, "y": 4263.5 },
+      "fastTravel": "village:441",
+      "summary": "The Crimson Desert's most prosperous village, held by the Arcosa Tribe and watched from its towers.",
+      "body": "Arcosa is the Arcosa Tribe's main village in the Crimson Desert. Sources call it the busiest settlement in the region and note watchtowers raised against raid after raid. The rest point sits on the village itself.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://gfuel.com/blogs/news/crimson-desert-map-full-region-map-cities-and-more", "title": "G FUEL: Crimson Desert map, cities and more", "accessed": "2026-09-06" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:arcosa-trade-depot",
+      "type": "place",
+      "name": "Arcosa Trade Depot",
+      "kind": "other",
+      "region": "region:crimson-desert",
+      "location": { "x": 4503.0, "y": 4217.2 },
+      "fastTravel": "village:447",
+      "summary": "A trade depot beside Arcosa; no guide yet names the site, so the region is taken from the village next to it.",
+      "body": "Arcosa Trade Depot is a fast-travel stop next to [[place:arcosa]]. No guide names the depot yet; the region is inferred from that neighbouring village. Treat it as a satellite yard rather than a settlement of its own.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:batihar",
+      "type": "place",
+      "name": "Batihar",
+      "kind": "village",
+      "region": "region:crimson-desert",
+      "location": { "x": 4617.9, "y": 3680.5 },
+      "fastTravel": "village:466",
+      "summary": "A Crimson Desert village seized by The Helms and used as a captured base.",
+      "body": "Batihar is a desert village taken by force by The Helms, who keep it as a captured base. A figure named Rusten is recorded as the weapon they used to take it. It sits in the northern village cluster of the Crimson Desert.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesert.gaming.tools/territories/node_crim_batiharvillage", "title": "gaming.tools: Batihar", "accessed": "2026-09-06", "note": "seen via search snippet; the page blocks scripted fetches" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:burhum",
+      "type": "place",
+      "name": "Burhum",
+      "kind": "town",
+      "region": "region:crimson-desert",
+      "location": { "x": 3748.3, "y": 3810.6 },
+      "fastTravel": "village:449",
+      "summary": "A Crimson Desert town of labyrinth-like towers, home to the Disciples of Master Du.",
+      "body": "Burhum is a desert town known for a labyrinth-like tower style. The Disciples of Master Du hold it; [[character:master-du]] is named as a resident and later as a Chapter 9 trial master. It sits in the same desert village belt as Caledora and Duzhar.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesert.gaming.tools/territories/node_crim_burhumvillage", "title": "gaming.tools: Burhum", "accessed": "2026-09-06", "note": "seen via search snippet; the page blocks scripted fetches" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:caledora",
+      "type": "place",
+      "name": "Caledora",
+      "kind": "village",
+      "region": "region:crimson-desert",
+      "related": ["region:tashkalp"],
+      "location": { "x": 4253.4, "y": 3800.1 },
+      "fastTravel": "village:433",
+      "summary": "A Tashkalp village near Tommaso, known for brightly dyed fabrics.",
+      "body": "Caledora is a village in [[region:tashkalp]], near Tommaso. It is known for vibrant dyed fabrics. One of the region's fog-clearing bells is also placed in that same stretch.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/585766", "title": "Game8: Crimson Desert region guide", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesert.gaming.tools/territories/node_crim_caledoravillage", "title": "gaming.tools: Caledora", "accessed": "2026-09-06", "note": "seen via search snippet; the page blocks scripted fetches" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:castlewood-ruins",
+      "type": "place",
+      "name": "Castlewood Ruins",
+      "kind": "ruins",
+      "region": "region:hernand",
+      "location": { "x": 2669.9, "y": 5731.7 },
+      "fastTravel": "place:139",
+      "summary": "Ruined stone in southern Hernand; no guide names the site, so the region is inferred from nearby villages.",
+      "body": "Castlewood Ruins is a fast-travel ruin in southern Hernand, near Florindale and Pororin. No guide names the place yet; the region is inferred from those neighbouring villages. What still stands is stone, not a living settlement.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:dewhaven-castle",
+      "type": "place",
+      "name": "Dewhaven Castle",
+      "kind": "castle",
+      "region": "region:delesyia",
+      "location": { "x": 4609.0, "y": 5611.2 },
+      "fastTravel": "place:dewhaven-castle",
+      "summary": "Delesyia castle that houses the Ironwheel workshop, arguing machines should assist people rather than replace them.",
+      "body": "Dewhaven Castle is a Delesyia stronghold and the home of the Ironwheel of Dewhaven, a workshop faction. The Ironwheel holds that machines should assist people, a stance set against [[character:marni]]. Players find the workshop on the castle grounds.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/585763", "title": "Game8: Delesyia region guide", "accessed": "2026-09-06" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:duzhar",
+      "type": "place",
+      "name": "Duzhar",
+      "kind": "village",
+      "region": "region:crimson-desert",
+      "location": { "x": 4621.7, "y": 3812.3 },
+      "fastTravel": "village:479",
+      "summary": "A small Crimson Desert village near Fort Manub, left in ruins after kidnappings.",
+      "body": "Duzhar is a small village near Fort Manub in the Crimson Desert. The Twilight Messengers set up a base here and began kidnapping residents, and the place is now described as ruins. The map still treats the rest point as a village.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesert.gaming.tools/knowledge/node_crim_duzharvillage", "title": "gaming.tools: Duzhar", "accessed": "2026-09-06", "note": "seen via search snippet; the page blocks scripted fetches" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:easelbury",
+      "type": "place",
+      "name": "Easelbury",
+      "kind": "village",
+      "region": "region:demeniss",
+      "location": { "x": 3380.0, "y": 4859.1 },
+      "fastTravel": "village:174",
+      "summary": "A village beside Demeniss Castle; no guide names it, so the region is inferred from that neighbour.",
+      "body": "Easelbury is a fast-travel village close to [[place:demeniss-castle]]. No guide names the place yet; the region is inferred from that castle. Treat it as a Demeniss settlement on the castle's doorstep.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:florindale",
+      "type": "place",
+      "name": "Florindale",
+      "kind": "village",
+      "region": "region:hernand",
+      "location": { "x": 2629.1, "y": 5584.0 },
+      "fastTravel": "village:89",
+      "summary": "A southern Hernand village named on the location indexes, with no further published detail.",
+      "body": "Florindale is a village in southern Hernand, listed on the Fextralife Locations page. No source read here names a ruling house or services. It sits in the same southern cluster as Pororin, Senia and Vellua.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Locations", "title": "Fextralife: Locations", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:fort-musket",
+      "type": "place",
+      "name": "Fort Musket",
+      "kind": "castle",
+      "region": "region:demeniss",
+      "location": { "x": 4090.3, "y": 4155.7 },
+      "fastTravel": "place:fort-musket",
+      "tags": ["fort"],
+      "summary": "A Demeniss fort built as a forward base for the push into the Crimson Desert.",
+      "body": "Fort Musket is a Demeniss fort north of the capital and south of the Valley of the Moon. It was raised as a forward base for Demeniss's expansion into the Crimson Desert. The rest point is tagged as a fort on this map.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesert.gaming.tools/knowledge/node_crim_fortmusket", "title": "gaming.tools: Fort Musket", "accessed": "2026-09-06", "note": "seen via search snippet; the page blocks scripted fetches" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:helmara",
+      "type": "place",
+      "name": "Helmara",
+      "kind": "village",
+      "region": "region:crimson-desert",
+      "location": { "x": 4464.3, "y": 3620.4 },
+      "fastTravel": "village:462",
+      "summary": "The Helms' desert village, used as the hub of their engineering work.",
+      "body": "Helmara is a Crimson Desert village held by The Helms as their base of operations. Sources call it the hub of their engineering work, even while the faction is known as bandits. It sits in the northern desert village cluster with Batihar and Nahab.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesert.gaming.tools/territories/node_crim_helmaravillage", "title": "gaming.tools: Helmara", "accessed": "2026-09-06", "note": "seen via search snippet; the page blocks scripted fetches" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:hexe-sanctuary",
+      "type": "place",
+      "name": "Hexe Sanctuary",
+      "kind": "sanctum",
+      "region": "region:demeniss",
+      "location": { "x": 3596.7, "y": 4090.7 },
+      "fastTravel": "place:hexe-sanctuary",
+      "summary": "A Demeniss sanctum listed on both location indexes, sharing a name with Hexe Marie.",
+      "body": "Hexe Sanctuary is a Demeniss sanctum on the Fextralife and Game8 location indexes. The name matches [[character:hexe-marie]], a Chapter 9 boss, but no source read here states that the fight is here. Players find a rest point at the sanctum itself.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Locations", "title": "Fextralife: Locations", "accessed": "2026-09-06" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/591407", "title": "Game8: All Region Locations", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:ivynook",
+      "type": "place",
+      "name": "Ivynook",
+      "kind": "village",
+      "region": "region:hernand",
+      "location": { "x": 2138.7, "y": 4875.1 },
+      "fastTravel": "village:35",
+      "summary": "A Hernand village in vine-choked wilds, where House Serkis tenants work the vines.",
+      "body": "Ivynook is a Hernand village in vine-choked country. House Serkis holds it, and the residents cultivate and process vines for a living. A dedicated Fextralife page names the settlement.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Ivynook", "title": "Fextralife: Ivynook", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesert.gaming.tools/territories/node_her_ivyvillage", "title": "gaming.tools: Ivynook", "accessed": "2026-09-06", "note": "seen via search snippet; the page blocks scripted fetches" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:kweiden",
+      "type": "place",
+      "name": "Kweiden",
+      "kind": "town",
+      "region": "region:pailune",
+      "location": { "x": 2337.0, "y": 3597.2 },
+      "fastTravel": "place:region_kwe",
+      "summary": "A Pailune mountain town, Kliff's home and the staging point for the high country.",
+      "body": "Kweiden is a rugged mountain town in Pailune, built in timber-longhouse style and used as the main staging point for the higher, more dangerous country. Local clans, Greymane members and mercenaries share it; [[character:kliff]] is said to hail from here, and the town has vendors, a blacksmith and a notice board. One territory database uses the same name for Pailune's tribal lands as a whole; this record treats Kweiden as a settlement, not a region.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertwiki.net/wiki/locations/Kweiden", "title": "Crimson Desert Wiki: Kweiden", "accessed": "2026-09-06", "note": "seen via search snippet; the page blocks scripted fetches" },
+        { "url": "https://crimsondesert.app/en/wiki/locations/kweiden", "title": "Crimson Desert App: Kweiden", "accessed": "2026-09-06", "note": "seen via search snippet; the page blocks scripted fetches" },
+        { "url": "https://crimsondesertwiki.org/locations/kweiden-mountains/", "title": "Crimson Desert Wiki: Kweiden Mountains", "accessed": "2026-09-06", "note": "seen via search snippet; the page blocks scripted fetches" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:muiquun",
+      "type": "place",
+      "name": "Muiquun",
+      "kind": "village",
+      "region": "region:crimson-desert",
+      "related": ["region:tashkalp"],
+      "location": { "x": 4690.8, "y": 4087.2 },
+      "fastTravel": "village:458",
+      "summary": "A Tashkalp village on the eastern edge, held by the Muiquun Outlaws beside a small stream.",
+      "body": "Muiquun sits on the eastern edge of [[region:tashkalp]], scorched by heat and sandstorms and kept alive by a small nearby stream. The Muiquun Outlaws hold the village. Tashkalp also holds Caledora and one of the region's fog-clearing bells.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/585766", "title": "Game8: Crimson Desert region guide", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesert.gaming.tools/territories/node_crim_muiquunvillage", "title": "gaming.tools: Muiquun", "accessed": "2026-09-06", "note": "seen via search snippet; the page blocks scripted fetches" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:nahab",
+      "type": "place",
+      "name": "Nahab",
+      "kind": "village",
+      "region": "region:crimson-desert",
+      "location": { "x": 4691.6, "y": 3880.1 },
+      "fastTravel": "village:480",
+      "summary": "A small Crimson Desert village near Fort Manub, kept alive by a well and held by The Faceless.",
+      "body": "Nahab is a small village near Fort Manub in the Crimson Desert. A well — one of the desert's most valuable resources — keeps it alive despite a Twilight Messengers base nearby. The Faceless hold the village.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesert.gaming.tools/territories/node_crim_nahabvillage", "title": "gaming.tools: Nahab", "accessed": "2026-09-06", "note": "seen via search snippet; the page blocks scripted fetches" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:odeck",
+      "type": "place",
+      "name": "Odeck",
+      "kind": "village",
+      "region": "region:pailune",
+      "location": { "x": 2251.5, "y": 2919.9 },
+      "fastTravel": "village:410",
+      "summary": "A Pailune village of the Odeck Tribe, with its own faction questline.",
+      "body": "Odeck is a Pailune village held by the Odeck Tribe. A faction list places the tribe among Pailune's named peoples. The village has its own faction questline.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:pororin",
+      "type": "place",
+      "name": "Pororin",
+      "kind": "village",
+      "region": "region:hernand",
+      "related": ["region:pororin-forest"],
+      "location": { "x": 2719.2, "y": 5632.8 },
+      "fastTravel": "village:87",
+      "summary": "A hidden shai and Fadus village inside Pororin Forest, watched by the forest's guardians.",
+      "body": "Pororin is a hidden village of shais and Fadus inside [[region:pororin-forest]]. The Pororin Forest Guardians hold it. Travellers find it only after entering the forest tract itself.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/585761", "title": "Game8: Hernand region guide", "accessed": "2026-09-06" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:senia",
+      "type": "place",
+      "name": "Senia",
+      "kind": "village",
+      "region": "region:hernand",
+      "location": { "x": 2234.7, "y": 5651.3 },
+      "fastTravel": "village:141",
+      "summary": "A southern Hernand village on the location indexes, west of the Florindale and Pororin cluster.",
+      "body": "Senia is a village in southern Hernand, listed on the Fextralife Locations page. No source read here names a ruling house or services. It sits west of the Florindale–Pororin cluster.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Locations", "title": "Fextralife: Locations", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:skoghorn",
+      "type": "place",
+      "name": "Skoghorn",
+      "kind": "village",
+      "region": "region:pailune",
+      "location": { "x": 1577.3, "y": 3587.5 },
+      "fastTravel": "place:skoghorn",
+      "summary": "A western Pailune mountain village of the Skoghorn Tribe, isolated and built around cold-country work.",
+      "body": "The Skoghorn Tribe keeps this western Pailune village through farming that survives the cold, plus ranching and fishing. A single source adds that they honour a mountain spirit of the snowy highlands. The rest point is the village itself, not a separate territory.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/585764", "title": "Game8: Pailune region guide", "accessed": "2026-09-06" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesert.gaming.tools/faction-quests/kweiden/skoghorn", "title": "gaming.tools: Skoghorn", "accessed": "2026-09-06", "note": "seen via search snippet; the page blocks scripted fetches" },
+        { "url": "https://crimsondesert.fandom.com/wiki/Skoghorn_Tribe", "title": "Fandom: Skoghorn Tribe", "accessed": "2026-09-06", "note": "seen via search snippet; the page blocks scripted fetches" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:tariv",
+      "type": "place",
+      "name": "Tariv",
+      "kind": "village",
+      "region": "region:demeniss",
+      "location": { "x": 3441.9, "y": 4145.7 },
+      "fastTravel": "village:231",
+      "summary": "A Demeniss village of the Tariv Sorcerers, sitting near the Crimson Desert border.",
+      "body": "Tariv is filed under Demeniss because the faction list places the Tariv Sorcerers there. The village itself sits near the Crimson Desert border, in the same map cluster as Caledora and Burhum. Players find a desert-edge settlement rather than a court town.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:thoron-town-hall-ruins",
+      "type": "place",
+      "name": "Thoron Town Hall Ruins",
+      "kind": "ruins",
+      "region": "region:crimson-desert",
+      "location": { "x": 4584.7, "y": 4767.8 },
+      "fastTravel": "place:359",
+      "summary": "Ruined town hall nearest Arcosa; no guide names it, so the region is inferred from that neighbour.",
+      "body": "Thoron Town Hall Ruins is a fast-travel ruin nearest [[place:arcosa]]. No guide names the place yet; the region is inferred from that neighbouring settlement, though the point could also sit in Delesyia. What remains is a ruined hall, not a living town.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:tinkerton-dig-site",
+      "type": "place",
+      "name": "Tinkerton Dig Site",
+      "kind": "other",
+      "region": "region:delesyia",
+      "location": { "x": 4751.4, "y": 5376.4 },
+      "fastTravel": "village:280",
+      "summary": "A Delesyia dig site tied to Marni's Tinkerton residents, listed beside Timberton.",
+      "body": "Tinkerton Dig Site is a Delesyia worksite. Region guides name Tinkerton alongside Timberton as places populated by [[character:marni]]'s residents; no further dig-site facts were found. Players find a rest point at the workings rather than a town.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/585763", "title": "Game8: Delesyia region guide", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:totemfelt",
+      "type": "place",
+      "name": "Totemfelt",
+      "kind": "village",
+      "region": "region:pailune",
+      "location": { "x": 2789.5, "y": 3223.8 },
+      "fastTravel": "village:406",
+      "summary": "A Pailune village by map position; no guide names it yet.",
+      "body": "Totemfelt is a fast-travel village in Pailune by map position, north of the settlement of [[place:pailune]]. No guide names the place yet; the region is inferred from that nearby hub. Treat it as an unnamed-in-guides mountain village until a source appears.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:vellua",
+      "type": "place",
+      "name": "Vellua",
+      "kind": "village",
+      "region": "region:hernand",
+      "location": { "x": 2517.1, "y": 5990.2 },
+      "fastTravel": "village:82",
+      "summary": "A southern Hernand fishing village with its own church, held by the Vellua Fishermen's Guild.",
+      "body": "Vellua is a southern fishing village in Hernand. The Vellua Fishermen's Guild holds it, and the Fextralife location list also names a Church of Vellua. It sits on the southern shore of the same cluster as Florindale and Senia.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Locations", "title": "Fextralife: Locations", "accessed": "2026-09-06" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/585761", "title": "Game8: Hernand region guide", "accessed": "2026-09-06" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
