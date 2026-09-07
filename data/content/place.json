@@ -1172,6 +1172,837 @@
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:anvil-hill-bandit-camp",
+      "type": "place",
+      "name": "Anvil Hill Bandit Camp",
+      "kind": "camp",
+      "region": "region:hernand",
+      "related": ["region:anvil-hill"],
+      "location": { "x": 2917.4, "y": 4917.6 },
+      "fastTravel": "camp:557",
+      "tags": ["bandit"],
+      "summary": "A bandit camp on Anvil Hill in Hernand, east of Hernand Castle.",
+      "body": "A bandit camp on [[region:anvil-hill]], east of [[place:hernand-castle]]. Territory lists file it with Hernand's other hill camps.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesert.gaming.tools/territories/hernand/hernand_banditcamp", "title": "gaming.tools: Hernand bandit camps", "accessed": "2026-09-06", "note": "seen via search snippet; the page blocks scripted fetches" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:anvil-riverside-bandit-camp",
+      "type": "place",
+      "name": "Anvil Riverside Bandit Camp",
+      "kind": "camp",
+      "region": "region:hernand",
+      "related": ["region:anvil-hill"],
+      "location": { "x": 2628.2, "y": 5118.0 },
+      "fastTravel": "camp:552",
+      "tags": ["bandit"],
+      "summary": "A bandit camp on the Anvil Riverside, close to Hernand Castle.",
+      "body": "A bandit camp on the riverside below [[region:anvil-hill]], close to [[place:hernand-castle]]. The Locations index lists it with the Anvil Hill camps.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Locations", "title": "Fextralife: Locations", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:arboria-forest-bandit-camp",
+      "type": "place",
+      "name": "Arboria Forest Bandit Camp",
+      "kind": "camp",
+      "region": "region:hernand",
+      "related": ["region:arboria-forest"],
+      "location": { "x": 2765.0, "y": 4377.6 },
+      "fastTravel": "camp:548",
+      "tags": ["bandit"],
+      "summary": "A bandit camp in Arboria Forest, near the village of Arboria.",
+      "body": "A bandit camp in [[region:arboria-forest]], near the village of [[place:arboria]]. Territory lists file it with Hernand's other forest camps.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesert.gaming.tools/territories/hernand/hernand_banditcamp", "title": "gaming.tools: Hernand bandit camps", "accessed": "2026-09-06", "note": "seen via search snippet; the page blocks scripted fetches" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:argent-peaks-bandit-camp",
+      "type": "place",
+      "name": "Argent Peaks Bandit Camp",
+      "kind": "camp",
+      "region": "region:hernand",
+      "related": ["region:argent-peaks"],
+      "location": { "x": 1552.4, "y": 4905.0 },
+      "fastTravel": "camp:566",
+      "tags": ["bandit"],
+      "summary": "A bandit camp in the Argent Peaks, a Hernand range west of Ivynook.",
+      "body": "A bandit camp in [[region:argent-peaks]]. It sits in that western Hernand range, toward [[place:ivynook]].",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesert.gaming.tools/knowledge/node_her_whitemountainbanditcamp", "title": "gaming.tools: Argent Peaks bandit camp", "accessed": "2026-09-06", "note": "seen via search snippet; the page blocks scripted fetches" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:argent-peaks-sentry-camp",
+      "type": "place",
+      "name": "Argent Peaks Sentry Camp",
+      "kind": "camp",
+      "region": "region:hernand",
+      "related": ["region:argent-peaks"],
+      "location": { "x": 1717.4, "y": 4703.8 },
+      "fastTravel": "camp:538",
+      "tags": ["military", "outpost"],
+      "summary": "A military sentry camp in the Argent Peaks; no guide names it yet.",
+      "body": "A military sentry camp in [[region:argent-peaks]], toward [[place:calphade-castle]]. No guide names the place yet; the region is inferred from that Hernand mountain range.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:arima-jahr-camp",
+      "type": "place",
+      "name": "Arima-jahr Camp",
+      "kind": "camp",
+      "region": "region:crimson-desert",
+      "location": { "x": 3838.0, "y": 3490.3 },
+      "fastTravel": "camp:600",
+      "tags": ["tribal", "outpost"],
+      "summary": "A desert -jahr outlaw camp in the Crimson Desert, nearest Burhum.",
+      "body": "A tribal -jahr camp in the Crimson Desert, grouped with the region's other outlaw outposts rather than one named faction. It sits nearest [[place:burhum]].",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesert.gaming.tools/knowledge/topography/crimsondesert/crimsondesert_jahrcamp", "title": "gaming.tools: Crimson Desert -jahr camps", "accessed": "2026-09-06", "note": "seen via search snippet; the page blocks scripted fetches" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:baisun-jahr-camp",
+      "type": "place",
+      "name": "Baisun-jahr Camp",
+      "kind": "camp",
+      "region": "region:crimson-desert",
+      "location": { "x": 4339.7, "y": 3510.1 },
+      "fastTravel": "camp:607",
+      "tags": ["tribal", "outpost"],
+      "summary": "A desert -jahr outlaw camp in the Crimson Desert, nearest Helmara.",
+      "body": "A tribal -jahr camp in the Crimson Desert, listed with the other -jahr outlaw outposts. It sits nearest [[place:helmara]].",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesert.gaming.tools/knowledge/topography/crimsondesert/crimsondesert_jahrcamp", "title": "gaming.tools: Crimson Desert -jahr camps", "accessed": "2026-09-06", "note": "seen via search snippet; the page blocks scripted fetches" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:benus-river-bandit-camp",
+      "type": "place",
+      "name": "Benus River Bandit Camp",
+      "kind": "camp",
+      "region": "region:delesyia",
+      "related": ["region:benus-river"],
+      "location": { "x": 4904.2, "y": 5459.8 },
+      "fastTravel": "camp:575",
+      "tags": ["bandit"],
+      "summary": "A bandit camp on the Benus River in Delesyia, near the Tinkerton Dig Site.",
+      "body": "A bandit camp on [[region:benus-river]] in Delesyia. It sits near [[place:tinkerton-dig-site]] on that river's course.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesert.gaming.tools/territories/delesyian/delesyian_banditcamp", "title": "gaming.tools: Delesyian bandit camps", "accessed": "2026-09-06", "note": "seen via search snippet; the page blocks scripted fetches" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:black-wall-bandit-camp",
+      "type": "place",
+      "name": "Black Wall Bandit Camp",
+      "kind": "camp",
+      "region": "region:pailune",
+      "related": ["region:black-wall"],
+      "location": { "x": 2901.0, "y": 3045.4 },
+      "fastTravel": "camp:582",
+      "tags": ["bandit"],
+      "summary": "A bandit camp at the Black Wall in Pailune; no guide names it yet.",
+      "body": "A bandit camp at [[region:black-wall]], nearest the settlement of [[place:pailune]]. No guide names the place yet; the region is inferred from that Pailune ridge.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:bloodsteel-hearth",
+      "type": "place",
+      "name": "Bloodsteel Hearth",
+      "kind": "camp",
+      "region": "region:hernand",
+      "location": { "x": 3158.2, "y": 5952.3 },
+      "fastTravel": "camp:918",
+      "tags": ["other"],
+      "summary": "A camp hearth near the Steel Mountains in southern Hernand; no guide names it yet.",
+      "body": "A camp hearth nearest [[place:steel-mountains]] in southern Hernand. No guide names the place yet; the region is inferred from that neighbouring landmark.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:border-trail-bandit-camp",
+      "type": "place",
+      "name": "Border Trail Bandit Camp",
+      "kind": "camp",
+      "region": "region:crimson-desert",
+      "related": ["region:border-trail"],
+      "location": { "x": 4287.1, "y": 4298.0 },
+      "fastTravel": "camp:597",
+      "tags": ["bandit"],
+      "summary": "A bandit camp on the Border Trail in the Crimson Desert; no guide names it yet.",
+      "body": "A bandit camp on [[region:border-trail]], nearest [[place:arcosa]]. No guide names the place yet; the region is inferred from that desert trail.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:bordig-camp",
+      "type": "place",
+      "name": "Bordig Camp",
+      "kind": "camp",
+      "region": "region:crimson-desert",
+      "location": { "x": 4784.2, "y": 4257.6 },
+      "fastTravel": "camp:469",
+      "tags": ["other"],
+      "summary": "A camp nearest Muiquun in the Crimson Desert; no guide names it yet.",
+      "body": "A camp nearest [[place:muiquun]]. No guide names the place yet; the region is inferred from that neighbouring village.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:calphade-logging-camp",
+      "type": "place",
+      "name": "Calphade Logging Camp",
+      "kind": "camp",
+      "region": "region:hernand",
+      "related": ["region:calphadean-territory"],
+      "location": { "x": 2036.8, "y": 4243.7 },
+      "fastTravel": "camp:118",
+      "tags": ["logging"],
+      "summary": "A logging camp in the Calphadean Territory, near Calphade Castle.",
+      "body": "A logging camp in the [[region:calphadean-territory]], close to [[place:calphade-castle]]. The Locations index lists it among Hernand's Calphade names.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Locations", "title": "Fextralife: Locations", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:camp-bjornlund",
+      "type": "place",
+      "name": "Camp Bjornlund",
+      "kind": "camp",
+      "region": "region:pailune",
+      "location": { "x": 1969.1, "y": 3968.5 },
+      "fastTravel": "camp:375",
+      "tags": ["other"],
+      "summary": "A Pailune camp on the Calphadean frontier, listed on the Locations index.",
+      "body": "Camp Bjornlund is a Pailune camp on the approach to the Calphadean line, nearest [[place:calphade-castle]]. The Locations index files it in Pailune.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Locations", "title": "Fextralife: Locations", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Pailune", "title": "Fextralife: Pailune", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:coastal-cliff-bandit-camp",
+      "type": "place",
+      "name": "Coastal Cliff Bandit Camp",
+      "kind": "camp",
+      "region": "region:delesyia",
+      "location": { "x": 5498.1, "y": 5630.3 },
+      "fastTravel": "camp:574",
+      "tags": ["bandit"],
+      "summary": "A Delesyia bandit camp on the coastal cliffs, east of the Tinkerton Dig Site.",
+      "body": "A bandit camp on Delesyia's coastal cliffs. Territory lists file it with the region's other bandit camps; the nearest named worksite is [[place:tinkerton-dig-site]].",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesert.gaming.tools/territories/delesyian/delesyian_banditcamp", "title": "gaming.tools: Delesyian bandit camps", "accessed": "2026-09-06", "note": "seen via search snippet; the page blocks scripted fetches" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:crescent-camp",
+      "type": "place",
+      "name": "Crescent Camp",
+      "kind": "camp",
+      "region": "region:demeniss",
+      "location": { "x": 3269.7, "y": 4246.7 },
+      "fastTravel": "camp:573",
+      "tags": ["other"],
+      "summary": "A camp near Tariv on the Demeniss side of the desert border; no guide names it yet.",
+      "body": "A camp nearest [[place:tariv]], a Demeniss village that sits near the Crimson Desert border. No guide names the place yet; the region is inferred from that neighbouring settlement.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:damp-rainforest-bandit-camp",
+      "type": "place",
+      "name": "Damp Rainforest Bandit Camp",
+      "kind": "camp",
+      "region": "region:crimson-desert",
+      "related": ["region:rainforest"],
+      "location": { "x": 4959.3, "y": 4289.6 },
+      "fastTravel": "camp:599",
+      "tags": ["bandit"],
+      "summary": "A bandit camp in the Crimson Desert rainforest; no guide names it yet.",
+      "body": "A bandit camp in the desert's [[region:rainforest]] pocket, nearest [[place:muiquun]]. No guide names the place yet; the region is inferred from that woodland tract.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:deepwoods-bandit-camp",
+      "type": "place",
+      "name": "Deepwoods Bandit Camp",
+      "kind": "camp",
+      "region": "region:hernand",
+      "related": ["region:deepwoods"],
+      "location": { "x": 2786.1, "y": 3800.1 },
+      "fastTravel": "camp:577",
+      "tags": ["bandit"],
+      "summary": "A bandit camp in Hernand's Deepwoods, toward Pailune; no guide names it yet.",
+      "body": "A bandit camp in [[region:deepwoods]], sitting toward [[place:pailune]] on Hernand's northern forest edge. No guide names the place yet; the region is inferred from that Hernand woodland.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:demeniss-sentry-camp",
+      "type": "place",
+      "name": "Demeniss Sentry Camp",
+      "kind": "camp",
+      "region": "region:demeniss",
+      "location": { "x": 4242.1, "y": 4397.0 },
+      "fastTravel": "camp:540",
+      "tags": ["military", "outpost"],
+      "summary": "A military sentry camp near Fort Musket; no guide names it yet.",
+      "body": "A military sentry camp nearest [[place:fort-musket]]. No guide names the place yet; the region is inferred from that Demeniss fort.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:demeniss-supply-camp",
+      "type": "place",
+      "name": "Demeniss Supply Camp",
+      "kind": "camp",
+      "region": "region:demeniss",
+      "location": { "x": 4142.7, "y": 4546.8 },
+      "fastTravel": "camp:155",
+      "tags": ["military", "outpost"],
+      "summary": "A military supply camp near Fort Musket; no guide names it yet.",
+      "body": "A military supply camp nearest [[place:fort-musket]]. No guide names the place yet; the region is inferred from that Demeniss fort.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:denn-river-bandit-camp",
+      "type": "place",
+      "name": "Denn River Bandit Camp",
+      "kind": "camp",
+      "region": "region:demeniss",
+      "related": ["region:denn-river"],
+      "location": { "x": 2834.9, "y": 3875.9 },
+      "fastTravel": "camp:579",
+      "tags": ["bandit"],
+      "summary": "A bandit camp on the Denn River toward Beighen; no guide names it yet.",
+      "body": "A bandit camp on [[region:denn-river]], nearest the Pailune village of [[place:beighen]]. No guide names the place yet; the region is inferred from that Demeniss river.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:desert-freesword-camp",
+      "type": "place",
+      "name": "Desert Freesword Camp",
+      "kind": "camp",
+      "region": "region:crimson-desert",
+      "location": { "x": 4348.1, "y": 4210.5 },
+      "fastTravel": "camp:442",
+      "tags": ["freesword"],
+      "summary": "A freesword camp in the Crimson Desert, close to Arcosa.",
+      "body": "A freesword camp in the Crimson Desert, close to [[place:arcosa]]. A territory page names this rest point as a desert freesword site.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesert.gaming.tools/knowledge/node_crim_desertfreeswordcamp", "title": "gaming.tools: Desert Freesword Camp", "accessed": "2026-09-06", "note": "seen via search snippet; the page blocks scripted fetches" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:desertshade-bandit-camp",
+      "type": "place",
+      "name": "Desertshade Bandit Camp",
+      "kind": "camp",
+      "region": "region:crimson-desert",
+      "location": { "x": 4264.8, "y": 3689.8 },
+      "fastTravel": "camp:595",
+      "tags": ["bandit"],
+      "summary": "A bandit camp near Caledora in the Crimson Desert; no guide names it yet.",
+      "body": "A bandit camp nearest [[place:caledora]]. No guide names the place yet; the region is inferred from that neighbouring village.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:dewhaven-logging-camp",
+      "type": "place",
+      "name": "Dewhaven Logging Camp",
+      "kind": "camp",
+      "region": "region:delesyia",
+      "location": { "x": 4134.3, "y": 5377.7 },
+      "fastTravel": "camp:308",
+      "tags": ["logging"],
+      "summary": "A logging camp near Dewhaven Castle in Delesyia; no guide names it yet.",
+      "body": "A logging camp nearest [[place:dewhaven-castle]]. No guide names the place yet; the region is inferred from that Delesyia castle.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:drakesfall-gorge-bandit-camp",
+      "type": "place",
+      "name": "Drakesfall Gorge Bandit Camp",
+      "kind": "camp",
+      "region": "region:hernand",
+      "related": ["region:drakesfall-gorge"],
+      "location": { "x": 2768.8, "y": 4136.8 },
+      "fastTravel": "camp:547",
+      "tags": ["bandit"],
+      "summary": "A bandit camp in Drakesfall Gorge, north of Arboria.",
+      "body": "A bandit camp in [[region:drakesfall-gorge]], toward [[place:arboria]]. Territory lists file it with Hernand's other gorge and forest camps.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesert.gaming.tools/territories/hernand/hernand_banditcamp", "title": "gaming.tools: Hernand bandit camps", "accessed": "2026-09-06", "note": "seen via search snippet; the page blocks scripted fetches" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:duskway-camp",
+      "type": "place",
+      "name": "Duskway Camp",
+      "kind": "camp",
+      "region": "region:crimson-desert",
+      "location": { "x": 4794.7, "y": 4061.1 },
+      "fastTravel": "camp:431",
+      "tags": ["other"],
+      "summary": "A camp beside Muiquun in the Crimson Desert; no guide names it yet.",
+      "body": "A camp nearest [[place:muiquun]]. No guide names the place yet; the region is inferred from that neighbouring village.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:duskway-camp-ironcrawler-station",
+      "type": "place",
+      "name": "Duskway Camp Ironcrawler Station",
+      "kind": "camp",
+      "region": "region:crimson-desert",
+      "location": { "x": 4821.3, "y": 4084.6 },
+      "fastTravel": "camp:333",
+      "tags": ["other"],
+      "summary": "An Ironcrawler station beside Duskway Camp, nearest Muiquun; no guide names it yet.",
+      "body": "An Ironcrawler station next to [[place:duskway-camp]], nearest [[place:muiquun]]. No guide names the place yet; the region is inferred from that neighbouring village.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:duskwood-bandit-camp",
+      "type": "place",
+      "name": "Duskwood Bandit Camp",
+      "kind": "camp",
+      "region": "region:hernand",
+      "related": ["region:duskwood"],
+      "location": { "x": 2135.8, "y": 5014.9 },
+      "fastTravel": "camp:550",
+      "tags": ["bandit"],
+      "summary": "A bandit camp in Duskwood, close to Ivynook.",
+      "body": "A bandit camp in [[region:duskwood]], close to [[place:ivynook]]. The Locations index and Hernand camp lists both name it.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Locations", "title": "Fextralife: Locations", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesert.gaming.tools/territories/hernand/hernand_banditcamp", "title": "gaming.tools: Hernand bandit camps", "accessed": "2026-09-06", "note": "seen via search snippet; the page blocks scripted fetches" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:eastern-goblin-camp",
+      "type": "place",
+      "name": "Eastern Goblin Camp",
+      "kind": "camp",
+      "region": "region:hernand",
+      "location": { "x": 2776.8, "y": 5901.3 },
+      "fastTravel": "camp:567",
+      "tags": ["goblin"],
+      "summary": "A goblin camp near the Steel Mountains in southern Hernand; no guide names it yet.",
+      "body": "A goblin camp nearest [[place:steel-mountains]] in southern Hernand. No guide names the place yet; the region is inferred from that neighbouring landmark.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:five-finger-mountain-bandit-camp",
+      "type": "place",
+      "name": "Five-Finger Mountain Bandit Camp",
+      "kind": "camp",
+      "region": "region:pailune",
+      "related": ["region:five-finger-mountain"],
+      "location": { "x": 1887.0, "y": 3952.0 },
+      "fastTravel": "camp:584",
+      "tags": ["bandit"],
+      "summary": "A bandit camp on Five-Finger Mountain in Pailune; no guide names it yet.",
+      "body": "A bandit camp on [[region:five-finger-mountain]], toward [[place:calphade-castle]] on the Pailune side of that frontier. No guide names the place yet; the region is inferred from that Pailune range.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:freesword-encampment",
+      "type": "place",
+      "name": "Freesword Encampment",
+      "kind": "camp",
+      "region": "region:hernand",
+      "location": { "x": 2410.4, "y": 5007.2 },
+      "fastTravel": "camp:0",
+      "tags": ["freesword"],
+      "summary": "A freesword camp beside Hernand Castle; no guide names it yet.",
+      "body": "A freesword camp nearest [[place:hernand-castle]]. No guide names the place yet; the region is inferred from that neighbouring city.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:frost-camp",
+      "type": "place",
+      "name": "Frost Camp",
+      "kind": "camp",
+      "region": "region:pailune",
+      "location": { "x": 2373.2, "y": 3642.7 },
+      "fastTravel": "camp:1011",
+      "tags": ["other"],
+      "summary": "A camp beside Kweiden in Pailune; no guide names it yet.",
+      "body": "A camp nearest [[place:kweiden]] in Pailune's mountain country. No guide names the place yet; the region is inferred from that neighbouring town.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:frowde-camp",
+      "type": "place",
+      "name": "Frowde Camp",
+      "kind": "camp",
+      "region": "region:hernand",
+      "location": { "x": 2627.8, "y": 4644.5 },
+      "fastTravel": "camp:41",
+      "tags": ["other"],
+      "summary": "A Hernand camp near Arboria, listed on the Locations index.",
+      "body": "Frowde Camp is a Hernand camp near [[place:arboria]]. The Locations index names it; no source read here says who holds it.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Locations", "title": "Fextralife: Locations", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:gate-of-peace-northern-camp",
+      "type": "place",
+      "name": "Gate of Peace: Northern Camp",
+      "kind": "camp",
+      "region": "region:delesyia",
+      "related": ["region:gate-of-peace"],
+      "location": { "x": 4114.1, "y": 4941.6 },
+      "fastTravel": "camp:299",
+      "tags": ["military", "outpost"],
+      "summary": "A military camp on the north side of the Gate of Peace, on the Demeniss–Delesyia border.",
+      "body": "A military camp on the northern face of [[region:gate-of-peace]], in [[region:gorthak]] on the Demeniss–Delesyia border. It watches that wall chokepoint rather than sitting inside one region alone.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesert.gaming.tools/knowledge/node_neut_delpheonnorthcamp", "title": "gaming.tools: Gate of Peace northern camp", "accessed": "2026-09-06", "note": "seen via search snippet; the page blocks scripted fetches" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:gate-of-peace-western-camp",
+      "type": "place",
+      "name": "Gate of Peace: Western Camp",
+      "kind": "camp",
+      "region": "region:delesyia",
+      "related": ["region:gate-of-peace"],
+      "location": { "x": 4093.1, "y": 4996.8 },
+      "fastTravel": "camp:298",
+      "tags": ["military", "outpost"],
+      "summary": "A military camp on the west side of the Gate of Peace, on the Demeniss–Delesyia border.",
+      "body": "A military camp on the western face of [[region:gate-of-peace]], in [[region:gorthak]] on the Demeniss–Delesyia border. It sits on that same wall line as the northern camp.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesert.gaming.tools/territories/node_neut_delpheonwestcamp", "title": "gaming.tools: Gate of Peace western camp", "accessed": "2026-09-06", "note": "seen via search snippet; the page blocks scripted fetches" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:ghadir-jahr-camp",
+      "type": "place",
+      "name": "Ghadir-jahr Camp",
+      "kind": "camp",
+      "region": "region:crimson-desert",
+      "location": { "x": 3991.6, "y": 3640.1 },
+      "fastTravel": "camp:602",
+      "tags": ["tribal", "outpost"],
+      "summary": "A desert -jahr outlaw camp in the Crimson Desert, nearest Burhum.",
+      "body": "A tribal -jahr camp in the Crimson Desert, listed with the other -jahr outlaw outposts. It sits nearest [[place:burhum]].",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesert.gaming.tools/knowledge/topography/crimsondesert/crimsondesert_jahrcamp", "title": "gaming.tools: Crimson Desert -jahr camps", "accessed": "2026-09-06", "note": "seen via search snippet; the page blocks scripted fetches" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:giants-yard-resource-camp",
+      "type": "place",
+      "name": "Giant's Yard Resource Camp",
+      "kind": "camp",
+      "region": "region:crimson-desert",
+      "related": ["region:giants-yard"],
+      "location": { "x": 4770.7, "y": 4515.7 },
+      "fastTravel": "camp:507",
+      "tags": ["logging"],
+      "summary": "A resource camp in Giant's Yard in the Crimson Desert; no guide names the camp yet.",
+      "body": "A resource camp in [[region:giants-yard]], nearest [[place:arcosa]]. No guide names the camp yet; the region is inferred from that desert tract.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:gloomy-forest-bandit-camp",
+      "type": "place",
+      "name": "Gloomy Forest Bandit Camp",
+      "kind": "camp",
+      "region": "region:crimson-desert",
+      "related": ["region:gloomy-forest"],
+      "location": { "x": 4893.6, "y": 4103.2 },
+      "fastTravel": "camp:593",
+      "tags": ["bandit"],
+      "summary": "A bandit camp in Gloomy Forest in the Crimson Desert; no guide names it yet.",
+      "body": "A bandit camp in [[region:gloomy-forest]], nearest [[place:muiquun]]. No guide names the place yet; the region is inferred from that desert woodland.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:gorthak-logging-camp",
+      "type": "place",
+      "name": "Gorthak Logging Camp",
+      "kind": "camp",
+      "region": "region:delesyia",
+      "related": ["region:gorthak"],
+      "location": { "x": 4366.2, "y": 5290.6 },
+      "fastTravel": "camp:289",
+      "tags": ["logging"],
+      "summary": "A logging camp in Gorthak, Ironflame Orc ground on the Demeniss border.",
+      "body": "A logging camp in [[region:gorthak]], Ironflame Orc ground under [[character:valgash]], on the Demeniss border. It sits toward [[place:tinkerton-dig-site]].",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/585763", "title": "Game8: Delesyia region guide", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:grace-falls-expedition-camp",
+      "type": "place",
+      "name": "Grace Falls Expedition Camp",
+      "kind": "camp",
+      "region": "region:hernand",
+      "location": { "x": 3395.6, "y": 5675.7 },
+      "fastTravel": "camp:219",
+      "tags": ["research"],
+      "summary": "An expedition camp near the Steel Mountains in southern Hernand; no guide names it yet.",
+      "body": "A research expedition camp nearest [[place:steel-mountains]] in southern Hernand. No guide names the place yet; the region is inferred from that neighbouring landmark.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:greenfield-bandit-camp",
+      "type": "place",
+      "name": "Greenfield Bandit Camp",
+      "kind": "camp",
+      "region": "region:hernand",
+      "related": ["region:greenfield-highlands"],
+      "location": { "x": 2983.9, "y": 5681.2 },
+      "fastTravel": "camp:561",
+      "tags": ["bandit"],
+      "summary": "A bandit camp in the Greenfield country of southern Hernand, near the Steel Mountains.",
+      "body": "A bandit camp in [[region:greenfield-highlands]], nearest [[place:steel-mountains]]. Territory lists file it with Hernand's other Greenfield camps.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesert.gaming.tools/territories/hernand/hernand_banditcamp", "title": "gaming.tools: Hernand bandit camps", "accessed": "2026-09-06", "note": "seen via search snippet; the page blocks scripted fetches" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:greenfield-camp",
+      "type": "place",
+      "name": "Greenfield Camp",
+      "kind": "camp",
+      "region": "region:hernand",
+      "related": ["region:greenfield-highlands"],
+      "location": { "x": 2945.2, "y": 5405.9 },
+      "fastTravel": "camp:539",
+      "tags": ["other"],
+      "summary": "A camp in Greenfield country near Pororin; no guide names it yet.",
+      "body": "A camp in [[region:greenfield-highlands]], nearest [[place:pororin]]. No guide names the place yet; the region is inferred from that Hernand highland.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:greenfield-highlands-camp",
+      "type": "place",
+      "name": "Greenfield Highlands Camp",
+      "kind": "camp",
+      "region": "region:hernand",
+      "related": ["region:greenfield-highlands"],
+      "location": { "x": 2863.5, "y": 5569.7 },
+      "fastTravel": "camp:560",
+      "tags": ["other"],
+      "summary": "A camp in the Greenfield Highlands, close to Pororin.",
+      "body": "A camp in [[region:greenfield-highlands]], close to [[place:pororin]]. Territory lists file it with Hernand's other Greenfield names.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesert.gaming.tools/territories/hernand/hernand_banditcamp", "title": "gaming.tools: Hernand bandit camps", "accessed": "2026-09-06", "note": "seen via search snippet; the page blocks scripted fetches" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:greenhill-bandit-camp",
+      "type": "place",
+      "name": "Greenhill Bandit Camp",
+      "kind": "camp",
+      "region": "region:hernand",
+      "location": { "x": 2960.8, "y": 5693.0 },
+      "fastTravel": "camp:562",
+      "tags": ["bandit"],
+      "summary": "A bandit camp in southern Hernand near the Steel Mountains.",
+      "body": "A bandit camp nearest [[place:steel-mountains]] in southern Hernand. Territory lists file it with the region's other bandit camps; Greenhill itself is not a confirmed named tract.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesert.gaming.tools/territories/hernand/hernand_banditcamp", "title": "gaming.tools: Hernand bandit camps", "accessed": "2026-09-06", "note": "seen via search snippet; the page blocks scripted fetches" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:hariyah-ram-camp",
+      "type": "place",
+      "name": "Hariyah-ram Camp",
+      "kind": "camp",
+      "region": "region:crimson-desert",
+      "location": { "x": 4635.2, "y": 3114.0 },
+      "fastTravel": "camp:611",
+      "tags": ["tribal", "outpost"],
+      "summary": "A desert -ram outlaw camp in the Crimson Desert, nearest Helmara.",
+      "body": "A tribal -ram camp in the Crimson Desert, listed with the other -jahr and -ram outlaw outposts. It sits nearest [[place:helmara]].",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesert.gaming.tools/knowledge/topography/crimsondesert/crimsondesert_jahrcamp", "title": "gaming.tools: Crimson Desert -jahr camps", "accessed": "2026-09-06", "note": "seen via search snippet; the page blocks scripted fetches" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "place:haunted-hill-camp",
+      "type": "place",
+      "name": "Haunted Hill Camp",
+      "kind": "camp",
+      "region": "region:hernand",
+      "location": { "x": 2149.2, "y": 4746.7 },
+      "fastTravel": "camp:559",
+      "tags": ["other"],
+      "summary": "A Hernand camp near Ivynook, listed on the Locations index.",
+      "body": "Haunted Hill Camp is a Hernand camp near [[place:ivynook]]. The Locations index and Hernand camp lists both name it; no source read here says who holds it.",
+      "sources": [
+        { "url": "https://crimsondesert.th.gl", "title": "The Hidden Gaming Lair: Crimson Desert map (fast-travel point)", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Locations", "title": "Fextralife: Locations", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesert.gaming.tools/territories/hernand/hernand_banditcamp", "title": "gaming.tools: Hernand bandit camps", "accessed": "2026-09-06", "note": "seen via search snippet; the page blocks scripted fetches" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
     }
   ]
 }

@@ -303,6 +303,10 @@
       "parent": "region:hernand",
       "summary": "A Hernand mountain range used as a named highland above the western valleys.",
       "body": "The Argent Peaks are a mountain range in Hernand. A bandit camp and a sentry camp take the same name.",
+      "keyPlaces": [
+        "place:argent-peaks-bandit-camp",
+        "place:argent-peaks-sentry-camp"
+      ],
       "sources": [
         {
           "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
@@ -326,6 +330,10 @@
       "parent": "region:hernand",
       "summary": "A Hernand hill with Anvil Basin and Anvil Riverside beside it, and bandit camps on the same ground.",
       "body": "Anvil Hill is hill country in Hernand. Anvil Basin and Anvil Riverside sit with it; bandit camps use those names.",
+      "keyPlaces": [
+        "place:anvil-hill-bandit-camp",
+        "place:anvil-riverside-bandit-camp"
+      ],
       "sources": [
         {
           "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
@@ -362,6 +370,9 @@
       "parent": "region:hernand",
       "summary": "A Hernand forest that gives its name to a bandit camp among the trees.",
       "body": "Duskwood is a forest in Hernand. A bandit camp in the timber uses the same name.",
+      "keyPlaces": [
+        "place:duskwood-bandit-camp"
+      ],
       "sources": [
         {
           "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
@@ -380,6 +391,9 @@
       "parent": "region:hernand",
       "summary": "A Hernand forest known from the Southern Deepwoods Bandit Camp that takes its name.",
       "body": "The Deepwoods are forest in Hernand. Location lists name the tract through the Southern Deepwoods Bandit Camp.",
+      "keyPlaces": [
+        "place:deepwoods-bandit-camp"
+      ],
       "sources": [
         {
           "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
@@ -421,6 +435,11 @@
       "parent": "region:hernand",
       "summary": "Hernand highland country, with Greenfield Gorge cut through it.",
       "body": "The Greenfield Highlands are upland in Hernand. Greenfield Gorge is the cut through the same ground, and camps in the highlands take the Greenfield name.",
+      "keyPlaces": [
+        "place:greenfield-bandit-camp",
+        "place:greenfield-camp",
+        "place:greenfield-highlands-camp"
+      ],
       "sources": [
         {
           "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
@@ -494,7 +513,8 @@
       "summary": "A Hernand forest around the village of Arboria.",
       "body": "Arboria Forest is woodland in Hernand. The village of Arboria, with a castle and craftshop listed beside it, sits in the same tract.",
       "keyPlaces": [
-        "place:arboria"
+        "place:arboria",
+        "place:arboria-forest-bandit-camp"
       ],
       "sources": [
         {
@@ -519,6 +539,9 @@
       "parent": "region:hernand",
       "summary": "A gorge in Hernand with a bandit camp on its walls.",
       "body": "Drakesfall Gorge is a cut through Hernand hill country. A bandit camp uses the gorge's name.",
+      "keyPlaces": [
+        "place:drakesfall-gorge-bandit-camp"
+      ],
       "sources": [
         {
           "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
@@ -628,7 +651,8 @@
       "summary": "Frontier march of the Duchy of Hernand under House Lanford, on the Pailune border.",
       "body": "The Calphadean Territory is the Duchy of Hernand's northern frontier, held by House Lanford and set against Pailune. [[place:calphade-castle]] is its seat; Chapter 6 (Cracks in the Shield) plays here, along the line watched from [[place:calphade-gate]].",
       "keyPlaces": [
-        "place:calphade-castle"
+        "place:calphade-castle",
+        "place:calphade-logging-camp"
       ],
       "location": {
         "x": 1920.7,
@@ -818,6 +842,9 @@
       "parent": "region:pailune",
       "summary": "A Pailune range whose named fingers include First-Finger Lake and Second-Finger Cave.",
       "body": "Five-Finger Mountain is a range in Pailune. First-Finger Lake and Second-Finger Cave are named parts of the same massif.",
+      "keyPlaces": [
+        "place:five-finger-mountain-bandit-camp"
+      ],
       "sources": [
         {
           "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
@@ -869,6 +896,9 @@
       "parent": "region:pailune",
       "summary": "A wall or ridge landmark in Pailune.",
       "body": "The Black Wall is a ridge landmark in Pailune. A bandit camp takes the wall's name.",
+      "keyPlaces": [
+        "place:black-wall-bandit-camp"
+      ],
       "sources": [
         {
           "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
@@ -1171,6 +1201,9 @@
       "parent": "region:demeniss",
       "summary": "Demeniss's named river, with the Central Denn River Basin along its course.",
       "body": "The Denn River runs through Demeniss. The Central Denn River Basin is a named stretch; [[region:upper-denn-river]] is the Pailune reach upstream.",
+      "keyPlaces": [
+        "place:denn-river-bandit-camp"
+      ],
       "sources": [
         {
           "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
@@ -1227,6 +1260,10 @@
       "parent": "region:demeniss",
       "summary": "A wall gate on the Demeniss-Gorthak border, not clearly inside either region alone.",
       "body": "The Gate of Peace is a chokepoint in the wall between Demeniss and [[region:gorthak]]. It sits on that border rather than squarely inside one region; northern and western camps take the gate's name.",
+      "keyPlaces": [
+        "place:gate-of-peace-northern-camp",
+        "place:gate-of-peace-western-camp"
+      ],
       "sources": [
         {
           "url": "https://game8.co/games/Crimson-Desert/archives/585763",
@@ -1274,6 +1311,9 @@
       "parent": "region:delesyia",
       "summary": "A Delesyia river that runs by Mount Benus.",
       "body": "The Benus River is a watercourse in Delesyia. [[region:mount-benus]] stands beside it; a bandit camp takes the river's name.",
+      "keyPlaces": [
+        "place:benus-river-bandit-camp"
+      ],
       "sources": [
         {
           "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
@@ -1412,6 +1452,9 @@
       "parent": "region:delesyia",
       "summary": "Ironflame Orc territory on the Demeniss border at the Gate of Peace.",
       "body": "Gorthak is the Ironflame Orcs' ground in Delesyia, led by [[character:valgash]]. It sits on the Demeniss border at [[region:gate-of-peace]].",
+      "keyPlaces": [
+        "place:gorthak-logging-camp"
+      ],
       "sources": [
         {
           "url": "https://game8.co/games/Crimson-Desert/archives/585763",
@@ -1511,6 +1554,9 @@
       "parent": "region:crimson-desert",
       "summary": "A forest in the Crimson Desert.",
       "body": "Gloomy Forest is woodland in the Crimson Desert. A bandit camp takes the forest's name.",
+      "keyPlaces": [
+        "place:gloomy-forest-bandit-camp"
+      ],
       "sources": [
         {
           "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
@@ -1562,6 +1608,9 @@
       "parent": "region:crimson-desert",
       "summary": "A named desert tract that holds a resource camp.",
       "body": "Giant's Yard is a named stretch of the Crimson Desert. A resource camp stands on the same ground.",
+      "keyPlaces": [
+        "place:giants-yard-resource-camp"
+      ],
       "sources": [
         {
           "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
@@ -1659,6 +1708,9 @@
       "parent": "region:crimson-desert",
       "summary": "A rainforest pocket inside the Crimson Desert.",
       "body": "The Rainforest is a wet pocket in the Crimson Desert. A damp-rainforest bandit camp takes its name from this tract.",
+      "keyPlaces": [
+        "place:damp-rainforest-bandit-camp"
+      ],
       "sources": [
         {
           "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
@@ -1734,6 +1786,9 @@
       "parent": "region:crimson-desert",
       "summary": "A named desert stretch with a bandit camp; no guide page fetched here treats it as its own mapped area.",
       "body": "Border Trail is a named stretch of the Crimson Desert with a bandit camp. The name is low-confidence: no dedicated wiki page was fetched, only a search listing.",
+      "keyPlaces": [
+        "place:border-trail-bandit-camp"
+      ],
       "sources": [
         {
           "url": "https://game8.co/games/Crimson-Desert/archives/585766",
