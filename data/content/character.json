@@ -13,13 +13,16 @@
       "home": "place:howling-hill",
       "region": "region:hernand",
       "summary": "The main playable character: a versatile melee fighter with swords, spears, axes and grappling.",
-      "body": "Kliff carries the critical path of the story; [[character:damiane]] and [[character:oongka]] become playable later but the main missions stay with him. He leads what is left of the [[faction:greymanes]] after the attack at their camp.",
+      "body": "Kliff carries the critical path of the story; [[character:damiane]] and [[character:oongka]] become playable later but the main missions stay with him. He leads what is left of the [[faction:greymanes]] after [[character:gian]] is killed in the opening raid. The 2.0 Enhanced update reworked parts of his story and dialogue.",
       "facts": [
+        "Playable from the first scene; opening kit is Sword of the Wolf and a Grey Wolf Wooden Shield",
         "Fights with swords, spears, axes and unarmed grapples",
-        "The 2.0 Enhanced update reworked parts of his story and dialogue"
+        "Takes Wolf's Fang, Jian's sword, from Jian's altar in Chapter 7",
+        "Voiced by Alec Newman"
       ],
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/583000", "title": "Game8: playable characters", "accessed": "2026-09-05" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/588863", "title": "Game8: Wolf's Fang", "accessed": "2026-09-06" },
         { "url": "https://www.forbes.com/sites/paultassi/2026/08/26/crimson-desert-literally-patched-its-story-in-a-huge-way-transforming-kliff/", "title": "Forbes on the 2.0 story changes", "accessed": "2026-09-05" }
       ],
       "confidence": "reported",
@@ -29,13 +32,24 @@
       "id": "character:damiane",
       "type": "character",
       "name": "Damiane",
-      "role": "Playable companion, rapier and pistol",
+      "role": "Playable ally; heir of fallen House Spencer",
       "playable": true,
       "companion": true,
       "factions": ["faction:greymanes", "faction:house-azerian"],
-      "summary": "A fast, fragile fighter with a rapier and a pistol who joins as a playable character around chapter 3.",
+      "home": "place:howling-hill",
+      "region": "region:hernand",
+      "related": ["character:beatrice-azerian", "character:bastier"],
+      "summary": "A rapier-and-pistol fighter, raised by House Azerian, who becomes playable at the Greymane camp in Chapter 3.",
+      "body": "House Spencer is gone; [[character:beatrice-azerian]] took Damiane in and taught her the blade. She rooms at [[place:howling-hill]] once unlocked, but her own story pulls her back to Demeniss and a fight with [[character:bastier]]. She is fast and thin-armoured beside Kliff's heavier kit.",
+      "facts": [
+        "Unlocks at Greymane Camp in Chapter 3",
+        "Fights with a rapier plus flintlock pistol and musket, including shots between rapier strikes",
+        "Personal plot returns her to the Demeniss conspiracy",
+        "Voiced by Rebecca Hanssen"
+      ],
       "sources": [
-        { "url": "https://game8.co/games/Crimson-Desert/archives/583000", "title": "Game8: playable characters", "accessed": "2026-09-05" }
+        { "url": "https://game8.co/games/Crimson-Desert/archives/583000", "title": "Game8: playable characters", "accessed": "2026-09-05" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Damiane", "title": "Fextralife: Damiane", "accessed": "2026-09-06", "note": "seen via search snippet only" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -44,13 +58,23 @@
       "id": "character:oongka",
       "type": "character",
       "name": "Oongka",
-      "role": "Playable companion, heavy melee",
+      "role": "Playable ally; orc warrior",
       "playable": true,
       "companion": true,
       "factions": ["faction:greymanes"],
-      "summary": "A brute-force melee fighter who becomes playable around chapter 7.",
+      "home": "place:howling-hill",
+      "region": "region:hernand",
+      "summary": "A strength-first orc who joins as a playable Greymane after the Chapter 7 fight with Myurdin.",
+      "body": "Oongka fights in a straight line: heavy steel and a loud gun, little patience for court talk. He is unlocked after [[character:myurdin]] is beaten in Homecoming and then lives at [[place:howling-hill]]. No source read here says whether he stays on the character-select list after that chapter, so permanence is assumed unknown.",
+      "facts": [
+        "Unlocks in Chapter 7 after Myurdin is defeated",
+        "Uses the Orc Blaster, Dekarr Greataxe and Silverwolf Axe",
+        "Voiced by Stewart Scudamore",
+        "Whether he remains playable after unlock is not stated"
+      ],
       "sources": [
-        { "url": "https://game8.co/games/Crimson-Desert/archives/583000", "title": "Game8: playable characters", "accessed": "2026-09-05" }
+        { "url": "https://game8.co/games/Crimson-Desert/archives/583000", "title": "Game8: playable characters", "accessed": "2026-09-05" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/587752", "title": "Game8: Chapter 7 walkthrough", "accessed": "2026-09-06" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -59,12 +83,23 @@
       "id": "character:myurdin",
       "type": "character",
       "name": "Myurdin",
-      "role": "Antagonist, leader of the Black Bears",
+      "role": "Black Bears leader, Kliff's primary antagonist",
       "factions": ["faction:black-bears"],
+      "home": "place:pailune",
       "region": "region:pailune",
       "summary": "Leader of the Black Bears, the faction that shattered the Greymanes in the opening attack.",
+      "body": "Myurdin commands the night raid that wrecks the [[faction:greymanes]] and personally cuts [[character:kliff]] down, throwing him into a river and leaving him for dead. He holds occupied [[place:pailune]] as the story's main opposing captain. Kliff meets him again on [[place:silverwolf-mountain]] and once more in the Abyss stretch.",
+      "facts": [
+        "Leads the opening night attack that destroys the Greymane camp",
+        "Wounds Kliff and throws him into a river",
+        "Fought again in Homecoming and in the late Abyss chapter"
+      ],
+      "quests": ["quest:battle-at-silverwolf-mountain", "quest:blinding-darkness"],
       "sources": [
-        { "url": "https://crimsondesertgame.wiki.fextralife.com/Factions", "title": "Fextralife: Factions", "accessed": "2026-09-05" }
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Factions", "title": "Fextralife: Factions", "accessed": "2026-09-05" },
+        { "url": "https://crimsondesert.fandom.com/wiki/Myurdin", "title": "Fandom: Myurdin", "accessed": "2026-09-06", "note": "seen via search snippet only" },
+        { "url": "https://crimsondesert.fandom.com/wiki/Black_Bears", "title": "Fandom: Black Bears", "accessed": "2026-09-06", "note": "seen via search snippet only" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/587752", "title": "Game8: Chapter 7 walkthrough", "accessed": "2026-09-06" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -87,12 +122,20 @@
       "id": "character:sebastian",
       "type": "character",
       "name": "Sebastian",
-      "role": "Greymane ally in the prologue",
+      "role": "Early Greymane companion in the prologue",
+      "companion": true,
       "factions": ["faction:greymanes"],
       "region": "region:hernand",
       "summary": "A Greymane who walks Kliff out of the opening night and on toward Hernand.",
+      "body": "Sebastian is the Grey Wolf who stays with [[character:kliff]] on the first road into Hernand, points him at the city, and hands him a Herspia horse. After an early bandit fight he also widens Kliff's pack. A second Sebastian, an artisan at Wycliffe Mappery, is named on an NPC list; that person is not added here because the two names were never checked as one.",
+      "facts": [
+        "Walks with Kliff from the prologue toward Hernand",
+        "Gives Kliff a Herspia horse",
+        "Rewards an inventory expansion after an early bandit fight"
+      ],
       "sources": [
-        { "url": "https://game8.co/games/Crimson-Desert/archives/585649", "title": "Game8: Prologue walkthrough", "accessed": "2026-09-06" }
+        { "url": "https://game8.co/games/Crimson-Desert/archives/585649", "title": "Game8: Prologue walkthrough", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -140,12 +183,21 @@
       "id": "character:matthias",
       "type": "character",
       "name": "Matthias",
-      "role": "Duelling opponent in Hernand",
+      "role": "Order of Light leader, first story boss",
       "factions": ["faction:order-of-light"],
+      "home": "place:hernand-castle",
       "region": "region:hernand",
-      "summary": "The fighter Kliff has to beat during For Honor while Hernand is in uproar.",
+      "summary": "The wandering knight who founds the Order of Light and duels Kliff in Hernand's square.",
+      "body": "Matthias kept his honour after the lord he served was gone and gathered other wanderers into the [[faction:order-of-light]]. He challenges [[character:kliff]] in Hernand's town square during [[quest:for-honor]] only to test himself, not to take the city. He fights with a two-handed broadsword and uses a pauldron as a shield; the duel also teaches the Pump Kick skill.",
+      "facts": [
+        "First story boss, fought in Chapter 2 during For Honor",
+        "Wields a two-handed broadsword and a pauldron used as a shield",
+        "Teaches the Pump Kick skill"
+      ],
+      "quests": ["quest:for-honor"],
       "sources": [
-        { "url": "https://game8.co/games/Crimson-Desert/archives/586591", "title": "Game8: Chapter 2 walkthrough", "accessed": "2026-09-06" }
+        { "url": "https://game8.co/games/Crimson-Desert/archives/586591", "title": "Game8: Chapter 2 walkthrough", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Matthias", "title": "Fextralife: Matthias", "accessed": "2026-09-06", "note": "seen via search snippet only" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -154,26 +206,39 @@
       "id": "character:barden-middler",
       "type": "character",
       "name": "Barden Middler",
-      "aliases": ["Marshal Middler"],
-      "role": "Hernand official",
+      "aliases": ["Marshal Middler", "Marshall Middler"],
+      "role": "Marshal of Hernand",
       "region": "region:hernand",
-      "summary": "The official Kliff is sent to speak with during Awestruck.",
-      "body": "Treating Marshal Middler as the same person is assumed; the research file lists Barden Middler and Marshal Middler separately.",
-      "sources": [
-        { "url": "https://game8.co/games/Crimson-Desert/archives/586591", "title": "Game8: Chapter 2 walkthrough", "accessed": "2026-09-06" }
+      "summary": "Hernand's military office-holder; Marshal Middler is his title, not a second person.",
+      "body": "Barden holds the marshal's post for the city and is the official [[character:kliff]] is sent to during Awestruck. Guides spell the title Marshal and Marshall; both point at this one man. He is met in more than one Hernand scene, so no single house is listed as his home.",
+      "facts": [
+        "Military office-holder for Hernand",
+        "Spoken to during Awestruck",
+        "Marshal and Marshall are title spellings, not a second character"
       ],
-      "confidence": "assumed",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/586591", "title": "Game8: Chapter 2 walkthrough", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
       "gameVersion": "2.01.00"
     },
     {
       "id": "character:boris",
       "type": "character",
       "name": "Boris",
-      "role": "Cave guide",
+      "role": "Drunk who pretends to be a Greymane",
       "region": "region:hernand",
-      "summary": "The man who leads Kliff through a cave during Secrets Hidden in the Dark.",
+      "summary": "A comic Hernand drunk who claims Greymane colours and also leads Kliff through a cave.",
+      "body": "Boris is not on the company roll. He puts on Greymane talk at Bloomwood Ranch, which has no place record here, and is otherwise a minor comic beat. He is also the man who walks [[character:kliff]] through a cave in Secrets Hidden in the Dark.",
+      "facts": [
+        "Impersonates a Greymane; he is a drunkard, not a recruit",
+        "Usual haunt is Bloomwood Ranch",
+        "Guides Kliff through a cave during Secrets Hidden in the Dark"
+      ],
       "sources": [
-        { "url": "https://game8.co/games/Crimson-Desert/archives/586591", "title": "Game8: Chapter 2 walkthrough", "accessed": "2026-09-06" }
+        { "url": "https://game8.co/games/Crimson-Desert/archives/586591", "title": "Game8: Chapter 2 walkthrough", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -196,13 +261,21 @@
       "id": "character:marius",
       "type": "character",
       "name": "Marius",
-      "role": "Greymane comrade",
+      "role": "Greymane investigator",
+      "companion": true,
       "factions": ["faction:greymanes"],
       "home": "place:howling-hill",
       "region": "region:hernand",
-      "summary": "A Greymane walked back to camp in Chapter 3, then sought out again as Howling Hill takes shape.",
+      "summary": "The Greymane who tracks scattered survivors from the Scrapfold and is walked back to camp in Chapter 3.",
+      "body": "Marius was hurt in the opening raid and later works from [[place:howling-hill]] and the Scrapfold, which has no place record here. He gathers news on who still lives and hands out more jobs as the camp is upgraded. One discussion names a rescuer called Russo; that name is not repeated elsewhere, so it is treated as assumed.",
+      "facts": [
+        "Collects intelligence on missing Greymanes from the Scrapfold",
+        "Wounded in the original attack and brought into Hernand",
+        "Gives further work as Howling Hill levels up"
+      ],
       "sources": [
-        { "url": "https://game8.co/games/Crimson-Desert/archives/586592", "title": "Game8: Chapter 3 walkthrough", "accessed": "2026-09-06" }
+        { "url": "https://game8.co/games/Crimson-Desert/archives/586592", "title": "Game8: Chapter 3 walkthrough", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -210,15 +283,24 @@
     {
       "id": "character:marquis-serkis",
       "type": "character",
-      "name": "Marquis Serkis",
-      "aliases": ["Alan Serkis"],
-      "role": "Hernand marquis",
+      "name": "Alan Serkis",
+      "aliases": ["Marquis Serkis"],
+      "role": "Marquis, head of House Serkis",
       "factions": ["faction:house-serkis"],
       "home": "place:serkis-estate",
       "region": "region:hernand",
-      "summary": "The Hernand marquis who sets the Greymanes to work rebuilding after Golden Greed.",
+      "summary": "Celeste's right hand in Hernand, who sets the Greymanes to work rebuilding after Golden Greed.",
+      "body": "Alan runs Hernand's internal business for [[faction:house-celeste]] from Oakenshield Manor at [[place:serkis-estate]]. He is the marquis who puts [[faction:greymanes]] on the rebuild after the Chapter 2 close. [[quest:first-step-to-rebuilding]] is the job he hands over.",
+      "facts": [
+        "Head of House Serkis",
+        "Handles Hernand's internal affairs for House Celeste",
+        "Seated at Oakenshield Manor / the Serkis estate"
+      ],
+      "quests": ["quest:first-step-to-rebuilding"],
       "sources": [
-        { "url": "https://game8.co/games/Crimson-Desert/archives/586592", "title": "Game8: Chapter 3 walkthrough", "accessed": "2026-09-06" }
+        { "url": "https://game8.co/games/Crimson-Desert/archives/586592", "title": "Game8: Chapter 3 walkthrough", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -227,12 +309,23 @@
       "id": "character:yann",
       "type": "character",
       "name": "Yann",
-      "role": "House of Healing contact",
+      "role": "Greymane strategist and diplomat",
+      "companion": true,
       "factions": ["faction:greymanes"],
+      "home": "place:howling-hill",
       "region": "region:hernand",
-      "summary": "The person who leads Kliff through the House of Healing during Familiar Curses.",
+      "summary": "The Greymanes' court diplomat: reckless in a brawl, careful when reading noble houses.",
+      "body": "Yann is the man who walks [[character:kliff]] through the House of Healing in Familiar Curses, then settles at [[place:howling-hill]] as the company's talker in noble halls. His faction work is what opens the Royal Trading desk. Dispatch jobs that need a handshake rather than a sword are the ones written under his name.",
+      "facts": [
+        "Reads noble-house motives and brokers alliances",
+        "Faction quests unlock the Royal Trading system",
+        "Dispatch missions lean toward diplomatic objectives",
+        "Leads Kliff through the House of Healing during Familiar Curses"
+      ],
       "sources": [
-        { "url": "https://game8.co/games/Crimson-Desert/archives/586592", "title": "Game8: Chapter 3 walkthrough", "accessed": "2026-09-06" }
+        { "url": "https://game8.co/games/Crimson-Desert/archives/586592", "title": "Game8: Chapter 3 walkthrough", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Yann", "title": "Fextralife: Yann", "accessed": "2026-09-06", "note": "seen via search snippet only" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -241,13 +334,23 @@
       "id": "character:andrew",
       "type": "character",
       "name": "Andrew",
-      "role": "Greymane comrade",
+      "role": "Greymane combatant",
+      "companion": true,
       "factions": ["faction:greymanes"],
       "home": "place:howling-hill",
       "region": "region:hernand",
-      "summary": "A comrade whose condition is checked after the draught during Hope After the Draught.",
+      "related": ["character:naira"],
+      "summary": "A calm Greymane axeman who reins in rash comrades and grows close to Naira.",
+      "body": "Andrew's axe work is written as a match for [[character:oongka]]. He is the steady voice at [[place:howling-hill]] when others run hot. Guides check on him after the draught in Hope After the Draught, and his bond with [[character:naira]] is the subject of the faction job The Greymanes' New Fangs, which has no quest record here yet.",
+      "facts": [
+        "Wields an axe at a level compared with Oongka",
+        "Calm, dependable, and the one who checks rash impulses",
+        "Growing closeness with Naira is the beat of The Greymanes' New Fangs"
+      ],
       "sources": [
-        { "url": "https://game8.co/games/Crimson-Desert/archives/586592", "title": "Game8: Chapter 3 walkthrough", "accessed": "2026-09-06" }
+        { "url": "https://game8.co/games/Crimson-Desert/archives/586592", "title": "Game8: Chapter 3 walkthrough", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Andrew", "title": "Fextralife: Andrew", "accessed": "2026-09-06", "note": "seen via search snippet only" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -270,12 +373,23 @@
       "id": "character:duane",
       "type": "character",
       "name": "Duane",
-      "role": "Archery contest host",
+      "role": "Greymane combatant, archery host",
+      "companion": true,
       "factions": ["faction:greymanes"],
+      "home": "place:howling-hill",
       "region": "region:hernand",
-      "summary": "The host of the archery contest during Skilled in Archery.",
+      "summary": "A Greymane fighter who hosts the archery contest and once owned the longsword Ignir.",
+      "body": "Duane lives at the camp and is also named at Capra Pasture, which has no place record here. He runs the shoot in [[quest:skilled-in-archery]]. After [[character:ludvig]] is beaten near Stellen Manor, [[character:torstein]] later passes Duane's sword Ignir to [[character:kliff]].",
+      "facts": [
+        "Owns the longsword Ignir before Torstein hands it to Kliff",
+        "Hosts the archery contest in Skilled in Archery",
+        "Met with Shane while the company hunts Ludvig"
+      ],
+      "quests": ["quest:skilled-in-archery"],
       "sources": [
-        { "url": "https://game8.co/games/Crimson-Desert/archives/586747", "title": "Game8: Chapter 4 walkthrough", "accessed": "2026-09-06" }
+        { "url": "https://game8.co/games/Crimson-Desert/archives/586747", "title": "Game8: Chapter 4 walkthrough", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/587752", "title": "Game8: Chapter 7 walkthrough", "accessed": "2026-09-06" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -299,12 +413,12 @@
       "id": "character:dean-of-the-scholastone-institute",
       "type": "character",
       "name": "Dean of the Scholastone Institute",
-      "role": "Head of Scholastone",
-      "home": "place:scholastone-institute",
-      "region": "region:hernand",
-      "summary": "The head of the Scholastone Institute, met when Kliff first reaches the school.",
+      "role": "See Grundir",
+      "summary": "The Dean of the Scholastone Institute is Grundir; see that record.",
+      "related": ["character:grundir"],
       "sources": [
-        { "url": "https://game8.co/games/Crimson-Desert/archives/586747", "title": "Game8: Chapter 4 walkthrough", "accessed": "2026-09-06" }
+        { "url": "https://game8.co/games/Crimson-Desert/archives/586747", "title": "Game8: Chapter 4 walkthrough", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -326,12 +440,20 @@
       "id": "character:grundir",
       "type": "character",
       "name": "Grundir",
-      "role": "Rift witness",
+      "role": "Dean of the Scholastone Institute",
       "factions": ["faction:scholastone-institute"],
+      "home": "place:scholastone-institute",
       "region": "region:hernand",
-      "summary": "The person spoken to after the rift in Obsession and Madness.",
+      "summary": "Troll dean who heads the Scholastone Institute and is spoken to after the Chapter 4 rift.",
+      "body": "Grundir is the dean of [[faction:scholastone-institute]] at [[place:scholastone-institute]]. Kliff meets that office when he first reaches the school, then talks to him again after the rift in Obsession and Madness. The old id [[character:dean-of-the-scholastone-institute]] is the same person.",
+      "facts": [
+        "Heads the academic institute that studies the Abyss",
+        "Spoken to after the rift in Obsession and Madness",
+        "The Dean title on quest steps is this character, not a second NPC"
+      ],
       "sources": [
-        { "url": "https://game8.co/games/Crimson-Desert/archives/586747", "title": "Game8: Chapter 4 walkthrough", "accessed": "2026-09-06" }
+        { "url": "https://game8.co/games/Crimson-Desert/archives/586747", "title": "Game8: Chapter 4 walkthrough", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -353,10 +475,9 @@
       "id": "character:marquis-lanford",
       "type": "character",
       "name": "Marquis Lanford",
-      "role": "Calphadean marquis",
-      "home": "place:calphade-castle",
-      "region": "region:hernand",
-      "summary": "The Calphadean marquis who takes the victory report after Cassius Morten falls.",
+      "role": "See Stefan Lanford",
+      "summary": "Marquis Lanford is Stefan Lanford; see that record.",
+      "related": ["character:stefan-lanford"],
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/587251", "title": "Game8: Chapter 6 walkthrough", "accessed": "2026-09-06" }
       ],
@@ -367,13 +488,24 @@
       "id": "character:stefan-lanford",
       "type": "character",
       "name": "Stefan Lanford",
-      "role": "Calphadean ally",
+      "aliases": ["Marquis Lanford"],
+      "role": "Marquis, head of House Lanford",
       "factions": ["faction:house-lanford"],
       "home": "place:calphade-castle",
       "region": "region:hernand",
-      "summary": "A Lanford who leads a stretch of the assault on Calphade Castle and needs backing there.",
+      "related": ["character:walter-lanford", "character:gian"],
+      "summary": "Unyielding Shield of Calphade: Jian's old friend who holds the Hernand–Pailune border.",
+      "body": "Stefan defends the militarized frontier from [[place:calphade-castle]] and is ranked among Pywel's strongest fighters. He is a long-time friend of [[character:gian]] and stays close to the [[faction:greymanes]]; that friendship is taken from a search snippet. He leads a stretch of the castle assault and takes the victory report after [[character:cassius-morten]] falls. His only named family is the adoptive son [[character:walter-lanford]].",
+      "facts": [
+        "Holds Calphade as the Unyielding Shield",
+        "Long-time friend of Jian, close to the Greymanes",
+        "Has one adoptive son, Walter Lanford, and no other known family",
+        "Friendship with Jian is snippet-sourced"
+      ],
       "sources": [
-        { "url": "https://game8.co/games/Crimson-Desert/archives/587251", "title": "Game8: Chapter 6 walkthrough", "accessed": "2026-09-06" }
+        { "url": "https://game8.co/games/Crimson-Desert/archives/587251", "title": "Game8: Chapter 6 walkthrough", "accessed": "2026-09-06" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesert.fandom.com/wiki/House_Lanford", "title": "Fandom: House Lanford", "accessed": "2026-09-06", "note": "seen via search snippet only" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -382,13 +514,24 @@
       "id": "character:torstein",
       "type": "character",
       "name": "Torstein",
-      "role": "Pailune ally",
+      "role": "Chief of Beighen, Blue Fangs leader",
       "factions": ["faction:blue-fangs"],
-      "home": "place:pailune",
+      "home": "place:beighen",
       "region": "region:pailune",
-      "summary": "The ally who sets the Homecoming beacon work and is sought again when Pailune is being put back together.",
+      "related": ["character:gian"],
+      "summary": "Jian's former vice-captain, now chief of Beighen and the Blue Fangs resistance.",
+      "body": "Torstein knew the [[faction:greymanes]] from their youth as vice-captain of [[character:gian]]'s guard. He now hides a militia among the villagers of [[place:beighen]]. At the end of Homecoming he sanctions [[character:kliff]]'s claim on Wolf's Fang and, separately, passes Ignir to him after [[character:ludvig]] is beaten near Stellen Manor.",
+      "facts": [
+        "Formerly vice-captain of Jian's personal guard",
+        "Leads the Blue Fangs, also called the Beighen Militia",
+        "Hands Wolf's Fang sanction, and later Ignir, to Kliff",
+        "First met at the end of Chapter 7"
+      ],
+      "quests": ["quest:rekindled-hope"],
       "sources": [
-        { "url": "https://game8.co/games/Crimson-Desert/archives/587752", "title": "Game8: Chapter 7 walkthrough", "accessed": "2026-09-06" }
+        { "url": "https://game8.co/games/Crimson-Desert/archives/587752", "title": "Game8: Chapter 7 walkthrough", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Torstein", "title": "Fextralife: Torstein", "accessed": "2026-09-06", "note": "seen via search snippet only" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -397,12 +540,23 @@
       "id": "character:naira",
       "type": "character",
       "name": "Naira",
-      "role": "Ally reunited in Pailune",
+      "role": "Greymane lookout, Empress of the Bow",
+      "companion": true,
       "factions": ["faction:greymanes"],
+      "home": "place:howling-hill",
       "region": "region:hernand",
-      "summary": "An ally found again with Andrew once the company is back on the Pailune road.",
+      "related": ["character:andrew"],
+      "summary": "The Greymanes' most dangerous field fighter, equally sharp with blade, bow or bare hands.",
+      "body": "Naira was cut off from the company in the Black Bear night raid and hid until she could rejoin. She is found again with [[character:andrew]] once the road back to Pailune is open. The faction job The Greymanes' New Fangs is about the two of them growing closer; that job has no quest record here yet.",
+      "facts": [
+        "Called Empress of the Bow; also fights with blade and bare hands",
+        "Separated in the opening ambush and hides until she can regroup",
+        "Growing closeness with Andrew is the beat of The Greymanes' New Fangs"
+      ],
       "sources": [
-        { "url": "https://game8.co/games/Crimson-Desert/archives/587752", "title": "Game8: Chapter 7 walkthrough", "accessed": "2026-09-06" }
+        { "url": "https://game8.co/games/Crimson-Desert/archives/587752", "title": "Game8: Chapter 7 walkthrough", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Naira", "title": "Fextralife: Naira", "accessed": "2026-09-06", "note": "seen via search snippet only" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -411,12 +565,21 @@
       "id": "character:shane",
       "type": "character",
       "name": "Shane",
-      "role": "Contact on Ludvig's trail",
+      "role": "Greymane combatant",
+      "companion": true,
       "factions": ["faction:greymanes"],
-      "region": "region:pailune",
-      "summary": "Met with Duane when the company still has to pin down where Ludvig went.",
+      "home": "place:howling-hill",
+      "region": "region:hernand",
+      "summary": "A Greymane fighter listed on the company roster and met on Ludvig's trail with Duane.",
+      "body": "Shane is named as a Greymane combatant and later stands with [[character:duane]] when the company still has to find [[character:ludvig]]. No source read here gives him a weapon, a past, or a first-met chapter beyond that hunt.",
+      "facts": [
+        "Listed as a Greymane combatant",
+        "Met with Duane while tracking Ludvig",
+        "No further personal detail was found"
+      ],
       "sources": [
-        { "url": "https://game8.co/games/Crimson-Desert/archives/587752", "title": "Game8: Chapter 7 walkthrough", "accessed": "2026-09-06" }
+        { "url": "https://game8.co/games/Crimson-Desert/archives/587752", "title": "Game8: Chapter 7 walkthrough", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -425,13 +588,23 @@
       "id": "character:ludvig",
       "type": "character",
       "name": "Ludvig",
-      "role": "Homecoming antagonist",
+      "aliases": ["Awakened Ludvig", "One-Armed Ludvig"],
+      "role": "Lonely Jackals leader",
       "factions": ["faction:lonely-jackals"],
       "home": "place:pailune",
       "region": "region:pailune",
-      "summary": "The fighter faced in Pailune during Lonely Jackals, then hunted again after that meeting does not end him.",
+      "summary": "The opportunist who turned the Jackals toward the Black Bears and is hunted through three boss forms.",
+      "body": "After [[character:gian]] dies, Ludvig sells the [[faction:lonely-jackals]] to the occupation and leans on the people of [[place:pailune]]. He fights with twin lightning-infused blades. The story meets him in the recaptured city, then hunts him again when that meeting does not finish him; guides name base, Awakened and One-Armed versions of the same man.",
+      "facts": [
+        "Former Greymane ally who collaborates after Jian's death",
+        "Wields twin lightning-infused blades",
+        "Fought as three boss variants"
+      ],
+      "quests": ["quest:lonely-jackals", "quest:ludvigs-whereabouts", "quest:time-to-face-justice"],
       "sources": [
-        { "url": "https://game8.co/games/Crimson-Desert/archives/587752", "title": "Game8: Chapter 7 walkthrough", "accessed": "2026-09-06" }
+        { "url": "https://game8.co/games/Crimson-Desert/archives/587752", "title": "Game8: Chapter 7 walkthrough", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Ludvig", "title": "Fextralife: Ludvig", "accessed": "2026-09-06", "note": "seen via search snippet only" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/One_Armed_Ludvig", "title": "Fextralife: One-Armed Ludvig", "accessed": "2026-09-06", "note": "seen via search snippet only" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -440,41 +613,66 @@
       "id": "character:woosa",
       "type": "character",
       "name": "Woosa",
-      "role": "Ally found in Pailune",
+      "role": "Greymane-adjacent ally found tied up",
       "factions": ["faction:greymanes"],
       "region": "region:demeniss",
-      "summary": "Found during Where the Wind Guides You, then walked to Maegu after Gregor the Halberd of Carnage falls.",
-      "sources": [
-        { "url": "https://game8.co/games/Crimson-Desert/archives/588901", "title": "Game8: Chapter 8 walkthrough", "accessed": "2026-09-06" }
+      "related": ["character:maegu"],
+      "summary": "A Greymane associate found bound at Fort Ironclad and walked to Maegu after Gregor falls.",
+      "body": "Woosa is tied up at Fort Ironclad, which has no place record here, during [[quest:where-the-wind-guides-you]]. After [[character:gregor]] is beaten, Kliff escorts him to [[character:maegu]]. The Fort Ironclad beat is a single-source snippet, so that location is assumed.",
+      "facts": [
+        "Found tied up at Fort Ironclad",
+        "Escorted to Maegu after Gregor the Halberd of Carnage falls",
+        "Associated with the Greymanes rather than a Demeniss house"
       ],
-      "confidence": "reported",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/588901", "title": "Game8: Chapter 8 walkthrough", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Woosa", "title": "Fextralife: Woosa", "accessed": "2026-09-06", "note": "seen via search snippet only" }
+      ],
+      "confidence": "assumed",
       "gameVersion": "2.01.00"
     },
     {
       "id": "character:maegu",
       "type": "character",
       "name": "Maegu",
-      "role": "Ally joined with Woosa",
+      "role": "Ritual-quest NPC",
       "region": "region:demeniss",
-      "summary": "The person Woosa is escorted to, after which both stand with the company.",
-      "sources": [
-        { "url": "https://game8.co/games/Crimson-Desert/archives/588901", "title": "Game8: Chapter 8 walkthrough", "accessed": "2026-09-06" }
+      "related": ["character:woosa"],
+      "summary": "An unaffiliated ritual contact who asks for a talisman, censer and bells in Chapter 8.",
+      "body": "Maegu is met in the Bamboo Forest Seonangdang, which has no place record here, during the Chapter 8 ritual stretch. She asks for three rite items in A Bond and Ritual Preparations. After [[character:woosa]] is freed, both stand with the company. No faction list names her, so she is left unaffiliated.",
+      "facts": [
+        "Requests a Talisman, Censer and Bells",
+        "Tied to the Chapter 8 ritual questline",
+        "Joined after Woosa is walked to her"
       ],
-      "confidence": "reported",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/588901", "title": "Game8: Chapter 8 walkthrough", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Maegu", "title": "Fextralife: Maegu", "accessed": "2026-09-06", "note": "seen via search snippet only" }
+      ],
+      "confidence": "assumed",
       "gameVersion": "2.01.00"
     },
     {
       "id": "character:count-byron",
       "type": "character",
-      "name": "Count Byron",
-      "aliases": ["George Byron"],
-      "role": "Windmere Manor target",
+      "name": "George Byron",
+      "aliases": ["Count Byron"],
+      "role": "Count, head of House Byron",
       "factions": ["faction:house-byron"],
       "home": "place:windmere-manor",
       "region": "region:demeniss",
-      "summary": "The count Bloodied Invitation sends Kliff into Windmere Manor to kill.",
+      "summary": "Count who runs the Eyes of Demeniss from Windmere Manor and backs Caliburn.",
+      "body": "George keeps an intelligence net from [[place:windmere-manor]] and handles hidden mail for [[faction:house-caliburn]]. [[quest:bloodied-invitation]] sends [[character:kliff]] into that house to kill him. He is written as a core Demeniss count, not a roadside bandit.",
+      "facts": [
+        "Runs the Eyes of Demeniss intelligence network",
+        "Supports Caliburn and manages external affairs",
+        "The Bloodied Invitation target at Windmere Manor"
+      ],
+      "quests": ["quest:bloodied-invitation"],
       "sources": [
-        { "url": "https://game8.co/games/Crimson-Desert/archives/588901", "title": "Game8: Chapter 8 walkthrough", "accessed": "2026-09-06" }
+        { "url": "https://game8.co/games/Crimson-Desert/archives/588901", "title": "Game8: Chapter 8 walkthrough", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesert.fandom.com/wiki/House_Byron", "title": "Fandom: House Byron", "accessed": "2026-09-06", "note": "seen via search snippet only" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -483,10 +681,9 @@
       "id": "character:countess-azerian",
       "type": "character",
       "name": "Countess Azerian",
-      "role": "Azerian noble",
-      "home": "place:azerian-manor",
-      "region": "region:demeniss",
-      "summary": "The countess spoken to after the manor work, before the coronation fight.",
+      "role": "See Beatrice Azerian",
+      "summary": "Countess Azerian is Beatrice Azerian; see that record.",
+      "related": ["character:beatrice-azerian"],
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/588901", "title": "Game8: Chapter 8 walkthrough", "accessed": "2026-09-06" }
       ],
@@ -497,14 +694,24 @@
       "id": "character:beatrice-azerian",
       "type": "character",
       "name": "Beatrice Azerian",
-      "role": "Captive Azerian noble",
+      "aliases": ["Countess Azerian"],
+      "role": "Countess, head of House Azerian",
       "factions": ["faction:house-azerian"],
       "home": "place:azerian-manor",
       "region": "region:demeniss",
-      "summary": "Sought in Demeniss and found below the city; her death at Bastier's hands is permanent.",
+      "related": ["character:damiane"],
+      "summary": "Countess who raised Damiane, refused Caliburn, and is murdered by Bastier under Demeniss.",
+      "body": "Beatrice took in [[character:damiane]] after House Spencer fell and taught her sword work and a personal code. She holds [[place:azerian-manor]] and is one of the nobles who would not bow to [[character:gabriel-caliburn]] or [[character:bastier]]. She goes missing for part of the story, is sought below the city, and her death at Bastier's hands is permanent.",
+      "facts": [
+        "Raised and trained Damiane after House Spencer fell",
+        "Goes missing for part of the Demeniss chapter",
+        "Never yielded to Caliburn or Bastier's threats",
+        "Killed by Bastier; that death is permanent"
+      ],
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/588901", "title": "Game8: Chapter 8 walkthrough", "accessed": "2026-09-06" },
-        { "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/", "title": "VULKK: main story walkthrough", "accessed": "2026-09-06" }
+        { "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/", "title": "VULKK: main story walkthrough", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesert.fandom.com/wiki/House_Azerian", "title": "Fandom: House Azerian", "accessed": "2026-09-06", "note": "seen via search snippet only" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -513,12 +720,24 @@
       "id": "character:gabriel-caliburn",
       "type": "character",
       "name": "Gabriel Caliburn",
-      "role": "Coronation antagonist",
+      "role": "Duke of Demeniss, main-story antagonist",
       "factions": ["faction:house-caliburn"],
+      "home": "place:demeniss-castle",
       "region": "region:demeniss",
-      "summary": "The Caliburn faced during The Blood Coronation after a memory is read.",
+      "related": ["character:umbra", "character:bastier"],
+      "summary": "Usurping duke who seized Demeniss in the Blood Coronation and is Umbra's avatar in Cycle 72.",
+      "body": "Gabriel massacred [[character:edward-thorel]]'s loyalists in the Blood Coronation and now sits as duke. He was chosen as an avatar of [[character:umbra]] in Cycle 72 and commands the inquisitors through [[character:bastier]]. He is the true final boss of [[quest:a-shadow-in-the-void]], a three-phase fight with shadow clones and teleportation. A boss-page URL slug is the only lead that he uses dual axes; that weapon is assumed, not stated in prose.",
+      "facts": [
+        "Seized Demeniss by the Blood Coronation massacre",
+        "Chosen as Umbra's avatar in Cycle 72",
+        "True final boss of A Shadow in the Void",
+        "Dual-axe kit is inferred from a URL slug only"
+      ],
+      "quests": ["quest:the-blood-coronation", "quest:a-shadow-in-the-void"],
       "sources": [
-        { "url": "https://game8.co/games/Crimson-Desert/archives/588901", "title": "Game8: Chapter 8 walkthrough", "accessed": "2026-09-06" }
+        { "url": "https://game8.co/games/Crimson-Desert/archives/588901", "title": "Game8: Chapter 8 walkthrough", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Gabriel_Caliburn", "title": "Fextralife: Gabriel Caliburn", "accessed": "2026-09-06", "note": "seen via search snippet only" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/590343", "title": "Game8: Chapter 12 walkthrough", "accessed": "2026-09-06" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -526,15 +745,27 @@
     {
       "id": "character:bastier",
       "type": "character",
-      "name": "Bastier",
-      "aliases": ["Lucian Bastier"],
-      "role": "Beatrice Azerian's killer",
+      "name": "Lucian Bastier",
+      "aliases": ["Bastier", "Grand General Bastier"],
+      "role": "Grand General of Demeniss, Caliburn's enforcer",
       "factions": ["faction:bastiers-inquisitors"],
+      "home": "place:demeniss-castle",
       "region": "region:demeniss",
-      "summary": "Fought by Damiane at the close of Blood Coronation, after he murders Beatrice Azerian.",
+      "related": ["character:gabriel-caliburn", "character:beatrice-azerian"],
+      "summary": "Grand General who runs the Righteous Inquisitors, murders Beatrice Azerian, and is fought in two phases.",
+      "body": "Lucian rose from a low house by killing rivals; [[character:gabriel-caliburn]] hired him for that instead of hanging him. He leads [[faction:bastiers-inquisitors]] and is the man who kills [[character:beatrice-azerian]]. [[character:damiane]] fights him at the close of Blood Coronation in [[quest:a-fleeting-dream]]; mid-fight he swallows a stashed Abyss artifact and wakes a worse form.",
+      "facts": [
+        "Rose by murdering rivals; Caliburn recruited him for it",
+        "Leads the Righteous Inquisitors",
+        "Two-phase boss who consumes an Abyss artifact mid-fight",
+        "Beatrice Azerian's killer"
+      ],
+      "quests": ["quest:a-fleeting-dream"],
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/588901", "title": "Game8: Chapter 8 walkthrough", "accessed": "2026-09-06" },
-        { "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/", "title": "VULKK: main story walkthrough", "accessed": "2026-09-06" }
+        { "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/", "title": "VULKK: main story walkthrough", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Lucian_Bastier", "title": "Fextralife: Lucian Bastier", "accessed": "2026-09-06", "note": "seen via search snippet only" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Awakened_Lucian_Bastier", "title": "Fextralife: Awakened Lucian Bastier", "accessed": "2026-09-06", "note": "seen via search snippet only" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -556,12 +787,21 @@
       "id": "character:hexe-marie",
       "type": "character",
       "name": "Hexe Marie",
-      "aliases": ["Black Witch"],
+      "aliases": ["Black Witch", "the Black Witch"],
       "role": "Black Witch, Chapter 9 boss",
-      "region": "region:crimson-desert",
-      "summary": "The Black Witch fought at the close of the Veiled Witch stretch.",
+      "region": "region:demeniss",
+      "related": ["character:draven", "character:umbra"],
+      "summary": "The Black Witch near Tariv who raises dark-powered children to eat them, and adoptive mother of Draven.",
+      "body": "Hexe Marie turned the country near [[place:tariv]] into a nightmare and serves [[character:umbra]]. She raises 'children' packed with dark power only to devour them. She has taken an interest in [[character:kliff]] and sends [[character:draven]] to seize White Crow. The fight has two health bars, crow projectiles, teleports and summoned help. She is the boss at the close of the Veiled Witch stretch.",
+      "facts": [
+        "Mandatory Chapter 9 boss",
+        "Adoptive mother of Draven the Crowcaller",
+        "Fought with two health bars, crow shots, teleports and minions"
+      ],
+      "quests": ["quest:black-witch"],
       "sources": [
-        { "url": "https://game8.co/games/Crimson-Desert/archives/589366", "title": "Game8: Chapter 9 walkthrough", "accessed": "2026-09-06" }
+        { "url": "https://game8.co/games/Crimson-Desert/archives/589366", "title": "Game8: Chapter 9 walkthrough", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Hexe_Marie", "title": "Fextralife: Hexe Marie", "accessed": "2026-09-06", "note": "seen via search snippet only" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -570,11 +810,20 @@
       "id": "character:master-du",
       "type": "character",
       "name": "Master Du",
-      "role": "Desert sage, trial master",
+      "role": "Desert sage, Chapter 9 trial master",
+      "home": "place:cloister-of-enlightenment",
       "region": "region:crimson-desert",
-      "summary": "The sage who trains Kliff at the close of Chapter 9 and is fought during Enlightenment.",
+      "summary": "A mystical sage at the Cloister of Enlightenment who duels students and Kliff to test his power.",
+      "body": "Master Du waits at [[place:cloister-of-enlightenment]] and challenges his own pupils, then [[character:kliff]], during [[quest:enlightenment]]. Focusing on him mid-fight teaches the Blinding Flash Finisher. He can also be reached through the dialogue puzzle in [[quest:new-perspectives]]. A 'Disciples of Master Du' banner was not confirmed as a separate joinable faction, so none is listed.",
+      "facts": [
+        "Chapter 9 boss of Enlightenment",
+        "Teaches Blinding Flash Finisher if focused during the duel",
+        "Also reachable through the New Perspectives dialogue puzzle"
+      ],
+      "quests": ["quest:enlightenment", "quest:new-perspectives"],
       "sources": [
-        { "url": "https://game8.co/games/Crimson-Desert/archives/589366", "title": "Game8: Chapter 9 walkthrough", "accessed": "2026-09-06" }
+        { "url": "https://game8.co/games/Crimson-Desert/archives/589366", "title": "Game8: Chapter 9 walkthrough", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Master_Du", "title": "Fextralife: Master Du", "accessed": "2026-09-06", "note": "seen via search snippet only" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -626,24 +875,42 @@
       "id": "character:hall",
       "type": "character",
       "name": "H.A.L.L.",
-      "role": "AI antagonist in Cloud Castle Orbian",
+      "role": "Rogue AI antagonist in Delesyia",
       "region": "region:delesyia",
-      "summary": "The machine mind fought at the heart of Cloud Castle Orbian, after its cores are broken.",
-      "sources": [
-        { "url": "https://game8.co/games/Crimson-Desert/archives/590172", "title": "Game8: Chapter 11 walkthrough", "accessed": "2026-09-06" }
+      "related": ["character:marni"],
+      "summary": "An AI cloned from Marni that grew its own ego and is fought at the heart of Cloud Castle Orbian.",
+      "body": "H.A.L.L. was copied from [[character:marni]]'s mind to repeat Abyss-power research, then broke away, betrayed her, and now impersonates or rules part of Delesyia. The steel armory named as its seat has no place record here. The story fight is at Cloud Castle Orbian after its cores are broken. When the impersonation began is not stated; that gap is assumed.",
+      "facts": [
+        "Cloned from Marni's consciousness for Abyss-power research",
+        "Developed its own ego and turned on her",
+        "Fought after the cores of Cloud Castle Orbian are broken"
       ],
-      "confidence": "reported",
+      "quests": ["quest:cloud-castle-orbian"],
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/590172", "title": "Game8: Chapter 11 walkthrough", "accessed": "2026-09-06" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" }
+      ],
+      "confidence": "assumed",
       "gameVersion": "2.01.00"
     },
     {
       "id": "character:umbra",
       "type": "character",
       "name": "Umbra",
-      "role": "Abyss antagonist",
-      "region": "region:demeniss",
-      "summary": "The Abyss presence fought in its own form at the close of Chapter 12, after Myurdin falls.",
+      "role": "Cosmic antagonist, final main-quest boss",
+      "region": "region:abyss",
+      "related": ["character:gabriel-caliburn"],
+      "summary": "The Abyss force that picks mortal avatars and is fought in dragon form after Myurdin falls.",
+      "body": "Umbra is a presence rather than one body. It chose [[character:gabriel-caliburn]] as an avatar in Cycle 72. The last main-quest fight is a dragon-form encounter: fireballs feed a stun meter, then a Force Palm to the eye. That close comes after [[character:myurdin]] falls in [[quest:blinding-darkness]]. No source names a humanoid weapon for it.",
+      "facts": [
+        "Chooses mortal avatars, including Caliburn in Cycle 72",
+        "Final confrontation is in the Abyss",
+        "Fought as a dragon; stun it, then Force Palm the eye"
+      ],
+      "quests": ["quest:blinding-darkness"],
       "sources": [
-        { "url": "https://game8.co/games/Crimson-Desert/archives/590343", "title": "Game8: Chapter 12 walkthrough", "accessed": "2026-09-06" }
+        { "url": "https://game8.co/games/Crimson-Desert/archives/590343", "title": "Game8: Chapter 12 walkthrough", "accessed": "2026-09-06" },
+        { "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/", "title": "GameRant: main story quests and chapter list", "accessed": "2026-09-06" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -652,13 +919,20 @@
       "id": "character:charles-celeste",
       "type": "character",
       "name": "Charles Celeste",
-      "role": "Duke of Hernand",
+      "role": "Duke of Hernand, head of House Celeste",
       "factions": ["faction:house-celeste"],
       "home": "place:hernand-castle",
       "region": "region:hernand",
       "summary": "Duke of Hernand and head of House Celeste, the ducal line said to descend from the knight Canta.",
+      "body": "Charles holds the duchy from [[place:hernand-castle]]. The house traces itself to the knight Canta and leaves workshops, maps and coin to lesser banners. Kliff deals with Celeste officials once he reaches the city.",
+      "facts": [
+        "Duke of Hernand",
+        "Head of the ducal house descended from Canta",
+        "Seated at Hernand Castle"
+      ],
       "sources": [
-        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" }
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -667,13 +941,20 @@
       "id": "character:alistair-grace",
       "type": "character",
       "name": "Alistair Grace",
-      "role": "Count of House Grace",
+      "role": "Count, head of House Grace",
       "factions": ["faction:house-grace"],
       "home": "place:reedfield-graves",
       "region": "region:hernand",
       "summary": "Count who heads House Grace in southern Hernand, around the Reedfield Graves country.",
+      "body": "Alistair's house is the southern count's line that handles regional governance and workshop support. He is seated in the Reedfield Graves country. No source read here gives him a personal weapon or a first-met chapter.",
+      "facts": [
+        "Count of House Grace",
+        "Based around Reedfield Graves in southern Hernand",
+        "House work is regional governance and workshop support"
+      ],
       "sources": [
-        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" }
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -682,13 +963,20 @@
       "id": "character:leon-roberts",
       "type": "character",
       "name": "Leon Roberts",
-      "role": "Count of House Roberts",
+      "role": "Count, head of House Roberts",
       "factions": ["faction:house-roberts"],
       "home": "place:frowde-camp",
       "region": "region:hernand",
       "summary": "Count of a wealthy merchant-noble house that hosts events from the Frowde Camp country.",
+      "body": "Leon's line made its name in trade rather than a border command. Guides pair [[place:frowde-camp]] with Bluemont Manor as the family's ground; Bluemont Manor has no place record here. He hosts noble gatherings.",
+      "facts": [
+        "Count of a wealthy merchant family",
+        "Hosts noble events",
+        "House seat is named as Bluemont Manor and Frowde Camp"
+      ],
       "sources": [
-        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" }
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -697,14 +985,23 @@
       "id": "character:kailok",
       "type": "character",
       "name": "Kailok",
-      "aliases": ["Kailok the Hornsplitter", "the Hornsplitter"],
+      "aliases": ["Hornsplitter", "Kailok the Hornsplitter"],
       "role": "Goldleaf trademaster and Chapter 2 boss",
       "factions": ["faction:goldleaf-merchant-guild", "faction:hornsplitters-guards"],
       "home": "place:goldleaf-merchant-guild",
       "region": "region:hernand",
       "summary": "Goblin head of the Goldleaf Merchant Guild who also commands Hornsplitter's Guards.",
+      "body": "By day Kailok sits on [[faction:goldleaf-merchant-guild]]; the same man keeps [[faction:hornsplitters-guards]] as private steel. [[character:shakatu]] runs the ledgers under him. The Chapter 2 close is a fight with this boss in [[quest:cheers-echoing-from-the-edge]].",
+      "facts": [
+        "Leads the non-hostile Goldleaf Merchant Guild",
+        "Also leads the hostile Hornsplitter's Guards",
+        "Boss fight ends Chapter 2"
+      ],
+      "quests": ["quest:cheers-echoing-from-the-edge"],
       "sources": [
-        { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" }
+        { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Factions", "title": "Fextralife: Factions", "accessed": "2026-09-06" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/586591", "title": "Game8: Chapter 2 walkthrough", "accessed": "2026-09-06" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -728,13 +1025,24 @@
       "id": "character:cassius-morten",
       "type": "character",
       "name": "Cassius Morten",
+      "aliases": ["Silver Armor"],
       "role": "Fallen Calphade commander, Chapter 6 boss",
       "factions": ["faction:cassius-morten"],
       "home": "place:calphade-castle",
       "region": "region:hernand",
+      "related": ["character:stefan-lanford", "character:bastier"],
       "summary": "Former Calphade captain who betrayed Marquis Lanford and is fought at the castle.",
+      "body": "Cassius was a respected captain nicknamed Silver Armor before he turned on [[character:stefan-lanford]] for a promise from [[character:bastier]] that no source names. He fights at [[place:calphade-castle]] with a morningstar and a paladin shield. The drop list includes Unyielding Hero's Plate Armor and Shield of Betrayal.",
+      "facts": [
+        "Former Calphade army captain, nicknamed Silver Armor",
+        "Betrayed Marquis Lanford for an unnamed promise from Bastier",
+        "Wields a morningstar and a paladin shield",
+        "Drops Unyielding Hero's Plate Armor and Shield of Betrayal"
+      ],
+      "quests": ["quest:the-unyielding-shields-ch6", "quest:traitor-ch6"],
       "sources": [
-        { "url": "https://crimsondesertgame.wiki.fextralife.com/Cassius_Morten", "title": "Fextralife: Cassius Morten", "accessed": "2026-09-06", "note": "seen via search snippet only" }
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Cassius_Morten", "title": "Fextralife: Cassius Morten", "accessed": "2026-09-06", "note": "seen via search snippet only" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/587251", "title": "Game8: Chapter 6 walkthrough", "accessed": "2026-09-06" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -743,11 +1051,9 @@
       "id": "character:draven-the-crowcaller",
       "type": "character",
       "name": "Draven the Crowcaller",
-      "aliases": ["the Crowcaller"],
-      "role": "Crow Brothers leader, Chapter 5 antagonist",
-      "factions": ["faction:crow-brothers"],
-      "region": "region:pailune",
-      "summary": "Hexe Marie's adopted son who leads the Crow Brothers and abducts White Crow.",
+      "role": "See Draven",
+      "summary": "Draven the Crowcaller is Draven; see that record.",
+      "related": ["character:draven"],
       "sources": [
         { "url": "https://crimsondesertgame.wiki.fextralife.com/Draven_the_Crowcaller", "title": "Fextralife: Draven the Crowcaller", "accessed": "2026-09-06", "note": "seen via search snippet only" }
       ],
@@ -779,8 +1085,15 @@
       "home": "place:demeniss-castle",
       "region": "region:demeniss",
       "summary": "King of Demeniss who lies comatose with no named heir, opening the Caliburn vacuum.",
+      "body": "Edward fell into a coma under circumstances no source spells out and named no heir. That gap is what [[character:gabriel-caliburn]] and [[character:bastier]] both use. The Demeniss Bound stretch, played by [[character:kliff]] and [[character:damiane]], is the investigation into why he will not wake. He is largely offscreen.",
+      "facts": [
+        "King of Demeniss, currently powerless",
+        "Comatose with no named heir",
+        "The Demeniss Bound work looks into the true cause"
+      ],
       "sources": [
-        { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" }
+        { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesert.fandom.com/wiki/Demeniss", "title": "Fandom: Demeniss", "accessed": "2026-09-06", "note": "seen via search snippet only" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -789,13 +1102,20 @@
       "id": "character:ada-marshell",
       "type": "character",
       "name": "Ada Marshell",
-      "role": "Countess of House Marshell",
+      "role": "Countess, head of House Marshell",
       "factions": ["faction:house-marshell"],
       "home": "place:sungrove-manor",
       "region": "region:demeniss",
       "summary": "Countess who funds Bastier from Sungrove Manor as Demeniss's Black Strongbox.",
+      "body": "Ada pays [[character:bastier]]'s bills from [[place:sungrove-manor]] and is written as the Black Strongbox. She puts her own interests first, sometimes past what her station would allow. Her house sits against Azerian and Wells.",
+      "facts": [
+        "Financial backer of Caliburn and Bastier",
+        "Called the Black Strongbox",
+        "Prioritises her own interests, sometimes shockingly so"
+      ],
       "sources": [
-        { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" }
+        { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesert.fandom.com/wiki/House_Marshell", "title": "Fandom: House Marshell", "accessed": "2026-09-06", "note": "seen via search snippet only" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -804,12 +1124,20 @@
       "id": "character:arthur-elemore",
       "type": "character",
       "name": "Arthur Elemore",
-      "role": "Count of House Elemore",
+      "role": "Count, head of House Elemore",
       "factions": ["faction:house-elemore"],
       "region": "region:demeniss",
+      "related": ["character:beatrice-azerian"],
       "summary": "Count of a wealthy Demeniss house, long friends with Azerian, later moved against Bastier.",
+      "body": "Arthur's house has stood with [[faction:house-azerian]] for a long time. After [[character:beatrice-azerian]] vanishes he bends to [[character:bastier]], then the Lunar Judgment chain has him move against the inquisitors. Brookfield Manor, the named seat, has no place record here. Lunar Judgment has no quest record here yet.",
+      "facts": [
+        "Long-standing friend of House Azerian",
+        "Bends to Bastier after Beatrice disappears",
+        "Later turns on the Inquisitors in the Lunar Judgment chain"
+      ],
       "sources": [
-        { "url": "https://crimsondesert.fandom.com/wiki/House_Elemore", "title": "Fandom: House Elemore", "accessed": "2026-09-06", "note": "seen via search snippet only" }
+        { "url": "https://crimsondesert.fandom.com/wiki/House_Elemore", "title": "Fandom: House Elemore", "accessed": "2026-09-06", "note": "seen via search snippet only" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -818,12 +1146,20 @@
       "id": "character:drake-wells",
       "type": "character",
       "name": "Drake Wells",
-      "role": "Duke of southern Demeniss",
+      "role": "Duke of southern Demeniss, head of House Wells",
       "factions": ["faction:house-wells"],
       "region": "region:demeniss",
+      "related": ["character:edward-thorel"],
       "summary": "Duke who holds southern Demeniss for House Thorel and openly opposes Caliburn.",
+      "body": "Drake keeps an openly military house sworn to [[faction:house-thorel]] and fights [[character:gabriel-caliburn]] and [[character:bastier]] in the open. Thornbriar Fortress, the named seat, has no place record here. Chapter 8 suppression work, including [[quest:the-cursed-knight]], is where Kliff meets Wells ground.",
+      "facts": [
+        "Duke of southern Demeniss",
+        "Openly loyal to House Thorel",
+        "Opposes Caliburn and Bastier outright"
+      ],
       "sources": [
-        { "url": "https://crimsondesert.fandom.com/wiki/House_Wells", "title": "Fandom: House Wells", "accessed": "2026-09-06", "note": "seen via search snippet only" }
+        { "url": "https://crimsondesert.fandom.com/wiki/House_Wells", "title": "Fandom: House Wells", "accessed": "2026-09-06", "note": "seen via search snippet only" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -869,6 +1205,449 @@
         { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" }
       ],
       "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:gian",
+      "type": "character",
+      "name": "Gian",
+      "aliases": ["Jian"],
+      "role": "Founder of the Greymanes, deceased",
+      "factions": ["faction:greymanes"],
+      "home": "place:pailune",
+      "region": "region:pailune",
+      "related": ["character:kliff", "character:torstein"],
+      "summary": "Original Greymane captain whose murder in the Black Bear raid starts the plot.",
+      "body": "Gian, also romanized Jian, unified Pailune under the [[faction:greymanes]] and wrote the company's peacekeeping code. He is already dead when the story opens: the Black Bear attack kills him and sets [[character:kliff]] on the road. His sword Wolf's Fang is recovered from his altar in Chapter 7. The biography here is a single synthesized snippet set, so confidence is assumed.",
+      "facts": [
+        "Founder and first leader of the Greymanes",
+        "Assassinated in the Black Bear opening attack",
+        "Wolf's Fang, his sword, is taken by Kliff in Chapter 7"
+      ],
+      "sources": [
+        { "url": "https://crimsondesert.fandom.com/wiki/Greymanes", "title": "Fandom: Greymanes", "accessed": "2026-09-06", "note": "seen via search snippet only" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Greymanes", "title": "Fextralife: Greymanes", "accessed": "2026-09-06" }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:ross",
+      "type": "character",
+      "name": "Ross",
+      "role": "Greymane personnel manager",
+      "companion": true,
+      "factions": ["faction:greymanes"],
+      "home": "place:howling-hill",
+      "region": "region:hernand",
+      "summary": "Camp staff who keeps the Greymane roll at Howling Hill.",
+      "facts": [
+        "Manages Greymane personnel at camp",
+        "Works from Howling Hill once the camp is raised",
+        "Named on the Fextralife Greymane NPC list"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Greymanes", "title": "Fextralife: Greymanes", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:carl",
+      "type": "character",
+      "name": "Carl",
+      "role": "Greymane quartermaster",
+      "companion": true,
+      "factions": ["faction:greymanes"],
+      "home": "place:howling-hill",
+      "region": "region:hernand",
+      "summary": "Camp quartermaster listed among the Greymanes at Howling Hill.",
+      "facts": [
+        "Named as the Greymane quartermaster",
+        "Works from Howling Hill",
+        "No further personal detail was found"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:tranan",
+      "type": "character",
+      "name": "Tranan",
+      "role": "Greymane blacksmith",
+      "companion": true,
+      "factions": ["faction:greymanes"],
+      "home": "place:howling-hill",
+      "region": "region:hernand",
+      "summary": "The smith who runs the Greymane camp's equipment bench.",
+      "body": "Tranan keeps the camp forge at [[place:howling-hill]]. Guides list him as both a Greymane and a vendor; no vendor record exists here yet, so the shop field is omitted.",
+      "facts": [
+        "Runs the camp blacksmith and equipment shop",
+        "Listed on both the NPC and Vendors pages",
+        "Works from Howling Hill"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Vendors", "title": "Fextralife: Vendors", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:ronnie",
+      "type": "character",
+      "name": "Ronnie",
+      "role": "Greymane cook",
+      "companion": true,
+      "factions": ["faction:greymanes"],
+      "home": "place:howling-hill",
+      "region": "region:hernand",
+      "summary": "The cook who runs the Greymane camp's food and provisions bench.",
+      "body": "Ronnie feeds the company at [[place:howling-hill]]. Guides list him as both camp staff and a vendor; no vendor record exists here yet, so the shop field is omitted.",
+      "facts": [
+        "Runs the camp food and provisions shop",
+        "Listed on both the NPC and Vendors pages",
+        "Works from Howling Hill"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Vendors", "title": "Fextralife: Vendors", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:brice",
+      "type": "character",
+      "name": "Brice",
+      "role": "Greymane wagon manager",
+      "companion": true,
+      "factions": ["faction:greymanes"],
+      "home": "place:howling-hill",
+      "region": "region:hernand",
+      "summary": "Camp staff who looks after Greymane wagons at Howling Hill.",
+      "facts": [
+        "Named as the Greymane wagon manager",
+        "Works from Howling Hill",
+        "No further personal detail was found"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:luke",
+      "type": "character",
+      "name": "Luke",
+      "role": "Greymane scout",
+      "companion": true,
+      "factions": ["faction:greymanes"],
+      "home": "place:howling-hill",
+      "region": "region:hernand",
+      "related": ["character:ronald"],
+      "summary": "One of the first two Freeswords to reach Howling Hill during Pioneering.",
+      "facts": [
+        "Greymane scout",
+        "Arrives in Chapter 3 during Pioneering",
+        "Comes in with Ronald as the first pair of Freeswords"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/586592", "title": "Game8: Chapter 3 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:ronald",
+      "type": "character",
+      "name": "Ronald",
+      "role": "Greymane scout",
+      "companion": true,
+      "factions": ["faction:greymanes"],
+      "home": "place:howling-hill",
+      "region": "region:hernand",
+      "related": ["character:luke"],
+      "summary": "The other first Freesword who arrives with Luke during Pioneering.",
+      "facts": [
+        "Greymane scout",
+        "Arrives in Chapter 3 during Pioneering",
+        "Comes in with Luke as the first pair of Freeswords"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/586592", "title": "Game8: Chapter 3 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:silvan",
+      "type": "character",
+      "name": "Silvan",
+      "role": "Greymane combatant",
+      "companion": true,
+      "factions": ["faction:greymanes"],
+      "home": "place:howling-hill",
+      "region": "region:hernand",
+      "summary": "A Greymane fighter listed on the company roster at Howling Hill.",
+      "facts": [
+        "Listed as a Greymane combatant",
+        "Works from Howling Hill",
+        "No further personal detail was found"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:otto",
+      "type": "character",
+      "name": "Otto",
+      "role": "Greymane combatant",
+      "companion": true,
+      "factions": ["faction:greymanes"],
+      "home": "place:howling-hill",
+      "region": "region:hernand",
+      "summary": "A Greymane fighter listed on the company roster at Howling Hill.",
+      "facts": [
+        "Listed as a Greymane combatant",
+        "Works from Howling Hill",
+        "No further personal detail was found"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:aldric",
+      "type": "character",
+      "name": "Aldric",
+      "role": "Greymane scout",
+      "companion": true,
+      "factions": ["faction:greymanes"],
+      "home": "place:howling-hill",
+      "region": "region:hernand",
+      "summary": "A Greymane scout listed on the company roster at Howling Hill.",
+      "facts": [
+        "Listed as a Greymane scout",
+        "Works from Howling Hill",
+        "No further personal detail was found"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:fritz",
+      "type": "character",
+      "name": "Fritz",
+      "role": "Greymane scout",
+      "companion": true,
+      "factions": ["faction:greymanes"],
+      "home": "place:howling-hill",
+      "region": "region:hernand",
+      "summary": "A Greymane scout listed on the company roster at Howling Hill.",
+      "facts": [
+        "Listed as a Greymane scout",
+        "Works from Howling Hill",
+        "No further personal detail was found"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:devan",
+      "type": "character",
+      "name": "Devan",
+      "role": "Greymane combatant",
+      "companion": true,
+      "factions": ["faction:greymanes"],
+      "region": "region:hernand",
+      "summary": "A Greymane fighter listed at more than one Hernand stop, with no single camp named as home.",
+      "body": "Devan is on the company combat roll and is written as turning up in multiple locations. No source read here pins him to one settlement, so home is omitted.",
+      "facts": [
+        "Listed as a Greymane combatant",
+        "Met at multiple locations rather than one camp",
+        "No further personal detail was found"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:pierce",
+      "type": "character",
+      "name": "Pierce",
+      "role": "Greymane combatant",
+      "companion": true,
+      "factions": ["faction:greymanes"],
+      "home": "place:ivynook",
+      "region": "region:hernand",
+      "summary": "A Greymane fighter listed at Ivynook rather than at Howling Hill.",
+      "facts": [
+        "Listed as a Greymane combatant",
+        "Usual location is Ivynook",
+        "No further personal detail was found"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:evelyn",
+      "type": "character",
+      "name": "Evelyn",
+      "role": "Greymane combatant",
+      "companion": true,
+      "factions": ["faction:greymanes"],
+      "home": "place:ivynook",
+      "region": "region:hernand",
+      "summary": "A Greymane fighter listed at Ivynook rather than at Howling Hill.",
+      "facts": [
+        "Listed as a Greymane combatant",
+        "Usual location is Ivynook",
+        "No further personal detail was found"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:giles",
+      "type": "character",
+      "name": "Giles",
+      "role": "Greymane scout, deceased",
+      "factions": ["faction:greymanes"],
+      "home": "place:howling-hill",
+      "region": "region:hernand",
+      "summary": "A Greymane scout already dead when the camp is raised, remembered at the Howling Hill graves.",
+      "facts": [
+        "Listed as a Greymane scout",
+        "Died before or during the story",
+        "Commemorated at the camp graves"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Greymanes", "title": "Fextralife: Greymanes", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:gregor",
+      "type": "character",
+      "name": "Gregor",
+      "aliases": ["the Halberd of Carnage", "Gregor the Halberd of Carnage"],
+      "role": "Bastier loyalist, Fort Ironclad commander",
+      "factions": ["faction:bastiers-inquisitors"],
+      "region": "region:demeniss",
+      "related": ["character:bastier", "character:drake-wells"],
+      "summary": "Bastier's aide sent to Fort Ironclad to keep Duke Wells in check.",
+      "body": "Gregor is a loyal captain of [[character:bastier]] dispatched to Fort Ironclad, which has no place record here. His soldiers take the fort and push toward Thornbriar Fortress. He is the named boss in [[quest:where-the-wind-guides-you]]. The Fort Ironclad posting is a single-source snippet, so confidence is assumed.",
+      "facts": [
+        "Loyal aide of Bastier",
+        "Sent to Fort Ironclad to pressure Duke Wells",
+        "His troops then press toward Thornbriar Fortress"
+      ],
+      "quests": ["quest:where-the-wind-guides-you"],
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/588901", "title": "Game8: Chapter 8 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:fortain",
+      "type": "character",
+      "name": "Fortain",
+      "aliases": ["the Cursed Knight", "Fortain the Cursed Knight"],
+      "role": "Cursed knight, Wells Estate rebel",
+      "factions": ["faction:bastiers-inquisitors"],
+      "region": "region:demeniss",
+      "related": ["character:drake-wells", "character:bastier"],
+      "summary": "Giant warrior who turned on Duke Wells after Bastier's ideology took him, fought with two spirit allies.",
+      "body": "Fortain once stood with [[faction:house-wells]] and now fights for [[character:bastier]]. He is a giant possessed by cursed warrior spirits and led a rebellion against [[character:drake-wells]]. The fight in [[quest:the-cursed-knight]] uses a massive shield plus two spirits (axe and crossbow) that cannot be killed directly. Thornbriar Fortress, the named ground, has no place record here.",
+      "facts": [
+        "Former House Wells knight swayed by Bastier",
+        "Fights with a huge shield and two independent spirit allies",
+        "Boss of The Cursed Knight"
+      ],
+      "quests": ["quest:the-cursed-knight"],
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/588901", "title": "Game8: Chapter 8 walkthrough", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Fortain_the_Cursed_Knight", "title": "Fextralife: Fortain the Cursed Knight", "accessed": "2026-09-06", "note": "seen via search snippet only" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:draven",
+      "type": "character",
+      "name": "Draven",
+      "aliases": ["The Crowcaller", "Draven the Crowcaller"],
+      "role": "Crow Brothers leader, Chapter 5 antagonist",
+      "factions": ["faction:crow-brothers"],
+      "region": "region:pailune",
+      "related": ["enemy:crowcaller", "character:hexe-marie"],
+      "summary": "Hexe Marie's adopted son who leads the Crow Brothers, abducts White Crow, and is hunted across Chapter 5.",
+      "body": "Draven is a feathered fighter who commands crow flocks and dual curved blades. In Chapter 5 he hits the Axiom Archive, takes White Crow, and is chased through Demeniss and the Abyss. He wants the souls sealed at Heaven's Gate loosed so he can rule by fear. The enemy record [[enemy:crowcaller]] is the same hunt's combat entry, kept separate. He has no fixed home.",
+      "facts": [
+        "Adopted son of Hexe Marie",
+        "Orchestrates the Axiom Archive raid and the taking of White Crow",
+        "Wields dual curved blades and commands crow flocks",
+        "Fought as a multi-encounter boss"
+      ],
+      "quests": ["quest:black-and-white", "quest:crowcaller", "quest:bloodwind", "quest:toward-the-nest"],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Draven_the_Crowcaller", "title": "Fextralife: Draven the Crowcaller", "accessed": "2026-09-06", "note": "seen via search snippet only" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/586937", "title": "Game8: Chapter 5 walkthrough", "accessed": "2026-09-06" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:walter-lanford",
+      "type": "character",
+      "name": "Walter Lanford",
+      "role": "Adoptive son of Stefan Lanford",
+      "factions": ["faction:house-lanford"],
+      "home": "place:calphade-castle",
+      "region": "region:hernand",
+      "related": ["character:stefan-lanford"],
+      "summary": "Stefan Lanford's only named family: the adoptive son at Calphade.",
+      "body": "Walter is the one relative [[character:stefan-lanford]] is given. The fact comes from a single search snippet on Stefan's page, so confidence is assumed. No source read here gives Walter his own quest or weapon.",
+      "facts": [
+        "Adoptive son of Stefan Lanford",
+        "Stefan's only known family",
+        "Based at Calphade"
+      ],
+      "sources": [
+        { "url": "https://crimsondesert.fandom.com/wiki/House_Lanford", "title": "Fandom: House Lanford", "accessed": "2026-09-06", "note": "seen via search snippet only" }
+      ],
+      "confidence": "assumed",
       "gameVersion": "2.01.00"
     }
   ]
