@@ -108,12 +108,21 @@
       "id": "character:rhett",
       "type": "character",
       "name": "Rhett",
-      "role": "Armour merchant in Hernand",
+      "role": "Blacksmith in the City of Hernand",
       "vendor": "vendor:rhett-hernand",
       "home": "place:hernand-castle",
-      "summary": "Hernand's armour merchant; the first place to buy a full plate set.",
+      "region": "region:hernand",
+      "summary": "The City of Hernand's armour merchant and the first bench that sells a full plate set.",
+      "body": "Rhett keeps the equipment shop inside [[place:hernand-castle]]. His stall is the one named for starter plate, including the Canta set. Guides list him as both a blacksmith and an armour merchant; the shop record is [[vendor:rhett-hernand]].",
+      "facts": [
+        "Runs the City of Hernand equipment and armour bench",
+        "Sells the Canta Plate starter set",
+        "Listed on the Fextralife NPC and Vendors pages"
+      ],
       "sources": [
-        { "url": "https://gamingbolt.com/crimson-desert-guide-the-best-armor-sets-and-how-to-get-them", "title": "GamingBolt: best armor sets", "accessed": "2026-09-05" }
+        { "url": "https://gamingbolt.com/crimson-desert-guide-the-best-armor-sets-and-how-to-get-them", "title": "GamingBolt: best armor sets", "accessed": "2026-09-05" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Vendors", "title": "Fextralife: Vendors", "accessed": "2026-09-06" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -157,11 +166,15 @@
       "id": "character:woman-in-white",
       "type": "character",
       "name": "Woman in White",
-      "role": "Abyss figure",
-      "region": "region:hernand",
-      "summary": "A figure met in the Abyss at the close of Chapter 1, before the return to Hernand.",
+      "role": "Pointer to White Crow",
+      "region": "region:abyss",
+      "related": ["character:white-crow"],
+      "summary": "The woman in white is White Crow; see that record.",
+      "body": "Woman in White is the Chapter 1 quest title for the first meeting with [[character:white-crow]], not a second person. [[quest:woman-in-white]] still points here so older steps keep resolving.",
+      "quests": ["quest:woman-in-white"],
       "sources": [
-        { "url": "https://game8.co/games/Crimson-Desert/archives/585170", "title": "Game8: Chapter 1 walkthrough", "accessed": "2026-09-06" }
+        { "url": "https://game8.co/games/Crimson-Desert/archives/585170", "title": "Game8: Chapter 1 walkthrough", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Woman_in_White", "title": "Fextralife: Woman in White", "accessed": "2026-09-06", "note": "seen via search snippet only" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -247,12 +260,22 @@
       "id": "character:shakatu",
       "type": "character",
       "name": "Shakatu",
-      "role": "Goldleaf trade ally",
+      "role": "Trademaster of the Goldleaf Merchant Guild",
       "factions": ["faction:goldleaf-merchant-guild"],
+      "home": "place:goldleaf-merchant-guild",
       "region": "region:hernand",
-      "summary": "The Goldleaf contact who becomes a trade ally after Rebellion of Revolution.",
+      "related": ["character:kailok"],
+      "summary": "Goldleaf's trademaster: he runs the ledgers under Kailok and becomes a trade ally after the guild revolt.",
+      "body": "Shakatu handles day-to-day Goldleaf trade for [[character:kailok]] from [[place:goldleaf-merchant-guild]] and other guild posts. [[quest:rebellion-of-revolution]] is the Chapter 2 talk that leaves him as a trade ally. He is a guild officer, not the Hornsplitter's street muscle.",
+      "facts": [
+        "Trademaster under Kailok, the Hornsplitter",
+        "Works from Goldleaf posts around Hernand",
+        "Becomes a trade ally after Rebellion of Revolution"
+      ],
+      "quests": ["quest:rebellion-of-revolution"],
       "sources": [
-        { "url": "https://game8.co/games/Crimson-Desert/archives/586591", "title": "Game8: Chapter 2 walkthrough", "accessed": "2026-09-06" }
+        { "url": "https://game8.co/games/Crimson-Desert/archives/586591", "title": "Game8: Chapter 2 walkthrough", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -359,12 +382,21 @@
       "id": "character:grimnir",
       "type": "character",
       "name": "Grimnir",
-      "role": "Kilnden Workshop contact",
+      "role": "Artisan of the Kilnden Workshop",
       "home": "place:kilnden-workshop",
       "region": "region:hernand",
-      "summary": "The workshop contact who hands over the iron pot in Chapter 4.",
+      "related": ["character:grundir"],
+      "summary": "The Kilnden Workshop craftsman who hands Kliff the iron pot in Chapter 4.",
+      "body": "Grimnir works the bench at [[place:kilnden-workshop]] and is the giver of [[quest:the-mysterious-pot]]. He is not [[character:grundir]], the Scholastone dean; the names sit close on NPC lists. [[character:harvik]] and [[character:irkyn]] are named as assistants at the same shop.",
+      "facts": [
+        "Artisan at the Kilnden Workshop",
+        "Hands over the iron pot in Chapter 4",
+        "Distinct from Grundir, the Scholastone dean"
+      ],
+      "quests": ["quest:the-mysterious-pot"],
       "sources": [
-        { "url": "https://game8.co/games/Crimson-Desert/archives/586747", "title": "Game8: Chapter 4 walkthrough", "accessed": "2026-09-06" }
+        { "url": "https://game8.co/games/Crimson-Desert/archives/586747", "title": "Game8: Chapter 4 walkthrough", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -398,13 +430,21 @@
       "id": "character:octavius",
       "type": "character",
       "name": "Octavius",
-      "role": "Scholastone experimenter",
+      "role": "Scholastone scholar",
       "factions": ["faction:scholastone-institute"],
       "home": "place:scholastone-institute",
       "region": "region:hernand",
-      "summary": "A Scholastone experimenter whose work Kliff helps during On the Right Path.",
+      "summary": "A Scholastone scholar whose experiment Kliff joins during On the Right Path.",
+      "body": "Octavius studies at [[place:scholastone-institute]] under [[character:grundir]]. [[quest:on-the-right-path]] is the Chapter 4 job that puts Kliff on his bench. NPC lists name him only as a scholar; no further personal history was found.",
+      "facts": [
+        "Scholar of the Scholastone Institute",
+        "Gives the experiment work in On the Right Path",
+        "Based at the Institute in Hernand"
+      ],
+      "quests": ["quest:on-the-right-path"],
       "sources": [
-        { "url": "https://game8.co/games/Crimson-Desert/archives/586747", "title": "Game8: Chapter 4 walkthrough", "accessed": "2026-09-06" }
+        { "url": "https://game8.co/games/Crimson-Desert/archives/586747", "title": "Game8: Chapter 4 walkthrough", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -427,11 +467,22 @@
       "id": "character:alustin",
       "type": "character",
       "name": "Alustin",
-      "role": "Letter writer",
-      "region": "region:hernand",
-      "summary": "The writer of the letter that points Kliff toward Scholastone in Chapter 4.",
+      "role": "Overseer of the Axiom Archive",
+      "home": "place:axiom-archive",
+      "region": "region:abyss",
+      "related": ["character:white-crow"],
+      "summary": "An ancient Abyss entity who keeps the Axiom Archive and asks Kliff to help hold the two worlds in balance.",
+      "body": "Alustin has stood since ancient times beside [[character:white-crow]]. He oversees [[place:axiom-archive]] and asks [[character:kliff]] to help keep the Abyss and the ground from tipping. The same name writes the Chapter 4 letter in [[quest:the-words-of-alustin]] that sends Kliff to Scholastone; that letter is kept as a fact of this one record.",
+      "facts": [
+        "Transcendent entity paired with White Crow since ancient times",
+        "Oversees the Axiom Archive in the Abyss",
+        "Asks Kliff to help maintain balance between the Abyss and the ground",
+        "Author of the Chapter 4 letter that points at Scholastone"
+      ],
+      "quests": ["quest:the-words-of-alustin"],
       "sources": [
-        { "url": "https://game8.co/games/Crimson-Desert/archives/586747", "title": "Game8: Chapter 4 walkthrough", "accessed": "2026-09-06" }
+        { "url": "https://game8.co/games/Crimson-Desert/archives/586747", "title": "Game8: Chapter 4 walkthrough", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Alustin", "title": "Fextralife: Alustin", "accessed": "2026-09-06", "note": "seen via search snippet only" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -462,11 +513,24 @@
       "id": "character:white-crow",
       "type": "character",
       "name": "White Crow",
-      "role": "Abduction victim",
-      "region": "region:hernand",
-      "summary": "The captive the Chapter 5 hunt keeps circling back to while Crowcaller is still at large.",
+      "aliases": ["the Witch", "Woman in White"],
+      "role": "Guardian of the Abyss",
+      "region": "region:abyss",
+      "related": ["character:alustin", "character:draven", "character:woman-in-white"],
+      "summary": "Abyss guardian who meets Kliff in Chapter 1, grants Flight, and is later taken by Draven.",
+      "body": "White Crow is one of four beings who keep the Abyss in balance, alongside [[character:alustin]]. She introduces herself as guardian of the Abyss and cosmic order on the Ethereal Pathway, which has no place record here, during [[quest:woman-in-white]]. She grants [[character:kliff]] Flight. [[character:draven]] takes her in Chapter 5 during [[quest:black-and-white]]; the hunt later frees her. The pointer record [[character:woman-in-white]] is the quest title, not a second person.",
+      "facts": [
+        "One of four beings who maintain the Abyss's balance",
+        "First met in the Chapter 1 quest Woman in White",
+        "Grants Kliff the Flight ability",
+        "Kidnapped by Draven the Crowcaller in Chapter 5, later rescued"
+      ],
+      "quests": ["quest:woman-in-white", "quest:black-and-white"],
       "sources": [
-        { "url": "https://game8.co/games/Crimson-Desert/archives/586937", "title": "Game8: Chapter 5 walkthrough", "accessed": "2026-09-06" }
+        { "url": "https://game8.co/games/Crimson-Desert/archives/586937", "title": "Game8: Chapter 5 walkthrough", "accessed": "2026-09-06" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/585170", "title": "Game8: Chapter 1 walkthrough", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/White_Crow", "title": "Fextralife: White Crow", "accessed": "2026-09-06", "note": "seen via search snippet only" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Woman_in_White", "title": "Fextralife: Woman in White", "accessed": "2026-09-06", "note": "seen via search snippet only" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -773,12 +837,23 @@
     {
       "id": "character:witch",
       "type": "character",
-      "name": "Witch",
-      "role": "Desert trial guide",
+      "name": "Areciel",
+      "aliases": ["The Witch", "Desert Witch"],
+      "role": "Desert Witch of the Urdavah trials",
       "region": "region:crimson-desert",
-      "summary": "The woman who calls Kliff into the Crimson Desert and points him at the trials of Chapter 9.",
+      "related": ["place:urdavah"],
+      "summary": "The Desert Witch near Urdavah who calls Kliff into the Crimson Desert and asks him to cleanse the last three Sanctums.",
+      "body": "Areciel lives in a cliff hideout near [[place:urdavah]]; a beggar boy at the Tommaso Fork Posthouse, which has no place record here, is the one who points the way. She calls [[character:kliff]] into the desert and sets the Chapter 9 trials. Her line is the last of the four regional Witch quests and opens only after the other three are done and their Witch Tokens are in hand. She asks the player to cleanse the last three Sanctums.",
+      "facts": [
+        "Also called the Desert Witch and the Witch of the desert trials",
+        "Hideout is a cliff near Urdavah",
+        "Location is given by a beggar boy near the Tommaso Fork Posthouse",
+        "Last of the four Witch questlines; needs the other three Witch Tokens first"
+      ],
+      "quests": ["quest:the-calling", "quest:an-unknown-voice"],
       "sources": [
-        { "url": "https://game8.co/games/Crimson-Desert/archives/589366", "title": "Game8: Chapter 9 walkthrough", "accessed": "2026-09-06" }
+        { "url": "https://game8.co/games/Crimson-Desert/archives/589366", "title": "Game8: Chapter 9 walkthrough", "accessed": "2026-09-06" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/591742", "title": "Game8: witch locations", "accessed": "2026-09-06", "note": "seen via search snippet only" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -832,13 +907,21 @@
       "id": "character:valgash",
       "type": "character",
       "name": "Valgash",
-      "role": "Weaponsmith",
+      "role": "Leader of the Ironflame Orcs",
       "factions": ["faction:ironflame-orcs"],
       "home": "place:gorthak-ironworks",
-      "region": "region:demeniss",
-      "summary": "The ironworks smith followed in Chapter 10, then spoken to again after Marni's Clockwork Mantis falls.",
+      "region": "region:delesyia",
+      "summary": "Ironflame captain at Gorthak: followed through the ironworks in Chapter 10, then spoken to again after the Clockwork Mantis falls.",
+      "body": "Valgash leads [[faction:ironflame-orcs]], written as the strongest force in Gorthak, from [[place:gorthak-ironworks]]. He is the giver of [[quest:master-of-the-ironworks]] and the man Kliff reports to in [[quest:lingering-shadow]] after Marni's Clockwork Mantis is down. Gorthak is a Delesyia sub-area on the Demeniss border; this record uses the top-level Delesyia id.",
+      "facts": [
+        "Leader of the Ironflame Orcs",
+        "Based at the Gorthak ironworks",
+        "Followed through the works in Chapter 10, then spoken to after the mantis fight"
+      ],
+      "quests": ["quest:master-of-the-ironworks", "quest:lingering-shadow"],
       "sources": [
-        { "url": "https://game8.co/games/Crimson-Desert/archives/590081", "title": "Game8: Chapter 10 walkthrough", "accessed": "2026-09-06" }
+        { "url": "https://game8.co/games/Crimson-Desert/archives/590081", "title": "Game8: Chapter 10 walkthrough", "accessed": "2026-09-06" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -860,13 +943,25 @@
       "id": "character:marni",
       "type": "character",
       "name": "Marni",
-      "role": "Delesyia figure, laboratorium namesake",
+      "aliases": ["Genius Engineer"],
+      "role": "Genius Engineer of Delesyia",
       "factions": ["faction:marni", "faction:society-of-progress"],
       "home": "place:marnis-laboratorium",
       "region": "region:delesyia",
-      "summary": "A living person in Delesyia, not only a name on machines; met again at the castle gate during the epilogue.",
+      "related": ["character:hall"],
+      "summary": "Living engineer who drives Delesyia's machine-utopia, later met at the castle gate; her cloned mind became H.A.L.L.",
+      "body": "Marni is a living person in Delesyia, not only a name on machines. She leads both [[faction:marni]] and [[faction:society-of-progress]] from [[place:marnis-laboratorium]] and pushes a technological-utopia project for the city. A copy of her mind, made to study Abyss power, broke away as [[character:hall]] and later impersonates her. She is spoken to again at the castle gate during [[quest:evolving-city]].",
+      "facts": [
+        "Called the Genius Engineer; leads Delesyia's technological development",
+        "Heads the Society of Progress as well as her own circle",
+        "Her cloned consciousness became the hostile AI H.A.L.L.",
+        "Met again at Delesyia Castle Gate in the epilogue"
+      ],
+      "quests": ["quest:evolving-city"],
       "sources": [
-        { "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/", "title": "VULKK: main story walkthrough", "accessed": "2026-09-06" }
+        { "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/", "title": "VULKK: main story walkthrough", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Factions", "title": "Fextralife: Factions", "accessed": "2026-09-06" },
+        { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
@@ -1278,7 +1373,7 @@
       "id": "character:tranan",
       "type": "character",
       "name": "Tranan",
-      "role": "Greymane blacksmith",
+      "role": "Blacksmith at Greymane Camp",
       "companion": true,
       "factions": ["faction:greymanes"],
       "home": "place:howling-hill",
@@ -1301,7 +1396,7 @@
       "id": "character:ronnie",
       "type": "character",
       "name": "Ronnie",
-      "role": "Greymane cook",
+      "role": "Provisioner at Greymane Camp",
       "companion": true,
       "factions": ["faction:greymanes"],
       "home": "place:howling-hill",
@@ -1648,6 +1743,1080 @@
         { "url": "https://crimsondesert.fandom.com/wiki/House_Lanford", "title": "Fandom: House Lanford", "accessed": "2026-09-06", "note": "seen via search snippet only" }
       ],
       "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:rulupee",
+      "type": "character",
+      "name": "Rulupee",
+      "role": "Wandering cat lover",
+      "home": "place:hernand-castle",
+      "region": "region:hernand",
+      "related": ["place:lioncrest-watchtower"],
+      "summary": "A likeable Hernand wanderer who keeps cats, shows a streak of mystic power, and gifts pendants.",
+      "body": "Rulupee turns up in the City of Hernand and at [[place:lioncrest-watchtower]]. NPC lists call this wanderer a cat lover with mystic power. The character is not tied to a house or a main-story beat; raising Trust is the reason to keep this name on a route, and it is the one named example for pendant gifts.",
+      "facts": [
+        "Met in the City of Hernand and at Lioncrest Watchtower",
+        "Has mystic powers on the Fextralife NPC list",
+        "Gifts pendants; a trackable non-critical NPC"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:elowen",
+      "type": "character",
+      "name": "Elowen",
+      "aliases": ["Witch of Wisdom"],
+      "role": "Alchemist at the Witch's House",
+      "region": "region:hernand",
+      "related": ["character:witch"],
+      "summary": "Hernand's Witch of Wisdom: an alchemist at the Witch's House who handles Abyss Gear work.",
+      "body": "Elowen keeps the Witch's House in Hernand, which has no place record here. This is the region's Witch NPC, distinct from [[character:witch]] in the desert. Guides also list Elowen as a vendor for alchemy and Abyss Gear services; no vendor record exists here yet, so the shop field is omitted.",
+      "facts": [
+        "Called the Witch of Wisdom",
+        "Works from the Witch's House in Hernand",
+        "Offers Abyss Gear-related services"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Vendors", "title": "Fextralife: Vendors", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:patrigio",
+      "type": "character",
+      "name": "Patrigio",
+      "role": "Wandering peddler in Duskwood",
+      "region": "region:hernand",
+      "summary": "A renowned travelling merchant who hawks goods in Duskwood rather than from a city stall.",
+      "body": "Patrigio is a peddler on the move, usually named in Duskwood, which has no place record here. He is a vendor without a fixed shop; no vendor record exists here yet, so the shop field is omitted.",
+      "facts": [
+        "Called a renowned peddler",
+        "Travels rather than keeping a city stall",
+        "Usual ground is Duskwood in Hernand"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Vendors", "title": "Fextralife: Vendors", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:bilwise",
+      "type": "character",
+      "name": "Bilwise",
+      "role": "Eccentric shai in the Meandering Hills",
+      "region": "region:hernand",
+      "summary": "A shai with an eccentric manner, found in the Meandering Hills and little else on the lists.",
+      "body": "Bilwise is named only as an eccentric shai in the Meandering Hills, which has no place record here. No source read here gives a quest, a shop, or a first-met chapter.",
+      "facts": [
+        "Shai NPC with an eccentric personality",
+        "Usual ground is the Meandering Hills",
+        "No further personal detail was found"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:simon-de-montfort",
+      "type": "character",
+      "name": "Simon de Montfort",
+      "role": "Wanted fugitive",
+      "region": "region:hernand",
+      "summary": "A Hernand bounty target wanted for taking honey from an apiary.",
+      "facts": [
+        "Wanted for stealing honey from an apiary",
+        "Hernand bounty target",
+        "Personal page was seen only as a search snippet"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Simon_de_Montfort", "title": "Fextralife: Simon de Montfort", "accessed": "2026-09-06", "note": "seen via search snippet only" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:blix",
+      "type": "character",
+      "name": "Blix",
+      "role": "Wanted fugitive",
+      "region": "region:hernand",
+      "summary": "A Hernand bounty target wanted for looting state-owned ruins without leave.",
+      "body": "Blix is posted as a fugitive along the Nas Riverside, which has no place record here. The charge is unauthorized looting of ruins the state claims.",
+      "facts": [
+        "Wanted for unauthorized looting of state-owned ruins",
+        "Usual ground is the Nas Riverside",
+        "Hernand bounty target"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Blix", "title": "Fextralife: Blix", "accessed": "2026-09-06", "note": "seen via search snippet only" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:jeffrey",
+      "type": "character",
+      "name": "Jeffrey",
+      "role": "Wanted fugitive",
+      "home": "place:hernand-castle",
+      "region": "region:hernand",
+      "summary": "A theft bounty posted on the streets of the City of Hernand.",
+      "facts": [
+        "Wanted for theft",
+        "Usual ground is the city streets of Hernand",
+        "Hernand bounty target"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:billy",
+      "type": "character",
+      "name": "Billy",
+      "role": "Wanted fugitive",
+      "home": "place:hernand-tavern",
+      "region": "region:hernand",
+      "summary": "A pickpocket bounty posted around the Hernand inn.",
+      "facts": [
+        "Wanted for pickpocketing",
+        "Usual ground is the Hernand Inn area",
+        "Hernand bounty target"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:bianca",
+      "type": "character",
+      "name": "Bianca",
+      "role": "Wanted fugitive",
+      "home": "place:hernand-church",
+      "region": "region:hernand",
+      "summary": "A murder bounty posted around the Church of Hernand.",
+      "facts": [
+        "Wanted for murder",
+        "Usual ground is the Church of Hernand area",
+        "Hernand bounty target"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:salvatore",
+      "type": "character",
+      "name": "Salvatore",
+      "role": "Wanted fugitive",
+      "region": "region:hernand",
+      "summary": "A murder bounty posted in Sunset Valley.",
+      "body": "Salvatore is a Hernand fugitive wanted for murder. Lists place him in Sunset Valley, which has no place record here.",
+      "facts": [
+        "Wanted for murder",
+        "Usual ground is Sunset Valley",
+        "Hernand bounty target"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:alessio",
+      "type": "character",
+      "name": "Alessio",
+      "role": "Wanted fugitive",
+      "region": "region:hernand",
+      "summary": "A theft bounty posted in the Greenfield Highlands.",
+      "body": "Alessio is a Hernand fugitive wanted for theft. Lists place him in the Greenfield Highlands; that stretch has no settlement record used as home here.",
+      "facts": [
+        "Wanted for theft",
+        "Usual ground is the Greenfield Highlands",
+        "Hernand bounty target"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:warren",
+      "type": "character",
+      "name": "Warren",
+      "role": "Wanted fugitive",
+      "home": "place:pororin",
+      "region": "region:hernand",
+      "summary": "A drug-manufacturing bounty posted around Pororin.",
+      "facts": [
+        "Wanted for drug manufacturing",
+        "Usual ground is Pororin",
+        "Hernand bounty target"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:tina",
+      "type": "character",
+      "name": "Tina",
+      "role": "Tailor in the City of Hernand",
+      "home": "place:hernand-castle",
+      "region": "region:hernand",
+      "summary": "The tailor who keeps a clothing bench inside the City of Hernand.",
+      "facts": [
+        "Runs the tailor shop in the City of Hernand",
+        "Listed on the Fextralife NPC and Vendors pages"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Vendors", "title": "Fextralife: Vendors", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:alden",
+      "type": "character",
+      "name": "Alden",
+      "role": "Provisioner in the City of Hernand",
+      "home": "place:hernand-castle",
+      "region": "region:hernand",
+      "summary": "The general-goods merchant who stocks everyday supplies in the City of Hernand.",
+      "facts": [
+        "Runs a general goods and provisioner stall in the City of Hernand",
+        "Listed on the Fextralife NPC and Vendors pages"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Vendors", "title": "Fextralife: Vendors", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:bran",
+      "type": "character",
+      "name": "Bran",
+      "role": "Tanner in the City of Hernand",
+      "home": "place:hernand-castle",
+      "region": "region:hernand",
+      "summary": "The tanner who works hides inside the City of Hernand.",
+      "facts": [
+        "Runs the tannery in the City of Hernand",
+        "Listed on the Fextralife NPC and Vendors pages"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Vendors", "title": "Fextralife: Vendors", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:delkin",
+      "type": "character",
+      "name": "Delkin",
+      "role": "Grocer in the City of Hernand",
+      "home": "place:hernand-castle",
+      "region": "region:hernand",
+      "summary": "The grocer who sells foodstuffs in the City of Hernand.",
+      "facts": [
+        "Runs the grocery stall in the City of Hernand",
+        "Listed on the Fextralife NPC and Vendors pages"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Vendors", "title": "Fextralife: Vendors", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:renee",
+      "type": "character",
+      "name": "Renee",
+      "role": "Butcher in the City of Hernand",
+      "home": "place:hernand-castle",
+      "region": "region:hernand",
+      "summary": "The butcher who sells meat in the City of Hernand.",
+      "facts": [
+        "Runs the butcher stall in the City of Hernand",
+        "Listed on the Fextralife NPC and Vendors pages"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Vendors", "title": "Fextralife: Vendors", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:dahlia",
+      "type": "character",
+      "name": "Dahlia",
+      "role": "Innkeeper in the City of Hernand",
+      "home": "place:hernand-castle",
+      "region": "region:hernand",
+      "summary": "The innkeeper who keeps rooms and a tap in the City of Hernand.",
+      "facts": [
+        "Runs the inn in the City of Hernand",
+        "Listed on the Fextralife NPC and Vendors pages"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Vendors", "title": "Fextralife: Vendors", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:bentley",
+      "type": "character",
+      "name": "Bentley",
+      "role": "Royal Trading Post manager in the City of Hernand",
+      "home": "place:hernand-castle",
+      "region": "region:hernand",
+      "summary": "The clerk who runs the Royal Trading Post desk in the City of Hernand.",
+      "facts": [
+        "Manages the Royal Trading Post in the City of Hernand",
+        "Listed on the Fextralife NPC and Vendors pages"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Vendors", "title": "Fextralife: Vendors", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:annabella",
+      "type": "character",
+      "name": "Annabella",
+      "role": "Saddler in the City of Hernand",
+      "home": "place:hernand-castle",
+      "region": "region:hernand",
+      "summary": "The saddler who outfits mounts in the City of Hernand.",
+      "facts": [
+        "Runs the saddlery in the City of Hernand",
+        "Listed on the Fextralife NPC and Vendors pages"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Vendors", "title": "Fextralife: Vendors", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:merton",
+      "type": "character",
+      "name": "Merton",
+      "role": "Stablekeep in the City of Hernand",
+      "home": "place:hernand-castle",
+      "region": "region:hernand",
+      "summary": "The stablekeep who looks after horses in the City of Hernand.",
+      "facts": [
+        "Runs the stable in the City of Hernand",
+        "Listed on the Fextralife NPC and Vendors pages"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Vendors", "title": "Fextralife: Vendors", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:haldwin",
+      "type": "character",
+      "name": "Haldwin",
+      "role": "Contribution Shop manager at Hernand Castle",
+      "home": "place:hernand-castle",
+      "region": "region:hernand",
+      "summary": "The clerk who spends Hernand Contribution Points at the castle shop.",
+      "facts": [
+        "Manages Hernand's Contribution Shop",
+        "Works from Hernand Castle",
+        "Listed on the Fextralife NPC and Vendors pages"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Vendors", "title": "Fextralife: Vendors", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:alfred",
+      "type": "character",
+      "name": "Alfred",
+      "role": "Priest at the Church of Hernand",
+      "home": "place:hernand-church",
+      "region": "region:hernand",
+      "summary": "The priest who keeps the confessional at the Church of Hernand.",
+      "facts": [
+        "Priest at the Church of Hernand",
+        "Runs the confessional there",
+        "Named on the Fextralife NPC list"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:edmond",
+      "type": "character",
+      "name": "Edmond",
+      "role": "Livestock black-market fence at Hernand Farmhouse",
+      "region": "region:hernand",
+      "summary": "A fence who moves livestock under the table at the Hernand Farmhouse.",
+      "body": "Edmond works the livestock black market at the Hernand Farmhouse, which has no place record here. Guides list him as a vendor; no vendor record exists here yet, so the shop field is omitted.",
+      "facts": [
+        "Livestock black-market fence",
+        "Usual ground is the Hernand Farmhouse"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Vendors", "title": "Fextralife: Vendors", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:grimrak",
+      "type": "character",
+      "name": "Grimrak",
+      "role": "Back-alley merchant at Hernand Farmhouse",
+      "region": "region:hernand",
+      "summary": "A back-alley trader working out of the Hernand Farmhouse.",
+      "body": "Grimrak keeps a quiet stall at the Hernand Farmhouse, which has no place record here. Guides list him as a vendor; no vendor record exists here yet, so the shop field is omitted.",
+      "facts": [
+        "Back-alley merchant",
+        "Usual ground is the Hernand Farmhouse"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Vendors", "title": "Fextralife: Vendors", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:theoric",
+      "type": "character",
+      "name": "Theoric",
+      "role": "Dyer at Hernand Farmhouse",
+      "region": "region:hernand",
+      "summary": "The dyer who colours cloth at the Hernand Farmhouse dyehouse.",
+      "body": "Theoric works the dyehouse tied to the Hernand Farmhouse, which has no place record here. Guides list him as a vendor; no vendor record exists here yet, so the shop field is omitted.",
+      "facts": [
+        "Dyer at the Hernand Farmhouse dyehouse",
+        "Listed on the Fextralife NPC and Vendors pages"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Vendors", "title": "Fextralife: Vendors", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:groks",
+      "type": "character",
+      "name": "Groks",
+      "role": "Black-market trader at the Goldleaf Tradepost",
+      "factions": ["faction:goldleaf-merchant-guild"],
+      "home": "place:goldleaf-merchant-guild",
+      "region": "region:hernand",
+      "summary": "A Goldleaf black-market trader working the guild tradepost in Hernand.",
+      "facts": [
+        "Handles black-market trade at the Goldleaf Tradepost",
+        "Listed on the Fextralife NPC and Vendors pages"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Vendors", "title": "Fextralife: Vendors", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:prox",
+      "type": "character",
+      "name": "Prox",
+      "role": "Black-market trader at the Goldleaf Trading Post",
+      "factions": ["faction:goldleaf-merchant-guild"],
+      "home": "place:goldleaf-merchant-guild",
+      "region": "region:hernand",
+      "summary": "A Goldleaf black-market trader at the guild trading post in Hernand.",
+      "facts": [
+        "Handles black-market trade at the Goldleaf Trading Post",
+        "Listed on the Fextralife NPC and Vendors pages"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Vendors", "title": "Fextralife: Vendors", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:serge",
+      "type": "character",
+      "name": "Serge",
+      "role": "Black-market trader at the Goldleaf Trading Post",
+      "factions": ["faction:goldleaf-merchant-guild"],
+      "home": "place:goldleaf-merchant-guild",
+      "region": "region:hernand",
+      "summary": "Another Goldleaf black-market trader sharing the guild trading post with Prox.",
+      "facts": [
+        "Handles black-market trade at the Goldleaf Trading Post",
+        "Listed on the Fextralife NPC and Vendors pages"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Vendors", "title": "Fextralife: Vendors", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:darroch",
+      "type": "character",
+      "name": "Darroch",
+      "role": "Black-market merchant at Oakenshield Manor",
+      "home": "place:serkis-estate",
+      "region": "region:hernand",
+      "summary": "A black-market merchant working out of Oakenshield Manor at the Serkis estate.",
+      "facts": [
+        "Black-market merchant at Oakenshield Manor",
+        "Named on the Fextralife NPC list"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:bruna",
+      "type": "character",
+      "name": "Bruna",
+      "role": "Saddler at Equinsher Saddlery",
+      "region": "region:hernand",
+      "summary": "The saddler who outfits mounts at Equinsher Saddlery.",
+      "body": "Bruna keeps the saddle bench at Equinsher Saddlery, which has no place record here. Guides list her as a vendor; no vendor record exists here yet, so the shop field is omitted.",
+      "facts": [
+        "Saddler at Equinsher Saddlery",
+        "Listed on the Fextralife NPC and Vendors pages"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Vendors", "title": "Fextralife: Vendors", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:grania",
+      "type": "character",
+      "name": "Grania",
+      "role": "Innkeeper in Kharonso",
+      "region": "region:hernand",
+      "summary": "The innkeeper who keeps rooms in the hidden troll village of Kharonso.",
+      "body": "Grania runs the inn at Kharonso. No Kharonso place record exists here yet, so home is omitted.",
+      "facts": [
+        "Innkeeper in Kharonso",
+        "Listed on the Fextralife NPC and Vendors pages"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Vendors", "title": "Fextralife: Vendors", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:nork",
+      "type": "character",
+      "name": "Nork",
+      "role": "Equipment vendor in Kharonso",
+      "region": "region:hernand",
+      "summary": "The equipment seller in the hidden troll village of Kharonso.",
+      "body": "Nork stocks gear in Kharonso. No Kharonso place record exists here yet, so home is omitted.",
+      "facts": [
+        "Equipment vendor in Kharonso",
+        "Named on the Fextralife NPC list"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:milford",
+      "type": "character",
+      "name": "Milford",
+      "role": "Wagon black-market fence at Anvil Riverside Terrace",
+      "region": "region:hernand",
+      "summary": "A fence who moves wagons under the table at Anvil Riverside Terrace.",
+      "body": "Milford works the wagon black market at Anvil Riverside Terrace, which has no place record here. Guides list him as a vendor; no vendor record exists here yet, so the shop field is omitted.",
+      "facts": [
+        "Wagon black-market fence",
+        "Usual ground is Anvil Riverside Terrace"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Vendors", "title": "Fextralife: Vendors", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:finley",
+      "type": "character",
+      "name": "Finley",
+      "role": "Fisherman at the Nas River Fishing Dock",
+      "region": "region:hernand",
+      "summary": "The angler who keeps the fishing shop at the Nas River dock.",
+      "body": "Finley sells fishing goods at the Nas River Fishing Dock, which has no place record here. Guides list him as a vendor; no vendor record exists here yet, so the shop field is omitted.",
+      "facts": [
+        "Fisherman and fishing-shop keeper",
+        "Usual ground is the Nas River Fishing Dock"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" },
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Vendors", "title": "Fextralife: Vendors", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:grover",
+      "type": "character",
+      "name": "Grover",
+      "role": "Banker at Hernand Bank",
+      "region": "region:hernand",
+      "summary": "The banker who keeps the books at Hernand Bank.",
+      "body": "Grover works the desk at Hernand Bank, which has no place record here.",
+      "facts": [
+        "Banker at Hernand Bank",
+        "Named on the Fextralife NPC list"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:turnali",
+      "type": "character",
+      "name": "Turnali",
+      "role": "Blacksmith at Hernand Smithy",
+      "region": "region:hernand",
+      "summary": "The smith who works the anvil at Hernand Smithy.",
+      "body": "Turnali keeps the forge at Hernand Smithy, which has no place record here. He is a second Hernand smith beside [[character:rhett]] in the city.",
+      "facts": [
+        "Blacksmith at Hernand Smithy",
+        "Named on the Fextralife NPC list"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:ibano",
+      "type": "character",
+      "name": "Ibano",
+      "role": "Owner of Muckroot Ranch",
+      "region": "region:hernand",
+      "summary": "The rancher who owns Muckroot Ranch in Hernand.",
+      "body": "Ibano is named as the owner of Muckroot Ranch, which has no place record here.",
+      "facts": [
+        "Owner of Muckroot Ranch",
+        "Named on the Fextralife NPC list"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:bremer",
+      "type": "character",
+      "name": "Bremer",
+      "role": "Cattle ranch owner at Hernand Farmhouse",
+      "region": "region:hernand",
+      "summary": "The cattle rancher based at the Hernand Farmhouse.",
+      "body": "Bremer owns a cattle ranch tied to the Hernand Farmhouse, which has no place record here.",
+      "facts": [
+        "Owner of a cattle ranch at the Hernand Farmhouse",
+        "Named on the Fextralife NPC list"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:clemens",
+      "type": "character",
+      "name": "Clemens",
+      "role": "General merchant at Hernand Farmhouse",
+      "region": "region:hernand",
+      "summary": "A general merchant at the Hernand Farmhouse, named only on the Vendors list.",
+      "body": "Clemens sells general goods at the Hernand Farmhouse, which has no place record here. Only the Vendors page names him, so the row is single-source.",
+      "facts": [
+        "General merchant at the Hernand Farmhouse",
+        "Named only on the Fextralife Vendors page"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Vendors", "title": "Fextralife: Vendors", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:erich",
+      "type": "character",
+      "name": "Erich",
+      "role": "Steward of House Roberts",
+      "factions": ["faction:house-roberts"],
+      "region": "region:hernand",
+      "related": ["character:leon-roberts"],
+      "summary": "The steward who manages House Roberts business across more than one Hernand stop.",
+      "body": "Erich serves [[character:leon-roberts]] as steward. Lists place him at multiple locations, so no single house is set as home.",
+      "facts": [
+        "Steward of House Roberts",
+        "Met at more than one Hernand stop",
+        "Named on the Fextralife NPC list"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:ugmon",
+      "type": "character",
+      "name": "Ugmon",
+      "role": "Trade office director at the Goldleaf Guildhouse",
+      "factions": ["faction:goldleaf-merchant-guild"],
+      "home": "place:goldleaf-merchant-guild",
+      "region": "region:hernand",
+      "summary": "The director who runs Goldleaf's trade-management office in the guildhouse.",
+      "facts": [
+        "Director of the trade management office",
+        "Works from the Goldleaf Guildhouse",
+        "Named on the Fextralife NPC list"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:harvik",
+      "type": "character",
+      "name": "Harvik",
+      "role": "Artisan's assistant at Kilnden Workshop",
+      "home": "place:kilnden-workshop",
+      "region": "region:hernand",
+      "related": ["character:grimnir"],
+      "summary": "A Kilnden Workshop assistant tied to the Mysterious Pot bench.",
+      "facts": [
+        "Artisan's assistant at Kilnden Workshop",
+        "Listed against the Mysterious Pot",
+        "Named on the Fextralife NPC list"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:irkyn",
+      "type": "character",
+      "name": "Irkyn",
+      "role": "Artisan's assistant at Kilnden Workshop",
+      "home": "place:kilnden-workshop",
+      "region": "region:hernand",
+      "related": ["character:grimnir"],
+      "summary": "A Kilnden Workshop assistant tied to the Kuku pot bench.",
+      "facts": [
+        "Artisan's assistant at Kilnden Workshop",
+        "Listed against the Kuku pot",
+        "Named on the Fextralife NPC list"
+      ],
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:gunter",
+      "type": "character",
+      "name": "Gunter",
+      "role": "Equipment shop owner in Pailune",
+      "home": "place:pailune",
+      "region": "region:pailune",
+      "summary": "The equipment-shop owner named in the Pailune capital, known only from a search snippet.",
+      "body": "Gunter is listed as the equipment shop owner in the Pailune capital. The row comes from a search snippet of a goods-vendor page, not a fetched article.",
+      "facts": [
+        "Equipment shop owner in Pailune",
+        "Known only from a search snippet"
+      ],
+      "sources": [
+        { "url": "https://crimsondesert.gaming.tools/people/kweiden/kweiden_lifeshop", "title": "gaming.tools: Pailune goods vendors", "accessed": "2026-09-06", "note": "seen via search snippet only" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:rocco",
+      "type": "character",
+      "name": "Rocco",
+      "role": "Provisioner in Skoghorn",
+      "home": "place:skoghorn",
+      "region": "region:pailune",
+      "summary": "The provisioner named in Skoghorn, known only from a search snippet.",
+      "body": "Rocco stocks provisions in [[place:skoghorn]]. The row comes from a search snippet of a goods-vendor page, not a fetched article.",
+      "facts": [
+        "Provisioner in Skoghorn",
+        "Known only from a search snippet"
+      ],
+      "sources": [
+        { "url": "https://crimsondesert.gaming.tools/people/kweiden/kweiden_lifeshop", "title": "gaming.tools: Pailune goods vendors", "accessed": "2026-09-06", "note": "seen via search snippet only" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:thomas",
+      "type": "character",
+      "name": "Thomas",
+      "role": "Trade manager in Arcosa",
+      "home": "place:arcosa",
+      "region": "region:crimson-desert",
+      "summary": "The Arcosa trade manager named for the Varnia merchant desk, known only from a search snippet.",
+      "body": "Thomas is listed as trade manager for the Arcosa Varnia Merchant Guild in [[place:arcosa]]. That guild name is not a faction record here. The row comes from a search snippet, not a fetched article.",
+      "facts": [
+        "Trade manager in Arcosa",
+        "Named against the Arcosa Varnia Merchant Guild",
+        "Known only from a search snippet"
+      ],
+      "sources": [
+        { "url": "https://crimsondesert.gaming.tools/people/crimsondesert/crimsondesert_lifeshop", "title": "gaming.tools: Crimson Desert goods vendors", "accessed": "2026-09-06", "note": "seen via search snippet only" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:alvaris",
+      "type": "character",
+      "name": "Alvaris",
+      "role": "Contribution Shop manager in Tommaso",
+      "region": "region:crimson-desert",
+      "summary": "The clerk who spends Crimson Desert Contribution Points at the Tommaso shop.",
+      "body": "Alvaris manages the Contribution Shop in Tommaso. No Tommaso place record exists here yet, so home is omitted. The row comes from a search snippet, not a fetched article.",
+      "facts": [
+        "Contribution Shop manager in Tommaso",
+        "Known only from a search snippet"
+      ],
+      "sources": [
+        { "url": "https://crimsondesert.gaming.tools/people/crimsondesert/crimsondesert_lifeshop", "title": "gaming.tools: Crimson Desert goods vendors", "accessed": "2026-09-06", "note": "seen via search snippet only" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:rowan",
+      "type": "character",
+      "name": "Rowan",
+      "role": "Grocer in Tommaso",
+      "region": "region:crimson-desert",
+      "summary": "The grocer named in Tommaso, known only from a search snippet.",
+      "body": "Rowan sells foodstuffs in Tommaso. No Tommaso place record exists here yet, so home is omitted. The row comes from a search snippet, not a fetched article.",
+      "facts": [
+        "Grocer in Tommaso",
+        "Known only from a search snippet"
+      ],
+      "sources": [
+        { "url": "https://crimsondesert.gaming.tools/people/crimsondesert/crimsondesert_lifeshop", "title": "gaming.tools: Crimson Desert goods vendors", "accessed": "2026-09-06", "note": "seen via search snippet only" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:seratien",
+      "type": "character",
+      "name": "Seratien",
+      "role": "Mineral vendor in Tommaso",
+      "region": "region:crimson-desert",
+      "summary": "The mineral seller named in Tommaso, known only from a search snippet.",
+      "body": "Seratien sells minerals in Tommaso. No Tommaso place record exists here yet, so home is omitted. The row comes from a search snippet, not a fetched article.",
+      "facts": [
+        "Mineral vendor in Tommaso",
+        "Known only from a search snippet"
+      ],
+      "sources": [
+        { "url": "https://crimsondesert.gaming.tools/people/crimsondesert/crimsondesert_lifeshop", "title": "gaming.tools: Crimson Desert goods vendors", "accessed": "2026-09-06", "note": "seen via search snippet only" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:caden",
+      "type": "character",
+      "name": "Caden",
+      "role": "Provisioner in Tommaso",
+      "region": "region:crimson-desert",
+      "summary": "The provisioner named in Tommaso, known only from a search snippet.",
+      "body": "Caden stocks provisions in Tommaso. No Tommaso place record exists here yet, so home is omitted. The row comes from a search snippet, not a fetched article.",
+      "facts": [
+        "Provisioner in Tommaso",
+        "Known only from a search snippet"
+      ],
+      "sources": [
+        { "url": "https://crimsondesert.gaming.tools/people/crimsondesert/crimsondesert_lifeshop", "title": "gaming.tools: Crimson Desert goods vendors", "accessed": "2026-09-06", "note": "seen via search snippet only" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:alina",
+      "type": "character",
+      "name": "Alina",
+      "role": "Saddler in Tommaso",
+      "region": "region:crimson-desert",
+      "summary": "The saddler named in Tommaso, known only from a search snippet.",
+      "body": "Alina outfits mounts in Tommaso. No Tommaso place record exists here yet, so home is omitted. The row comes from a search snippet, not a fetched article.",
+      "facts": [
+        "Saddler in Tommaso",
+        "Known only from a search snippet"
+      ],
+      "sources": [
+        { "url": "https://crimsondesert.gaming.tools/people/crimsondesert/crimsondesert_lifeshop", "title": "gaming.tools: Crimson Desert goods vendors", "accessed": "2026-09-06", "note": "seen via search snippet only" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:nix",
+      "type": "character",
+      "name": "Nix",
+      "role": "Trade manager in Tommaso",
+      "region": "region:crimson-desert",
+      "related": ["character:marcus"],
+      "summary": "A Tommaso trade manager named in search snippets that may also be describing Marcus.",
+      "body": "Nix is listed as a trade manager in Tommaso. No Tommaso place record exists here yet, so home is omitted. Search snippets also name [[character:marcus]] in the same role; the sources may describe one manager under two names.",
+      "facts": [
+        "Trade manager in Tommaso",
+        "Known only from a search snippet",
+        "May be the same desk as Marcus"
+      ],
+      "sources": [
+        { "url": "https://crimsondesert.gaming.tools/people/crimsondesert/crimsondesert_lifeshop", "title": "gaming.tools: Crimson Desert goods vendors", "accessed": "2026-09-06", "note": "seen via search snippet only" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:marcus",
+      "type": "character",
+      "name": "Marcus",
+      "role": "Trade manager in Tommaso",
+      "region": "region:crimson-desert",
+      "related": ["character:nix"],
+      "summary": "A Tommaso trade manager named in search snippets that may also be describing Nix.",
+      "body": "Marcus is listed as a trade manager in Tommaso. No Tommaso place record exists here yet, so home is omitted. Search snippets also name [[character:nix]] in the same role; the sources may describe one manager under two names.",
+      "facts": [
+        "Trade manager in Tommaso",
+        "Known only from a search snippet",
+        "May be the same desk as Nix"
+      ],
+      "sources": [
+        { "url": "https://crimsondesert.gaming.tools/people/crimsondesert/crimsondesert_lifeshop", "title": "gaming.tools: Crimson Desert goods vendors", "accessed": "2026-09-06", "note": "seen via search snippet only" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:norfix",
+      "type": "character",
+      "name": "Norfix",
+      "role": "Trade manager in Urdavah",
+      "home": "place:urdavah",
+      "region": "region:crimson-desert",
+      "related": ["character:kamraan"],
+      "summary": "An Urdavah trade manager named in search snippets that may also be describing Kamraan.",
+      "body": "Norfix is listed as a trade manager in [[place:urdavah]]. Search snippets also name [[character:kamraan]] in the same role; the sources may describe one manager under two names.",
+      "facts": [
+        "Trade manager in Urdavah",
+        "Known only from a search snippet",
+        "May be the same desk as Kamraan"
+      ],
+      "sources": [
+        { "url": "https://crimsondesert.gaming.tools/people/crimsondesert/crimsondesert_lifeshop", "title": "gaming.tools: Crimson Desert goods vendors", "accessed": "2026-09-06", "note": "seen via search snippet only" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:kamraan",
+      "type": "character",
+      "name": "Kamraan",
+      "role": "Trade manager in Urdavah",
+      "home": "place:urdavah",
+      "region": "region:crimson-desert",
+      "related": ["character:norfix"],
+      "summary": "An Urdavah trade manager named in search snippets that may also be describing Norfix.",
+      "body": "Kamraan is listed as a trade manager in [[place:urdavah]]. Search snippets also name [[character:norfix]] in the same role; the sources may describe one manager under two names.",
+      "facts": [
+        "Trade manager in Urdavah",
+        "Known only from a search snippet",
+        "May be the same desk as Norfix"
+      ],
+      "sources": [
+        { "url": "https://crimsondesert.gaming.tools/people/crimsondesert/crimsondesert_lifeshop", "title": "gaming.tools: Crimson Desert goods vendors", "accessed": "2026-09-06", "note": "seen via search snippet only" }
+      ],
+      "confidence": "reported",
       "gameVersion": "2.01.00"
     }
   ]

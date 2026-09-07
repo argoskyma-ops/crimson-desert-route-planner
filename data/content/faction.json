@@ -207,6 +207,7 @@
       "kind": "house",
       "hostile": false,
       "leader": "character:leon-roberts",
+      "members": ["character:erich"],
       "headquarters": "place:frowde-camp",
       "region": "region:hernand",
       "summary": "Wealthy merchant-noble house in Hernand, known for hosting events.",
@@ -299,7 +300,13 @@
       "kind": "guild",
       "hostile": false,
       "leader": "character:kailok",
-      "members": ["character:shakatu"],
+      "members": [
+        "character:shakatu",
+        "character:groks",
+        "character:prox",
+        "character:serge",
+        "character:ugmon"
+      ],
       "headquarters": "place:goldleaf-merchant-guild",
       "region": "region:hernand",
       "summary": "Pywel's largest merchant guild, goblin-run and profit-first, based in Hernand.",
