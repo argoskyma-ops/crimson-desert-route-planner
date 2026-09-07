@@ -636,7 +636,8 @@ export function collectRefs(entity: z.infer<typeof EntitySchema>): {
   const links: string[] = []
   const walk = (value: unknown, key: string | undefined) => {
     if (typeof value === 'string') {
-      if (key === 'id') return
+      // `fastTravel` is a foreign key into data/fast-travel.json, not an entity ref.
+      if (key === 'id' || key === 'fastTravel') return
       // parseId (not the type guard) so the else branch keeps `value` a string.
       if (parseId(value) !== null) refs.push(value)
       else if (value.includes('[[')) links.push(...extractLinks(value))
