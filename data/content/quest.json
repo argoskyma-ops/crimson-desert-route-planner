@@ -5899,10 +5899,12 @@
         },
         {
           "kind": "item",
+          "ref": "item:solas-plate-body-armor",
           "text": "Solas Plate Armor"
         },
         {
           "kind": "item",
+          "ref": "item:solas-plate-footwear",
           "text": "Solas Plate Boots"
         }
       ],
@@ -8816,7 +8818,8 @@
           "text": "Golden Star Power Core"
         },
         {
-          "kind": "unlock",
+          "kind": "item",
+          "ref": "item:golden-fire",
           "text": "Golden Fire"
         },
         {

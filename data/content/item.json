@@ -7,7 +7,6 @@
       "type": "item",
       "name": "Bringer of Balance",
       "category": "weapon",
-      "rarity": "unique",
       "summary": "A unique weapon taken from an altar in an underground ruin west of Tashelp; nothing in the game points at it.",
       "body": "The unique-weapons page that names this altar was blocked when the items file was compiled; the route is carried from an earlier session. Like other gear, it has ten material-only refinement ranks.",
       "acquisitions": [
@@ -39,7 +38,7 @@
           "accessed": "2026-09-05"
         }
       ],
-      "confidence": "reported",
+      "confidence": "assumed",
       "gameVersion": "2.01.00"
     },
     {
@@ -487,6 +486,10 @@
           "kind": "quest",
           "ref": "quest:cheers-echoing-from-the-edge",
           "note": "The Chapter 2 reward list also names it on Cheers Echoing From the Edge."
+        },
+        {
+          "kind": "other",
+          "note": "A separate best-weapons page calls this a starting weapon that arrives with Abyss Gear; that line conflicts with the Hornsplitter drop."
         }
       ],
       "sources": [
@@ -660,7 +663,7 @@
       "category": "weapon",
       "slot": "two-handed sword",
       "region": "region:pailune",
-      "summary": "A two-handed weapon found in the White Wastes Sanctuary in Pailune.",
+      "summary": "A two-handed sword taken from a chest at Pailune's White Wastes Sanctuary.",
       "body": "A best-weapons page also calls this an early exploration pickup. Like other gear, it has ten material-only refinement ranks.",
       "acquisitions": [
         {
@@ -1316,7 +1319,8 @@
       "acquisitions": [
         {
           "kind": "quest",
-          "note": "Given once the main story is finished; no single quest name is attached.",
+          "ref": "quest:blinding-darkness",
+          "note": "Paid when Blinding Darkness closes the main story.",
           "steps": [
             {
               "text": "Fight through to the last main-story bosses.",
@@ -3138,7 +3142,7 @@
       "category": "weapon",
       "slot": "spear",
       "summary": "A two-handed spear taken from a Bismuth Oreback Crab at the Well of Enlightenment, per a single unconfirmed snippet.",
-      "body": "The only acquisition line is a search snippet. The items file could not name the article, only two candidate domains, and marks the fact single-source and source-uncertain. The Well of Enlightenment has no place record here yet.",
+      "body": "The only acquisition line is a search snippet. The items file could not name the article, only one remaining candidate domain, and marks the fact single-source and source-uncertain. The Well of Enlightenment has no place record here yet.",
       "acquisitions": [
         {
           "kind": "drop",
@@ -3160,12 +3164,6 @@
         }
       ],
       "sources": [
-        {
-          "url": "https://egamersworld.com/",
-          "title": "egamersworld (snippet candidate)",
-          "accessed": "2026-09-06",
-          "note": "seen via search snippet only"
-        },
         {
           "url": "https://dropreference.com/",
           "title": "dropreference (snippet candidate)",
@@ -5985,6 +5983,9 @@
       "id": "item:official-knights-leather-gloves",
       "type": "item",
       "name": "Official Knight's Leather Gloves",
+      "aliases": [
+        "Leather Gloves"
+      ],
       "category": "armor",
       "slot": "gloves",
       "setName": "Official Knight's",
@@ -6050,6 +6051,9 @@
       "id": "item:official-knights-leather-boots",
       "type": "item",
       "name": "Official Knight's Leather Boots",
+      "aliases": [
+        "Leather Boots"
+      ],
       "category": "armor",
       "slot": "feet",
       "setName": "Official Knight's",
@@ -6479,7 +6483,7 @@
         "damiane"
       ],
       "summary": "Body piece of Damiane's Elegant Carmine set, crafted from a Jungle Ruins blueprint after a Force Palm on a fake wall.",
-      "body": "Damiane crafts this kit from shared blueprints. Turnali in Hernand uses Thin Hide x10, Thick Hide x5, Sturdy Hide x2, Gold Ore x2, and Garnet x2. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "body": "Damiane crafts this kit from shared blueprints. Turnali in Hernand spends two gold ore and two garnets, then ten thin hides, five thick hides, and two sturdy hides. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
       "acquisitions": [
         {
           "kind": "craft",
@@ -6777,15 +6781,12 @@
       "body": "Damiane receives this kit from Trust-100 NPCs and one crafted cloak. Olanelle's Request Commission is said to grant 50 Trust toward that cap. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
       "acquisitions": [
         {
-          "kind": "vendor",
+          "kind": "other",
           "note": "Paid at Trust 100 with Olanelle at the Demeniss Tailor's Shop; that shop has no vendor record here yet.",
           "steps": [
             {
               "text": "Go to the Tailor's Shop in Demeniss and start work with Olanelle.",
-              "action": "travel",
-              "refs": [
-                "place:demeniss-castle"
-              ]
+              "action": "travel"
             },
             {
               "text": "Finish her Request Commission and raise Trust with her to 100.",
@@ -7330,8 +7331,7 @@
       "slot": "body",
       "setName": "Valortread Plate",
       "tags": [
-        "oongka",
-        "abyss-gear"
+        "oongka"
       ],
       "summary": "Body plate of Oongka's Valortread Plate set; no source names a pickup.",
       "body": "Game8 names the Oongka plate and stops. The head piece is the row that lists Gourmet, Aegis, and Fortification Abyss Gear. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
@@ -7469,19 +7469,34 @@
     {
       "id": "item:solas-plate-body-armor",
       "type": "item",
-      "name": "Solas Plate Body Armor",
+      "name": "Solas Plate Armor",
       "category": "armor",
       "slot": "body",
       "setName": "Solas Plate",
       "tags": [
         "oongka"
       ],
-      "summary": "Body plate of Oongka's Solas Plate set; no source names a pickup.",
-      "body": "Game8 lists this Oongka plate with no gloves piece and no route. Eclipsed Solas Plate Gloves on [[quest:a-fleeting-dream]] are not confirmed as part of this set. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "summary": "Body plate of Oongka's Solas Plate set, paid on Time to Face Justice at the close of Homecoming.",
+      "body": "The chapter table names this as Solas Plate Armor on [[quest:time-to-face-justice]]. Game8's Oongka set list still has no pickup of its own. Eclipsed Solas Plate Gloves on [[quest:a-fleeting-dream]] are not confirmed as part of this set. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
       "acquisitions": [
         {
-          "kind": "other",
-          "note": "No source in the research file names a pickup, drop, or vendor."
+          "kind": "quest",
+          "ref": "quest:time-to-face-justice",
+          "note": "Paid at the close of Chapter 7, on Time to Face Justice.",
+          "steps": [
+            {
+              "text": "Finish the Homecoming fights through Ludvig.",
+              "action": "fight",
+              "refs": [
+                "quest:time-to-face-justice",
+                "character:ludvig"
+              ]
+            },
+            {
+              "text": "Collect Solas Plate Armor with the chapter rewards.",
+              "action": "collect"
+            }
+          ]
         }
       ],
       "sources": [
@@ -7489,27 +7504,57 @@
           "url": "https://game8.co/games/Crimson-Desert/archives/598696",
           "title": "Game8: list of all Oongka armor sets",
           "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587752",
+          "title": "Game8: Chapter 7 walkthrough",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/",
+          "title": "VULKK: main story walkthrough",
+          "accessed": "2026-09-06"
         }
       ],
-      "confidence": "assumed",
+      "confidence": "reported",
       "gameVersion": "2.01.00"
     },
     {
       "id": "item:solas-plate-footwear",
       "type": "item",
-      "name": "Solas Plate Footwear",
+      "name": "Solas Plate Boots",
       "category": "armor",
       "slot": "feet",
       "setName": "Solas Plate",
       "tags": [
         "oongka"
       ],
-      "summary": "Footwear of Oongka's Solas Plate set; no source names a pickup.",
-      "body": "Game8 lists this Oongka plate with no gloves piece and no route. Eclipsed Solas Plate Gloves on [[quest:a-fleeting-dream]] are not confirmed as part of this set. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "summary": "Boots of Oongka's Solas Plate set, paid on Time to Face Justice at the close of Homecoming.",
+      "body": "The chapter table names this as Solas Plate Boots on [[quest:time-to-face-justice]]. Game8's Oongka set list still has no pickup of its own. Eclipsed Solas Plate Gloves on [[quest:a-fleeting-dream]] are not confirmed as part of this set. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
       "acquisitions": [
         {
-          "kind": "other",
-          "note": "No source in the research file names a pickup, drop, or vendor."
+          "kind": "quest",
+          "ref": "quest:time-to-face-justice",
+          "note": "Paid at the close of Chapter 7, on Time to Face Justice.",
+          "steps": [
+            {
+              "text": "Finish the Homecoming fights through Ludvig.",
+              "action": "fight",
+              "refs": [
+                "quest:time-to-face-justice",
+                "character:ludvig"
+              ]
+            },
+            {
+              "text": "Collect Solas Plate Boots with the chapter rewards.",
+              "action": "collect"
+            }
+          ]
         }
       ],
       "sources": [
@@ -7517,9 +7562,24 @@
           "url": "https://game8.co/games/Crimson-Desert/archives/598696",
           "title": "Game8: list of all Oongka armor sets",
           "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587752",
+          "title": "Game8: Chapter 7 walkthrough",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/",
+          "title": "VULKK: main story walkthrough",
+          "accessed": "2026-09-06"
         }
       ],
-      "confidence": "assumed",
+      "confidence": "reported",
       "gameVersion": "2.01.00"
     },
     {
@@ -7791,12 +7851,12 @@
       "slot": "head",
       "setName": "Icewing Plate",
       "region": "region:hernand",
-      "summary": "A piece of the Icewing Plate set taken from Gwen Kraber at the Eldertree; the slot map is not given.",
-      "body": "KeenGamer is the only source and does not name which piece falls here. This record files the Eldertree drop against the head slot only as a catalog hook. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "summary": "Headgear of the Icewing Plate set; KeenGamer names an Eldertree drop, a 15-Sanctum reward, and three chests, with no piece-to-site map.",
+      "body": "KeenGamer is the only source and leaves every Icewing row unspecified. The Eldertree drop, the 15-Sanctum Witches-questline reward, and the chests at Claggy Chasm, the Sanctum of Solace, and the Cave of the Ancients are listed on every piece because no slot map exists. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
       "acquisitions": [
         {
           "kind": "drop",
-          "note": "Dropped by Gwen Kraber at the Eldertree; that boss and site have no records here yet.",
+          "note": "KeenGamer names Gwen Kraber at the Eldertree as one Icewing Plate route and does not say which piece falls there.",
           "steps": [
             {
               "text": "Ride to the Eldertree in Hernand.",
@@ -7807,7 +7867,67 @@
               "action": "fight"
             },
             {
-              "text": "Take the Icewing Plate piece from the fall.",
+              "text": "Take the Icewing Plate piece if it drops here.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "quest",
+          "note": "KeenGamer names the 15-Sanctum Witches-questline reward as one Icewing Plate route and does not say which piece is paid.",
+          "steps": [
+            {
+              "text": "Open the Witches questline.",
+              "action": "other"
+            },
+            {
+              "text": "Clear all 15 Sanctums on that line.",
+              "action": "solve"
+            },
+            {
+              "text": "Collect the Icewing Plate piece if it is the Sanctum reward.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "chest",
+          "note": "KeenGamer names a chest at Claggy Chasm as one Icewing Plate site and does not say which piece is there.",
+          "steps": [
+            {
+              "text": "Ride to Claggy Chasm.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for an Icewing Plate piece.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "chest",
+          "note": "KeenGamer names a chest at the Sanctum of Solace as one Icewing Plate site and does not say which piece is there.",
+          "steps": [
+            {
+              "text": "Ride to the Sanctum of Solace.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for an Icewing Plate piece.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "chest",
+          "note": "KeenGamer names a chest at the Cave of the Ancients as one Icewing Plate site and does not say which piece is there.",
+          "steps": [
+            {
+              "text": "Ride to the Cave of the Ancients.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for an Icewing Plate piece.",
               "action": "collect"
             }
           ]
@@ -7830,12 +7950,30 @@
       "category": "armor",
       "slot": "body",
       "setName": "Icewing Plate",
-      "summary": "A piece of the Icewing Plate set paid after all 15 Witches-questline Sanctums; the slot map is not given.",
-      "body": "KeenGamer is the only source and does not name which piece this reward is. This record files the Sanctum bundle against the body slot only as a catalog hook. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "summary": "Body plate of the Icewing Plate set; KeenGamer names an Eldertree drop, a 15-Sanctum reward, and three chests, with no piece-to-site map.",
+      "body": "KeenGamer is the only source and leaves every Icewing row unspecified. The Eldertree drop, the 15-Sanctum Witches-questline reward, and the chests at Claggy Chasm, the Sanctum of Solace, and the Cave of the Ancients are listed on every piece because no slot map exists. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
       "acquisitions": [
         {
+          "kind": "drop",
+          "note": "KeenGamer names Gwen Kraber at the Eldertree as one Icewing Plate route and does not say which piece falls there.",
+          "steps": [
+            {
+              "text": "Ride to the Eldertree in Hernand.",
+              "action": "travel"
+            },
+            {
+              "text": "Defeat Gwen Kraber.",
+              "action": "fight"
+            },
+            {
+              "text": "Take the Icewing Plate piece if it drops here.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
           "kind": "quest",
-          "note": "Paid after finishing all 15 Sanctums on the Witches questline; that questline has no record here yet.",
+          "note": "KeenGamer names the 15-Sanctum Witches-questline reward as one Icewing Plate route and does not say which piece is paid.",
           "steps": [
             {
               "text": "Open the Witches questline.",
@@ -7846,7 +7984,49 @@
               "action": "solve"
             },
             {
-              "text": "Collect the Icewing Plate piece from the quest reward.",
+              "text": "Collect the Icewing Plate piece if it is the Sanctum reward.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "chest",
+          "note": "KeenGamer names a chest at Claggy Chasm as one Icewing Plate site and does not say which piece is there.",
+          "steps": [
+            {
+              "text": "Ride to Claggy Chasm.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for an Icewing Plate piece.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "chest",
+          "note": "KeenGamer names a chest at the Sanctum of Solace as one Icewing Plate site and does not say which piece is there.",
+          "steps": [
+            {
+              "text": "Ride to the Sanctum of Solace.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for an Icewing Plate piece.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "chest",
+          "note": "KeenGamer names a chest at the Cave of the Ancients as one Icewing Plate site and does not say which piece is there.",
+          "steps": [
+            {
+              "text": "Ride to the Cave of the Ancients.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for an Icewing Plate piece.",
               "action": "collect"
             }
           ]
@@ -7869,19 +8049,83 @@
       "category": "armor",
       "slot": "cloak",
       "setName": "Icewing Plate",
-      "summary": "Icewing Plate pieces hidden at Claggy Chasm, the Sanctum of Solace, and the Cave of the Ancients; no slot map is given.",
-      "body": "KeenGamer is the only source and names three sites without saying which chest holds which piece. This record files those chests against the cloak slot only as a catalog hook. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "summary": "Cloak of the Icewing Plate set; KeenGamer names an Eldertree drop, a 15-Sanctum reward, and three chests, with no piece-to-site map.",
+      "body": "KeenGamer is the only source and leaves every Icewing row unspecified. The Eldertree drop, the 15-Sanctum Witches-questline reward, and the chests at Claggy Chasm, the Sanctum of Solace, and the Cave of the Ancients are listed on every piece because no slot map exists. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
       "acquisitions": [
         {
-          "kind": "chest",
-          "note": "Chests at Claggy Chasm, the Sanctum of Solace, and the Cave of the Ancients; those sites have no place records here yet.",
+          "kind": "drop",
+          "note": "KeenGamer names Gwen Kraber at the Eldertree as one Icewing Plate route and does not say which piece falls there.",
           "steps": [
             {
-              "text": "Search Claggy Chasm, the Sanctum of Solace, and the Cave of the Ancients.",
+              "text": "Ride to the Eldertree in Hernand.",
               "action": "travel"
             },
             {
-              "text": "Open the treasure chests until the Icewing Plate pieces appear.",
+              "text": "Defeat Gwen Kraber.",
+              "action": "fight"
+            },
+            {
+              "text": "Take the Icewing Plate piece if it drops here.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "quest",
+          "note": "KeenGamer names the 15-Sanctum Witches-questline reward as one Icewing Plate route and does not say which piece is paid.",
+          "steps": [
+            {
+              "text": "Open the Witches questline.",
+              "action": "other"
+            },
+            {
+              "text": "Clear all 15 Sanctums on that line.",
+              "action": "solve"
+            },
+            {
+              "text": "Collect the Icewing Plate piece if it is the Sanctum reward.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "chest",
+          "note": "KeenGamer names a chest at Claggy Chasm as one Icewing Plate site and does not say which piece is there.",
+          "steps": [
+            {
+              "text": "Ride to Claggy Chasm.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for an Icewing Plate piece.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "chest",
+          "note": "KeenGamer names a chest at the Sanctum of Solace as one Icewing Plate site and does not say which piece is there.",
+          "steps": [
+            {
+              "text": "Ride to the Sanctum of Solace.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for an Icewing Plate piece.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "chest",
+          "note": "KeenGamer names a chest at the Cave of the Ancients as one Icewing Plate site and does not say which piece is there.",
+          "steps": [
+            {
+              "text": "Ride to the Cave of the Ancients.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for an Icewing Plate piece.",
               "action": "collect"
             }
           ]
@@ -7904,19 +8148,75 @@
       "category": "armor",
       "slot": "head",
       "setName": "Golden Greed",
-      "summary": "A piece of the Golden Greed set hidden in Venomblade Grotto; the slot map is not given.",
-      "body": "KeenGamer is the only source and names five sites without saying which chest holds which piece. This record files Venomblade Grotto against the head slot only as a catalog hook. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "summary": "Headgear of the Golden Greed set; KeenGamer names five chests and does not say which piece sits in which site.",
+      "body": "KeenGamer is the only source. Venomblade Grotto, Arehaze Cave, the Sanctum of Renunciation, Gale of Judgement Cave, and Bursada Castle Ruins are listed on every piece because no piece-to-chest map exists. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
       "acquisitions": [
         {
           "kind": "chest",
-          "note": "One-time chest in Venomblade Grotto; that grotto has no place record here yet.",
+          "note": "KeenGamer names a chest in Venomblade Grotto and does not say which Golden Greed piece is there.",
           "steps": [
             {
               "text": "Ride to Venomblade Grotto.",
               "action": "travel"
             },
             {
-              "text": "Open the treasure chest for the Golden Greed piece.",
+              "text": "Open the treasure chest for a Golden Greed piece.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "chest",
+          "note": "KeenGamer names a chest in Arehaze Cave and does not say which Golden Greed piece is there.",
+          "steps": [
+            {
+              "text": "Ride to Arehaze Cave.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for a Golden Greed piece.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "chest",
+          "note": "KeenGamer names a chest in the Sanctum of Renunciation and does not say which Golden Greed piece is there.",
+          "steps": [
+            {
+              "text": "Ride to the Sanctum of Renunciation.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for a Golden Greed piece.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "chest",
+          "note": "KeenGamer names a chest in Gale of Judgement Cave and does not say which Golden Greed piece is there.",
+          "steps": [
+            {
+              "text": "Ride to Gale of Judgement Cave.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for a Golden Greed piece.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "chest",
+          "note": "KeenGamer names a chest in Bursada Castle Ruins and does not say which Golden Greed piece is there.",
+          "steps": [
+            {
+              "text": "Ride to Bursada Castle Ruins.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for a Golden Greed piece.",
               "action": "collect"
             }
           ]
@@ -7939,19 +8239,75 @@
       "category": "armor",
       "slot": "body",
       "setName": "Golden Greed",
-      "summary": "A piece of the Golden Greed set hidden in Arehaze Cave; the slot map is not given.",
-      "body": "KeenGamer is the only source and names five sites without saying which chest holds which piece. This record files Arehaze Cave against the body slot only as a catalog hook. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "summary": "Body plate of the Golden Greed set; KeenGamer names five chests and does not say which piece sits in which site.",
+      "body": "KeenGamer is the only source. Venomblade Grotto, Arehaze Cave, the Sanctum of Renunciation, Gale of Judgement Cave, and Bursada Castle Ruins are listed on every piece because no piece-to-chest map exists. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
       "acquisitions": [
         {
           "kind": "chest",
-          "note": "One-time chest in Arehaze Cave; that cave has no place record here yet.",
+          "note": "KeenGamer names a chest in Venomblade Grotto and does not say which Golden Greed piece is there.",
+          "steps": [
+            {
+              "text": "Ride to Venomblade Grotto.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for a Golden Greed piece.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "chest",
+          "note": "KeenGamer names a chest in Arehaze Cave and does not say which Golden Greed piece is there.",
           "steps": [
             {
               "text": "Ride to Arehaze Cave.",
               "action": "travel"
             },
             {
-              "text": "Open the treasure chest for the Golden Greed piece.",
+              "text": "Open the treasure chest for a Golden Greed piece.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "chest",
+          "note": "KeenGamer names a chest in the Sanctum of Renunciation and does not say which Golden Greed piece is there.",
+          "steps": [
+            {
+              "text": "Ride to the Sanctum of Renunciation.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for a Golden Greed piece.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "chest",
+          "note": "KeenGamer names a chest in Gale of Judgement Cave and does not say which Golden Greed piece is there.",
+          "steps": [
+            {
+              "text": "Ride to Gale of Judgement Cave.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for a Golden Greed piece.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "chest",
+          "note": "KeenGamer names a chest in Bursada Castle Ruins and does not say which Golden Greed piece is there.",
+          "steps": [
+            {
+              "text": "Ride to Bursada Castle Ruins.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for a Golden Greed piece.",
               "action": "collect"
             }
           ]
@@ -7974,19 +8330,75 @@
       "category": "armor",
       "slot": "gloves",
       "setName": "Golden Greed",
-      "summary": "A piece of the Golden Greed set hidden in the Sanctum of Renunciation; the slot map is not given.",
-      "body": "KeenGamer is the only source and names five sites without saying which chest holds which piece. This record files the Sanctum of Renunciation against the gloves slot only as a catalog hook. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "summary": "Gloves of the Golden Greed set; KeenGamer names five chests and does not say which piece sits in which site.",
+      "body": "KeenGamer is the only source. Venomblade Grotto, Arehaze Cave, the Sanctum of Renunciation, Gale of Judgement Cave, and Bursada Castle Ruins are listed on every piece because no piece-to-chest map exists. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
       "acquisitions": [
         {
           "kind": "chest",
-          "note": "One-time chest in the Sanctum of Renunciation; that sanctum has no place record here yet.",
+          "note": "KeenGamer names a chest in Venomblade Grotto and does not say which Golden Greed piece is there.",
+          "steps": [
+            {
+              "text": "Ride to Venomblade Grotto.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for a Golden Greed piece.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "chest",
+          "note": "KeenGamer names a chest in Arehaze Cave and does not say which Golden Greed piece is there.",
+          "steps": [
+            {
+              "text": "Ride to Arehaze Cave.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for a Golden Greed piece.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "chest",
+          "note": "KeenGamer names a chest in the Sanctum of Renunciation and does not say which Golden Greed piece is there.",
           "steps": [
             {
               "text": "Ride to the Sanctum of Renunciation.",
               "action": "travel"
             },
             {
-              "text": "Open the treasure chest for the Golden Greed piece.",
+              "text": "Open the treasure chest for a Golden Greed piece.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "chest",
+          "note": "KeenGamer names a chest in Gale of Judgement Cave and does not say which Golden Greed piece is there.",
+          "steps": [
+            {
+              "text": "Ride to Gale of Judgement Cave.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for a Golden Greed piece.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "chest",
+          "note": "KeenGamer names a chest in Bursada Castle Ruins and does not say which Golden Greed piece is there.",
+          "steps": [
+            {
+              "text": "Ride to Bursada Castle Ruins.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for a Golden Greed piece.",
               "action": "collect"
             }
           ]
@@ -8009,19 +8421,75 @@
       "category": "armor",
       "slot": "cloak",
       "setName": "Golden Greed",
-      "summary": "A piece of the Golden Greed set hidden in Gale of Judgement Cave; the slot map is not given.",
-      "body": "KeenGamer is the only source and names five sites without saying which chest holds which piece. This record files Gale of Judgement Cave against the cloak slot only as a catalog hook. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "summary": "Cloak of the Golden Greed set; KeenGamer names five chests and does not say which piece sits in which site.",
+      "body": "KeenGamer is the only source. Venomblade Grotto, Arehaze Cave, the Sanctum of Renunciation, Gale of Judgement Cave, and Bursada Castle Ruins are listed on every piece because no piece-to-chest map exists. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
       "acquisitions": [
         {
           "kind": "chest",
-          "note": "One-time chest in Gale of Judgement Cave; that cave has no place record here yet.",
+          "note": "KeenGamer names a chest in Venomblade Grotto and does not say which Golden Greed piece is there.",
+          "steps": [
+            {
+              "text": "Ride to Venomblade Grotto.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for a Golden Greed piece.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "chest",
+          "note": "KeenGamer names a chest in Arehaze Cave and does not say which Golden Greed piece is there.",
+          "steps": [
+            {
+              "text": "Ride to Arehaze Cave.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for a Golden Greed piece.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "chest",
+          "note": "KeenGamer names a chest in the Sanctum of Renunciation and does not say which Golden Greed piece is there.",
+          "steps": [
+            {
+              "text": "Ride to the Sanctum of Renunciation.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for a Golden Greed piece.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "chest",
+          "note": "KeenGamer names a chest in Gale of Judgement Cave and does not say which Golden Greed piece is there.",
           "steps": [
             {
               "text": "Ride to Gale of Judgement Cave.",
               "action": "travel"
             },
             {
-              "text": "Open the treasure chest for the Golden Greed piece.",
+              "text": "Open the treasure chest for a Golden Greed piece.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "chest",
+          "note": "KeenGamer names a chest in Bursada Castle Ruins and does not say which Golden Greed piece is there.",
+          "steps": [
+            {
+              "text": "Ride to Bursada Castle Ruins.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for a Golden Greed piece.",
               "action": "collect"
             }
           ]
@@ -8044,19 +8512,75 @@
       "category": "armor",
       "slot": "feet",
       "setName": "Golden Greed",
-      "summary": "A piece of the Golden Greed set hidden in Bursada Castle Ruins; the slot map is not given.",
-      "body": "KeenGamer is the only source and names five sites without saying which chest holds which piece. This record files Bursada Castle Ruins against the feet slot only as a catalog hook. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "summary": "Footwear of the Golden Greed set; KeenGamer names five chests and does not say which piece sits in which site.",
+      "body": "KeenGamer is the only source. Venomblade Grotto, Arehaze Cave, the Sanctum of Renunciation, Gale of Judgement Cave, and Bursada Castle Ruins are listed on every piece because no piece-to-chest map exists. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
       "acquisitions": [
         {
           "kind": "chest",
-          "note": "One-time chest in Bursada Castle Ruins; those ruins have no place record here yet.",
+          "note": "KeenGamer names a chest in Venomblade Grotto and does not say which Golden Greed piece is there.",
+          "steps": [
+            {
+              "text": "Ride to Venomblade Grotto.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for a Golden Greed piece.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "chest",
+          "note": "KeenGamer names a chest in Arehaze Cave and does not say which Golden Greed piece is there.",
+          "steps": [
+            {
+              "text": "Ride to Arehaze Cave.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for a Golden Greed piece.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "chest",
+          "note": "KeenGamer names a chest in the Sanctum of Renunciation and does not say which Golden Greed piece is there.",
+          "steps": [
+            {
+              "text": "Ride to the Sanctum of Renunciation.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for a Golden Greed piece.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "chest",
+          "note": "KeenGamer names a chest in Gale of Judgement Cave and does not say which Golden Greed piece is there.",
+          "steps": [
+            {
+              "text": "Ride to Gale of Judgement Cave.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for a Golden Greed piece.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "chest",
+          "note": "KeenGamer names a chest in Bursada Castle Ruins and does not say which Golden Greed piece is there.",
           "steps": [
             {
               "text": "Ride to Bursada Castle Ruins.",
               "action": "travel"
             },
             {
-              "text": "Open the treasure chest for the Golden Greed piece.",
+              "text": "Open the treasure chest for a Golden Greed piece.",
               "action": "collect"
             }
           ]
@@ -8080,19 +8604,61 @@
       "slot": "head",
       "setName": "Dark Ringleader's",
       "region": "region:hernand",
-      "summary": "A piece of the Dark Ringleader's set hidden in Echoing Tunnel; the slot map is not given.",
-      "body": "KeenGamer is the only source and names four west Hernand sites without saying which chest holds which piece. This record files Echoing Tunnel against the head slot only as a catalog hook. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "summary": "Headgear of the Dark Ringleader's set; KeenGamer names four west Hernand chests and does not say which piece sits in which site.",
+      "body": "KeenGamer is the only source. Echoing Tunnel, Cloudmist Cave, Shadowheart Grotto, and Blade Cavern in west Hernand are listed on every piece because no piece-to-chest map exists. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
       "acquisitions": [
         {
           "kind": "chest",
-          "note": "One-time chest in Echoing Tunnel in west Hernand; that tunnel has no place record here yet.",
+          "note": "KeenGamer names a chest in Echoing Tunnel in west Hernand and does not say which Dark Ringleader's piece is there.",
           "steps": [
             {
               "text": "Ride to Echoing Tunnel in west Hernand.",
               "action": "travel"
             },
             {
-              "text": "Open the treasure chest for the Dark Ringleader's piece.",
+              "text": "Open the treasure chest for a Dark Ringleader's piece.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "chest",
+          "note": "KeenGamer names a chest in Cloudmist Cave in west Hernand and does not say which Dark Ringleader's piece is there.",
+          "steps": [
+            {
+              "text": "Ride to Cloudmist Cave in west Hernand.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for a Dark Ringleader's piece.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "chest",
+          "note": "KeenGamer names a chest in Shadowheart Grotto in west Hernand and does not say which Dark Ringleader's piece is there.",
+          "steps": [
+            {
+              "text": "Ride to Shadowheart Grotto in west Hernand.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for a Dark Ringleader's piece.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "chest",
+          "note": "KeenGamer names a chest in Blade Cavern in west Hernand and does not say which Dark Ringleader's piece is there.",
+          "steps": [
+            {
+              "text": "Ride to Blade Cavern in west Hernand.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for a Dark Ringleader's piece.",
               "action": "collect"
             }
           ]
@@ -8116,19 +8682,61 @@
       "slot": "body",
       "setName": "Dark Ringleader's",
       "region": "region:hernand",
-      "summary": "A piece of the Dark Ringleader's set hidden in Cloudmist Cave; the slot map is not given.",
-      "body": "KeenGamer is the only source and names four west Hernand sites without saying which chest holds which piece. This record files Cloudmist Cave against the body slot only as a catalog hook. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "summary": "Body plate of the Dark Ringleader's set; KeenGamer names four west Hernand chests and does not say which piece sits in which site.",
+      "body": "KeenGamer is the only source. Echoing Tunnel, Cloudmist Cave, Shadowheart Grotto, and Blade Cavern in west Hernand are listed on every piece because no piece-to-chest map exists. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
       "acquisitions": [
         {
           "kind": "chest",
-          "note": "One-time chest in Cloudmist Cave in west Hernand; that cave has no place record here yet.",
+          "note": "KeenGamer names a chest in Echoing Tunnel in west Hernand and does not say which Dark Ringleader's piece is there.",
+          "steps": [
+            {
+              "text": "Ride to Echoing Tunnel in west Hernand.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for a Dark Ringleader's piece.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "chest",
+          "note": "KeenGamer names a chest in Cloudmist Cave in west Hernand and does not say which Dark Ringleader's piece is there.",
           "steps": [
             {
               "text": "Ride to Cloudmist Cave in west Hernand.",
               "action": "travel"
             },
             {
-              "text": "Open the treasure chest for the Dark Ringleader's piece.",
+              "text": "Open the treasure chest for a Dark Ringleader's piece.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "chest",
+          "note": "KeenGamer names a chest in Shadowheart Grotto in west Hernand and does not say which Dark Ringleader's piece is there.",
+          "steps": [
+            {
+              "text": "Ride to Shadowheart Grotto in west Hernand.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for a Dark Ringleader's piece.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "chest",
+          "note": "KeenGamer names a chest in Blade Cavern in west Hernand and does not say which Dark Ringleader's piece is there.",
+          "steps": [
+            {
+              "text": "Ride to Blade Cavern in west Hernand.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for a Dark Ringleader's piece.",
               "action": "collect"
             }
           ]
@@ -8152,19 +8760,61 @@
       "slot": "gloves",
       "setName": "Dark Ringleader's",
       "region": "region:hernand",
-      "summary": "A piece of the Dark Ringleader's set hidden in Shadowheart Grotto; the slot map is not given.",
-      "body": "KeenGamer is the only source and names four west Hernand sites without saying which chest holds which piece. This record files Shadowheart Grotto against the gloves slot only as a catalog hook. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "summary": "Gloves of the Dark Ringleader's set; KeenGamer names four west Hernand chests and does not say which piece sits in which site.",
+      "body": "KeenGamer is the only source. Echoing Tunnel, Cloudmist Cave, Shadowheart Grotto, and Blade Cavern in west Hernand are listed on every piece because no piece-to-chest map exists. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
       "acquisitions": [
         {
           "kind": "chest",
-          "note": "One-time chest in Shadowheart Grotto in west Hernand; that grotto has no place record here yet.",
+          "note": "KeenGamer names a chest in Echoing Tunnel in west Hernand and does not say which Dark Ringleader's piece is there.",
+          "steps": [
+            {
+              "text": "Ride to Echoing Tunnel in west Hernand.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for a Dark Ringleader's piece.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "chest",
+          "note": "KeenGamer names a chest in Cloudmist Cave in west Hernand and does not say which Dark Ringleader's piece is there.",
+          "steps": [
+            {
+              "text": "Ride to Cloudmist Cave in west Hernand.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for a Dark Ringleader's piece.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "chest",
+          "note": "KeenGamer names a chest in Shadowheart Grotto in west Hernand and does not say which Dark Ringleader's piece is there.",
           "steps": [
             {
               "text": "Ride to Shadowheart Grotto in west Hernand.",
               "action": "travel"
             },
             {
-              "text": "Open the treasure chest for the Dark Ringleader's piece.",
+              "text": "Open the treasure chest for a Dark Ringleader's piece.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "chest",
+          "note": "KeenGamer names a chest in Blade Cavern in west Hernand and does not say which Dark Ringleader's piece is there.",
+          "steps": [
+            {
+              "text": "Ride to Blade Cavern in west Hernand.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for a Dark Ringleader's piece.",
               "action": "collect"
             }
           ]
@@ -8188,19 +8838,61 @@
       "slot": "feet",
       "setName": "Dark Ringleader's",
       "region": "region:hernand",
-      "summary": "A piece of the Dark Ringleader's set hidden in Blade Cavern; the slot map is not given.",
-      "body": "KeenGamer is the only source and names four west Hernand sites without saying which chest holds which piece. This record files Blade Cavern against the feet slot only as a catalog hook. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "summary": "Footwear of the Dark Ringleader's set; KeenGamer names four west Hernand chests and does not say which piece sits in which site.",
+      "body": "KeenGamer is the only source. Echoing Tunnel, Cloudmist Cave, Shadowheart Grotto, and Blade Cavern in west Hernand are listed on every piece because no piece-to-chest map exists. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
       "acquisitions": [
         {
           "kind": "chest",
-          "note": "One-time chest in Blade Cavern in west Hernand; that cavern has no place record here yet.",
+          "note": "KeenGamer names a chest in Echoing Tunnel in west Hernand and does not say which Dark Ringleader's piece is there.",
+          "steps": [
+            {
+              "text": "Ride to Echoing Tunnel in west Hernand.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for a Dark Ringleader's piece.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "chest",
+          "note": "KeenGamer names a chest in Cloudmist Cave in west Hernand and does not say which Dark Ringleader's piece is there.",
+          "steps": [
+            {
+              "text": "Ride to Cloudmist Cave in west Hernand.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for a Dark Ringleader's piece.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "chest",
+          "note": "KeenGamer names a chest in Shadowheart Grotto in west Hernand and does not say which Dark Ringleader's piece is there.",
+          "steps": [
+            {
+              "text": "Ride to Shadowheart Grotto in west Hernand.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the treasure chest for a Dark Ringleader's piece.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "chest",
+          "note": "KeenGamer names a chest in Blade Cavern in west Hernand and does not say which Dark Ringleader's piece is there.",
           "steps": [
             {
               "text": "Ride to Blade Cavern in west Hernand.",
               "action": "travel"
             },
             {
-              "text": "Open the treasure chest for the Dark Ringleader's piece.",
+              "text": "Open the treasure chest for a Dark Ringleader's piece.",
               "action": "collect"
             }
           ]
@@ -8775,13 +9467,13 @@
       "category": "shield",
       "slot": "shield",
       "region": "region:pailune",
-      "summary": "A large shield under the Beighen Candlery in Pailune, reached through a trapdoor behind the Stranger.",
-      "body": "The trapdoor sits behind the Stranger, next to a wagon, and a low crawl leads to the chest. Like other gear, it has ten material-only refinement ranks.",
+      "summary": "A large shield in a crawlspace under Beighen's candlery in Pailune, past the Stranger and a wagon.",
+      "body": "A hatch under the candlery, on the far side of the Stranger by a parked wagon, opens onto a crouch-only crawl to the chest. Like other gear, it has ten material-only refinement ranks.",
       "acquisitions": [
         {
           "kind": "chest",
           "ref": "place:beighen",
-          "note": "The chest is under the Beighen Candlery, reached through a trapdoor behind the Stranger.",
+          "note": "The chest is under the Beighen Candlery, reached through a hatch on the far side of the Stranger.",
           "steps": [
             {
               "text": "Travel to Beighen in Pailune and find the Candlery.",
@@ -8791,7 +9483,7 @@
               ]
             },
             {
-              "text": "Open the trapdoor behind the Stranger, next to a wagon.",
+              "text": "Open the hatch on the far side of the Stranger, by the parked wagon.",
               "action": "solve"
             },
             {
