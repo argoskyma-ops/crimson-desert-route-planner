@@ -238,11 +238,13 @@ and C1 and C2 fill them out afterwards.
   places. Done 2026-09-06 in four Grok parts from
   `docs/RESEARCH-REGIONS.md`: 65 sub-areas, 124 fast-travel places (91
   camps; th.gl-only camps are `assumed`, D13).
-- [ ] **C2. Factions and characters.** `faction.json`, `character.json`. All
+- [x] **C2. Factions and characters.** `faction.json`, `character.json`. All
   factions in `docs/RESEARCH-COMPANION.md` section 3 (houses, guilds,
   Greymanes, Black Bears, Jackals, hostile groups), the three playable
   characters, Greymane companions, antagonists, and every named vendor.
-  Target: ≥ 25 factions, ≥ 60 characters.
+  Target: ≥ 25 factions, ≥ 60 characters. Done 2026-09-06 in three Grok
+  parts from `docs/RESEARCH-FACTIONS.md`: 76 factions, 136 characters
+  (48 named vendors).
 - [ ] **C5. Unique gear and sets.** `item.json`. Every named unique weapon
   and armour piece, sets as items sharing `setName` with one acquisition
   per branch (boss drop, chest, vendor, craft). Refinement notes in `body`.
