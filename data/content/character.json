@@ -35,12 +35,12 @@
       "role": "Playable ally; heir of fallen House Spencer",
       "playable": true,
       "companion": true,
-      "factions": ["faction:greymanes", "faction:house-azerian"],
+      "factions": ["faction:greymanes"],
       "home": "place:howling-hill",
       "region": "region:hernand",
       "related": ["character:beatrice-azerian", "character:bastier"],
       "summary": "A rapier-and-pistol fighter, raised by House Azerian, who becomes playable at the Greymane camp in Chapter 3.",
-      "body": "House Spencer is gone; [[character:beatrice-azerian]] took Damiane in and taught her the blade. She rooms at [[place:howling-hill]] once unlocked, but her own story pulls her back to Demeniss and a fight with [[character:bastier]]. She is fast and thin-armoured beside Kliff's heavier kit.",
+      "body": "House Spencer is gone; [[character:beatrice-azerian]] took Damiane in and taught her the blade. She rooms at [[place:howling-hill]] once unlocked, but her own story pulls her back to Demeniss and a fight with [[character:bastier]].",
       "facts": [
         "Unlocks at Greymane Camp in Chapter 3",
         "Fights with a rapier plus flintlock pistol and musket, including shots between rapier strikes",
@@ -495,7 +495,7 @@
       "factions": ["faction:scholastone-institute"],
       "home": "place:scholastone-institute",
       "region": "region:hernand",
-      "summary": "Troll dean who heads the Scholastone Institute and is spoken to after the Chapter 4 rift.",
+      "summary": "Dean who heads the Scholastone Institute and is spoken to after the Chapter 4 rift.",
       "body": "Grundir is the dean of [[faction:scholastone-institute]] at [[place:scholastone-institute]]. Kliff meets that office when he first reaches the school, then talks to him again after the rift in Obsession and Madness. The old id [[character:dean-of-the-scholastone-institute]] is the same person.",
       "facts": [
         "Heads the academic institute that studies the Abyss",
@@ -513,7 +513,7 @@
       "id": "character:white-crow",
       "type": "character",
       "name": "White Crow",
-      "aliases": ["the Witch", "Woman in White"],
+      "aliases": ["Woman in White"],
       "role": "Guardian of the Abyss",
       "region": "region:abyss",
       "related": ["character:alustin", "character:draven", "character:woman-in-white"],
@@ -688,6 +688,7 @@
         "Escorted to Maegu after Gregor the Halberd of Carnage falls",
         "Associated with the Greymanes rather than a Demeniss house"
       ],
+      "quests": ["quest:where-the-wind-guides-you"],
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/588901", "title": "Game8: Chapter 8 walkthrough", "accessed": "2026-09-06" },
         { "url": "https://crimsondesertgame.wiki.fextralife.com/Woosa", "title": "Fextralife: Woosa", "accessed": "2026-09-06", "note": "seen via search snippet only" }
@@ -709,6 +710,7 @@
         "Tied to the Chapter 8 ritual questline",
         "Joined after Woosa is walked to her"
       ],
+      "quests": ["quest:a-bond", "quest:ritual-preparations"],
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/588901", "title": "Game8: Chapter 8 walkthrough", "accessed": "2026-09-06" },
         { "url": "https://crimsondesertgame.wiki.fextralife.com/Maegu", "title": "Fextralife: Maegu", "accessed": "2026-09-06", "note": "seen via search snippet only" }
@@ -1081,11 +1083,11 @@
       "type": "character",
       "name": "Kailok",
       "aliases": ["Hornsplitter", "Kailok the Hornsplitter"],
-      "role": "Goldleaf trademaster and Chapter 2 boss",
+      "role": "Goldleaf guild head, Hornsplitter, and Chapter 2 boss",
       "factions": ["faction:goldleaf-merchant-guild", "faction:hornsplitters-guards"],
       "home": "place:goldleaf-merchant-guild",
       "region": "region:hernand",
-      "summary": "Goblin head of the Goldleaf Merchant Guild who also commands Hornsplitter's Guards.",
+      "summary": "Head of the goblin-run Goldleaf Merchant Guild who also commands Hornsplitter's Guards.",
       "body": "By day Kailok sits on [[faction:goldleaf-merchant-guild]]; the same man keeps [[faction:hornsplitters-guards]] as private steel. [[character:shakatu]] runs the ledgers under him. The Chapter 2 close is a fight with this boss in [[quest:cheers-echoing-from-the-edge]].",
       "facts": [
         "Leads the non-hostile Goldleaf Merchant Guild",
@@ -1158,8 +1160,8 @@
     {
       "id": "character:olvald",
       "type": "character",
-      "name": "Chief Olvald",
-      "aliases": ["Olvald"],
+      "name": "Olvald",
+      "aliases": ["Chief Olvald"],
       "role": "Chief of the Knytlingar",
       "factions": ["faction:knytlingar"],
       "region": "region:pailune",
@@ -1842,7 +1844,7 @@
       "sources": [
         { "url": "https://crimsondesertgame.wiki.fextralife.com/Simon_de_Montfort", "title": "Fextralife: Simon de Montfort", "accessed": "2026-09-06", "note": "seen via search snippet only" }
       ],
-      "confidence": "reported",
+      "confidence": "assumed",
       "gameVersion": "2.01.00"
     },
     {
@@ -2251,10 +2253,9 @@
       "type": "character",
       "name": "Groks",
       "role": "Black-market trader at the Goldleaf Tradepost",
-      "factions": ["faction:goldleaf-merchant-guild"],
       "home": "place:goldleaf-merchant-guild",
       "region": "region:hernand",
-      "summary": "A Goldleaf black-market trader working the guild tradepost in Hernand.",
+      "summary": "A black-market trader working the Goldleaf Tradepost in Hernand.",
       "facts": [
         "Handles black-market trade at the Goldleaf Tradepost",
         "Listed on the Fextralife NPC and Vendors pages"
@@ -2271,10 +2272,9 @@
       "type": "character",
       "name": "Prox",
       "role": "Black-market trader at the Goldleaf Trading Post",
-      "factions": ["faction:goldleaf-merchant-guild"],
       "home": "place:goldleaf-merchant-guild",
       "region": "region:hernand",
-      "summary": "A Goldleaf black-market trader at the guild trading post in Hernand.",
+      "summary": "A black-market trader at the Goldleaf Trading Post in Hernand.",
       "facts": [
         "Handles black-market trade at the Goldleaf Trading Post",
         "Listed on the Fextralife NPC and Vendors pages"
@@ -2291,10 +2291,9 @@
       "type": "character",
       "name": "Serge",
       "role": "Black-market trader at the Goldleaf Trading Post",
-      "factions": ["faction:goldleaf-merchant-guild"],
       "home": "place:goldleaf-merchant-guild",
       "region": "region:hernand",
-      "summary": "Another Goldleaf black-market trader sharing the guild trading post with Prox.",
+      "summary": "A black-market trader at the Goldleaf Trading Post, sharing the stall ground with Prox.",
       "facts": [
         "Handles black-market trade at the Goldleaf Trading Post",
         "Listed on the Fextralife NPC and Vendors pages"
@@ -2605,7 +2604,7 @@
       "sources": [
         { "url": "https://crimsondesert.gaming.tools/people/kweiden/kweiden_lifeshop", "title": "gaming.tools: Pailune goods vendors", "accessed": "2026-09-06", "note": "seen via search snippet only" }
       ],
-      "confidence": "reported",
+      "confidence": "assumed",
       "gameVersion": "2.01.00"
     },
     {
@@ -2680,7 +2679,7 @@
       "sources": [
         { "url": "https://crimsondesert.gaming.tools/people/crimsondesert/crimsondesert_lifeshop", "title": "gaming.tools: Crimson Desert goods vendors", "accessed": "2026-09-06", "note": "seen via search snippet only" }
       ],
-      "confidence": "reported",
+      "confidence": "assumed",
       "gameVersion": "2.01.00"
     },
     {
@@ -2754,7 +2753,7 @@
       "sources": [
         { "url": "https://crimsondesert.gaming.tools/people/crimsondesert/crimsondesert_lifeshop", "title": "gaming.tools: Crimson Desert goods vendors", "accessed": "2026-09-06", "note": "seen via search snippet only" }
       ],
-      "confidence": "reported",
+      "confidence": "assumed",
       "gameVersion": "2.01.00"
     },
     {
@@ -2774,7 +2773,7 @@
       "sources": [
         { "url": "https://crimsondesert.gaming.tools/people/crimsondesert/crimsondesert_lifeshop", "title": "gaming.tools: Crimson Desert goods vendors", "accessed": "2026-09-06", "note": "seen via search snippet only" }
       ],
-      "confidence": "reported",
+      "confidence": "assumed",
       "gameVersion": "2.01.00"
     },
     {

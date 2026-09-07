@@ -38,7 +38,7 @@
         "character:giles"
       ],
       "headquarters": "place:howling-hill",
-      "region": "region:pailune",
+      "region": "region:hernand",
       "summary": "Kliff's mercenary company and the protectors of Pailune, all but destroyed in the opening attack.",
       "body": "The company was built to keep Pailune's roads and towns safe; after Jian's death [[character:kliff]] holds the banner from the rebuilt camp on [[place:howling-hill]]. Survivors are found one by one through the main story. Greymane commissions are short repeatable tasks that pay a flat reward and refresh daily. New comrades arrive through the Grounds of the Sunrise work, and they grow stronger when the camp is upgraded rather than by earning their own experience.",
       "reputation": {
@@ -76,10 +76,6 @@
       "region": "region:pailune",
       "summary": "Myurdin's hostile mercenary company, responsible for the attack on the Greymane camp.",
       "body": "[[character:myurdin]] leads a conquest company that smashed the Greymanes on the opening night and now sits on [[place:pailune]]. They want Pailune under their rule, not a peacekeeping charter. Kliff meets them in the prologue raid and again when the company pushes north to take the city back. Story fights against Myurdin and his occupation troops are how this banner shows up; it is not a joinable house.",
-      "reputation": {
-        "tiers": ["War", "Hostile", "Neutral", "Friendly", "Alliance"],
-        "notes": "Ranks run War, Hostile, Neutral, Friendly and Alliance. This company starts on the low end and fights on sight. Clearing occupation camps and beating the story bosses tied to Myurdin is how standing moves, if the game lets it climb at all."
-      },
       "quests": [
         "quest:ambush",
         "quest:in-ashes-prologue",
@@ -130,7 +126,7 @@
       "headquarters": "place:serkis-estate",
       "region": "region:hernand",
       "summary": "Marquis house that runs Hernand's internal affairs as Celeste's right hand.",
-      "body": "[[character:marquis-serkis]] (Alan Serkis) keeps the duchy's books and streets in order from [[place:serkis-estate]], working as House Celeste's right hand. The house wants Hernand's daily business to run without the duke having to watch every ledger. Kliff is set to rebuild work after Golden Greed, including the first camp jobs that start at the Serkis seat. [[quest:first-step-to-rebuilding]] is the early beat that puts the marquis on the page.",
+      "body": "[[character:marquis-serkis]] (Alan Serkis) keeps the duchy's books and streets in order from Oakenshield Manor at [[place:serkis-estate]], working as House Celeste's right hand. The house wants Hernand's daily business to run without the duke having to watch every ledger. Kliff is set to rebuild work after Golden Greed, including the first camp jobs that start at the Serkis seat. [[quest:first-step-to-rebuilding]] is the early beat that puts the marquis on the page.",
       "reputation": {
         "tiers": ["War", "Hostile", "Neutral", "Friendly", "Alliance"],
         "notes": "Standing runs War, Hostile, Neutral, Friendly and Alliance. City administration jobs and the early rebuild chain move this house. Alliance unlocks allied troops, exclusive vendors and restricted nodes on Serkis ground."
@@ -302,9 +298,6 @@
       "leader": "character:kailok",
       "members": [
         "character:shakatu",
-        "character:groks",
-        "character:prox",
-        "character:serge",
         "character:ugmon"
       ],
       "headquarters": "place:goldleaf-merchant-guild",
@@ -357,10 +350,6 @@
       "region": "region:hernand",
       "summary": "Isolated sanctuary community in Pororin Forest, unfriendly to outsiders.",
       "body": "The guardians keep a hidden village at [[place:pororin]] and treat the forest as a closed sanctuary. They want strangers out, not a seat in Hernand's court. Kliff reaches them only after entering the woods; they are listed as a community, not a bandit camp you clear on sight. No source read here names a chief, so the leader field is left empty.",
-      "reputation": {
-        "tiers": ["War", "Hostile", "Neutral", "Friendly", "Alliance"],
-        "notes": "The five ranks are War, Hostile, Neutral, Friendly and Alliance. Forest requests and leaving their sanctuary intact raise standing. Alliance unlocks exclusive vendors, restricted woodland nodes and allied help inside Pororin."
-      },
       "sources": [
         { "url": "https://crimsondesertgame.wiki.fextralife.com/Factions", "title": "Fextralife: Factions", "accessed": "2026-09-06" },
         { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" },
@@ -378,10 +367,6 @@
       "region": "region:hernand",
       "summary": "Traditional troll village alliance in southwest Hernand, at odds with Scholastone.",
       "body": "The alliance is a conservative troll community in a hidden mountain village in southwest Hernand. It wants old custom kept, and it clashes with [[faction:scholastone-institute]]'s open, modernising school. Kliff can meet the village as a community, not an on-sight raid. Headquarters is omitted because no Kharonso place record exists yet.",
-      "reputation": {
-        "tiers": ["War", "Hostile", "Neutral", "Friendly", "Alliance"],
-        "notes": "Ranks run War, Hostile, Neutral, Friendly and Alliance. Village requests and staying on the right side of their traditions raise standing. Alliance opens exclusive vendors, restricted mountain nodes and allied help around Kharonso."
-      },
       "sources": [
         { "url": "https://crimsondesertgame.wiki.fextralife.com/Factions", "title": "Fextralife: Factions", "accessed": "2026-09-06" },
         { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" },
@@ -399,10 +384,6 @@
       "region": "region:hernand",
       "summary": "Mutual-aid network of vagrants and refugees in Hernand.",
       "body": "The alliance is a street-level compact among vagrants and refugees in Hernand, not a noble house. It wants its people fed and left alone, not a charter on the castle wall. Kliff can pick up small requests from beggars in the city; [[quest:mysterious-man]] starts with a coin asked in Hernand, which sits in that world even if the giver is not named as a guild officer. No source read here names a leader.",
-      "reputation": {
-        "tiers": ["War", "Hostile", "Neutral", "Friendly", "Alliance"],
-        "notes": "The five ranks are War, Hostile, Neutral, Friendly and Alliance. Alms, city requests and looking after refugees raise standing. Alliance unlocks exclusive vendors, restricted nodes and allied help among the alliance's people."
-      },
       "sources": [
         { "url": "https://crimsondesertgame.wiki.fextralife.com/Factions", "title": "Fextralife: Factions", "accessed": "2026-09-06" },
         { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" },
@@ -420,12 +401,8 @@
       "leader": "character:kailok",
       "region": "region:hernand",
       "summary": "Kailok's personal elite force, fought as the Chapter 2 guild uprising bosses.",
-      "body": "[[character:kailok]] keeps this armed retinue as private security while also heading the non-hostile [[faction:goldleaf-merchant-guild]]. The guards exist to protect his person and his ledgers, not to keep Hernand's peace. Kliff fights them at the close of Chapter 2 when the guildhouse revolt comes to a head. [[quest:rebellion-of-revolution]] is the story beat that ends that chain.",
-      "reputation": {
-        "tiers": ["War", "Hostile", "Neutral", "Friendly", "Alliance"],
-        "notes": "Ranks run War, Hostile, Neutral, Friendly and Alliance. This force starts low and is met in a fight. Beating the Chapter 2 bosses and clearing related camps is how standing moves, if it moves at all."
-      },
-      "quests": ["quest:rebellion-of-revolution"],
+      "body": "[[character:kailok]] keeps this armed retinue as private security while also heading the non-hostile [[faction:goldleaf-merchant-guild]]. The guards exist to protect his person and his ledgers, not to keep Hernand's peace. Kliff fights them at the close of Chapter 2 when the guildhouse revolt comes to a head. [[quest:rebellion-of-revolution]] is the Shakatu talk that starts that chain; [[quest:cheers-echoing-from-the-edge]] is the Chapter 2 boss fight.",
+      "quests": ["quest:rebellion-of-revolution", "quest:cheers-echoing-from-the-edge"],
       "sources": [
         { "url": "https://crimsondesertgame.wiki.fextralife.com/Factions", "title": "Fextralife: Factions", "accessed": "2026-09-06" },
         { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" },
@@ -445,10 +422,6 @@
       "region": "region:hernand",
       "summary": "Hernand asylum that confines the politically inconvenient under a medical name.",
       "body": "[[character:augustine]] heads the house at [[place:house-of-healing]]. On paper it treats troubled minds; in practice it locks away people the city wants gone. Kliff is walked through the building during Familiar Curses and finds a prison, not a ward. [[quest:familiar-curses]] is the story visit; the faction lists mark the house hostile.",
-      "reputation": {
-        "tiers": ["War", "Hostile", "Neutral", "Friendly", "Alliance"],
-        "notes": "The five ranks are War, Hostile, Neutral, Friendly and Alliance. This institution starts on the low end and is met as an enemy site. Clearing the house and finishing the Chapter 3 visit are the standing hooks the lists give."
-      },
       "quests": ["quest:familiar-curses"],
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" },
@@ -467,10 +440,6 @@
       "region": "region:hernand",
       "summary": "Hernand band that claims scholarly purpose while operating like common thieves.",
       "body": "This goblin band talks like a school and works like a theft ring. It wants loot dressed up as study, not a chair at Scholastone. Kliff meets them as hostile field enemies in Hernand rather than as a joinable college. No source read here names a leader.",
-      "reputation": {
-        "tiers": ["War", "Hostile", "Neutral", "Friendly", "Alliance"],
-        "notes": "Ranks run War, Hostile, Neutral, Friendly and Alliance. These crews start low and fight on sight. Clearing their camps and finishing bounties tied to them is how standing moves."
-      },
       "sources": [
         { "url": "https://crimsondesertgame.wiki.fextralife.com/Factions", "title": "Fextralife: Factions", "accessed": "2026-09-06" },
         { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" },
@@ -488,10 +457,6 @@
       "region": "region:hernand",
       "summary": "Hernand crime ring that traffics Dreamer's Bliss and takes slaves.",
       "body": "The Bleed Bandits are an organised crime crew in Hernand, not a fallen house. They push a drug called Dreamer's Bliss and take people as property. Kliff meets them as hostile camps and bounties, not as a court faction. No source read here names a boss of the ring.",
-      "reputation": {
-        "tiers": ["War", "Hostile", "Neutral", "Friendly", "Alliance"],
-        "notes": "The five ranks are War, Hostile, Neutral, Friendly and Alliance. This ring starts low and attacks on sight. Breaking their camps and finishing related bounties raise standing."
-      },
       "sources": [
         { "url": "https://crimsondesertgame.wiki.fextralife.com/Factions", "title": "Fextralife: Factions", "accessed": "2026-09-06" },
         { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" },
@@ -509,10 +474,6 @@
       "region": "region:hernand",
       "summary": "Pywel-wide hunting band that chases legendary quarry for sport.",
       "body": "The Wolf Trackers roam beyond one duchy and hunt famous beasts for the chase, not for a town's larder. They want trophies, not a charter. Kliff meets them as hostile hunters in the field. The Hernand faction table is where the lists park them; no source read here names a captain.",
-      "reputation": {
-        "tiers": ["War", "Hostile", "Neutral", "Friendly", "Alliance"],
-        "notes": "Standing runs War, Hostile, Neutral, Friendly and Alliance. These hunters start low and fight on sight. Beating their parties and finishing hunt-related bounties move the needle."
-      },
       "sources": [
         { "url": "https://crimsondesertgame.wiki.fextralife.com/Factions", "title": "Fextralife: Factions", "accessed": "2026-09-06" },
         { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" },
@@ -530,10 +491,6 @@
       "region": "region:hernand",
       "summary": "Lesser-known robbery crew operating in southern Hernand.",
       "body": "The Southern Bandits are a small pillage crew on Hernand's south side, not a named house. They want road loot and abandoned farms. Kliff meets them as ordinary hostile camps rather than a chapter boss. No source read here names a leader.",
-      "reputation": {
-        "tiers": ["War", "Hostile", "Neutral", "Friendly", "Alliance"],
-        "notes": "The five ranks are War, Hostile, Neutral, Friendly and Alliance. This crew starts low and attacks on sight. Clearing southern camps is the standing hook the guides give."
-      },
       "sources": [
         { "url": "https://crimsondesertgame.wiki.fextralife.com/Factions", "title": "Fextralife: Factions", "accessed": "2026-09-06" },
         { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" },
@@ -552,10 +509,6 @@
       "region": "region:hernand",
       "summary": "Demon-led scarecrow host haunting Sunset Valley and the Reed Fields.",
       "body": "The Reed Devil is both the name of a demon and the banner over the spirits that wear scarecrow bodies in its fields. It wants that country feared and empty of ordinary travel. Kliff tracks the trouble around [[place:reedfield-graves]] in Chapter 3. [[quest:dance-with-the-devil]] is the story beat that puts the host on the map; no personal name beyond Reed Devil appears in the sources read here.",
-      "reputation": {
-        "tiers": ["War", "Hostile", "Neutral", "Friendly", "Alliance"],
-        "notes": "Ranks run War, Hostile, Neutral, Friendly and Alliance. This host starts low and is fought, not greeted. Finishing the reed-field chapter work and clearing its ground raise standing."
-      },
       "quests": ["quest:dance-with-the-devil"],
       "sources": [
         { "url": "https://crimsondesertgame.wiki.fextralife.com/Factions", "title": "Fextralife: Factions", "accessed": "2026-09-06" },
@@ -576,10 +529,6 @@
       "region": "region:hernand",
       "summary": "Loyalist band listed under Cassius Morten's own name after he betrays Calphade.",
       "body": "Game8 files this military remnant under the name Cassius Morten rather than a house title; it is the loyalist band that stayed with the fallen Calphade commander after he turned on the marquis. They want his banner held at [[place:calphade-castle]], not Lanford's. Kliff meets them as the Chapter 6 castle opposition. [[quest:traitor-ch6]] is the fight that ends the chain; a search snippet on gaming.tools files the same group as faction_silvermorten.",
-      "reputation": {
-        "tiers": ["War", "Hostile", "Neutral", "Friendly", "Alliance"],
-        "notes": "The five ranks are War, Hostile, Neutral, Friendly and Alliance. This band starts low and is met in the Calphade assault. Beating Cassius and taking the castle are the standing hooks the story gives."
-      },
       "quests": ["quest:the-unyielding-shields-ch6", "quest:traitor-ch6"],
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" },
@@ -599,10 +548,6 @@
       "region": "region:hernand",
       "summary": "Coastal pirate crew whose followers treat Sir Catfish with near-fanatical loyalty.",
       "body": "These pirates work Hernand's coast and prey on fishing traffic, including the Vellua boats. They want plunder, and the crews treat Sir Catfish as more than a captain. Kliff meets them as hostile shore fights. The row is Game8-only in the research file; Sir Catfish has no character record in this pass, so leadership is omitted rather than invented.",
-      "reputation": {
-        "tiers": ["War", "Hostile", "Neutral", "Friendly", "Alliance"],
-        "notes": "Ranks run War, Hostile, Neutral, Friendly and Alliance. The pirates start low and fight on sight. Clearing coastal camps and finishing pirate bounties raise standing."
-      },
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" },
         { "url": "https://www.keengamer.com/articles/guides/crimson-desert-all-factions-guide-how-to-earn-reputation-and-best-rewards/", "title": "KeenGamer: factions and reputation", "accessed": "2026-09-06" }
@@ -619,11 +564,7 @@
       "leader": "character:draven",
       "region": "region:pailune",
       "summary": "Mobile sorcerous killers who serve Hexe Marie and hunt her favour.",
-      "body": "[[character:draven-the-crowcaller]], adopted by [[character:hexe-marie]], leads this slaughter band across Pailune and Demeniss. They want the witch's affection and the souls she points them at, not a town to govern. Kliff meets them in the Chapter 5 hunt that starts with the Axiom Archive raid and the taking of White Crow. [[quest:black-and-white]] and [[quest:crowcaller]] are the story beats that put Draven on the road.",
-      "reputation": {
-        "tiers": ["War", "Hostile", "Neutral", "Friendly", "Alliance"],
-        "notes": "The five ranks are War, Hostile, Neutral, Friendly and Alliance. This band starts low and is fought through the Crowcaller chase. Beating Draven's encounters is the standing hook the story gives."
-      },
+      "body": "[[character:draven]], adopted by [[character:hexe-marie]], leads this slaughter band across Pailune and Demeniss. They want the witch's affection and the souls she points them at, not a town to govern. Kliff meets them in the Chapter 5 hunt that starts with the Axiom Archive raid and the taking of White Crow. [[quest:black-and-white]] and [[quest:crowcaller]] are the story beats that put Draven on the road.",
       "quests": ["quest:black-and-white", "quest:crowcaller", "quest:the-crows-warning"],
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" },
@@ -642,10 +583,6 @@
       "region": "region:pailune",
       "summary": "Poachers in the Wayward Woods who hunt woodland spirits for profit.",
       "body": "The Mistwood Hunters work the Wayward Woods and treat forest spirits as stock. They want coin from those kills, not a village charter. Kliff meets them as hostile woods enemies in Pailune country. The row is Game8-only in the research file, and no leader is named.",
-      "reputation": {
-        "tiers": ["War", "Hostile", "Neutral", "Friendly", "Alliance"],
-        "notes": "Standing runs War, Hostile, Neutral, Friendly and Alliance. These hunters start low and fight on sight. Clearing Wayward Woods camps raises standing."
-      },
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" },
         { "url": "https://www.keengamer.com/articles/guides/crimson-desert-all-factions-guide-how-to-earn-reputation-and-best-rewards/", "title": "KeenGamer: factions and reputation", "accessed": "2026-09-06" }
@@ -662,10 +599,6 @@
       "region": "region:hernand",
       "summary": "Southern Pywel church of the light god Solumen, wary of prayers for miracles.",
       "body": "The church worships Solumen and is written as the largest light faith in southern Pywel. It wants reverence without miracle-begging; asking the god to intervene is treated as taboo. Kliff meets parish buildings and clergy as civilian institutions, not as a raid target. The row is Game8-only in the research file, so the wide southern claim is assumed from that single list.",
-      "reputation": {
-        "tiers": ["War", "Hostile", "Neutral", "Friendly", "Alliance"],
-        "notes": "The five ranks are War, Hostile, Neutral, Friendly and Alliance. Parish requests and leaving churches intact raise standing. Alliance opens exclusive vendors, restricted holy sites and allied help on church ground."
-      },
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" },
         { "url": "https://www.keengamer.com/articles/guides/crimson-desert-all-factions-guide-how-to-earn-reputation-and-best-rewards/", "title": "KeenGamer: factions and reputation", "accessed": "2026-09-06" }
@@ -683,10 +616,6 @@
       "region": "region:hernand",
       "summary": "Hernand branch of Solumen worship, run apart from the central cathedral.",
       "body": "This parish is the Hernand office of Solumen worship and is written as independent from the central cathedral. It wants local rites kept under local priests. Kliff visits [[place:hernand-church]] in Chapter 5 for a relic and the Pillar of Radiance. The row is Game8-only in the research file; tying the parish seat to that church is assumed from the city church being the named Solumen building.",
-      "reputation": {
-        "tiers": ["War", "Hostile", "Neutral", "Friendly", "Alliance"],
-        "notes": "Ranks run War, Hostile, Neutral, Friendly and Alliance. Church errands in Hernand raise standing. Alliance unlocks exclusive vendors, restricted parish rooms and allied help around the city church."
-      },
       "quests": ["quest:secret-at-the-church"],
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" },
@@ -704,10 +633,6 @@
       "region": "region:hernand",
       "summary": "Scattered dark-worship order that uses sacrifice and calls evil a path to equality.",
       "body": "The Antumbra Order is a hostile faith spread across Pywel rather than pinned to one castle. It wants light and ordinary life profaned, and it sells that as a kind of equality. Kliff meets its people as enemies, not as a parish he can join. The row is Game8-only in the research file, and no leader is named.",
-      "reputation": {
-        "tiers": ["War", "Hostile", "Neutral", "Friendly", "Alliance"],
-        "notes": "The five ranks are War, Hostile, Neutral, Friendly and Alliance. This order starts low and fights on sight. Clearing its sites and finishing related bounties raise standing."
-      },
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" },
         { "url": "https://www.keengamer.com/articles/guides/crimson-desert-all-factions-guide-how-to-earn-reputation-and-best-rewards/", "title": "KeenGamer: factions and reputation", "accessed": "2026-09-06" }
@@ -725,10 +650,6 @@
       "region": "region:demeniss",
       "summary": "Secret Eastern spiritual and martial discipline based at Jijeong Temple.",
       "body": "The school keeps a closed Eastern discipline of spirit and martial work at [[place:jijeong-temple]]. It wants students tested on its own terms, not advertised in Hernand. Kliff reaches the temple during Chapter 9 when the grounds are in uproar. [[quest:jijeong-temple-in-chaos]] and the disciple path that follows are the story visit; the Chief Monk is named in Game8 only and has no character record in this pass, so leadership is omitted.",
-      "reputation": {
-        "tiers": ["War", "Hostile", "Neutral", "Friendly", "Alliance"],
-        "notes": "Standing uses War, Hostile, Neutral, Friendly and Alliance. Temple work and the Chapter 9 disciple chain raise standing. Alliance opens exclusive vendors, restricted training grounds and allied help at the temple."
-      },
       "quests": [
         "quest:jijeong-temple-in-chaos",
         "quest:path-to-enlightenment",
@@ -752,10 +673,6 @@
       "region": "region:hernand",
       "summary": "Knightly order Matthias founded after his lord fell, met as an honour duel in Hernand.",
       "body": "[[character:matthias]] raised this order from fellow wanderers after the lord he served was gone. They want a test of arms, not a city to occupy; the first meeting is an honour duel in Hernand's square during [[quest:for-honor]]. The house is not marked hostile-on-sight on the faction lists, even though that duel is a story boss. Headquarters is the city square at [[place:hernand-castle]] because that is where the order first appears; they are otherwise written as wandering.",
-      "reputation": {
-        "tiers": ["War", "Hostile", "Neutral", "Friendly", "Alliance"],
-        "notes": "The five ranks are War, Hostile, Neutral, Friendly and Alliance. The Hernand duel and any later honour jobs are the standing hooks. Alliance would open exclusive vendors and allied help if the order tracks that far."
-      },
       "quests": ["quest:for-honor"],
       "sources": [
         { "url": "https://crimsondesertgame.wiki.fextralife.com/Matthias", "title": "Fextralife: Matthias", "accessed": "2026-09-06", "note": "seen via search snippet only" },
@@ -777,10 +694,6 @@
       "region": "region:pailune",
       "summary": "Former Greymane allies who now occupy Pailune under Ludvig with the Black Bears.",
       "body": "[[character:ludvig]] turned the Jackals into Black Bear collaborators after Jian's death and now leans on the people of [[place:pailune]]. They want the city held for the occupation, not the old Greymane peace charter. Kliff meets them as the Chapter 7 castle opposition and hunts Ludvig through more than one boss form. [[quest:lonely-jackals]] is the named fight; Jackals is only the short form of the same banner.",
-      "reputation": {
-        "tiers": ["War", "Hostile", "Neutral", "Friendly", "Alliance"],
-        "notes": "Ranks run War, Hostile, Neutral, Friendly and Alliance. This company starts low and fights on sight. Beating Ludvig's encounters and taking Pailune back are the standing hooks."
-      },
       "quests": ["quest:lonely-jackals", "quest:ludvigs-whereabouts", "quest:time-to-face-justice"],
       "sources": [
         { "url": "https://crimsondesertgame.wiki.fextralife.com/Factions", "title": "Fextralife: Factions", "accessed": "2026-09-06" },
@@ -870,10 +783,6 @@
       "region": "region:pailune",
       "summary": "Weakened northern Pailune clan that can no longer hold invaders off.",
       "body": "[[character:olvald]] is chief of this northern Pailune clan. They want their ground kept, but the lists say they can no longer push invaders back. Kliff meets them as a tribal community rather than a raid target. Headquarters is omitted because no named Knytlingar village record exists yet.",
-      "reputation": {
-        "tiers": ["War", "Hostile", "Neutral", "Friendly", "Alliance"],
-        "notes": "Ranks run War, Hostile, Neutral, Friendly and Alliance. Northern Pailune requests raise this clan. Alliance unlocks exclusive vendors, restricted nodes and allied help on their ground."
-      },
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" },
         { "url": "https://www.keengamer.com/articles/guides/crimson-desert-all-factions-guide-how-to-earn-reputation-and-best-rewards/", "title": "KeenGamer: factions and reputation", "accessed": "2026-09-06" }
@@ -890,10 +799,6 @@
       "region": "region:pailune",
       "summary": "Tree-dwelling Wayward Woods tribe that uses sacred lanterns and shuns outsiders.",
       "body": "The Longleaf keep to the trees in the Wayward Woods and light sacred lanterns as part of that life. They want outsiders out of the canopy. Kliff meets them as a closed woodland people, not as a bandit camp. No source read here names a chief, and no Longleaf village record exists, so leadership and headquarters are omitted.",
-      "reputation": {
-        "tiers": ["War", "Hostile", "Neutral", "Friendly", "Alliance"],
-        "notes": "The five ranks are War, Hostile, Neutral, Friendly and Alliance. Woods requests that respect their lanterns raise standing. Alliance opens exclusive vendors, restricted woodland nodes and allied help among the Longleaf."
-      },
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" },
         { "url": "https://www.keengamer.com/articles/guides/crimson-desert-all-factions-guide-how-to-earn-reputation-and-best-rewards/", "title": "KeenGamer: factions and reputation", "accessed": "2026-09-06" }
@@ -911,10 +816,6 @@
       "region": "region:pailune",
       "summary": "Western Pailune mountain tribe that worships mountain spirits.",
       "body": "The Skoghorn hold the western Pailune mountains from [[place:skoghorn]] and keep mountain-spirit rites. A fandom snippet says they once practiced child sacrifice; that past is single-source and is treated as assumed here. Kliff meets the village as a tribal community, not an on-sight raid. No source read here names a living chief.",
-      "reputation": {
-        "tiers": ["War", "Hostile", "Neutral", "Friendly", "Alliance"],
-        "notes": "Standing runs War, Hostile, Neutral, Friendly and Alliance. Mountain village requests raise this tribe. Alliance unlocks exclusive vendors, restricted highland nodes and allied help at Skoghorn."
-      },
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" },
         { "url": "https://crimsondesert.fandom.com/wiki/Skoghorn_Tribe", "title": "Fandom: Skoghorn Tribe", "accessed": "2026-09-06", "note": "seen via search snippet only" },
@@ -933,10 +834,6 @@
       "region": "region:pailune",
       "summary": "Northern Pailune clan split between ancestor rites at Totemfelt and weather worship at Skallcove.",
       "body": "The Stjar keep two northern villages: ancestor worship at [[place:totemfelt]] and weather-deity worship at Skallcove. They want both rites kept, even though the clan is split. Kliff meets them as tribal communities rather than a single castle faction. Skallcove has no place record yet, so the named headquarters is Totemfelt.",
-      "reputation": {
-        "tiers": ["War", "Hostile", "Neutral", "Friendly", "Alliance"],
-        "notes": "The five ranks are War, Hostile, Neutral, Friendly and Alliance. Northern village requests raise this clan. Alliance opens exclusive vendors, restricted nodes and allied help at their villages."
-      },
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" },
         { "url": "https://www.keengamer.com/articles/guides/crimson-desert-all-factions-guide-how-to-earn-reputation-and-best-rewards/", "title": "KeenGamer: factions and reputation", "accessed": "2026-09-06" }
@@ -1022,7 +919,6 @@
       "kind": "house",
       "hostile": false,
       "leader": "character:beatrice-azerian",
-      "members": ["character:damiane"],
       "headquarters": "place:azerian-manor",
       "region": "region:demeniss",
       "summary": "Count's house in Demeniss that opposes Caliburn and raised Damiane.",
@@ -1152,10 +1048,6 @@
       "region": "region:demeniss",
       "summary": "Village order at Tariv that gives magical protection and keeps a Guardian Tree rite.",
       "body": "The sorcerers of [[place:tariv]] give magical guidance and protection and hold a Guardian Tree coming-of-age for their youths. They want that rite and that village kept. Kliff meets Tariv as a Demeniss-listed settlement sitting near the desert edge. No source read here names a head sorcerer.",
-      "reputation": {
-        "tiers": ["War", "Hostile", "Neutral", "Friendly", "Alliance"],
-        "notes": "Ranks run War, Hostile, Neutral, Friendly and Alliance. Village rite work and protection jobs raise standing. Alliance unlocks exclusive vendors, restricted grove sites and allied help at Tariv."
-      },
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" },
         { "url": "https://www.keengamer.com/articles/guides/crimson-desert-all-factions-guide-how-to-earn-reputation-and-best-rewards/", "title": "KeenGamer: factions and reputation", "accessed": "2026-09-06" }
@@ -1176,10 +1068,6 @@
       "region": "region:demeniss",
       "summary": "Caliburn's political persecution force under Grand General Lucian Bastier.",
       "body": "[[character:bastier]] (Lucian Bastier) runs this persecution arm for Caliburn from Demeniss, and the lists also call them Righteous Inquisitors. They want dissenters broken; the same lists say the office has slid far from whatever purpose it first claimed. Kliff and Damiane meet them through the late Demeniss chapter, and Damiane fights Bastier in [[quest:a-fleeting-dream]]. Headquarters is the capital they enforce, [[place:demeniss-castle]].",
-      "reputation": {
-        "tiers": ["War", "Hostile", "Neutral", "Friendly", "Alliance"],
-        "notes": "The five ranks are War, Hostile, Neutral, Friendly and Alliance. This force starts low and is fought through the Demeniss chapter. Beating Bastier and his field commanders is the standing hook."
-      },
       "quests": ["quest:a-fleeting-dream", "quest:rebel-suppression"],
       "sources": [
         { "url": "https://crimsondesertgame.wiki.fextralife.com/Factions", "title": "Fextralife: Factions", "accessed": "2026-09-06" },
@@ -1290,10 +1178,6 @@
       "region": "region:delesyia",
       "summary": "Delesyia service building airship warfare for a sky-conquest program.",
       "body": "The Aerial Force develops airship war and is written as a sky-conquest project. It wants the air over Delesyia owned. Kliff visits the aeronautical works during [[quest:fortress-keys]]; tying the headquarters to [[place:aeronautical-research-base]] is assumed from that being the named air-research site. No source read here names a commander.",
-      "reputation": {
-        "tiers": ["War", "Hostile", "Neutral", "Friendly", "Alliance"],
-        "notes": "Standing runs War, Hostile, Neutral, Friendly and Alliance. Airfield jobs and the fortress-key visit raise this service. Alliance opens exclusive vendors, restricted hangars and allied help at the base."
-      },
       "quests": ["quest:fortress-keys"],
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" },
@@ -1359,10 +1243,6 @@
       "region": "region:delesyia",
       "summary": "Tech-minded Tinkerton residents who prefer watching the sky to pushing research.",
       "body": "The Tinkertons are Marni-aligned residents at Tinkerton and Timberton who would rather watch the sky than run the next experiment. They want that slower life kept. Kliff can meet them around [[place:tinkerton-dig-site]]. The row is Game8-only in the research file, and no leader is named.",
-      "reputation": {
-        "tiers": ["War", "Hostile", "Neutral", "Friendly", "Alliance"],
-        "notes": "The five ranks are War, Hostile, Neutral, Friendly and Alliance. Quiet Tinkerton requests raise this community. Alliance unlocks exclusive vendors, restricted lookouts and allied help at the diggings."
-      },
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" },
         { "url": "https://www.keengamer.com/articles/guides/crimson-desert-all-factions-guide-how-to-earn-reputation-and-best-rewards/", "title": "KeenGamer: factions and reputation", "accessed": "2026-09-06" }
@@ -1421,10 +1301,6 @@
       "region": "region:delesyia",
       "summary": "Delesyia militia that fields Marni's machines as war engines.",
       "body": "The Cogknights are a tactical militia that rolls Marni's machines into the field. They want those engines ready, not sitting in a museum. Kliff meets them as Delesyia's armed civic arm. No source read here names a captain.",
-      "reputation": {
-        "tiers": ["War", "Hostile", "Neutral", "Friendly", "Alliance"],
-        "notes": "Ranks run War, Hostile, Neutral, Friendly and Alliance. Machine-militia jobs in Delesyia raise standing. Alliance opens exclusive vendors, restricted engine yards and allied troops in the city."
-      },
       "sources": [
         { "url": "https://crimsondesertgame.wiki.fextralife.com/Factions", "title": "Fextralife: Factions", "accessed": "2026-09-06" },
         { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" },
@@ -1442,10 +1318,6 @@
       "region": "region:delesyia",
       "summary": "Foreign wyvern-riders who massacre and enslave from Windridge Fortress.",
       "body": "The Wyvernflames are foreign riders who take slaves and burn locals, holding Windridge Fortress. They want Delesyia ground under their saddles. Kliff meets them as hostile occupiers. Headquarters is omitted because Windridge Fortress has no place record yet.",
-      "reputation": {
-        "tiers": ["War", "Hostile", "Neutral", "Friendly", "Alliance"],
-        "notes": "The five ranks are War, Hostile, Neutral, Friendly and Alliance. This host starts low and fights on sight. Taking their fortress ground and finishing related bounties raise standing."
-      },
       "sources": [
         { "url": "https://crimsondesertgame.wiki.fextralife.com/Factions", "title": "Fextralife: Factions", "accessed": "2026-09-06" },
         { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" },
@@ -1464,10 +1336,6 @@
       "region": "region:crimson-desert",
       "summary": "Desert tribe that holds Arcosa, written as the region's most prosperous village.",
       "body": "The Arcosa Tribe keeps the walled town of [[place:arcosa]] and its four watchtowers. They want that prosperity defended against desert raids. Kliff meets the town as a desert hub rather than a hostile camp. No source read here names a tribal chief.",
-      "reputation": {
-        "tiers": ["War", "Hostile", "Neutral", "Friendly", "Alliance"],
-        "notes": "Standing runs War, Hostile, Neutral, Friendly and Alliance. Town defense and desert commissions raise this tribe. Alliance unlocks exclusive vendors, restricted watchtowers and allied help at Arcosa."
-      },
       "sources": [
         { "url": "https://crimsondesertgame.wiki.fextralife.com/Factions", "title": "Fextralife: Factions", "accessed": "2026-09-06" },
         { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" },
@@ -1484,12 +1352,8 @@
       "hostile": false,
       "headquarters": "place:muiquun",
       "region": "region:crimson-desert",
-      "summary": "Exile refuge at Muiquun whose only written law is the strength to survive.",
-      "body": "The outlaws hold [[place:muiquun]] as a place for the exiled, and the lists say strength to survive is the only law there. They want that refuge left standing. Kliff can walk the village without it being marked as an on-sight raid; the research file marks hostility as depends, so hostile stays false. No source read here names a boss of the refuge.",
-      "reputation": {
-        "tiers": ["War", "Hostile", "Neutral", "Friendly", "Alliance"],
-        "notes": "The five ranks are War, Hostile, Neutral, Friendly and Alliance. Respecting the refuge and finishing local jobs raise standing. Alliance opens exclusive vendors, restricted caches and allied help at Muiquun."
-      },
+      "summary": "Exile refuge at Muiquun where staying alive, not a written code, decides who lasts.",
+      "body": "The outlaws hold [[place:muiquun]] as a place for the exiled, and the lists say nothing but the will to stay alive counts as law there. They want that refuge left standing. Kliff can walk the village without it being marked as an on-sight raid; the research file marks hostility as depends, so hostile stays false. No source read here names a boss of the refuge.",
       "sources": [
         { "url": "https://crimsondesertgame.wiki.fextralife.com/Factions", "title": "Fextralife: Factions", "accessed": "2026-09-06" },
         { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" },
@@ -1507,10 +1371,6 @@
       "region": "region:crimson-desert",
       "summary": "Independent desert dwellers who answer to no duchy or guild.",
       "body": "The Lords of Unclaimed Lands are ungoverned desert people, not a noble house despite the name. They want no duke and no guild charter. Kliff meets them as scattered desert civilians. No source read here names a speaker or a seat, so those fields are omitted.",
-      "reputation": {
-        "tiers": ["War", "Hostile", "Neutral", "Friendly", "Alliance"],
-        "notes": "Ranks run War, Hostile, Neutral, Friendly and Alliance. Helping independent desert camps raise this banner. Alliance unlocks exclusive vendors, restricted waste nodes and allied help among the ungoverned."
-      },
       "sources": [
         { "url": "https://crimsondesertgame.wiki.fextralife.com/Factions", "title": "Fextralife: Factions", "accessed": "2026-09-06" },
         { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" },
@@ -1551,10 +1411,6 @@
       "region": "region:crimson-desert",
       "summary": "Itinerant goblin preacher whose harsh lessons are meant to wake pilgrims.",
       "body": "The Sage of the Desert is both a banner and the goblin preacher who walks it. The teaching is written as a harsh awakening, not a gentle homily. Kliff meets that road during Chapter 9. [[quest:the-sage-of-the-desert]] is the named beat; there is no fixed hall, so headquarters is omitted.",
-      "reputation": {
-        "tiers": ["War", "Hostile", "Neutral", "Friendly", "Alliance"],
-        "notes": "Standing runs War, Hostile, Neutral, Friendly and Alliance. Pilgrim jobs and the Chapter 9 sage visit raise this banner. Alliance unlocks exclusive vendors, restricted shrines and allied help among the preacher's students."
-      },
       "quests": ["quest:the-sage-of-the-desert"],
       "sources": [
         { "url": "https://crimsondesertgame.wiki.fextralife.com/Factions", "title": "Fextralife: Factions", "accessed": "2026-09-06" },
@@ -1573,10 +1429,6 @@
       "region": "region:crimson-desert",
       "summary": "Goblin wolf-riders trying to unify the desert under bandit rule.",
       "body": "The Sandfang are goblin-led wolf-riders with the widest bandit country in the Crimson Desert. They want that waste under one outlaw banner. Kliff meets them as hostile desert camps. No source read here names a captain.",
-      "reputation": {
-        "tiers": ["War", "Hostile", "Neutral", "Friendly", "Alliance"],
-        "notes": "The five ranks are War, Hostile, Neutral, Friendly and Alliance. This host starts low and fights on sight. Clearing their camps raises standing."
-      },
       "sources": [
         { "url": "https://crimsondesertgame.wiki.fextralife.com/Factions", "title": "Fextralife: Factions", "accessed": "2026-09-06" },
         { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" },
@@ -1594,10 +1446,6 @@
       "region": "region:crimson-desert",
       "summary": "Dwarf-led iguana riders, dismissed by rivals as petty thieves.",
       "body": "The Goldenscale ride iguanas and are written as a dwarf-led desert crew. They want easy plunder; other bands treat them as small-time. Kliff meets them as hostile desert fights. No source read here names a leader.",
-      "reputation": {
-        "tiers": ["War", "Hostile", "Neutral", "Friendly", "Alliance"],
-        "notes": "Ranks run War, Hostile, Neutral, Friendly and Alliance. These riders start low and attack on sight. Clearing their camps is the standing hook."
-      },
       "sources": [
         { "url": "https://crimsondesertgame.wiki.fextralife.com/Factions", "title": "Fextralife: Factions", "accessed": "2026-09-06" },
         { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" },
@@ -1615,10 +1463,6 @@
       "region": "region:crimson-desert",
       "summary": "Deserter-soldier bandits in the Crimson Desert who fight with stolen weapons.",
       "body": "Dusksong is a deserter crew that kept its army kit and turned it on the road. They want that stolen steel to pay. Kliff meets them as hostile desert bandits, separate from the Bursada research team that shares a Game8 heading. No source read here names a captain.",
-      "reputation": {
-        "tiers": ["War", "Hostile", "Neutral", "Friendly", "Alliance"],
-        "notes": "The five ranks are War, Hostile, Neutral, Friendly and Alliance. This crew starts low and fights on sight. Clearing deserter camps raises standing."
-      },
       "sources": [
         { "url": "https://crimsondesertgame.wiki.fextralife.com/Factions", "title": "Fextralife: Factions", "accessed": "2026-09-06" },
         { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" },
@@ -1637,10 +1481,6 @@
       "region": "region:crimson-desert",
       "summary": "Nomadic boar-riding raiders under Ravok, mostly ex-Kharonso trolls in the wetlands.",
       "body": "[[character:ravok]] formed this raiding band after leaving Kharonso's rigid customs, and most of the riders are trolls from that village. They want travelers' packs, not a new town. Lists place their ground in both Pailune wetlands and the Crimson Desert; this record keeps the desert region the task asked for. The row is a single gaming.tools snippet, so the wetland seat and the Kharonso origin are assumed.",
-      "reputation": {
-        "tiers": ["War", "Hostile", "Neutral", "Friendly", "Alliance"],
-        "notes": "Standing runs War, Hostile, Neutral, Friendly and Alliance. These raiders start low and fight on sight. Clearing wetland and desert camps tied to them raises standing."
-      },
       "sources": [
         { "url": "https://crimsondesert.gaming.tools/factions/faction_trollwildriders", "title": "gaming.tools: Savage Fangs", "accessed": "2026-09-06", "note": "seen via search snippet only" },
         { "url": "https://www.keengamer.com/articles/guides/crimson-desert-all-factions-guide-how-to-earn-reputation-and-best-rewards/", "title": "KeenGamer: factions and reputation", "accessed": "2026-09-06" }
@@ -1657,10 +1497,6 @@
       "region": "region:crimson-desert",
       "summary": "Masked desert bandits who call their plunder liberation and keep to themselves.",
       "body": "The Faceless wear masks and sell their raids as liberation while staying self-reliant. They want that story believed and their caches unshared. Kliff meets them as hostile desert crews. No source read here names a leader.",
-      "reputation": {
-        "tiers": ["War", "Hostile", "Neutral", "Friendly", "Alliance"],
-        "notes": "The five ranks are War, Hostile, Neutral, Friendly and Alliance. This band starts low and attacks on sight. Clearing their camps is the standing hook."
-      },
       "sources": [
         { "url": "https://crimsondesertgame.wiki.fextralife.com/Factions", "title": "Fextralife: Factions", "accessed": "2026-09-06" },
         { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" },
@@ -1678,10 +1514,6 @@
       "region": "region:crimson-desert",
       "summary": "Vicious desert tribe that builds war machines from stolen technology.",
       "body": "The Helms are written as the most vicious desert tribe and they bolt stolen machines into war gear. They want conquest, not a market stall. Kliff meets them as hostile desert fighters. No source read here names a chief.",
-      "reputation": {
-        "tiers": ["War", "Hostile", "Neutral", "Friendly", "Alliance"],
-        "notes": "Ranks run War, Hostile, Neutral, Friendly and Alliance. This tribe starts low and fights on sight. Breaking their machine camps raises standing."
-      },
       "sources": [
         { "url": "https://crimsondesertgame.wiki.fextralife.com/Factions", "title": "Fextralife: Factions", "accessed": "2026-09-06" },
         { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" },
@@ -1700,10 +1532,6 @@
       "region": "region:crimson-desert",
       "summary": "Freesword company under Merrick that tolls desert guilds and now takes Demeniss coin.",
       "body": "[[character:merrick]], called the Knight of Fortune, leads a freesword company that answers only to pay. They toll merchant guilds crossing the desert and are currently taking orders from Demeniss. Kliff meets them as hostile desert mercenaries holding named ground such as Dawnreach and the Timeworn Ruins. Headquarters is omitted because Crimson Mountains Fortress has no place record yet; the row is snippet-only.",
-      "reputation": {
-        "tiers": ["War", "Hostile", "Neutral", "Friendly", "Alliance"],
-        "notes": "The five ranks are War, Hostile, Neutral, Friendly and Alliance. This company starts low and fights on sight. Clearing their desert holds raises standing."
-      },
       "sources": [
         { "url": "https://crimsondesert.gaming.tools/factions/faction_dawnmoon", "title": "gaming.tools: Twilight Messengers", "accessed": "2026-09-06", "note": "seen via search snippet only" },
         { "url": "https://www.keengamer.com/articles/guides/crimson-desert-all-factions-guide-how-to-earn-reputation-and-best-rewards/", "title": "KeenGamer: factions and reputation", "accessed": "2026-09-06" }
@@ -1760,10 +1588,6 @@
       "region": "region:crimson-desert",
       "summary": "Varnia debate hall open only to high-ranking Atima believers.",
       "body": "The Whitesand Retreat is a philosophical hall in Varnia for high-ranking Atima believers only. It wants that debate kept inside the faith's upper ranks. Kliff can meet it as a closed religious room, not a raid. The row is Game8-only in the research file; Varnia has no place record yet, so headquarters is omitted.",
-      "reputation": {
-        "tiers": ["War", "Hostile", "Neutral", "Friendly", "Alliance"],
-        "notes": "Ranks run War, Hostile, Neutral, Friendly and Alliance. Faith jobs in Varnia that respect the closed hall raise standing. Alliance opens exclusive vendors, restricted debate rooms and allied help among Atima believers."
-      },
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" },
         { "url": "https://www.keengamer.com/articles/guides/crimson-desert-all-factions-guide-how-to-earn-reputation-and-best-rewards/", "title": "KeenGamer: factions and reputation", "accessed": "2026-09-06" }
