@@ -95,6 +95,1814 @@
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:circling-moon",
+      "type": "item",
+      "name": "Circling Moon",
+      "category": "weapon",
+      "summary": "A unique weapon taken when the Full Moon Reaper falls during Lunar Judgement.",
+      "acquisitions": [
+        {
+          "kind": "drop",
+          "note": "Drops from the Full Moon Reaper on the Lunar Judgement quest; that quest has no record here yet.",
+          "steps": [
+            {
+              "text": "Take up Lunar Judgement when that quest opens.",
+              "action": "other"
+            },
+            {
+              "text": "Defeat the Full Moon Reaper.",
+              "action": "fight"
+            },
+            {
+              "text": "Take Circling Moon from the fall.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587692",
+          "title": "Game8: list of unique weapons",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:crow-whisperer",
+      "type": "item",
+      "name": "Crow Whisperer",
+      "category": "weapon",
+      "summary": "A unique weapon taken from Hexe Marie and also listed among the Veiled Witch rewards.",
+      "acquisitions": [
+        {
+          "kind": "drop",
+          "note": "Drops from Hexe Marie at the end of the Veiled Witch stretch.",
+          "steps": [
+            {
+              "text": "Follow Veiled Witch until the Black Witch is in reach.",
+              "action": "travel",
+              "refs": ["quest:veiled-witch", "character:hexe-marie"]
+            },
+            {
+              "text": "Defeat Hexe Marie.",
+              "action": "fight",
+              "refs": ["quest:black-witch", "character:hexe-marie"]
+            },
+            {
+              "text": "Take Crow Whisperer from the fall.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "quest",
+          "ref": "quest:veiled-witch",
+          "note": "The Veiled Witch reward list also names Crow Whisperer."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587692",
+          "title": "Game8: list of unique weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/589366",
+          "title": "Game8: Chapter 9 walkthrough",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:frostfang",
+      "type": "item",
+      "name": "Frostfang",
+      "category": "weapon",
+      "region": "region:hernand",
+      "summary": "A unique weapon taken from Gwen Kraber at Roothold in Hernand.",
+      "acquisitions": [
+        {
+          "kind": "drop",
+          "note": "Drops from Gwen Kraber at Roothold; that site has no place record here yet.",
+          "steps": [
+            {
+              "text": "Ride to Roothold in Hernand.",
+              "action": "travel"
+            },
+            {
+              "text": "Defeat Gwen Kraber.",
+              "action": "fight"
+            },
+            {
+              "text": "Take Frostfang from the fall.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587692",
+          "title": "Game8: list of unique weapons",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:golden-vanguard",
+      "type": "item",
+      "name": "Golden Vanguard",
+      "category": "weapon",
+      "slot": "two-handed sword",
+      "summary": "A two-handed weapon taken from Gregor, the Halberd of Carnage, during the Chapter 8 stretch.",
+      "body": "The unique-weapons list ties this to Gregor in Ashen Steps. The chapter table also files it under A Fleeting Dream. The Chapter 8 walkthrough pays it on [[quest:where-the-wind-guides-you]]. Like other gear, it has ten material-only refinement ranks.",
+      "acquisitions": [
+        {
+          "kind": "drop",
+          "note": "Drops from Gregor, the Halberd of Carnage, on the Ashen Steps stretch.",
+          "steps": [
+            {
+              "text": "Take up the Ashen Steps work in Chapter 8.",
+              "action": "travel",
+              "refs": ["quest:ashen-steps"]
+            },
+            {
+              "text": "Defeat Gregor, the Halberd of Carnage.",
+              "action": "fight",
+              "refs": ["character:gregor", "quest:where-the-wind-guides-you"]
+            },
+            {
+              "text": "Take Golden Vanguard from the fall.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "quest",
+          "ref": "quest:where-the-wind-guides-you",
+          "note": "The Chapter 8 walkthrough also lists it among the rewards of Where the Wind Guides You."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587692",
+          "title": "Game8: list of unique weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Unique+Weapons",
+          "title": "Fextralife: Unique Weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/588901",
+          "title": "Game8: Chapter 8 walkthrough",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:grasping-moon",
+      "type": "item",
+      "name": "Grasping Moon",
+      "category": "weapon",
+      "summary": "A unique weapon taken when the Half Moon Reaper falls during Lunar Judgement.",
+      "acquisitions": [
+        {
+          "kind": "drop",
+          "note": "Drops from the Half Moon Reaper on the Lunar Judgement quest; that quest has no record here yet.",
+          "steps": [
+            {
+              "text": "Take up Lunar Judgement when that quest opens.",
+              "action": "other"
+            },
+            {
+              "text": "Defeat the Half Moon Reaper.",
+              "action": "fight"
+            },
+            {
+              "text": "Take Grasping Moon from the fall.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587692",
+          "title": "Game8: list of unique weapons",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:sanguine-knell",
+      "type": "item",
+      "name": "Sanguine Knell",
+      "category": "weapon",
+      "summary": "A unique weapon taken from Mazzul during One Step Ahead.",
+      "acquisitions": [
+        {
+          "kind": "drop",
+          "note": "Drops from Mazzul on One Step Ahead; that quest has no record here yet.",
+          "steps": [
+            {
+              "text": "Take up One Step Ahead when that quest opens.",
+              "action": "other"
+            },
+            {
+              "text": "Defeat Mazzul.",
+              "action": "fight"
+            },
+            {
+              "text": "Take Sanguine Knell from the fall.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587692",
+          "title": "Game8: list of unique weapons",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:sword-of-the-lord",
+      "type": "item",
+      "name": "Sword of the Lord",
+      "category": "weapon",
+      "slot": "one-handed sword",
+      "summary": "A one-handed sword taken from Hornsplitter at the close of The End of Greed.",
+      "body": "One unique-weapons page says Hornsplitter drops this at the end of [[quest:the-end-of-greed]]. A separate best-weapons page calls it a starting weapon that comes with Abyss Gear. The Chapter 2 reward list names it on [[quest:cheers-echoing-from-the-edge]]. Like other gear, it has ten material-only refinement ranks.",
+      "acquisitions": [
+        {
+          "kind": "drop",
+          "note": "Drops from Hornsplitter when The End of Greed closes.",
+          "steps": [
+            {
+              "text": "Push The End of Greed through to the Hornsplitter fight.",
+              "action": "travel",
+              "refs": ["quest:the-end-of-greed", "character:kailok"]
+            },
+            {
+              "text": "Defeat Kailok the Hornsplitter.",
+              "action": "fight",
+              "refs": ["quest:cheers-echoing-from-the-edge", "character:kailok"]
+            },
+            {
+              "text": "Take Sword of the Lord when the chapter rewards are paid.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "quest",
+          "ref": "quest:cheers-echoing-from-the-edge",
+          "note": "The Chapter 2 reward list also names it on Cheers Echoing From the Edge."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587692",
+          "title": "Game8: list of unique weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587175",
+          "title": "Game8: best weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Weapons",
+          "title": "Fextralife: Weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/586591",
+          "title": "Game8: Chapter 2 walkthrough",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/",
+          "title": "VULKK: main story walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:black-sun",
+      "type": "item",
+      "name": "Black Sun",
+      "category": "shield",
+      "slot": "shield",
+      "region": "region:demeniss",
+      "summary": "A shield found in a chest beneath the bridge at Demeniss Castle.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "ref": "place:demeniss-castle",
+          "note": "The chest sits under the castle bridge.",
+          "steps": [
+            {
+              "text": "Ride to Demeniss Castle and drop under the bridge that fronts it.",
+              "action": "travel",
+              "refs": ["place:demeniss-castle"]
+            },
+            {
+              "text": "Open the chest beneath the span and take the shield.",
+              "action": "collect",
+              "refs": ["place:demeniss-castle"]
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587692",
+          "title": "Game8: list of unique weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Weapons",
+          "title": "Fextralife: Weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Shields",
+          "title": "Fextralife: Shields",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:blazing-shield",
+      "type": "item",
+      "name": "Blazing Shield",
+      "category": "shield",
+      "slot": "shield",
+      "region": "region:crimson-desert",
+      "summary": "A shield hidden in an unmarked cave somewhere in the Crimson Desert.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "The cave is unmarked and has no place record here yet.",
+          "steps": [
+            {
+              "text": "Search the Crimson Desert for an unmarked cave.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the chest inside and take the shield.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587692",
+          "title": "Game8: list of unique weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Weapons",
+          "title": "Fextralife: Weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Shields",
+          "title": "Fextralife: Shields",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:crimson-wardens-bow",
+      "type": "item",
+      "name": "Crimson Warden's Bow",
+      "category": "weapon",
+      "slot": "bow",
+      "region": "region:demeniss",
+      "summary": "A bow taken from a treasure chest on the Golden Plains in Demeniss.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "The chest sits on the Golden Plains; that field has no place record here yet.",
+          "steps": [
+            {
+              "text": "Ride out onto the Golden Plains in Demeniss.",
+              "action": "travel"
+            },
+            {
+              "text": "Find the treasure chest and take the bow.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587692",
+          "title": "Game8: list of unique weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Weapons",
+          "title": "Fextralife: Weapons",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:darkbringer",
+      "type": "item",
+      "name": "Darkbringer",
+      "category": "weapon",
+      "slot": "two-handed sword",
+      "region": "region:pailune",
+      "summary": "A two-handed weapon found in the White Wastes Sanctuary in Pailune.",
+      "body": "A best-weapons page also calls this an early exploration pickup. Like other gear, it has ten material-only refinement ranks.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "The chest is in the White Wastes Sanctuary; that site has no place record here yet.",
+          "steps": [
+            {
+              "text": "Ride into Pailune and find the White Wastes Sanctuary.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the chest inside and take Darkbringer.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587692",
+          "title": "Game8: list of unique weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587175",
+          "title": "Game8: best weapons",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:demenissian-heros-musket",
+      "type": "item",
+      "name": "Demenissian Hero's Musket",
+      "category": "weapon",
+      "slot": "rifle",
+      "summary": "A musket found in a chest inside Lost Song Cave.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "The chest is in Lost Song Cave; that cave has no place record here yet.",
+          "steps": [
+            {
+              "text": "Find Lost Song Cave and go inside.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the chest and take the musket.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587692",
+          "title": "Game8: list of unique weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Weapons",
+          "title": "Fextralife: Weapons",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:diverging-moon",
+      "type": "item",
+      "name": "Diverging Moon",
+      "category": "weapon",
+      "summary": "A unique weapon in a chest at the Southern Court, reachable only after that court is liberated.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "The chest is at the Southern Court after liberation; that site has no place record here yet.",
+          "steps": [
+            {
+              "text": "Liberate the Southern Court.",
+              "action": "fight"
+            },
+            {
+              "text": "Enter the court once it is free.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the chest and take Diverging Moon.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587692",
+          "title": "Game8: list of unique weapons",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:drake-shield",
+      "type": "item",
+      "name": "Drake Shield",
+      "category": "shield",
+      "slot": "shield",
+      "region": "region:demeniss",
+      "summary": "A shield claimed after Tristan the Flame Knight falls and Flame Knight Castle is freed.",
+      "body": "The unique-weapons and best-shields pages both send you through the Flame Knight faction work, then up the stairs past two Demenissian Soldiers to a chest. Like other gear, it has ten material-only refinement ranks.",
+      "acquisitions": [
+        {
+          "kind": "drop",
+          "note": "Tied to defeating Tristan the Flame Knight and freeing Flame Knight Castle; neither has a record here yet.",
+          "steps": [
+            {
+              "text": "Take the Flame Knight faction work that leads to Flame Knight Castle.",
+              "action": "travel"
+            },
+            {
+              "text": "Defeat Tristan the Flame Knight and free the castle.",
+              "action": "fight"
+            }
+          ]
+        },
+        {
+          "kind": "chest",
+          "note": "After the castle is free, the chest is up the stairs past two Demenissian Soldiers.",
+          "steps": [
+            {
+              "text": "Climb the stairs inside the freed castle.",
+              "action": "travel"
+            },
+            {
+              "text": "Pass the two Demenissian Soldiers on the way up.",
+              "action": "fight"
+            },
+            {
+              "text": "Open the chest and take the shield.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587692",
+          "title": "Game8: list of unique weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/596271",
+          "title": "Game8: best shields",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Weapons",
+          "title": "Fextralife: Weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Shields",
+          "title": "Fextralife: Shields",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:electro-mecha-spear",
+      "type": "item",
+      "name": "Electro-Mecha Spear",
+      "category": "weapon",
+      "slot": "spear",
+      "summary": "A two-handed spear found in a chest at Regent's Rise.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "The chest is at Regent's Rise; that site has no place record here yet.",
+          "steps": [
+            {
+              "text": "Travel to Regent's Rise.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the chest and take the spear.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587692",
+          "title": "Game8: list of unique weapons",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:elite-vanguard",
+      "type": "item",
+      "name": "Elite Vanguard",
+      "category": "weapon",
+      "summary": "A unique weapon found in a cave on Bowsprit Cape.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "The chest is in a cave on Bowsprit Cape; that cape has no place record here yet.",
+          "steps": [
+            {
+              "text": "Ride to Bowsprit Cape and find the cave.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the chest inside and take Elite Vanguard.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587692",
+          "title": "Game8: list of unique weapons",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:frozen-anguish",
+      "type": "item",
+      "name": "Frozen Anguish",
+      "category": "weapon",
+      "summary": "A unique weapon found in a chest at the Spire of Frost.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "The chest is at the Spire of Frost; that spire has no place record here yet.",
+          "steps": [
+            {
+              "text": "Travel to the Spire of Frost.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the chest and take Frozen Anguish.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587692",
+          "title": "Game8: list of unique weapons",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:fated-shadow",
+      "type": "item",
+      "name": "Fated Shadow",
+      "category": "weapon",
+      "summary": "A unique weapon taken from Goyen during Chapter 9.",
+      "acquisitions": [
+        {
+          "kind": "drop",
+          "note": "Drops from Goyen in Chapter 9; no source names a single quest for that fight.",
+          "steps": [
+            {
+              "text": "Reach Chapter 9, The Sage of the Desert.",
+              "action": "travel"
+            },
+            {
+              "text": "Defeat Goyen and take Fated Shadow.",
+              "action": "fight"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587692",
+          "title": "Game8: list of unique weapons",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:golden-shield",
+      "type": "item",
+      "name": "Golden Shield",
+      "category": "shield",
+      "slot": "shield",
+      "summary": "A shield found in a chest inside Silentwater Grotto.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "The chest is in Silentwater Grotto; that grotto has no place record here yet.",
+          "steps": [
+            {
+              "text": "Find Silentwater Grotto and go inside.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the chest and take the shield.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587692",
+          "title": "Game8: list of unique weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Weapons",
+          "title": "Fextralife: Weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Shields",
+          "title": "Fextralife: Shields",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:goblin-kings-treasure-dagger",
+      "type": "item",
+      "name": "Goblin King's Treasure Dagger",
+      "category": "weapon",
+      "slot": "dagger",
+      "summary": "A dagger found in a chest beneath Mudridge Cabin.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "The chest sits under Mudridge Cabin; that cabin has no place record here yet.",
+          "steps": [
+            {
+              "text": "Find Mudridge Cabin and look beneath it.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the chest and take the dagger.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587692",
+          "title": "Game8: list of unique weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Weapons",
+          "title": "Fextralife: Weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Unique+Weapons",
+          "title": "Fextralife: Unique Weapons",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:hwando",
+      "type": "item",
+      "name": "Hwando",
+      "category": "weapon",
+      "slot": "two-handed sword",
+      "summary": "A two-handed sword found in a chest at Lioncrest Manor.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "The chest is at Lioncrest Manor, which is not the same site as Lioncrest Watchtower.",
+          "steps": [
+            {
+              "text": "Travel to Lioncrest Manor.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the chest and take Hwando.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587692",
+          "title": "Game8: list of unique weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Unique+Weapons",
+          "title": "Fextralife: Unique Weapons",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:knightlords-sword",
+      "type": "item",
+      "name": "Knightlord's Sword",
+      "category": "weapon",
+      "slot": "one-handed sword",
+      "summary": "A one-handed sword in a chest at Crescent Lake during the Dark Justiciar quest.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "The chest is at Crescent Lake on Dark Justiciar; neither that lake nor that quest has a record here yet.",
+          "steps": [
+            {
+              "text": "Take up the Dark Justiciar quest.",
+              "action": "other"
+            },
+            {
+              "text": "Travel to Crescent Lake.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the chest and take Knightlord's Sword.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587692",
+          "title": "Game8: list of unique weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Weapons",
+          "title": "Fextralife: Weapons",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:shield-of-conviction",
+      "type": "item",
+      "name": "Shield of Conviction",
+      "category": "shield",
+      "slot": "shield",
+      "region": "region:hernand",
+      "summary": "A shield in the bell tower of the Church of Calphade, on Hernand's Calphade march.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "The chest is in the church bell tower; the Church of Calphade has no place record here yet.",
+          "steps": [
+            {
+              "text": "Travel to the Church of Calphade.",
+              "action": "travel"
+            },
+            {
+              "text": "Climb the bell tower.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the chest and take the shield.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587692",
+          "title": "Game8: list of unique weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/596271",
+          "title": "Game8: best shields",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Weapons",
+          "title": "Fextralife: Weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Shields",
+          "title": "Fextralife: Shields",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:shield-of-sacrifice",
+      "type": "item",
+      "name": "Shield of Sacrifice",
+      "category": "shield",
+      "slot": "shield",
+      "summary": "A shield found in a cave in the Thornbriar Mountains.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "The chest is in a Thornbriar Mountains cave; that cave has no place record here yet.",
+          "steps": [
+            {
+              "text": "Ride into the Thornbriar Mountains and find the cave.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the chest inside and take the shield.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587692",
+          "title": "Game8: list of unique weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Weapons",
+          "title": "Fextralife: Weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Shields",
+          "title": "Fextralife: Shields",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:sigremon-greataxe",
+      "type": "item",
+      "name": "Sigremon Greataxe",
+      "category": "weapon",
+      "slot": "greataxe",
+      "region": "region:pailune",
+      "summary": "A greataxe found in a chest on Silver Wolf Mountain in Pailune.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "ref": "place:silverwolf-mountain",
+          "note": "The chest is on Silver Wolf Mountain.",
+          "steps": [
+            {
+              "text": "Climb Silver Wolf Mountain in Pailune.",
+              "action": "travel",
+              "refs": ["place:silverwolf-mountain"]
+            },
+            {
+              "text": "Find the chest and take the greataxe.",
+              "action": "collect",
+              "refs": ["place:silverwolf-mountain"]
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587692",
+          "title": "Game8: list of unique weapons",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:soul-spear",
+      "type": "item",
+      "name": "Soul Spear",
+      "category": "weapon",
+      "slot": "spear",
+      "summary": "A two-handed spear found in a chest at the Antumbra Ritual Grounds.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "The chest is at the Antumbra Ritual Grounds; that site has no place record here yet.",
+          "steps": [
+            {
+              "text": "Travel to the Antumbra Ritual Grounds.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the chest and take Soul Spear.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587692",
+          "title": "Game8: list of unique weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Unique+Weapons",
+          "title": "Fextralife: Unique Weapons",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:axe-of-the-apocalypse",
+      "type": "item",
+      "name": "Axe of the Apocalypse",
+      "category": "weapon",
+      "slot": "greataxe",
+      "summary": "A one-use two-handed axe with immense attack, given for finishing the main story.",
+      "body": "Awarded for finishing the main story. Sources give it a single use and an attack value of 99999. Like other gear it can be refined, but the one-use line is the fact the guides stress.",
+      "acquisitions": [
+        {
+          "kind": "quest",
+          "note": "Given once the main story is finished; no single quest name is attached.",
+          "steps": [
+            {
+              "text": "Fight through to the last main-story bosses.",
+              "action": "fight",
+              "refs": ["quest:blinding-darkness"]
+            },
+            {
+              "text": "Collect the axe with the closing rewards.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587692",
+          "title": "Game8: list of unique weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/594267",
+          "title": "Game8: special weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/",
+          "title": "VULKK: main story walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:ignir",
+      "type": "item",
+      "name": "Ignir",
+      "category": "weapon",
+      "slot": "spear",
+      "summary": "A two-handed spear awarded at the close of Chapter 7.",
+      "body": "The unique-weapons list and the Chapter 7 table both place this on the Homecoming close. The chapter table names it as a spear. Like other gear, it has ten material-only refinement ranks.",
+      "acquisitions": [
+        {
+          "kind": "quest",
+          "ref": "quest:time-to-face-justice",
+          "note": "Paid at the close of Chapter 7, on Time to Face Justice.",
+          "steps": [
+            {
+              "text": "Finish the Homecoming fights through Ludvig.",
+              "action": "fight",
+              "refs": ["quest:time-to-face-justice", "character:ludvig"]
+            },
+            {
+              "text": "Collect Ignir with the chapter rewards.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587692",
+          "title": "Game8: list of unique weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Unique+Weapons",
+          "title": "Fextralife: Unique Weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587752",
+          "title": "Game8: Chapter 7 walkthrough",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/",
+          "title": "VULKK: main story walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:melted-ambition",
+      "type": "item",
+      "name": "Melted Ambition",
+      "category": "weapon",
+      "slot": "one-handed sword",
+      "summary": "A one-handed sword taken from Myurdin during the Decisive Battle stretch.",
+      "acquisitions": [
+        {
+          "kind": "drop",
+          "note": "Drops from Myurdin on the Decisive Battle stretch; the chapter table records the pickup after that fight.",
+          "steps": [
+            {
+              "text": "Open the Decisive Battle stretch and climb toward Myurdin.",
+              "action": "travel",
+              "refs": ["quest:decisive-battle", "character:myurdin"]
+            },
+            {
+              "text": "Defeat Myurdin on Silverwolf Mountain.",
+              "action": "fight",
+              "refs": ["quest:battle-at-silverwolf-mountain", "place:silverwolf-mountain", "character:myurdin"]
+            },
+            {
+              "text": "Take Melted Ambition after the fight.",
+              "action": "collect",
+              "refs": ["quest:incomplete-victory"]
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587692",
+          "title": "Game8: list of unique weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Unique+Weapons",
+          "title": "Fextralife: Unique Weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587752",
+          "title": "Game8: Chapter 7 walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:balgran-shield",
+      "type": "item",
+      "name": "Balgran Shield",
+      "category": "shield",
+      "slot": "shield",
+      "summary": "A shield included with the Deluxe Edition purchase.",
+      "acquisitions": [
+        {
+          "kind": "other",
+          "note": "Comes with the Deluxe Edition; no in-world pickup is named."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587692",
+          "title": "Game8: list of unique weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Weapons",
+          "title": "Fextralife: Weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Shields",
+          "title": "Fextralife: Shields",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:khaled-shield",
+      "type": "item",
+      "name": "Khaled Shield",
+      "category": "shield",
+      "slot": "shield",
+      "summary": "A shield given as a pre-order bonus.",
+      "acquisitions": [
+        {
+          "kind": "other",
+          "note": "A pre-order bonus; no in-world pickup is named."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587692",
+          "title": "Game8: list of unique weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Weapons",
+          "title": "Fextralife: Weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Shields",
+          "title": "Fextralife: Shields",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:grey-wolf-bow",
+      "type": "item",
+      "name": "Grey Wolf Bow",
+      "category": "weapon",
+      "slot": "bow",
+      "tags": ["kliff"],
+      "summary": "Kliff's starting bow, already in his kit when he first takes the field.",
+      "acquisitions": [
+        {
+          "kind": "other",
+          "note": "Unlocked by default for Kliff; no world pickup is named."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587692",
+          "title": "Game8: list of unique weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Weapons",
+          "title": "Fextralife: Weapons",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:grey-wolf-wooden-shield",
+      "type": "item",
+      "name": "Grey Wolf Wooden Shield",
+      "category": "shield",
+      "slot": "shield",
+      "tags": ["kliff"],
+      "summary": "Kliff's starting shield, already equipped when the game begins.",
+      "acquisitions": [
+        {
+          "kind": "other",
+          "note": "Unlocked by default for Kliff as his starting shield."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587692",
+          "title": "Game8: list of unique weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/583000",
+          "title": "Game8: playable characters",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Weapons",
+          "title": "Fextralife: Weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Shields",
+          "title": "Fextralife: Shields",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:orc-blaster",
+      "type": "item",
+      "name": "Orc Blaster",
+      "category": "weapon",
+      "slot": "hand cannon",
+      "tags": ["oongka"],
+      "summary": "Oongka's starting hand cannon, already in his kit when he becomes playable.",
+      "acquisitions": [
+        {
+          "kind": "other",
+          "note": "Unlocked by default for Oongka as his starting hand cannon."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587692",
+          "title": "Game8: list of unique weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/583000",
+          "title": "Game8: playable characters",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Weapons",
+          "title": "Fextralife: Weapons",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:silverwolf-axe",
+      "type": "item",
+      "name": "Silverwolf Axe",
+      "category": "weapon",
+      "slot": "axe",
+      "tags": ["kliff"],
+      "summary": "A one-handed axe taken from Myurdin in the Decisive Battle stretch and treated as Kliff's key item.",
+      "acquisitions": [
+        {
+          "kind": "drop",
+          "note": "Drops from Myurdin on the Decisive Battle stretch and is called Kliff's key item.",
+          "steps": [
+            {
+              "text": "Open the Decisive Battle stretch and climb toward Myurdin.",
+              "action": "travel",
+              "refs": ["quest:decisive-battle", "character:myurdin", "character:kliff"]
+            },
+            {
+              "text": "Defeat Myurdin on Silverwolf Mountain.",
+              "action": "fight",
+              "refs": ["quest:battle-at-silverwolf-mountain", "place:silverwolf-mountain", "character:myurdin"]
+            },
+            {
+              "text": "Take the Silverwolf Axe from the fall.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587692",
+          "title": "Game8: list of unique weapons",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:sword-of-the-wolf",
+      "type": "item",
+      "name": "Sword of the Wolf",
+      "category": "weapon",
+      "slot": "one-handed sword",
+      "tags": ["kliff"],
+      "summary": "Kliff's starting one-handed sword, already in his kit at the opening of the story.",
+      "acquisitions": [
+        {
+          "kind": "other",
+          "note": "Unlocked by default for Kliff as his starting sword."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587692",
+          "title": "Game8: list of unique weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/583000",
+          "title": "Game8: playable characters",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:caliburns-mercy-pistol",
+      "type": "item",
+      "name": "Caliburn's Mercy Pistol",
+      "category": "weapon",
+      "slot": "pistol",
+      "tags": ["damiane"],
+      "summary": "Damiane's pistol, left on a table inside Fort Musket.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "ref": "place:fort-musket",
+          "note": "Picked up from a table inside Fort Musket.",
+          "steps": [
+            {
+              "text": "Enter Fort Musket.",
+              "action": "travel",
+              "refs": ["place:fort-musket"]
+            },
+            {
+              "text": "Find the table and take the pistol.",
+              "action": "collect",
+              "refs": ["place:fort-musket"]
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587692",
+          "title": "Game8: list of unique weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Weapons",
+          "title": "Fextralife: Weapons",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:delesyian-ornamental-shield",
+      "type": "item",
+      "name": "Delesyian Ornamental Shield",
+      "category": "shield",
+      "slot": "shield",
+      "region": "region:delesyia",
+      "summary": "A shield taken from Storm Crusher during Brave New World in Delesyia.",
+      "body": "Fextralife's weapon index lists a Delesyian Dagger as a separate item. This record is the ornamental shield from Storm Crusher, not that dagger.",
+      "acquisitions": [
+        {
+          "kind": "drop",
+          "note": "Drops from Storm Crusher on Brave New World.",
+          "steps": [
+            {
+              "text": "Push the Brave New World stretch into Delesyia.",
+              "action": "travel",
+              "refs": ["quest:brave-new-world", "place:delesyia-castle"]
+            },
+            {
+              "text": "Fight Storm Crusher when that guardian appears on the fortress-key run.",
+              "action": "fight",
+              "refs": ["quest:fortress-keys"]
+            },
+            {
+              "text": "Take the ornamental shield from the fall.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587692",
+          "title": "Game8: list of unique weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Weapons",
+          "title": "Fextralife: Weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Shields",
+          "title": "Fextralife: Shields",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:golden-fire",
+      "type": "item",
+      "name": "Golden Fire",
+      "category": "weapon",
+      "slot": "hand cannon",
+      "summary": "A hand cannon taken from Golden Star during Foreboding Shadow, and also listed among that chapter's unlocks.",
+      "acquisitions": [
+        {
+          "kind": "drop",
+          "note": "Drops from Golden Star on the Foreboding Shadow stretch.",
+          "steps": [
+            {
+              "text": "Follow Foreboding Shadow until Golden Star is named.",
+              "action": "travel",
+              "refs": ["quest:foreboding-shadow"]
+            },
+            {
+              "text": "Defeat Golden Star.",
+              "action": "fight",
+              "refs": ["quest:master-of-a-forgotten-land"]
+            },
+            {
+              "text": "Take Golden Fire from the fall.",
+              "action": "collect"
+            }
+          ]
+        },
+        {
+          "kind": "quest",
+          "ref": "quest:foreboding-shadow",
+          "note": "Also named in the Chapter 11 unlock bundle beside the Golden Star Power Core."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587692",
+          "title": "Game8: list of unique weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Weapons",
+          "title": "Fextralife: Weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/590172",
+          "title": "Game8: Chapter 11 walkthrough",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/",
+          "title": "VULKK: main story walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:guidance-of-dark-pursuit",
+      "type": "item",
+      "name": "Guidance of Dark Pursuit",
+      "category": "weapon",
+      "summary": "A unique weapon taken after Antumbra's Staff falls.",
+      "acquisitions": [
+        {
+          "kind": "drop",
+          "note": "Drops from the fight named Antumbra's Staff; that enemy has no record here yet.",
+          "steps": [
+            {
+              "text": "Find the fight named Antumbra's Staff.",
+              "action": "travel"
+            },
+            {
+              "text": "Win that fight and take the weapon.",
+              "action": "fight"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587692",
+          "title": "Game8: list of unique weapons",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:leofric-musket",
+      "type": "item",
+      "name": "Leofric Musket",
+      "category": "weapon",
+      "slot": "rifle",
+      "summary": "A musket awarded for finishing Greater Firepower.",
+      "body": "The unique-weapons list names Greater Firepower. The Chapter 10 table writes the same musket on the chapter-total rewards of [[quest:lingering-shadow]].",
+      "acquisitions": [
+        {
+          "kind": "quest",
+          "ref": "quest:greater-firepower",
+          "note": "Awarded for completing Greater Firepower; the chapter total is written on Lingering Shadow.",
+          "steps": [
+            {
+              "text": "Work through the Greater Firepower stretch.",
+              "action": "other",
+              "refs": ["quest:greater-firepower"]
+            },
+            {
+              "text": "Collect the musket when the counterattack closes.",
+              "action": "collect",
+              "refs": ["quest:lingering-shadow"]
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587692",
+          "title": "Game8: list of unique weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Weapons",
+          "title": "Fextralife: Weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/590081",
+          "title": "Game8: Chapter 10 walkthrough",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/",
+          "title": "VULKK: main story walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:marni-musket",
+      "type": "item",
+      "name": "Marni Musket",
+      "category": "weapon",
+      "slot": "rifle",
+      "summary": "A musket taken from Storm Crusher during Brave New World.",
+      "acquisitions": [
+        {
+          "kind": "drop",
+          "note": "Drops from Storm Crusher on Brave New World.",
+          "steps": [
+            {
+              "text": "Push the Brave New World stretch into Delesyia.",
+              "action": "travel",
+              "refs": ["quest:brave-new-world", "place:delesyia-castle"]
+            },
+            {
+              "text": "Fight Storm Crusher when that guardian appears on the fortress-key run.",
+              "action": "fight",
+              "refs": ["quest:fortress-keys"]
+            },
+            {
+              "text": "Take the musket from the fall.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587692",
+          "title": "Game8: list of unique weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Weapons",
+          "title": "Fextralife: Weapons",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:mechanical-clockwork-blaster",
+      "type": "item",
+      "name": "Mechanical Clockwork Blaster",
+      "category": "weapon",
+      "slot": "hand cannon",
+      "summary": "A hand cannon taken from Thunder Tank during Brave New World.",
+      "acquisitions": [
+        {
+          "kind": "drop",
+          "note": "Drops from Thunder Tank on Brave New World.",
+          "steps": [
+            {
+              "text": "Push the Brave New World stretch into Delesyia.",
+              "action": "travel",
+              "refs": ["quest:brave-new-world", "place:delesyia-castle"]
+            },
+            {
+              "text": "Fight Thunder Tank when that guardian appears on the fortress-key run.",
+              "action": "fight",
+              "refs": ["quest:fortress-keys"]
+            },
+            {
+              "text": "Take the blaster from the fall.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/587692",
+          "title": "Game8: list of unique weapons",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Weapons",
+          "title": "Fextralife: Weapons",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
     }
   ]
 }
