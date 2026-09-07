@@ -1674,6 +1674,7 @@
         },
         {
           "kind": "item",
+          "ref": "item:sword-of-the-lord",
           "text": "Sword of the Lord (with Abyss Gears)"
         },
         {
@@ -3905,6 +3906,7 @@
         },
         {
           "kind": "item",
+          "ref": "item:blackwing-leather-armor",
           "text": "Blackwing Leather Armor"
         },
         {
@@ -3914,10 +3916,12 @@
         },
         {
           "kind": "item",
+          "ref": "item:tauria-curved-sword",
           "text": "Tauria Curved Sword"
         },
         {
           "kind": "item",
+          "ref": "item:the-groves-thorn",
           "text": "The Grove's Thorn"
         },
         {
@@ -5740,6 +5744,7 @@
       "rewards": [
         {
           "kind": "item",
+          "ref": "item:melted-ambition",
           "text": "Melted Ambition"
         }
       ],
@@ -5889,6 +5894,7 @@
         },
         {
           "kind": "item",
+          "ref": "item:ignir",
           "text": "Ignir (spear)"
         },
         {
@@ -6142,10 +6148,12 @@
         },
         {
           "kind": "item",
+          "ref": "item:golden-vanguard",
           "text": "Golden Vanguard"
         },
         {
           "kind": "item",
+          "ref": "item:radiant-necklace",
           "text": "Radiant Necklace"
         }
       ],
@@ -6549,6 +6557,7 @@
         },
         {
           "kind": "item",
+          "ref": "item:shackle-of-might",
           "text": "Shackle of Might x1"
         }
       ],
@@ -6687,6 +6696,7 @@
       "rewards": [
         {
           "kind": "item",
+          "ref": "item:damianes-ponytail-ticket",
           "text": "Damiane's Ponytail Ticket x1"
         },
         {
@@ -6887,6 +6897,7 @@
       "rewards": [
         {
           "kind": "item",
+          "ref": "item:stardust-necklace",
           "text": "Stardust Necklace"
         }
       ],
@@ -7037,10 +7048,12 @@
       "rewards": [
         {
           "kind": "item",
+          "ref": "item:witchs-ring",
           "text": "Witch's Ring"
         },
         {
           "kind": "item",
+          "ref": "item:greymanes-earring",
           "text": "Greymane's Earring"
         }
       ],
@@ -7473,10 +7486,12 @@
       "rewards": [
         {
           "kind": "item",
+          "ref": "item:earring-of-dark-magic",
           "text": "Earring of Dark Magic"
         },
         {
           "kind": "item",
+          "ref": "item:crow-whisperer",
           "text": "Crow Whisperer"
         }
       ],
@@ -8322,6 +8337,7 @@
       "rewards": [
         {
           "kind": "item",
+          "ref": "item:leofric-musket",
           "text": "Leofric Musket"
         },
         {
@@ -9120,6 +9136,7 @@
       "rewards": [
         {
           "kind": "item",
+          "ref": "item:twisted-verdict",
           "text": "Twisted Verdict"
         },
         {
@@ -9184,6 +9201,7 @@
       "rewards": [
         {
           "kind": "item",
+          "ref": "item:axe-of-the-apocalypse",
           "text": "Axe of the Apocalypse"
         },
         {
@@ -9572,6 +9590,7 @@
       "rewards": [
         {
           "kind": "item",
+          "ref": "item:dark-executioner-leather-armor",
           "text": "Dark Executioner Leather Armor"
         }
       ],

@@ -3028,10 +3028,9 @@
       "id": "item:mining-knuckledrill",
       "type": "item",
       "name": "Mining Knuckledrill",
-      "category": "weapon",
-      "slot": "one-handed sword",
-      "summary": "A one-handed mining tool that can also strike as a weapon; no pickup is named.",
-      "body": "The special-weapons page gives it 33 attack and a 30 percent chance to pull an extra ore on a hit. No source names a chest, boss, or vendor. Like other gear, it has ten material-only refinement ranks.",
+      "category": "tool",
+      "summary": "A mining tool that can also strike as a weapon; no pickup is named.",
+      "body": "Guides file this as both a tool and a one-handed weapon. The special-weapons page gives it 33 attack and a 30 percent chance to pull an extra ore on a hit. No source names a chest, boss, or vendor. Like other gear, it has ten material-only refinement ranks.",
       "acquisitions": [
         {
           "kind": "other",
@@ -3057,10 +3056,9 @@
       "id": "item:eastern-witchs-fan",
       "type": "item",
       "name": "Eastern Witch's Fan",
-      "category": "weapon",
-      "slot": "one-handed sword",
-      "summary": "A one-handed fan that can clear local weather; no pickup is named.",
-      "body": "The special-weapons page says it clears local bad weather on a ten-minute cooldown and uses a wind and lightning moveset. No source names a chest, boss, or vendor.",
+      "category": "tool",
+      "summary": "A fan that can clear local weather and also strike as a weapon; no pickup is named.",
+      "body": "Guides file this as both a tool and a one-handed fan. It clears local bad weather on a ten-minute cooldown and uses a wind and lightning moveset. No source names a chest, boss, or vendor. Like other gear, it has ten material-only refinement ranks.",
       "acquisitions": [
         {
           "kind": "other",
@@ -6660,7 +6658,7 @@
         "abyss-gear"
       ],
       "summary": "Damiane set named for high defense and Fortification, Aegis, and Vitality Abyss Gear; no source names a pickup.",
-      "body": "Guides treat this as a full Damiane kit and stop there. A same-named earring in the accessory index is a separate item, not this armour. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
+      "body": "Guides treat this as a full Damiane kit and stop there. A same-named earring ([[item:light-of-the-battlefield-earring]]) in the accessory index is a separate item, not this armour. The game does not add a generic full-set combat bonus. Like other equipment, it has ten refinement ranks that cost materials only.",
       "acquisitions": [
         {
           "kind": "other",
@@ -8725,6 +8723,632 @@
         {
           "url": "https://www.keengamer.com/articles/guides/crimson-desert-best-kuku-weapons-and-gears-guide/",
           "title": "KeenGamer: best Kuku weapons and gears",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:ancient-shield",
+      "type": "item",
+      "name": "Ancient Shield",
+      "category": "shield",
+      "slot": "shield",
+      "region": "region:delesyia",
+      "summary": "A shield taken from the Sanctum of Faith in southeastern Delesyia after a vine-choked door is burned open.",
+      "body": "The best-shields page is the only source that names this chest. Blinding Flash burns the vines off the sanctum door. Like other gear, it has ten material-only refinement ranks.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "The chest is inside the Sanctum of Faith; that sanctum has no place record here yet.",
+          "steps": [
+            {
+              "text": "Ride into southeastern Delesyia and find the Sanctum of Faith.",
+              "action": "travel"
+            },
+            {
+              "text": "Burn the vines off the doorway with Blinding Flash.",
+              "action": "solve"
+            },
+            {
+              "text": "Open the chest and take the shield.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/596271",
+          "title": "Game8: best shields",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:lucon-large-shield",
+      "type": "item",
+      "name": "Lucon Large Shield",
+      "category": "shield",
+      "slot": "shield",
+      "region": "region:pailune",
+      "summary": "A large shield under the Beighen Candlery in Pailune, reached through a trapdoor behind the Stranger.",
+      "body": "The trapdoor sits behind the Stranger, next to a wagon, and a low crawl leads to the chest. Like other gear, it has ten material-only refinement ranks.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "ref": "place:beighen",
+          "note": "The chest is under the Beighen Candlery, reached through a trapdoor behind the Stranger.",
+          "steps": [
+            {
+              "text": "Travel to Beighen in Pailune and find the Candlery.",
+              "action": "travel",
+              "refs": [
+                "place:beighen"
+              ]
+            },
+            {
+              "text": "Open the trapdoor behind the Stranger, next to a wagon.",
+              "action": "solve"
+            },
+            {
+              "text": "Crouch through the low opening.",
+              "action": "travel"
+            },
+            {
+              "text": "Open the chest and take the shield.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/596271",
+          "title": "Game8: best shields",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:legion-spearmens-large-shield",
+      "type": "item",
+      "name": "Legion Spearmen's Large Shield",
+      "category": "shield",
+      "slot": "shield",
+      "region": "region:delesyia",
+      "summary": "A large shield in a hidden room above Delesyia South Gate, opened with Force Palm on a disguised wall.",
+      "body": "From the south gate, look north, climb the masonry, and Force Palm the panel that does not match the rest of the wall. Like other gear, it has ten material-only refinement ranks.",
+      "acquisitions": [
+        {
+          "kind": "chest",
+          "note": "The chest is in a hidden room at Delesyia South Gate; that gate has no place record here yet.",
+          "steps": [
+            {
+              "text": "Travel to Delesyia South Gate.",
+              "action": "travel"
+            },
+            {
+              "text": "Face north and climb the stone wall.",
+              "action": "travel"
+            },
+            {
+              "text": "Force Palm the camouflaged wall panel.",
+              "action": "solve"
+            },
+            {
+              "text": "Open the chest in the hidden room and take the shield.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/596271",
+          "title": "Game8: best shields",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:witchs-ring",
+      "type": "item",
+      "name": "Witch's Ring",
+      "category": "accessory",
+      "slot": "ring",
+      "summary": "A ring paid for finishing the Thinning Blade stretch of the Sage of the Desert chapter.",
+      "body": "Paid at the close of Thinning Blade, the Chapter 9 trial that crosses the Spire of the Sun. Like other jewelry, it has ten material-only refinement ranks.",
+      "acquisitions": [
+        {
+          "kind": "quest",
+          "ref": "quest:thinning-blade",
+          "note": "The Thinning Blade reward list names Witch's Ring with Greymane's Earring.",
+          "steps": [
+            {
+              "text": "Play Thinning Blade and make for the Spire of the Sun.",
+              "action": "travel",
+              "refs": [
+                "quest:thinning-blade",
+                "place:spire-of-the-sun"
+              ]
+            },
+            {
+              "text": "Finish the trial on the far side.",
+              "action": "other",
+              "refs": [
+                "quest:thinning-blade"
+              ]
+            },
+            {
+              "text": "Collect Witch's Ring.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/589366",
+          "title": "Game8: Chapter 9 walkthrough",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/",
+          "title": "VULKK: main story walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:greymanes-earring",
+      "type": "item",
+      "name": "Greymane's Earring",
+      "category": "accessory",
+      "slot": "earring",
+      "summary": "An earring paid with Witch's Ring at the end of the Thinning Blade stretch.",
+      "body": "Paid on the same Thinning Blade close as [[item:witchs-ring]]. Like other jewelry, it has ten material-only refinement ranks.",
+      "acquisitions": [
+        {
+          "kind": "quest",
+          "ref": "quest:thinning-blade",
+          "note": "The Thinning Blade reward list names Greymane's Earring with Witch's Ring.",
+          "steps": [
+            {
+              "text": "Play Thinning Blade and make for the Spire of the Sun.",
+              "action": "travel",
+              "refs": [
+                "quest:thinning-blade",
+                "place:spire-of-the-sun"
+              ]
+            },
+            {
+              "text": "Finish the trial on the far side.",
+              "action": "other",
+              "refs": [
+                "quest:thinning-blade"
+              ]
+            },
+            {
+              "text": "Collect Greymane's Earring.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/589366",
+          "title": "Game8: Chapter 9 walkthrough",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/",
+          "title": "VULKK: main story walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:stardust-necklace",
+      "type": "item",
+      "name": "Stardust Necklace",
+      "category": "accessory",
+      "slot": "necklace",
+      "summary": "A necklace paid for freeing the dragon during the Shattered Ties stretch.",
+      "body": "Paid on Shattered Ties after the dragon at Urdavah is freed. Like other jewelry, it has ten material-only refinement ranks.",
+      "acquisitions": [
+        {
+          "kind": "quest",
+          "ref": "quest:shattered-ties",
+          "note": "The Shattered Ties reward list names Stardust Necklace.",
+          "steps": [
+            {
+              "text": "Travel to Urdavah and take up Shattered Ties.",
+              "action": "travel",
+              "refs": [
+                "quest:shattered-ties",
+                "place:urdavah"
+              ]
+            },
+            {
+              "text": "Free the dragon bound there.",
+              "action": "other",
+              "refs": [
+                "place:urdavah"
+              ]
+            },
+            {
+              "text": "Collect Stardust Necklace.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/589366",
+          "title": "Game8: Chapter 9 walkthrough",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/",
+          "title": "VULKK: main story walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:earring-of-dark-magic",
+      "type": "item",
+      "name": "Earring of Dark Magic",
+      "category": "accessory",
+      "slot": "earring",
+      "summary": "An earring paid on Veiled Witch after Hexe Marie falls.",
+      "body": "Paid on Veiled Witch, the stretch that ends with Hexe Marie. Like other jewelry, it has ten material-only refinement ranks.",
+      "acquisitions": [
+        {
+          "kind": "quest",
+          "ref": "quest:veiled-witch",
+          "note": "The Veiled Witch reward list names this earring with Crow Whisperer.",
+          "steps": [
+            {
+              "text": "Follow Veiled Witch until the Black Witch is in reach.",
+              "action": "travel",
+              "refs": [
+                "quest:veiled-witch",
+                "character:hexe-marie"
+              ]
+            },
+            {
+              "text": "Defeat Hexe Marie.",
+              "action": "fight",
+              "refs": [
+                "quest:black-witch",
+                "character:hexe-marie"
+              ]
+            },
+            {
+              "text": "Collect Earring of Dark Magic.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/589366",
+          "title": "Game8: Chapter 9 walkthrough",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/",
+          "title": "VULKK: main story walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:radiant-necklace",
+      "type": "item",
+      "name": "Radiant Necklace",
+      "category": "accessory",
+      "slot": "necklace",
+      "summary": "A necklace paid on Where the Wind Guides You after Gregor the Halberd of Carnage falls.",
+      "body": "A Chapter 8 walkthrough pays this necklace on Where the Wind Guides You after Gregor falls. Another list files it with the chapter totals that close on A Fleeting Dream. Like other jewelry, it has ten material-only refinement ranks.",
+      "acquisitions": [
+        {
+          "kind": "quest",
+          "ref": "quest:where-the-wind-guides-you",
+          "note": "The Where the Wind Guides You reward list names Radiant Necklace with Golden Vanguard.",
+          "steps": [
+            {
+              "text": "Find Woosa on Where the Wind Guides You.",
+              "action": "travel",
+              "refs": [
+                "quest:where-the-wind-guides-you",
+                "character:woosa"
+              ]
+            },
+            {
+              "text": "Defeat Gregor the Halberd of Carnage.",
+              "action": "fight",
+              "refs": [
+                "character:gregor"
+              ]
+            },
+            {
+              "text": "Collect Radiant Necklace.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/588901",
+          "title": "Game8: Chapter 8 walkthrough",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/",
+          "title": "VULKK: main story walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:damianes-ponytail-ticket",
+      "type": "item",
+      "name": "Damiane's Ponytail Ticket",
+      "category": "cosmetic",
+      "tags": [
+        "damiane"
+      ],
+      "summary": "A hairstyle token paid with Damiane's Official Knight kit after Bastier falls on A Fleeting Dream.",
+      "body": "Listed with Damiane's Official Knight kit after Bastier falls. Whether it is a wearable accessory is unverified; it reads as a hairstyle unlock rather than a ring or earring.",
+      "acquisitions": [
+        {
+          "kind": "quest",
+          "ref": "quest:a-fleeting-dream",
+          "note": "The A Fleeting Dream reward list names Damiane's Ponytail Ticket with the Official Knight armor set.",
+          "steps": [
+            {
+              "text": "Play Damiane's stretch on A Fleeting Dream.",
+              "action": "other",
+              "refs": [
+                "quest:a-fleeting-dream",
+                "character:damiane"
+              ]
+            },
+            {
+              "text": "Defeat Bastier.",
+              "action": "fight",
+              "refs": [
+                "character:bastier"
+              ]
+            },
+            {
+              "text": "Collect Damiane's Ponytail Ticket.",
+              "action": "collect"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://gamerant.com/crimson-desert-main-story-quests-chapter-list/",
+          "title": "GameRant: main story quests and chapter list",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://game8.co/games/Crimson-Desert/archives/588901",
+          "title": "Game8: Chapter 8 walkthrough",
+          "accessed": "2026-09-06"
+        },
+        {
+          "url": "https://vulkk.com/2026/04/19/crimson-desert-main-story-walkthrough/",
+          "title": "VULKK: main story walkthrough",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:ring-of-lightning",
+      "type": "item",
+      "name": "Ring of Lightning",
+      "category": "accessory",
+      "slot": "ring",
+      "summary": "A ring finished at the Kilnden Workshop after a two-minute rain charge.",
+      "body": "The Kilnden Workshop and every named Kuku piece rest on one KeenGamer article. The craft needs two minutes of rain before it will complete. Like other jewelry, it has ten material-only refinement ranks.",
+      "acquisitions": [
+        {
+          "kind": "craft",
+          "note": "Crafted at the Kilnden Workshop after a two-minute rain charge; that recipe has no record here yet.",
+          "steps": [
+            {
+              "text": "Reach Chapter 4 and open the Kilnden Workshop.",
+              "action": "travel",
+              "refs": [
+                "quest:kilnden-workshop",
+                "place:kilnden-workshop"
+              ]
+            },
+            {
+              "text": "Speak with Grimnir at the bench.",
+              "action": "talk",
+              "refs": [
+                "character:grimnir",
+                "place:kilnden-workshop"
+              ]
+            },
+            {
+              "text": "Hold the craft in the rain for two minutes.",
+              "action": "other"
+            },
+            {
+              "text": "Finish Ring of Lightning at the workshop.",
+              "action": "craft",
+              "refs": [
+                "character:grimnir"
+              ]
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.keengamer.com/articles/guides/crimson-desert-best-kuku-weapons-and-gears-guide/",
+          "title": "KeenGamer: best Kuku weapons and gears",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:light-of-the-battlefield-earring",
+      "type": "item",
+      "name": "Light of the Battlefield",
+      "category": "accessory",
+      "slot": "earring",
+      "summary": "An earring that shares a name with Damiane's high-defense set; no source names a pickup.",
+      "body": "The accessory index lists this earring beside Damiane's same-named armour set ([[item:light-of-the-battlefield]]). The shared name is treated as coincidence, not one item. No pickup is named. Like other jewelry, it has ten material-only refinement ranks.",
+      "acquisitions": [
+        {
+          "kind": "other",
+          "note": "No source in the research file names a pickup, drop, or vendor."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Accessories",
+          "title": "Fextralife: Accessories",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:axiom",
+      "type": "item",
+      "name": "Axiom",
+      "category": "accessory",
+      "slot": "bracelet",
+      "rarity": "Unknown",
+      "summary": "A bracelet in the Unknown rarity group; no source names a pickup.",
+      "body": "The accessory index keeps this bracelet, plus [[item:damianes-axiom]] and [[item:oongkas-axiom]], in an Unknown rarity group off the usual colour ladder. Those colour names themselves rest on one unofficial icons page. No pickup is named. Like other jewelry, it has ten material-only refinement ranks.",
+      "acquisitions": [
+        {
+          "kind": "other",
+          "note": "No source in the research file names a pickup, drop, or vendor."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Accessories",
+          "title": "Fextralife: Accessories",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:damianes-axiom",
+      "type": "item",
+      "name": "Damiane's Axiom",
+      "category": "accessory",
+      "slot": "bracelet",
+      "rarity": "Unknown",
+      "tags": [
+        "damiane"
+      ],
+      "summary": "Damiane's bracelet variant of Axiom; no source names a pickup.",
+      "body": "A character-specific variant of [[item:axiom]]. No pickup is named. Like other jewelry, it has ten material-only refinement ranks.",
+      "acquisitions": [
+        {
+          "kind": "other",
+          "note": "No source in the research file names a pickup, drop, or vendor."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Accessories",
+          "title": "Fextralife: Accessories",
+          "accessed": "2026-09-06"
+        }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "item:oongkas-axiom",
+      "type": "item",
+      "name": "Oongka's Axiom",
+      "category": "accessory",
+      "slot": "bracelet",
+      "rarity": "Unknown",
+      "tags": [
+        "oongka"
+      ],
+      "summary": "Oongka's bracelet variant of Axiom; no source names a pickup.",
+      "body": "A character-specific variant of [[item:axiom]]. No pickup is named. Like other jewelry, it has ten material-only refinement ranks.",
+      "acquisitions": [
+        {
+          "kind": "other",
+          "note": "No source in the research file names a pickup, drop, or vendor."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://crimsondesertgame.wiki.fextralife.com/Accessories",
+          "title": "Fextralife: Accessories",
           "accessed": "2026-09-06"
         }
       ],
