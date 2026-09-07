@@ -71,6 +71,21 @@ change a decision there first, then the code.
   fast-travel rest points) have no place records; the overlay still
   shows them. `crimsondesert.fandom.com` answers 402/403 to scripts, so
   its facts came from search snippets (`docs/RESEARCH-REGIONS.md`).
+- C2 follow-ups (2026-09-06): five duplicate seed records stay as
+  pointers because quests reference them (`character:marquis-lanford`,
+  `character:countess-azerian`, `character:dean-of-the-scholastone-institute`,
+  `character:woman-in-white`, `character:draven-the-crowcaller`); retarget
+  the quest refs and drop the pointers in a later C4/C8 pass. Faction
+  headquarters and vendor homes with no place record (Kharonso, Tommaso,
+  Varnia, Thornbriar Fortress, Fort Ironclad, Brookfield Manor, Windridge
+  Fortress, Oakenshield Manor and the Hernand shops) are named in `body`
+  only; add them when C4 or C7 touches those places. Faction questline
+  names without quest records (Grounds of the Sunrise, Executioner of
+  Justice, Slumbering Soul, Lunar Judgment, Demeniss Bound) are C4 work.
+  Whether Oongka stays playable after Chapter 7 and whether the Nix/Marcus
+  and Norfix/Kamraan trade managers are one person each is unconfirmed.
+  `crimsondesert.gaming.tools` now answers a Cloudflare challenge to curl
+  as well; its facts are snippet-only.
 - Calibrate `METERS_PER_PIXEL` and `SPEED_MPS` in-game (`src/config/travel.ts`, D7).
   Check whether wide roads or paths are the faster class for a horse.
 - Second sweep in the editor for dead ends (about 600) and trails still missing; use

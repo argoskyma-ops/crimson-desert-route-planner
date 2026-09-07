@@ -4,6 +4,56 @@ Whole-feature reviews of the companion build (docs/COMPANION-PLAN.md,
 R-tasks). Each review is pasted verbatim from the read-only Grok run; the
 orchestrator's status line above it says what was done with the findings.
 
+## R4 (C2): factions and characters
+
+Status 2026-09-06: applied (commit "Apply the R4 review of the C2
+factions and characters content", Grok, one pass): the blocking item,
+every should-fix and every nit except the two `kind` changes, decided
+otherwise: `faction:hornsplitters-guards` and
+`faction:bastiers-inquisitors` stay `hostile` (a private guard force and
+a state enforcement arm the player fights fit `hostile` better than
+`community`; the schema has no militia kind). `reputation` stays on the
+33 factions the research types as core, joinable or questline-bearing.
+Orchestrator checks before the review: every record validates, ids
+unique, refs resolve, leaders and members agree with `character.factions`
+both ways, exactly three playable records; every cited URL returns 200
+except five Fandom pages and one Forbes article (bot blocks); three
+7-word overlaps found, one (the Muiquun motto) reworded, two factual
+phrases left. Grok's C2c pass left two missing commas that the
+orchestrator repaired before the commit. Numbers after C2: 76 factions
+(23 hostile), 136 characters (3 playable, 23 companions, 48 vendors,
+5 pointer records for duplicate seeds).
+
+### R4 review: C2 factions and characters (Cursor/Grok 4.6, 2026-09-06)
+
+**Blocking** (wrong facts, invented facts, copied prose, schema misuse)
+- `character:kailok` (`data/content/character.json`) — `role` is “Goldleaf trademaster and Chapter 2 boss.” Research: Kailok leads the guild; **Shakatu** is the trademaster. Change the role to guild head / Hornsplitter / Chapter 2 boss. Leave trademaster on `character:shakatu`.
+
+**Should fix**
+- `faction:greymanes` (`data/content/faction.json`) — `region` is `region:pailune`. Section 1 lists the company under Hernand; HQ is Howling Hill (Hernand, Pailune border); `place:howling-hill` and `character:kliff` are `region:hernand`. Set `region` to `region:hernand`.
+- Every sampled faction (`data/content/faction.json`) — `reputation` is copied onto all 76 rows, including on-sight hostiles, with Alliance-troop/vendor/node notes. Section 3 describes a general five-tier scale; section 1 does not give a climbable track per banner. Keep `reputation` on core/joinable houses, guilds, Greymanes, and other rows whose quest note implies standing. Drop it from hostiles and one-off bands unless the file names a track.
+- `faction:hornsplitters-guards` (`data/content/faction.json`) — `kind` is `hostile`. Orchestrator mapping: militias are `community` (`faction:cassius-morten` already does this). Set `kind` to `community`; keep `hostile: true`. `quests` is only `quest:rebellion-of-revolution` (Shakatu talk). Research: Hornsplitter boss ends Chapter 2. `quest:cheers-echoing-from-the-edge` is that fight (`character:kailok` already lists it). Add that id.
+- `faction:bastiers-inquisitors` (`data/content/faction.json`) — same kind miss: research is hostile/militia; `kind` is `hostile`. Set `kind` to `community`; keep `hostile: true`.
+- `faction:goldleaf-merchant-guild` (`data/content/faction.json`) and `character:serge` (`data/content/character.json`; same for Groks and Prox on the guild `members` list) — research vendor table leaves faction blank except “own shop.” They are not Goldleaf members. Drop Groks, Prox, and Serge from `members` and from those characters’ `factions`. Keep Shakatu and Ugmon.
+- `faction:house-azerian` (`data/content/faction.json`) and `character:damiane` (`data/content/character.json`) — Damiane is in `members` / `factions`. Research: Greymanes (ally); **raised by** House Azerian, not a house member. Drop her from `members` and from `factions`; keep `related` to Beatrice.
+- `faction:house-serkis` (`data/content/faction.json`) — `headquarters` is `place:serkis-estate`. Research HQ is Oakenshield Manor, Hernand Castle. `character:marquis-serkis` already names Oakenshield at that estate. Name Oakenshield Manor in the faction `body` (keep the estate id if that is the same site).
+- `character:white-crow` and `character:witch` (`data/content/character.json`) — both carry alias “the Witch” / “The Witch.” Orchestrator: `character:witch` is Areciel. Search will collide. Drop that alias from White Crow; keep “Desert Witch” / “Witch of Wisdom” on the regional witches.
+- `character:damiane` (`data/content/character.json`) — body “fast and thin-armoured beside Kliff's heavier kit” is not in the research row. Delete it.
+- `character:grundir` (`data/content/character.json`) — summary “Troll dean.” Research: the institute was founded by troll scholars; it does not say Grundir is a troll. Drop “Troll.”
+- `character:maegu` (`data/content/character.json`) — research names her as giver of “A Bond” / “Ritual Preparations.” Those ids exist (`quest:a-bond`, `quest:ritual-preparations`) and are not on `quests`. Add them.
+- `character:woosa` (`data/content/character.json`) — research (and `quest:where-the-wind-guides-you`) names him in that quest. Body already links it; `quests` does not. Add `quest:where-the-wind-guides-you`.
+- `character:gunter`, `character:rowan`, `character:nix`, `character:marcus`, `character:simon-de-montfort` (`data/content/character.json`) — snippet-only / single-source rows the file marks weak, `confidence` is `reported`. Set `assumed` (sources already have the snippet `note`).
+
+**Nits**
+- `faction:crow-brothers` (`data/content/faction.json`) — `leader` is `character:draven`; `body` links `[[character:draven-the-crowcaller]]`. Link the full record.
+- `character:olvald` (`data/content/character.json`) — `name` is “Chief Olvald.” Prefer `Olvald` with alias “Chief Olvald.”
+- `character:kailok` (`data/content/character.json`) — summary “Goblin head.” Research: the guild is goblin-run; it does not call Kailok a goblin. Say he heads the goblin-run guild.
+- Quest spot-check: `quest:woman-in-white` → `character:woman-in-white`; `quest:for-honor` → `character:matthias`; `quest:a-fleeting-dream` → `character:bastier`. Those three match. The miss is Maegu/Woosa/Hornsplitter above.
+
+**Sampled and sound**
+- Factions: `faction:black-bears`, `faction:house-roberts`, `faction:scholastone-institute`, `faction:pororin-forest-guardians`, `faction:bleed-bandits`, `faction:reed-devil`, `faction:cassius-morten`, `faction:hernandian-parish-of-solumen`, `faction:order-of-light`, `faction:lonely-jackals`, `faction:blue-fangs`, `faction:longleaf`, `faction:odeck`, `faction:house-thorel`, `faction:house-caliburn`, `faction:house-wells`, `faction:society-of-progress`, `faction:marni`, `faction:ironflame-orcs`, `faction:gearmelt-confectionery`, `faction:wyvernflames`, `faction:lords-of-unclaimed-lands`, `faction:sandfang-marauders`, `faction:savage-fangs`, `faction:twilight-messengers`, `faction:whitesand-retreat`
+- Characters: `character:kliff`, `character:oongka`, `character:rhett`, `character:sebastian`, `character:shai`, `character:woman-in-white`, `character:barden-middler`, `character:shakatu`, `character:andrew`, `character:dean-of-the-scholastone-institute`, `character:marquis-lanford`, `character:stefan-lanford`, `character:torstein`, `character:shane`, `character:count-byron`, `character:countess-azerian`, `character:beatrice-azerian`, `character:bastier`, `character:valgash`, `character:umbra`, `character:olvald`, `character:drake-wells`, `character:gian`, `character:ronnie`, `character:silvan`, `character:devan`, `character:gregor`, `character:rulupee`, `character:bianca`, `character:tina`, `character:renee`, `character:merton`, `character:grimrak`, `character:nork`, `character:turnali`, `character:erich`, `character:elowen`, `character:hall`, `character:marni`, `character:draven`, `character:draven-the-crowcaller`
+
 ## R4 (C1): regions and places
 
 Status 2026-09-06: applied (commit "Apply the R4 review of the C1 regions
