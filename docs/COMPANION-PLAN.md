@@ -245,10 +245,13 @@ and C1 and C2 fill them out afterwards.
   Target: ≥ 25 factions, ≥ 60 characters. Done 2026-09-06 in three Grok
   parts from `docs/RESEARCH-FACTIONS.md`: 76 factions, 136 characters
   (48 named vendors).
-- [ ] **C5. Unique gear and sets.** `item.json`. Every named unique weapon
+- [x] **C5. Unique gear and sets.** `item.json`. Every named unique weapon
   and armour piece, sets as items sharing `setName` with one acquisition
   per branch (boss drop, chest, vendor, craft). Refinement notes in `body`.
-  Target: ≥ 150 items.
+  Target: ≥ 150 items. Done 2026-09-06 in five Grok parts from
+  `docs/RESEARCH-ITEMS.md`: 233 items (71 weapons, 136 armour pieces in
+  33 sets, 13 shields, 10 accessories); main-quest gear rewards now
+  carry item refs.
 - [ ] **C6. Collectibles.** `collection.json`, `collectible.json`. Sealed
   Abyss Artifacts, memory fragments, collection chests, anamorphic
   constellations, totems, treasure maps and bells as collections with
