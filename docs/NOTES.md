@@ -59,14 +59,18 @@ change a decision there first, then the code.
   re-check them when a per-quest walkthrough appears. Gear rewards are
   `item` text until C5 exists; bosses are step text until C7. The Forbes
   article cited on `character:kliff` answers 403 to scripts (bot block).
-- C1 sourcing question (maintainer's call before C1 runs): the plan says
-  to give the 120+ fast-travel settlements their `data/fast-travel.json`
-  coordinates, while the record checklist (item 5) asks for a non-th.gl
-  source on any located record. Options: cite the th.gl map page for the
-  coordinates plus a wiki page for the place's existence and region, or
-  relax item 5 for fast-travel-backed places. `docs/RESEARCH-COMPANION.md`
-  section 2 names the sub-areas only for Hernand and the Crimson Desert;
-  the other regions need a research pass first.
+- C1 follow-ups (2026-09-06): the sourcing question was settled in D13
+  (fast-travel-backed places cite th.gl for the coordinates and add a
+  non-th.gl source when one names the place). 50 camps are th.gl-only
+  and `assumed`, with the region inferred from their sub-area or the
+  nearest settlement; re-check them when a per-region camp guide
+  appears. Three source conflicts were decided by position or by the
+  faction list and are noted in the records: Steel Mountains (Hernand),
+  Tariv (Demeniss), Kweiden (a Pailune town, not a region). Thoron Town
+  Hall Ruins may be Delesyia rather than Crimson Desert. Hearths (108
+  fast-travel rest points) have no place records; the overlay still
+  shows them. `crimsondesert.fandom.com` answers 402/403 to scripts, so
+  its facts came from search snippets (`docs/RESEARCH-REGIONS.md`).
 - Calibrate `METERS_PER_PIXEL` and `SPEED_MPS` in-game (`src/config/travel.ts`, D7).
   Check whether wide roads or paths are the faster class for a horse.
 - Second sweep in the editor for dead ends (about 600) and trails still missing; use

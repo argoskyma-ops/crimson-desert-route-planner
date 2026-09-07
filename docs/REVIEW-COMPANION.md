@@ -4,6 +4,69 @@ Whole-feature reviews of the companion build (docs/COMPANION-PLAN.md,
 R-tasks). Each review is pasted verbatim from the read-only Grok run; the
 orchestrator's status line above it says what was done with the findings.
 
+## R4 (C1): regions and places
+
+Status 2026-09-06: applied (commit "Apply the R4 review of the C1 regions
+and places content", Grok, one pass): all three blocking items, every
+should-fix and every nit except two decided otherwise: `region:pailune`
+keeps the Lonely Jackals as plain text (no faction record exists to link)
+and `region:delesyia` keeps `place:delesyia-castle` in `keyPlaces` (the
+seed is treated as the in-game castle name); `place:duzhar` stays a
+`village` (the map label) and says the source calls it ruined.
+Orchestrator checks before the review: every record validates, ids
+unique, refs resolve, every `fastTravel` id exists and the location
+matches its point, all 124 points inside the bounds and on land, every
+one of the 123 fast-travel settlement and camp names has one record;
+every cited URL returns 200 except four Fandom pages (403 to scripts,
+the research file notes the same block); the only 7-word overlap left is
+a chapter title. Two extra fixes came out of that check (a dead
+crimsondesertwiki.org host on `place:kweiden`, a copied phrase in
+`region:izvatu`). Numbers after C1: 5 regions, 65 sub-areas, 1 layer;
+168 places, 124 with fast-travel coordinates (74 with a non-th.gl
+source, 50 th.gl-only camps marked `assumed`).
+
+### R4 review: C1 regions and places (Cursor/Grok 4.6, 2026-09-06)
+
+**Blocking** (wrong facts, invented facts, copied prose, schema misuse)
+- `place:demeniss-castle` (`data/content/place.json`) — summary still says “House Caliburn's stronghold”; body says House Thorel, vacant while Edward is in a coma. Research: Thorel is the ruling house; Gabriel Caliburn seizes power later in Blood Coronation. Rewrite the summary to Thorel / the vacant throne. If Caliburn stays, say it only as the later seizure, matching the body.
+- `region:morning-mist-peaks` (`data/content/region.json`) — summary adds “Chapter 9's pensive statues are repaired.” Section 2 only has “Mountain peaks.” That chapter fact is not in the research file (it is on the old `place:morning-mist-peaks` seed). Drop the statues/chapter clause from the sub-area summary.
+- `region:silver-wolf-mountain` (`data/content/region.json`) — summary adds “the site of the Chapter 7 fight on its slopes.” Section 2 only has “Mountain (+ cave).” Drop the chapter/fight clause.
+
+**Should fix**
+- `place:hernand-castle` (`data/content/place.json`) — extended seed never states the settlements-table houses (Celeste ducal, Serkis marquis) or Prologue–6. Body still has “west of the Sena's tributaries”; Sena River is in Gaps as unconfirmed. Add Celeste/Serkis (and the chapter span if you keep capital-hub language). Drop or mark the Sena line as assumed.
+- `place:beighen` (`data/content/place.json`) — “milder edge of the snow country, looking toward the occupied highlands” is not in the table (only “Pailune's southern village,” Beighen Tribe / Blue Fangs). Cut that terrain.
+- `place:easelbury` (`data/content/place.json`) — table says Hernand (inferred from position). Record is Demeniss, inferred from `place:demeniss-castle`. Keep Demeniss: 3380, 4859 is ~180 px from Demeniss Castle and ~960 px from Hernand Castle. Do not move it to Hernand. Add that the table's Hernand call is the bad inference.
+- `place:freesword-encampment` (`data/content/place.json`) — table states Crimson Desert (no URL). Record is Hernand, inferred from Hernand Castle (2410, 5007 vs 2422, 5053). Keep Hernand. Do not file it under the desert. Add that the table's desert row looks like a catalogue error (the sourced freesword site is `place:desert-freesword-camp`).
+- `place:khafi-jahr-camp` (`data/content/place.json`) — `related` is `region:worlds-navel` but the camp name does not match that sub-area. Research puts a Dusksong outpost at World's Navel; that stays in the body. Drop `related`. Then drop this id from `region:worlds-navel` `keyPlaces`.
+- `region:worlds-navel` (`data/content/region.json`) — `keyPlaces` lists `place:khafi-jahr-camp` only via that `related`. After the drop, leave `keyPlaces` empty. Body may keep the Dusksong/Khafi sentence; add the jahrcamp URL (with the search-snippet note) if that sentence stays.
+- `region:pailune` (`data/content/region.json`) — `keyPlaces` includes `place:silverwolf-mountain`, a landmark seed, not a Section 3 settlement. Remove it. Keep pailune, beighen, kweiden, odeck, skoghorn, totemfelt.
+- `region:demeniss` (`data/content/region.json`) — `keyPlaces` includes `place:morning-mist-peaks`, a landmark seed, not a Section 3 settlement. Remove it. Keep easelbury only if that place stays Demeniss.
+- `region:calphadean-territory` (`data/content/region.json`) — body links `[[place:calphade-gate]]`. That gate is not in the Section 2 row. Drop the gate or move the link to the castle record.
+- `region:twinpath` (`data/content/region.json`) — “location lists file it with the Crimson Desert” is false. Fextralife/Game8 indexes do not list Twinpath; the research file only files the row under Crimson Desert and calls it a Hernand/Pailune border. Parent `region:crimson-desert` can stay. Rewrite the sentence to match the research file, not “location lists.”
+- `region:border-trail` (`data/content/region.json`) — cites Game8 585766 and 591407. The row is “no specific wiki URL, low confidence.” Drop those two URLs. `confidence: "assumed"` stays.
+- `region:hernandian-mountains` (`data/content/region.json`) — cites Game8 585761. That Hernand guide does not name this range; the row is search synthesis + the bandit-camp page. Drop 585761; keep the gaming.tools camp URL with its note.
+- `region:timberdale` (`data/content/region.json`) — cites Game8 591407. The row is gaming.tools bandit-camp, single-source, not in the location indexes. Drop 591407.
+- `place:giants-yard-resource-camp` (`data/content/place.json`) — `tags` is `["logging"]`. Research kind is research (Giant Yard's Research Group). Change the tag to `research`.
+- `place:demeniss-castle` (`data/content/place.json`) — body uses Thorel / coma / Blood Coronation / Ch8–10–12 but sources are only th.gl, Fextralife Factions, and Locations. Add Game8 588601 and the Demeniss political URL from the research file (with the search-snippet note).
+
+**Nits**
+- `place:burhum` (`data/content/place.json`) — “Chapter 9 trial master.” Table: Ch9 boss. Say boss, not trial master.
+- `place:ivynook` (`data/content/place.json`) — “House Serkis tenants.” Table: House Serkis. Drop “tenants.”
+- `place:duzhar` (`data/content/place.json`) — kind is `village`; table is village (ruins). `ruins` fits the body better, or say the kind is the map label.
+- `place:demeniss-castle` (`data/content/place.json`) — no alias for “City of Demeniss” (research: preferred name unconfirmed). Add it as an alias if you keep the castle as the hub name.
+- `place:border-trail-bandit-camp` (`data/content/place.json`) — body says the region is inferred. The camp table states Crimson Desert (not marked inferred). Soften to “table places it in the Crimson Desert; no guide page was fetched.”
+- `region:golden-plains` (`data/content/region.json`) — “Fortified cities and military works” is Section 1 Demeniss terrain, not the “Plains” row. Stick to plains.
+- `region:delesyia` (`data/content/region.json`) — `keyPlaces` includes `place:delesyia-castle`, which is not in the settlements table; research names no capital. Keep only if you treat the seed as the in-game castle name; otherwise drop it and leave Dewhaven and Tinkerton.
+- `region:abyss` (`data/content/region.json`) — extra Fextralife wiki-hub URL is not an Abyss source in the research file. Drop it; PowerPyx + Fandom already cover the layer.
+- `region:pailune` (`data/content/region.json`) — Black Bears are linked; Lonely Jackals are not. Link or leave both plain.
+- `region:howlsands` (`data/content/region.json`) — Game8 585766 is not a Howlsands URL in the research file (name is gaming.tools only). Keep 588601 only if you need Sandfang; otherwise drop 585766.
+
+**Sampled and sound**
+- Regions: `region:hernand`, `region:crimson-desert`
+- Sub-areas: `region:argent-peaks`, `region:deepwoods`, `region:pororin-forest`, `region:nas-river`, `region:black-forest`, `region:five-finger-mountain`, `region:upper-denn-river`, `region:serpent-marsh`, `region:steel-mountains`, `region:mount-benus`, `region:snaketail-wall`, `region:valley-of-fire`, `region:traders-expanse`, `region:gate-of-peace`, `region:gorthak`, `region:tashkalp`
+- Settlements: `place:steel-mountains`, `place:calphade-castle`, `place:pailune`, `place:arboria`, `place:arcosa`, `place:arcosa-trade-depot`, `place:batihar`, `place:caledora`, `place:castlewood-ruins`, `place:dewhaven-castle`, `place:florindale`, `place:fort-musket`, `place:helmara`, `place:hexe-sanctuary`, `place:kweiden`, `place:muiquun`, `place:nahab`, `place:odeck`, `place:pororin`, `place:senia`, `place:skoghorn`, `place:tariv`, `place:thoron-town-hall-ruins`, `place:tinkerton-dig-site`, `place:totemfelt`, `place:vellua`
+- Camps: `place:anvil-hill-bandit-camp`, `place:arima-jahr-camp`, `place:crescent-camp`, `place:denn-river-bandit-camp`, `place:duskway-camp`, `place:duskway-camp-ironcrawler-station`, `place:ghadir-jahr-camp`, `place:greenfield-bandit-camp`, `place:haunted-hill-camp`, `place:ironwood-forest-bandit-camp`, `place:kuhte-ram-camp`, `place:mustawi-jahr-camp`, `place:perwin-prison-camp`, `place:rockshade-bandit-camp`, `place:shadow-cliff-watch-camp`, `place:southern-riverside-bandit-camp`, `place:timberdale-bandit-camp`, `place:yalwi-jahr-camp`, `place:steel-mountains-camp`, `place:gate-of-peace-northern-camp`, `place:howlsands-camp-hearth`, `place:izvatu-bandit-camp`, `place:makha-ram-camp`
+
 ## R4 (C3): main story content
 
 Status 2026-09-06: applied (commit "Apply the R4 review of the C3 main
