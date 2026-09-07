@@ -10,6 +10,8 @@
       "playable": true,
       "companion": false,
       "factions": ["faction:greymanes"],
+      "home": "place:howling-hill",
+      "region": "region:hernand",
       "summary": "The main playable character: a versatile melee fighter with swords, spears, axes and grappling.",
       "body": "Kliff carries the critical path of the story; [[character:damiane]] and [[character:oongka]] become playable later but the main missions stay with him. He leads what is left of the [[faction:greymanes]] after the attack at their camp.",
       "facts": [
@@ -30,6 +32,7 @@
       "role": "Playable companion, rapier and pistol",
       "playable": true,
       "companion": true,
+      "factions": ["faction:greymanes", "faction:house-azerian"],
       "summary": "A fast, fragile fighter with a rapier and a pistol who joins as a playable character around chapter 3.",
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/583000", "title": "Game8: playable characters", "accessed": "2026-09-05" }
@@ -44,6 +47,7 @@
       "role": "Playable companion, heavy melee",
       "playable": true,
       "companion": true,
+      "factions": ["faction:greymanes"],
       "summary": "A brute-force melee fighter who becomes playable around chapter 7.",
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/583000", "title": "Game8: playable characters", "accessed": "2026-09-05" }
@@ -57,6 +61,7 @@
       "name": "Myurdin",
       "role": "Antagonist, leader of the Black Bears",
       "factions": ["faction:black-bears"],
+      "region": "region:pailune",
       "summary": "Leader of the Black Bears, the faction that shattered the Greymanes in the opening attack.",
       "sources": [
         { "url": "https://crimsondesertgame.wiki.fextralife.com/Factions", "title": "Fextralife: Factions", "accessed": "2026-09-05" }
@@ -84,6 +89,7 @@
       "name": "Sebastian",
       "role": "Greymane ally in the prologue",
       "factions": ["faction:greymanes"],
+      "region": "region:hernand",
       "summary": "A Greymane who walks Kliff out of the opening night and on toward Hernand.",
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/585649", "title": "Game8: Prologue walkthrough", "accessed": "2026-09-06" }
@@ -135,6 +141,7 @@
       "type": "character",
       "name": "Matthias",
       "role": "Duelling opponent in Hernand",
+      "factions": ["faction:order-of-light"],
       "region": "region:hernand",
       "summary": "The fighter Kliff has to beat during For Honor while Hernand is in uproar.",
       "sources": [
@@ -176,6 +183,7 @@
       "type": "character",
       "name": "Shakatu",
       "role": "Goldleaf trade ally",
+      "factions": ["faction:goldleaf-merchant-guild"],
       "region": "region:hernand",
       "summary": "The Goldleaf contact who becomes a trade ally after Rebellion of Revolution.",
       "sources": [
@@ -190,6 +198,7 @@
       "name": "Marius",
       "role": "Greymane comrade",
       "factions": ["faction:greymanes"],
+      "home": "place:howling-hill",
       "region": "region:hernand",
       "summary": "A Greymane walked back to camp in Chapter 3, then sought out again as Howling Hill takes shape.",
       "sources": [
@@ -202,7 +211,9 @@
       "id": "character:marquis-serkis",
       "type": "character",
       "name": "Marquis Serkis",
+      "aliases": ["Alan Serkis"],
       "role": "Hernand marquis",
+      "factions": ["faction:house-serkis"],
       "home": "place:serkis-estate",
       "region": "region:hernand",
       "summary": "The Hernand marquis who sets the Greymanes to work rebuilding after Golden Greed.",
@@ -217,6 +228,7 @@
       "type": "character",
       "name": "Yann",
       "role": "House of Healing contact",
+      "factions": ["faction:greymanes"],
       "region": "region:hernand",
       "summary": "The person who leads Kliff through the House of Healing during Familiar Curses.",
       "sources": [
@@ -231,6 +243,7 @@
       "name": "Andrew",
       "role": "Greymane comrade",
       "factions": ["faction:greymanes"],
+      "home": "place:howling-hill",
       "region": "region:hernand",
       "summary": "A comrade whose condition is checked after the draught during Hope After the Draught.",
       "sources": [
@@ -258,6 +271,7 @@
       "type": "character",
       "name": "Duane",
       "role": "Archery contest host",
+      "factions": ["faction:greymanes"],
       "region": "region:hernand",
       "summary": "The host of the archery contest during Skilled in Archery.",
       "sources": [
@@ -271,6 +285,7 @@
       "type": "character",
       "name": "Octavius",
       "role": "Scholastone experimenter",
+      "factions": ["faction:scholastone-institute"],
       "home": "place:scholastone-institute",
       "region": "region:hernand",
       "summary": "A Scholastone experimenter whose work Kliff helps during On the Right Path.",
@@ -312,6 +327,7 @@
       "type": "character",
       "name": "Grundir",
       "role": "Rift witness",
+      "factions": ["faction:scholastone-institute"],
       "region": "region:hernand",
       "summary": "The person spoken to after the rift in Obsession and Madness.",
       "sources": [
@@ -352,6 +368,7 @@
       "type": "character",
       "name": "Stefan Lanford",
       "role": "Calphadean ally",
+      "factions": ["faction:house-lanford"],
       "home": "place:calphade-castle",
       "region": "region:hernand",
       "summary": "A Lanford who leads a stretch of the assault on Calphade Castle and needs backing there.",
@@ -366,6 +383,7 @@
       "type": "character",
       "name": "Torstein",
       "role": "Pailune ally",
+      "factions": ["faction:blue-fangs"],
       "home": "place:pailune",
       "region": "region:pailune",
       "summary": "The ally who sets the Homecoming beacon work and is sought again when Pailune is being put back together.",
@@ -380,6 +398,7 @@
       "type": "character",
       "name": "Naira",
       "role": "Ally reunited in Pailune",
+      "factions": ["faction:greymanes"],
       "region": "region:hernand",
       "summary": "An ally found again with Andrew once the company is back on the Pailune road.",
       "sources": [
@@ -393,6 +412,7 @@
       "type": "character",
       "name": "Shane",
       "role": "Contact on Ludvig's trail",
+      "factions": ["faction:greymanes"],
       "region": "region:pailune",
       "summary": "Met with Duane when the company still has to pin down where Ludvig went.",
       "sources": [
@@ -406,6 +426,8 @@
       "type": "character",
       "name": "Ludvig",
       "role": "Homecoming antagonist",
+      "factions": ["faction:lonely-jackals"],
+      "home": "place:pailune",
       "region": "region:pailune",
       "summary": "The fighter faced in Pailune during Lonely Jackals, then hunted again after that meeting does not end him.",
       "sources": [
@@ -419,6 +441,7 @@
       "type": "character",
       "name": "Woosa",
       "role": "Ally found in Pailune",
+      "factions": ["faction:greymanes"],
       "region": "region:demeniss",
       "summary": "Found during Where the Wind Guides You, then walked to Maegu after Gregor the Halberd of Carnage falls.",
       "sources": [
@@ -444,7 +467,9 @@
       "id": "character:count-byron",
       "type": "character",
       "name": "Count Byron",
+      "aliases": ["George Byron"],
       "role": "Windmere Manor target",
+      "factions": ["faction:house-byron"],
       "home": "place:windmere-manor",
       "region": "region:demeniss",
       "summary": "The count Bloodied Invitation sends Kliff into Windmere Manor to kill.",
@@ -473,6 +498,7 @@
       "type": "character",
       "name": "Beatrice Azerian",
       "role": "Captive Azerian noble",
+      "factions": ["faction:house-azerian"],
       "home": "place:azerian-manor",
       "region": "region:demeniss",
       "summary": "Sought in Demeniss and found below the city; her death at Bastier's hands is permanent.",
@@ -488,6 +514,7 @@
       "type": "character",
       "name": "Gabriel Caliburn",
       "role": "Coronation antagonist",
+      "factions": ["faction:house-caliburn"],
       "region": "region:demeniss",
       "summary": "The Caliburn faced during The Blood Coronation after a memory is read.",
       "sources": [
@@ -500,7 +527,9 @@
       "id": "character:bastier",
       "type": "character",
       "name": "Bastier",
+      "aliases": ["Lucian Bastier"],
       "role": "Beatrice Azerian's killer",
+      "factions": ["faction:bastiers-inquisitors"],
       "region": "region:demeniss",
       "summary": "Fought by Damiane at the close of Blood Coronation, after he murders Beatrice Azerian.",
       "sources": [
@@ -555,6 +584,7 @@
       "type": "character",
       "name": "Valgash",
       "role": "Weaponsmith",
+      "factions": ["faction:ironflame-orcs"],
       "home": "place:gorthak-ironworks",
       "region": "region:demeniss",
       "summary": "The ironworks smith followed in Chapter 10, then spoken to again after Marni's Clockwork Mantis falls.",
@@ -582,6 +612,7 @@
       "type": "character",
       "name": "Marni",
       "role": "Delesyia figure, laboratorium namesake",
+      "factions": ["faction:marni", "faction:society-of-progress"],
       "home": "place:marnis-laboratorium",
       "region": "region:delesyia",
       "summary": "A living person in Delesyia, not only a name on machines; met again at the castle gate during the epilogue.",
@@ -613,6 +644,229 @@
       "summary": "The Abyss presence fought in its own form at the close of Chapter 12, after Myurdin falls.",
       "sources": [
         { "url": "https://game8.co/games/Crimson-Desert/archives/590343", "title": "Game8: Chapter 12 walkthrough", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:charles-celeste",
+      "type": "character",
+      "name": "Charles Celeste",
+      "role": "Duke of Hernand",
+      "factions": ["faction:house-celeste"],
+      "home": "place:hernand-castle",
+      "region": "region:hernand",
+      "summary": "Duke of Hernand and head of House Celeste, the ducal line said to descend from the knight Canta.",
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:alistair-grace",
+      "type": "character",
+      "name": "Alistair Grace",
+      "role": "Count of House Grace",
+      "factions": ["faction:house-grace"],
+      "home": "place:reedfield-graves",
+      "region": "region:hernand",
+      "summary": "Count who heads House Grace in southern Hernand, around the Reedfield Graves country.",
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:leon-roberts",
+      "type": "character",
+      "name": "Leon Roberts",
+      "role": "Count of House Roberts",
+      "factions": ["faction:house-roberts"],
+      "home": "place:frowde-camp",
+      "region": "region:hernand",
+      "summary": "Count of a wealthy merchant-noble house that hosts events from the Frowde Camp country.",
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:kailok",
+      "type": "character",
+      "name": "Kailok",
+      "aliases": ["Kailok the Hornsplitter", "the Hornsplitter"],
+      "role": "Goldleaf trademaster and Chapter 2 boss",
+      "factions": ["faction:goldleaf-merchant-guild", "faction:hornsplitters-guards"],
+      "home": "place:goldleaf-merchant-guild",
+      "region": "region:hernand",
+      "summary": "Goblin head of the Goldleaf Merchant Guild who also commands Hornsplitter's Guards.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:augustine",
+      "type": "character",
+      "name": "Augustine",
+      "role": "Head of the House of Healing",
+      "factions": ["faction:st-halssiuss-house-of-healing"],
+      "home": "place:house-of-healing",
+      "region": "region:hernand",
+      "summary": "Named head of St. Halssius's House of Healing in Hernand.",
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/NPCs", "title": "Fextralife: NPCs", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:cassius-morten",
+      "type": "character",
+      "name": "Cassius Morten",
+      "role": "Fallen Calphade commander, Chapter 6 boss",
+      "factions": ["faction:cassius-morten"],
+      "home": "place:calphade-castle",
+      "region": "region:hernand",
+      "summary": "Former Calphade captain who betrayed Marquis Lanford and is fought at the castle.",
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Cassius_Morten", "title": "Fextralife: Cassius Morten", "accessed": "2026-09-06", "note": "seen via search snippet only" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:draven-the-crowcaller",
+      "type": "character",
+      "name": "Draven the Crowcaller",
+      "aliases": ["the Crowcaller"],
+      "role": "Crow Brothers leader, Chapter 5 antagonist",
+      "factions": ["faction:crow-brothers"],
+      "region": "region:pailune",
+      "summary": "Hexe Marie's adopted son who leads the Crow Brothers and abducts White Crow.",
+      "sources": [
+        { "url": "https://crimsondesertgame.wiki.fextralife.com/Draven_the_Crowcaller", "title": "Fextralife: Draven the Crowcaller", "accessed": "2026-09-06", "note": "seen via search snippet only" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:olvald",
+      "type": "character",
+      "name": "Chief Olvald",
+      "aliases": ["Olvald"],
+      "role": "Chief of the Knytlingar",
+      "factions": ["faction:knytlingar"],
+      "region": "region:pailune",
+      "summary": "Named chief of the weakened Knytlingar clan in northern Pailune.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:edward-thorel",
+      "type": "character",
+      "name": "Edward Thorel",
+      "aliases": ["King Edward Thorel"],
+      "role": "Comatose king of Demeniss",
+      "factions": ["faction:house-thorel"],
+      "home": "place:demeniss-castle",
+      "region": "region:demeniss",
+      "summary": "King of Demeniss who lies comatose with no named heir, opening the Caliburn vacuum.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:ada-marshell",
+      "type": "character",
+      "name": "Ada Marshell",
+      "role": "Countess of House Marshell",
+      "factions": ["faction:house-marshell"],
+      "home": "place:sungrove-manor",
+      "region": "region:demeniss",
+      "summary": "Countess who funds Bastier from Sungrove Manor as Demeniss's Black Strongbox.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:arthur-elemore",
+      "type": "character",
+      "name": "Arthur Elemore",
+      "role": "Count of House Elemore",
+      "factions": ["faction:house-elemore"],
+      "region": "region:demeniss",
+      "summary": "Count of a wealthy Demeniss house, long friends with Azerian, later moved against Bastier.",
+      "sources": [
+        { "url": "https://crimsondesert.fandom.com/wiki/House_Elemore", "title": "Fandom: House Elemore", "accessed": "2026-09-06", "note": "seen via search snippet only" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:drake-wells",
+      "type": "character",
+      "name": "Drake Wells",
+      "role": "Duke of southern Demeniss",
+      "factions": ["faction:house-wells"],
+      "region": "region:demeniss",
+      "summary": "Duke who holds southern Demeniss for House Thorel and openly opposes Caliburn.",
+      "sources": [
+        { "url": "https://crimsondesert.fandom.com/wiki/House_Wells", "title": "Fandom: House Wells", "accessed": "2026-09-06", "note": "seen via search snippet only" }
+      ],
+      "confidence": "reported",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:ravok",
+      "type": "character",
+      "name": "Ravok",
+      "role": "Savage Fangs leader",
+      "factions": ["faction:savage-fangs"],
+      "region": "region:crimson-desert",
+      "summary": "Troll who left Kharonso and formed the boar-riding Savage Fangs.",
+      "sources": [
+        { "url": "https://crimsondesert.gaming.tools/factions/faction_trollwildriders", "title": "gaming.tools: Savage Fangs", "accessed": "2026-09-06", "note": "seen via search snippet only" }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:merrick",
+      "type": "character",
+      "name": "Merrick",
+      "aliases": ["Merrick the Knight of Fortune", "the Knight of Fortune"],
+      "role": "Twilight Messengers leader",
+      "factions": ["faction:twilight-messengers"],
+      "region": "region:crimson-desert",
+      "summary": "Freesword captain called the Knight of Fortune, currently taking Demeniss coin.",
+      "sources": [
+        { "url": "https://crimsondesert.gaming.tools/factions/faction_dawnmoon", "title": "gaming.tools: Twilight Messengers", "accessed": "2026-09-06", "note": "seen via search snippet only" }
+      ],
+      "confidence": "assumed",
+      "gameVersion": "2.01.00"
+    },
+    {
+      "id": "character:goblin-sage",
+      "type": "character",
+      "name": "Goblin Sage",
+      "role": "Desert preacher",
+      "factions": ["faction:sage-of-the-desert"],
+      "region": "region:crimson-desert",
+      "summary": "Itinerant goblin preacher who delivers harsh awakening lessons to desert pilgrims.",
+      "sources": [
+        { "url": "https://game8.co/games/Crimson-Desert/archives/588601", "title": "Game8: List of All Factions", "accessed": "2026-09-06" }
       ],
       "confidence": "reported",
       "gameVersion": "2.01.00"
