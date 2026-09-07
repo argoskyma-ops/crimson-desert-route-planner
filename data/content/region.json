@@ -352,6 +352,10 @@
       "parent": "region:hernand",
       "summary": "A Hernand hill with a beacon and bandit camps on its northern and southern faces.",
       "body": "Rocca's Hill is a hill area in Hernand. A beacon stands on it, and northern and southern bandit camps take the hill's name.",
+      "keyPlaces": [
+        "place:northern-roccas-hill-bandit-camp",
+        "place:southern-roccas-hill-bandit-camp"
+      ],
       "sources": [
         {
           "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
@@ -392,7 +396,8 @@
       "summary": "A Hernand forest known from the Southern Deepwoods Bandit Camp that takes its name.",
       "body": "The Deepwoods are forest in Hernand. Location lists name the tract through the Southern Deepwoods Bandit Camp.",
       "keyPlaces": [
-        "place:deepwoods-bandit-camp"
+        "place:deepwoods-bandit-camp",
+        "place:southern-deepwoods-bandit-camp"
       ],
       "sources": [
         {
@@ -412,6 +417,9 @@
       "parent": "region:hernand",
       "summary": "Open plains in Hernand, with a bandit camp on the same grassland.",
       "body": "Sunrise Plains are grassland in Hernand. A bandit camp sits on the same flats.",
+      "keyPlaces": [
+        "place:sunrise-plains-bandit-camp"
+      ],
       "sources": [
         {
           "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
@@ -565,6 +573,9 @@
       "parent": "region:hernand",
       "summary": "A stepped hillside in Hernand, also listed as Mistwind Stepped Hillside.",
       "body": "Mistwind is hillside country in Hernand. Location indexes give it as Mistwind (Stepped Hillside).",
+      "keyPlaces": [
+        "place:mistwind-bandit-camp"
+      ],
       "sources": [
         {
           "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
@@ -682,6 +693,9 @@
       "parent": "region:hernand",
       "summary": "A Hernand mountain belt named from the bandit camp that sits on it.",
       "body": "The Hernandian Mountains are a range in Hernand. Location lists name the tract through the Hernandian Mountains Bandit Camp; no dedicated area page was fetched.",
+      "keyPlaces": [
+        "place:hernandian-mountains-bandit-camp"
+      ],
       "sources": [
         {
           "url": "https://game8.co/games/Crimson-Desert/archives/585761",
@@ -873,6 +887,9 @@
       "parent": "region:pailune",
       "summary": "A Pailune forest held by the Longleaf Tribe.",
       "body": "Wayward Woods are forest in Pailune. The Longleaf Tribe holds this timber.",
+      "keyPlaces": [
+        "place:wayward-woods-bandit-camp"
+      ],
       "sources": [
         {
           "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
@@ -1055,6 +1072,9 @@
       "parent": "region:demeniss",
       "summary": "A Demeniss valley north of the line toward Fort Musket and the desert.",
       "body": "The Valley of the Moon is a valley in Demeniss. Fort Musket is described as sitting south of this valley on the way toward the Crimson Desert.",
+      "keyPlaces": [
+        "place:valley-of-the-moon-bandit-camp"
+      ],
       "sources": [
         {
           "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
@@ -1102,7 +1122,8 @@
       "summary": "A southern Hernand mountain range whose adjoining Bay of Steel is named with it.",
       "body": "The Steel Mountains sit in southern Hernand by map position, with the Bay of Steel against them; [[place:steel-mountains]] is the landmark on the same range. Two location indexes instead file the mountains under Demeniss.",
       "keyPlaces": [
-        "place:steel-mountains"
+        "place:steel-mountains",
+        "place:steel-mountains-camp"
       ],
       "sources": [
         {
@@ -1178,6 +1199,11 @@
       "parent": "region:demeniss",
       "summary": "A Demeniss forest cluster that includes Ironwood Cape and Ironwood Highland Plains.",
       "body": "Ironwood Forest is woodland in Demeniss. Ironwood Cape and Ironwood Highland Plains sit with it, and several bandit camps take the Ironwood name.",
+      "keyPlaces": [
+        "place:ironwood-bandit-camp",
+        "place:ironwood-basin-bandit-camp",
+        "place:ironwood-forest-bandit-camp"
+      ],
       "sources": [
         {
           "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
@@ -1484,6 +1510,9 @@
       "parent": "region:delesyia",
       "summary": "A named Delesyia tract known from the Timberdale Bandit Camp.",
       "body": "Timberdale is a named stretch of Delesyia. The Timberdale Bandit Camp is the listing that confirms the name.",
+      "keyPlaces": [
+        "place:timberdale-bandit-camp"
+      ],
       "sources": [
         {
           "url": "https://game8.co/games/Crimson-Desert/archives/591407",
@@ -1580,6 +1609,9 @@
       "parent": "region:crimson-desert",
       "summary": "A desert trade road, with Saltroad Camp along it.",
       "body": "Saltroad is a trade route through the Crimson Desert. Saltroad Camp sits on the same road.",
+      "keyPlaces": [
+        "place:saltroad-edge-bandit-camp"
+      ],
       "sources": [
         {
           "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
@@ -1734,6 +1766,9 @@
       "parent": "region:crimson-desert",
       "summary": "A named landmark area in the Crimson Desert.",
       "body": "World's Navel is a landmark tract in the Crimson Desert. Khafi-jahr Camp is described as a Dusksong outpost on this ground.",
+      "keyPlaces": [
+        "place:khafi-jahr-camp"
+      ],
       "sources": [
         {
           "url": "https://crimsondesertgame.wiki.fextralife.com/Locations",
@@ -1757,6 +1792,9 @@
       "parent": "region:crimson-desert",
       "summary": "Dune country that holds the Sandfang Marauders' stronghold.",
       "body": "Howlsands are dune country in the Crimson Desert. The Sandfang Marauders keep their stronghold here.",
+      "keyPlaces": [
+        "place:howlsands-camp-hearth"
+      ],
       "sources": [
         {
           "url": "https://game8.co/games/Crimson-Desert/archives/585766",
@@ -1812,6 +1850,9 @@
       "parent": "region:crimson-desert",
       "summary": "Site of the desert's largest raider base, held by the Dusksongs.",
       "body": "Izvatu holds the largest raider base in the Crimson Desert. The Dusksongs keep it; they are said to have come from Demeniss.",
+      "keyPlaces": [
+        "place:izvatu-bandit-camp"
+      ],
       "sources": [
         {
           "url": "https://game8.co/games/Crimson-Desert/archives/588601",
